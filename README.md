@@ -135,7 +135,6 @@ MIT License - feel free to use this project for personal or commercial purposes.
 ## Contact
 
 Mohammad Luqman - [@mirmohmmadluqman](https://github.com/mirmohmmadluqman)
-
 Project Link: [https://github.com/mirmohmmadluqman/web3skills](https://github.com/mirmohmmadluqman/web3skills)
 
 ## Acknowledgments
