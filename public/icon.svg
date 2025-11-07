@@ -1,0 +1,15 @@
+<!-- Shield check icon - save as shield-check.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128" aria-hidden="true">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="transparent"/>
+  <g transform="translate(8,6)">
+    <path d="M24 2 C36 2 44 8 44 18 C44 34 24 46 24 46 C24 46 4 34 4 18 C4 8 12 2 24 2 Z"
+          fill="url(#g2)" stroke="#0f172a" stroke-opacity="0.08" stroke-width="1"/>
+    <path d="M18 28 L22 32 L34 18" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
