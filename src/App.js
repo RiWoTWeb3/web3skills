@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Download, Upload, CheckCircle, Circle, TrendingUp, Award, Target, BookOpen, Code, Shield, DollarSign, Layout, Server, Network, Users, 
-  MessageCircle, Github, ArrowRight, Share2, Eye, X, Copy, Check, Moon, Sun, ChevronDown, ChevronUp, Search, Cloud, FileCode 
+  MessageCircle, Github, ArrowRight, Share2, Eye, X, Copy, Check, Moon, Sun, ChevronDown, ChevronUp, Search, /*Cloud,*/ /*FileCode*/ 
 } from 'lucide-react';
 
 const App = () => {
