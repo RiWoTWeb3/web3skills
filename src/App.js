@@ -177,22 +177,23 @@ const App = () => {
     SKILL_NAME_MAP[index] = skill;
   });
 
-  useEffect(() => {
-    const savedSkills = localStorage.getItem('web3skills');
-    const agreement = localStorage.getItem('web3skills_agreement_accepted');
-    const savedDarkMode = localStorage.getItem('web3skills_darkmode');
-    if (savedSkills) setSkills(JSON.parse(savedSkills));
-    if (savedDarkMode) setDarkMode(JSON.parse(savedDarkMode));
-    if (!agreement) setShowAgreementModal(true);
-    const params = new URLSearchParams(window.location.search);
-    const viewCode = params.get('view');
-    const gistId = params.get('gist');
-    if (viewCode) loadSharedSkills(viewCode);
-    else if (gistId) loadFromGist(gistId);
-    const initialExpanded = {};
-    Object.keys(categories).forEach(cat => initialExpanded[cat] = true);
-    setExpandedCategories(initialExpanded);
-  }, []);
+useEffect(() => {
+     const savedSkills = localStorage.getItem('web3skills');
+     const agreement = localStorage.getItem('web3skills_agreement_accepted');
+     const savedDarkMode = localStorage.getItem('web3skills_darkmode');
+     if (savedSkills) setSkills(JSON.parse(savedSkills));
+     if (savedDarkMode) setDarkMode(JSON.parse(savedDarkMode));
+     if (!agreement) setShowAgreementModal(true);
+     const params = new URLSearchParams(window.location.search);
+     const viewCode = params.get('view');
+     const gistId = params.get('gist');
+     if (viewCode) loadSharedSkills(viewCode);
+     else if (gistId) loadFromGist(gistId);
+     const initialExpanded = {};
+     Object.keys(categories).forEach(cat => initialExpanded[cat] = true);
+     setExpandedCategories(initialExpanded);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
   useEffect(() => {
     localStorage.setItem('web3skills', JSON.stringify(skills));
