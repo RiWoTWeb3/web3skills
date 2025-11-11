@@ -1,0 +1,217 @@
+Complete Directory Structure:
+
+└── ./
+    └── web3skills
+        ├── .github
+        │   └── FUNDING.yml ✓
+        ├── Docs
+        │   ├── CHECKLIST.md ✓
+        │   ├── CONTRIBUTING.md ✓
+        │   ├── DEPLOYMENT.md ✓
+        │   ├── DESIGN.md ✓
+        │   ├── FEATURES.md ✓
+        │   └── QUICK_START.md ✓
+        ├── Saves
+        │   ├── code_related
+        │   │   ├── .gitignore ✓
+        │   │   ├── App.js ✓
+        │   │   ├── DETAILS.md ✓
+        │   │   ├── old_code_with_cloud_feature.js ✓
+        │   │   └── package.json ✓
+        │   └── v2.1
+        │       ├── .github
+        │       │   └── FUNDING.yml ✓
+        │       ├── build
+        │       │   ├── static
+        │       │   │   ├── css
+        │       │   │   │   └── main.43a471bb.css ✓
+        │       │   │   └── js
+        │       │   │       ├── main.85c2f5f1.js ✓
+        │       │   │       └── main.85c2f5f1.js.LICENSE.txt ✓
+        │       │   ├── asset-manifest.json ✓
+        │       │   ├── index.html ✓
+        │       │   ├── manifest.json ✓
+        │       │   └── robots.txt ✓
+        │       ├── Docs
+        │       │   ├── CHECKLIST.md ✓
+        │       │   ├── CONTRIBUTING.md ✓
+        │       │   ├── DEPLOYMENT.md ✓
+        │       │   ├── DESIGN.md ✓
+        │       │   ├── FEATURES.md ✓
+        │       │   └── QUICK_START.md ✓
+        │       ├── NPM
+        │       │   ├── src
+        │       │   │   ├── components
+        │       │   │   │   ├── figma
+        │       │   │   │   │   └── ImageWithFallback.tsx ✓
+        │       │   │   │   └── ui
+        │       │   │   │       ├── accordion.tsx ✓
+        │       │   │   │       ├── alert-dialog.tsx ✓
+        │       │   │   │       ├── alert.tsx ✓
+        │       │   │   │       ├── aspect-ratio.tsx ✓
+        │       │   │   │       ├── avatar.tsx ✓
+        │       │   │   │       ├── badge.tsx ✓
+        │       │   │   │       ├── breadcrumb.tsx ✓
+        │       │   │   │       ├── button.tsx ✓
+        │       │   │   │       ├── calendar.tsx ✓
+        │       │   │   │       ├── card.tsx ✓
+        │       │   │   │       ├── carousel.tsx ✓
+        │       │   │   │       ├── chart.tsx ✓
+        │       │   │   │       ├── checkbox.tsx ✓
+        │       │   │   │       ├── collapsible.tsx ✓
+        │       │   │   │       ├── command.tsx ✓
+        │       │   │   │       ├── context-menu.tsx ✓
+        │       │   │   │       ├── dialog.tsx ✓
+        │       │   │   │       ├── drawer.tsx ✓
+        │       │   │   │       ├── dropdown-menu.tsx ✓
+        │       │   │   │       ├── form.tsx ✓
+        │       │   │   │       ├── hover-card.tsx ✓
+        │       │   │   │       ├── input-otp.tsx ✓
+        │       │   │   │       ├── input.tsx ✓
+        │       │   │   │       ├── label.tsx ✓
+        │       │   │   │       ├── menubar.tsx ✓
+        │       │   │   │       ├── navigation-menu.tsx ✓
+        │       │   │   │       ├── pagination.tsx ✓
+        │       │   │   │       ├── popover.tsx ✓
+        │       │   │   │       ├── progress.tsx ✓
+        │       │   │   │       ├── radio-group.tsx ✓
+        │       │   │   │       ├── resizable.tsx ✓
+        │       │   │   │       ├── scroll-area.tsx ✓
+        │       │   │   │       ├── select.tsx ✓
+        │       │   │   │       ├── separator.tsx ✓
+        │       │   │   │       ├── sheet.tsx ✓
+        │       │   │   │       ├── sidebar.tsx ✓
+        │       │   │   │       ├── skeleton.tsx ✓
+        │       │   │   │       ├── slider.tsx ✓
+        │       │   │   │       ├── sonner.tsx ✓
+        │       │   │   │       ├── switch.tsx ✓
+        │       │   │   │       ├── table.tsx ✓
+        │       │   │   │       ├── tabs.tsx ✓
+        │       │   │   │       ├── textarea.tsx ✓
+        │       │   │   │       ├── toggle-group.tsx ✓
+        │       │   │   │       ├── toggle.tsx ✓
+        │       │   │   │       ├── tooltip.tsx ✓
+        │       │   │   │       ├── use-mobile.ts ✓
+        │       │   │   │       └── utils.ts ✓
+        │       │   │   ├── guidelines
+        │       │   │   │   └── Guidelines.md ✓
+        │       │   │   ├── styles
+        │       │   │   │   └── globals.css ✓
+        │       │   │   ├── supabase
+        │       │   │   │   └── functions
+        │       │   │   │       └── server
+        │       │   │   │           ├── index.tsx ✓
+        │       │   │   │           └── kv_store.tsx ✓
+        │       │   │   ├── utils
+        │       │   │   │   └── supabase
+        │       │   │   │       └── info.tsx ✓
+        │       │   │   ├── App.tsx ✓
+        │       │   │   ├── Attributions.md ✓
+        │       │   │   ├── index.css ✓
+        │       │   │   ├── main.tsx ✓
+        │       │   │   ├── README.md ✓
+        │       │   │   └── STRUCTURE.md ✓
+        │       │   ├── index.html ✓
+        │       │   ├── package.json ✓
+        │       │   ├── README.md ✓
+        │       │   └── vite.config.ts ✓
+        │       ├── public
+        │       │   ├── index.html ✓
+        │       │   ├── manifest.json ✓
+        │       │   └── robots.txt ✓
+        │       ├── src
+        │       │   ├── App.css ✓
+        │       │   ├── App.js ✓
+        │       │   ├── App.test.js ✓
+        │       │   ├── index.css ✓
+        │       │   ├── index.js ✓
+        │       │   ├── reportWebVitals.js ✓
+        │       │   └── setupTests.js ✓
+        │       ├── .gitattributes ✓
+        │       ├── .gitignore ✓
+        │       ├── CONtRIBUTING.md ✓
+        │       ├── LICENSE ✓
+        │       ├── package-lock.json ✓
+        │       ├── package.json ✓
+        │       ├── postcss.config.js ✓
+        │       ├── README.md ✓
+        │       ├── SETUP.md ✓
+        │       └── tailwind.config.js ✓
+        ├── src
+        │   ├── components
+        │   │   ├── figma
+        │   │   │   └── ImageWithFallback.tsx ✓
+        │   │   └── ui
+        │   │       ├── accordion.tsx ✓
+        │   │       ├── alert-dialog.tsx ✓
+        │   │       ├── alert.tsx ✓
+        │   │       ├── aspect-ratio.tsx ✓
+        │   │       ├── avatar.tsx ✓
+        │   │       ├── badge.tsx ✓
+        │   │       ├── breadcrumb.tsx ✓
+        │   │       ├── button.tsx ✓
+        │   │       ├── calendar.tsx ✓
+        │   │       ├── card.tsx ✓
+        │   │       ├── carousel.tsx ✓
+        │   │       ├── chart.tsx ✓
+        │   │       ├── checkbox.tsx ✓
+        │   │       ├── collapsible.tsx ✓
+        │   │       ├── command.tsx ✓
+        │   │       ├── context-menu.tsx ✓
+        │   │       ├── dialog.tsx ✓
+        │   │       ├── drawer.tsx ✓
+        │   │       ├── dropdown-menu.tsx ✓
+        │   │       ├── form.tsx ✓
+        │   │       ├── hover-card.tsx ✓
+        │   │       ├── input-otp.tsx ✓
+        │   │       ├── input.tsx ✓
+        │   │       ├── label.tsx ✓
+        │   │       ├── menubar.tsx ✓
+        │   │       ├── navigation-menu.tsx ✓
+        │   │       ├── pagination.tsx ✓
+        │   │       ├── popover.tsx ✓
+        │   │       ├── progress.tsx ✓
+        │   │       ├── radio-group.tsx ✓
+        │   │       ├── resizable.tsx ✓
+        │   │       ├── scroll-area.tsx ✓
+        │   │       ├── select.tsx ✓
+        │   │       ├── separator.tsx ✓
+        │   │       ├── sheet.tsx ✓
+        │   │       ├── sidebar.tsx ✓
+        │   │       ├── skeleton.tsx ✓
+        │   │       ├── slider.tsx ✓
+        │   │       ├── sonner.tsx ✓
+        │   │       ├── switch.tsx ✓
+        │   │       ├── table.tsx ✓
+        │   │       ├── tabs.tsx ✓
+        │   │       ├── textarea.tsx ✓
+        │   │       ├── toggle-group.tsx ✓
+        │   │       ├── toggle.tsx ✓
+        │   │       ├── tooltip.tsx ✓
+        │   │       ├── use-mobile.ts ✓
+        │   │       └── utils.ts ✓
+        │   ├── guidelines
+        │   │   └── Guidelines.md ✓
+        │   ├── styles
+        │   │   └── globals.css ✓
+        │   ├── supabase
+        │   │   └── functions
+        │   │       └── server
+        │   │           ├── index.tsx ✓
+        │   │           └── kv_store.tsx ✓
+        │   ├── utils
+        │   │   └── supabase
+        │   │       └── info.tsx ✓
+        │   ├── App.tsx ✓
+        │   ├── Attributions.md ✓
+        │   ├── index.css ✓
+        │   ├── main.tsx ✓
+        │   ├── README.md ✓
+        │   └── STRUCTURE.md ✓
+        ├── CONtRIBUTING.md ✓
+        ├── index.html ✓
+        ├── LICENSE ✓
+        ├── package.json ✓
+        ├── README.md ✓
+        ├── SETUP.md ✓
+        └── vite.config.ts ✓
