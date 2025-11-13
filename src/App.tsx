@@ -12,7 +12,7 @@ const App = () => {
   const [skills, setSkills] = useState({});
   const [currentView, setCurrentView] = useState('home');
   const [selectedCareer, setSelectedCareer] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // true = dark mode (default)
   const [searchQuery, setSearchQuery] = useState('');
   const [filterComplete, setFilterComplete] = useState('all');
   const [expandedCategories, setExpandedCategories] = useState({});
@@ -41,7 +41,7 @@ const App = () => {
     ],
     'Development Tools': [
       'Foundry', 'Hardhat', 'Truffle', 'Remix', 'Ganache', 'Anchor CLI', 
-      'Solana CLI', 'Figma', 'Adobe Creative Suite', 'AI Design Tools', 
+      'Solana CLI', 'Design Tools', 'Adobe Creative Suite', 'AI Design Tools', 
       'Postman', 'VS Code Extensions', 'Docker', 'Git Advanced', 'GitHub Actions', 
       'Vercel', 'Railway', 'Render'
     ],
@@ -135,22 +135,22 @@ const App = () => {
       roadmap: [
         {
           phase: 'Foundation',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Blockchain Fundamentals', 'Solidity Basics', 'JavaScript/TypeScript', 'Git Version Control'],
           resources: [
-            { name: 'Cyfrin Updraft - Blockchain Basics', url: 'https://updraft.cyfrin.io/courses/blockchain-basics', type: 'FREE', duration: '~15 hours' },
-            { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~30 hours' },
-            { name: 'CryptoZombies', url: 'https://cryptozombies.io', type: 'FREE', duration: '~10 hours' },
+            { name: 'Cyfrin Updraft - Blockchain Basics', url: 'https://updraft.cyfrin.io/courses/blockchain-basics', type: 'FREE', duration: '~5 hours' },
+            { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~10 hours' },
+            { name: 'CryptoZombies', url: 'https://cryptozombies.io', type: 'FREE', duration: '~3 hours' },
             { name: 'Ethereum.org Developer Docs', url: 'https://ethereum.org/en/developers/', type: 'FREE' },
             { name: 'Solidity Official Documentation', url: 'https://docs.soliditylang.org', type: 'FREE' }
           ]
         },
         {
           phase: 'Core Development',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Foundry', 'Hardhat', 'Unit Testing', 'Smart Contract Development', 'EVM Opcodes'],
           resources: [
-            { name: 'Cyfrin Updraft - Foundry Fundamentals', url: 'https://updraft.cyfrin.io/courses/foundry', type: 'FREE', duration: '~40 hours' },
+            { name: 'Cyfrin Updraft - Foundry Fundamentals', url: 'https://updraft.cyfrin.io/courses/foundry', type: 'FREE', duration: '~13 hours' },
             { name: 'Foundry Book', url: 'https://book.getfoundry.sh', type: 'FREE' },
             { name: 'Hardhat Documentation', url: 'https://hardhat.org/docs', type: 'FREE' },
             { name: 'OpenZeppelin Contracts', url: 'https://docs.openzeppelin.com/contracts', type: 'FREE' },
@@ -159,10 +159,10 @@ const App = () => {
         },
         {
           phase: 'Advanced Concepts',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Gas Optimization', 'Security Best Practices', 'Upgradeable Contracts', 'Fuzz Testing'],
           resources: [
-            { name: 'Cyfrin Updraft - Advanced Foundry', url: 'https://updraft.cyfrin.io/courses/advanced-foundry', type: 'FREE', duration: '~50 hours' },
+            { name: 'Cyfrin Updraft - Advanced Foundry', url: 'https://updraft.cyfrin.io/courses/advanced-foundry', type: 'FREE', duration: '~17 hours' },
             { name: 'Solidity Patterns', url: 'https://fravoll.github.io/solidity-patterns/', type: 'FREE' },
             { name: 'EIP Standards', url: 'https://eips.ethereum.org', type: 'FREE' },
             { name: 'Yul Documentation', url: 'https://docs.soliditylang.org/en/latest/yul.html', type: 'FREE' }
@@ -170,7 +170,7 @@ const App = () => {
         },
         {
           phase: 'Specialization & Production',
-          duration: '5-6 months',
+          duration: '2 months',
           skills: ['High-TVL Contracts', 'DeFi Protocol Design', 'Production Deployment', 'Multi-chain'],
           resources: [
             { name: 'Uniswap V2/V3 Source Code', url: 'https://github.com/Uniswap', type: 'FREE' },
@@ -199,7 +199,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'Foundation',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Solidity Advanced', 'Smart Contract Development', 'EVM Mechanics', 'Security Best Practices'],
           resources: [
             { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~30 hours' },
@@ -210,7 +210,7 @@ const App = () => {
         },
         {
           phase: 'Security Fundamentals',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Vulnerability Assessment', 'Slither', 'Aderyn', 'Common Attack Vectors'],
           resources: [
             { name: 'Cyfrin Updraft - Smart Contract Security', url: 'https://updraft.cyfrin.io/courses/security', type: 'FREE', duration: '~60 hours' },
@@ -221,7 +221,7 @@ const App = () => {
         },
         {
           phase: 'Advanced Security',
-          duration: '5-6 months',
+          duration: '2 months',
           skills: ['Formal Verification', 'Echidna Fuzzing', 'Certora', 'Smart Contract Auditing'],
           resources: [
             { name: 'Cyfrin Updraft - Assembly and Formal Verification', url: 'https://updraft.cyfrin.io/courses/formal-verification', type: 'FREE', duration: '~40 hours' },
@@ -232,7 +232,7 @@ const App = () => {
         },
         {
           phase: 'Professional Auditing',
-          duration: '6-8 months',
+          duration: '2-2.5 months',
           skills: ['Audit Workflow', 'Bug Bounty Hunting', 'Report Writing', 'Client Communication'],
           resources: [
             { name: 'Code4rena Contests', url: 'https://code4rena.com', type: 'PAID - Earn Money' },
@@ -262,7 +262,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'DeFi Basics',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['DeFi Concepts', 'Smart Contract Development', 'Token Standards'],
           resources: [
             { name: 'DeFi MOOC by UC Berkeley', url: 'https://defi-learning.org', type: 'FREE' },
@@ -272,7 +272,7 @@ const App = () => {
         },
         {
           phase: 'Core Protocols',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['AMMs', 'Lending Protocols', 'Oracles', 'Tokenomics'],
           resources: [
             { name: 'Cyfrin Updraft - Uniswap V4', url: 'https://updraft.cyfrin.io/courses/uniswap-v4', type: 'FREE', duration: '~25 hours' },
@@ -283,7 +283,7 @@ const App = () => {
         },
         {
           phase: 'Advanced DeFi',
-          duration: '5-6 months',
+          duration: '2 months',
           skills: ['MEV', 'Cross-chain', 'L2s', 'Advanced AMM Curves'],
           resources: [
             { name: 'Cyfrin Updraft - Curve Stableswap', url: 'https://updraft.cyfrin.io/courses/curve-stableswap', type: 'FREE', duration: '~30 hours' },
@@ -293,7 +293,7 @@ const App = () => {
         },
         {
           phase: 'Production',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['High-TVL Contracts', 'Security', 'Gas Optimization'],
           resources: [
             { name: 'Cyfrin Updraft - Uniswap V2 Deep Dive', url: 'https://updraft.cyfrin.io/courses/uniswap-v2', type: 'FREE', duration: '~40 hours' },
@@ -313,7 +313,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'Frontend Foundation',
-          duration: '2-3 months',
+          duration: '3-4 weeks',
           skills: ['JavaScript', 'React', 'TypeScript', 'TailwindCSS'],
           resources: [
             { name: 'React Official Tutorial', url: 'https://react.dev', type: 'FREE' },
@@ -323,7 +323,7 @@ const App = () => {
         },
         {
           phase: 'Web3 Integration',
-          duration: '2-3 months',
+          duration: '3-4 weeks',
           skills: ['Web3 Wallets', 'Blockchain Fundamentals', 'dApps'],
           resources: [
             { name: 'Cyfrin Updraft - Full-Stack Web3 Crash Course', url: 'https://updraft.cyfrin.io/courses/full-stack-web3-development-crash-course', type: 'FREE' },
@@ -333,7 +333,7 @@ const App = () => {
         },
         {
           phase: 'dApp Development',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Smart Contract Interaction', 'IPFS', 'The Graph'],
           resources: [
             { name: 'Scaffold-ETH', url: 'https://scaffoldeth.io', type: 'FREE' },
@@ -343,7 +343,7 @@ const App = () => {
         },
         {
           phase: 'Advanced UI/UX',
-          duration: '2-3 months',
+          duration: '3-4 weeks',
           skills: ['Next.js', 'Redux', 'React Query', 'Responsive Design'],
           resources: [
             { name: 'Next.js Documentation', url: 'https://nextjs.org/docs', type: 'FREE' },
@@ -363,7 +363,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'Backend Basics',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Python', 'REST API', 'Database Design', 'Git Advanced'],
           resources: [
             { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/', type: 'FREE' },
@@ -372,7 +372,7 @@ const App = () => {
         },
         {
           phase: 'Distributed Systems',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Microservices', 'Redis', 'Distributed Systems', 'Kubernetes'],
           resources: [
             { name: 'Kubernetes Documentation', url: 'https://kubernetes.io/docs/', type: 'FREE' },
@@ -381,7 +381,7 @@ const App = () => {
         },
         {
           phase: 'Blockchain Integration',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Developer Infrastructure', 'The Graph', 'Event-Driven Architecture'],
           resources: [
             { name: 'Alchemy Documentation', url: 'https://docs.alchemy.com', type: 'FREE' },
@@ -390,7 +390,7 @@ const App = () => {
         },
         {
           phase: 'Scale & Performance',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['High-Throughput Systems', 'Database Optimization', 'Cloud Architecture'],
           resources: [
             { name: 'AWS Documentation', url: 'https://docs.aws.amazon.com', type: 'FREE' }
@@ -409,7 +409,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'Deep Blockchain Knowledge',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Blockchain Fundamentals', 'Consensus Mechanisms', 'EVM Mechanics'],
           resources: [
             { name: 'Ethereum.org', url: 'https://ethereum.org', type: 'FREE' },
@@ -419,7 +419,7 @@ const App = () => {
         },
         {
           phase: 'System Design',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['System Design', 'Distributed Systems', 'Large-Scale Cloud Systems'],
           resources: [
             { name: 'System Design Primer', url: 'https://github.com/donnemartin/system-design-primer', type: 'FREE' }
@@ -427,7 +427,7 @@ const App = () => {
         },
         {
           phase: 'Layer 2 & Scaling',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['L2s', 'ZK Proofs', 'Bridges', 'Cross-chain Protocols'],
           resources: [
             { name: 'Cyfrin Updraft - ZK Proofs Fundamentals', url: 'https://updraft.cyfrin.io/courses/fundamentals-of-zero-knowledge-proofs', type: 'FREE' },
@@ -438,7 +438,7 @@ const App = () => {
         },
         {
           phase: 'Advanced Architecture',
-          duration: '5-6 months',
+          duration: '2 months',
           skills: ['High-Throughput Systems', 'Performance Testing', 'Production Systems'],
           resources: [
             { name: 'L2Beat', url: 'https://l2beat.com', type: 'FREE' }
@@ -457,7 +457,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'Solana Basics',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Rust Basics', 'Solana Fundamentals', 'Solana CLI'],
           resources: [
             { name: 'Cyfrin Updraft - Rust Programming Basics', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
@@ -468,7 +468,7 @@ const App = () => {
         },
         {
           phase: 'Program Development',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Anchor Framework', 'Solana Program Development', 'SPL Tokens'],
           resources: [
             { name: 'Solana Developer Bootcamp 2024 (Projects 1-9)', url: 'https://www.youtube.com/watch?v=amAq-WHAFs8', type: 'FREE' },
@@ -478,7 +478,7 @@ const App = () => {
         },
         {
           phase: 'Advanced Solana',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['PDAs', 'CPI', 'Solana Security', 'Solana Testing'],
           resources: [
             { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
@@ -487,7 +487,7 @@ const App = () => {
         },
         {
           phase: 'Production & DeFi',
-          duration: '5-6 months',
+          duration: '2 months',
           skills: ['Solana DeFi', 'Jupiter', 'Raydium', 'Metaplex NFTs'],
           resources: [
             { name: 'Jupiter Documentation', url: 'https://docs.jup.ag', type: 'FREE' },
@@ -507,7 +507,7 @@ const App = () => {
       roadmap: [
         {
           phase: 'Rust & Solana Foundation',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Rust Advanced', 'Solana Fundamentals', 'Anchor Framework'],
           resources: [
             { name: 'Cyfrin Updraft - Rust Programming', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
@@ -516,7 +516,7 @@ const App = () => {
         },
         {
           phase: 'Security Fundamentals',
-          duration: '4-5 months',
+          duration: '1.5-2 months',
           skills: ['Solana Security Best Practices', 'Common Vulnerabilities', 'Aderyn'],
           resources: [
             { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
@@ -525,7 +525,7 @@ const App = () => {
         },
         {
           phase: 'Advanced Auditing',
-          duration: '5-6 months',
+          duration: '2 months',
           skills: ['Exploit Development', 'Audit Report Writing', 'Testing'],
           resources: [
             { name: 'Solana Security Best Practices', url: 'https://docs.solana.com/developers', type: 'FREE' }
@@ -533,7 +533,7 @@ const App = () => {
         },
         {
           phase: 'Professional Practice',
-          duration: '6-8 months',
+          duration: '2-2.5 months',
           skills: ['Bug Bounties', 'Audit Contests', 'Client Work'],
           resources: [
             { name: 'Immunefi Solana Programs', url: 'https://immunefi.com', type: 'PAID - Earn Money' }
@@ -546,22 +546,22 @@ const App = () => {
       ecosystem: 'Cross-chain',
       description: 'Design beautiful and intuitive user experiences for Web3 applications',
       requiredSkills: [
-        'UI/UX Design', 'Figma', 'Adobe Creative Suite', 'Wireframing', 'Prototyping', 
+        'UI/UX Design', 'Design Tools', 'Adobe Creative Suite', 'Wireframing', 'Prototyping', 
         'Responsive Design', 'Web3 User Flows', 'Blockchain Fundamentals'
       ],
       roadmap: [
         {
           phase: 'Design Fundamentals',
-          duration: '2-3 months',
-          skills: ['UI/UX Design', 'Figma', 'Adobe Creative Suite'],
+          duration: '3-4 weeks',
+          skills: ['UI/UX Design', 'Design Tools', 'Adobe Creative Suite'],
           resources: [
-            { name: 'Figma Official Tutorials', url: 'https://www.figma.com/resources/learn-design/', type: 'FREE' },
+            { name: 'UI/UX Design Course', url: 'https://www.interaction-design.org/courses', type: 'FREE' },
             { name: 'Adobe XD Tutorials', url: 'https://www.adobe.com/products/xd/learn.html', type: 'FREE' }
           ]
         },
         {
           phase: 'Web3 Design Patterns',
-          duration: '2-3 months',
+          duration: '3-4 weeks',
           skills: ['Web3 User Flows', 'Wallet UX', 'Transaction Design'],
           resources: [
             { name: 'Web3 Design Principles', url: 'https://web3designprinciples.com', type: 'FREE' },
@@ -570,7 +570,7 @@ const App = () => {
         },
         {
           phase: 'Advanced Design',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Prototyping', 'Design Systems', 'Responsive Design'],
           resources: [
             { name: 'Design Systems Handbook', url: 'https://www.designbetter.co/design-systems-handbook', type: 'FREE' }
@@ -578,7 +578,7 @@ const App = () => {
         },
         {
           phase: 'Portfolio & Practice',
-          duration: '3-4 months',
+          duration: '1-1.5 months',
           skills: ['Portfolio Building', 'Client Work', 'Collaborative Design'],
           resources: [
             { name: 'Dribbble for Inspiration', url: 'https://dribbble.com', type: 'FREE' }
@@ -759,6 +759,7 @@ const App = () => {
   };
 
   const displaySkills = viewMode ? (sharedSkills || skills) : skills;
+  const totalSkillsCount = Object.values(skillCategories).flat().length;
   const totalSkills = Object.keys(displaySkills).length;
   const checkedSkills = Object.values(displaySkills).filter(Boolean).length;
   const overallProgress = totalSkills > 0 ? (checkedSkills / totalSkills) * 100 : 0;
@@ -776,78 +777,82 @@ const App = () => {
 
   // Components
   const Navigation = () => (
-    <nav className={`${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} border-b sticky top-0 z-40 backdrop-blur-sm bg-opacity-90`}>
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className={`${darkMode ? 'navbar-dark' : 'navbar-light'} sticky top-4 z-40 mx-4 md:mx-8 rounded-2xl`}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center space-x-2">
-              <Rocket className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={28} />
+            <div className="flex items-center space-x-3">
+              <div className="icon-gradient-blue p-3 rounded-xl">
+                <Rocket className="text-white" size={24} />
+              </div>
               <div>
-                <h1 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Web3 Skills <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>RiWoT</span>
+                <h1 className={`font-bold text-xl ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  Web3 Skills <span className="gradient-text">RiWoT</span>
                 </h1>
-                <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>Learn. Build. Grow.</p>
+                <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Learn. Build. Grow.</p>
               </div>
             </div>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            <button
-              onClick={() => setCurrentView('home')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'home'
-                  ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
-                  : (darkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-50')
-              }`}
-            >
-              Home
-            </button>
+          <div className="hidden md:flex items-center space-x-2">
+            {!viewMode && (
+              <button
+                onClick={() => setCurrentView('home')}
+                className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                  currentView === 'home'
+                    ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                    : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
+                }`}
+              >
+                Home
+              </button>
+            )}
             <button
               onClick={() => setCurrentView('skills')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                 currentView === 'skills'
-                  ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
-                  : (darkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-50')
+                  ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
               }`}
             >
               Skills
             </button>
             <button
               onClick={() => setCurrentView('careers')}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                 currentView === 'careers' || currentView === 'career-detail'
-                  ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
-                  : (darkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-50')
+                  ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
               }`}
             >
-              Careers
+              {viewMode ? 'Career Match' : 'Careers'}
             </button>
             
             {!viewMode && (
               <>
                 <button
                   onClick={() => setShowShareModal(true)}
-                  className={`p-2 rounded-lg transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+                  className={`p-3 rounded-xl transition-all ${darkMode ? 'btn-glass-dark' : 'btn-glass-light'}`}
                   title="Share Progress"
                 >
-                  <Share2 className={darkMode ? 'text-gray-300' : 'text-gray-600'} size={20} />
+                  <Share2 size={20} />
                 </button>
                 <button
                   onClick={() => setShowViewModal(true)}
-                  className={`p-2 rounded-lg transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+                  className={`p-3 rounded-xl transition-all ${darkMode ? 'btn-glass-dark' : 'btn-glass-light'}`}
                   title="View Shared"
                 >
-                  <Eye className={darkMode ? 'text-gray-300' : 'text-gray-600'} size={20} />
+                  <Eye size={20} />
                 </button>
               </>
             )}
             
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-lg transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+              className={`p-3 rounded-xl transition-all ${darkMode ? 'btn-glass-dark' : 'btn-glass-light'}`}
             >
-              {darkMode ? <Sun className="text-yellow-400" size={20} /> : <Moon className="text-gray-600" size={20} />}
+              {darkMode ? <Sun className="text-yellow-400" size={22} /> : <Moon className="text-purple-600" size={22} />}
             </button>
           </div>
 
@@ -867,16 +872,18 @@ const App = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
-            <button
-              onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); }}
-              className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium ${
-                currentView === 'home'
-                  ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
-                  : (darkMode ? 'text-gray-300' : 'text-gray-600')
-              }`}
-            >
-              Home
-            </button>
+            {!viewMode && (
+              <button
+                onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); }}
+                className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium ${
+                  currentView === 'home'
+                    ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
+                    : (darkMode ? 'text-gray-300' : 'text-gray-600')
+                }`}
+              >
+                Home
+              </button>
+            )}
             <button
               onClick={() => { setCurrentView('skills'); setMobileMenuOpen(false); }}
               className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium ${
@@ -895,7 +902,7 @@ const App = () => {
                   : (darkMode ? 'text-gray-300' : 'text-gray-600')
               }`}
             >
-              Careers
+              {viewMode ? 'Career Match' : 'Careers'}
             </button>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -974,91 +981,213 @@ const App = () => {
         </div>
       )}
 
-      {/* Hero Section */}
-      <div className="text-center pt-12 pb-8">
-        <div className="flex justify-center mb-4">
-          <div className={`${darkMode ? 'bg-gradient-to-r from-blue-600 to-purple-600' : 'bg-gradient-to-r from-blue-500 to-purple-500'} p-4 rounded-2xl`}>
-            <GraduationCap className="text-white" size={48} />
+      {/* Hero Section - Enhanced */}
+      <div className={`text-center pt-16 pb-12 relative overflow-hidden ${darkMode ? 'mesh-gradient-dark' : 'mesh-gradient'}`}>
+        <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+        <div className="relative z-10">
+          <div className="flex justify-center mb-6 animate-float">
+            <div className={`${darkMode ? 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500'} p-6 rounded-3xl shadow-2xl animate-pulse-glow`}>
+              <GraduationCap className="text-white" size={64} />
+            </div>
           </div>
+          <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 animate-slideUp ${darkMode ? 'gradient-text-blue' : 'gradient-text-purple'} leading-tight`}>
+            Web3 Skills <br className="md:hidden" />Learning Platform
+          </h1>
+          <p className={`text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-slideUp ${darkMode ? 'text-gray-300' : 'text-gray-700'}`} style={{animationDelay: '0.1s'}}>
+            Master Web3 development with curated resources, track your progress, and join the RiWoT community
+          </p>
+          {!viewMode && (
+            <div className="flex flex-wrap gap-4 justify-center animate-slideUp" style={{animationDelay: '0.2s'}}>
+              <button 
+                onClick={() => setCurrentView('skills')}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 shadow-xl ${darkMode ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white' : 'bg-purple-600 hover:bg-purple-700 text-white'}`}
+              >
+                <Rocket size={24} />
+                Track Skills
+              </button>
+              <button 
+                onClick={() => setCurrentView('careers')}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 shadow-xl ${darkMode ? 'bg-gray-800 hover:bg-gray-700 border-2 border-gray-600 text-white' : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900'}`}
+              >
+                <Target size={24} />
+                Explore Careers
+              </button>
+            </div>
+          )}
         </div>
-        <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Web3 Skills Learning Platform
-        </h1>
-        <p className={`text-lg md:text-xl max-w-2xl mx-auto ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          Master Web3 development with curated resources, track your progress, and join the RiWoT community
-        </p>
       </div>
 
-      {/* Stats */}
+      {/* Stats Cards - Glassmorphism Design */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Your Progress</h3>
-            <TrendingUp className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={20} />
+        {/* White Card - Your Progress - Hide in View Mode */}
+        {!viewMode && (
+          <div className={`${darkMode ? 'glass-card-dark text-white' : 'card-white-light text-gray-900'} p-8 rounded-2xl card-lift stagger-item`}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${darkMode ? 'bg-white/20' : 'bg-black'}`}>
+                <TrendingUp className={darkMode ? 'text-blue-400' : 'text-white'} size={24} />
+              </div>
+              <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Your Progress</h3>
+            </div>
+            <div className="mb-4">
+              <div className={`text-5xl font-extrabold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                {checkedSkills}<span className={`text-2xl ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>/{totalSkills} skills</span>
+              </div>
+            </div>
+            <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-3`}>
+              <div className="progress-fill" style={{ width: `${overallProgress}%` }} />
+            </div>
+            <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{overallProgress.toFixed(1)}% Complete</p>
           </div>
-          <div className={`text-3xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            {checkedSkills}<span className={`text-lg ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>/{totalSkills}</span>
+        )}
+
+        {/* Gradient Card - Categories */}
+        <div className="gradient-card-purple p-8 rounded-2xl text-white card-lift stagger-item">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+              <Award className="text-white" size={24} />
+            </div>
+            <h3 className="text-lg font-bold">Categories Mastered</h3>
           </div>
-          <div className={`w-full ${darkMode ? 'bg-gray-700' : 'bg-gray-100'} rounded-full h-2`}>
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all" style={{ width: `${overallProgress}%` }} />
+          <div className="space-y-2 mb-4">
+            <div className="flex flex-wrap gap-2">
+              <span className="badge badge-green">Essentials</span>
+              <span className="badge badge-orange">Blockchain</span>
+              <span className="badge" style={{background: '#7c3aed'}}>Rust</span>
+            </div>
           </div>
-          <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'} mt-2`}>{overallProgress.toFixed(1)}% Complete</p>
+          <p className="text-sm opacity-80">Sixteen available paths</p>
         </div>
 
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Categories</h3>
-            <Award className={darkMode ? 'text-green-400' : 'text-green-600'} size={20} />
+        {/* Glass Card - Career Paths - Hide in View Mode */}
+        {!viewMode && (
+          <div className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-8 rounded-2xl card-lift stagger-item`}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl icon-gradient-blue flex items-center justify-center">
+                <Target className="text-white" size={24} />
+              </div>
+              <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
+            </div>
+            <div className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{Object.keys(careerPaths).length}</div>
+            <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Available Paths</p>
           </div>
-          <div className={`text-3xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            {Object.keys(skillCategories).filter(cat => getCategoryProgress(cat).percentage === 100).length}
-            <span className={`text-lg ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>/{Object.keys(skillCategories).length}</span>
-          </div>
-          <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>Categories Mastered</p>
-        </div>
-
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className={`text-sm font-semibold ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Career Paths</h3>
-            <Target className={darkMode ? 'text-purple-400' : 'text-purple-600'} size={20} />
-          </div>
-          <div className={`text-3xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            {Object.keys(careerPaths).length}
-          </div>
-          <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>Available Paths</p>
-        </div>
+        )}
       </div>
 
-      {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <button
-          onClick={() => setCurrentView('skills')}
-          className={`${darkMode ? 'bg-gradient-to-br from-blue-900/50 to-blue-800/50 border-blue-700 hover:from-blue-800/60 hover:to-blue-700/60' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200'} p-8 rounded-2xl border transition-all text-left group`}
-        >
-          <BookOpen className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
-          <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
-          <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
-            Browse and track {totalSkills}+ Web3 skills across {Object.keys(skillCategories).length} categories
-          </p>
-          <span className={`text-sm font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'} flex items-center gap-2`}>
-            Start Tracking <ArrowRight size={16} />
-          </span>
-        </button>
+      {/* Skills Section - Show in View Mode */}
+      {viewMode && (
+        <div className="space-y-6">
+          <h2 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Skills</h2>
+          
+          {/* Skills by Category */}
+          {Object.entries(skillCategories).map(([categoryName, categorySkills]) => {
+            const progress = getCategoryProgress(categoryName);
+            const activeSkills = sharedSkills || skills;
+            const filtered = categorySkills.filter(skill => {
+              const isChecked = activeSkills[skill];
+              return true; // Show all skills in view mode
+            });
+            
+            if (filtered.length === 0) return null;
 
-        <button
-          onClick={() => setCurrentView('careers')}
-          className={`${darkMode ? 'bg-gradient-to-br from-purple-900/50 to-purple-800/50 border-purple-700 hover:from-purple-800/60 hover:to-purple-700/60' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200'} p-8 rounded-2xl border transition-all text-left group`}
-        >
-          <Target className={`${darkMode ? 'text-purple-400' : 'text-purple-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
-          <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
-          <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
-            Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
-          </p>
-          <span className={`text-sm font-medium ${darkMode ? 'text-purple-400' : 'text-purple-600'} flex items-center gap-2`}>
-            View Careers <ArrowRight size={16} />
-          </span>
-        </button>
-      </div>
+            return (
+              <div key={categoryName} className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl`}>
+                <div
+                  className="flex flex-wrap justify-between items-center mb-4 gap-3 cursor-pointer group"
+                  onClick={() => setExpandedCategories(prev => ({ ...prev, [categoryName]: !prev[categoryName] }))}
+                >
+                  <div className="flex items-center gap-3">
+                    <h3 className={`text-2xl font-bold transition-colors ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-gray-900 group-hover:text-purple-600'}`}>
+                      {categoryName}
+                    </h3>
+                    {expandedCategories[categoryName] ? (
+                      <ChevronUp className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={24} />
+                    ) : (
+                      <ChevronDown className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={24} />
+                    )}
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className={`text-sm font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {progress.checked}/{progress.total}
+                    </span>
+                    <div className={`w-32 ${darkMode ? 'progress-bar-dark' : 'progress-bar-light'}`}>
+                      <div
+                        className="progress-fill"
+                        style={{ width: `${progress.percentage}%` }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {expandedCategories[categoryName] && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                    {filtered.map(skill => {
+                      const isChecked = activeSkills[skill];
+                      return (
+                        <div
+                          key={skill}
+                          className={`flex items-center gap-3 p-3 rounded-lg transition-all ${
+                            isChecked
+                              ? (darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-300')
+                              : (darkMode ? 'bg-gray-800/30 border-gray-700' : 'bg-gray-50 border-gray-300')
+                          } border`}
+                        >
+                          <div className={`flex-shrink-0 w-5 h-5 rounded flex items-center justify-center ${
+                            isChecked
+                              ? 'bg-green-600'
+                              : (darkMode ? 'bg-gray-700' : 'bg-white border border-gray-300')
+                          }`}>
+                            {isChecked && <CheckCircle className="text-white" size={16} />}
+                          </div>
+                          <span className={`text-sm ${
+                            isChecked
+                              ? (darkMode ? 'text-green-300 font-medium' : 'text-green-700 font-medium')
+                              : (darkMode ? 'text-gray-300' : 'text-gray-700')
+                          }`}>
+                            {skill}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Quick Actions - Hide in View Mode */}
+      {!viewMode && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <button
+            onClick={() => setCurrentView('skills')}
+            className={`${darkMode ? 'bg-gradient-to-br from-blue-900/50 to-blue-800/50 border-blue-700 hover:from-blue-800/60 hover:to-blue-700/60' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200'} p-8 rounded-2xl border transition-all text-left group`}
+          >
+            <BookOpen className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
+            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
+            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
+              Browse and track {totalSkillsCount}+ Web3 skills across {Object.keys(skillCategories).length} categories
+            </p>
+            <span className={`text-sm font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'} flex items-center gap-2`}>
+              Start Tracking <ArrowRight size={16} />
+            </span>
+          </button>
+
+          <button
+            onClick={() => setCurrentView('careers')}
+            className={`${darkMode ? 'bg-gradient-to-br from-purple-900/50 to-purple-800/50 border-purple-700 hover:from-purple-800/60 hover:to-purple-700/60' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200'} p-8 rounded-2xl border transition-all text-left group`}
+          >
+            <Target className={`${darkMode ? 'text-purple-400' : 'text-purple-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
+            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
+            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
+              Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
+            </p>
+            <span className={`text-sm font-medium ${darkMode ? 'text-purple-400' : 'text-purple-600'} flex items-center gap-2`}>
+              View Careers <ArrowRight size={16} />
+            </span>
+          </button>
+        </div>
+      )}
 
       {/* RiWoT Community Section */}
       <div className={`${darkMode ? 'bg-gradient-to-br from-green-900/30 to-blue-900/30 border-green-800' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} rounded-2xl p-8 md:p-12 border`}>
@@ -1173,59 +1302,57 @@ const App = () => {
   };
 
   const SkillsView = () => (
-    <div className="space-y-6">
-      <div className="mb-8">
-        <h1 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>All Skills</h1>
-        <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
-          Track your progress across {totalSkills}+ Web3 skills
+    <div className="space-y-8">
+      <div className="mb-8 animate-slideUp">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>All Skills</h1>
+        <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+          Track your progress across {totalSkillsCount}+ Web3 skills
         </p>
       </div>
 
       {/* Search and Filters */}
       {!viewMode && (
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-4 rounded-xl border`}>
+        <div className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl animate-slideUp`}>
           <div className="flex flex-col md:flex-row gap-3">
             <div className="flex-1">
               <div className="relative">
-                <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`} size={18} />
+                <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`} size={20} />
                 <input
                   type="text"
                   placeholder="Search skills..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className={`w-full pl-10 pr-4 py-2 rounded-lg border ${
-                    darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-500' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`${darkMode ? 'input-glass-dark' : 'input-glass-light'} w-full pl-12 pr-4 py-3`}
                 />
               </div>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={() => setFilterComplete('all')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
                   filterComplete === 'all'
-                    ? 'bg-blue-600 text-white'
-                    : (darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200')
+                    ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                    : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
                 All
               </button>
               <button
                 onClick={() => setFilterComplete('complete')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
                   filterComplete === 'complete'
-                    ? 'bg-green-600 text-white'
-                    : (darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200')
+                    ? 'bg-green-600 text-white shadow-lg'
+                    : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
                 Complete
               </button>
               <button
                 onClick={() => setFilterComplete('incomplete')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
                   filterComplete === 'incomplete'
-                    ? 'bg-orange-600 text-white'
-                    : (darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200')
+                    ? 'bg-orange-600 text-white shadow-lg'
+                    : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
                 Incomplete
@@ -1242,26 +1369,28 @@ const App = () => {
         if (filtered.length === 0) return null;
 
         return (
-          <div key={categoryName} className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
+          <div key={categoryName} className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl`}>
             <div
-              className="flex flex-wrap justify-between items-center mb-4 gap-3 cursor-pointer"
+              className="flex flex-wrap justify-between items-center mb-4 gap-3 cursor-pointer group"
               onClick={() => setExpandedCategories(prev => ({ ...prev, [categoryName]: !prev[categoryName] }))}
             >
               <div className="flex items-center gap-3">
-                <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{categoryName}</h2>
+                <h2 className={`text-2xl font-bold transition-colors ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-gray-900 group-hover:text-purple-600'}`}>
+                  {categoryName}
+                </h2>
                 {expandedCategories[categoryName] ? (
-                  <ChevronUp className={darkMode ? 'text-gray-400' : 'text-gray-500'} size={20} />
+                  <ChevronUp className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={24} />
                 ) : (
-                  <ChevronDown className={darkMode ? 'text-gray-400' : 'text-gray-500'} size={20} />
+                  <ChevronDown className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={24} />
                 )}
               </div>
-              <div className="flex items-center gap-3">
-                <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+              <div className="flex items-center gap-4">
+                <span className={`text-sm font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   {progress.checked}/{progress.total}
                 </span>
-                <div className={`w-24 ${darkMode ? 'bg-gray-700' : 'bg-gray-100'} rounded-full h-2`}>
+                <div className={`w-32 ${darkMode ? 'progress-bar-dark' : 'progress-bar-light'}`}>
                   <div
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all"
+                    className="progress-fill"
                     style={{ width: `${progress.percentage}%` }}
                   />
                 </div>
@@ -1273,30 +1402,30 @@ const App = () => {
                 {filtered.map(skill => (
                   <label
                     key={skill}
-                    className={`flex items-center gap-3 p-3 rounded-lg ${
+                    className={`flex items-center gap-3 p-3 rounded-xl ${
                       viewMode ? '' : 'cursor-pointer'
-                    } transition-colors group ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-50'}`}
+                    } transition-all group ${darkMode ? 'hover:bg-white/10' : 'hover:bg-purple-100/50'}`}
                   >
                     {!viewMode && (
                       <input
                         type="checkbox"
                         checked={displaySkills[skill] || false}
                         onChange={() => toggleSkill(skill)}
-                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 focus:ring-2"
+                        className="w-5 h-5 rounded-lg text-blue-600 focus:ring-blue-500 focus:ring-2"
                       />
                     )}
                     {viewMode && (
                       displaySkills[skill] ? (
-                        <CheckCircle className="text-green-600 flex-shrink-0" size={18} />
+                        <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
                       ) : (
-                        <Circle className={darkMode ? 'text-gray-600' : 'text-gray-300'} size={18} />
+                        <Circle className={darkMode ? 'text-gray-500' : 'text-gray-400'} size={20} />
                       )
                     )}
                     <span
-                      className={`text-sm transition-colors ${
+                      className={`transition-colors ${
                         displaySkills[skill]
                           ? (darkMode ? 'text-gray-500 line-through' : 'text-gray-400 line-through')
-                          : (darkMode ? 'text-gray-300 group-hover:text-white' : 'text-gray-700 group-hover:text-gray-900')
+                          : (darkMode ? 'text-gray-200 group-hover:text-white' : 'text-gray-700 group-hover:text-gray-900')
                       }`}
                     >
                       {skill}
@@ -1324,65 +1453,73 @@ const App = () => {
       return (
         <div
           key={careerName}
-          className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border hover:shadow-lg transition-all group`}
+          className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl card-lift group relative overflow-hidden`}
         >
-          <div className="flex items-start gap-4 mb-4">
-            <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'} group-hover:scale-110 transition-transform`}>
-              <Icon className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={24} />
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <h3 className={`text-xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h3>
+              <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{career.ecosystem}</p>
             </div>
-            <div className="flex-1">
-              <h3 className={`text-lg font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h3>
-              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{career.description}</p>
+            <div className="icon-gradient-blue p-3 rounded-xl">
+              <Icon className="text-white" size={24} />
             </div>
           </div>
 
+          <p className={`text-sm mb-4 line-clamp-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{career.description}</p>
+
+          {!viewMode && (
+            <div className="mb-4">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg icon-gradient-orange flex items-center justify-center">
+                  <span className="text-xs font-bold">⚡</span>
+                </div>
+                <span className={`text-sm ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>Skills to learn:</span>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {career.requiredSkills.slice(0, 3).map((skill, idx) => (
+                  <span key={idx} className={`text-xs px-2 py-1 rounded-full ${darkMode ? 'bg-white/10' : 'bg-purple-100'} backdrop-blur-sm ${darkMode ? 'text-gray-200' : 'text-purple-700'}`}>
+                    {skill}
+                  </span>
+                ))}
+                {career.requiredSkills.length > 3 && (
+                  <span className={`text-xs px-2 py-1 rounded-full ${darkMode ? 'bg-white/10' : 'bg-purple-100'} backdrop-blur-sm ${darkMode ? 'text-gray-200' : 'text-purple-700'}`}>
+                    +{career.requiredSkills.length - 3} more
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
           <div className="mb-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Your Match</span>
-              <span className={`text-sm font-bold ${
-                match.percentage >= 70 ? 'text-green-600' :
-                match.percentage >= 40 ? 'text-yellow-600' :
-                'text-red-600'
-              }`}>
-                {match.matched}/{match.total} skills
-              </span>
+            <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-2`}>
+              <div className="progress-fill" style={{ width: `${match.percentage}%` }} />
             </div>
-            <div className={`w-full ${darkMode ? 'bg-gray-700' : 'bg-gray-100'} rounded-full h-2.5`}>
-              <div
-                className={`h-2.5 rounded-full transition-all ${
-                  match.percentage >= 70 ? 'bg-green-600' :
-                  match.percentage >= 40 ? 'bg-yellow-600' :
-                  'bg-red-600'
-                }`}
-                style={{ width: `${match.percentage}%` }}
-              />
-            </div>
-            <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'} mt-1`}>
-              {match.percentage.toFixed(0)}% match
+            <p className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              {match.percentage.toFixed(0)}% match • {match.matched}/{match.total} skills
             </p>
           </div>
 
-          <button
-            onClick={() => {
-              setSelectedCareer(careerName);
-              setCurrentView('career-detail');
-            }}
-            className={`w-full py-2.5 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
-              darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
-            }`}
-          >
-            View Roadmap
-            <ArrowRight size={16} />
-          </button>
+          {!viewMode && (
+            <button
+              onClick={() => {
+                setSelectedCareer(careerName);
+                setCurrentView('career-detail');
+              }}
+              className={`${darkMode ? 'btn-primary-dark' : 'btn-primary-light'} w-full py-3 px-6 rounded-xl font-semibold transition-all flex items-center justify-center gap-2`}
+            >
+              Start Learning
+              <ArrowRight size={16} />
+            </button>
+          )}
         </div>
       );
     };
 
     return (
       <div className="space-y-8">
-        <div className="mb-8">
-          <h1 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career Paths</h1>
-          <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
+        <div className="mb-8 animate-slideUp">
+          <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>Career Paths</h1>
+          <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             Explore {Object.keys(careerPaths).length} Web3 career paths with detailed roadmaps
           </p>
         </div>
@@ -1905,15 +2042,27 @@ const App = () => {
 
   // Main Render
   return (
-    <div className={`min-h-screen transition-colors ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <Navigation />
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        {currentView === 'home' && <HomePage />}
-        {currentView === 'skills' && <SkillsView />}
-        {currentView === 'careers' && <CareersView />}
-        {currentView === 'career-detail' && <CareerDetailView />}
-        <Footer />
+    <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme' : 'bg-light-theme'}`}>
+      {/* Floating Orbs */}
+      <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-1`}></div>
+      <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-2`}></div>
+      <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-3`}></div>
+      
+      {/* Grid Pattern Overlay */}
+      <div className={`absolute inset-0 ${darkMode ? 'grid-pattern-dark' : 'grid-pattern-light'} opacity-50`}></div>
+      
+      {/* Main Content */}
+      <div className="relative z-10">
+        <Navigation />
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 pt-28">
+          {currentView === 'home' && <HomePage />}
+          {currentView === 'skills' && <SkillsView />}
+          {currentView === 'careers' && <CareersView />}
+          {currentView === 'career-detail' && <CareerDetailView />}
+          <Footer />
+        </div>
       </div>
+      
       {showShareModal && <ShareModal />}
       {showViewModal && <ViewModal />}
       {showPolicyModal && <PolicyModal />}

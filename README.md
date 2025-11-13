@@ -6,22 +6,24 @@ A clean, minimal, and comprehensive skills tracking tool for Web3 professionals.
 
 ## Documentation
 
-- **[Setup Guide](./SETUP.md)** - Detailed installation instructions
-- **[Design System](./DESIGN.md)** - UI/UX guidelines
-- **[Contributing](./CONTRIBUTING.md)** - Contribution guidelines
-- **[Deployment](./DEPLOYMENT.md)** - How to deploy
-- **[Features](./FEATURES.md)** - Complete feature list
+- **[Setup Guide](Docs/SETUP.md)** - Detailed installation instructions
+- **[Design System](Docs/DESIGN.md)** - UI/UX guidelines
+- **[Contributing](Docs/CONTRIBUTING.md)** - Contribution guidelines
+- **[Deployment](Docs/DEPLOYMENT.md)** - How to deploy
+- **[Features](Docs/FEATURES.md)** - Complete feature list
 
 ---
 
 ## Community & Support
 
 ### **Join RiWoT Community**
+
 - **Discord**: [https://discord.gg/epWxxeWC](https://discord.gg/epWxxeWC)
 - **GitHub**: [https://github.com/RiWoT](https://github.com/RiWoT)
-- **Twitter**: Coming soon!
+- **Twitter**: @riwotofficial
 
 ### **Get Help**
+
 - Open an issue on GitHub
 - Ask in RiWoT Discord
 - Check existing documentation
@@ -30,13 +32,15 @@ A clean, minimal, and comprehensive skills tracking tool for Web3 professionals.
 ## Privacy & Data
 
 ### **Your Data is Safe**
--  All data stored locally in your browser
--  No server storage or cloud backup
--  No tracking or analytics
--  No account required
--  Export/import your data anytime
+
+- All data stored locally in your browser
+- No server storage or cloud backup
+- No tracking or analytics
+- No account required
+- Export/import your data anytime
 
 ### **Sharing is Optional**
+
 - Share codes are URL-encoded
 - No personal information shared
 - You control what you share
@@ -53,6 +57,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 **Mir Mohammad Luqman**
+
 - Portfolio: [https://mirmohmmadluqman.github.io/portfolio/](https://mirmohmmadluqman.github.io/portfolio/)
 - GitHub: [@mirmohmmadluqman](https://github.com/mirmohmmadluqman)
 - Part of [RiWoT Community](https://github.com/RiWoT)
@@ -65,26 +70,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Turbin3** - For Solana education
 - **RiWoT Community** - For support and feedback
 - **All Contributors** - For making this project better
-
----
-
-## Roadmap
-
-### **Current Version: 2.0**
--  200+ skills tracking
--  9 comprehensive career paths
--  100+ learning resources
--  Dark/light mode
--  Import/export functionality
-
-### **Planned Features**
-- [ ] More career paths (15+ total)
-- [ ] Interactive skill dependencies graph
-- [ ] Mobile app version
-- [ ] Multi-language support
-- [ ] Integration with job boards
-- [ ] Achievement system
-- [ ] Progress analytics dashboard
 
 ---
 
