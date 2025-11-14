@@ -451,17 +451,21 @@ const App = () => {
       ecosystem: 'Solana',
       description: 'Build high-performance dApps on Solana using Rust and the Anchor framework',
       requiredSkills: [
-        'Rust', 'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework', 
+        'Rust', 'TypeScript', 'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework', 
         'Solana Web3.js', 'SPL Tokens', 'Solana Account Model', 'PDAs'
       ],
       roadmap: [
         {
           phase: 'Solana Basics',
           duration: '1-1.5 months',
-          skills: ['Rust Basics', 'Solana Fundamentals', 'Solana CLI'],
+          skills: ['Rust Basics', 'TypeScript Basics', 'Solana Fundamentals', 'Solana CLI'],
           resources: [
             { name: 'Cyfrin Updraft - Rust Programming Basics', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
             { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' },
+            { name: 'Blueshift - Solana Development Courses', url: 'https://learn.blueshift.gg/en', type: 'FREE' },
+            { name: 'Solana Foundation - Solana Bootcamp', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE' },
+            { name: 'Solana Foundation - Solana Bytes', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE', duration: '4-min tutorials' },
+            { name: 'RiseIn - Build on Solana', url: 'https://www.risein.com/courses/build-on-solana', type: 'FREE', duration: 'Native Rust & Solana' },
             { name: 'Solana Documentation', url: 'https://docs.solana.com', type: 'FREE' },
             { name: 'Rust Book', url: 'https://doc.rust-lang.org/book/', type: 'FREE' }
           ]
@@ -473,6 +477,8 @@ const App = () => {
           resources: [
             { name: 'Solana Developer Bootcamp 2024 (Projects 1-9)', url: 'https://www.youtube.com/watch?v=amAq-WHAFs8', type: 'FREE' },
             { name: 'Solana Developer Bootcamp 2024 (Projects 10-13)', url: 'https://www.youtube.com/watch?v=5JRVnxGW8kc', type: 'FREE' },
+            { name: 'RareSkills - Ethereum to Solana Developer Course', url: 'https://rareskills.io/post/hello-world-solana', type: 'FREE' },
+            { name: 'Hackquest - Solana Learning Track', url: 'https://www.hackquest.io/learning-track/Solana', type: 'FREE' },
             { name: 'Anchor Documentation', url: 'https://www.anchor-lang.com', type: 'FREE' }
           ]
         },
@@ -501,17 +507,21 @@ const App = () => {
       ecosystem: 'Solana',
       description: 'Audit Rust-based Solana programs and identify vulnerabilities in SVM applications',
       requiredSkills: [
-        'Rust', 'Solana Program Development', 'Solana Security Best Practices', 
+        'Rust', 'TypeScript', 'Solana Program Development', 'Solana Security Best Practices', 
         'Anchor Framework', 'Vulnerability Assessment', 'Aderyn', 'Audit Report Writing'
       ],
       roadmap: [
         {
           phase: 'Rust & Solana Foundation',
           duration: '1.5-2 months',
-          skills: ['Rust Advanced', 'Solana Fundamentals', 'Anchor Framework'],
+          skills: ['Rust Basics', 'TypeScript Basics', 'Solana Fundamentals', 'Anchor Framework'],
           resources: [
             { name: 'Cyfrin Updraft - Rust Programming', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
-            { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' }
+            { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' },
+            { name: 'Blueshift - Solana Development Courses', url: 'https://learn.blueshift.gg/en', type: 'FREE' },
+            { name: 'Solana Foundation - Solana Bootcamp', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE' },
+            { name: 'Solana Foundation - Solana Bytes', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE', duration: '4-min tutorials' },
+            { name: 'RiseIn - Build on Solana', url: 'https://www.risein.com/courses/build-on-solana', type: 'FREE', duration: 'Native Rust & Solana' }
           ]
         },
         {
@@ -520,6 +530,8 @@ const App = () => {
           skills: ['Solana Security Best Practices', 'Common Vulnerabilities', 'Aderyn'],
           resources: [
             { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
+            { name: 'RareSkills - Ethereum to Solana Developer Course', url: 'https://rareskills.io/post/hello-world-solana', type: 'FREE' },
+            { name: 'Hackquest - Solana Learning Track', url: 'https://www.hackquest.io/learning-track/Solana', type: 'FREE' },
             { name: 'Ackee Blockchain Resources', url: 'https://ackeeblockchain.com', type: 'FREE' }
           ]
         },
@@ -636,6 +648,26 @@ const App = () => {
   // Helper functions
   const toggleSkill = (skill) => {
     setSkills(prev => ({ ...prev, [skill]: !prev[skill] }));
+  };
+
+  // Map roadmap skill names to actual skill names
+  const matchRoadmapSkill = (roadmapSkill, userSkills) => {
+    // Direct match
+    if (userSkills[roadmapSkill]) return true;
+    
+    // Handle "X Basics" -> "X" mapping
+    if (roadmapSkill.endsWith(' Basics')) {
+      const baseSkill = roadmapSkill.replace(' Basics', '');
+      if (userSkills[baseSkill]) return true;
+    }
+    
+    // Handle "X Advanced" -> "X" mapping
+    if (roadmapSkill.endsWith(' Advanced')) {
+      const baseSkill = roadmapSkill.replace(' Advanced', '');
+      if (userSkills[baseSkill]) return true;
+    }
+    
+    return false;
   };
 
   const getCategoryProgress = (categoryName) => {
@@ -1688,18 +1720,21 @@ const App = () => {
                         Skills to Learn:
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        {phase.skills.map(skill => (
-                          <span
-                            key={skill}
-                            className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
-                              displaySkills[skill]
-                                ? (darkMode ? 'bg-green-800 text-green-300' : 'bg-green-100 text-green-700')
-                                : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600')
-                            }`}
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                        {phase.skills.map(skill => {
+                          const isCompleted = matchRoadmapSkill(skill, displaySkills);
+                          return (
+                            <span
+                              key={skill}
+                              className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
+                                isCompleted
+                                  ? (darkMode ? 'bg-green-800 text-green-300' : 'bg-green-100 text-green-700')
+                                  : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600')
+                              }`}
+                            >
+                              {skill}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
 
