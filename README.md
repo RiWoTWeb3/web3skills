@@ -18,7 +18,7 @@ A clean, minimal, and comprehensive skills tracking tool for Web3 professionals.
 
 ### **Join RiWoT Community**
 
-- **Discord**: [https://discord.gg/epWxxeWC](https://discord.gg/epWxxeWC)
+- **Discord**: [https://discord.gg/qMd7jwV7UG](https://discord.gg/qMd7jwV7UG)
 - **GitHub**: [https://github.com/RiWoT](https://github.com/RiWoT)
 - **Twitter**: @riwotofficial
 
@@ -78,7 +78,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <p>Star ⭐ this repo if you find it helpful!</p>
   
   <p>
-    <a href="https://discord.gg/epWxxeWC">Discord</a> •
+    <a href="https://discord.gg/qMd7jwV7UG">Discord</a> •
     <a href="https://github.com/RiWoT">GitHub</a> •
     <a href="https://mirmohmmadluqman.github.io/portfolio/">Portfolio</a>
   </p>

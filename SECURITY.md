@@ -175,7 +175,7 @@ We thank the following for their security contributions:
 
 - **Maintainer**: [@mirmohmmadluqman](https://github.com/mirmohmmadluqman)
 - **Organization**: RiWoT
-- **Discord**: [https://discord.gg/epWxxeWC](https://discord.gg/epWxxeWC)
+- **Discord**: [https://discord.gg/qMd7jwV7UG](https://discord.gg/qMd7jwV7UG)
 - **Repository**: [web3skills](https://github.com/mirmohmmadluqman/web3skills)
 
 ---

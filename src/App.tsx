@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { 
   BookOpen, Code, Shield, DollarSign, Layout, Server, Network, 
   GraduationCap, Palette, Target, TrendingUp, Award, CheckCircle, 
@@ -166,7 +166,7 @@ const careerPaths = {
           { name: 'Uniswap V2/V3 Source Code', url: 'https://github.com/Uniswap', type: 'FREE' },
           { name: 'Aave V3 Contracts', url: 'https://github.com/aave/aave-v3-core', type: 'FREE' },
           { name: 'ETHGlobal Hackathons', url: 'https://ethglobal.com', type: 'FREE/Prizes' },
-          { name: 'RiWoT Community', url: 'https://discord.gg/epWxxeWC', type: 'FREE' }
+          { name: 'RiWoT Community', url: 'https://discord.gg/qMd7jwV7UG', type: 'FREE' }
         ]
       }
     ],
@@ -754,11 +754,13 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
 };
 
 const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSkills, totalSkills, overallProgress, getCareerMatch, getCategoryProgress, exportData, importData }) => {
-  const bestMatchName = Object.keys(careerPaths).reduce((best, name) => {
-    const match = getCareerMatch(name);
-    const bestMatchData = getCareerMatch(best);
-    return match.percentage > bestMatchData.percentage ? name : best;
-  }, Object.keys(careerPaths)[0]);
+  const bestMatchName = useMemo(() => {
+    return Object.keys(careerPaths).reduce((best, name) => {
+      const match = getCareerMatch(name);
+      const bestMatchData = getCareerMatch(best);
+      return match.percentage > bestMatchData.percentage ? name : best;
+    }, Object.keys(careerPaths)[0]);
+  }, [getCareerMatch]);
 
   return (
     <div className="space-y-12">
@@ -990,7 +992,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
 
         <div className="flex flex-wrap gap-4 justify-center">
           <a
-            href="https://discord.gg/epWxxeWC"
+            href="https://discord.gg/qMd7jwV7UG"
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors ${
@@ -1740,7 +1742,7 @@ const Footer = ({ darkMode }) => (
         </a>
         <span>•</span>
         <a
-          href="https://discord.gg/epWxxeWC"
+          href="https://discord.gg/qMd7jwV7UG"
           target="_blank"
           rel="noopener noreferrer"
           className={darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'}
@@ -1760,11 +1762,36 @@ const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [skills, setSkills] = useState({});
-  const [darkMode, setDarkMode] = useState(true);
+  const [skills, setSkills] = useState(() => {
+    const savedSkills = localStorage.getItem('web3skills_riwot');
+    if (savedSkills) return JSON.parse(savedSkills);
+
+    const initialSkills = {};
+    Object.values(skillCategories).forEach(categorySkills => {
+      categorySkills.forEach(skill => {
+        initialSkills[skill] = false;
+      });
+    });
+    return initialSkills;
+  });
+
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedDarkMode = localStorage.getItem('web3skills_darkmode');
+    return savedDarkMode !== null ? JSON.parse(savedDarkMode) : true;
+  });
+
   const [searchQuery, setSearchQuery] = useState('');
   const [filterComplete, setFilterComplete] = useState('all');
-  const [expandedCategories, setExpandedCategories] = useState({});
+
+  const [expandedCategories, setExpandedCategories] = useState(() => {
+    const savedExpanded = localStorage.getItem('web3skills_expanded');
+    if (savedExpanded) return JSON.parse(savedExpanded);
+
+    const initialExpanded = {};
+    Object.keys(skillCategories).forEach(cat => initialExpanded[cat] = true);
+    return initialExpanded;
+  });
+
   const [showShareModal, setShowShareModal] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
   const [copiedShare, setCopiedShare] = useState(false);
@@ -1775,30 +1802,6 @@ const App = () => {
   const [showPolicyModal, setShowPolicyModal] = useState(false);
 
   useEffect(() => {
-    const initialSkills = {};
-    Object.values(skillCategories).forEach(categorySkills => {
-      categorySkills.forEach(skill => {
-        initialSkills[skill] = false;
-      });
-    });
-
-    const savedSkills = localStorage.getItem('web3skills_riwot');
-    const savedDarkMode = localStorage.getItem('web3skills_darkmode');
-
-    if (savedSkills) {
-      setSkills(JSON.parse(savedSkills));
-    } else {
-      setSkills(initialSkills);
-    }
-
-    if (savedDarkMode) {
-      setDarkMode(JSON.parse(savedDarkMode));
-    }
-
-    const initialExpanded = {};
-    Object.keys(skillCategories).forEach(cat => initialExpanded[cat] = true);
-    setExpandedCategories(initialExpanded);
-
     const policyAccepted = localStorage.getItem('web3skills_policy_accepted');
     if (!policyAccepted) {
       setShowPolicyModal(true);
@@ -1806,18 +1809,27 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (Object.keys(skills).length > 0) {
-      localStorage.setItem('web3skills_riwot', JSON.stringify(skills));
-    }
+    localStorage.setItem('web3skills_riwot', JSON.stringify(skills));
   }, [skills]);
 
   useEffect(() => {
     localStorage.setItem('web3skills_darkmode', JSON.stringify(darkMode));
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem('web3skills_expanded', JSON.stringify(expandedCategories));
+  }, [expandedCategories]);
 
   const handleViewShared = useCallback((code) => {
     try {
       const checkedSkills = JSON.parse(atob(code));
+      if (!Array.isArray(checkedSkills)) throw new Error('Invalid share code format');
+
       const newSkills = {};
       Object.values(skillCategories).flat().forEach(s => newSkills[s] = false);
       checkedSkills.forEach(skill => {
@@ -1846,7 +1858,7 @@ const App = () => {
     setSkills(prev => ({ ...prev, [skill]: !prev[skill] }));
   };
 
-  const getCategoryProgress = (categoryName) => {
+  const getCategoryProgress = useCallback((categoryName) => {
     const categorySkills = skillCategories[categoryName] || [];
     const displaySkills = viewMode ? sharedSkills || skills : skills;
     const checked = categorySkills.filter(skill => displaySkills[skill]).length;
@@ -1855,9 +1867,9 @@ const App = () => {
       total: categorySkills.length,
       percentage: categorySkills.length > 0 ? (checked / categorySkills.length) * 100 : 0
     };
-  };
+  }, [viewMode, sharedSkills, skills]);
 
-  const getCareerMatch = (careerName) => {
+  const getCareerMatch = useCallback((careerName) => {
     const career = careerPaths[careerName];
     if (!career) return { matched: 0, total: 0, percentage: 0 };
 
@@ -1873,7 +1885,7 @@ const App = () => {
         ? (matchedSkills.length / career.requiredSkills.length) * 100
         : 0
     };
-  };
+  }, [viewMode, sharedSkills, skills]);
 
   const exportData = () => {
     const data = { skills, version: '2.0', timestamp: new Date().toISOString() };
@@ -1912,6 +1924,8 @@ const App = () => {
   const loadFromShareCode = (code) => {
     try {
       const checkedSkills = JSON.parse(atob(code));
+      if (!Array.isArray(checkedSkills)) throw new Error('Invalid share code format');
+
       const newSkills = {};
       Object.values(skillCategories).flat().forEach(s => newSkills[s] = false);
       checkedSkills.forEach(skill => {
@@ -1956,9 +1970,9 @@ const App = () => {
   };
 
   const displaySkills = viewMode ? (sharedSkills || skills) : skills;
-  const totalSkills = Object.values(skillCategories).flat().length;
-  const checkedSkillsCount = Object.values(displaySkills).filter(Boolean).length;
-  const overallProgress = totalSkills > 0 ? (checkedSkillsCount / totalSkills) * 100 : 0;
+  const totalSkills = useMemo(() => Object.values(skillCategories).flat().length, []);
+  const checkedSkillsCount = useMemo(() => Object.values(displaySkills).filter(Boolean).length, [displaySkills]);
+  const overallProgress = useMemo(() => totalSkills > 0 ? (checkedSkillsCount / totalSkills) * 100 : 0, [totalSkills, checkedSkillsCount]);
 
   return (
     <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme' : 'bg-light-theme'}`}>
