@@ -1,818 +1,620 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { 
   BookOpen, Code, Shield, DollarSign, Layout, Server, Network, 
   GraduationCap, Palette, Target, TrendingUp, Award, CheckCircle, 
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
-  Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle
+  Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter
 } from 'lucide-react';
+import {
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+  useLocation,
+  useParams
+} from 'react-router-dom';
 
-const App = () => {
-  // State Management
-  const [skills, setSkills] = useState({});
-  const [currentView, setCurrentView] = useState('home');
-  const [selectedCareer, setSelectedCareer] = useState(null);
-  const [darkMode, setDarkMode] = useState(true); // true = dark mode (default)
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterComplete, setFilterComplete] = useState('all');
-  const [expandedCategories, setExpandedCategories] = useState({});
-  const [showShareModal, setShowShareModal] = useState(false);
-  const [showViewModal, setShowViewModal] = useState(false);
-  const [copiedShare, setCopiedShare] = useState(false);
-  const [viewMode, setViewMode] = useState(false);
-  const [sharedSkills, setSharedSkills] = useState(null);
-  const [shareInput, setShareInput] = useState('');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showPolicyModal, setShowPolicyModal] = useState(false);
+// --- Types & Data ---
 
-  // Initialize skills from all categories
-  const skillCategories = {
-    'Programming Languages': [
-      'Python', 'Rust', 'Go', 'TypeScript', 'JavaScript', 'Solidity', 'Vyper', 
-      'Huff', 'Yul', 'Cairo', 'C++', 'Move', 'Anchor', 'Seahorse', 'Assembly'
+const skillCategories = {
+  'Programming Languages': [
+    'Python', 'Rust', 'Go', 'TypeScript', 'JavaScript', 'Solidity', 'Vyper',
+    'Huff', 'Yul', 'Cairo', 'C++', 'Move', 'Anchor', 'Seahorse', 'Assembly'
+  ],
+  'Frontend Technologies': [
+    'React', 'Next.js', 'Vue.js', 'Svelte', 'Angular', 'TailwindCSS',
+    'Styled Components', 'Redux', 'React Query', 'Zustand', 'Wagmi', 'RainbowKit'
+  ],
+  'Backend & API': [
+    'REST API', 'GraphQL', 'WebSockets', 'gRPC', 'Node.js', 'Express.js',
+    'NestJS', 'Fastify', 'tRPC', 'Bun'
+  ],
+  'Development Tools': [
+    'Foundry', 'Hardhat', 'Truffle', 'Remix', 'Ganache', 'Anchor CLI',
+    'Solana CLI', 'Design Tools', 'Adobe Creative Suite', 'AI Design Tools',
+    'Postman', 'VS Code Extensions', 'Docker', 'Git Advanced', 'GitHub Actions',
+    'Vercel', 'Railway', 'Render'
+  ],
+  'Security Tools': [
+    'Slither', 'Echidna', 'Certora', 'Mythril', 'Manticore', 'Trail of Bits Tools',
+    'OpenZeppelin Defender', 'Tenderly', 'Aderyn', 'MythX', 'Securify', 'Octopus'
+  ],
+  'Cloud & DevOps': [
+    'AWS', 'GCP', 'Azure', 'CI/CD', 'DevOps Principles', 'Cloud Architecture',
+    'Kubernetes', 'Terraform', 'Jenkins', 'Docker Compose', 'Ansible',
+    'CloudFormation', 'Heroku', 'DigitalOcean'
+  ],
+  'Database & Systems': [
+    'PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Firebase', 'Database Design',
+    'Database Optimization', 'Distributed Systems', 'Time-Series Observability',
+    'Elasticsearch', 'Prisma', 'TypeORM'
+  ],
+  'EVM Blockchain & Web3': [
+    'Blockchain Fundamentals', 'EVM Mechanics', 'Smart Contract Development',
+    'Production EVM Smart Contracts', 'High-TVL Contracts', 'AMMs', 'Oracles',
+    'DeFi Understanding', 'DeFi Products', 'dApps', 'Developer Infrastructure',
+    'L2s', 'Bridges', 'ERC-4337', 'ZK Proofs', 'ZK Rollups', 'ZK-SNARKs',
+    'ZK-STARKs', 'EIPs Contributions', 'MEV', 'Consensus Mechanisms', 'Tokenomics',
+    'NFT Standards', 'Cross-chain Protocols', 'Web3 Wallets', 'IPFS', 'The Graph',
+    'Chainlink Oracles', 'Uniswap V2/V3/V4', 'Curve Finance', 'Aave Protocol',
+    'Compound Protocol', 'MakerDAO', 'Ethers.js', 'Viem'
+  ],
+  'Solana/SVM Blockchain': [
+    'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework',
+    'Seahorse Framework', 'Solana Web3.js', 'Solana CLI', 'SPL Tokens',
+    'Solana NFTs (Metaplex)', 'Solana DeFi', 'Solana Account Model', 'PDAs',
+    'CPI', 'Solana Runtime', 'Borsh Serialization', 'Solana Security Best Practices',
+    'Solana Testing (Bankrun)', 'Jupiter Aggregator', 'Raydium', 'Orca',
+    'Marinade Finance', 'Jito MEV', 'Pyth Network', 'Switchboard Oracles',
+    'Wormhole', 'Solana Mobile Stack'
+  ],
+  'Architecture & Design': [
+    'System Design', 'System Architecture', 'API Building & Scaling',
+    'High-Throughput Systems', 'Low-Latency Systems', 'Production Systems',
+    'Large-Scale Cloud Systems', 'Microservices', 'Event-Driven Architecture',
+    'Domain-Driven Design', 'Serverless Architecture', 'Message Queues',
+    'Load Balancing', 'Caching Strategies', 'Rate Limiting'
+  ],
+  'Security & Auditing': [
+    'Smart Contract Auditing', 'Vulnerability Assessment', 'Formal Verification',
+    'Gas Optimization', 'Access Control Patterns', 'Upgrade Patterns',
+    'Reentrancy Prevention', 'Security Best Practices', 'Cryptography',
+    'Key Management', 'TEEs', 'Zero-Knowledge Systems', 'Audit Report Writing',
+    'Exploit Development', 'Bug Bounty Hunting', 'Threat Modeling',
+    'Secure SDLC', 'Penetration Testing'
+  ],
+  'Testing & QA': [
+    'Unit Testing', 'Integration Testing', 'End-to-End Testing', 'Fuzz Testing',
+    'Invariant Testing', 'Test-Driven Development', 'Performance Testing',
+    'Load Testing', 'Security Testing', 'Mutation Testing'
+  ],
+  'Soft Skills': [
+    'Communication', 'Collaboration', 'Mentoring', 'Leadership',
+    'Guiding Technical Teams', 'Autonomy', 'Adapt to Feedback',
+    'Align with Business Goals', 'Problem Solving', 'Critical Thinking',
+    'Technical Writing', 'Public Speaking'
+  ],
+  'Specialized Experience': [
+    'Billing/Monetization Systems', 'Security Tools Experience', 'Startup Experience',
+    'Web3 Experience', 'Passion for Web3', 'Crypto Experience',
+    'Open-source Contributions', 'Technical Writing', 'Community Building',
+    'Public Speaking', 'Fintech', 'Algorithmic Trading', 'UI/UX Design',
+    'Wireframing', 'Prototyping', 'Sketch', 'InVision', 'Visio', 'SCSS',
+    'iOS Design', 'Android Design', 'Responsive Design', 'Animation (Framer Motion)',
+    'Web Performance Optimization', 'SEO Optimization'
+  ],
+  'Full-Stack Development': [
+    'Frontend-Backend Integration', 'Wallet Connection', 'Transaction Signing',
+    'Smart Contract Interaction', 'Web3 Authentication', 'Decentralized Storage',
+    'Event Listening', 'Multi-chain Support', 'Gas Estimation', 'Error Handling'
+  ]
+};
+
+const careerPaths = {
+  'EVM Smart Contract Developer': {
+    icon: Code,
+    ecosystem: 'EVM',
+    description: 'Master Solidity development and build secure, efficient smart contracts for Ethereum and EVM-compatible chains',
+    requiredSkills: [
+      'Solidity', 'Foundry', 'Hardhat', 'Smart Contract Development',
+      'Production EVM Smart Contracts', 'EVM Mechanics', 'Security Best Practices',
+      'Gas Optimization', 'Unit Testing', 'Integration Testing', 'Fuzz Testing',
+      'Ethers.js', 'Viem'
     ],
-    'Frontend Technologies': [
-      'React', 'Next.js', 'Vue.js', 'Svelte', 'Angular', 'TailwindCSS', 
-      'Styled Components', 'Redux', 'React Query', 'Zustand', 'Wagmi', 'RainbowKit'
+    roadmap: [
+      {
+        phase: 'Foundation',
+        duration: '1-1.5 months',
+        skills: ['Blockchain Fundamentals', 'Solidity Basics', 'JavaScript/TypeScript', 'Git Version Control'],
+        resources: [
+          { name: 'Cyfrin Updraft - Blockchain Basics', url: 'https://updraft.cyfrin.io/courses/blockchain-basics', type: 'FREE', duration: '~5 hours' },
+          { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~10 hours' },
+          { name: 'CryptoZombies', url: 'https://cryptozombies.io', type: 'FREE', duration: '~3 hours' },
+          { name: 'Ethereum.org Developer Docs', url: 'https://ethereum.org/en/developers/', type: 'FREE' },
+          { name: 'Solidity Official Documentation', url: 'https://docs.soliditylang.org', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Core Development',
+        duration: '1.5-2 months',
+        skills: ['Foundry', 'Hardhat', 'Unit Testing', 'Smart Contract Development', 'EVM Opcodes'],
+        resources: [
+          { name: 'Cyfrin Updraft - Foundry Fundamentals', url: 'https://updraft.cyfrin.io/courses/foundry', type: 'FREE', duration: '~13 hours' },
+          { name: 'Foundry Book', url: 'https://book.getfoundry.sh', type: 'FREE' },
+          { name: 'Hardhat Documentation', url: 'https://hardhat.org/docs', type: 'FREE' },
+          { name: 'OpenZeppelin Contracts', url: 'https://docs.openzeppelin.com/contracts', type: 'FREE' },
+          { name: 'Ethernaut CTF', url: 'https://ethernaut.openzeppelin.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced Concepts',
+        duration: '1.5-2 months',
+        skills: ['Gas Optimization', 'Security Best Practices', 'Upgradeable Contracts', 'Fuzz Testing'],
+        resources: [
+          { name: 'Cyfrin Updraft - Advanced Foundry', url: 'https://updraft.cyfrin.io/courses/advanced-foundry', type: 'FREE', duration: '~17 hours' },
+          { name: 'Solidity Patterns', url: 'https://fravoll.github.io/solidity-patterns/', type: 'FREE' },
+          { name: 'EIP Standards', url: 'https://eips.ethereum.org', type: 'FREE' },
+          { name: 'Yul Documentation', url: 'https://docs.soliditylang.org/en/latest/yul.html', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Specialization & Production',
+        duration: '2 months',
+        skills: ['High-TVL Contracts', 'DeFi Protocol Design', 'Production Deployment', 'Multi-chain'],
+        resources: [
+          { name: 'Uniswap V2/V3 Source Code', url: 'https://github.com/Uniswap', type: 'FREE' },
+          { name: 'Aave V3 Contracts', url: 'https://github.com/aave/aave-v3-core', type: 'FREE' },
+          { name: 'ETHGlobal Hackathons', url: 'https://ethglobal.com', type: 'FREE/Prizes' },
+          { name: 'RiWoT Community', url: 'https://discord.gg/epWxxeWC', type: 'FREE' }
+        ]
+      }
     ],
-    'Backend & API': [
-      'REST API', 'GraphQL', 'WebSockets', 'gRPC', 'Node.js', 'Express.js', 
-      'NestJS', 'Fastify', 'tRPC', 'Bun'
+    outcomes: {
+      junior: '$80k-$120k',
+      mid: '$120k-$180k',
+      senior: '$180k-$250k+',
+      lead: '$250k-$400k+'
+    }
+  },
+  'Smart Contract Security Auditor': {
+    icon: Shield,
+    ecosystem: 'EVM',
+    description: 'Become a security researcher and auditor for smart contracts. Identify vulnerabilities and earn through bug bounties',
+    requiredSkills: [
+      'Solidity', 'Rust', 'Security Tools Experience', 'Smart Contract Auditing',
+      'Slither', 'Echidna', 'Certora', 'Aderyn', 'Vulnerability Assessment',
+      'Formal Verification', 'Exploit Development', 'Audit Report Writing'
     ],
-    'Development Tools': [
-      'Foundry', 'Hardhat', 'Truffle', 'Remix', 'Ganache', 'Anchor CLI', 
-      'Solana CLI', 'Design Tools', 'Adobe Creative Suite', 'AI Design Tools', 
-      'Postman', 'VS Code Extensions', 'Docker', 'Git Advanced', 'GitHub Actions', 
-      'Vercel', 'Railway', 'Render'
+    roadmap: [
+      {
+        phase: 'Foundation',
+        duration: '1.5-2 months',
+        skills: ['Solidity Advanced', 'Smart Contract Development', 'EVM Mechanics', 'Security Best Practices'],
+        resources: [
+          { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~30 hours' },
+          { name: 'Cyfrin Updraft - Foundry Fundamentals', url: 'https://updraft.cyfrin.io/courses/foundry', type: 'FREE', duration: '~40 hours' },
+          { name: 'Ethereum Security Documentation', url: 'https://ethereum.org/en/developers/docs/security/', type: 'FREE' },
+          { name: 'SWC Registry', url: 'https://swcregistry.io', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Security Fundamentals',
+        duration: '1.5-2 months',
+        skills: ['Vulnerability Assessment', 'Slither', 'Aderyn', 'Common Attack Vectors'],
+        resources: [
+          { name: 'Cyfrin Updraft - Smart Contract Security', url: 'https://updraft.cyfrin.io/courses/security', type: 'FREE', duration: '~60 hours' },
+          { name: 'Damn Vulnerable DeFi', url: 'https://www.damnvulnerabledefi.xyz', type: 'FREE' },
+          { name: 'Ethernaut by OpenZeppelin', url: 'https://ethernaut.openzeppelin.com', type: 'FREE' },
+          { name: 'Not So Smart Contracts', url: 'https://github.com/crytic/not-so-smart-contracts', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced Security',
+        duration: '2 months',
+        skills: ['Formal Verification', 'Echidna Fuzzing', 'Certora', 'Smart Contract Auditing'],
+        resources: [
+          { name: 'Cyfrin Updraft - Assembly and Formal Verification', url: 'https://updraft.cyfrin.io/courses/formal-verification', type: 'FREE', duration: '~40 hours' },
+          { name: 'Echidna Documentation', url: 'https://github.com/crytic/echidna', type: 'FREE' },
+          { name: 'Certora Documentation', url: 'https://docs.certora.com', type: 'FREE' },
+          { name: 'Secureum Bootcamp', url: 'https://secureum.substack.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Professional Auditing',
+        duration: '2-2.5 months',
+        skills: ['Audit Workflow', 'Bug Bounty Hunting', 'Report Writing', 'Client Communication'],
+        resources: [
+          { name: 'Code4rena Contests', url: 'https://code4rena.com', type: 'PAID - Earn Money' },
+          { name: 'Immunefi Bug Bounties', url: 'https://immunefi.com', type: 'PAID - Earn Money' },
+          { name: 'Sherlock Audit Contests', url: 'https://www.sherlock.xyz', type: 'PAID - Earn Money' },
+          { name: 'CodeHawks by Cyfrin', url: 'https://codehawks.com', type: 'PAID - Earn Money' },
+          { name: 'Solodit Audit Database', url: 'https://solodit.xyz', type: 'FREE' }
+        ]
+      }
     ],
-    'Security Tools': [
-      'Slither', 'Echidna', 'Certora', 'Mythril', 'Manticore', 'Trail of Bits Tools', 
-      'OpenZeppelin Defender', 'Tenderly', 'Aderyn', 'MythX', 'Securify', 'Octopus'
+    outcomes: {
+      junior: '$90k-$140k',
+      mid: '$140k-$200k',
+      senior: '$200k-$300k',
+      lead: '$300k-$500k+',
+      bounty: '$0-$10M per finding'
+    }
+  },
+  'DeFi Developer (EVM)': {
+    icon: DollarSign,
+    ecosystem: 'EVM',
+    description: 'Build decentralized finance protocols - AMMs, lending platforms, yield aggregators on Ethereum and EVM chains',
+    requiredSkills: [
+      'Solidity', 'DeFi Understanding', 'DeFi Products', 'AMMs', 'Oracles',
+      'Uniswap V2/V3/V4', 'Curve Finance', 'Aave Protocol', 'High-TVL Contracts'
     ],
-    'Cloud & DevOps': [
-      'AWS', 'GCP', 'Azure', 'CI/CD', 'DevOps Principles', 'Cloud Architecture', 
-      'Kubernetes', 'Terraform', 'Jenkins', 'Docker Compose', 'Ansible', 
-      'CloudFormation', 'Heroku', 'DigitalOcean'
-    ],
-    'Database & Systems': [
-      'PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Firebase', 'Database Design', 
-      'Database Optimization', 'Distributed Systems', 'Time-Series Observability', 
-      'Elasticsearch', 'Prisma', 'TypeORM'
-    ],
-    'EVM Blockchain & Web3': [
-      'Blockchain Fundamentals', 'EVM Mechanics', 'Smart Contract Development', 
-      'Production EVM Smart Contracts', 'High-TVL Contracts', 'AMMs', 'Oracles', 
-      'DeFi Understanding', 'DeFi Products', 'dApps', 'Developer Infrastructure', 
-      'L2s', 'Bridges', 'ERC-4337', 'ZK Proofs', 'ZK Rollups', 'ZK-SNARKs', 
-      'ZK-STARKs', 'EIPs Contributions', 'MEV', 'Consensus Mechanisms', 'Tokenomics', 
-      'NFT Standards', 'Cross-chain Protocols', 'Web3 Wallets', 'IPFS', 'The Graph', 
-      'Chainlink Oracles', 'Uniswap V2/V3/V4', 'Curve Finance', 'Aave Protocol', 
-      'Compound Protocol', 'MakerDAO', 'Ethers.js', 'Viem'
-    ],
-    'Solana/SVM Blockchain': [
-      'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework', 
-      'Seahorse Framework', 'Solana Web3.js', 'Solana CLI', 'SPL Tokens', 
-      'Solana NFTs (Metaplex)', 'Solana DeFi', 'Solana Account Model', 'PDAs', 
-      'CPI', 'Solana Runtime', 'Borsh Serialization', 'Solana Security Best Practices', 
-      'Solana Testing (Bankrun)', 'Jupiter Aggregator', 'Raydium', 'Orca', 
-      'Marinade Finance', 'Jito MEV', 'Pyth Network', 'Switchboard Oracles', 
-      'Wormhole', 'Solana Mobile Stack'
-    ],
-    'Architecture & Design': [
-      'System Design', 'System Architecture', 'API Building & Scaling', 
-      'High-Throughput Systems', 'Low-Latency Systems', 'Production Systems', 
-      'Large-Scale Cloud Systems', 'Microservices', 'Event-Driven Architecture', 
-      'Domain-Driven Design', 'Serverless Architecture', 'Message Queues', 
-      'Load Balancing', 'Caching Strategies', 'Rate Limiting'
-    ],
-    'Security & Auditing': [
-      'Smart Contract Auditing', 'Vulnerability Assessment', 'Formal Verification', 
-      'Gas Optimization', 'Access Control Patterns', 'Upgrade Patterns', 
-      'Reentrancy Prevention', 'Security Best Practices', 'Cryptography', 
-      'Key Management', 'TEEs', 'Zero-Knowledge Systems', 'Audit Report Writing', 
-      'Exploit Development', 'Bug Bounty Hunting', 'Threat Modeling', 
-      'Secure SDLC', 'Penetration Testing'
-    ],
-    'Testing & QA': [
-      'Unit Testing', 'Integration Testing', 'End-to-End Testing', 'Fuzz Testing', 
-      'Invariant Testing', 'Test-Driven Development', 'Performance Testing', 
-      'Load Testing', 'Security Testing', 'Mutation Testing'
-    ],
-    'Soft Skills': [
-      'Communication', 'Collaboration', 'Mentoring', 'Leadership', 
-      'Guiding Technical Teams', 'Autonomy', 'Adapt to Feedback', 
-      'Align with Business Goals', 'Problem Solving', 'Critical Thinking', 
-      'Technical Writing', 'Public Speaking'
-    ],
-    'Specialized Experience': [
-      'Billing/Monetization Systems', 'Security Tools Experience', 'Startup Experience', 
-      'Web3 Experience', 'Passion for Web3', 'Crypto Experience', 
-      'Open-source Contributions', 'Technical Writing', 'Community Building', 
-      'Public Speaking', 'Fintech', 'Algorithmic Trading', 'UI/UX Design', 
-      'Wireframing', 'Prototyping', 'Sketch', 'InVision', 'Visio', 'SCSS', 
-      'iOS Design', 'Android Design', 'Responsive Design', 'Animation (Framer Motion)', 
-      'Web Performance Optimization', 'SEO Optimization'
-    ],
-    'Full-Stack Development': [
-      'Frontend-Backend Integration', 'Wallet Connection', 'Transaction Signing', 
-      'Smart Contract Interaction', 'Web3 Authentication', 'Decentralized Storage', 
-      'Event Listening', 'Multi-chain Support', 'Gas Estimation', 'Error Handling'
+    roadmap: [
+      {
+        phase: 'DeFi Basics',
+        duration: '1-1.5 months',
+        skills: ['DeFi Concepts', 'Smart Contract Development', 'Token Standards'],
+        resources: [
+          { name: 'DeFi MOOC by UC Berkeley', url: 'https://defi-learning.org', type: 'FREE' },
+          { name: 'Finematics YouTube', url: 'https://www.youtube.com/@Finematics', type: 'FREE' },
+          { name: 'Cyfrin Updraft - Blockchain Basics', url: 'https://updraft.cyfrin.io/courses/blockchain-basics', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Core Protocols',
+        duration: '1.5-2 months',
+        skills: ['AMMs', 'Lending Protocols', 'Oracles', 'Tokenomics'],
+        resources: [
+          { name: 'Cyfrin Updraft - Uniswap V4', url: 'https://updraft.cyfrin.io/courses/uniswap-v4', type: 'FREE', duration: '~25 hours' },
+          { name: 'Cyfrin Updraft - Chainlink Fundamentals', url: 'https://updraft.cyfrin.io/courses/chainlink', type: 'FREE', duration: '~20 hours' },
+          { name: 'Uniswap V2/V3 Documentation', url: 'https://docs.uniswap.org', type: 'FREE' },
+          { name: 'Aave V3 Documentation', url: 'https://docs.aave.com/developers/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced DeFi',
+        duration: '2 months',
+        skills: ['MEV', 'Cross-chain', 'L2s', 'Advanced AMM Curves'],
+        resources: [
+          { name: 'Cyfrin Updraft - Curve Stableswap', url: 'https://updraft.cyfrin.io/courses/curve-stableswap', type: 'FREE', duration: '~30 hours' },
+          { name: 'Cyfrin Updraft - Curve Cryptoswap', url: 'https://updraft.cyfrin.io/courses/curve-cryptoswap', type: 'FREE', duration: '~30 hours' },
+          { name: 'Flashbots Documentation', url: 'https://docs.flashbots.net', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Production',
+        duration: '1.5-2 months',
+        skills: ['High-TVL Contracts', 'Security', 'Gas Optimization'],
+        resources: [
+          { name: 'Cyfrin Updraft - Uniswap V2 Deep Dive', url: 'https://updraft.cyfrin.io/courses/uniswap-v2', type: 'FREE', duration: '~40 hours' },
+          { name: 'Cyfrin Updraft - Uniswap V3 Deep Dive', url: 'https://updraft.cyfrin.io/courses/uniswap-v3', type: 'FREE', duration: '~50 hours' }
+        ]
+      }
     ]
-  };
-
-  // Career Paths Data
-  const careerPaths = {
-    'EVM Smart Contract Developer': {
-      icon: Code,
-      ecosystem: 'EVM',
-      description: 'Master Solidity development and build secure, efficient smart contracts for Ethereum and EVM-compatible chains',
-      requiredSkills: [
-        'Solidity', 'Foundry', 'Hardhat', 'Smart Contract Development', 
-        'Production EVM Smart Contracts', 'EVM Mechanics', 'Security Best Practices', 
-        'Gas Optimization', 'Unit Testing', 'Integration Testing', 'Fuzz Testing', 
-        'Ethers.js', 'Viem'
-      ],
-      roadmap: [
-        {
-          phase: 'Foundation',
-          duration: '1-1.5 months',
-          skills: ['Blockchain Fundamentals', 'Solidity Basics', 'JavaScript/TypeScript', 'Git Version Control'],
-          resources: [
-            { name: 'Cyfrin Updraft - Blockchain Basics', url: 'https://updraft.cyfrin.io/courses/blockchain-basics', type: 'FREE', duration: '~5 hours' },
-            { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~10 hours' },
-            { name: 'CryptoZombies', url: 'https://cryptozombies.io', type: 'FREE', duration: '~3 hours' },
-            { name: 'Ethereum.org Developer Docs', url: 'https://ethereum.org/en/developers/', type: 'FREE' },
-            { name: 'Solidity Official Documentation', url: 'https://docs.soliditylang.org', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Core Development',
-          duration: '1.5-2 months',
-          skills: ['Foundry', 'Hardhat', 'Unit Testing', 'Smart Contract Development', 'EVM Opcodes'],
-          resources: [
-            { name: 'Cyfrin Updraft - Foundry Fundamentals', url: 'https://updraft.cyfrin.io/courses/foundry', type: 'FREE', duration: '~13 hours' },
-            { name: 'Foundry Book', url: 'https://book.getfoundry.sh', type: 'FREE' },
-            { name: 'Hardhat Documentation', url: 'https://hardhat.org/docs', type: 'FREE' },
-            { name: 'OpenZeppelin Contracts', url: 'https://docs.openzeppelin.com/contracts', type: 'FREE' },
-            { name: 'Ethernaut CTF', url: 'https://ethernaut.openzeppelin.com', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced Concepts',
-          duration: '1.5-2 months',
-          skills: ['Gas Optimization', 'Security Best Practices', 'Upgradeable Contracts', 'Fuzz Testing'],
-          resources: [
-            { name: 'Cyfrin Updraft - Advanced Foundry', url: 'https://updraft.cyfrin.io/courses/advanced-foundry', type: 'FREE', duration: '~17 hours' },
-            { name: 'Solidity Patterns', url: 'https://fravoll.github.io/solidity-patterns/', type: 'FREE' },
-            { name: 'EIP Standards', url: 'https://eips.ethereum.org', type: 'FREE' },
-            { name: 'Yul Documentation', url: 'https://docs.soliditylang.org/en/latest/yul.html', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Specialization & Production',
-          duration: '2 months',
-          skills: ['High-TVL Contracts', 'DeFi Protocol Design', 'Production Deployment', 'Multi-chain'],
-          resources: [
-            { name: 'Uniswap V2/V3 Source Code', url: 'https://github.com/Uniswap', type: 'FREE' },
-            { name: 'Aave V3 Contracts', url: 'https://github.com/aave/aave-v3-core', type: 'FREE' },
-            { name: 'ETHGlobal Hackathons', url: 'https://ethglobal.com', type: 'FREE/Prizes' },
-            { name: 'RiWoT Community', url: 'https://discord.gg/epWxxeWC', type: 'FREE' }
-          ]
-        }
-      ],
-      outcomes: {
-        junior: '$80k-$120k',
-        mid: '$120k-$180k',
-        senior: '$180k-$250k+',
-        lead: '$250k-$400k+'
+  },
+  'Frontend Web3 Developer': {
+    icon: Layout,
+    ecosystem: 'EVM',
+    description: 'Build beautiful user interfaces for decentralized applications with React, Next.js, and Web3 integration',
+    requiredSkills: [
+      'React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Wagmi', 'RainbowKit',
+      'Web3 Wallets', 'dApps', 'Ethers.js', 'Viem'
+    ],
+    roadmap: [
+      {
+        phase: 'Frontend Foundation',
+        duration: '3-4 weeks',
+        skills: ['JavaScript', 'React', 'TypeScript', 'TailwindCSS'],
+        resources: [
+          { name: 'React Official Tutorial', url: 'https://react.dev', type: 'FREE' },
+          { name: 'TypeScript Handbook', url: 'https://www.typescriptlang.org/docs/', type: 'FREE' },
+          { name: 'TailwindCSS Docs', url: 'https://tailwindcss.com/docs', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Web3 Integration',
+        duration: '3-4 weeks',
+        skills: ['Web3 Wallets', 'Blockchain Fundamentals', 'dApps'],
+        resources: [
+          { name: 'Cyfrin Updraft - Full-Stack Web3 Crash Course', url: 'https://updraft.cyfrin.io/courses/full-stack-web3-development-crash-course', type: 'FREE' },
+          { name: 'Wagmi Documentation', url: 'https://wagmi.sh', type: 'FREE' },
+          { name: 'RainbowKit Docs', url: 'https://www.rainbowkit.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'dApp Development',
+        duration: '1-1.5 months',
+        skills: ['Smart Contract Interaction', 'IPFS', 'The Graph'],
+        resources: [
+          { name: 'Scaffold-ETH', url: 'https://scaffoldeth.io', type: 'FREE' },
+          { name: 'The Graph Documentation', url: 'https://thegraph.com/docs', type: 'FREE' },
+          { name: 'IPFS Documentation', url: 'https://docs.ipfs.tech', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced UI/UX',
+        duration: '3-4 weeks',
+        skills: ['Next.js', 'Redux', 'React Query', 'Responsive Design'],
+        resources: [
+          { name: 'Next.js Documentation', url: 'https://nextjs.org/docs', type: 'FREE' },
+          { name: 'React Query Docs', url: 'https://tanstack.com/query', type: 'FREE' }
+        ]
       }
-    },
-    'Smart Contract Security Auditor': {
-      icon: Shield,
-      ecosystem: 'EVM',
-      description: 'Become a security researcher and auditor for smart contracts. Identify vulnerabilities and earn through bug bounties',
-      requiredSkills: [
-        'Solidity', 'Rust', 'Security Tools Experience', 'Smart Contract Auditing', 
-        'Slither', 'Echidna', 'Certora', 'Aderyn', 'Vulnerability Assessment', 
-        'Formal Verification', 'Exploit Development', 'Audit Report Writing'
-      ],
-      roadmap: [
-        {
-          phase: 'Foundation',
-          duration: '1.5-2 months',
-          skills: ['Solidity Advanced', 'Smart Contract Development', 'EVM Mechanics', 'Security Best Practices'],
-          resources: [
-            { name: 'Cyfrin Updraft - Solidity 101', url: 'https://updraft.cyfrin.io/courses/solidity', type: 'FREE', duration: '~30 hours' },
-            { name: 'Cyfrin Updraft - Foundry Fundamentals', url: 'https://updraft.cyfrin.io/courses/foundry', type: 'FREE', duration: '~40 hours' },
-            { name: 'Ethereum Security Documentation', url: 'https://ethereum.org/en/developers/docs/security/', type: 'FREE' },
-            { name: 'SWC Registry', url: 'https://swcregistry.io', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Security Fundamentals',
-          duration: '1.5-2 months',
-          skills: ['Vulnerability Assessment', 'Slither', 'Aderyn', 'Common Attack Vectors'],
-          resources: [
-            { name: 'Cyfrin Updraft - Smart Contract Security', url: 'https://updraft.cyfrin.io/courses/security', type: 'FREE', duration: '~60 hours' },
-            { name: 'Damn Vulnerable DeFi', url: 'https://www.damnvulnerabledefi.xyz', type: 'FREE' },
-            { name: 'Ethernaut by OpenZeppelin', url: 'https://ethernaut.openzeppelin.com', type: 'FREE' },
-            { name: 'Not So Smart Contracts', url: 'https://github.com/crytic/not-so-smart-contracts', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced Security',
-          duration: '2 months',
-          skills: ['Formal Verification', 'Echidna Fuzzing', 'Certora', 'Smart Contract Auditing'],
-          resources: [
-            { name: 'Cyfrin Updraft - Assembly and Formal Verification', url: 'https://updraft.cyfrin.io/courses/formal-verification', type: 'FREE', duration: '~40 hours' },
-            { name: 'Echidna Documentation', url: 'https://github.com/crytic/echidna', type: 'FREE' },
-            { name: 'Certora Documentation', url: 'https://docs.certora.com', type: 'FREE' },
-            { name: 'Secureum Bootcamp', url: 'https://secureum.substack.com', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Professional Auditing',
-          duration: '2-2.5 months',
-          skills: ['Audit Workflow', 'Bug Bounty Hunting', 'Report Writing', 'Client Communication'],
-          resources: [
-            { name: 'Code4rena Contests', url: 'https://code4rena.com', type: 'PAID - Earn Money' },
-            { name: 'Immunefi Bug Bounties', url: 'https://immunefi.com', type: 'PAID - Earn Money' },
-            { name: 'Sherlock Audit Contests', url: 'https://www.sherlock.xyz', type: 'PAID - Earn Money' },
-            { name: 'CodeHawks by Cyfrin', url: 'https://codehawks.com', type: 'PAID - Earn Money' },
-            { name: 'Solodit Audit Database', url: 'https://solodit.xyz', type: 'FREE' }
-          ]
-        }
-      ],
-      outcomes: {
-        junior: '$90k-$140k',
-        mid: '$140k-$200k',
-        senior: '$200k-$300k',
-        lead: '$300k-$500k+',
-        bounty: '$0-$10M per finding'
+    ]
+  },
+  'Backend Infrastructure Engineer': {
+    icon: Server,
+    ecosystem: 'EVM',
+    description: 'Build scalable backend systems and infrastructure for Web3 applications',
+    requiredSkills: [
+      'Go', 'Rust', 'Python', 'Distributed Systems', 'API Building & Scaling',
+      'Database Design', 'High-Throughput Systems', 'Kubernetes'
+    ],
+    roadmap: [
+      {
+        phase: 'Backend Basics',
+        duration: '1-1.5 months',
+        skills: ['Python', 'REST API', 'Database Design', 'Git Advanced'],
+        resources: [
+          { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/', type: 'FREE' },
+          { name: 'REST API Best Practices', url: 'https://restfulapi.net', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Distributed Systems',
+        duration: '1-1.5 months',
+        skills: ['Microservices', 'Redis', 'Distributed Systems', 'Kubernetes'],
+        resources: [
+          { name: 'Kubernetes Documentation', url: 'https://kubernetes.io/docs/', type: 'FREE' },
+          { name: 'System Design Primer', url: 'https://github.com/donnemartin/system-design-primer', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Blockchain Integration',
+        duration: '1-1.5 months',
+        skills: ['Developer Infrastructure', 'The Graph', 'Event-Driven Architecture'],
+        resources: [
+          { name: 'Alchemy Documentation', url: 'https://docs.alchemy.com', type: 'FREE' },
+          { name: 'The Graph Protocol', url: 'https://thegraph.com/docs', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Scale & Performance',
+        duration: '1.5-2 months',
+        skills: ['High-Throughput Systems', 'Database Optimization', 'Cloud Architecture'],
+        resources: [
+          { name: 'AWS Documentation', url: 'https://docs.aws.amazon.com', type: 'FREE' }
+        ]
       }
-    },
-    'DeFi Developer (EVM)': {
-      icon: DollarSign,
-      ecosystem: 'EVM',
-      description: 'Build decentralized finance protocols - AMMs, lending platforms, yield aggregators on Ethereum and EVM chains',
-      requiredSkills: [
-        'Solidity', 'DeFi Understanding', 'DeFi Products', 'AMMs', 'Oracles', 
-        'Uniswap V2/V3/V4', 'Curve Finance', 'Aave Protocol', 'High-TVL Contracts'
-      ],
-      roadmap: [
-        {
-          phase: 'DeFi Basics',
-          duration: '1-1.5 months',
-          skills: ['DeFi Concepts', 'Smart Contract Development', 'Token Standards'],
-          resources: [
-            { name: 'DeFi MOOC by UC Berkeley', url: 'https://defi-learning.org', type: 'FREE' },
-            { name: 'Finematics YouTube', url: 'https://www.youtube.com/@Finematics', type: 'FREE' },
-            { name: 'Cyfrin Updraft - Blockchain Basics', url: 'https://updraft.cyfrin.io/courses/blockchain-basics', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Core Protocols',
-          duration: '1.5-2 months',
-          skills: ['AMMs', 'Lending Protocols', 'Oracles', 'Tokenomics'],
-          resources: [
-            { name: 'Cyfrin Updraft - Uniswap V4', url: 'https://updraft.cyfrin.io/courses/uniswap-v4', type: 'FREE', duration: '~25 hours' },
-            { name: 'Cyfrin Updraft - Chainlink Fundamentals', url: 'https://updraft.cyfrin.io/courses/chainlink', type: 'FREE', duration: '~20 hours' },
-            { name: 'Uniswap V2/V3 Documentation', url: 'https://docs.uniswap.org', type: 'FREE' },
-            { name: 'Aave V3 Documentation', url: 'https://docs.aave.com/developers/', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced DeFi',
-          duration: '2 months',
-          skills: ['MEV', 'Cross-chain', 'L2s', 'Advanced AMM Curves'],
-          resources: [
-            { name: 'Cyfrin Updraft - Curve Stableswap', url: 'https://updraft.cyfrin.io/courses/curve-stableswap', type: 'FREE', duration: '~30 hours' },
-            { name: 'Cyfrin Updraft - Curve Cryptoswap', url: 'https://updraft.cyfrin.io/courses/curve-cryptoswap', type: 'FREE', duration: '~30 hours' },
-            { name: 'Flashbots Documentation', url: 'https://docs.flashbots.net', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Production',
-          duration: '1.5-2 months',
-          skills: ['High-TVL Contracts', 'Security', 'Gas Optimization'],
-          resources: [
-            { name: 'Cyfrin Updraft - Uniswap V2 Deep Dive', url: 'https://updraft.cyfrin.io/courses/uniswap-v2', type: 'FREE', duration: '~40 hours' },
-            { name: 'Cyfrin Updraft - Uniswap V3 Deep Dive', url: 'https://updraft.cyfrin.io/courses/uniswap-v3', type: 'FREE', duration: '~50 hours' }
-          ]
-        }
-      ]
-    },
-    'Frontend Web3 Developer': {
-      icon: Layout,
-      ecosystem: 'EVM',
-      description: 'Build beautiful user interfaces for decentralized applications with React, Next.js, and Web3 integration',
-      requiredSkills: [
-        'React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Wagmi', 'RainbowKit', 
-        'Web3 Wallets', 'dApps', 'Ethers.js', 'Viem'
-      ],
-      roadmap: [
-        {
-          phase: 'Frontend Foundation',
-          duration: '3-4 weeks',
-          skills: ['JavaScript', 'React', 'TypeScript', 'TailwindCSS'],
-          resources: [
-            { name: 'React Official Tutorial', url: 'https://react.dev', type: 'FREE' },
-            { name: 'TypeScript Handbook', url: 'https://www.typescriptlang.org/docs/', type: 'FREE' },
-            { name: 'TailwindCSS Docs', url: 'https://tailwindcss.com/docs', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Web3 Integration',
-          duration: '3-4 weeks',
-          skills: ['Web3 Wallets', 'Blockchain Fundamentals', 'dApps'],
-          resources: [
-            { name: 'Cyfrin Updraft - Full-Stack Web3 Crash Course', url: 'https://updraft.cyfrin.io/courses/full-stack-web3-development-crash-course', type: 'FREE' },
-            { name: 'Wagmi Documentation', url: 'https://wagmi.sh', type: 'FREE' },
-            { name: 'RainbowKit Docs', url: 'https://www.rainbowkit.com', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'dApp Development',
-          duration: '1-1.5 months',
-          skills: ['Smart Contract Interaction', 'IPFS', 'The Graph'],
-          resources: [
-            { name: 'Scaffold-ETH', url: 'https://scaffoldeth.io', type: 'FREE' },
-            { name: 'The Graph Documentation', url: 'https://thegraph.com/docs', type: 'FREE' },
-            { name: 'IPFS Documentation', url: 'https://docs.ipfs.tech', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced UI/UX',
-          duration: '3-4 weeks',
-          skills: ['Next.js', 'Redux', 'React Query', 'Responsive Design'],
-          resources: [
-            { name: 'Next.js Documentation', url: 'https://nextjs.org/docs', type: 'FREE' },
-            { name: 'React Query Docs', url: 'https://tanstack.com/query', type: 'FREE' }
-          ]
-        }
-      ]
-    },
-    'Backend Infrastructure Engineer': {
-      icon: Server,
-      ecosystem: 'EVM',
-      description: 'Build scalable backend systems and infrastructure for Web3 applications',
-      requiredSkills: [
-        'Go', 'Rust', 'Python', 'Distributed Systems', 'API Building & Scaling', 
-        'Database Design', 'High-Throughput Systems', 'Kubernetes'
-      ],
-      roadmap: [
-        {
-          phase: 'Backend Basics',
-          duration: '1-1.5 months',
-          skills: ['Python', 'REST API', 'Database Design', 'Git Advanced'],
-          resources: [
-            { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/', type: 'FREE' },
-            { name: 'REST API Best Practices', url: 'https://restfulapi.net', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Distributed Systems',
-          duration: '1-1.5 months',
-          skills: ['Microservices', 'Redis', 'Distributed Systems', 'Kubernetes'],
-          resources: [
-            { name: 'Kubernetes Documentation', url: 'https://kubernetes.io/docs/', type: 'FREE' },
-            { name: 'System Design Primer', url: 'https://github.com/donnemartin/system-design-primer', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Blockchain Integration',
-          duration: '1-1.5 months',
-          skills: ['Developer Infrastructure', 'The Graph', 'Event-Driven Architecture'],
-          resources: [
-            { name: 'Alchemy Documentation', url: 'https://docs.alchemy.com', type: 'FREE' },
-            { name: 'The Graph Protocol', url: 'https://thegraph.com/docs', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Scale & Performance',
-          duration: '1.5-2 months',
-          skills: ['High-Throughput Systems', 'Database Optimization', 'Cloud Architecture'],
-          resources: [
-            { name: 'AWS Documentation', url: 'https://docs.aws.amazon.com', type: 'FREE' }
-          ]
-        }
-      ]
-    },
-    'Blockchain Architect': {
-      icon: Network,
-      ecosystem: 'EVM',
-      description: 'Design and architect blockchain systems, L2 solutions, and infrastructure at scale',
-      requiredSkills: [
-        'System Architecture', 'Blockchain Fundamentals', 'L2s', 'Bridges', 
-        'Distributed Systems', 'High-Throughput Systems', 'EVM Mechanics', 'Consensus Mechanisms'
-      ],
-      roadmap: [
-        {
-          phase: 'Deep Blockchain Knowledge',
-          duration: '1.5-2 months',
-          skills: ['Blockchain Fundamentals', 'Consensus Mechanisms', 'EVM Mechanics'],
-          resources: [
-            { name: 'Ethereum.org', url: 'https://ethereum.org', type: 'FREE' },
-            { name: 'Bitcoin Whitepaper', url: 'https://bitcoin.org/bitcoin.pdf', type: 'FREE' },
-            { name: 'Ethereum Whitepaper', url: 'https://ethereum.org/en/whitepaper/', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'System Design',
-          duration: '1-1.5 months',
-          skills: ['System Design', 'Distributed Systems', 'Large-Scale Cloud Systems'],
-          resources: [
-            { name: 'System Design Primer', url: 'https://github.com/donnemartin/system-design-primer', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Layer 2 & Scaling',
-          duration: '1.5-2 months',
-          skills: ['L2s', 'ZK Proofs', 'Bridges', 'Cross-chain Protocols'],
-          resources: [
-            { name: 'Cyfrin Updraft - ZK Proofs Fundamentals', url: 'https://updraft.cyfrin.io/courses/fundamentals-of-zero-knowledge-proofs', type: 'FREE' },
-            { name: 'Optimism Docs', url: 'https://docs.optimism.io', type: 'FREE' },
-            { name: 'Arbitrum Docs', url: 'https://docs.arbitrum.io', type: 'FREE' },
-            { name: 'zkSync Docs', url: 'https://docs.zksync.io', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced Architecture',
-          duration: '2 months',
-          skills: ['High-Throughput Systems', 'Performance Testing', 'Production Systems'],
-          resources: [
-            { name: 'L2Beat', url: 'https://l2beat.com', type: 'FREE' }
-          ]
-        }
-      ]
-    },
-    'Solana Developer': {
-      icon: Zap,
-      ecosystem: 'Solana',
-      description: 'Build high-performance dApps on Solana using Rust and the Anchor framework',
-      requiredSkills: [
-        'Rust', 'TypeScript', 'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework', 
-        'Solana Web3.js', 'SPL Tokens', 'Solana Account Model', 'PDAs'
-      ],
-      roadmap: [
-        {
-          phase: 'Solana Basics',
-          duration: '1-1.5 months',
-          skills: ['Rust Basics', 'TypeScript Basics', 'Solana Fundamentals', 'Solana CLI'],
-          resources: [
-            { name: 'Cyfrin Updraft - Rust Programming Basics', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
-            { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' },
-            { name: 'Blueshift - Solana Development Courses', url: 'https://learn.blueshift.gg/en', type: 'FREE' },
-            { name: 'Solana Foundation - Solana Bootcamp', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE' },
-            { name: 'Solana Foundation - Solana Bytes', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE', duration: '4-min tutorials' },
-            { name: 'RiseIn - Build on Solana', url: 'https://www.risein.com/courses/build-on-solana', type: 'FREE', duration: 'Native Rust & Solana' },
-            { name: 'Solana Documentation', url: 'https://docs.solana.com', type: 'FREE' },
-            { name: 'Rust Book', url: 'https://doc.rust-lang.org/book/', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Program Development',
-          duration: '1.5-2 months',
-          skills: ['Anchor Framework', 'Solana Program Development', 'SPL Tokens'],
-          resources: [
-            { name: 'Solana Developer Bootcamp 2024 (Projects 1-9)', url: 'https://www.youtube.com/watch?v=amAq-WHAFs8', type: 'FREE' },
-            { name: 'Solana Developer Bootcamp 2024 (Projects 10-13)', url: 'https://www.youtube.com/watch?v=5JRVnxGW8kc', type: 'FREE' },
-            { name: 'RareSkills - Ethereum to Solana Developer Course', url: 'https://rareskills.io/post/hello-world-solana', type: 'FREE' },
-            { name: 'Hackquest - Solana Learning Track', url: 'https://www.hackquest.io/learning-track/Solana', type: 'FREE' },
-            { name: 'Anchor Documentation', url: 'https://www.anchor-lang.com', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced Solana',
-          duration: '1.5-2 months',
-          skills: ['PDAs', 'CPI', 'Solana Security', 'Solana Testing'],
-          resources: [
-            { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
-            { name: 'Ackee Blockchain Security', url: 'https://ackeeblockchain.com', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Production & DeFi',
-          duration: '2 months',
-          skills: ['Solana DeFi', 'Jupiter', 'Raydium', 'Metaplex NFTs'],
-          resources: [
-            { name: 'Jupiter Documentation', url: 'https://docs.jup.ag', type: 'FREE' },
-            { name: 'Metaplex Documentation', url: 'https://docs.metaplex.com', type: 'FREE' }
-          ]
-        }
-      ]
-    },
-    'Solana Security Auditor': {
-      icon: Shield,
-      ecosystem: 'Solana',
-      description: 'Audit Rust-based Solana programs and identify vulnerabilities in SVM applications',
-      requiredSkills: [
-        'Rust', 'TypeScript', 'Solana Program Development', 'Solana Security Best Practices', 
-        'Anchor Framework', 'Vulnerability Assessment', 'Aderyn', 'Audit Report Writing'
-      ],
-      roadmap: [
-        {
-          phase: 'Rust & Solana Foundation',
-          duration: '1.5-2 months',
-          skills: ['Rust Basics', 'TypeScript Basics', 'Solana Fundamentals', 'Anchor Framework'],
-          resources: [
-            { name: 'Cyfrin Updraft - Rust Programming', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
-            { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' },
-            { name: 'Blueshift - Solana Development Courses', url: 'https://learn.blueshift.gg/en', type: 'FREE' },
-            { name: 'Solana Foundation - Solana Bootcamp', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE' },
-            { name: 'Solana Foundation - Solana Bytes', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE', duration: '4-min tutorials' },
-            { name: 'RiseIn - Build on Solana', url: 'https://www.risein.com/courses/build-on-solana', type: 'FREE', duration: 'Native Rust & Solana' }
-          ]
-        },
-        {
-          phase: 'Security Fundamentals',
-          duration: '1.5-2 months',
-          skills: ['Solana Security Best Practices', 'Common Vulnerabilities', 'Aderyn'],
-          resources: [
-            { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
-            { name: 'RareSkills - Ethereum to Solana Developer Course', url: 'https://rareskills.io/post/hello-world-solana', type: 'FREE' },
-            { name: 'Hackquest - Solana Learning Track', url: 'https://www.hackquest.io/learning-track/Solana', type: 'FREE' },
-            { name: 'Ackee Blockchain Resources', url: 'https://ackeeblockchain.com', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced Auditing',
-          duration: '2 months',
-          skills: ['Exploit Development', 'Audit Report Writing', 'Testing'],
-          resources: [
-            { name: 'Solana Security Best Practices', url: 'https://docs.solana.com/developers', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Professional Practice',
-          duration: '2-2.5 months',
-          skills: ['Bug Bounties', 'Audit Contests', 'Client Work'],
-          resources: [
-            { name: 'Immunefi Solana Programs', url: 'https://immunefi.com', type: 'PAID - Earn Money' }
-          ]
-        }
-      ]
-    },
-    'UI/UX Designer (Web3)': {
-      icon: Palette,
-      ecosystem: 'Cross-chain',
-      description: 'Design beautiful and intuitive user experiences for Web3 applications',
-      requiredSkills: [
-        'UI/UX Design', 'Design Tools', 'Adobe Creative Suite', 'Wireframing', 'Prototyping', 
-        'Responsive Design', 'Web3 User Flows', 'Blockchain Fundamentals'
-      ],
-      roadmap: [
-        {
-          phase: 'Design Fundamentals',
-          duration: '3-4 weeks',
-          skills: ['UI/UX Design', 'Design Tools', 'Adobe Creative Suite'],
-          resources: [
-            { name: 'UI/UX Design Course', url: 'https://www.interaction-design.org/courses', type: 'FREE' },
-            { name: 'Adobe XD Tutorials', url: 'https://www.adobe.com/products/xd/learn.html', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Web3 Design Patterns',
-          duration: '3-4 weeks',
-          skills: ['Web3 User Flows', 'Wallet UX', 'Transaction Design'],
-          resources: [
-            { name: 'Web3 Design Principles', url: 'https://web3designprinciples.com', type: 'FREE' },
-            { name: 'Blockchain Fundamentals for Designers', url: 'https://ethereum.org/en/developers/', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Advanced Design',
-          duration: '1-1.5 months',
-          skills: ['Prototyping', 'Design Systems', 'Responsive Design'],
-          resources: [
-            { name: 'Design Systems Handbook', url: 'https://www.designbetter.co/design-systems-handbook', type: 'FREE' }
-          ]
-        },
-        {
-          phase: 'Portfolio & Practice',
-          duration: '1-1.5 months',
-          skills: ['Portfolio Building', 'Client Work', 'Collaborative Design'],
-          resources: [
-            { name: 'Dribbble for Inspiration', url: 'https://dribbble.com', type: 'FREE' }
-          ]
-        }
-      ]
-    }
-  };
-
-  // Initialize skills state
-  useEffect(() => {
-    const initialSkills = {};
-    Object.values(skillCategories).forEach(categorySkills => {
-      categorySkills.forEach(skill => {
-        initialSkills[skill] = false;
-      });
-    });
-    
-    const savedSkills = localStorage.getItem('web3skills_riwot');
-    const savedDarkMode = localStorage.getItem('web3skills_darkmode');
-    
-    if (savedSkills) {
-      setSkills(JSON.parse(savedSkills));
-    } else {
-      setSkills(initialSkills);
-    }
-    
-    if (savedDarkMode) {
-      setDarkMode(JSON.parse(savedDarkMode));
-    }
-
-    // Initialize all categories as expanded
-    const initialExpanded = {};
-    Object.keys(skillCategories).forEach(cat => initialExpanded[cat] = true);
-    setExpandedCategories(initialExpanded);
-
-    // Check if policy has been accepted
-    const policyAccepted = localStorage.getItem('web3skills_policy_accepted');
-    if (!policyAccepted) {
-      setShowPolicyModal(true);
-    }
-  }, []);
-
-  // Save skills to localStorage
-  useEffect(() => {
-    if (Object.keys(skills).length > 0) {
-      localStorage.setItem('web3skills_riwot', JSON.stringify(skills));
-    }
-  }, [skills]);
-
-  useEffect(() => {
-    localStorage.setItem('web3skills_darkmode', JSON.stringify(darkMode));
-  }, [darkMode]);
-
-  // Helper functions
-  const toggleSkill = (skill) => {
-    setSkills(prev => ({ ...prev, [skill]: !prev[skill] }));
-  };
-
-  // Map roadmap skill names to actual skill names
-  const matchRoadmapSkill = (roadmapSkill, userSkills) => {
-    // Direct match
-    if (userSkills[roadmapSkill]) return true;
-    
-    // Handle "X Basics" -> "X" mapping
-    if (roadmapSkill.endsWith(' Basics')) {
-      const baseSkill = roadmapSkill.replace(' Basics', '');
-      if (userSkills[baseSkill]) return true;
-    }
-    
-    // Handle "X Advanced" -> "X" mapping
-    if (roadmapSkill.endsWith(' Advanced')) {
-      const baseSkill = roadmapSkill.replace(' Advanced', '');
-      if (userSkills[baseSkill]) return true;
-    }
-    
-    return false;
-  };
-
-  const getCategoryProgress = (categoryName) => {
-    const categorySkills = skillCategories[categoryName] || [];
-    const displaySkills = viewMode ? sharedSkills || skills : skills;
-    const checked = categorySkills.filter(skill => displaySkills[skill]).length;
-    return {
-      checked,
-      total: categorySkills.length,
-      percentage: categorySkills.length > 0 ? (checked / categorySkills.length) * 100 : 0
-    };
-  };
-
-  const getCareerMatch = (careerName) => {
-    const career = careerPaths[careerName];
-    if (!career) return { matched: 0, total: 0, percentage: 0 };
-    
-    const currentSkills = viewMode ? (sharedSkills || skills) : skills;
-    const matchedSkills = career.requiredSkills.filter(
-      skill => currentSkills.hasOwnProperty(skill) && currentSkills[skill]
-    );
-    
-    return {
-      matched: matchedSkills.length,
-      total: career.requiredSkills.length,
-      percentage: career.requiredSkills.length > 0 
-        ? (matchedSkills.length / career.requiredSkills.length) * 100 
-        : 0
-    };
-  };
-
-  const exportData = () => {
-    const data = { skills, version: '2.0', timestamp: new Date().toISOString() };
-    const dataStr = JSON.stringify(data, null, 2);
-    const blob = new Blob([dataStr], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `web3skills-riwot-${new Date().toISOString().split('T')[0]}.json`;
-    link.click();
-  };
-
-  const importData = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        try {
-          const imported = JSON.parse(e.target.result);
-          if (imported.skills) {
-            setSkills(imported.skills);
-          }
-        } catch (error) {
-          alert('Invalid file format');
-        }
-      };
-      reader.readAsText(file);
-    }
-  };
-
-  const generateShareCode = () => {
-    const checkedSkills = Object.keys(skills).filter(k => skills[k]);
-    return btoa(JSON.stringify(checkedSkills));
-  };
-
-  const loadFromShareCode = (code) => {
-    try {
-      const checkedSkills = JSON.parse(atob(code));
-      const newSkills = { ...skills };
-      Object.keys(newSkills).forEach(key => newSkills[key] = false);
-      checkedSkills.forEach(skill => {
-        if (newSkills.hasOwnProperty(skill)) {
-          newSkills[skill] = true;
-        }
-      });
-      setSharedSkills(newSkills);
-      setViewMode(true);
-      setShowViewModal(false);
-      setCurrentView('home');
-    } catch (e) {
-      alert('Invalid share code');
-    }
-  };
-
-  const copyToClipboard = async (text) => {
-    // Try modern clipboard API first (but catch if blocked)
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text);
-        return true;
+    ]
+  },
+  'Blockchain Architect': {
+    icon: Network,
+    ecosystem: 'EVM',
+    description: 'Design and architect blockchain systems, L2 solutions, and infrastructure at scale',
+    requiredSkills: [
+      'System Architecture', 'Blockchain Fundamentals', 'L2s', 'Bridges',
+      'Distributed Systems', 'High-Throughput Systems', 'EVM Mechanics', 'Consensus Mechanisms'
+    ],
+    roadmap: [
+      {
+        phase: 'Deep Blockchain Knowledge',
+        duration: '1.5-2 months',
+        skills: ['Blockchain Fundamentals', 'Consensus Mechanisms', 'EVM Mechanics'],
+        resources: [
+          { name: 'Ethereum.org', url: 'https://ethereum.org', type: 'FREE' },
+          { name: 'Bitcoin Whitepaper', url: 'https://bitcoin.org/bitcoin.pdf', type: 'FREE' },
+          { name: 'Ethereum Whitepaper', url: 'https://ethereum.org/en/whitepaper/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'System Design',
+        duration: '1-1.5 months',
+        skills: ['System Design', 'Distributed Systems', 'Large-Scale Cloud Systems'],
+        resources: [
+          { name: 'System Design Primer', url: 'https://github.com/donnemartin/system-design-primer', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Layer 2 & Scaling',
+        duration: '1.5-2 months',
+        skills: ['L2s', 'ZK Proofs', 'Bridges', 'Cross-chain Protocols'],
+        resources: [
+          { name: 'Cyfrin Updraft - ZK Proofs Fundamentals', url: 'https://updraft.cyfrin.io/courses/fundamentals-of-zero-knowledge-proofs', type: 'FREE' },
+          { name: 'Optimism Docs', url: 'https://docs.optimism.io', type: 'FREE' },
+          { name: 'Arbitrum Docs', url: 'https://docs.arbitrum.io', type: 'FREE' },
+          { name: 'zkSync Docs', url: 'https://docs.zksync.io', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced Architecture',
+        duration: '2 months',
+        skills: ['High-Throughput Systems', 'Performance Testing', 'Production Systems'],
+        resources: [
+          { name: 'L2Beat', url: 'https://l2beat.com', type: 'FREE' }
+        ]
       }
-    } catch (err) {
-      // Clipboard API blocked, will fall back below
-      console.log('Clipboard API blocked, using fallback');
-    }
-    
-    // Fallback method using document.execCommand
-    try {
-      const textArea = document.createElement('textarea');
-      textArea.value = text;
-      textArea.style.position = 'fixed';
-      textArea.style.left = '-999999px';
-      textArea.style.top = '-999999px';
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      
-      try {
-        const successful = document.execCommand('copy');
-        textArea.remove();
-        return successful;
-      } catch (err) {
-        console.error('Fallback copy failed:', err);
-        textArea.remove();
-        return false;
+    ]
+  },
+  'Solana Developer': {
+    icon: Zap,
+    ecosystem: 'Solana',
+    description: 'Build high-performance dApps on Solana using Rust and the Anchor framework',
+    requiredSkills: [
+      'Rust', 'TypeScript', 'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework',
+      'Solana Web3.js', 'SPL Tokens', 'Solana Account Model', 'PDAs'
+    ],
+    roadmap: [
+      {
+        phase: 'Solana Basics',
+        duration: '1-1.5 months',
+        skills: ['Rust Basics', 'TypeScript Basics', 'Solana Fundamentals', 'Solana CLI'],
+        resources: [
+          { name: 'Cyfrin Updraft - Rust Programming Basics', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
+          { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' },
+          { name: 'Blueshift - Solana Development Courses', url: 'https://learn.blueshift.gg/en', type: 'FREE' },
+          { name: 'Solana Foundation - Solana Bootcamp', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE' },
+          { name: 'Solana Foundation - Solana Bytes', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE', duration: '4-min tutorials' },
+          { name: 'RiseIn - Build on Solana', url: 'https://www.risein.com/courses/build-on-solana', type: 'FREE', duration: 'Native Rust & Solana' },
+          { name: 'Solana Documentation', url: 'https://docs.solana.com', type: 'FREE' },
+          { name: 'Rust Book', url: 'https://doc.rust-lang.org/book/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Program Development',
+        duration: '1.5-2 months',
+        skills: ['Anchor Framework', 'Solana Program Development', 'SPL Tokens'],
+        resources: [
+          { name: 'Solana Developer Bootcamp 2024 (Projects 1-9)', url: 'https://www.youtube.com/watch?v=amAq-WHAFs8', type: 'FREE' },
+          { name: 'Solana Developer Bootcamp 2024 (Projects 10-13)', url: 'https://www.youtube.com/watch?v=5JRVnxGW8kc', type: 'FREE' },
+          { name: 'RareSkills - Ethereum to Solana Developer Course', url: 'https://rareskills.io/post/hello-world-solana', type: 'FREE' },
+          { name: 'Hackquest - Solana Learning Track', url: 'https://www.hackquest.io/learning-track/Solana', type: 'FREE' },
+          { name: 'Anchor Documentation', url: 'https://www.anchor-lang.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced Solana',
+        duration: '1.5-2 months',
+        skills: ['PDAs', 'CPI', 'Solana Security', 'Solana Testing'],
+        resources: [
+          { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
+          { name: 'Ackee Blockchain Security', url: 'https://ackeeblockchain.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Production & DeFi',
+        duration: '2 months',
+        skills: ['Solana DeFi', 'Jupiter', 'Raydium', 'Metaplex NFTs'],
+        resources: [
+          { name: 'Jupiter Documentation', url: 'https://docs.jup.ag', type: 'FREE' },
+          { name: 'Metaplex Documentation', url: 'https://docs.metaplex.com', type: 'FREE' }
+        ]
       }
-    } catch (err) {
-      console.error('All copy methods failed:', err);
-      return false;
-    }
-  };
+    ]
+  },
+  'Solana Security Auditor': {
+    icon: Shield,
+    ecosystem: 'Solana',
+    description: 'Audit Rust-based Solana programs and identify vulnerabilities in SVM applications',
+    requiredSkills: [
+      'Rust', 'TypeScript', 'Solana Program Development', 'Solana Security Best Practices',
+      'Anchor Framework', 'Vulnerability Assessment', 'Aderyn', 'Audit Report Writing'
+    ],
+    roadmap: [
+      {
+        phase: 'Rust & Solana Foundation',
+        duration: '1.5-2 months',
+        skills: ['Rust Basics', 'TypeScript Basics', 'Solana Fundamentals', 'Anchor Framework'],
+        resources: [
+          { name: 'Cyfrin Updraft - Rust Programming', url: 'https://updraft.cyfrin.io/courses/rust-programming-basics', type: 'FREE' },
+          { name: 'Turbin3 Bootcamp', url: 'https://www.turbin3.org/', type: 'FREE' },
+          { name: 'Blueshift - Solana Development Courses', url: 'https://learn.blueshift.gg/en', type: 'FREE' },
+          { name: 'Solana Foundation - Solana Bootcamp', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE' },
+          { name: 'Solana Foundation - Solana Bytes', url: 'https://www.youtube.com/watch?v=pRYs49MqapI&list=PLilwLeBwGuK51Ji870apdb88dnBr1Xqhm', type: 'FREE', duration: '4-min tutorials' },
+          { name: 'RiseIn - Build on Solana', url: 'https://www.risein.com/courses/build-on-solana', type: 'FREE', duration: 'Native Rust & Solana' }
+        ]
+      },
+      {
+        phase: 'Security Fundamentals',
+        duration: '1.5-2 months',
+        skills: ['Solana Security Best Practices', 'Common Vulnerabilities', 'Aderyn'],
+        resources: [
+          { name: 'Solana Auditors Bootcamp 2024', url: 'https://www.youtube.com/playlist?list=PLzUrW5H8-hDdU-pzHjZrgupi5Wis6zWNJ', type: 'FREE' },
+          { name: 'RareSkills - Ethereum to Solana Developer Course', url: 'https://rareskills.io/post/hello-world-solana', type: 'FREE' },
+          { name: 'Hackquest - Solana Learning Track', url: 'https://www.hackquest.io/learning-track/Solana', type: 'FREE' },
+          { name: 'Ackee Blockchain Resources', url: 'https://ackeeblockchain.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced Auditing',
+        duration: '2 months',
+        skills: ['Exploit Development', 'Audit Report Writing', 'Testing'],
+        resources: [
+          { name: 'Solana Security Best Practices', url: 'https://docs.solana.com/developers', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Professional Practice',
+        duration: '2-2.5 months',
+        skills: ['Bug Bounties', 'Audit Contests', 'Client Work'],
+        resources: [
+          { name: 'Immunefi Solana Programs', url: 'https://immunefi.com', type: 'PAID - Earn Money' }
+        ]
+      }
+    ]
+  },
+  'UI/UX Designer (Web3)': {
+    icon: Palette,
+    ecosystem: 'Cross-chain',
+    description: 'Design beautiful and intuitive user experiences for Web3 applications',
+    requiredSkills: [
+      'UI/UX Design', 'Design Tools', 'Adobe Creative Suite', 'Wireframing', 'Prototyping',
+      'Responsive Design', 'Web3 User Flows', 'Blockchain Fundamentals'
+    ],
+    roadmap: [
+      {
+        phase: 'Design Fundamentals',
+        duration: '3-4 weeks',
+        skills: ['UI/UX Design', 'Design Tools', 'Adobe Creative Suite'],
+        resources: [
+          { name: 'UI/UX Design Course', url: 'https://www.interaction-design.org/courses', type: 'FREE' },
+          { name: 'Adobe XD Tutorials', url: 'https://www.adobe.com/products/xd/learn.html', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Web3 Design Patterns',
+        duration: '3-4 weeks',
+        skills: ['Web3 User Flows', 'Wallet UX', 'Transaction Design'],
+        resources: [
+          { name: 'Web3 Design Principles', url: 'https://web3designprinciples.com', type: 'FREE' },
+          { name: 'Blockchain Fundamentals for Designers', url: 'https://ethereum.org/en/developers/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Advanced Design',
+        duration: '1-1.5 months',
+        skills: ['Prototyping', 'Design Systems', 'Responsive Design'],
+        resources: [
+          { name: 'Design Systems Handbook', url: 'https://www.designbetter.co/design-systems-handbook', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Portfolio & Practice',
+        duration: '1-1.5 months',
+        skills: ['Portfolio Building', 'Client Work', 'Collaborative Design'],
+        resources: [
+          { name: 'Dribbble for Inspiration', url: 'https://dribbble.com', type: 'FREE' }
+        ]
+      }
+    ]
+  }
+};
 
-  const displaySkills = viewMode ? (sharedSkills || skills) : skills;
-  const totalSkillsCount = Object.values(skillCategories).flat().length;
-  const totalSkills = Object.keys(displaySkills).length;
-  const checkedSkills = Object.values(displaySkills).filter(Boolean).length;
-  const overallProgress = totalSkills > 0 ? (checkedSkills / totalSkills) * 100 : 0;
+// --- Helper Functions ---
 
-  const filteredSkills = (categorySkills) => {
-    return categorySkills.filter(skill => {
-      const matchesSearch = skill.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesFilter = 
-        filterComplete === 'all' || 
-        (filterComplete === 'complete' && displaySkills[skill]) ||
-        (filterComplete === 'incomplete' && !displaySkills[skill]);
-      return matchesSearch && matchesFilter;
-    });
-  };
+const matchRoadmapSkill = (roadmapSkill, userSkills) => {
+  if (userSkills[roadmapSkill]) return true;
+  if (roadmapSkill.endsWith(' Basics')) {
+    const baseSkill = roadmapSkill.replace(' Basics', '');
+    if (userSkills[baseSkill]) return true;
+  }
+  if (roadmapSkill.endsWith(' Advanced')) {
+    const baseSkill = roadmapSkill.replace(' Advanced', '');
+    if (userSkills[baseSkill]) return true;
+  }
+  return false;
+};
 
-  // Components
-  const Navigation = () => (
+// --- Components ---
+
+const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
+  const location = useLocation();
+
+  return (
     <nav className={`${darkMode ? 'navbar-dark' : 'navbar-light'} sticky top-4 z-40 mx-4 md:mx-8 rounded-2xl`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="flex items-center space-x-3">
               <div className="icon-gradient-blue p-3 rounded-xl">
                 <Rocket className="text-white" size={24} />
@@ -824,42 +626,41 @@ const App = () => {
                 <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Learn. Build. Grow.</p>
               </div>
             </div>
-          </div>
+          </Link>
           
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
             {!viewMode && (
-              <button
-                onClick={() => setCurrentView('home')}
+              <Link
+                to="/"
                 className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-                  currentView === 'home'
+                  location.pathname === '/'
                     ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
                     : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
                 Home
-              </button>
+              </Link>
             )}
-            <button
-              onClick={() => setCurrentView('skills')}
+            <Link
+              to="/skills"
               className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-                currentView === 'skills'
+                location.pathname === '/skills'
                   ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
                   : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
               }`}
             >
               Skills
-            </button>
-            <button
-              onClick={() => setCurrentView('careers')}
+            </Link>
+            <Link
+              to="/careers"
               className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-                currentView === 'careers' || currentView === 'career-detail'
+                location.pathname === '/careers' || location.pathname.startsWith('/career/')
                   ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
                   : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
               }`}
             >
               {viewMode ? 'Career Match' : 'Careers'}
-            </button>
+            </Link>
             
             {!viewMode && (
               <>
@@ -888,7 +689,6 @@ const App = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg"
@@ -901,41 +701,43 @@ const App = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
             {!viewMode && (
-              <button
-                onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); }}
-                className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium ${
-                  currentView === 'home'
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2 rounded-lg text-sm font-medium ${
+                  location.pathname === '/'
                     ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
                     : (darkMode ? 'text-gray-300' : 'text-gray-600')
                 }`}
               >
                 Home
-              </button>
+              </Link>
             )}
-            <button
-              onClick={() => { setCurrentView('skills'); setMobileMenuOpen(false); }}
-              className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium ${
-                currentView === 'skills'
+            <Link
+              to="/skills"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 rounded-lg text-sm font-medium ${
+                location.pathname === '/skills'
                   ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
                   : (darkMode ? 'text-gray-300' : 'text-gray-600')
               }`}
             >
               Skills
-            </button>
-            <button
-              onClick={() => { setCurrentView('careers'); setMobileMenuOpen(false); }}
-              className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium ${
-                currentView === 'careers'
+            </Link>
+            <Link
+              to="/careers"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 rounded-lg text-sm font-medium ${
+                location.pathname === '/careers'
                   ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
                   : (darkMode ? 'text-gray-300' : 'text-gray-600')
               }`}
             >
               {viewMode ? 'Career Match' : 'Careers'}
-            </button>
+            </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
                 onClick={() => setDarkMode(!darkMode)}
@@ -949,17 +751,17 @@ const App = () => {
       </div>
     </nav>
   );
+};
 
-  const HomePage = () => {
-    const bestMatch = Object.entries(careerPaths).reduce((best, [name, career]) => {
-      const match = getCareerMatch(name);
-      const bestMatchData = getCareerMatch(best[0]);
-      return match.percentage > bestMatchData.percentage ? [name, career] : best;
-    }, [Object.keys(careerPaths)[0], careerPaths[Object.keys(careerPaths)[0]]]);
+const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSkills, totalSkills, overallProgress, getCareerMatch, getCategoryProgress, exportData, importData }) => {
+  const bestMatchName = Object.keys(careerPaths).reduce((best, name) => {
+    const match = getCareerMatch(name);
+    const bestMatchData = getCareerMatch(best);
+    return match.percentage > bestMatchData.percentage ? name : best;
+  }, Object.keys(careerPaths)[0]);
 
-    return (
+  return (
     <div className="space-y-12">
-      {/* View Mode Banner */}
       {viewMode && (
         <div className={`${darkMode ? 'bg-gradient-to-r from-blue-900/50 to-purple-900/50 border-blue-800' : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200'} border rounded-xl p-6 animate-slideUp`}>
           <div className="flex items-start justify-between gap-4">
@@ -986,10 +788,10 @@ const App = () => {
                 <div>
                   <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Best Match</p>
                   <p className={`text-base font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                    {bestMatch[0]}
+                    {bestMatchName}
                   </p>
                   <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-600'}`}>
-                    {getCareerMatch(bestMatch[0]).percentage.toFixed(0)}% match
+                    {getCareerMatch(bestMatchName).percentage.toFixed(0)}% match
                   </p>
                 </div>
               </div>
@@ -1013,7 +815,6 @@ const App = () => {
         </div>
       )}
 
-      {/* Hero Section - Enhanced */}
       <div className={`text-center pt-16 pb-12 relative overflow-hidden ${darkMode ? 'mesh-gradient-dark' : 'mesh-gradient'}`}>
         <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
         <div className="relative z-10">
@@ -1030,28 +831,26 @@ const App = () => {
           </p>
           {!viewMode && (
             <div className="flex flex-wrap gap-4 justify-center animate-slideUp" style={{animationDelay: '0.2s'}}>
-              <button 
-                onClick={() => setCurrentView('skills')}
+              <Link
+                to="/skills"
                 className={`px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 shadow-xl ${darkMode ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white' : 'bg-purple-600 hover:bg-purple-700 text-white'}`}
               >
                 <Rocket size={24} />
                 Track Skills
-              </button>
-              <button 
-                onClick={() => setCurrentView('careers')}
+              </Link>
+              <Link
+                to="/careers"
                 className={`px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 shadow-xl ${darkMode ? 'bg-gray-800 hover:bg-gray-700 border-2 border-gray-600 text-white' : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900'}`}
               >
                 <Target size={24} />
                 Explore Careers
-              </button>
+              </Link>
             </div>
           )}
         </div>
       </div>
 
-      {/* Stats Cards - Glassmorphism Design */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* White Card - Your Progress - Hide in View Mode */}
         {!viewMode && (
           <div className={`${darkMode ? 'glass-card-dark text-white' : 'card-white-light text-gray-900'} p-8 rounded-2xl card-lift stagger-item`}>
             <div className="flex items-center gap-3 mb-4">
@@ -1072,7 +871,6 @@ const App = () => {
           </div>
         )}
 
-        {/* Gradient Card - Categories */}
         <div className="gradient-card-purple p-8 rounded-2xl text-white card-lift stagger-item">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -1090,7 +888,6 @@ const App = () => {
           <p className="text-sm opacity-80">Sixteen available paths</p>
         </div>
 
-        {/* Glass Card - Career Paths - Hide in View Mode */}
         {!viewMode && (
           <div className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-8 rounded-2xl card-lift stagger-item`}>
             <div className="flex items-center gap-3 mb-4">
@@ -1105,108 +902,24 @@ const App = () => {
         )}
       </div>
 
-      {/* Skills Section - Show in View Mode */}
-      {viewMode && (
-        <div className="space-y-6">
-          <h2 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Skills</h2>
-          
-          {/* Skills by Category */}
-          {Object.entries(skillCategories).map(([categoryName, categorySkills]) => {
-            const progress = getCategoryProgress(categoryName);
-            const activeSkills = sharedSkills || skills;
-            const filtered = categorySkills.filter(skill => {
-              const isChecked = activeSkills[skill];
-              return true; // Show all skills in view mode
-            });
-            
-            if (filtered.length === 0) return null;
-
-            return (
-              <div key={categoryName} className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl`}>
-                <div
-                  className="flex flex-wrap justify-between items-center mb-4 gap-3 cursor-pointer group"
-                  onClick={() => setExpandedCategories(prev => ({ ...prev, [categoryName]: !prev[categoryName] }))}
-                >
-                  <div className="flex items-center gap-3">
-                    <h3 className={`text-2xl font-bold transition-colors ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-gray-900 group-hover:text-purple-600'}`}>
-                      {categoryName}
-                    </h3>
-                    {expandedCategories[categoryName] ? (
-                      <ChevronUp className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={24} />
-                    ) : (
-                      <ChevronDown className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={24} />
-                    )}
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className={`text-sm font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      {progress.checked}/{progress.total}
-                    </span>
-                    <div className={`w-32 ${darkMode ? 'progress-bar-dark' : 'progress-bar-light'}`}>
-                      <div
-                        className="progress-fill"
-                        style={{ width: `${progress.percentage}%` }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {expandedCategories[categoryName] && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                    {filtered.map(skill => {
-                      const isChecked = activeSkills[skill];
-                      return (
-                        <div
-                          key={skill}
-                          className={`flex items-center gap-3 p-3 rounded-lg transition-all ${
-                            isChecked
-                              ? (darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-300')
-                              : (darkMode ? 'bg-gray-800/30 border-gray-700' : 'bg-gray-50 border-gray-300')
-                          } border`}
-                        >
-                          <div className={`flex-shrink-0 w-5 h-5 rounded flex items-center justify-center ${
-                            isChecked
-                              ? 'bg-green-600'
-                              : (darkMode ? 'bg-gray-700' : 'bg-white border border-gray-300')
-                          }`}>
-                            {isChecked && <CheckCircle className="text-white" size={16} />}
-                          </div>
-                          <span className={`text-sm ${
-                            isChecked
-                              ? (darkMode ? 'text-green-300 font-medium' : 'text-green-700 font-medium')
-                              : (darkMode ? 'text-gray-300' : 'text-gray-700')
-                          }`}>
-                            {skill}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Quick Actions - Hide in View Mode */}
       {!viewMode && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <button
-            onClick={() => setCurrentView('skills')}
+          <Link
+            to="/skills"
             className={`${darkMode ? 'bg-gradient-to-br from-blue-900/50 to-blue-800/50 border-blue-700 hover:from-blue-800/60 hover:to-blue-700/60' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200'} p-8 rounded-2xl border transition-all text-left group`}
           >
             <BookOpen className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
             <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
-              Browse and track {totalSkillsCount}+ Web3 skills across {Object.keys(skillCategories).length} categories
+              Browse and track 300+ Web3 skills across 15 categories
             </p>
             <span className={`text-sm font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'} flex items-center gap-2`}>
               Start Tracking <ArrowRight size={16} />
             </span>
-          </button>
+          </Link>
 
-          <button
-            onClick={() => setCurrentView('careers')}
+          <Link
+            to="/careers"
             className={`${darkMode ? 'bg-gradient-to-br from-purple-900/50 to-purple-800/50 border-purple-700 hover:from-purple-800/60 hover:to-purple-700/60' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200'} p-8 rounded-2xl border transition-all text-left group`}
           >
             <Target className={`${darkMode ? 'text-purple-400' : 'text-purple-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
@@ -1217,7 +930,7 @@ const App = () => {
             <span className={`text-sm font-medium ${darkMode ? 'text-purple-400' : 'text-purple-600'} flex items-center gap-2`}>
               View Careers <ArrowRight size={16} />
             </span>
-          </button>
+          </Link>
         </div>
       )}
 
@@ -1303,7 +1016,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* Data Management */}
+      {/* Data Management Section */}
       {!viewMode && (
         <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
           <div className="flex flex-wrap justify-between items-center gap-4">
@@ -1331,18 +1044,29 @@ const App = () => {
       )}
     </div>
   );
+};
+
+const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterComplete, setFilterComplete, getCategoryProgress, displaySkills, toggleSkill, expandedCategories, setExpandedCategories }) => {
+  const filteredSkills = (categorySkills) => {
+    return categorySkills.filter(skill => {
+      const matchesSearch = skill.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesFilter =
+        filterComplete === 'all' ||
+        (filterComplete === 'complete' && displaySkills[skill]) ||
+        (filterComplete === 'incomplete' && !displaySkills[skill]);
+      return matchesSearch && matchesFilter;
+    });
   };
 
-  const SkillsView = () => (
+  return (
     <div className="space-y-8">
       <div className="mb-8 animate-slideUp">
         <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>All Skills</h1>
         <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          Track your progress across {totalSkillsCount}+ Web3 skills
+          Track your progress across Web3 skills
         </p>
       </div>
 
-      {/* Search and Filters */}
       {!viewMode && (
         <div className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl animate-slideUp`}>
           <div className="flex flex-col md:flex-row gap-3">
@@ -1394,7 +1118,6 @@ const App = () => {
         </div>
       )}
 
-      {/* Skills by Category */}
       {Object.entries(skillCategories).map(([categoryName, categorySkills]) => {
         const progress = getCategoryProgress(categoryName);
         const filtered = filteredSkills(categorySkills);
@@ -1471,636 +1194,862 @@ const App = () => {
       })}
     </div>
   );
+};
 
-  const CareersView = () => {
-    // Group careers by ecosystem
-    const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
-    const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
-    const crossChainCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Cross-chain');
+const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
+  const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
+  const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
 
-    const CareerCard = ({ careerName, career }) => {
-      const match = getCareerMatch(careerName);
-      const Icon = career.icon;
-
-      return (
-        <div
-          key={careerName}
-          className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl card-lift group relative overflow-hidden`}
-        >
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <h3 className={`text-xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h3>
-              <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{career.ecosystem}</p>
-            </div>
-            <div className="icon-gradient-blue p-3 rounded-xl">
-              <Icon className="text-white" size={24} />
-            </div>
-          </div>
-
-          <p className={`text-sm mb-4 line-clamp-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{career.description}</p>
-
-          {!viewMode && (
-            <div className="mb-4">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-lg icon-gradient-orange flex items-center justify-center">
-                  <span className="text-xs font-bold">⚡</span>
-                </div>
-                <span className={`text-sm ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>Skills to learn:</span>
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {career.requiredSkills.slice(0, 3).map((skill, idx) => (
-                  <span key={idx} className={`text-xs px-2 py-1 rounded-full ${darkMode ? 'bg-white/10' : 'bg-purple-100'} backdrop-blur-sm ${darkMode ? 'text-gray-200' : 'text-purple-700'}`}>
-                    {skill}
-                  </span>
-                ))}
-                {career.requiredSkills.length > 3 && (
-                  <span className={`text-xs px-2 py-1 rounded-full ${darkMode ? 'bg-white/10' : 'bg-purple-100'} backdrop-blur-sm ${darkMode ? 'text-gray-200' : 'text-purple-700'}`}>
-                    +{career.requiredSkills.length - 3} more
-                  </span>
-                )}
-              </div>
-            </div>
-          )}
-
-          <div className="mb-4">
-            <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-2`}>
-              <div className="progress-fill" style={{ width: `${match.percentage}%` }} />
-            </div>
-            <p className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              {match.percentage.toFixed(0)}% match • {match.matched}/{match.total} skills
-            </p>
-          </div>
-
-          {!viewMode && (
-            <button
-              onClick={() => {
-                setSelectedCareer(careerName);
-                setCurrentView('career-detail');
-              }}
-              className={`${darkMode ? 'btn-primary-dark' : 'btn-primary-light'} w-full py-3 px-6 rounded-xl font-semibold transition-all flex items-center justify-center gap-2`}
-            >
-              Start Learning
-              <ArrowRight size={16} />
-            </button>
-          )}
-        </div>
-      );
-    };
-
-    return (
-      <div className="space-y-8">
-        <div className="mb-8 animate-slideUp">
-          <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>Career Paths</h1>
-          <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            Explore {Object.keys(careerPaths).length} Web3 career paths with detailed roadmaps
-          </p>
-        </div>
-
-        {/* EVM Careers */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="h-8 w-1 bg-blue-600 rounded-full" />
-            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>EVM Ecosystem</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {evmCareers.map(([name, career]) => (
-              <CareerCard key={name} careerName={name} career={career} />
-            ))}
-          </div>
-        </div>
-
-        {/* Solana Careers */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="h-8 w-1 bg-purple-600 rounded-full" />
-            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Solana Ecosystem</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {solanaCareers.map(([name, career]) => (
-              <CareerCard key={name} careerName={name} career={career} />
-            ))}
-          </div>
-        </div>
-
-        {/* Cross-chain Careers */}
-        {crossChainCareers.length > 0 && (
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-1 bg-green-600 rounded-full" />
-              <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Cross-chain</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {crossChainCareers.map(([name, career]) => (
-                <CareerCard key={name} careerName={name} career={career} />
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const CareerDetailView = () => {
-    if (!selectedCareer) return null;
-
-    const career = careerPaths[selectedCareer];
-    const match = getCareerMatch(selectedCareer);
+  const CareerCard = ({ careerName, career }) => {
+    const match = getCareerMatch(careerName);
     const Icon = career.icon;
 
     return (
-      <div className="space-y-8">
-        <button
-          onClick={() => setCurrentView('careers')}
-          className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-            darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
-          }`}
-        >
-          <ArrowRight size={16} className="rotate-180" />
-          Back to Careers
-        </button>
-
-        {/* Header */}
-        <div>
-          <div className="flex items-start gap-4 mb-4">
-            <div className={`p-4 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-              <Icon className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={32} />
-            </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <h1 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{selectedCareer}</h1>
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  career.ecosystem === 'EVM' ? 'bg-blue-100 text-blue-700' :
-                  career.ecosystem === 'Solana' ? 'bg-purple-100 text-purple-700' :
-                  'bg-green-100 text-green-700'
-                }`}>
-                  {career.ecosystem}
-                </span>
-              </div>
-              <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{career.description}</p>
-            </div>
+      <div
+        key={careerName}
+        className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl card-lift group relative overflow-hidden`}
+      >
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h3 className={`text-xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h3>
+            <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{career.ecosystem}</p>
           </div>
-
-          {/* Progress */}
-          <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-blue-50 border-blue-200'} p-6 rounded-xl border`}>
-            <div className="flex justify-between items-center mb-3">
-              <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Your Progress</span>
-              <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                {match.matched}/{match.total} skills
-              </span>
-            </div>
-            <div className={`w-full ${darkMode ? 'bg-gray-700' : 'bg-white'} rounded-full h-4`}>
-              <div
-                className="bg-gradient-to-r from-blue-600 to-purple-600 h-4 rounded-full transition-all"
-                style={{ width: `${match.percentage}%` }}
-              />
-            </div>
-            <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-600'} mt-2`}>
-              {match.percentage.toFixed(1)}% Complete
-            </p>
+          <div className="icon-gradient-blue p-3 rounded-xl">
+            <Icon className="text-white" size={24} />
           </div>
         </div>
 
-        {/* Required Skills */}
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
-          <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Required Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {career.requiredSkills.map(skill => (
-              <div
-                key={skill}
-                className={`flex items-center gap-3 p-4 rounded-lg ${
-                  darkMode ? 'bg-gray-700' : 'bg-gray-50'
-                }`}
-              >
-                {displaySkills.hasOwnProperty(skill) && displaySkills[skill] ? (
-                  <CheckCircle className="text-green-600 flex-shrink-0" size={20} />
-                ) : (
-                  <Circle className={darkMode ? 'text-gray-600' : 'text-gray-300'} size={20} />
-                )}
-                <span
-                  className={`text-sm font-medium ${
-                    displaySkills[skill]
-                      ? (darkMode ? 'text-white' : 'text-gray-900')
-                      : (darkMode ? 'text-gray-400' : 'text-gray-600')
-                  }`}
-                >
-                  {skill}
-                </span>
-              </div>
-            ))}
+        <p className={`text-sm mb-4 line-clamp-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{career.description}</p>
+
+        <div className="mb-4">
+          <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-2`}>
+            <div className="progress-fill" style={{ width: `${match.percentage}%` }} />
           </div>
+          <p className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            {match.percentage.toFixed(0)}% match • {match.matched}/{match.total} skills
+          </p>
         </div>
 
-        {/* Learning Roadmap */}
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
-          <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            4-Phase Learning Roadmap
-          </h2>
-          <div className="space-y-8">
-            {career.roadmap.map((phase, index) => (
-              <div key={index} className="relative">
-                <div className={`flex items-start gap-4 ${darkMode ? 'border-gray-600' : 'border-gray-200'} border-l-4 border-blue-600 pl-6 pb-8`}>
-                  <div className="absolute -left-3 top-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {phase.phase}
-                      </h3>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
-                      }`}>
-                        {phase.duration}
-                      </span>
-                    </div>
-
-                    {/* Skills for this phase */}
-                    <div className="mb-4">
-                      <h4 className={`text-sm font-semibold mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Skills to Learn:
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {phase.skills.map(skill => {
-                          const isCompleted = matchRoadmapSkill(skill, displaySkills);
-                          return (
-                            <span
-                              key={skill}
-                              className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
-                                isCompleted
-                                  ? (darkMode ? 'bg-green-800 text-green-300' : 'bg-green-100 text-green-700')
-                                  : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600')
-                              }`}
-                            >
-                              {skill}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    {/* Resources */}
-                    <div>
-                      <h4 className={`text-sm font-semibold mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                        Learning Resources:
-                      </h4>
-                      <div className="space-y-2">
-                        {phase.resources.map((resource, idx) => (
-                          <a
-                            key={idx}
-                            href={resource.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`flex items-start gap-3 p-3 rounded-lg transition-colors ${
-                              darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-gray-100'
-                            }`}
-                          >
-                            <BookOpen className={darkMode ? 'text-blue-400 flex-shrink-0' : 'text-blue-600 flex-shrink-0'} size={18} />
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-1">
-                                <span className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                  {resource.name}
-                                </span>
-                                <ExternalLink className={darkMode ? 'text-gray-500' : 'text-gray-400'} size={14} />
-                              </div>
-                              <div className="flex items-center gap-2 text-xs">
-                                <span className={`px-2 py-0.5 rounded ${
-                                  resource.type.includes('FREE')
-                                    ? 'bg-green-100 text-green-700'
-                                    : 'bg-blue-100 text-blue-700'
-                                }`}>
-                                  {resource.type}
-                                </span>
-                                {resource.duration && (
-                                  <span className={darkMode ? 'text-gray-500' : 'text-gray-500'}>
-                                    {resource.duration}
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Career Outcomes (if available) */}
-        {career.outcomes && (
-          <div className={`${darkMode ? 'bg-gradient-to-br from-green-900/30 to-blue-900/30 border-green-800' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} p-6 rounded-xl border`}>
-            <h2 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Career Outcomes
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {career.outcomes.junior && (
-                <div>
-                  <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Junior</p>
-                  <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.junior}</p>
-                </div>
-              )}
-              {career.outcomes.mid && (
-                <div>
-                  <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Mid-level</p>
-                  <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.mid}</p>
-                </div>
-              )}
-              {career.outcomes.senior && (
-                <div>
-                  <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Senior</p>
-                  <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.senior}</p>
-                </div>
-              )}
-              {career.outcomes.lead && (
-                <div>
-                  <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Lead</p>
-                  <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.lead}</p>
-                </div>
-              )}
-            </div>
-          </div>
+        {!viewMode && (
+          <Link
+            to={`/career/${encodeURIComponent(careerName)}`}
+            className={`${darkMode ? 'btn-primary-dark' : 'btn-primary-light'} w-full py-3 px-6 rounded-xl font-semibold transition-all flex items-center justify-center gap-2`}
+          >
+            View Roadmap
+            <ArrowRight size={16} />
+          </Link>
         )}
       </div>
     );
   };
 
-  // Modals
-  const ShareModal = () => (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-md w-full p-6 animate-slideUp`}>
-        <div className="flex justify-between items-center mb-4">
-          <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Share Progress</h2>
-          <button
-            onClick={() => setShowShareModal(false)}
-            className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
-          >
-            <X className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={20} />
-          </button>
+  return (
+    <div className="space-y-8">
+      <div className="mb-8 animate-slideUp">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>Career Paths</h1>
+        <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+          Explore Web3 career paths with detailed roadmaps
+        </p>
+      </div>
+
+      <div>
+        <div className="flex items-center gap-2 mb-4">
+          <div className="h-8 w-1 bg-blue-600 rounded-full" />
+          <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>EVM Ecosystem</h2>
         </div>
-        <div className="space-y-4">
-          <button
-            onClick={async () => {
-              const code = generateShareCode();
-              const success = await copyToClipboard(code);
-              if (success) {
-                setCopiedShare(true);
-                setTimeout(() => setCopiedShare(false), 2000);
-              } else {
-                alert('Failed to copy. Please manually copy the code below.');
-              }
-            }}
-            className={`w-full py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
-              copiedShare
-                ? 'bg-green-600 text-white'
-                : (darkMode ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')
-            }`}
-          >
-            {copiedShare ? <Check size={20} /> : <Copy size={20} />}
-            {copiedShare ? 'Copied!' : 'Copy Share Code'}
-          </button>
-          <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
-            <p className={`text-xs font-mono break-all ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {generateShareCode()}
-            </p>
-          </div>
-          <p className={`text-xs text-center ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
-            Share this code with others to show your progress
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {evmCareers.map(([name, career]) => (
+            <CareerCard key={name} careerName={name} career={career} />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div className="flex items-center gap-2 mb-4">
+          <div className="h-8 w-1 bg-purple-600 rounded-full" />
+          <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Solana Ecosystem</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solanaCareers.map(([name, career]) => (
+            <CareerCard key={name} careerName={name} career={career} />
+          ))}
         </div>
       </div>
     </div>
   );
+};
 
-  const ViewModal = () => (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-md w-full p-6 animate-slideUp`}>
-        <div className="flex justify-between items-center mb-4">
-          <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>View Shared Progress</h2>
-          <button
-            onClick={() => setShowViewModal(false)}
-            className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
-          >
-            <X className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={20} />
-          </button>
+const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
+  const { id } = useParams();
+  const careerName = decodeURIComponent(id || "");
+  const career = careerPaths[careerName];
+
+  if (!career) return (
+      <div className="text-center py-20">
+          <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career path not found</h2>
+          <Link to="/careers" className="text-blue-500 mt-4 inline-block">Back to Careers</Link>
+      </div>
+  );
+
+  const match = getCareerMatch(careerName);
+  const Icon = career.icon;
+
+  return (
+    <div className="space-y-8">
+      <Link
+        to="/careers"
+        className={`flex items-center gap-2 text-sm font-medium transition-colors ${
+          darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
+        }`}
+      >
+        <ArrowRight size={16} className="rotate-180" />
+        Back to Careers
+      </Link>
+
+      <div>
+        <div className="flex items-start gap-4 mb-4">
+          <div className={`p-4 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+            <Icon className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={32} />
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-2">
+              <h1 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h1>
+              <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                career.ecosystem === 'EVM' ? 'bg-blue-100 text-blue-700' :
+                career.ecosystem === 'Solana' ? 'bg-purple-100 text-purple-700' :
+                'bg-green-100 text-green-700'
+              }`}>
+                {career.ecosystem}
+              </span>
+            </div>
+            <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{career.description}</p>
+          </div>
         </div>
-        <div className="space-y-4">
-          <div>
-            <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              Paste Share Code
-            </label>
-            <input
-              type="text"
-              placeholder="Enter code..."
-              value={shareInput}
-              onChange={(e) => setShareInput(e.target.value)}
-              className={`w-full px-3 py-2 border rounded-lg ${
-                darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-500' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-              } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+
+        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-blue-50 border-blue-200'} p-6 rounded-xl border`}>
+          <div className="flex justify-between items-center mb-3">
+            <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Your Progress</span>
+            <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              {match.matched}/{match.total} skills
+            </span>
+          </div>
+          <div className={`w-full ${darkMode ? 'bg-gray-700' : 'bg-white'} rounded-full h-4`}>
+            <div
+              className="bg-gradient-to-r from-blue-600 to-purple-600 h-4 rounded-full transition-all"
+              style={{ width: `${match.percentage}%` }}
             />
           </div>
-          <button
-            onClick={() => {
-              if (shareInput.trim()) {
-                loadFromShareCode(shareInput.trim());
-              }
-            }}
-            className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
-              darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
-            }`}
-          >
-            Load Progress
-          </button>
+          <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-600'} mt-2`}>
+            {match.percentage.toFixed(1)}% Complete
+          </p>
         </div>
       </div>
-    </div>
-  );
 
-  const PolicyModal = () => (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto animate-slideUp`}>
-        <div className="mb-6">
-          <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Welcome to Web3 Skills RiWoT
+      <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
+        <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Required Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {career.requiredSkills.map(skill => (
+            <div
+              key={skill}
+              className={`flex items-center gap-3 p-4 rounded-lg ${
+                darkMode ? 'bg-gray-700' : 'bg-gray-50'
+              }`}
+            >
+              {displaySkills.hasOwnProperty(skill) && displaySkills[skill] ? (
+                <CheckCircle className="text-green-600 flex-shrink-0" size={20} />
+              ) : (
+                <Circle className={darkMode ? 'text-gray-600' : 'text-gray-300'} size={20} />
+              )}
+              <span
+                className={`text-sm font-medium ${
+                  displaySkills[skill]
+                    ? (darkMode ? 'text-white' : 'text-gray-900')
+                    : (darkMode ? 'text-gray-400' : 'text-gray-600')
+                }`}
+              >
+                {skill}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
+        <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          4-Phase Learning Roadmap
+        </h2>
+        <div className="space-y-8">
+          {career.roadmap.map((phase, index) => (
+            <div key={index} className="relative">
+              <div className={`flex items-start gap-4 ${darkMode ? 'border-gray-600' : 'border-gray-200'} border-l-4 border-blue-600 pl-6 pb-8`}>
+                <div className="absolute -left-3 top-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                  {index + 1}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      {phase.phase}
+                    </h3>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                    }`}>
+                      {phase.duration}
+                    </span>
+                  </div>
+
+                  <div className="mb-4">
+                    <h4 className={`text-sm font-semibold mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      Skills to Learn:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {phase.skills.map(skill => {
+                        const isCompleted = matchRoadmapSkill(skill, displaySkills);
+                        return (
+                          <span
+                            key={skill}
+                            className={`px-3 py-1.5 rounded-lg text-sm font-medium ${
+                              isCompleted
+                                ? (darkMode ? 'bg-green-800 text-green-300' : 'bg-green-100 text-green-700')
+                                : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600')
+                            }`}
+                          >
+                            {skill}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className={`text-sm font-semibold mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      Learning Resources:
+                    </h4>
+                    <div className="space-y-2">
+                      {phase.resources.map((resource, idx) => (
+                        <a
+                          key={idx}
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-start gap-3 p-3 rounded-lg transition-colors ${
+                            darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-gray-100'
+                          }`}
+                        >
+                          <BookOpen className={darkMode ? 'text-blue-400 flex-shrink-0' : 'text-blue-600 flex-shrink-0'} size={18} />
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                {resource.name}
+                              </span>
+                              <ExternalLink className={darkMode ? 'text-gray-500' : 'text-gray-400'} size={14} />
+                            </div>
+                            <div className="flex items-center gap-2 text-xs">
+                              <span className={`px-2 py-0.5 rounded ${
+                                resource.type.includes('FREE')
+                                  ? 'bg-green-100 text-green-700'
+                                  : 'bg-blue-100 text-blue-700'
+                              }`}>
+                                {resource.type}
+                              </span>
+                              {resource.duration && (
+                                <span className={darkMode ? 'text-gray-500' : 'text-gray-500'}>
+                                  {resource.duration}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {career.outcomes && (
+        <div className={`${darkMode ? 'bg-gradient-to-br from-green-900/30 to-blue-900/30 border-green-800' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} p-6 rounded-xl border`}>
+          <h2 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            Career Outcomes
           </h2>
-          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Please read and accept our terms before using the platform
-          </p>
-        </div>
-
-        <div className={`space-y-4 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          <div className={`p-4 rounded-lg ${darkMode ? 'bg-yellow-900/20 border border-yellow-800' : 'bg-yellow-50 border border-yellow-200'}`}>
-            <h3 className={`font-bold mb-2 flex items-center gap-2 ${darkMode ? 'text-yellow-400' : 'text-yellow-800'}`}>
-              <Star size={18} />
-              Important Disclaimer
-            </h3>
-            <p className={darkMode ? 'text-yellow-300' : 'text-yellow-900'}>
-              This platform provides educational resources and career guidance for Web3 development. While we mention salary ranges and career outcomes, <strong>we do not guarantee employment or specific compensation</strong>. These are industry estimates based on market research as of 2025.
-            </p>
-          </div>
-
-          <div>
-            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Provide</h3>
-            <ul className="space-y-2 ml-4">
-              <li>• Curated learning resources and roadmaps</li>
-              <li>• Skills tracking and progress management</li>
-              <li>• Career path guidance and match analysis</li>
-              <li>• Links to free and paid educational content</li>
-              <li>• Community access through RiWoT</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Expect</h3>
-            <ul className="space-y-2 ml-4">
-              <li>• You take responsibility for your own learning journey</li>
-              <li>• You verify all external resources before use</li>
-              <li>• You understand that career outcomes vary by individual effort</li>
-              <li>• You use the platform ethically and honestly</li>
-            </ul>
-          </div>
-
-          <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/20 border border-blue-800' : 'bg-blue-50 border border-blue-200'}`}>
-            <h3 className={`font-bold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-800'}`}>Privacy & Data Storage</h3>
-            <ul className="space-y-2">
-              <li><strong>What we store:</strong> Your skill selections, progress data, and theme preferences</li>
-              <li><strong>Where we store it:</strong> Locally in your browser's localStorage (not on our servers)</li>
-              <li><strong>Who has access:</strong> Only you. Data never leaves your device unless you share it</li>
-              <li><strong>How long we keep it:</strong> Until you clear your browser data or uninstall</li>
-              <li><strong>Sharing:</strong> Optional. You control if/when to generate share codes</li>
-              <li><strong>Third parties:</strong> None. We don't use analytics or tracking</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>External Resources</h3>
-            <p>
-              We link to third-party platforms (Cyfrin Updraft, Turbin3, YouTube, etc.). We are not responsible for their content, availability, or policies. Some resources may require payment or registration.
-            </p>
-          </div>
-
-          <div>
-            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Salary Information</h3>
-            <p>
-              Salary ranges shown are estimates based on 2025 market research. Actual compensation depends on location, experience, company, market conditions, and individual negotiation. Bug bounty earnings are highly variable.
-            </p>
-          </div>
-
-          <div>
-            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Open Source</h3>
-            <p>
-              This project is open source. You can view the code, suggest improvements, or report issues on{' '}
-              <a href="https://github.com/mirmohmmadluqman/web3skills" target="_blank" rel="noopener noreferrer" className={darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}>
-                GitHub
-              </a>.
-            </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {career.outcomes.junior && (
+              <div>
+                <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Junior</p>
+                <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.junior}</p>
+              </div>
+            )}
+            {career.outcomes.mid && (
+              <div>
+                <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Mid-level</p>
+                <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.mid}</p>
+              </div>
+            )}
+            {career.outcomes.senior && (
+              <div>
+                <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Senior</p>
+                <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.senior}</p>
+              </div>
+            )}
+            {career.outcomes.lead && (
+              <div>
+                <p className={`text-xs font-semibold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Lead</p>
+                <p className={`font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{career.outcomes.lead}</p>
+              </div>
+            )}
           </div>
         </div>
-
-        <div className="mt-6 pt-6 border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}">
-          <button
-            onClick={() => {
-              localStorage.setItem('web3skills_policy_accepted', 'true');
-              setShowPolicyModal(false);
-            }}
-            className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
-              darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
-            }`}
-          >
-            I Understand and Accept
-          </button>
-          <p className={`text-xs text-center mt-3 ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
-            By accepting, you agree to use this platform at your own discretion
-          </p>
-        </div>
-      </div>
+      )}
     </div>
   );
+};
 
-  const Footer = () => (
-    <footer className={`mt-16 pt-8 ${darkMode ? 'border-gray-800' : 'border-gray-200'} border-t`}>
-      <div className="text-center space-y-4">
-        <div className="flex justify-center items-center gap-2 mb-2">
-          <Rocket className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={24} />
-          <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Web3 Skills RiWoT</span>
+const ShareModal = ({ darkMode, setShowShareModal, generateShareCode, copyToClipboard, copiedShare, setCopiedShare }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-md w-full p-6 animate-slideUp`}>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Share Progress</h2>
+        <button
+          onClick={() => setShowShareModal(false)}
+          className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+        >
+          <X className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={20} />
+        </button>
+      </div>
+      <div className="space-y-4">
+        <button
+          onClick={async () => {
+            const code = generateShareCode();
+            const success = await copyToClipboard(code);
+            if (success) {
+              setCopiedShare(true);
+              setTimeout(() => setCopiedShare(false), 2000);
+            } else {
+              alert('Failed to copy. Please manually copy the code below.');
+            }
+          }}
+          className={`w-full py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
+            copiedShare
+              ? 'bg-green-600 text-white'
+              : (darkMode ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')
+          }`}
+        >
+          {copiedShare ? <Check size={20} /> : <Copy size={20} />}
+          {copiedShare ? 'Copied!' : 'Copy Share Code'}
+        </button>
+        <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+          <p className={`text-xs font-mono break-all ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            {generateShareCode()}
+          </p>
         </div>
-        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          Built with ❤️ by{' '}
-          <a
-            href="https://mirmohmmadluqman.github.io/portfolio/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}
-          >
-            Mir Mohammad Luqman
-          </a>
+        <p className={`text-xs text-center ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+          Share this code with others to show your progress
         </p>
-        <div className="flex justify-center items-center gap-3 mb-3">
-          <a
-            href="https://github.com/mirmohmmadluqman/web3skills"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-              darkMode ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-            }`}
-            title="View on GitHub"
-          >
-            <Github size={20} />
-            <span className="text-sm font-medium">View Source</span>
-          </a>
+      </div>
+    </div>
+  </div>
+);
+
+const ViewModal = ({ darkMode, setShowViewModal, shareInput, setShareInput, loadFromShareCode }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-md w-full p-6 animate-slideUp`}>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>View Shared Progress</h2>
+        <button
+          onClick={() => setShowViewModal(false)}
+          className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+        >
+          <X className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={20} />
+        </button>
+      </div>
+      <div className="space-y-4">
+        <div>
+          <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            Paste Share Code
+          </label>
+          <input
+            type="text"
+            placeholder="Enter code..."
+            value={shareInput}
+            onChange={(e) => setShareInput(e.target.value)}
+            className={`w-full px-3 py-2 border rounded-lg ${
+              darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-500' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
+            } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+          />
         </div>
-        <div className={`flex justify-center gap-4 text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
-          <a
-            href="https://github.com/RiWoT"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'}
-          >
-            RiWoT GitHub
-          </a>
-          <span>•</span>
-          <a
-            href="https://discord.gg/epWxxeWC"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'}
-          >
-            Discord
-          </a>
-          <span>•</span>
-          <span>© 2025 Web3 Skills RiWoT</span>
+        <button
+          onClick={() => {
+            if (shareInput.trim()) {
+              loadFromShareCode(shareInput.trim());
+            }
+          }}
+          className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
+            darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
+          }`}
+        >
+          Load Progress
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto animate-slideUp`}>
+      <div className="mb-6">
+        <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          Welcome to Web3 Skills RiWoT
+        </h2>
+        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+          Please read and accept our terms before using the platform
+        </p>
+      </div>
+
+      <div className={`space-y-4 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-yellow-900/20 border border-yellow-800' : 'bg-yellow-50 border border-yellow-200'}`}>
+          <h3 className={`font-bold mb-2 flex items-center gap-2 ${darkMode ? 'text-yellow-400' : 'text-yellow-800'}`}>
+            <Star size={18} />
+            Important Disclaimer
+          </h3>
+          <p className={darkMode ? 'text-yellow-300' : 'text-yellow-900'}>
+            This platform provides educational resources and career guidance for Web3 development. While we mention salary ranges and career outcomes, <strong>we do not guarantee employment or specific compensation</strong>. These are industry estimates based on market research as of 2025.
+          </p>
+        </div>
+
+        <div>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Provide</h3>
+          <ul className="space-y-2 ml-4">
+            <li>• Curated learning resources and roadmaps</li>
+            <li>• Skills tracking and progress management</li>
+            <li>• Career path guidance and match analysis</li>
+            <li>• Links to free and paid educational content</li>
+            <li>• Community access through RiWoT</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Expect</h3>
+          <ul className="space-y-2 ml-4">
+            <li>• You take responsibility for your own learning journey</li>
+            <li>• You verify all external resources before use</li>
+            <li>• You understand that career outcomes vary by individual effort</li>
+            <li>• You use the platform ethically and honestly</li>
+          </ul>
+        </div>
+
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/20 border border-blue-800' : 'bg-blue-50 border border-blue-200'}`}>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-800'}`}>Privacy & Data Storage</h3>
+          <ul className="space-y-2">
+            <li><strong>What we store:</strong> Your skill selections, progress data, and theme preferences</li>
+            <li><strong>Where we store it:</strong> Locally in your browser's localStorage (not on our servers)</li>
+            <li><strong>Who has access:</strong> Only you. Data never leaves your device unless you share it</li>
+            <li><strong>How long we keep it:</strong> Until you clear your browser data or uninstall</li>
+            <li><strong>Sharing:</strong> Optional. You control if/when to generate share codes</li>
+            <li><strong>Third parties:</strong> None. We don't use analytics or tracking</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>External Resources</h3>
+          <p>
+            We link to third-party platforms (Cyfrin Updraft, Turbin3, YouTube, etc.). We are not responsible for their content, availability, or policies. Some resources may require payment or registration.
+          </p>
+        </div>
+
+        <div>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Salary Information</h3>
+          <p>
+            Salary ranges shown are estimates based on 2025 market research. Actual compensation depends on location, experience, company, market conditions, and individual negotiation. Bug bounty earnings are highly variable.
+          </p>
+        </div>
+
+        <div>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Open Source</h3>
+          <p>
+            This project is open source. You can view the code, suggest improvements, or report issues on{' '}
+            <a href="https://github.com/mirmohmmadluqman/web3skills" target="_blank" rel="noopener noreferrer" className={darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}>
+              GitHub
+            </a>.
+          </p>
         </div>
       </div>
-    </footer>
-  );
 
-  // Main Render
+      <div className={`mt-6 pt-6 border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+        <button
+          onClick={() => {
+            localStorage.setItem('web3skills_policy_accepted', 'true');
+            setShowPolicyModal(false);
+          }}
+          className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
+            darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
+          }`}
+        >
+          I Understand and Accept
+        </button>
+        <p className={`text-xs text-center mt-3 ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+          By accepting, you agree to use this platform at your own discretion
+        </p>
+      </div>
+    </div>
+  </div>
+);
+
+const Footer = ({ darkMode }) => (
+  <footer className={`mt-16 pt-8 ${darkMode ? 'border-gray-800' : 'border-gray-200'} border-t`}>
+    <div className="text-center space-y-4">
+      <div className="flex justify-center items-center gap-2 mb-2">
+        <Rocket className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={24} />
+        <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Web3 Skills RiWoT</span>
+      </div>
+      <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+        Built with ❤️ by{' '}
+        <a
+          href="https://mirmohmmadluqman.github.io/portfolio/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}
+        >
+          Mir Mohammad Luqman
+        </a>
+      </p>
+      <div className="flex justify-center items-center gap-3 mb-3">
+        <a
+          href="https://github.com/mirmohmmadluqman/web3skills"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+            darkMode ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+          }`}
+          title="View on GitHub"
+        >
+          <Github size={20} />
+          <span className="text-sm font-medium">View Source</span>
+        </a>
+      </div>
+      <div className={`flex justify-center gap-4 text-xs ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+        <a
+          href="https://github.com/RiWoT"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'}
+        >
+          RiWoT GitHub
+        </a>
+        <span>•</span>
+        <a
+          href="https://discord.gg/epWxxeWC"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'}
+        >
+          Discord
+        </a>
+        <span>•</span>
+        <span>© 2025 Web3 Skills RiWoT</span>
+      </div>
+    </div>
+  </footer>
+);
+
+// --- Main App Component ---
+
+const App = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [skills, setSkills] = useState({});
+  const [darkMode, setDarkMode] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterComplete, setFilterComplete] = useState('all');
+  const [expandedCategories, setExpandedCategories] = useState({});
+  const [showShareModal, setShowShareModal] = useState(false);
+  const [showViewModal, setShowViewModal] = useState(false);
+  const [copiedShare, setCopiedShare] = useState(false);
+  const [viewMode, setViewMode] = useState(false);
+  const [sharedSkills, setSharedSkills] = useState(null);
+  const [shareInput, setShareInput] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showPolicyModal, setShowPolicyModal] = useState(false);
+
+  useEffect(() => {
+    const initialSkills = {};
+    Object.values(skillCategories).forEach(categorySkills => {
+      categorySkills.forEach(skill => {
+        initialSkills[skill] = false;
+      });
+    });
+
+    const savedSkills = localStorage.getItem('web3skills_riwot');
+    const savedDarkMode = localStorage.getItem('web3skills_darkmode');
+
+    if (savedSkills) {
+      setSkills(JSON.parse(savedSkills));
+    } else {
+      setSkills(initialSkills);
+    }
+
+    if (savedDarkMode) {
+      setDarkMode(JSON.parse(savedDarkMode));
+    }
+
+    const initialExpanded = {};
+    Object.keys(skillCategories).forEach(cat => initialExpanded[cat] = true);
+    setExpandedCategories(initialExpanded);
+
+    const policyAccepted = localStorage.getItem('web3skills_policy_accepted');
+    if (!policyAccepted) {
+      setShowPolicyModal(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (Object.keys(skills).length > 0) {
+      localStorage.setItem('web3skills_riwot', JSON.stringify(skills));
+    }
+  }, [skills]);
+
+  useEffect(() => {
+    localStorage.setItem('web3skills_darkmode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  const handleViewShared = useCallback((code) => {
+    try {
+      const checkedSkills = JSON.parse(atob(code));
+      const newSkills = {};
+      Object.values(skillCategories).flat().forEach(s => newSkills[s] = false);
+      checkedSkills.forEach(skill => {
+        if (newSkills.hasOwnProperty(skill)) {
+          newSkills[skill] = true;
+        }
+      });
+      setSharedSkills(newSkills);
+      setViewMode(true);
+      navigate("/");
+    } catch (e) {
+      console.error("Failed to decode shared link", e);
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (location.pathname.startsWith('/view/')) {
+      const code = location.pathname.split('/view/')[1];
+      if (code) {
+        handleViewShared(code);
+      }
+    }
+  }, [location.pathname, handleViewShared]);
+
+  const toggleSkill = (skill) => {
+    setSkills(prev => ({ ...prev, [skill]: !prev[skill] }));
+  };
+
+  const getCategoryProgress = (categoryName) => {
+    const categorySkills = skillCategories[categoryName] || [];
+    const displaySkills = viewMode ? sharedSkills || skills : skills;
+    const checked = categorySkills.filter(skill => displaySkills[skill]).length;
+    return {
+      checked,
+      total: categorySkills.length,
+      percentage: categorySkills.length > 0 ? (checked / categorySkills.length) * 100 : 0
+    };
+  };
+
+  const getCareerMatch = (careerName) => {
+    const career = careerPaths[careerName];
+    if (!career) return { matched: 0, total: 0, percentage: 0 };
+
+    const currentSkills = viewMode ? (sharedSkills || skills) : skills;
+    const matchedSkills = career.requiredSkills.filter(
+      skill => currentSkills.hasOwnProperty(skill) && currentSkills[skill]
+    );
+
+    return {
+      matched: matchedSkills.length,
+      total: career.requiredSkills.length,
+      percentage: career.requiredSkills.length > 0
+        ? (matchedSkills.length / career.requiredSkills.length) * 100
+        : 0
+    };
+  };
+
+  const exportData = () => {
+    const data = { skills, version: '2.0', timestamp: new Date().toISOString() };
+    const dataStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `web3skills-riwot-${new Date().toISOString().split('T')[0]}.json`;
+    link.click();
+  };
+
+  const importData = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (imported.skills) {
+            setSkills(imported.skills);
+          }
+        } catch (error) {
+          alert('Invalid file format');
+        }
+      };
+      reader.readAsText(file);
+    }
+  };
+
+  const generateShareCode = () => {
+    const checkedSkills = Object.keys(skills).filter(k => skills[k]);
+    return btoa(JSON.stringify(checkedSkills));
+  };
+
+  const loadFromShareCode = (code) => {
+    try {
+      const checkedSkills = JSON.parse(atob(code));
+      const newSkills = {};
+      Object.values(skillCategories).flat().forEach(s => newSkills[s] = false);
+      checkedSkills.forEach(skill => {
+        if (newSkills.hasOwnProperty(skill)) {
+          newSkills[skill] = true;
+        }
+      });
+      setSharedSkills(newSkills);
+      setViewMode(true);
+      setShowViewModal(false);
+      navigate("/");
+    } catch (e) {
+      alert('Invalid share code');
+    }
+  };
+
+  const copyToClipboard = async (text) => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (err) {
+      console.log('Clipboard API blocked, using fallback');
+    }
+
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      const successful = document.execCommand('copy');
+      textArea.remove();
+      return successful;
+    } catch (err) {
+      return false;
+    }
+  };
+
+  const displaySkills = viewMode ? (sharedSkills || skills) : skills;
+  const totalSkills = Object.values(skillCategories).flat().length;
+  const checkedSkillsCount = Object.values(displaySkills).filter(Boolean).length;
+  const overallProgress = totalSkills > 0 ? (checkedSkillsCount / totalSkills) * 100 : 0;
+
   return (
     <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme' : 'bg-light-theme'}`}>
-      {/* Floating Orbs */}
       <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-1`}></div>
       <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-2`}></div>
       <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-3`}></div>
       
-      {/* Grid Pattern Overlay */}
       <div className={`absolute inset-0 ${darkMode ? 'grid-pattern-dark' : 'grid-pattern-light'} opacity-50`}></div>
       
-      {/* Main Content */}
       <div className="relative z-10">
-        <Navigation />
+        <Navigation
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          setShowShareModal={setShowShareModal}
+          setShowViewModal={setShowViewModal}
+          viewMode={viewMode}
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
+        />
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 pt-28">
-          {currentView === 'home' && <HomePage />}
-          {currentView === 'skills' && <SkillsView />}
-          {currentView === 'careers' && <CareersView />}
-          {currentView === 'career-detail' && <CareerDetailView />}
-          <Footer />
+          <Routes>
+            <Route path="/" element={
+              <HomePage
+                darkMode={darkMode}
+                viewMode={viewMode}
+                setViewMode={setViewMode}
+                setSharedSkills={setSharedSkills}
+                checkedSkills={checkedSkillsCount}
+                totalSkills={totalSkills}
+                overallProgress={overallProgress}
+                getCareerMatch={getCareerMatch}
+                getCategoryProgress={getCategoryProgress}
+                exportData={exportData}
+                importData={importData}
+              />
+            } />
+            <Route path="/skills" element={
+              <SkillsView
+                darkMode={darkMode}
+                viewMode={viewMode}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+                filterComplete={filterComplete}
+                setFilterComplete={setFilterComplete}
+                getCategoryProgress={getCategoryProgress}
+                displaySkills={displaySkills}
+                toggleSkill={toggleSkill}
+                expandedCategories={expandedCategories}
+                setExpandedCategories={setExpandedCategories}
+              />
+            } />
+            <Route path="/careers" element={
+              <CareersView
+                darkMode={darkMode}
+                viewMode={viewMode}
+                getCareerMatch={getCareerMatch}
+              />
+            } />
+            <Route path="/career/:id" element={
+              <CareerDetailView
+                darkMode={darkMode}
+                displaySkills={displaySkills}
+                getCareerMatch={getCareerMatch}
+              />
+            } />
+            <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />
+          </Routes>
+          <Footer darkMode={darkMode} />
         </div>
       </div>
       
-      {showShareModal && <ShareModal />}
-      {showViewModal && <ViewModal />}
-      {showPolicyModal && <PolicyModal />}
+      {showShareModal && (
+        <ShareModal
+          darkMode={darkMode}
+          setShowShareModal={setShowShareModal}
+          generateShareCode={generateShareCode}
+          copyToClipboard={copyToClipboard}
+          copiedShare={copiedShare}
+          setCopiedShare={setCopiedShare}
+        />
+      )}
+      {showViewModal && (
+        <ViewModal
+          darkMode={darkMode}
+          setShowViewModal={setShowViewModal}
+          shareInput={shareInput}
+          setShareInput={setShareInput}
+          loadFromShareCode={loadFromShareCode}
+        />
+      )}
+      {showPolicyModal && <PolicyModal darkMode={darkMode} setShowPolicyModal={setShowPolicyModal} />}
     </div>
   );
 };
