@@ -1187,9 +1187,18 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                           type="checkbox"
                           checked={displaySkills[skill] || false}
                           onChange={() => toggleSkill(skill)}
-                          className="peer appearance-none w-5 h-5 rounded-md border-2 border-white/20 checked:bg-accent-blue checked:border-accent-blue transition-all cursor-pointer"
+                          className={`peer appearance-none w-5 h-5 rounded-md border-2 transition-all cursor-pointer ${
+                            darkMode
+                              ? 'border-white/20 checked:bg-accent-blue checked:border-accent-blue'
+                              : 'border-gray-300 bg-white checked:bg-purple-600 checked:border-purple-600'
+                          }`}
                         />
-                        <Check className="absolute w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" strokeWidth={4} />
+                        <Check
+                          className={`absolute w-3.5 h-3.5 ${
+                            darkMode ? 'text-black' : 'text-white'
+                          } opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none`}
+                          strokeWidth={4}
+                        />
                       </div>
                     )}
                     {viewMode && (
