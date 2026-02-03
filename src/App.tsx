@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { useDirectionalHover } from './hooks/useDirectionalHover';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { 
   BookOpen, Code, Shield, DollarSign, Layout, Server, Network, 
   GraduationCap, Palette, Target, TrendingUp, Award, CheckCircle, 
@@ -612,13 +611,13 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
   const location = useLocation();
 
   return (
-    <nav className={`${darkMode ? 'bg-dark-surface/80 border border-white/5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]' : 'navbar-light'} sticky top-4 z-40 mx-4 md:mx-8 rounded-2xl transition-all duration-300`}>
+    <nav className={`${darkMode ? 'navbar-dark' : 'navbar-light'} sticky top-4 z-40 mx-4 md:mx-8 rounded-2xl transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="flex items-center space-x-3">
-              <div className="bg-accent-blue/10 p-3 rounded-xl border border-blue-500/20 group-hover:bg-accent-blue/20 transition-all duration-300">
-                <Rocket className="text-accent-blue" size={24} />
+              <div className="bg-accent-blue p-3 rounded-xl border border-cyan-300/40 transition-all duration-300">
+                <Rocket className="text-black" size={24} />
               </div>
               <div>
                 <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -633,10 +632,10 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             {!viewMode && (
               <Link
                 to="/"
-                className={`px-5 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
+                className={`text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
                   location.pathname === '/'
-                  ? (darkMode ? 'bg-accent-blue text-white shadow-[0_0_15px_rgba(0,255,255,0.3)]' : 'btn-primary-light')
-                    : (darkMode ? 'text-dark-tertiary hover:text-white hover:bg-white/5' : 'btn-glass-light')
+                  ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                    : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
                 Home
@@ -644,20 +643,20 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             )}
             <Link
               to="/skills"
-              className={`px-5 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
+              className={`text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
                 location.pathname === '/skills'
-                  ? (darkMode ? 'bg-accent-blue text-white shadow-[0_0_15px_rgba(0,255,255,0.3)]' : 'btn-primary-light')
-                  : (darkMode ? 'text-dark-tertiary hover:text-white hover:bg-white/5' : 'btn-glass-light')
+                  ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
               }`}
             >
               Skills
             </Link>
             <Link
               to="/careers"
-              className={`px-5 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
+              className={`text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
                 location.pathname === '/careers' || location.pathname.startsWith('/career/')
-                  ? (darkMode ? 'bg-accent-blue text-white shadow-[0_0_15px_rgba(0,255,255,0.3)]' : 'btn-primary-light')
-                  : (darkMode ? 'text-dark-tertiary hover:text-white hover:bg-white/5' : 'btn-glass-light')
+                  ? (darkMode ? 'btn-primary-dark' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
               }`}
             >
               {viewMode ? 'Match' : 'Careers'}
@@ -667,14 +666,14 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               <>
                 <button
                   onClick={() => setShowShareModal(true)}
-                  className={`p-3 rounded-xl transition-all duration-300 ${darkMode ? 'bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 text-dark-tertiary hover:text-white' : 'btn-glass-light'}`}
+                  className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark' : 'btn-glass-light'}`}
                   title="Share Progress"
                 >
                   <Share2 size={20} />
                 </button>
                 <button
                   onClick={() => setShowViewModal(true)}
-                  className={`p-3 rounded-xl transition-all duration-300 ${darkMode ? 'bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 text-dark-tertiary hover:text-white' : 'btn-glass-light'}`}
+                  className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark' : 'btn-glass-light'}`}
                   title="View Shared"
                 >
                   <Eye size={20} />
@@ -684,7 +683,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`p-3 rounded-xl transition-all duration-300 ${darkMode ? 'bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 text-yellow-400' : 'btn-glass-light'}`}
+              className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark text-yellow-300' : 'btn-glass-light'}`}
             >
               {darkMode ? <Sun size={22} /> : <Moon className="text-purple-600" size={22} />}
             </button>
@@ -710,7 +709,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 rounded-lg text-sm font-medium ${
                   location.pathname === '/'
-                    ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
+                    ? (darkMode ? 'bg-accent-blue text-black' : 'bg-blue-50 text-blue-600')
                     : (darkMode ? 'text-gray-300' : 'text-gray-600')
                 }`}
               >
@@ -722,7 +721,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-4 py-2 rounded-lg text-sm font-medium ${
                 location.pathname === '/skills'
-                  ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
+                  ? (darkMode ? 'bg-accent-blue text-black' : 'bg-blue-50 text-blue-600')
                   : (darkMode ? 'text-gray-300' : 'text-gray-600')
               }`}
             >
@@ -733,7 +732,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-4 py-2 rounded-lg text-sm font-medium ${
                 location.pathname === '/careers'
-                  ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-50 text-blue-600')
+                  ? (darkMode ? 'bg-accent-blue text-black' : 'bg-blue-50 text-blue-600')
                   : (darkMode ? 'text-gray-300' : 'text-gray-600')
               }`}
             >
@@ -766,11 +765,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
   return (
     <div className="space-y-12">
       {viewMode && (
-        <div className={`${darkMode ? 'bg-gradient-to-r from-blue-900/50 to-purple-900/50 border-blue-800' : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200'} border rounded-xl p-6 animate-slideUp`}>
+        <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-white border border-gray-200'} border rounded-xl p-6`}>
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-3">
-                <Eye className={darkMode ? 'text-blue-400' : 'text-blue-600'} size={24} />
+                <Eye className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={24} />
                 <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   Viewing Shared Skills Profile
                 </h3>
@@ -808,8 +807,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
                 setViewMode(false);
                 setSharedSkills(null);
               }}
-              className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
-                darkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-white hover:bg-gray-50 text-gray-900'
+              className={`px-4 py-2 font-medium text-sm transition-colors ${
+                darkMode ? 'btn-glass-dark' : 'bg-white hover:bg-gray-50 text-gray-900 border border-gray-200'
               }`}
             >
               Exit View Mode
@@ -819,27 +818,27 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       <div className={`text-center pt-16 pb-12 relative overflow-hidden ${darkMode ? 'mesh-gradient-dark' : 'mesh-gradient'}`}>
-        <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.06]"></div>
         <div className="relative z-10">
-          <div className="flex justify-center mb-6 animate-float">
-            <div className={`${darkMode ? 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500'} p-6 rounded-3xl shadow-2xl animate-pulse-glow`}>
-              <GraduationCap className="text-white" size={64} />
+          <div className="flex justify-center mb-6">
+            <div className={`${darkMode ? 'bg-accent-blue' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500'} p-6 rounded-3xl border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'}`}>
+              <GraduationCap className={darkMode ? 'text-black' : 'text-white'} size={64} />
             </div>
           </div>
-          <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 animate-slideUp ${darkMode ? 'gradient-text-blue' : 'gradient-text-purple'} leading-tight`}>
+          <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 ${darkMode ? 'text-white' : 'gradient-text-purple'} leading-tight`}>
             Web3 Skills <br className="md:hidden" />Learning Platform
           </h1>
-          <p className={`text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-slideUp ${darkMode ? 'text-gray-300' : 'text-gray-700'}`} style={{animationDelay: '0.1s'}}>
+          <p className={`text-xl md:text-2xl max-w-3xl mx-auto mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             Master Web3 development with curated resources, track your progress, and join the RiWoT community
           </p>
           {!viewMode && (
-            <div className="flex flex-wrap gap-4 justify-center animate-slideUp" style={{animationDelay: '0.2s'}}>
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 to="/skills"
-                className={`px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 transition-all duration-300 ${
+                className={`px-8 py-4 font-bold text-lg flex items-center gap-2 transition-all duration-300 ${
                   darkMode
-                    ? 'bg-accent-blue hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-blue-500/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]'
-                    : 'bg-purple-600 hover:bg-purple-700 text-white shadow-xl'
+                    ? 'btn-primary-dark'
+                    : 'bg-purple-600 hover:bg-purple-700 text-white shadow-xl rounded-xl'
                 }`}
               >
                 <Rocket size={24} />
@@ -847,10 +846,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
               </Link>
               <Link
                 to="/careers"
-                className={`px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 transition-all duration-300 ${
+                className={`px-8 py-4 font-bold text-lg flex items-center gap-2 transition-all duration-300 ${
                   darkMode
-                    ? 'bg-white/5 border border-white/10 hover:border-white/20 text-white hover:bg-white/10'
-                    : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900 shadow-xl'
+                    ? 'btn-glass-dark'
+                    : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900 shadow-xl rounded-xl'
                 }`}
               >
                 <Target size={24} />
@@ -866,8 +865,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           <div className={`${darkMode ? 'glass-card-dark text-white' : 'card-white-light text-gray-900'} p-8 rounded-2xl group transition-all duration-300 stagger-item overflow-hidden relative`}>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${darkMode ? 'bg-white/10' : 'bg-black'}`}>
-                  <TrendingUp className={darkMode ? 'text-accent-blue' : 'text-white'} size={24} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-black'}`}>
+                  <TrendingUp className={darkMode ? 'text-black' : 'text-white'} size={24} />
                 </div>
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Your Progress</h3>
               </div>
@@ -887,15 +886,15 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         <div className={`${darkMode ? 'glass-card-dark text-white' : 'gradient-card-purple p-8 rounded-2xl text-white card-lift'} p-8 rounded-2xl group transition-all duration-300 stagger-item overflow-hidden relative`}>
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${darkMode ? 'bg-white/10' : 'bg-white/20 backdrop-blur-sm'}`}>
-                <Award className="text-white" size={24} />
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-white/20 backdrop-blur-sm'}`}>
+                <Award className={darkMode ? 'text-black' : 'text-white'} size={24} />
               </div>
               <h3 className="text-lg font-bold">Categories Mastered</h3>
             </div>
             <div className="space-y-2 mb-4">
               <div className="flex flex-wrap gap-2">
-                <span className="badge badge-green">Essentials</span>
-                <span className="badge badge-orange">Blockchain</span>
+                <span className="badge badge-blue">Essentials</span>
+                <span className="badge badge-blue">Blockchain</span>
                 <span className="badge badge-blue">Rust</span>
               </div>
             </div>
@@ -908,7 +907,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl icon-gradient-blue flex items-center justify-center">
-                  <Target className="text-white" size={24} />
+                  <Target className="text-black" size={24} />
                 </div>
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
               </div>
@@ -923,28 +922,28 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
             to="/skills"
-            className={`${darkMode ? 'bg-gradient-to-br from-blue-900/50 to-blue-800/50 border-blue-700 hover:from-blue-800/60 hover:to-blue-700/60' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200'} p-8 rounded-2xl border transition-all text-left group`}
+            className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200'} p-8 rounded-2xl border transition-colors text-left group`}
           >
-            <BookOpen className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
+            <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={36} />
             <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
               Browse and track 300+ Web3 skills across 15 categories
             </p>
-            <span className={`text-sm font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'} flex items-center gap-2`}>
+            <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue' : 'text-blue-600'} flex items-center gap-2`}>
               Start Tracking <ArrowRight size={16} />
             </span>
           </Link>
 
           <Link
             to="/careers"
-            className={`${darkMode ? 'bg-gradient-to-br from-purple-900/50 to-purple-800/50 border-purple-700 hover:from-purple-800/60 hover:to-purple-700/60' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200'} p-8 rounded-2xl border transition-all text-left group`}
+            className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200'} p-8 rounded-2xl border transition-colors text-left group`}
           >
-            <Target className={`${darkMode ? 'text-purple-400' : 'text-purple-600'} mb-4 group-hover:scale-110 transition-transform`} size={36} />
+            <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={36} />
             <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
               Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
             </p>
-            <span className={`text-sm font-medium ${darkMode ? 'text-purple-400' : 'text-purple-600'} flex items-center gap-2`}>
+            <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue' : 'text-purple-600'} flex items-center gap-2`}>
               View Careers <ArrowRight size={16} />
             </span>
           </Link>
@@ -952,10 +951,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {/* RiWoT Community Section */}
-      <div className={`${darkMode ? 'bg-gradient-to-br from-green-900/30 to-blue-900/30 border-green-800' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} rounded-2xl p-8 md:p-12 border`}>
+      <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} rounded-2xl p-8 md:p-12 border`}>
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <Users className={darkMode ? 'text-green-400' : 'text-green-600'} size={48} />
+            <Users className={darkMode ? 'text-accent-blue' : 'text-green-600'} size={48} />
           </div>
           <h2 className={`text-3xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Join RiWoT Community
@@ -997,7 +996,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
                 'Open-source contributions'
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <Star className={darkMode ? 'text-blue-400 flex-shrink-0' : 'text-blue-600 flex-shrink-0'} size={20} />
+                  <Star className={darkMode ? 'text-accent-blue flex-shrink-0' : 'text-blue-600 flex-shrink-0'} size={20} />
                   <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>{item}</span>
                 </li>
               ))}
@@ -1011,7 +1010,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors ${
-              darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
+              darkMode ? 'btn-primary-dark' : 'bg-blue-600 hover:bg-blue-700 text-white'
             }`}
           >
             <MessageCircle size={20} />
@@ -1023,7 +1022,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors ${
-              darkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-800 hover:bg-gray-900 text-white'
+              darkMode ? 'btn-glass-dark' : 'bg-gray-800 hover:bg-gray-900 text-white'
             }`}
           >
             <Github size={20} />
@@ -1035,21 +1034,21 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
 
       {/* Data Management Section */}
       {!viewMode && (
-        <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
+        <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-white border-gray-200'} p-6 rounded-xl border`}>
           <div className="flex flex-wrap justify-between items-center gap-4">
             <h3 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Manage Progress</h3>
             <div className="flex gap-3">
               <button
                 onClick={exportData}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                  darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  darkMode ? 'btn-glass-dark' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 <Download size={16} />
                 Export
               </button>
               <label className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors cursor-pointer ${
-                darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                darkMode ? 'btn-glass-dark' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}>
                 <Upload size={16} />
                 Import
@@ -1077,7 +1076,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
 
   return (
     <div className="space-y-8">
-      <div className="mb-8 animate-slideUp">
+      <div className="mb-8">
         <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>All Skills</h1>
         <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
           Track your progress across Web3 skills
@@ -1085,7 +1084,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
       </div>
 
       {!viewMode && (
-        <div className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl animate-slideUp`}>
+        <div className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl`}>
           <div className="flex flex-col md:flex-row gap-3">
             <div className="flex-1">
               <div className="relative">
@@ -1114,7 +1113,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                 onClick={() => setFilterComplete('complete')}
                 className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
                   filterComplete === 'complete'
-                    ? 'bg-green-600 text-white shadow-lg'
+                    ? 'bg-green-500 text-black'
                     : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
@@ -1124,7 +1123,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                 onClick={() => setFilterComplete('incomplete')}
                 className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
                   filterComplete === 'incomplete'
-                    ? 'bg-orange-600 text-white shadow-lg'
+                    ? 'bg-red-500 text-white'
                     : (darkMode ? 'btn-glass-dark' : 'btn-glass-light')
                 }`}
               >
@@ -1178,7 +1177,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                       viewMode ? '' : 'cursor-pointer'
                     } transition-all duration-300 group ${
                       displaySkills[skill]
-                        ? (darkMode ? 'bg-blue-500/5' : 'bg-green-50')
+                        ? (darkMode ? 'bg-white/5 border border-white/10' : 'bg-green-50')
                         : (darkMode ? 'hover:bg-white/5' : 'hover:bg-purple-100/50')
                     }`}
                   >
@@ -1188,14 +1187,14 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                           type="checkbox"
                           checked={displaySkills[skill] || false}
                           onChange={() => toggleSkill(skill)}
-                          className="peer appearance-none w-5 h-5 rounded-md border-2 border-white/10 checked:bg-accent-blue checked:border-accent-blue transition-all cursor-pointer shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+                          className="peer appearance-none w-5 h-5 rounded-md border-2 border-white/20 checked:bg-accent-blue checked:border-accent-blue transition-all cursor-pointer"
                         />
-                        <Check className="absolute w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" strokeWidth={4} />
+                        <Check className="absolute w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" strokeWidth={4} />
                       </div>
                     )}
                     {viewMode && (
                       displaySkills[skill] ? (
-                        <CheckCircle className="text-accent-blue flex-shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.3)]" size={20} />
+                        <CheckCircle className="text-accent-blue flex-shrink-0" size={20} />
                       ) : (
                         <Circle className={darkMode ? 'text-white/10' : 'text-gray-400'} size={20} />
                       )
@@ -1210,7 +1209,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                       {skill}
                     </span>
                     {displaySkills[skill] && darkMode && (
-                      <div className="ml-auto w-1 h-1 rounded-full bg-accent-blue shadow-[0_0_8px_rgba(59,130,246,0.8)] animate-pulse" />
+                      <div className="ml-auto w-1 h-1 rounded-full bg-accent-blue" />
                     )}
                   </label>
                 ))}
@@ -1230,19 +1229,10 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   const CareerCard = ({ careerName, career }) => {
     const match = getCareerMatch(careerName);
     const Icon = career.icon;
-    const cardRef = useRef<HTMLDivElement>(null);
-    const { isHovered, direction, swooshAngle, handleMouseEnter, handleMouseLeave } = useDirectionalHover(cardRef);
-
     return (
       <div
         key={careerName}
-        ref={cardRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          '--swoosh-angle': `${swooshAngle}deg`,
-        } as React.CSSProperties}
-        className={`${darkMode ? 'glass-card-dark animate-card-swoosh' : 'glass-card-light'} p-6 rounded-2xl transition-all duration-300 group relative overflow-hidden ${isHovered && darkMode ? `swoosh-${direction} swoosh-active` : ''}`}
+        className={`${darkMode ? 'glass-card-dark' : 'glass-card-light'} p-6 rounded-2xl transition-all duration-300 group relative overflow-hidden`}
       >
         <div className="relative z-10">
           <div className="flex items-start justify-between mb-4">
@@ -1251,7 +1241,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
               <p className={`text-xs font-mono uppercase tracking-wider ${darkMode ? 'text-dark-tertiary' : 'text-gray-600'}`}>{career.ecosystem}</p>
             </div>
             <div className="icon-gradient-blue p-3 rounded-xl">
-              <Icon className="text-white" size={24} />
+              <Icon className="text-black" size={24} />
             </div>
           </div>
 
@@ -1269,7 +1259,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           {!viewMode && (
             <Link
               to={`/career/${encodeURIComponent(careerName)}`}
-              className={`${darkMode ? 'bg-accent-blue hover:bg-blue-500 text-white shadow-[0_4px_12px_rgba(59,130,246,0.3)] hover:shadow-blue-500/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]' : 'btn-primary-light'} w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2`}
+              className={`${darkMode ? 'btn-primary-dark' : 'btn-primary-light'} w-full py-3 px-6 font-bold transition-all duration-300 flex items-center justify-center gap-2`}
             >
               View Roadmap
               <ArrowRight size={16} />
@@ -1291,7 +1281,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
 
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <div className="h-8 w-1 bg-blue-600 rounded-full" />
+          <div className="h-8 w-1 bg-accent-blue rounded-full" />
           <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>EVM Ecosystem</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1303,7 +1293,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
 
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <div className="h-8 w-1 bg-purple-600 rounded-full" />
+          <div className="h-8 w-1 bg-accent-blue rounded-full" />
           <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Solana Ecosystem</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1332,7 +1322,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
   const Icon = career.icon;
 
   return (
-    <div className="space-y-8 animate-slideUp">
+    <div className="space-y-8">
       <Link
         to="/careers"
         className={`flex items-center gap-2 text-sm font-mono uppercase tracking-wider transition-colors ${
@@ -1345,16 +1335,20 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
 
       <div>
         <div className="flex items-start gap-4 mb-8">
-          <div className={`p-4 rounded-xl ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-gray-100'}`}>
-            <Icon className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={32} />
+          <div className={`p-4 rounded-xl ${darkMode ? 'bg-accent-blue border border-cyan-300/40' : 'bg-gray-100'}`}>
+            <Icon className={darkMode ? 'text-black' : 'text-blue-600'} size={32} />
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <h1 className={`text-4xl font-extrabold ${darkMode ? 'text-white text-shadow-dark' : 'text-gray-900 text-shadow'}`}>{careerName}</h1>
               <span className={`px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider ${
-                career.ecosystem === 'EVM' ? 'bg-blue-500/10 text-accent-blue border border-blue-500/20' :
-                career.ecosystem === 'Solana' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
-                'bg-green-500/10 text-green-400 border border-green-500/20'
+                darkMode
+                  ? 'bg-white/5 text-accent-blue border border-white/10'
+                  : (career.ecosystem === 'EVM'
+                    ? 'bg-blue-500/10 text-blue-600 border border-blue-500/20'
+                    : career.ecosystem === 'Solana'
+                      ? 'bg-purple-500/10 text-purple-600 border border-purple-500/20'
+                      : 'bg-green-500/10 text-green-600 border border-green-500/20')
               }`}>
                 {career.ecosystem}
               </span>
@@ -1372,7 +1366,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           </div>
           <div className={`w-full ${darkMode ? 'bg-white/5' : 'bg-white'} rounded-full h-3 overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
             <div
-              className="bg-accent-blue h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+              className="bg-accent-blue h-full rounded-full transition-all duration-1000 ease-out"
               style={{ width: `${match.percentage}%` }}
             />
           </div>
@@ -1419,7 +1413,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           {career.roadmap.map((phase, index) => (
             <div key={index} className="relative">
               <div className={`flex items-start gap-6 ${darkMode ? 'border-white/5' : 'border-gray-200'} border-l-2 pl-8 pb-12`}>
-                <div className="absolute -left-4 top-0 bg-dark-theme border border-white/20 text-accent-blue font-mono rounded-full w-8 h-8 flex items-center justify-center text-xs shadow-[0_0_10px_rgba(59,130,246,0.3)]">
+                <div className="absolute -left-4 top-0 bg-dark-theme border border-white/20 text-accent-blue font-mono rounded-full w-8 h-8 flex items-center justify-center text-xs">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <div className="flex-1">
@@ -1446,7 +1440,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                             key={skill}
                             className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
                               isCompleted
-                                ? (darkMode ? 'bg-blue-500/20 text-accent-blue border border-blue-500/30' : 'bg-green-100 text-green-700')
+                                ? (darkMode ? 'bg-white/5 text-accent-blue border border-white/10' : 'bg-green-100 text-green-700')
                                 : (darkMode ? 'bg-white/5 text-dark-secondary border border-white/5' : 'bg-gray-100 text-gray-600')
                             }`}
                           >
@@ -1484,7 +1478,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                               <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${
                                 resource.type.includes('FREE')
                                   ? (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-100 text-green-700')
-                                  : (darkMode ? 'bg-blue-500/10 text-accent-blue border-blue-500/20' : 'bg-blue-100 text-blue-700')
+                                  : (darkMode ? 'bg-white/5 text-accent-blue border-white/10' : 'bg-blue-100 text-blue-700')
                               }`}>
                                 {resource.type}
                               </span>
@@ -1507,7 +1501,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
       </div>
 
       {career.outcomes && (
-        <div className={`${darkMode ? 'glass-card-dark border-accent-blue/20' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} p-8 rounded-2xl`}>
+        <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200'} p-8 rounded-2xl`}>
           <h2 className={`text-sm font-mono uppercase tracking-[0.2em] mb-8 ${darkMode ? 'text-dark-tertiary' : 'text-gray-900'}`}>
             Estimated Ecosystem Yield
           </h2>
@@ -1544,13 +1538,13 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
 };
 
 const ShareModal = ({ darkMode, setShowShareModal, generateShareCode, copyToClipboard, copiedShare, setCopiedShare }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-md w-full p-6 animate-slideUp`}>
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+    <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-white'} rounded-2xl max-w-md w-full p-6`}>
       <div className="flex justify-between items-center mb-4">
         <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Share Progress</h2>
         <button
           onClick={() => setShowShareModal(false)}
-          className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+          className={`p-2 rounded-lg ${darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`}
         >
           <X className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={20} />
         </button>
@@ -1569,14 +1563,14 @@ const ShareModal = ({ darkMode, setShowShareModal, generateShareCode, copyToClip
           }}
           className={`w-full py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
             copiedShare
-              ? 'bg-green-600 text-white'
-              : (darkMode ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')
+              ? 'bg-green-500 text-black'
+              : (darkMode ? 'btn-glass-dark' : 'bg-gray-100 hover:bg-gray-200 text-gray-700')
           }`}
         >
           {copiedShare ? <Check size={20} /> : <Copy size={20} />}
           {copiedShare ? 'Copied!' : 'Copy Share Code'}
         </button>
-        <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+        <div className={`p-3 rounded-lg ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-gray-100'}`}>
           <p className={`text-xs font-mono break-all ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             {generateShareCode()}
           </p>
@@ -1590,13 +1584,13 @@ const ShareModal = ({ darkMode, setShowShareModal, generateShareCode, copyToClip
 );
 
 const ViewModal = ({ darkMode, setShowViewModal, shareInput, setShareInput, loadFromShareCode }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-md w-full p-6 animate-slideUp`}>
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+    <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-white'} rounded-2xl max-w-md w-full p-6`}>
       <div className="flex justify-between items-center mb-4">
         <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>View Shared Progress</h2>
         <button
           onClick={() => setShowViewModal(false)}
-          className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+          className={`p-2 rounded-lg ${darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`}
         >
           <X className={darkMode ? 'text-gray-400' : 'text-gray-600'} size={20} />
         </button>
@@ -1612,7 +1606,7 @@ const ViewModal = ({ darkMode, setShowViewModal, shareInput, setShareInput, load
             value={shareInput}
             onChange={(e) => setShareInput(e.target.value)}
             className={`w-full px-3 py-2 border rounded-lg ${
-              darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-500' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
+              darkMode ? 'input-glass-dark' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
         </div>
@@ -1623,7 +1617,7 @@ const ViewModal = ({ darkMode, setShowViewModal, shareInput, setShareInput, load
             }
           }}
           className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
-            darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
+            darkMode ? 'btn-primary-dark' : 'bg-blue-600 hover:bg-blue-700 text-white'
           }`}
         >
           Load Progress
@@ -1634,8 +1628,8 @@ const ViewModal = ({ darkMode, setShowViewModal, shareInput, setShareInput, load
 );
 
 const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto animate-slideUp`}>
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+    <div className={`${darkMode ? 'glass-card-dark border border-white/10' : 'bg-white'} rounded-2xl max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto`}>
       <div className="mb-6">
         <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
           Welcome to Web3 Skills RiWoT
@@ -1677,8 +1671,8 @@ const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
           </ul>
         </div>
 
-        <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/20 border border-blue-800' : 'bg-blue-50 border border-blue-200'}`}>
-          <h3 className={`font-bold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-800'}`}>Privacy & Data Storage</h3>
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-blue-50 border border-blue-200'}`}>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-accent-blue' : 'text-blue-800'}`}>Privacy & Data Storage</h3>
           <ul className="space-y-2">
             <li><strong>What we store:</strong> Your skill selections, progress data, and theme preferences</li>
             <li><strong>Where we store it:</strong> Locally in your browser's localStorage (not on our servers)</li>
@@ -1707,21 +1701,21 @@ const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
           <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Open Source</h3>
           <p>
             This project is open source. You can view the code, suggest improvements, or report issues on{' '}
-            <a href="https://github.com/mirmohmmadluqman/web3skills" target="_blank" rel="noopener noreferrer" className={darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}>
+            <a href="https://github.com/mirmohmmadluqman/web3skills" target="_blank" rel="noopener noreferrer" className={darkMode ? 'text-accent-blue hover:text-white' : 'text-blue-600 hover:text-blue-700'}>
               GitHub
             </a>.
           </p>
         </div>
       </div>
 
-      <div className={`mt-6 pt-6 border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+      <div className={`mt-6 pt-6 border-t ${darkMode ? 'border-white/10' : 'border-gray-200'}`}>
         <button
           onClick={() => {
             localStorage.setItem('web3skills_policy_accepted', 'true');
             setShowPolicyModal(false);
           }}
           className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
-            darkMode ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
+            darkMode ? 'btn-primary-dark' : 'bg-blue-600 hover:bg-blue-700 text-white'
           }`}
         >
           I Understand and Accept
@@ -2019,11 +2013,8 @@ const App = () => {
     <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme' : 'bg-light-theme'}`}>
       {darkMode && <div className="noise-overlay" />}
 
-      <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-1`}></div>
-      <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-2`}></div>
-      <div className={`${darkMode ? 'floating-orb-dark' : 'floating-orb-light'} floating-orb-3`}></div>
       
-      <div className={`absolute inset-0 ${darkMode ? 'grid-pattern-dark' : 'grid-pattern-light'} opacity-[0.15]`}></div>
+      <div className={`absolute inset-0 ${darkMode ? 'grid-pattern-dark' : 'grid-pattern-light'} opacity-[0.04]`}></div>
       
       <div className="relative z-10">
         <Navigation
