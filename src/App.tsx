@@ -616,8 +616,8 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="flex items-center space-x-3">
-              <div className={`${darkMode ? 'bg-accent-blue rounded' : 'bg-accent-blue rounded-xl'} p-3 border border-cyan-300/40 transition-all duration-300`}>
-                <Rocket className="text-black" size={24} />
+              <div className={`${darkMode ? 'bg-accent-blue rounded' : 'bg-accent-blue rounded-xl'} p-3 border border-cyan-300/40 transition-all duration-300 flex items-center justify-center`}>
+                <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-6 h-6 object-contain" />
               </div>
               <div>
                 <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -821,8 +821,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         {darkMode && <div className="absolute inset-0 grid-bg-industrial opacity-[0.05]"></div>}
         <div className="relative z-10">
           <div className="flex justify-center mb-6">
-            <div className={`${darkMode ? 'bg-accent-blue rounded' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl'} p-6 border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'}`}>
-              <GraduationCap className={darkMode ? 'text-black' : 'text-white'} size={64} />
+            <div className={`${darkMode ? 'bg-accent-blue rounded' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl'} p-6 border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'} flex items-center justify-center`}>
+              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-16 h-16 object-contain" />
             </div>
           </div>
           <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 ${darkMode ? 'text-white' : 'gradient-text-purple'} leading-tight`}>
@@ -983,7 +983,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
                 'Latest blockchain trends'
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className={darkMode ? 'text-accent-blue flex-shrink-0' : 'text-green-600 flex-shrink-0'} size={18} />
+                  <Code className={darkMode ? 'text-accent-blue flex-shrink-0' : 'text-blue-600 flex-shrink-0'} size={18} />
                   <span className={darkMode ? 'text-slate-300 text-sm' : 'text-gray-700'}>{item}</span>
                 </li>
               ))}
@@ -1198,7 +1198,9 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                           onChange={() => toggleSkill(skill)}
                           className={`peer appearance-none w-5 h-5 transition-all cursor-pointer ${darkMode ? 'border border-accent-blue/30 rounded-sm checked:bg-accent-blue' : 'border-2 border-white/20 rounded-md checked:bg-accent-blue'}`}
                         />
-                        <Check className="absolute w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" strokeWidth={4} />
+                        {displaySkills[skill] && (
+                          <Check className="absolute w-3.5 h-3.5 text-black transition-opacity pointer-events-none" strokeWidth={4} />
+                        )}
                       </div>
                     )}
                     {viewMode && (
@@ -1212,7 +1214,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                       className={`transition-all duration-300 font-medium ${
                         displaySkills[skill]
                           ? (darkMode ? 'text-white' : 'text-gray-400 line-through')
-                          : (darkMode ? 'text-dark-primary group-hover:text-white' : 'text-gray-700 group-hover:text-gray-900')
+                          : (darkMode ? 'text-slate-400 group-hover:text-white' : 'text-gray-700 group-hover:text-gray-900')
                       } ${darkMode ? 'text-sm font-mono uppercase tracking-tight' : ''}`}
                     >
                       {skill}
@@ -1338,7 +1340,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
       <Link
         to="/careers"
         className={`flex items-center gap-2 text-sm font-mono uppercase tracking-wider transition-colors ${
-          darkMode ? 'text-dark-tertiary hover:text-white' : 'text-blue-600 hover:text-blue-700'
+          darkMode ? 'text-slate-500 hover:text-white' : 'text-blue-600 hover:text-blue-700'
         }`}
       >
         <ArrowRight size={16} className="rotate-180" />
@@ -1520,25 +1522,25 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {career.outcomes.junior && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-dark-tertiary' : 'text-gray-600'}`}>Entry Level</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Entry Level</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.junior}</p>
               </div>
             )}
             {career.outcomes.mid && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-dark-tertiary' : 'text-gray-600'}`}>Intermediate</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Intermediate</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.mid}</p>
               </div>
             )}
             {career.outcomes.senior && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-dark-tertiary' : 'text-gray-600'}`}>Advanced</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Advanced</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.senior}</p>
               </div>
             )}
             {career.outcomes.lead && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-dark-tertiary' : 'text-gray-600'}`}>Principal</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Principal</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.lead}</p>
               </div>
             )}
@@ -1749,8 +1751,8 @@ const Footer = ({ darkMode }) => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className={`p-2 ${darkMode ? 'bg-accent-blue rounded' : 'bg-gray-100 rounded-lg'}`}>
-              <Rocket className={darkMode ? 'text-black' : 'text-blue-600'} size={24} />
+            <div className={`p-2 ${darkMode ? 'bg-accent-blue rounded' : 'bg-gray-100 rounded-lg'} flex items-center justify-center`}>
+              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-6 h-6 object-contain" />
             </div>
             <span className={`font-bold text-lg tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>Web3 Skills <span className={darkMode ? 'text-accent-blue' : 'text-accent-blue'}>RiWoT</span></span>
           </div>
@@ -2025,7 +2027,7 @@ const App = () => {
   const overallProgress = useMemo(() => totalSkills > 0 ? (checkedSkillsCount / totalSkills) * 100 : 0, [totalSkills, checkedSkillsCount]);
 
   return (
-    <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme' : 'bg-light-theme'}`}>
+    <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme text-white' : 'bg-light-theme text-gray-900'}`}>
       {darkMode && <div className="noise-overlay" />}
       {darkMode && <div className="scanline" />}
 
