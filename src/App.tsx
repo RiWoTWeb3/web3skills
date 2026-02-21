@@ -14,6 +14,7 @@ import {
   useLocation,
   useParams
 } from 'react-router-dom';
+import AdminPanel from './components/AdminPanel';
 
 // --- Types & Data ---
 
@@ -621,7 +622,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               </div>
               <div>
                 <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Web3 Skills <span className={darkMode ? 'text-white' : 'text-accent-blue'}>RiWoT</span>
+                  Antigravity <span className={darkMode ? 'text-white' : 'text-accent-blue'}>Bughunter-CFD</span>
                 </h1>
                 <p className={`${darkMode ? 'label-industrial text-accent-blue/60' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-600'}`}>System.Core.v2</p>
               </div>
@@ -2091,6 +2092,7 @@ const App = () => {
               />
             } />
             <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />
+            <Route path="/notadmin" element={<AdminPanel darkMode={darkMode} />} />
           </Routes>
           <Footer darkMode={darkMode} />
         </div>

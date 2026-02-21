@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@hono/node-server": "^1.19.9",
     "@jsr/supabase__supabase-js": "^2.49.8",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -51,13 +53,19 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
+    "@prisma/client": "^6.19.2",
     "@types/node": "^20.10.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
+    "dotenv": "^17.3.1",
     "playwright": "^1.58.1",
+    "prisma": "^6.19.2",
+    "ts-node": "^10.9.2",
     "vite": "6.3.5"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "server": "ts-node src/server/index.ts",
+    "audit:init": "npx prisma migrate dev --name init"
   }
 }
