@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Table 1: API Key Management
+model KeyPool {
+  id            String   @id @default(cuid())
+  key           String   @unique  // Encrypted/hashed in production
+  model         String   // "gemini-2.0-flash", "gemini-1.5-pro", etc.
+  current_rpm   Int      @default(0)
+  daily_usage   Int      @default(0)
+  status        String   @default("Active") // Active, CoolingDown, Exhausted
+  last_used     DateTime @default(now())
+  priority      Int      @default(1) // 1 = highest priority
+  createdAt     DateTime @default(now())
+}
+
+// Table 2: Audit Job State Management
+model AuditJobs {
+  id                  String   @id @default(cuid())
+  contract_id         String
+  contract_name       String
+  current_phase       Int      @default(1) // 1-6
+  last_processed_file String?
+  last_processed_line Int?
+  is_running          Boolean  @default(false)
+  audit_velocity      Float?   // Calculated: requests per hour
+  total_files         Int
+  total_lines         Int
+  estimated_duration  Int?     // In minutes
+  started_at          DateTime @default(now())
+  completed_at        DateTime?
+  userId              String?
+
+  vulnerabilities     VulnerabilityEvidence[]
+}
+
+// Table 3: Vulnerability Evidence Storage
+model VulnerabilityEvidence {
+  id              String   @id @default(cuid())
+  job_id          String
+  job             AuditJobs @relation(fields: [job_id], references: [id])
+  phase_found     Int      // 1-6
+  severity        String   // Critical, High, Medium, Low
+  vulnerability_type String // Reentrancy, Overflow, etc.
+  file_path       String
+  line_numbers    String   // "45-52"
+  code_snippet    String
+  tool_output     String?
+  ai_reasoning    String
+  advocate_counter String?
+  judge_verdict   String?
+  is_confirmed    Boolean  @default(false)
+  confidence      Float    @default(0.0) // 0.0 - 1.0
+  createdAt       DateTime @default(now())
+}
