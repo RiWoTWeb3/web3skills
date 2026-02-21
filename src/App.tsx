@@ -616,8 +616,8 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="flex items-center space-x-3">
-              <div className={`${darkMode ? 'bg-accent-blue rounded' : 'bg-accent-blue rounded-xl'} p-3 border border-cyan-300/40 transition-all duration-300 flex items-center justify-center`}>
-                <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-6 h-6 object-contain" />
+              <div className={`${darkMode ? 'bg-accent-blue rounded-lg' : 'bg-accent-blue rounded-xl'} w-12 h-12 p-1.5 border border-cyan-300/40 transition-all duration-300 flex items-center justify-center overflow-hidden`}>
+                <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-md" />
               </div>
               <div>
                 <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -821,8 +821,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         {darkMode && <div className="absolute inset-0 grid-bg-industrial opacity-[0.05]"></div>}
         <div className="relative z-10">
           <div className="flex justify-center mb-6">
-            <div className={`${darkMode ? 'bg-accent-blue rounded' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl'} p-6 border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'} flex items-center justify-center`}>
-              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-16 h-16 object-contain" />
+            <div className={`${darkMode ? 'bg-accent-blue rounded-2xl' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl'} p-3 border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'} flex items-center justify-center shadow-lg`}>
+              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-12 h-12 md:w-14 md:h-14 object-cover rounded-xl" />
             </div>
           </div>
           <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 ${darkMode ? 'text-white' : 'gradient-text-purple'} leading-tight`}>
@@ -1751,8 +1751,8 @@ const Footer = ({ darkMode }) => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className={`p-2 ${darkMode ? 'bg-accent-blue rounded' : 'bg-gray-100 rounded-lg'} flex items-center justify-center`}>
-              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-6 h-6 object-contain" />
+            <div className={`${darkMode ? 'bg-accent-blue rounded-lg' : 'bg-gray-100 rounded-lg'} p-1 border border-cyan-300/40 flex items-center justify-center overflow-hidden`} style={{ width: '40px', height: '40px' }}>
+              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-md" />
             </div>
             <span className={`font-bold text-lg tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>Web3 Skills <span className={darkMode ? 'text-accent-blue' : 'text-accent-blue'}>RiWoT</span></span>
           </div>
