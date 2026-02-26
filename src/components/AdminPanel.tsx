@@ -46,9 +46,9 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
   if (!authenticated) {
     return (
       <div className={`min-h-[60vh] flex items-center justify-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-        <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white shadow-xl rounded-2xl'} p-8 max-w-md w-full border`}>
+        <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 rounded-[6px]' : 'bg-white shadow-xl rounded-2xl'} p-8 max-w-md w-full border`}>
           <div className="flex flex-col items-center mb-6">
-            <div className={`p-4 rounded-full mb-4 ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-600'}`}>
+            <div className={`p-4 ${darkMode ? 'rounded-[4px]' : 'rounded-full'} mb-4 ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-600'}`}>
               <Shield size={32} />
             </div>
             <h1 className="text-2xl font-bold">Admin Authorization</h1>
@@ -58,13 +58,13 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className={`w-full px-4 py-3 rounded-lg mb-4 ${darkMode ? 'input-glass-dark' : 'border border-gray-300'}`}
+            className={`w-full px-4 py-3 mb-4 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'input-glass-dark rounded-[4px]' : 'border border-gray-300 rounded-lg'}`}
             placeholder="Admin Password"
             onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
           />
           <button
             onClick={handleLogin}
-            className={`w-full py-3 rounded-lg font-bold transition-all ${darkMode ? 'btn-industrial-primary' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+            className={`w-full py-3 font-bold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-industrial-primary' : 'bg-blue-600 hover:bg-blue-700 text-white rounded-lg'}`}
           >
             INITIALIZE_ACCESS
           </button>
@@ -82,7 +82,7 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
         </div>
         <button
           onClick={fetchData}
-          className={`p-2 rounded-lg ${darkMode ? 'btn-glass-dark' : 'bg-gray-100'}`}
+          className={`p-2 transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-glass-dark rounded-[4px]' : 'bg-gray-100 rounded-lg'}`}
           disabled={loading}
         >
           <RefreshCw className={loading ? 'animate-spin' : ''} size={20} />
@@ -90,7 +90,7 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-xl`}>
+        <div className={`${darkMode ? 'surface-industrial rounded-[6px]' : 'bg-white border rounded-xl'} p-6`}>
           <div className="flex items-center gap-3 mb-4">
             <Key className="text-accent-blue" size={24} />
             <h3 className="font-bold">Key Pool Health</h3>
@@ -98,7 +98,7 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
           <div className="text-3xl font-bold mb-1">{keys.length}</div>
           <p className="text-xs font-mono uppercase text-slate-500">Active API Nodes</p>
         </div>
-        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-xl`}>
+        <div className={`${darkMode ? 'surface-industrial rounded-[6px]' : 'bg-white border rounded-xl'} p-6`}>
           <div className="flex items-center gap-3 mb-4">
             <Activity className="text-accent-blue" size={24} />
             <h3 className="font-bold">Current Load</h3>
@@ -108,7 +108,7 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
           </div>
           <p className="text-xs font-mono uppercase text-slate-500">Global Request Velocity</p>
         </div>
-        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-xl`}>
+        <div className={`${darkMode ? 'surface-industrial rounded-[6px]' : 'bg-white border rounded-xl'} p-6`}>
           <div className="flex items-center gap-3 mb-4">
             <AlertTriangle className="text-accent-blue" size={24} />
             <h3 className="font-bold">Active Jobs</h3>
@@ -125,14 +125,14 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {keys.map((key) => (
-            <div key={key.id} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border'} p-4 rounded-lg`}>
+            <div key={key.id} className={`${darkMode ? 'surface-industrial border-white/5 rounded-[4px]' : 'bg-white border rounded-lg'} p-4`}>
               <div className="flex justify-between items-center mb-3">
                 <span className="font-mono text-xs">{key.model}</span>
-                <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
+                <span className={`px-2 py-0.5 text-[10px] font-bold uppercase ${
                   key.status === 'Active' ? 'bg-green-500/10 text-green-500' :
                   key.status === 'CoolingDown' ? 'bg-yellow-500/10 text-yellow-500' :
                   'bg-red-500/10 text-red-500'
-                }`}>
+                } ${darkMode ? 'rounded-[2px]' : 'rounded'}`}>
                   {key.status}
                 </span>
               </div>
@@ -143,9 +143,9 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
                     <span className="text-lg font-bold">{key.current_rpm}</span>
                     <span className="text-[10px] text-slate-500 mb-1">/ 14</span>
                   </div>
-                  <div className="w-full bg-white/5 h-1.5 rounded-full mt-1">
+                  <div className={`w-full bg-white/5 h-1.5 mt-1 ${darkMode ? 'rounded-none' : 'rounded-full'}`}>
                     <div
-                      className="h-full bg-accent-blue rounded-full"
+                      className={`h-full bg-accent-blue ${darkMode ? 'rounded-none' : 'rounded-full'}`}
                       style={{ width: `${(key.current_rpm / 14) * 100}%` }}
                     />
                   </div>
@@ -156,9 +156,9 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
                     <span className="text-lg font-bold">{key.daily_usage}</span>
                     <span className="text-[10px] text-slate-500 mb-1">/ 1500</span>
                   </div>
-                  <div className="w-full bg-white/5 h-1.5 rounded-full mt-1">
+                  <div className={`w-full bg-white/5 h-1.5 mt-1 ${darkMode ? 'rounded-none' : 'rounded-full'}`}>
                     <div
-                      className="h-full bg-purple-500 rounded-full"
+                      className={`h-full bg-purple-500 ${darkMode ? 'rounded-none' : 'rounded-full'}`}
                       style={{ width: `${(key.daily_usage / 1500) * 100}%` }}
                     />
                   </div>
@@ -177,7 +177,7 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
         </h2>
         <div className="space-y-4">
           {jobs.map((job) => (
-            <div key={job.id} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border'} p-6 rounded-xl`}>
+            <div key={job.id} className={`${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-white border rounded-xl'} p-6`}>
               <div className="flex flex-wrap justify-between items-center gap-4 mb-4">
                 <div>
                   <h3 className="text-lg font-bold">{job.contract_name}</h3>
@@ -188,7 +188,7 @@ const AdminPanel = ({ darkMode }: { darkMode: boolean }) => {
                       <p className="text-[10px] uppercase text-slate-500">Progress</p>
                       <p className="font-bold">Phase {job.current_phase} / 6</p>
                    </div>
-                   <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center ${job.is_running ? 'border-accent-blue animate-pulse' : 'border-slate-800'}`}>
+                   <div className={`w-12 h-12 border-4 flex items-center justify-center ${darkMode ? 'rounded-[4px]' : 'rounded-full'} ${job.is_running ? 'border-accent-blue animate-pulse' : 'border-slate-800'}`}>
                       <span className="text-[10px] font-bold">{Math.round((job.current_phase / 6) * 100)}%</span>
                    </div>
                 </div>
