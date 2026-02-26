@@ -612,13 +612,13 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
   const location = useLocation();
 
   return (
-    <nav className={`${darkMode ? 'navbar-industrial mx-0 md:mx-0 top-0 rounded-none border-b' : 'navbar-light top-4 mx-4 md:mx-8 rounded-2xl'} sticky z-40 transition-all duration-300`}>
+    <nav className={`${darkMode ? 'navbar-industrial mx-0 md:mx-0 top-0 rounded-none border-b' : 'navbar-light top-4 mx-4 md:mx-8 rounded-2xl'} sticky z-40 transition-all duration-300 focus-visible:outline-none`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[4px]">
             <div className="flex items-center space-x-3">
-              <div className={`${darkMode ? 'bg-accent-blue rounded-lg' : 'bg-accent-blue rounded-xl'} w-12 h-12 p-1.5 border border-cyan-300/40 transition-all duration-300 flex items-center justify-center overflow-hidden`}>
-                <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-md" />
+              <div className={`${darkMode ? 'bg-accent-blue rounded-[4px]' : 'bg-accent-blue rounded-xl'} w-12 h-12 p-1.5 border border-cyan-300/40 transition-all duration-300 flex items-center justify-center overflow-hidden`}>
+                <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-[2px]" />
               </div>
               <div>
                 <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -633,7 +633,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             {!viewMode && (
               <Link
                 to="/"
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   location.pathname === '/'
                   ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
                     : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
@@ -644,7 +644,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             )}
             <Link
               to="/skills"
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                 location.pathname === '/skills'
                   ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
                   : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
@@ -654,7 +654,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             </Link>
             <Link
               to="/careers"
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                 location.pathname === '/careers' || location.pathname.startsWith('/career/')
                   ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
                   : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
@@ -667,14 +667,14 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               <>
                 <button
                   onClick={() => setShowShareModal(true)}
-                  className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark' : 'btn-glass-light'}`}
+                  className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark' : 'btn-glass-light'}`}
                   title="Share Progress"
                 >
                   <Share2 size={20} />
                 </button>
                 <button
                   onClick={() => setShowViewModal(true)}
-                  className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark' : 'btn-glass-light'}`}
+                  className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark' : 'btn-glass-light'}`}
                   title="View Shared"
                 >
                   <Eye size={20} />
@@ -684,7 +684,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark text-yellow-300' : 'btn-glass-light text-purple-600'}`}
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-yellow-300' : 'btn-glass-light text-purple-600'}`}
             >
               {darkMode ? <Sun size={22} /> : <Moon size={22} />}
             </button>
@@ -692,7 +692,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg"
+            className={`md:hidden p-2 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'rounded-[4px]' : 'rounded-lg'}`}
           >
             {mobileMenuOpen ? (
               <XCircle className={darkMode ? 'text-white' : 'text-gray-600'} size={24} />
@@ -708,10 +708,10 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 rounded-lg text-sm font-medium ${
+                className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   location.pathname === '/'
-                    ? (darkMode ? 'bg-accent-blue text-black' : 'bg-blue-50 text-blue-600')
-                    : (darkMode ? 'text-slate-400 font-mono uppercase' : 'text-gray-600')
+                    ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                    : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
                 }`}
               >
                 Home
@@ -720,10 +720,10 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             <Link
               to="/skills"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 rounded-lg text-sm font-medium ${
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                 location.pathname === '/skills'
-                  ? (darkMode ? 'bg-accent-blue text-black' : 'bg-blue-50 text-blue-600')
-                  : (darkMode ? 'text-slate-400 font-mono uppercase' : 'text-gray-600')
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
               }`}
             >
               Skills
@@ -731,10 +731,10 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             <Link
               to="/careers"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 rounded-lg text-sm font-medium ${
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                 location.pathname === '/careers'
-                  ? (darkMode ? 'bg-accent-blue text-black' : 'bg-blue-50 text-blue-600')
-                  : (darkMode ? 'text-slate-400 font-mono uppercase' : 'text-gray-600')
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
               }`}
             >
               {viewMode ? 'Career Match' : 'Careers'}
@@ -836,7 +836,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 to="/skills"
-                className={`flex items-center gap-2 transition-all duration-300 ${
+                className={`flex items-center gap-2 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   darkMode
                     ? 'btn-industrial-primary px-10 py-5 text-lg'
                     : 'bg-purple-600 hover:bg-purple-700 text-white shadow-xl rounded-xl px-8 py-4 font-bold text-lg'
@@ -847,9 +847,9 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
               </Link>
               <Link
                 to="/careers"
-                className={`flex items-center gap-2 transition-all duration-300 ${
+                className={`flex items-center gap-2 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   darkMode
-                    ? 'btn-glass-dark px-10 py-5 text-lg border-white/10 font-mono uppercase tracking-widest'
+                    ? 'btn-glass-dark px-10 py-5 text-lg border-white/10 font-mono uppercase tracking-widest rounded-[4px]'
                     : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900 shadow-xl rounded-xl px-8 py-4 font-bold text-lg'
                 }`}
               >
@@ -867,14 +867,14 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             {darkMode && <div className="corner-bottom" />}
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 ${darkMode ? 'rounded' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-black'}`}>
+                <div className={`w-12 h-12 ${darkMode ? 'rounded-[4px]' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-black'}`}>
                   <TrendingUp className={darkMode ? 'text-black' : 'text-white'} size={24} />
                 </div>
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Your Progress</h3>
               </div>
               <div className="mb-4">
                 <div className={`text-5xl font-extrabold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  {checkedSkills}<span className={`text-2xl font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>/{totalSkills}</span>
+                  {checkedSkills}<span className={`text-2xl font-mono ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>/{totalSkills}</span>
                 </div>
               </div>
               <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-3`}>
@@ -889,7 +889,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           {darkMode && <div className="corner-bottom" />}
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 ${darkMode ? 'rounded' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-white/20 backdrop-blur-sm'}`}>
+              <div className={`w-12 h-12 ${darkMode ? 'rounded-[4px]' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-white/20 backdrop-blur-sm'}`}>
                 <Award className={darkMode ? 'text-black' : 'text-white'} size={24} />
               </div>
               <h3 className="text-lg font-bold">Categories Mastered</h3>
@@ -910,7 +910,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             {darkMode && <div className="corner-bottom" />}
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className={`${darkMode ? 'w-12 h-12 rounded bg-accent-blue' : 'w-12 h-12 rounded-xl icon-gradient-blue'} flex items-center justify-center`}>
+                <div className={`${darkMode ? 'w-12 h-12 rounded-[4px] bg-accent-blue' : 'w-12 h-12 rounded-xl icon-gradient-blue'} flex items-center justify-center`}>
                   <Target className="text-black" size={24} />
                 </div>
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
@@ -926,7 +926,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
             to="/skills"
-            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-8 border transition-colors text-left group`}
+            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
           >
             {darkMode && <div className="corner-bottom" />}
             <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={36} />
@@ -941,7 +941,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
 
           <Link
             to="/careers"
-            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-8 border transition-colors text-left group`}
+            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
           >
             {darkMode && <div className="corner-bottom" />}
             <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={36} />
@@ -1103,37 +1103,37 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                   placeholder={darkMode ? 'SEARCH_SYSTEM_REGISTRY...' : 'Search skills...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className={`${darkMode ? 'input-glass-dark font-mono' : 'input-glass-light'} w-full pl-12 pr-4 py-3`}
+                  className={`${darkMode ? 'input-glass-dark font-mono rounded-[4px]' : 'input-glass-light rounded-xl'} w-full pl-12 pr-4 py-3 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
                 />
               </div>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={() => setFilterComplete('all')}
-                className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
+                className={`px-5 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   filterComplete === 'all'
-                    ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
-                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase' : 'btn-glass-light')
+                    ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl')
+                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
                 }`}
               >
                 All
               </button>
               <button
                 onClick={() => setFilterComplete('complete')}
-                className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
+                className={`px-5 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   filterComplete === 'complete'
-                    ? (darkMode ? 'bg-green-500 text-black font-mono uppercase' : 'bg-green-500 text-black')
-                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase' : 'btn-glass-light')
+                    ? (darkMode ? 'bg-green-500 text-black font-mono uppercase rounded-[4px]' : 'bg-green-500 text-black rounded-xl')
+                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
                 }`}
               >
                 Complete
               </button>
               <button
                 onClick={() => setFilterComplete('incomplete')}
-                className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
+                className={`px-5 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   filterComplete === 'incomplete'
-                    ? (darkMode ? 'bg-red-500 text-white font-mono uppercase' : 'bg-red-500 text-white')
-                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase' : 'btn-glass-light')
+                    ? (darkMode ? 'bg-red-500 text-white font-mono uppercase rounded-[4px]' : 'bg-red-500 text-white rounded-xl')
+                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
                 }`}
               >
                 Incomplete
@@ -1149,7 +1149,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
         if (filtered.length === 0) return null;
 
         return (
-          <div key={categoryName} className={`${darkMode ? 'surface-industrial corner-animate border-white/5' : 'glass-card-light rounded-2xl'} p-6 overflow-hidden`}>
+          <div key={categoryName} className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-6 overflow-hidden`}>
             {darkMode && <div className="corner-bottom" />}
             <div
               className="flex flex-wrap justify-between items-center mb-4 gap-3 cursor-pointer group"
@@ -1183,12 +1183,12 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                 {filtered.map(skill => (
                   <label
                     key={skill}
-                    className={`flex items-center gap-3 p-3 rounded ${
+                    className={`flex items-center gap-3 p-3 ${
                       viewMode ? '' : 'cursor-pointer'
                     } transition-all duration-300 group ${
                       displaySkills[skill]
-                        ? (darkMode ? 'bg-accent-blue/10 border border-accent-blue/30' : 'bg-green-50 rounded-xl')
-                        : (darkMode ? 'hover:bg-white/5 border border-transparent' : 'hover:bg-purple-100/50 rounded-xl')
+                        ? (darkMode ? 'bg-accent-blue/10 border border-accent-blue/30 rounded-[4px]' : 'bg-green-50 rounded-xl')
+                        : (darkMode ? 'hover:bg-white/5 border border-transparent rounded-[4px]' : 'hover:bg-purple-100/50 rounded-xl')
                     }`}
                   >
                     {!viewMode && (
@@ -1221,7 +1221,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
                       {skill}
                     </span>
                     {displaySkills[skill] && darkMode && (
-                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_8px_rgba(0,255,255,0.8)]" />
+                      <div className="ml-auto w-1.5 h-1.5 rounded-[1px] bg-accent-blue shadow-[0_0_8px_rgba(0,255,255,0.8)]" />
                     )}
                   </label>
                 ))}
@@ -1244,7 +1244,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
     return (
       <div
         key={careerName}
-        className={`${darkMode ? 'surface-industrial corner-animate border-white/5' : 'glass-card-light rounded-2xl'} p-6 transition-all duration-300 group relative overflow-hidden`}
+        className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-6 transition-all duration-300 group relative overflow-hidden`}
       >
         {darkMode && <div className="corner-bottom" />}
         <div className="relative z-10">
@@ -1264,7 +1264,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
             <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-2`}>
               <div className="progress-fill" style={{ width: `${match.percentage}%` }} />
             </div>
-            <p className={`text-xs font-mono ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>
+            <p className={`text-xs font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               {match.percentage.toFixed(0)}% alignment • {match.matched}/{match.total} units
             </p>
           </div>
@@ -1272,7 +1272,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           {!viewMode && (
             <Link
               to={`/career/${encodeURIComponent(careerName)}`}
-              className={`${darkMode ? 'btn-industrial-primary' : 'btn-primary-light'} w-full py-3 px-6 font-bold transition-all duration-300 flex items-center justify-center gap-2`}
+              className={`${darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl'} w-full py-3 px-6 font-bold transition-all duration-300 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
             >
               {darkMode ? 'ACCESS_ROADMAP' : 'View Roadmap'}
               <ArrowRight size={16} />
@@ -1356,7 +1356,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <h1 className={`text-4xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>{careerName}</h1>
-              <span className={`px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider ${
+              <span className={`px-3 py-1 ${darkMode ? 'rounded-[2px]' : 'rounded-full'} text-xs font-mono uppercase tracking-wider ${
                 darkMode
                   ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/30'
                   : (career.ecosystem === 'EVM'
@@ -1379,26 +1379,26 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
               {match.matched}/{match.total} Units
             </span>
           </div>
-          <div className={`w-full ${darkMode ? 'bg-white/5' : 'bg-white'} rounded-full h-3 overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
+    <div className={`w-full ${darkMode ? 'bg-white/5' : 'bg-white'} ${darkMode ? 'rounded-none' : 'rounded-full'} h-3 overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
             <div
-              className="bg-accent-blue h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(0,255,255,0.5)]"
+              className={`bg-accent-blue h-full ${darkMode ? 'rounded-none' : 'rounded-full'} transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(0,255,255,0.5)]`}
               style={{ width: `${match.percentage}%` }}
             />
           </div>
-          <p className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mt-3`}>
+          <p className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-500'} mt-3`}>
             {match.percentage.toFixed(1)}% Alignment
           </p>
         </div>
       </div>
 
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-8`}>
+      <div className={`${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-white border-gray-200 rounded-2xl'} p-8`}>
         <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-8`}>{darkMode ? 'CORE_PREREQUISITES' : 'Core Prerequisites'}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {career.requiredSkills.map(skill => (
             <div
               key={skill}
-              className={`flex items-center gap-3 p-4 rounded transition-all duration-300 ${
-                darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30' : 'bg-gray-50'
+              className={`flex items-center gap-3 p-4 transition-all duration-300 ${
+                darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30 rounded-[4px]' : 'bg-gray-50 rounded'
               }`}
             >
               {displaySkills.hasOwnProperty(skill) && displaySkills[skill] ? (
@@ -1410,7 +1410,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                 className={`text-sm font-medium ${
                   displaySkills[skill]
                     ? (darkMode ? 'text-white' : 'text-gray-900')
-                    : (darkMode ? 'text-slate-500' : 'text-gray-600')
+                    : (darkMode ? 'text-slate-400' : 'text-gray-600')
                 } ${darkMode ? 'font-mono uppercase text-xs tracking-tight' : ''}`}
               >
                 {skill}
@@ -1420,7 +1420,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
         </div>
       </div>
 
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-8`}>
+      <div className={`${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-white border-gray-200 rounded-2xl'} p-8`}>
         <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-12`}>
           {darkMode ? 'PHASE_SEQUENCING' : 'System Roadmap Phases'}
         </h2>
@@ -1428,7 +1428,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           {career.roadmap.map((phase, index) => (
             <div key={index} className="relative">
               <div className={`flex items-start gap-6 ${darkMode ? 'border-accent-blue/10' : 'border-gray-200'} border-l-2 pl-8 pb-12`}>
-                <div className={`absolute -left-[17px] top-0 ${darkMode ? 'bg-[#070B12] border-accent-blue text-accent-blue shadow-[0_0_10px_rgba(0,255,255,0.3)]' : 'bg-white border-blue-600 text-blue-600'} border-2 font-mono rounded-full w-8 h-8 flex items-center justify-center text-xs z-10`}>
+                <div className={`absolute -left-[15px] top-0 ${darkMode ? 'bg-[#070B12] border-accent-blue text-accent-blue shadow-[0_0_10px_rgba(0,255,255,0.3)] rounded-[4px]' : 'bg-white border-blue-600 text-blue-600 rounded-full'} border-2 font-mono w-8 h-8 flex items-center justify-center text-xs z-10 mt-[2px]`}>
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <div className="flex-1">
@@ -1436,15 +1436,15 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                     <h3 className={`text-xl font-bold ${darkMode ? 'text-white font-mono uppercase tracking-tight' : 'text-gray-900'}`}>
                       {phase.phase}
                     </h3>
-                    <span className={`px-3 py-1 rounded text-xs font-mono uppercase tracking-wider ${
-                      darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/20' : 'bg-gray-100 text-gray-600'
+                    <span className={`px-3 py-1 text-xs font-mono uppercase tracking-wider ${
+                      darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/20 rounded-[2px]' : 'bg-gray-100 text-gray-600 rounded'
                     }`}>
                       {phase.duration}
                     </span>
                   </div>
 
                   <div className="mb-8">
-                    <h4 className={`${darkMode ? 'label-industrial text-slate-500' : 'text-xs font-mono uppercase tracking-widest text-gray-600'} mb-4`}>
+                    <h4 className={`${darkMode ? 'label-industrial text-slate-400' : 'text-xs font-mono uppercase tracking-widest text-gray-600'} mb-4`}>
                       {darkMode ? 'TARGET_UNIT_DATABASE' : 'Target Modules'}
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -1453,10 +1453,10 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                         return (
                           <span
                             key={skill}
-                            className={`px-3 py-1.5 rounded text-xs font-mono transition-all ${
+                            className={`px-3 py-1.5 text-xs font-mono transition-all ${
                               isCompleted
-                                ? (darkMode ? 'bg-accent-blue/20 text-accent-blue border border-accent-blue/40 shadow-[0_0_8px_rgba(0,255,255,0.2)]' : 'bg-green-100 text-green-700')
-                                : (darkMode ? 'bg-white/[0.02] text-slate-500 border border-white/5' : 'bg-gray-100 text-gray-600')
+                                ? (darkMode ? 'bg-accent-blue/20 text-accent-blue border border-accent-blue/40 shadow-[0_0_8px_rgba(0,255,255,0.2)] rounded-[2px]' : 'bg-green-100 text-green-700 rounded')
+                                : (darkMode ? 'bg-white/[0.02] text-slate-400 border border-white/5 rounded-[2px]' : 'bg-gray-100 text-gray-600 rounded')
                             }`}
                           >
                             {skill}
@@ -1467,7 +1467,7 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                   </div>
 
                   <div>
-                    <h4 className={`${darkMode ? 'label-industrial text-slate-500' : 'text-xs font-mono uppercase tracking-widest text-gray-600'} mb-4`}>
+                    <h4 className={`${darkMode ? 'label-industrial text-slate-400' : 'text-xs font-mono uppercase tracking-widest text-gray-600'} mb-4`}>
                       {darkMode ? 'ACCESS_PROTOCOLS' : 'Access Protocols'}
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -1477,8 +1477,8 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                           href={resource.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex items-start gap-4 p-4 rounded transition-all duration-300 ${
-                            darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30 hover:bg-white/[0.06]' : 'bg-gray-50 hover:bg-gray-100 border'
+                          className={`flex items-start gap-4 p-4 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                            darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30 hover:bg-white/[0.06] rounded-[4px]' : 'bg-gray-50 hover:bg-gray-100 border rounded'
                           }`}
                         >
                           <BookOpen className={darkMode ? 'text-accent-blue flex-shrink-0' : 'text-blue-600 flex-shrink-0'} size={20} />
@@ -1487,18 +1487,18 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                               <span className={`text-sm font-bold truncate ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                 {resource.name}
                               </span>
-                              <ExternalLink className={darkMode ? 'text-slate-500' : 'text-gray-400'} size={14} />
+                              <ExternalLink className={darkMode ? 'text-slate-400' : 'text-gray-400'} size={14} />
                             </div>
                             <div className="flex items-center gap-2">
-                              <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${
+                              <span className={`text-[10px] font-mono px-2 py-0.5 border ${
                                 resource.type.includes('FREE')
-                                  ? (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-100 text-green-700')
-                                  : (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-100 text-blue-700')
+                                  ? (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20 rounded-[2px]' : 'bg-green-100 text-green-700 rounded')
+                                  : (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20 rounded-[2px]' : 'bg-blue-100 text-blue-700 rounded')
                               }`}>
                                 {resource.type}
                               </span>
                               {resource.duration && (
-                                <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>
+                                <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>
                                   {resource.duration}
                                 </span>
                               )}
@@ -1516,32 +1516,32 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
       </div>
 
       {career.outcomes && (
-        <div className={`${darkMode ? 'surface-industrial border-accent-blue/10' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200 rounded-2xl'} p-8`}>
+        <div className={`${darkMode ? 'surface-industrial border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200 rounded-2xl'} p-8`}>
           <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-8`}>
             {darkMode ? 'ESTIMATED_ECOSYSTEM_YIELD' : 'Estimated Ecosystem Yield'}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {career.outcomes.junior && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Entry Level</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>Entry Level</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.junior}</p>
               </div>
             )}
             {career.outcomes.mid && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Intermediate</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>Intermediate</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.mid}</p>
               </div>
             )}
             {career.outcomes.senior && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Advanced</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>Advanced</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.senior}</p>
               </div>
             )}
             {career.outcomes.lead && (
               <div className="space-y-1">
-                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-600'}`}>Principal</p>
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>Principal</p>
                 <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-green-600'}`}>{career.outcomes.lead}</p>
               </div>
             )}
@@ -1658,7 +1658,7 @@ const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
       </div>
 
       <div className={`space-y-4 text-sm ${darkMode ? 'text-white' : 'text-gray-700'}`}>
-        <div className={`p-4 rounded-lg ${darkMode ? 'bg-yellow-900/20 border border-yellow-800' : 'bg-yellow-50 border border-yellow-200'}`}>
+        <div className={`p-4 ${darkMode ? 'rounded-[4px]' : 'rounded-lg'} ${darkMode ? 'bg-yellow-900/20 border border-yellow-800' : 'bg-yellow-50 border border-yellow-200'}`}>
           <h3 className={`font-bold mb-2 flex items-center gap-2 ${darkMode ? 'text-white' : 'text-yellow-800'}`}>
             <Star size={18} />
             Important Disclaimer
@@ -1668,28 +1668,30 @@ const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
           </p>
         </div>
 
-        <div>
-          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Provide</h3>
-          <ul className="space-y-2 ml-4">
-            <li>• Curated learning resources and roadmaps</li>
-            <li>• Skills tracking and progress management</li>
-            <li>• Career path guidance and match analysis</li>
-            <li>• Links to free and paid educational content</li>
-            <li>• Community access through RiWoT</li>
-          </ul>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Provide</h3>
+            <ul className="space-y-2 ml-4">
+              <li>• Curated learning resources and roadmaps</li>
+              <li>• Skills tracking and progress management</li>
+              <li>• Career path guidance and match analysis</li>
+              <li>• Links to free and paid educational content</li>
+              <li>• Community access through RiWoT</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Expect</h3>
+            <ul className="space-y-2 ml-4">
+              <li>• You take responsibility for your own learning journey</li>
+              <li>• You verify all external resources before use</li>
+              <li>• You understand that career outcomes vary by individual effort</li>
+              <li>• You use the platform ethically and honestly</li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h3 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>What We Expect</h3>
-          <ul className="space-y-2 ml-4">
-            <li>• You take responsibility for your own learning journey</li>
-            <li>• You verify all external resources before use</li>
-            <li>• You understand that career outcomes vary by individual effort</li>
-            <li>• You use the platform ethically and honestly</li>
-          </ul>
-        </div>
-
-        <div className={`p-4 rounded-lg ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-blue-50 border border-blue-200'}`}>
+        <div className={`p-4 ${darkMode ? 'rounded-[4px]' : 'rounded-lg'} ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-blue-50 border border-blue-200'}`}>
           <h3 className={`font-bold mb-2 ${darkMode ? 'text-accent-blue' : 'text-blue-800'}`}>Privacy & Data Storage</h3>
           <ul className="space-y-2">
             <li><strong>What we store:</strong> Your skill selections, progress data, and theme preferences</li>
@@ -1732,8 +1734,8 @@ const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
             localStorage.setItem('web3skills_policy_accepted', 'true');
             setShowPolicyModal(false);
           }}
-          className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
-            darkMode ? 'btn-primary-dark' : 'bg-blue-600 hover:bg-blue-700 text-white'
+          className={`w-full py-3 px-4 font-bold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+            darkMode ? 'btn-industrial-primary' : 'bg-blue-600 hover:bg-blue-700 text-white rounded-lg'
           }`}
         >
           I Understand and Accept
@@ -1752,8 +1754,8 @@ const Footer = ({ darkMode }) => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className={`${darkMode ? 'bg-accent-blue rounded-lg' : 'bg-gray-100 rounded-lg'} p-1 border border-cyan-300/40 flex items-center justify-center overflow-hidden`} style={{ width: '40px', height: '40px' }}>
-              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-md" />
+            <div className={`${darkMode ? 'bg-accent-blue rounded-[4px]' : 'bg-gray-100 rounded-lg'} p-1 border border-cyan-300/40 flex items-center justify-center overflow-hidden`} style={{ width: '40px', height: '40px' }}>
+              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-[2px]" />
             </div>
             <span className={`font-bold text-lg tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>Web3 Skills <span className={darkMode ? 'text-accent-blue' : 'text-accent-blue'}>RiWoT</span></span>
           </div>
@@ -1766,7 +1768,7 @@ const Footer = ({ darkMode }) => (
               href="https://github.com/mirmohmmadluqman/web3skills"
               target="_blank"
               rel="noopener noreferrer"
-              className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark text-accent-blue border-accent-blue/20' : 'bg-gray-100 text-gray-700 p-2 rounded-lg'}`}
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-accent-blue border-accent-blue/20' : 'bg-gray-100 text-gray-700 p-2 rounded-lg'}`}
             >
               <Github size={20} />
             </a>
@@ -1774,7 +1776,7 @@ const Footer = ({ darkMode }) => (
               href="https://discord.gg/qMd7jwV7UG"
               target="_blank"
               rel="noopener noreferrer"
-              className={`transition-all duration-300 ${darkMode ? 'btn-icon-dark text-accent-blue border-accent-blue/20' : 'bg-gray-100 text-gray-700 p-2 rounded-lg'}`}
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-accent-blue border-accent-blue/20' : 'bg-gray-100 text-gray-700 p-2 rounded-lg'}`}
             >
               <MessageCircle size={20} />
             </a>
@@ -1784,25 +1786,25 @@ const Footer = ({ darkMode }) => (
           <div className="space-y-4">
             <h4 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-900 font-bold'}`}>Infrastructure</h4>
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-              <li><Link to="/skills" className={darkMode ? 'hover:text-accent-blue transition-colors' : 'hover:text-accent-blue transition-colors'}>Skill Tree</Link></li>
-              <li><Link to="/careers" className={darkMode ? 'hover:text-accent-blue transition-colors' : 'hover:text-accent-blue transition-colors'}>Roadmaps</Link></li>
+              <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
+              <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-900 font-bold'}`}>Resources</h4>
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-              <li><a href="https://github.com/RiWoT" target="_blank" rel="noopener noreferrer" className={darkMode ? 'hover:text-accent-blue transition-colors' : 'hover:text-accent-blue transition-colors'}>RiWoT Org</a></li>
-              <li><a href="https://discord.gg/qMd7jwV7UG" target="_blank" rel="noopener noreferrer" className={darkMode ? 'hover:text-accent-blue transition-colors' : 'hover:text-accent-blue transition-colors'}>Discord</a></li>
+              <li><a href="https://github.com/RiWoT" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>RiWoT Org</a></li>
+              <li><a href="https://discord.gg/qMd7jwV7UG" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Discord</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div className={`mt-16 pt-8 border-t ${darkMode ? 'border-accent-blue/10' : 'border-gray-100'} flex flex-col md:flex-row justify-between items-center gap-4`}>
-        <p className={`${darkMode ? 'label-industrial text-slate-500' : 'text-[10px] font-mono uppercase tracking-widest text-gray-500'}`}>
+        <p className={`${darkMode ? 'label-industrial text-slate-400' : 'text-[10px] font-mono uppercase tracking-widest text-gray-500'}`}>
           © 2025 SYSTEM.RIWOT.CORE // ALL RIGHTS RESERVED
         </p>
-        <p className={`${darkMode ? 'label-industrial text-slate-500' : 'text-[10px] font-mono uppercase tracking-widest text-gray-500'}`}>
-          CREATED BY <a href="https://mirmohmmadluqman.github.io/portfolio/" target="_blank" rel="noopener noreferrer" className={darkMode ? 'text-accent-blue hover:underline' : 'text-accent-blue hover:underline'}>LUQMAN</a>
+        <p className={`${darkMode ? 'label-industrial text-slate-400' : 'text-[10px] font-mono uppercase tracking-widest text-gray-500'}`}>
+          CREATED BY <a href="https://mirmohmmadluqman.github.io/portfolio/" target="_blank" rel="noopener noreferrer" className={darkMode ? 'text-accent-blue hover:underline transition-all focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]' : 'text-accent-blue hover:underline'}>LUQMAN</a>
         </p>
       </div>
     </div>
