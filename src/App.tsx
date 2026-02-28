@@ -14,7 +14,6 @@ import {
   useLocation,
   useParams
 } from 'react-router-dom';
-import AdminPanel from './components/AdminPanel';
 
 // --- Types & Data ---
 
@@ -2094,7 +2093,7 @@ const App = () => {
               />
             } />
             <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />
-            <Route path="/notadmin" element={<AdminPanel darkMode={darkMode} />} />
+
           </Routes>
           <Footer darkMode={darkMode} />
         </div>
