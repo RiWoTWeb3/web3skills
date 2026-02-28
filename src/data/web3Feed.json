@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-02-28",
+    "type": "job",
+    "title": "Software Engineer - Solana at Rain",
+    "description": "Rain is hiring a Software Engineer for Solana development. Salary range: $140k - $240k. Location: New York / Remote.",
+    "link": "https://web3.career/rust-jobs"
+  },
+  {
+    "date": "2026-02-28",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Jumpcrypto is seeking a Crypto Production Engineer. Salary range: $150k - $200k. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-02-28",
+    "type": "job",
+    "title": "Rust Developer at 1010 trading",
+    "description": "1010 trading is looking for a Rust Developer for EVM Systems & Trading Infrastructure. Remote.",
+    "link": "https://web3.career/evm-jobs"
+  },
+  {
+    "date": "2026-02-28",
+    "type": "news",
+    "title": "TRM Labs reaches unicorn status with $70M Series C",
+    "description": "Blockchain intelligence firm TRM Labs has achieved unicorn status after raising $70 million in a Series C funding round to expand its compliance and risk management tools.",
+    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
+  },
+  {
+    "date": "2026-02-28",
+    "type": "news",
+    "title": "Jupiter secures $35M strategic raise for Solana DeFi",
+    "description": "Jupiter, a leading aggregator on Solana, has secured $35 million in strategic funding to further enhance its DeFi infrastructure and ecosystem growth.",
+    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
+  },
+  {
+    "date": "2026-02-28",
+    "type": "hack",
+    "title": "IoTeX ioTube bridge hacked for $4.4M",
+    "description": "The IoTeX ioTube cross-chain bridge was exploited for approximately $4.4 million due to a compromised private key used for a malicious contract upgrade.",
+    "link": "https://www.halborn.com/blog/post/explained-the-iotex-hack-february-2026"
+  }
+]
