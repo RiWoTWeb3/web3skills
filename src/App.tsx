@@ -4,7 +4,8 @@ import {
   GraduationCap, Palette, Target, TrendingUp, Award, CheckCircle, 
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
-  Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter
+  Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
+  Briefcase, Newspaper, ShieldAlert, AlertTriangle
 } from 'lucide-react';
 import {
   Routes,
@@ -14,6 +15,7 @@ import {
   useLocation,
   useParams
 } from 'react-router-dom';
+import web3Feed from './data/web3Feed.json';
 
 // --- Types & Data ---
 
@@ -661,6 +663,16 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             >
               {viewMode ? 'Match' : 'Careers'}
             </Link>
+            <Link
+              to="/feed"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/feed'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Feed
+            </Link>
             
             {!viewMode && (
               <>
@@ -737,6 +749,17 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               }`}
             >
               {viewMode ? 'Career Match' : 'Careers'}
+            </Link>
+            <Link
+              to="/feed"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/feed'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Live Feed
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -922,37 +945,76 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link
-            to="/skills"
-            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
-          >
-            {darkMode && <div className="corner-bottom" />}
-            <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={36} />
-            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
-            <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
-              Browse and track 300+ Web3 skills across 15 categories
-            </p>
-            <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-blue-600'} flex items-center gap-2`}>
-              {darkMode ? 'ACCESS_TREE' : 'Start Tracking'} <ArrowRight size={16} />
-            </span>
-          </Link>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              to="/skills"
+              className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+            >
+              {darkMode && <div className="corner-bottom" />}
+              <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={36} />
+              <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
+              <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
+                Browse and track 300+ Web3 skills across 15 categories
+              </p>
+              <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-blue-600'} flex items-center gap-2`}>
+                {darkMode ? 'ACCESS_TREE' : 'Start Tracking'} <ArrowRight size={16} />
+              </span>
+            </Link>
 
-          <Link
-            to="/careers"
-            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
-          >
-            {darkMode && <div className="corner-bottom" />}
-            <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={36} />
-            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
-            <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
-              Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
-            </p>
-            <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-purple-600'} flex items-center gap-2`}>
-              {darkMode ? 'DISCOVER_PATHS' : 'View Careers'} <ArrowRight size={16} />
-            </span>
-          </Link>
+            <Link
+              to="/careers"
+              className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+            >
+              {darkMode && <div className="corner-bottom" />}
+              <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={36} />
+              <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
+              <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
+                Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
+              </p>
+              <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-purple-600'} flex items-center gap-2`}>
+                {darkMode ? 'DISCOVER_PATHS' : 'View Careers'} <ArrowRight size={16} />
+              </span>
+            </Link>
+          </div>
+
+          <div className={`${darkMode ? 'surface-industrial border-accent-blue/10' : 'bg-white border-gray-200 rounded-2xl'} p-8 border`}>
+          <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center gap-3">
+              <div className={`${darkMode ? 'bg-accent-blue' : 'bg-blue-600'} p-2 rounded-[4px]`}>
+                <TrendingUp size={20} className={darkMode ? 'text-black' : 'text-white'} />
+              </div>
+              <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                {darkMode ? 'SYSTEM_LIVE_FEED' : 'Latest Web3 Updates'}
+              </h3>
+            </div>
+            <Link
+              to="/feed"
+              className={`text-sm font-mono uppercase tracking-widest flex items-center gap-2 ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}
+            >
+              {darkMode ? 'ACCESS_FULL_FEED' : 'View All'} <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {web3Feed.slice(0, 3).map((item, i) => (
+              <div key={i} className={`${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} p-4 border rounded-[4px] relative`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                    item.type === 'job' ? (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-100 text-green-700 border-green-200') :
+                    item.type === 'news' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-100 text-blue-700 border-blue-200') :
+                    (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-100 text-red-700 border-red-200')
+                  }`}>
+                    {item.type}
+                  </span>
+                  <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-400'}`}>{item.date}</span>
+                </div>
+                <h4 className={`text-sm font-bold mb-1 line-clamp-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
+                <p className={`text-[11px] line-clamp-2 ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
+        </>
       )}
 
       {/* RiWoT Community Section */}
@@ -1315,6 +1377,92 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
             <CareerCard key={name} careerName={name} career={career} />
           ))}
         </div>
+      </div>
+    </div>
+  );
+};
+
+const FeedView = ({ darkMode }) => {
+  const getIcon = (type) => {
+    switch (type) {
+      case 'job': return <Briefcase size={20} />;
+      case 'news': return <Newspaper size={20} />;
+      case 'hack': return <ShieldAlert size={20} />;
+      default: return <AlertTriangle size={20} />;
+    }
+  };
+
+  const getTypeStyles = (type) => {
+    if (!darkMode) {
+      switch (type) {
+        case 'job': return 'bg-green-100 text-green-700 border-green-200';
+        case 'news': return 'bg-blue-100 text-blue-700 border-blue-200';
+        case 'hack': return 'bg-red-100 text-red-700 border-red-200';
+        default: return 'bg-gray-100 text-gray-700 border-gray-200';
+      }
+    }
+    switch (type) {
+      case 'job': return 'bg-green-500/10 text-green-400 border-green-500/20';
+      case 'news': return 'bg-accent-blue/10 text-accent-blue border-accent-blue/20';
+      case 'hack': return 'bg-red-500/10 text-red-400 border-red-500/20';
+      default: return 'bg-white/5 text-slate-400 border-white/10';
+    }
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'SYSTEM_FEED' : 'Web3 Live Feed'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Latest remote jobs, infrastructure launches, and security updates
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4">
+        {web3Feed.map((item, index) => (
+          <div
+            key={index}
+            className={`${darkMode ? 'surface-industrial corner-animate' : 'bg-white border-gray-200 rounded-xl'} p-6 border group relative overflow-hidden`}
+          >
+            {darkMode && <div className="corner-bottom" />}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+              <div className="flex items-start gap-4 flex-1">
+                <div className={`p-3 rounded-[4px] ${getTypeStyles(item.type)} border`}>
+                  {getIcon(item.type)}
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <span className={`text-[10px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border rounded-[2px] ${getTypeStyles(item.type)}`}>
+                      {item.type}
+                    </span>
+                    <span className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-400'}`}>
+                      {item.date}
+                    </span>
+                  </div>
+                  <h3 className={`text-lg font-bold ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900 group-hover:text-blue-600'} transition-colors`}>
+                    {item.title}
+                  </h3>
+                  <p className={`text-sm mt-1 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 text-sm font-mono uppercase tracking-wider transition-all ${
+                  darkMode ? 'text-accent-blue hover:translate-x-1' : 'text-blue-600 hover:text-blue-700'
+                }`}
+              >
+                {darkMode ? 'ACCESS_SOURCE' : 'View Source'}
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -2092,6 +2240,7 @@ const App = () => {
                 getCareerMatch={getCareerMatch}
               />
             } />
+            <Route path="/feed" element={<FeedView darkMode={darkMode} />} />
             <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />
 
           </Routes>
