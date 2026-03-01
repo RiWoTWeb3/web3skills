@@ -1,37 +1,37 @@
 [
   {
-    "title": "Cross-Chain Protocol Reentrancy Exploit",
-    "category": "HACK",
-    "summary": "A popular cross-chain protocol was exploited for $15.5M due to a reentrancy vulnerability in its bridge contract. Security audits for bridge protocols remain a top priority.",
-    "date": "2025-03-15",
-    "sourceLink": "https://rekt.news"
+    "title": "Uniswap v4 Mainnet Launch Intel",
+    "category": "INFRA",
+    "summary": "Uniswap v4 introduces 'hooks', allowing for customized liquidity pools and dynamic fees. The security of these hooks is now a primary focus for DeFi auditors.",
+    "date": "2025-04-05",
+    "sourceLink": "https://uniswap.org"
   },
   {
-    "title": "Arbitrum Stylus Mainnet Upgrade",
+    "title": "Solana Firedancer v1.2 Performance Benchmark",
     "category": "INFRA",
-    "summary": "Arbitrum Stylus is now officially live on mainnet, allowing developers to write smart contracts in Rust, C, and C++ with Ethereum's security.",
-    "date": "2025-03-12",
-    "sourceLink": "https://arbitrum.io"
-  },
-  {
-    "title": "Solana Firedancer v1.0 Release",
-    "category": "INFRA",
-    "summary": "The first version of Firedancer, the independent Solana validator client, has reached v1.0, improving network resilience and throughput.",
-    "date": "2025-03-10",
+    "summary": "New benchmarks for Firedancer show significant improvements in block processing speed and network stability under extreme load conditions.",
+    "date": "2025-04-02",
     "sourceLink": "https://solana.com"
   },
   {
-    "title": "Immunefi Boosts Critical Payouts for L2s",
+    "title": "L2 Bridge Exploit Analysis: $45M Loss",
+    "category": "HACK",
+    "summary": "A complex exploit targeting a major L2 bridge protocol was identified. The attack used a flaw in the cross-chain message verification logic.",
+    "date": "2025-03-28",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "Immunefi 2025 Bug Bounty Report",
     "category": "BOUNTY",
-    "summary": "Immunefi has announced new bounty incentives for identifying critical vulnerabilities in major L2 sequencers and fraud proof systems.",
-    "date": "2025-03-08",
+    "summary": "Immunefi reports a 30% increase in critical vulnerability findings in 2025, with major payouts reaching new highs for infrastructure-level exploits.",
+    "date": "2025-03-25",
     "sourceLink": "https://immunefi.com"
   },
   {
-    "title": "New DeFi Security Standard Proposed",
+    "title": "New ERC-4337 Account Abstraction Updates",
     "category": "INFRA",
-    "summary": "A consortium of top auditing firms has proposed a new smart contract security standard (EIP-XXXX) to formalize reentrancy guards.",
-    "date": "2025-03-05",
+    "summary": "Recent updates to the Account Abstraction standard improve gas efficiency for user operations and simplify multi-chain wallet management.",
+    "date": "2025-03-20",
     "sourceLink": "https://ethereum.org"
   }
 ]
