@@ -15,7 +15,7 @@ import {
   useLocation,
   useParams
 } from 'react-router-dom';
-import web3Feed from './data/web3Feed.json';
+import { getFeed, type Web3FeedItem } from './services/feedService';
 
 // --- Types & Data ---
 
@@ -776,7 +776,7 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
   );
 };
 
-const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSkills, totalSkills, overallProgress, getCareerMatch, getCategoryProgress, exportData, importData }) => {
+const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSkills, totalSkills, overallProgress, getCareerMatch, getCategoryProgress, exportData, importData, feed }) => {
   const bestMatchName = useMemo(() => {
     return Object.keys(careerPaths).reduce((best, name) => {
       const match = getCareerMatch(name);
@@ -996,7 +996,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {web3Feed.slice(0, 3).map((item, i) => (
+            {feed.slice(0, 3).map((item, i) => (
               <div key={i} className={`${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} p-4 border rounded-[4px] relative`}>
                 <div className="flex items-center gap-2 mb-2">
                   <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
@@ -1382,7 +1382,10 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   );
 };
 
-const FeedView = ({ darkMode }) => {
+const FeedView = ({ darkMode, feed }) => {
+  const [filter, setFilter] = useState('all');
+  const [sortOrder, setSortOrder] = useState('newest');
+
   const getIcon = (type) => {
     switch (type) {
       case 'job': return <Briefcase size={20} />;
@@ -1409,6 +1412,19 @@ const FeedView = ({ darkMode }) => {
     }
   };
 
+  const filteredFeed = useMemo(() => {
+    let result = [...feed];
+    if (filter !== 'all') {
+      result = result.filter(item => item.type === filter);
+    }
+    result.sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+    return result;
+  }, [feed, filter, sortOrder]);
+
   return (
     <div className="space-y-8">
       <div className="mb-8">
@@ -1420,8 +1436,35 @@ const FeedView = ({ darkMode }) => {
         </p>
       </div>
 
+      <div className={`${darkMode ? 'surface-industrial' : 'bg-white border border-gray-200 rounded-xl'} p-6 flex flex-col md:flex-row justify-between items-center gap-4`}>
+        <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+          {['all', 'job', 'news', 'hack'].map((t) => (
+            <button
+              key={t}
+              onClick={() => setFilter(t)}
+              className={`px-4 py-2 text-xs font-mono uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none border ${
+                filter === t
+                  ? (darkMode ? 'bg-accent-blue text-black border-accent-blue' : 'bg-blue-600 text-white border-blue-600')
+                  : (darkMode ? 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10' : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100')
+              } rounded-[4px]`}
+            >
+              {t === 'hack' ? 'Security' : t}
+            </button>
+          ))}
+        </div>
+        <button
+          onClick={() => setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest')}
+          className={`flex items-center gap-2 px-4 py-2 text-xs font-mono uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none border ${
+            darkMode ? 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10' : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+          } rounded-[4px] w-full md:w-auto justify-center`}
+        >
+          {sortOrder === 'newest' ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
+          {sortOrder}
+        </button>
+      </div>
+
       <div className="grid grid-cols-1 gap-4">
-        {web3Feed.map((item, index) => (
+        {filteredFeed.map((item, index) => (
           <div
             key={index}
             className={`${darkMode ? 'surface-industrial corner-animate' : 'bg-white border-gray-200 rounded-xl'} p-6 border group relative overflow-hidden`}
@@ -2002,6 +2045,15 @@ const App = () => {
   const [shareInput, setShareInput] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showPolicyModal, setShowPolicyModal] = useState(false);
+  const [feed, setFeed] = useState<Web3FeedItem[]>([]);
+
+  useEffect(() => {
+    const loadFeed = async () => {
+      const data = await getFeed();
+      setFeed(data);
+    };
+    loadFeed();
+  }, []);
 
   useEffect(() => {
     const policyAccepted = localStorage.getItem('web3skills_policy_accepted');
@@ -2209,6 +2261,7 @@ const App = () => {
                 getCategoryProgress={getCategoryProgress}
                 exportData={exportData}
                 importData={importData}
+                feed={feed}
               />
             } />
             <Route path="/skills" element={
@@ -2240,7 +2293,7 @@ const App = () => {
                 getCareerMatch={getCareerMatch}
               />
             } />
-            <Route path="/feed" element={<FeedView darkMode={darkMode} />} />
+            <Route path="/feed" element={<FeedView darkMode={darkMode} feed={feed} />} />
             <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />
 
           </Routes>
