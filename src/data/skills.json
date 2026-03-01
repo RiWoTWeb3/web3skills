@@ -1,0 +1,93 @@
+{
+  "Programming Languages": [
+    "Python", "Rust", "Go", "TypeScript", "JavaScript", "Solidity", "Vyper",
+    "Huff", "Yul", "Cairo", "C++", "Move", "Anchor", "Seahorse", "Assembly"
+  ],
+  "Frontend Technologies": [
+    "React", "Next.js", "Vue.js", "Svelte", "Angular", "TailwindCSS",
+    "Styled Components", "Redux", "React Query", "Zustand", "Wagmi", "RainbowKit"
+  ],
+  "Backend & API": [
+    "REST API", "GraphQL", "WebSockets", "gRPC", "Node.js", "Express.js",
+    "NestJS", "Fastify", "tRPC", "Bun"
+  ],
+  "Development Tools": [
+    "Foundry", "Hardhat", "Truffle", "Remix", "Ganache", "Anchor CLI",
+    "Solana CLI", "Design Tools", "Adobe Creative Suite", "AI Design Tools",
+    "Postman", "VS Code Extensions", "Docker", "Git Advanced", "GitHub Actions",
+    "Vercel", "Railway", "Render"
+  ],
+  "Security Tools": [
+    "Slither", "Echidna", "Certora", "Mythril", "Manticore", "Trail of Bits Tools",
+    "OpenZeppelin Defender", "Tenderly", "Aderyn", "MythX", "Securify", "Octopus"
+  ],
+  "Cloud & DevOps": [
+    "AWS", "GCP", "Azure", "CI/CD", "DevOps Principles", "Cloud Architecture",
+    "Kubernetes", "Terraform", "Jenkins", "Docker Compose", "Ansible",
+    "CloudFormation", "Heroku", "DigitalOcean"
+  ],
+  "Database & Systems": [
+    "PostgreSQL", "MongoDB", "Redis", "Supabase", "Firebase", "Database Design",
+    "Database Optimization", "Distributed Systems", "Time-Series Observability",
+    "Elasticsearch", "Prisma", "TypeORM"
+  ],
+  "EVM Blockchain & Web3": [
+    "Blockchain Fundamentals", "EVM Mechanics", "Smart Contract Development",
+    "Production EVM Smart Contracts", "High-TVL Contracts", "AMMs", "Oracles",
+    "DeFi Understanding", "DeFi Products", "dApps", "Developer Infrastructure",
+    "L2s", "Bridges", "ERC-4337", "ZK Proofs", "ZK Rollups", "ZK-SNARKs",
+    "ZK-STARKs", "EIPs Contributions", "MEV", "Consensus Mechanisms", "Tokenomics",
+    "NFT Standards", "Cross-chain Protocols", "Web3 Wallets", "IPFS", "The Graph",
+    "Chainlink Oracles", "Uniswap V2/V3/V4", "Curve Finance", "Aave Protocol",
+    "Compound Protocol", "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus"
+  ],
+  "Solana/SVM Blockchain": [
+    "Solana Fundamentals", "Solana Program Development", "Anchor Framework",
+    "Seahorse Framework", "Solana Web3.js", "Solana CLI", "SPL Tokens",
+    "Solana NFTs (Metaplex)", "Solana DeFi", "Solana Account Model", "PDAs",
+    "CPI", "Solana Runtime", "Borsh Serialization", "Solana Security Best Practices",
+    "Solana Testing (Bankrun)", "Jupiter Aggregator", "Raydium", "Orca",
+    "Marinade Finance", "Jito MEV", "Pyth Network", "Switchboard Oracles",
+    "Wormhole", "Solana Mobile Stack", "Firedancer"
+  ],
+  "Architecture & Design": [
+    "System Design", "System Architecture", "API Building & Scaling",
+    "High-Throughput Systems", "Low-Latency Systems", "Production Systems",
+    "Large-Scale Cloud Systems", "Microservices", "Event-Driven Architecture",
+    "Domain-Driven Design", "Serverless Architecture", "Message Queues",
+    "Load Balancing", "Caching Strategies", "Rate Limiting"
+  ],
+  "Security & Auditing": [
+    "Smart Contract Auditing", "Vulnerability Assessment", "Formal Verification",
+    "Gas Optimization", "Access Control Patterns", "Upgrade Patterns",
+    "Reentrancy Prevention", "Security Best Practices", "Cryptography",
+    "Key Management", "TEEs", "Zero-Knowledge Systems", "Audit Report Writing",
+    "Exploit Development", "Bug Bounty Hunting", "Threat Modeling",
+    "Secure SDLC", "Penetration Testing"
+  ],
+  "Testing & QA": [
+    "Unit Testing", "Integration Testing", "End-to-End Testing", "Fuzz Testing",
+    "Invariant Testing", "Test-Driven Development", "Performance Testing",
+    "Load Testing", "Security Testing", "Mutation Testing"
+  ],
+  "Soft Skills": [
+    "Communication", "Collaboration", "Mentoring", "Leadership",
+    "Guiding Technical Teams", "Autonomy", "Adapt to Feedback",
+    "Align with Business Goals", "Problem Solving", "Critical Thinking",
+    "Technical Writing", "Public Speaking"
+  ],
+  "Specialized Experience": [
+    "Billing/Monetization Systems", "Security Tools Experience", "Startup Experience",
+    "Web3 Experience", "Passion for Web3", "Crypto Experience",
+    "Open-source Contributions", "Technical Writing", "Community Building",
+    "Public Speaking", "Fintech", "Algorithmic Trading", "UI/UX Design",
+    "Wireframing", "Prototyping", "Sketch", "InVision", "Visio", "SCSS",
+    "iOS Design", "Android Design", "Responsive Design", "Animation (Framer Motion)",
+    "Web Performance Optimization", "SEO Optimization"
+  ],
+  "Full-Stack Development": [
+    "Frontend-Backend Integration", "Wallet Connection", "Transaction Signing",
+    "Smart Contract Interaction", "Web3 Authentication", "Decentralized Storage",
+    "Event Listening", "Multi-chain Support", "Gas Estimation", "Error Handling"
+  ]
+}

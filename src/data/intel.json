@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Cross-Chain Protocol Reentrancy Exploit",
+    "category": "HACK",
+    "summary": "A popular cross-chain protocol was exploited for $15.5M due to a reentrancy vulnerability in its bridge contract. Security audits for bridge protocols remain a top priority.",
+    "date": "2025-03-15",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "Arbitrum Stylus Mainnet Upgrade",
+    "category": "INFRA",
+    "summary": "Arbitrum Stylus is now officially live on mainnet, allowing developers to write smart contracts in Rust, C, and C++ with Ethereum's security.",
+    "date": "2025-03-12",
+    "sourceLink": "https://arbitrum.io"
+  },
+  {
+    "title": "Solana Firedancer v1.0 Release",
+    "category": "INFRA",
+    "summary": "The first version of Firedancer, the independent Solana validator client, has reached v1.0, improving network resilience and throughput.",
+    "date": "2025-03-10",
+    "sourceLink": "https://solana.com"
+  },
+  {
+    "title": "Immunefi Boosts Critical Payouts for L2s",
+    "category": "BOUNTY",
+    "summary": "Immunefi has announced new bounty incentives for identifying critical vulnerabilities in major L2 sequencers and fraud proof systems.",
+    "date": "2025-03-08",
+    "sourceLink": "https://immunefi.com"
+  },
+  {
+    "title": "New DeFi Security Standard Proposed",
+    "category": "INFRA",
+    "summary": "A consortium of top auditing firms has proposed a new smart contract security standard (EIP-XXXX) to formalize reentrancy guards.",
+    "date": "2025-03-05",
+    "sourceLink": "https://ethereum.org"
+  }
+]
