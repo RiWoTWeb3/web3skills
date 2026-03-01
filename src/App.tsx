@@ -28,8 +28,9 @@ interface JobListing {
   id: string;
   title: string;
   company: string;
-  type: string;
-  salaryRange: string;
+  workType: string;
+  experience: string;
+  salary: string;
   requirements: string[];
   applyLink: string;
 }
@@ -1276,6 +1277,10 @@ const JobsView = ({ darkMode, displaySkills }) => {
     return (matched.length / requirements.length) * 100;
   };
 
+  const getMissingSkills = (requirements: string[]) => {
+    return requirements.filter(req => !displaySkills[req]);
+  };
+
   return (
     <div className="space-y-8">
       <div className="mb-8">
@@ -1287,57 +1292,105 @@ const JobsView = ({ darkMode, displaySkills }) => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
+      <div className={`${darkMode ? 'surface-industrial' : 'bg-blue-50 border-blue-200 rounded-2xl'} p-6 border`}>
+        <div className="flex items-start gap-4">
+          <ShieldAlert className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={24} />
+          <div>
+            <h3 className={`font-bold mb-2 ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Educational Policy Notice</h3>
+            <p className={`text-sm ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-700'}`}>
+              These listings are displayed for educational and skill alignment purposes only. Salary ranges are estimates and roles represent current market requirements. We do not provide direct job placement or guarantees.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8">
         {jobsData.map(job => {
           const alignment = getJobAlignment(job.requirements);
+          const missingSkills = getMissingSkills(job.requirements);
+
           return (
             <div
               key={job.id}
-              className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-6 transition-all duration-300 relative overflow-hidden`}
+              className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-8 transition-all duration-300 relative overflow-hidden`}
             >
               {darkMode && <div className="corner-bottom" />}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
-                    <span className={`px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider ${
-                      darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 rounded'
+              <div className="flex flex-col md:flex-row justify-between items-start gap-8 relative z-10">
+                <div className="flex-1 space-y-6">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
+                    <span className={`px-3 py-1 text-[10px] font-mono border ${
+                      darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 border-blue-200 rounded-full'
                     }`}>
-                      {job.type}
+                      AVAILABLE ROLE
                     </span>
                   </div>
-                  <p className={`text-lg font-medium mb-4 ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-                    {job.company} • <span className={darkMode ? 'text-accent-blue' : 'text-green-600'}>{job.salaryRange}</span>
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {job.requirements.map(req => (
-                      <span
-                        key={req}
-                        className={`px-2 py-1 text-[10px] font-mono border ${
-                          displaySkills[req]
-                            ? (darkMode ? 'bg-accent-blue/20 text-accent-blue border-accent-blue/40 rounded-[2px]' : 'bg-green-100 text-green-700 border-green-200 rounded')
-                            : (darkMode ? 'bg-white/5 text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-100 text-gray-500 border-gray-200 rounded')
-                        }`}
-                      >
-                        {req}
-                      </span>
-                    ))}
+
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Company</p>
+                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.company}</p>
+                    </div>
+                    <div>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Type</p>
+                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.workType}</p>
+                    </div>
+                    <div>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Experience</p>
+                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.experience}</p>
+                    </div>
+                    <div>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Salary</p>
+                      <p className={`font-bold ${darkMode ? 'text-accent-blue' : 'text-green-600'}`}>{job.salary}</p>
+                    </div>
                   </div>
+
+                  <div>
+                    <p className={`text-[10px] font-mono uppercase tracking-widest mb-3 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Required Stack</p>
+                    <div className="flex flex-wrap gap-2">
+                      {job.requirements.map(req => (
+                        <div
+                          key={req}
+                          className={`flex items-center gap-2 px-3 py-1.5 border ${
+                            displaySkills[req]
+                              ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-green-50 text-green-700 border-green-200 rounded')
+                              : (darkMode ? 'bg-white/[0.02] text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-100 text-gray-500 border-gray-200 rounded')
+                          }`}
+                        >
+                          {displaySkills[req] ? <CheckCircle size={12} className="text-accent-blue" /> : <Circle size={12} className="opacity-30" />}
+                          <span className="text-[11px] font-mono">{req}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {missingSkills.length > 0 && (
+                    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
+                      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+                        To align with this role, consider learning: <span className="font-bold">{missingSkills.join(', ')}</span>
+                      </p>
+                    </div>
+                  )}
                 </div>
 
-                <div className="flex flex-col items-end gap-3 w-full md:w-auto">
+                <div className="flex flex-col items-end gap-6 w-full md:w-auto">
                   <div className="text-right">
                     <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Alignment</p>
-                    <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
+                    <p className={`text-5xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
                   </div>
-                  <a
-                    href={job.applyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl'} px-8 py-3 w-full md:w-auto`}
-                  >
-                    Apply Now
-                  </a>
+                  <div className="flex flex-col gap-3 w-full md:w-auto min-w-[140px]">
+                    <a
+                      href={job.applyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest p-3 border transition-all ${
+                        darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue hover:bg-accent-blue/20' : 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100'
+                      }`}
+                    >
+                      Protocol Link <ExternalLink size={14} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1367,6 +1420,15 @@ const NewsView = ({ darkMode }) => {
     }
   };
 
+  const getCategoryIcon = (cat: string) => {
+    switch (cat) {
+      case 'HACK': return <ShieldAlert className="flex-shrink-0" size={18} />;
+      case 'INFRA': return <Server className="flex-shrink-0" size={18} />;
+      case 'BOUNTY': return <Target className="flex-shrink-0" size={18} />;
+      default: return <Newspaper className="flex-shrink-0" size={18} />;
+    }
+  };
+
   return (
     <div className="space-y-8">
       <div className="mb-8">
@@ -1378,35 +1440,50 @@ const NewsView = ({ darkMode }) => {
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 gap-4">
         {intelData.map((item, idx) => (
           <div
             key={idx}
-            className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all`}
+            className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all overflow-hidden relative`}
           >
-            <div className="flex items-start gap-4">
-              <div className={`mt-1.5 w-2 h-2 rounded-full ${item.category === 'HACK' ? 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]' : item.category === 'INFRA' ? 'bg-accent-blue shadow-[0_0_8px_rgba(0,255,255,0.8)]' : 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]'}`} />
+            {darkMode && <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">
+              {getCategoryIcon(item.category)}
+            </div>}
+
+            <div className="flex items-start gap-6 relative z-10">
+              <div className={`mt-1 p-2 rounded ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
+                {getCategoryIcon(item.category)}
+              </div>
+
               <div className="flex-1">
-                <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
-                    {item.category}
-                  </span>
-                  <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
+                      {item.category}
+                    </span>
+                    <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
+                  </div>
                 </div>
-                <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900'}`}>
+
+                <h3 className={`text-xl font-bold mb-3 ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900'}`}>
                   {item.title}
                 </h3>
-                <p className={`text-sm leading-relaxed mb-4 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
+
+                <p className={`text-sm leading-relaxed mb-6 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
                   {item.summary}
                 </p>
-                <a
-                  href={item.sourceLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}
-                >
-                  Source Protocol <ExternalLink size={12} />
-                </a>
+
+                <div className="flex items-center justify-between">
+                  <a
+                    href={item.sourceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest border border-transparent hover:border-current px-0 py-1 transition-all ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}
+                  >
+                    Establish Secure Link <ExternalLink size={12} />
+                  </a>
+                  {darkMode && <div className="text-[8px] font-mono text-slate-700 uppercase tracking-tighter">Verified_Source_Protocol // 0x...{item.title.length.toString(16)}</div>}
+                </div>
               </div>
             </div>
           </div>
