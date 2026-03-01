@@ -30,8 +30,10 @@ interface JobListing {
   company: string;
   type: string;
   salaryRange: string;
-  requirements: string[];
+  coreRequirements: string[];
+  bonusRequirements: string[];
   applyLink: string;
+  source: string;
 }
 
 interface IntelItem {
@@ -40,6 +42,7 @@ interface IntelItem {
   summary: string;
   date: string;
   sourceLink: string;
+  linkedSkills: string[];
 }
 
 const jobsData = jobsDataRaw as JobListing[];
@@ -738,6 +741,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
     }, Object.keys(careerPaths)[0]);
   }, [getCareerMatch]);
 
+  const sortedIntel = useMemo(() => {
+    return [...intelData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, []);
+
   return (
     <div className="space-y-12">
       {viewMode && (
@@ -971,9 +978,9 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           <Link to="/news" className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}>View All Logs</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {intelData.slice(0, 3).map((item, i) => (
-            <div key={i} className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-gray-50 border border-gray-100 rounded-xl'}`}>
-              <div className="flex items-center gap-2 mb-2">
+          {sortedIntel.slice(0, 3).map((item, i) => (
+            <div key={i} className={`p-6 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-gray-50 border border-gray-100 rounded-xl'} hover:border-accent-blue/20 transition-all group`}>
+              <div className="flex items-center gap-2 mb-3">
                 <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
                   item.category === 'HACK' ? (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200') :
                   item.category === 'INFRA' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200') :
@@ -983,8 +990,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
                 </span>
                 <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
               </div>
-              <h4 className={`font-bold text-sm mb-2 line-clamp-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
-              <p className={`text-xs leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{item.summary}</p>
+              <h4 className={`font-bold text-base mb-2 line-clamp-1 ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900'}`}>{item.title}</h4>
+              <p className={`text-sm leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>{item.summary}</p>
             </div>
           ))}
         </div>
@@ -1271,73 +1278,126 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
 };
 
 const JobsView = ({ darkMode, displaySkills }) => {
-  const getJobAlignment = (requirements: string[]) => {
-    const matched = requirements.filter(req => displaySkills[req]);
-    return (matched.length / requirements.length) * 100;
+  const getJobAlignment = (core: string[], bonus: string[]) => {
+    const coreMatched = core.filter(req => displaySkills[req]);
+    const bonusMatched = bonus.filter(req => displaySkills[req]);
+    const totalReqs = core.length + bonus.length;
+    const totalMatched = coreMatched.length + bonusMatched.length;
+    return (totalMatched / totalReqs) * 100;
   };
 
   return (
     <div className="space-y-8">
       <div className="mb-8">
         <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
-          {darkMode ? 'JOB_BOARD.INFRA' : 'Active Web3 Jobs'}
+          {darkMode ? 'SKILL_ALIGNMENT.MATRICES' : 'Market Skill Alignment'}
         </h1>
         <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
-          Identify opportunities and check your alignment
+          Identify market requirements and gap analysis
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
+      <div className={`${darkMode ? 'bg-blue-900/10 border border-blue-800' : 'bg-blue-50 border border-blue-200'} p-4 rounded-[4px] text-xs font-mono leading-relaxed mb-8`}>
+        <p className={darkMode ? 'text-blue-300' : 'text-blue-800'}>
+          [SYSTEM_NOTICE]: These listings are for alignment intelligence and learning purposes only. Salary ranges are market estimates. The platform does not guarantee employment. Roles are displayed to assist in technical roadmap prioritization.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8">
         {jobsData.map(job => {
-          const alignment = getJobAlignment(job.requirements);
+          const alignment = getJobAlignment(job.coreRequirements, job.bonusRequirements);
           return (
             <div
               key={job.id}
-              className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-6 transition-all duration-300 relative overflow-hidden`}
+              className={`${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-white border-gray-200 rounded-2xl'} p-8 transition-all duration-300 relative overflow-hidden`}
             >
-              {darkMode && <div className="corner-bottom" />}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
-                    <span className={`px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider ${
-                      darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 rounded'
+              {darkMode && <div className="scanline" />}
+
+              <div className="flex flex-col lg:flex-row justify-between items-start gap-8 relative z-10">
+                <div className="flex-1 space-y-6">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className={`text-2xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
+                    <span className={`px-2 py-0.5 text-[10px] font-mono border rounded-[2px] ${
+                      darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30' : 'bg-blue-50 text-blue-700 border-blue-200'
                     }`}>
                       {job.type}
                     </span>
+                    <span className={`px-2 py-0.5 text-[10px] font-mono border rounded-[2px] ${
+                      darkMode ? 'bg-white/5 text-slate-500 border-white/10' : 'bg-gray-100 text-gray-500 border-gray-200'
+                    }`}>
+                      {job.source}
+                    </span>
                   </div>
-                  <p className={`text-lg font-medium mb-4 ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+
+                  <p className={`text-lg font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
                     {job.company} • <span className={darkMode ? 'text-accent-blue' : 'text-green-600'}>{job.salaryRange}</span>
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {job.requirements.map(req => (
-                      <span
-                        key={req}
-                        className={`px-2 py-1 text-[10px] font-mono border ${
-                          displaySkills[req]
-                            ? (darkMode ? 'bg-accent-blue/20 text-accent-blue border-accent-blue/40 rounded-[2px]' : 'bg-green-100 text-green-700 border-green-200 rounded')
-                            : (darkMode ? 'bg-white/5 text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-100 text-gray-500 border-gray-200 rounded')
-                        }`}
-                      >
-                        {req}
-                      </span>
-                    ))}
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className={`text-xs font-mono uppercase tracking-[0.2em] mb-4 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Core Requirements</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {job.coreRequirements.map(req => (
+                          <span
+                            key={req}
+                            className={`px-2 py-1 text-[10px] font-mono border transition-all ${
+                              displaySkills[req]
+                                ? (darkMode ? 'bg-accent-blue/20 text-accent-blue border-accent-blue/40 rounded-[2px]' : 'bg-green-100 text-green-700 border-green-200 rounded')
+                                : (darkMode ? 'bg-red-500/5 text-red-400/60 border-red-500/20 rounded-[2px]' : 'bg-red-50 text-red-600/70 border-red-100 rounded')
+                            }`}
+                          >
+                            {req} {!displaySkills[req] && "•"}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className={`text-xs font-mono uppercase tracking-[0.2em] mb-4 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Bonus Stacks</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {job.bonusRequirements.map(req => (
+                          <span
+                            key={req}
+                            className={`px-2 py-1 text-[10px] font-mono border ${
+                              displaySkills[req]
+                                ? (darkMode ? 'bg-purple-500/20 text-purple-400 border-purple-500/40 rounded-[2px]' : 'bg-purple-50 text-purple-700 border-purple-200 rounded')
+                                : (darkMode ? 'bg-white/5 text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-50 text-gray-500 border-gray-100 rounded')
+                            }`}
+                          >
+                            {req}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
+
+                  {job.coreRequirements.some(req => !displaySkills[req]) && (
+                    <div className={`p-4 rounded-[4px] border ${darkMode ? 'bg-yellow-900/10 border-yellow-800/30' : 'bg-yellow-50 border-yellow-100'}`}>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-yellow-500' : 'text-yellow-700'}`}>Recommended Learning Path</p>
+                      <p className={`text-xs ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+                        Focus on: {job.coreRequirements.filter(req => !displaySkills[req]).join(", ")}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
-                <div className="flex flex-col items-end gap-3 w-full md:w-auto">
+                <div className="flex flex-col items-end gap-6 w-full lg:w-auto border-t lg:border-t-0 lg:border-l pt-6 lg:pt-0 lg:pl-8 border-white/5">
                   <div className="text-right">
-                    <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Alignment</p>
-                    <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
+                    <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>System Alignment</p>
+                    <p className={`text-5xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
                   </div>
-                  <a
-                    href={job.applyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl'} px-8 py-3 w-full md:w-auto`}
-                  >
-                    Apply Now
-                  </a>
+                  <div className="space-y-3 w-full">
+                    <a
+                      href={job.applyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center justify-center gap-2 px-6 py-2 text-xs font-mono uppercase tracking-widest transition-all ${
+                        darkMode ? 'text-accent-blue hover:bg-accent-blue/10 border border-accent-blue/30 rounded-[2px]' : 'text-blue-600 hover:bg-blue-50 border border-blue-200 rounded'
+                      }`}
+                    >
+                      Source Protocol <ExternalLink size={14} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1348,7 +1408,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
   );
 };
 
-const NewsView = ({ darkMode }) => {
+const NewsView = ({ darkMode, displaySkills }) => {
   const getCategoryColor = (cat: string) => {
     switch (cat) {
       case 'HACK': return darkMode ? 'text-red-500' : 'text-red-600';
@@ -1367,6 +1427,10 @@ const NewsView = ({ darkMode }) => {
     }
   };
 
+  const sortedIntel = useMemo(() => {
+    return [...intelData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, []);
+
   return (
     <div className="space-y-8">
       <div className="mb-8">
@@ -1379,7 +1443,7 @@ const NewsView = ({ darkMode }) => {
       </div>
 
       <div className="space-y-4">
-        {intelData.map((item, idx) => (
+        {sortedIntel.map((item, idx) => (
           <div
             key={idx}
             className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all`}
@@ -1387,11 +1451,21 @@ const NewsView = ({ darkMode }) => {
             <div className="flex items-start gap-4">
               <div className={`mt-1.5 w-2 h-2 rounded-full ${item.category === 'HACK' ? 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]' : item.category === 'INFRA' ? 'bg-accent-blue shadow-[0_0_8px_rgba(0,255,255,0.8)]' : 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]'}`} />
               <div className="flex-1">
-                <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
-                    {item.category}
-                  </span>
-                  <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
+                      {item.category}
+                    </span>
+                    <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
+                  </div>
+                  <a
+                    href={item.sourceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}
+                  >
+                    View Source <ExternalLink size={10} />
+                  </a>
                 </div>
                 <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900'}`}>
                   {item.title}
@@ -1399,14 +1473,20 @@ const NewsView = ({ darkMode }) => {
                 <p className={`text-sm leading-relaxed mb-4 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
                   {item.summary}
                 </p>
-                <a
-                  href={item.sourceLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}
-                >
-                  Source Protocol <ExternalLink size={12} />
-                </a>
+                <div className="flex flex-wrap gap-2">
+                  {item.linkedSkills.map(skill => (
+                    <span
+                      key={skill}
+                      className={`text-[9px] font-mono px-2 py-0.5 rounded-[2px] border ${
+                        displaySkills[skill]
+                          ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-green-50 text-green-700 border-green-200')
+                          : (darkMode ? 'bg-white/5 text-slate-500 border-white/5' : 'bg-gray-50 text-gray-500 border-gray-100')
+                      }`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -2277,6 +2357,7 @@ const App = () => {
             <Route path="/news" element={
               <NewsView
                 darkMode={darkMode}
+                displaySkills={displaySkills}
               />
             } />
             <Route path="/career/:id" element={

@@ -39,7 +39,7 @@
     "ZK-STARKs", "EIPs Contributions", "MEV", "Consensus Mechanisms", "Tokenomics",
     "NFT Standards", "Cross-chain Protocols", "Web3 Wallets", "IPFS", "The Graph",
     "Chainlink Oracles", "Uniswap V2/V3/V4", "Curve Finance", "Aave Protocol",
-    "Compound Protocol", "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus"
+    "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus", "Hooks Implementation"
   ],
   "Solana/SVM Blockchain": [
     "Solana Fundamentals", "Solana Program Development", "Anchor Framework",
@@ -48,7 +48,7 @@
     "CPI", "Solana Runtime", "Borsh Serialization", "Solana Security Best Practices",
     "Solana Testing (Bankrun)", "Jupiter Aggregator", "Raydium", "Orca",
     "Marinade Finance", "Jito MEV", "Pyth Network", "Switchboard Oracles",
-    "Wormhole", "Solana Mobile Stack", "Firedancer"
+    "Wormhole", "Solana Mobile Stack", "Firedancer", "Solana Runtime"
   ],
   "Architecture & Design": [
     "System Design", "System Architecture", "API Building & Scaling",
@@ -63,7 +63,7 @@
     "Reentrancy Prevention", "Security Best Practices", "Cryptography",
     "Key Management", "TEEs", "Zero-Knowledge Systems", "Audit Report Writing",
     "Exploit Development", "Bug Bounty Hunting", "Threat Modeling",
-    "Secure SDLC", "Penetration Testing"
+    "Secure SDLC", "Penetration Testing", "Cosmos SDK"
   ],
   "Testing & QA": [
     "Unit Testing", "Integration Testing", "End-to-End Testing", "Fuzz Testing",

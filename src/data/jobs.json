@@ -1,74 +1,90 @@
 [
   {
-    "id": "uniswap-sr-protocol-1",
-    "title": "Senior Protocol Engineer",
+    "id": "uniswap-protocol-lead",
+    "title": "Protocol Engineer (V4 Specialization)",
     "company": "Uniswap Labs",
     "type": "EVM",
-    "salaryRange": "$180k - $250k",
-    "requirements": ["Solidity", "Foundry", "EVM Mechanics", "Gas Optimization", "Smart Contract Development"],
-    "applyLink": "https://uniswap.org/jobs"
+    "salaryRange": "$200k - $280k",
+    "coreRequirements": ["Solidity", "Foundry", "EVM Mechanics", "Gas Optimization", "Smart Contract Development"],
+    "bonusRequirements": ["Uniswap V2/V3/V4", "Hooks Implementation", "MEV", "Yul"],
+    "applyLink": "https://uniswap.org/jobs",
+    "source": "Market Data"
   },
   {
-    "id": "jump-rust-eng-1",
-    "title": "Rust Software Engineer",
+    "id": "jump-svm-backend",
+    "title": "SVM Core Developer",
     "company": "Jump Crypto",
     "type": "SVM",
-    "salaryRange": "$200k - $300k",
-    "requirements": ["Rust", "Solana Fundamentals", "Anchor Framework", "Distributed Systems", "High-Throughput Systems"],
-    "applyLink": "https://jumpcrypto.com/careers"
+    "salaryRange": "$220k - $320k",
+    "coreRequirements": ["Rust", "Solana Fundamentals", "Solana Program Development", "Anchor Framework", "Distributed Systems"],
+    "bonusRequirements": ["Solana Runtime", "Jito MEV", "Firedancer", "C++"],
+    "applyLink": "https://jumpcrypto.com/careers",
+    "source": "Market Data"
   },
   {
-    "id": "chainlink-backend-1",
-    "title": "Backend Infrastructure Engineer",
+    "id": "chainlink-node-infra",
+    "title": "Backend Infrastructure Lead",
     "company": "Chainlink Labs",
     "type": "Backend",
-    "salaryRange": "$150k - $220k",
-    "requirements": ["Go", "Distributed Systems", "Oracles", "Node.js", "System Design"],
-    "applyLink": "https://chainlinklabs.com/jobs"
+    "salaryRange": "$180k - $250k",
+    "coreRequirements": ["Go", "Distributed Systems", "Oracles", "System Design", "Node.js"],
+    "bonusRequirements": ["Kubernetes", "gRPC", "PostgreSQL", "Chainlink Oracles"],
+    "applyLink": "https://chainlinklabs.com/jobs",
+    "source": "Market Data"
   },
   {
-    "id": "immunefi-sec-researcher-1",
-    "title": "Security Researcher",
+    "id": "immunefi-triager-lead",
+    "title": "Senior Security Researcher (Triage)",
     "company": "Immunefi",
     "type": "EVM",
-    "salaryRange": "$120k - $200k",
-    "requirements": ["Smart Contract Auditing", "Vulnerability Assessment", "Slither", "Echidna", "Audit Report Writing"],
-    "applyLink": "https://immunefi.com/careers"
+    "salaryRange": "$140k - $220k",
+    "coreRequirements": ["Smart Contract Auditing", "Vulnerability Assessment", "Slither", "Audit Report Writing", "EVM Mechanics"],
+    "bonusRequirements": ["Echidna", "Formal Verification", "Bug Bounty Hunting", "Solidity Advanced"],
+    "applyLink": "https://immunefi.com/careers",
+    "source": "Market Data"
   },
   {
-    "id": "base-l2-eng-1",
-    "title": "L2 Infrastructure Engineer",
+    "id": "base-l2-rollups",
+    "title": "L2 Rollup Engineer",
     "company": "Base (Coinbase)",
     "type": "EVM",
-    "salaryRange": "$170k - $240k",
-    "requirements": ["L2s", "EVM Mechanics", "Solidity", "Go", "Bridges"],
-    "applyLink": "https://base.org/jobs"
+    "salaryRange": "$190k - $260k",
+    "coreRequirements": ["L2s", "EVM Mechanics", "Solidity", "Go", "Bridges"],
+    "bonusRequirements": ["ZK Proofs", "Optimism Docs", "Consensus Mechanisms", "Rust"],
+    "applyLink": "https://base.org/jobs",
+    "source": "Market Data"
   },
   {
-    "id": "optimism-protocol-dev-1",
-    "title": "Protocol Developer",
-    "company": "Optimism",
-    "type": "EVM",
-    "salaryRange": "$160k - $230k",
-    "requirements": ["Solidity", "Go", "L2s", "Consensus Mechanisms", "EVM Mechanics"],
-    "applyLink": "https://www.optimism.io/jobs"
-  },
-  {
-    "id": "solana-core-eng-1",
-    "title": "Core Engineer",
-    "company": "Solana Labs",
-    "type": "SVM",
-    "salaryRange": "$180k - $260k",
-    "requirements": ["Rust", "Distributed Systems", "Solana Runtime", "C++", "High-Throughput Systems"],
-    "applyLink": "https://solana.com/jobs"
-  },
-  {
-    "id": "zksync-zk-eng-1",
+    "id": "zksync-zk-specialist",
     "title": "ZK Protocol Engineer",
-    "company": "Matter Labs (zkSync)",
+    "company": "Matter Labs",
     "type": "EVM",
-    "salaryRange": "$190k - $280k",
-    "requirements": ["Rust", "ZK Proofs", "Cryptography", "Solidity", "L2s"],
-    "applyLink": "https://zksync.io/jobs"
+    "salaryRange": "$210k - $300k",
+    "coreRequirements": ["Rust", "ZK Proofs", "Cryptography", "Solidity", "L2s"],
+    "bonusRequirements": ["ZK-SNARKs", "ZK-STARKs", "Formal Verification", "System Architecture"],
+    "applyLink": "https://zksync.io/jobs",
+    "source": "Market Data"
+  },
+  {
+    "id": "paradigm-research-eng",
+    "title": "Research Engineer (Reth)",
+    "company": "Paradigm",
+    "type": "EVM",
+    "salaryRange": "$250k - $400k",
+    "coreRequirements": ["Rust", "EVM Mechanics", "Distributed Systems", "High-Throughput Systems", "Consensus Mechanisms"],
+    "bonusRequirements": ["C++", "Blockchain Fundamentals", "P2P Networking", "Database Optimization"],
+    "applyLink": "https://www.paradigm.xyz/careers",
+    "source": "System Example"
+  },
+  {
+    "id": "berachain-pol-eng",
+    "title": "Proof of Liquidity Engineer",
+    "company": "Berachain",
+    "type": "EVM",
+    "salaryRange": "$170k - $240k",
+    "coreRequirements": ["Solidity", "Cosmos SDK", "Go", "Tokenomics", "DeFi Understanding"],
+    "bonusRequirements": ["AMMs", "Lending Protocols", "Foundry", "System Design"],
+    "applyLink": "https://berachain.com/jobs",
+    "source": "System Example"
   }
 ]
