@@ -1,0 +1,74 @@
+[
+  {
+    "id": "uniswap-sr-protocol-1",
+    "title": "Senior Protocol Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "salaryRange": "$180k - $250k",
+    "requirements": ["Solidity", "Foundry", "EVM Mechanics", "Gas Optimization", "Smart Contract Development"],
+    "applyLink": "https://uniswap.org/jobs"
+  },
+  {
+    "id": "jump-rust-eng-1",
+    "title": "Rust Software Engineer",
+    "company": "Jump Crypto",
+    "type": "SVM",
+    "salaryRange": "$200k - $300k",
+    "requirements": ["Rust", "Solana Fundamentals", "Anchor Framework", "Distributed Systems", "High-Throughput Systems"],
+    "applyLink": "https://jumpcrypto.com/careers"
+  },
+  {
+    "id": "chainlink-backend-1",
+    "title": "Backend Infrastructure Engineer",
+    "company": "Chainlink Labs",
+    "type": "Backend",
+    "salaryRange": "$150k - $220k",
+    "requirements": ["Go", "Distributed Systems", "Oracles", "Node.js", "System Design"],
+    "applyLink": "https://chainlinklabs.com/jobs"
+  },
+  {
+    "id": "immunefi-sec-researcher-1",
+    "title": "Security Researcher",
+    "company": "Immunefi",
+    "type": "EVM",
+    "salaryRange": "$120k - $200k",
+    "requirements": ["Smart Contract Auditing", "Vulnerability Assessment", "Slither", "Echidna", "Audit Report Writing"],
+    "applyLink": "https://immunefi.com/careers"
+  },
+  {
+    "id": "base-l2-eng-1",
+    "title": "L2 Infrastructure Engineer",
+    "company": "Base (Coinbase)",
+    "type": "EVM",
+    "salaryRange": "$170k - $240k",
+    "requirements": ["L2s", "EVM Mechanics", "Solidity", "Go", "Bridges"],
+    "applyLink": "https://base.org/jobs"
+  },
+  {
+    "id": "optimism-protocol-dev-1",
+    "title": "Protocol Developer",
+    "company": "Optimism",
+    "type": "EVM",
+    "salaryRange": "$160k - $230k",
+    "requirements": ["Solidity", "Go", "L2s", "Consensus Mechanisms", "EVM Mechanics"],
+    "applyLink": "https://www.optimism.io/jobs"
+  },
+  {
+    "id": "solana-core-eng-1",
+    "title": "Core Engineer",
+    "company": "Solana Labs",
+    "type": "SVM",
+    "salaryRange": "$180k - $260k",
+    "requirements": ["Rust", "Distributed Systems", "Solana Runtime", "C++", "High-Throughput Systems"],
+    "applyLink": "https://solana.com/jobs"
+  },
+  {
+    "id": "zksync-zk-eng-1",
+    "title": "ZK Protocol Engineer",
+    "company": "Matter Labs (zkSync)",
+    "type": "EVM",
+    "salaryRange": "$190k - $280k",
+    "requirements": ["Rust", "ZK Proofs", "Cryptography", "Solidity", "L2s"],
+    "applyLink": "https://zksync.io/jobs"
+  }
+]

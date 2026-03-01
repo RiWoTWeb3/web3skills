@@ -4,7 +4,8 @@ import {
   GraduationCap, Palette, Target, TrendingUp, Award, CheckCircle, 
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
-  Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter
+  Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
+  Briefcase, Newspaper, ShieldAlert
 } from 'lucide-react';
 import {
   Routes,
@@ -15,101 +16,34 @@ import {
   useParams
 } from 'react-router-dom';
 
+import skillCategoriesRaw from './data/skills.json';
+import jobsDataRaw from './data/jobs.json';
+import intelDataRaw from './data/intel.json';
+
 // --- Types & Data ---
 
-const skillCategories = {
-  'Programming Languages': [
-    'Python', 'Rust', 'Go', 'TypeScript', 'JavaScript', 'Solidity', 'Vyper',
-    'Huff', 'Yul', 'Cairo', 'C++', 'Move', 'Anchor', 'Seahorse', 'Assembly'
-  ],
-  'Frontend Technologies': [
-    'React', 'Next.js', 'Vue.js', 'Svelte', 'Angular', 'TailwindCSS',
-    'Styled Components', 'Redux', 'React Query', 'Zustand', 'Wagmi', 'RainbowKit'
-  ],
-  'Backend & API': [
-    'REST API', 'GraphQL', 'WebSockets', 'gRPC', 'Node.js', 'Express.js',
-    'NestJS', 'Fastify', 'tRPC', 'Bun'
-  ],
-  'Development Tools': [
-    'Foundry', 'Hardhat', 'Truffle', 'Remix', 'Ganache', 'Anchor CLI',
-    'Solana CLI', 'Design Tools', 'Adobe Creative Suite', 'AI Design Tools',
-    'Postman', 'VS Code Extensions', 'Docker', 'Git Advanced', 'GitHub Actions',
-    'Vercel', 'Railway', 'Render'
-  ],
-  'Security Tools': [
-    'Slither', 'Echidna', 'Certora', 'Mythril', 'Manticore', 'Trail of Bits Tools',
-    'OpenZeppelin Defender', 'Tenderly', 'Aderyn', 'MythX', 'Securify', 'Octopus'
-  ],
-  'Cloud & DevOps': [
-    'AWS', 'GCP', 'Azure', 'CI/CD', 'DevOps Principles', 'Cloud Architecture',
-    'Kubernetes', 'Terraform', 'Jenkins', 'Docker Compose', 'Ansible',
-    'CloudFormation', 'Heroku', 'DigitalOcean'
-  ],
-  'Database & Systems': [
-    'PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Firebase', 'Database Design',
-    'Database Optimization', 'Distributed Systems', 'Time-Series Observability',
-    'Elasticsearch', 'Prisma', 'TypeORM'
-  ],
-  'EVM Blockchain & Web3': [
-    'Blockchain Fundamentals', 'EVM Mechanics', 'Smart Contract Development',
-    'Production EVM Smart Contracts', 'High-TVL Contracts', 'AMMs', 'Oracles',
-    'DeFi Understanding', 'DeFi Products', 'dApps', 'Developer Infrastructure',
-    'L2s', 'Bridges', 'ERC-4337', 'ZK Proofs', 'ZK Rollups', 'ZK-SNARKs',
-    'ZK-STARKs', 'EIPs Contributions', 'MEV', 'Consensus Mechanisms', 'Tokenomics',
-    'NFT Standards', 'Cross-chain Protocols', 'Web3 Wallets', 'IPFS', 'The Graph',
-    'Chainlink Oracles', 'Uniswap V2/V3/V4', 'Curve Finance', 'Aave Protocol',
-    'Compound Protocol', 'MakerDAO', 'Ethers.js', 'Viem'
-  ],
-  'Solana/SVM Blockchain': [
-    'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework',
-    'Seahorse Framework', 'Solana Web3.js', 'Solana CLI', 'SPL Tokens',
-    'Solana NFTs (Metaplex)', 'Solana DeFi', 'Solana Account Model', 'PDAs',
-    'CPI', 'Solana Runtime', 'Borsh Serialization', 'Solana Security Best Practices',
-    'Solana Testing (Bankrun)', 'Jupiter Aggregator', 'Raydium', 'Orca',
-    'Marinade Finance', 'Jito MEV', 'Pyth Network', 'Switchboard Oracles',
-    'Wormhole', 'Solana Mobile Stack'
-  ],
-  'Architecture & Design': [
-    'System Design', 'System Architecture', 'API Building & Scaling',
-    'High-Throughput Systems', 'Low-Latency Systems', 'Production Systems',
-    'Large-Scale Cloud Systems', 'Microservices', 'Event-Driven Architecture',
-    'Domain-Driven Design', 'Serverless Architecture', 'Message Queues',
-    'Load Balancing', 'Caching Strategies', 'Rate Limiting'
-  ],
-  'Security & Auditing': [
-    'Smart Contract Auditing', 'Vulnerability Assessment', 'Formal Verification',
-    'Gas Optimization', 'Access Control Patterns', 'Upgrade Patterns',
-    'Reentrancy Prevention', 'Security Best Practices', 'Cryptography',
-    'Key Management', 'TEEs', 'Zero-Knowledge Systems', 'Audit Report Writing',
-    'Exploit Development', 'Bug Bounty Hunting', 'Threat Modeling',
-    'Secure SDLC', 'Penetration Testing'
-  ],
-  'Testing & QA': [
-    'Unit Testing', 'Integration Testing', 'End-to-End Testing', 'Fuzz Testing',
-    'Invariant Testing', 'Test-Driven Development', 'Performance Testing',
-    'Load Testing', 'Security Testing', 'Mutation Testing'
-  ],
-  'Soft Skills': [
-    'Communication', 'Collaboration', 'Mentoring', 'Leadership',
-    'Guiding Technical Teams', 'Autonomy', 'Adapt to Feedback',
-    'Align with Business Goals', 'Problem Solving', 'Critical Thinking',
-    'Technical Writing', 'Public Speaking'
-  ],
-  'Specialized Experience': [
-    'Billing/Monetization Systems', 'Security Tools Experience', 'Startup Experience',
-    'Web3 Experience', 'Passion for Web3', 'Crypto Experience',
-    'Open-source Contributions', 'Technical Writing', 'Community Building',
-    'Public Speaking', 'Fintech', 'Algorithmic Trading', 'UI/UX Design',
-    'Wireframing', 'Prototyping', 'Sketch', 'InVision', 'Visio', 'SCSS',
-    'iOS Design', 'Android Design', 'Responsive Design', 'Animation (Framer Motion)',
-    'Web Performance Optimization', 'SEO Optimization'
-  ],
-  'Full-Stack Development': [
-    'Frontend-Backend Integration', 'Wallet Connection', 'Transaction Signing',
-    'Smart Contract Interaction', 'Web3 Authentication', 'Decentralized Storage',
-    'Event Listening', 'Multi-chain Support', 'Gas Estimation', 'Error Handling'
-  ]
-};
+const skillCategories = skillCategoriesRaw as Record<string, string[]>;
+
+interface JobListing {
+  id: string;
+  title: string;
+  company: string;
+  type: string;
+  salaryRange: string;
+  requirements: string[];
+  applyLink: string;
+}
+
+interface IntelItem {
+  title: string;
+  category: 'HACK' | 'INFRA' | 'BOUNTY';
+  summary: string;
+  date: string;
+  sourceLink: string;
+}
+
+const jobsData = jobsDataRaw as JobListing[];
+const intelData = intelDataRaw as IntelItem[];
 
 const careerPaths = {
   'EVM Smart Contract Developer': {
@@ -661,6 +595,26 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             >
               {viewMode ? 'Match' : 'Careers'}
             </Link>
+            <Link
+              to="/jobs"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/jobs'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Jobs
+            </Link>
+            <Link
+              to="/news"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/news'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Intel
+            </Link>
             
             {!viewMode && (
               <>
@@ -737,6 +691,28 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
               }`}
             >
               {viewMode ? 'Career Match' : 'Careers'}
+            </Link>
+            <Link
+              to="/jobs"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/jobs'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Jobs
+            </Link>
+            <Link
+              to="/news"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/news'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Intel Feed
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -922,37 +898,98 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link
             to="/skills"
-            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+          className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-6 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
           >
             {darkMode && <div className="corner-bottom" />}
-            <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={36} />
-            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
-            <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
+          <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={32} />
+          <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
+          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4 line-clamp-2`}>
               Browse and track 300+ Web3 skills across 15 categories
             </p>
-            <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-blue-600'} flex items-center gap-2`}>
-              {darkMode ? 'ACCESS_TREE' : 'Start Tracking'} <ArrowRight size={16} />
+          <span className={`text-xs font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-blue-600'} flex items-center gap-2`}>
+            {darkMode ? 'ACCESS_TREE' : 'Start Tracking'} <ArrowRight size={14} />
             </span>
           </Link>
 
           <Link
             to="/careers"
-            className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+          className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-6 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
           >
             {darkMode && <div className="corner-bottom" />}
-            <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={36} />
-            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
-            <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
-              Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
+          <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={32} />
+          <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
+          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4 line-clamp-2`}>
+            Discover roadmaps and check your professional alignment
             </p>
-            <span className={`text-sm font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-purple-600'} flex items-center gap-2`}>
-              {darkMode ? 'DISCOVER_PATHS' : 'View Careers'} <ArrowRight size={16} />
+          <span className={`text-xs font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-purple-600'} flex items-center gap-2`}>
+            {darkMode ? 'VIEW_ROADMAPS' : 'View Careers'} <ArrowRight size={14} />
             </span>
           </Link>
+
+        <Link
+          to="/jobs"
+          className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-green-50 to-green-100 border-green-200 hover:from-green-100 hover:to-green-200 rounded-2xl'} p-6 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+        >
+          {darkMode && <div className="corner-bottom" />}
+          <Briefcase className={`${darkMode ? 'text-accent-blue' : 'text-green-600'} mb-4`} size={32} />
+          <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Job Board</h3>
+          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4 line-clamp-2`}>
+            Find active opportunities matching your current skill set
+          </p>
+          <span className={`text-xs font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-green-600'} flex items-center gap-2`}>
+            {darkMode ? 'FIND_WORK' : 'Explore Jobs'} <ArrowRight size={14} />
+          </span>
+        </Link>
+
+        <Link
+          to="/news"
+          className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-cyan-50 to-cyan-100 border-cyan-200 hover:from-cyan-100 hover:to-cyan-200 rounded-2xl'} p-6 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+        >
+          {darkMode && <div className="corner-bottom" />}
+          <Newspaper className={`${darkMode ? 'text-accent-blue' : 'text-cyan-600'} mb-4`} size={32} />
+          <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Intel Feed</h3>
+          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4 line-clamp-2`}>
+            Stay updated with exploits, infra, and bounty news
+          </p>
+          <span className={`text-xs font-medium ${darkMode ? 'text-accent-blue font-mono' : 'text-cyan-600'} flex items-center gap-2`}>
+            {darkMode ? 'GET_INTEL' : 'View Feed'} <ArrowRight size={14} />
+          </span>
+        </Link>
+      </div>
+
+      {/* Latest Intel Preview Section */}
+      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-8 border`}>
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center gap-3">
+            <ShieldAlert className={darkMode ? 'text-accent-blue' : 'text-red-600'} size={24} />
+            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-sm tracking-widest' : 'text-gray-900'}`}>Latest System Intel</h2>
+          </div>
+          <Link to="/news" className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}>View All Logs</Link>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {intelData.slice(0, 3).map((item, i) => (
+            <div key={i} className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-gray-50 border border-gray-100 rounded-xl'}`}>
+              <div className="flex items-center gap-2 mb-2">
+                <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                  item.category === 'HACK' ? (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200') :
+                  item.category === 'INFRA' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200') :
+                  (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-50 text-green-600 border-green-200')
+                }`}>
+                  {item.category}
+                </span>
+                <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
+              </div>
+              <h4 className={`font-bold text-sm mb-2 line-clamp-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
+              <p className={`text-xs leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{item.summary}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+        </>
       )}
 
       {/* RiWoT Community Section */}
@@ -1229,6 +1266,152 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
           </div>
         );
       })}
+    </div>
+  );
+};
+
+const JobsView = ({ darkMode, displaySkills }) => {
+  const getJobAlignment = (requirements: string[]) => {
+    const matched = requirements.filter(req => displaySkills[req]);
+    return (matched.length / requirements.length) * 100;
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'JOB_BOARD.INFRA' : 'Active Web3 Jobs'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Identify opportunities and check your alignment
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {jobsData.map(job => {
+          const alignment = getJobAlignment(job.requirements);
+          return (
+            <div
+              key={job.id}
+              className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-6 transition-all duration-300 relative overflow-hidden`}
+            >
+              {darkMode && <div className="corner-bottom" />}
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
+                    <span className={`px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider ${
+                      darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 rounded'
+                    }`}>
+                      {job.type}
+                    </span>
+                  </div>
+                  <p className={`text-lg font-medium mb-4 ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+                    {job.company} • <span className={darkMode ? 'text-accent-blue' : 'text-green-600'}>{job.salaryRange}</span>
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {job.requirements.map(req => (
+                      <span
+                        key={req}
+                        className={`px-2 py-1 text-[10px] font-mono border ${
+                          displaySkills[req]
+                            ? (darkMode ? 'bg-accent-blue/20 text-accent-blue border-accent-blue/40 rounded-[2px]' : 'bg-green-100 text-green-700 border-green-200 rounded')
+                            : (darkMode ? 'bg-white/5 text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-100 text-gray-500 border-gray-200 rounded')
+                        }`}
+                      >
+                        {req}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-end gap-3 w-full md:w-auto">
+                  <div className="text-right">
+                    <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Alignment</p>
+                    <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
+                  </div>
+                  <a
+                    href={job.applyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl'} px-8 py-3 w-full md:w-auto`}
+                  >
+                    Apply Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const NewsView = ({ darkMode }) => {
+  const getCategoryColor = (cat: string) => {
+    switch (cat) {
+      case 'HACK': return darkMode ? 'text-red-500' : 'text-red-600';
+      case 'INFRA': return darkMode ? 'text-accent-blue' : 'text-blue-600';
+      case 'BOUNTY': return darkMode ? 'text-green-500' : 'text-green-600';
+      default: return darkMode ? 'text-white' : 'text-gray-900';
+    }
+  };
+
+  const getCategoryBg = (cat: string) => {
+    switch (cat) {
+      case 'HACK': return darkMode ? 'bg-red-500/10 border-red-500/30' : 'bg-red-50 border-red-200';
+      case 'INFRA': return darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200';
+      case 'BOUNTY': return darkMode ? 'bg-green-500/10 border-green-500/30' : 'bg-green-50 border-green-200';
+      default: return darkMode ? 'bg-white/5 border-white/10' : 'bg-gray-50 border-gray-200';
+    }
+  };
+
+  return (
+    <div className="space-y-8">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'SYSTEM_LOG.INTEL' : 'Web3 Intel Feed'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Latest updates from the blockchain ecosystem
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        {intelData.map((item, idx) => (
+          <div
+            key={idx}
+            className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all`}
+          >
+            <div className="flex items-start gap-4">
+              <div className={`mt-1.5 w-2 h-2 rounded-full ${item.category === 'HACK' ? 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]' : item.category === 'INFRA' ? 'bg-accent-blue shadow-[0_0_8px_rgba(0,255,255,0.8)]' : 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]'}`} />
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
+                    {item.category}
+                  </span>
+                  <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
+                </div>
+                <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900'}`}>
+                  {item.title}
+                </h3>
+                <p className={`text-sm leading-relaxed mb-4 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
+                  {item.summary}
+                </p>
+                <a
+                  href={item.sourceLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}
+                >
+                  Source Protocol <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -2083,6 +2266,17 @@ const App = () => {
                 darkMode={darkMode}
                 viewMode={viewMode}
                 getCareerMatch={getCareerMatch}
+              />
+            } />
+            <Route path="/jobs" element={
+              <JobsView
+                darkMode={darkMode}
+                displaySkills={displaySkills}
+              />
+            } />
+            <Route path="/news" element={
+              <NewsView
+                darkMode={darkMode}
               />
             } />
             <Route path="/career/:id" element={
