@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-01",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Provable",
+    "description": "Provable is searching for a senior protocol engineer to design and maintain privacy-preserving ZK protocols. Required: 5+ years SWE, 2-3+ years Rust. Remote.",
+    "link": "https://jobs.ashbyhq.com/provable/e73124b0-b9d0-40f1-bcee-12410ff30b28"
+  },
+  {
+    "date": "2026-03-01",
+    "type": "job",
+    "title": "Software Engineer - Solana at Rain",
+    "description": "Rain is seeking a Software Engineer to own Solana programs end-to-end. Salary: $140k - $240k. Location: New York / Remote.",
+    "link": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
+  },
+  {
+    "date": "2026-03-01",
+    "type": "job",
+    "title": "Senior Software Engineer - Prime at Alpaca",
+    "description": "Alpaca is looking for a senior engineer to build algo trading platforms. Proficiency in C/C++, Go, or Rust required. Remote role.",
+    "link": "https://app.welcometothejungle.com/jobs/cpc7XK9B"
+  },
+  {
+    "date": "2026-03-01",
+    "type": "news",
+    "title": "TRM Labs releases 2026 Crypto Crime Report",
+    "description": "TRM identifies record $158 billion in illicit crypto flows in 2025, highlighting structural shifts in attack vectors toward operational infrastructure.",
+    "link": "https://www.trmlabs.com/reports-and-whitepapers/2026-crypto-crime-report"
+  },
+  {
+    "date": "2026-03-01",
+    "type": "news",
+    "title": "Chainalysis releases 2026 Crypto Crime Report on Ransomware",
+    "description": "Chainalysis report shows total on-chain ransomware payments fell to $820 million in 2025 despite record attacks, as fewer victims pay ransoms.",
+    "link": "https://www.chainalysis.com/blog/crypto-ransomware-2026/"
+  },
+  {
+    "date": "2026-03-01",
+    "type": "hack",
+    "title": "IoTeX ioTube Bridge Exploit Analysis",
+    "description": "The IoTeX ioTube cross-chain bridge was exploited for approximately $4.4 million in February 2026 due to a compromised private key used for a malicious contract upgrade.",
+    "link": "https://www.halborn.com/blog/post/explained-the-iotex-hack-february-2026"
+  },
+  {
     "date": "2026-02-28",
     "type": "job",
     "title": "Software Engineer - Solana at Rain",
