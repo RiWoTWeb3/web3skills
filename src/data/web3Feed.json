@@ -1,5 +1,33 @@
 [
   {
+    "date": "2025-04-29",
+    "type": "news",
+    "title": "Ostium Protocol Bug Bounty Launch",
+    "description": "Ostium Protocol launches a bug bounty program with rewards up to $100,000 on Immunefi.",
+    "link": "https://immunefi.com/bug-bounty/ostium/information/"
+  },
+  {
+    "date": "2025-04-24",
+    "type": "news",
+    "title": "dRPC Launches NodeHaus for Foundations",
+    "description": "New infrastructure platform NodeHaus provides real-time RPC monitoring for L1/L2 foundations.",
+    "link": "https://www.theblock.co/amp/post/351884/drpc-launches-nodehaus-an-infra-platform-for-web3-foundations-to-boost-blockchain-access-efficiency"
+  },
+  {
+    "date": "2025-04-23",
+    "type": "job",
+    "title": "Senior Solidity Engineer at Maple Finance",
+    "description": "Maple Finance is hiring a Senior Solidity Engineer. Salary: $160k - $220k. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/senior-solidity-engineer-maple-finance/"
+  },
+  {
+    "date": "2025-04-23",
+    "type": "job",
+    "title": "Senior Web3 Developer at OpenServ",
+    "description": "OpenServ is hiring a Senior Web3 Developer (Solidity/Rust). Salary: $140k - $210k. Remote.",
+    "link": "https://web3.career/senior-web3-developer-solidity-rust-openserv/145427"
+  },
+  {
     "date": "2026-02-28",
     "type": "job",
     "title": "Software Engineer - Solana at Rain",

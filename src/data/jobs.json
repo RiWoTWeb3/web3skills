@@ -1,72 +1,92 @@
 [
   {
-    "id": "wintermute-graduate-defi-algo-trader",
-    "title": "Graduate DeFi Algorithmic Trader",
-    "company": "Wintermute",
-    "workType": "Hybrid",
-    "experience": "Entry level",
-    "salary": "$230,000 - $250,000",
-    "requirements": ["Python", "Rust", "Go", "Git Advanced", "Distributed Systems", "Algorithmic Trading", "Blockchain Fundamentals", "EVM Mechanics", "Smart Contract Development", "Foundry", "System Design"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/graduate-defi-algorithmic-trader-wintermute-t"
+    "id": "maple-finance-senior-solidity-engineer",
+    "title": "Senior Solidity Engineer",
+    "company": "Maple Finance",
+    "type": "EVM",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": ["Solidity", "Foundry", "Smart Contract Development", "DeFi Understanding", "Ethereum"],
+    "applyLink": "https://cryptocurrencyjobs.co/solidity/senior-solidity-engineer-maple-finance/"
   },
   {
-    "id": "helius-senior-rust-engineer",
-    "title": "Senior Rust Engineer",
-    "company": "Helius",
-    "workType": "Remote",
-    "experience": "Senior level",
-    "salary": "Competitive",
-    "requirements": ["Rust", "High-Throughput Systems", "Low-Latency Systems", "Distributed Systems", "Database Design", "Autonomy", "Communication", "Collaboration", "Web3 Experience", "Solana Fundamentals"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/senior-rust-engineer-helius"
+    "id": "nethermind-web3-security-triager",
+    "title": "Web3 Security Triager",
+    "company": "Nethermind",
+    "type": "EVM/SVM",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": ["Rust", "Solidity", "Security Best Practices", "Solana Fundamentals", "Web3 Experience"],
+    "applyLink": "https://cryptocurrencyjobs.co/engineering/web3-security-triager-nethermind/"
   },
   {
-    "id": "helius-rust-engineer",
-    "title": "Rust Engineer",
-    "company": "Helius",
-    "workType": "Remote",
-    "experience": "Mid level",
-    "salary": "Competitive",
-    "requirements": ["Rust", "Distributed Systems", "Database Design", "Autonomy", "Communication", "Collaboration", "Web3 Experience", "Solana Fundamentals"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/rust-engineer-helius"
+    "id": "cow-dao-senior-smart-contract-engineer",
+    "title": "Senior Smart Contract Engineer",
+    "company": "CoW DAO",
+    "type": "EVM",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": ["Solidity", "Rust", "Python", "Smart Contract Development", "DeFi Understanding"],
+    "applyLink": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
   },
   {
-    "id": "helius-staff-fullstack-engineer",
-    "title": "Staff Software Engineer, Full Stack",
-    "company": "Helius",
-    "workType": "Remote",
-    "experience": "Expert / Leader",
-    "salary": "Competitive",
-    "requirements": ["React", "Next.js", "TypeScript", "Go", "API Building & Scaling", "Database Design", "System Design", "System Architecture", "CI/CD", "DevOps Principles", "Communication", "Mentoring", "Solana Fundamentals"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/staff-software-engineer-full-stack-helius"
+    "id": "openserv-senior-web3-developer",
+    "title": "Senior Web3 Developer (Solidity/Rust)",
+    "company": "OpenServ",
+    "type": "EVM/SVM",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": ["Solidity", "Rust", "Base", "Solana Fundamentals", "Gas Optimization", "TypeScript", "DeFi Products"],
+    "applyLink": "https://web3.career/senior-web3-developer-solidity-rust-openserv/145427"
   },
   {
-    "id": "uniswap-senior-backend-engineer",
-    "title": "Senior Backend Engineer",
-    "company": "Uniswap Labs",
-    "workType": "Remote / Hybrid",
-    "experience": "Senior level",
-    "salary": "$210,000 - $232,000",
-    "requirements": ["Cloud Architecture", "Large-Scale Cloud Systems", "Distributed Systems", "Time-Series Observability", "Mentoring", "Leadership", "Passion for Web3", "TypeScript", "AWS"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/senior-backend-engineer-uniswap"
+    "id": "nethermind-founding-protocol-engineer",
+    "title": "Founding Protocol Engineer (Web3 + AI)",
+    "company": "Nethermind",
+    "type": "EVM",
+    "salaryRange": "$170,000 - $250,000",
+    "requirements": ["Solidity", "Python", "Node.js", "TypeScript", "EVM Mechanics", "Distributed Systems"],
+    "applyLink": "https://cryptocurrencyjobs.co/engineering/founding-protocol-engineer-nethermind/"
   },
   {
-    "id": "uniswap-eng-manager-protocol",
-    "title": "Engineering Manager – Protocol",
-    "company": "Uniswap Labs",
-    "workType": "Remote",
-    "experience": "Senior level",
-    "salary": "$360,000 - $390,000",
-    "requirements": ["Solidity", "Huff", "Yul", "Leadership", "Mentoring", "High-TVL Contracts", "EVM Mechanics", "AMMs", "Oracles", "DeFi Understanding", "Communication", "Smart Contract Auditing", "Formal Verification", "Fuzz Testing", "L2s", "Bridges", "ERC-4337", "ZK Proofs", "Foundry", "Hardhat", "Slither", "Echidna", "Certora"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/engineering-manager-protocol-uniswap"
+    "id": "rain-software-engineer-solana",
+    "title": "Software Engineer - Solana",
+    "company": "Rain",
+    "type": "SVM",
+    "salaryRange": "$140,000 - $240,000",
+    "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Web3.js", "TypeScript"],
+    "applyLink": "https://web3.career/rust-jobs"
   },
   {
-    "id": "uniswap-senior-design-lead",
-    "title": "Senior Design Lead",
-    "company": "Uniswap Labs",
-    "workType": "Remote",
-    "experience": "Expert / Leadership level",
-    "salary": "$254,000 - $283,000",
-    "requirements": ["UI/UX Design", "Leadership", "Mentoring", "Design Tools", "Adobe Creative Suite", "AI Design Tools", "Align with Business Goals", "dApps", "DeFi Products"],
-    "applyLink": "https://jobs.cyfrin.io/jobs/senior-design-lead-uniswap"
+    "id": "jumpcrypto-crypto-production-engineer",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": ["Go", "Rust", "Distributed Systems", "High-Throughput Systems", "Linux"],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "1010-trading-rust-developer",
+    "title": "Rust Developer",
+    "company": "1010 trading",
+    "type": "EVM/Backend",
+    "salaryRange": "$130,000 - $190,000",
+    "requirements": ["Rust", "Distributed Systems", "EVM Mechanics", "System Design", "C++"],
+    "applyLink": "https://web3.career/evm-jobs"
+  },
+  {
+    "id": "caldera-protocol-engineer",
+    "title": "Protocol Engineer",
+    "company": "Caldera",
+    "type": "EVM",
+    "salaryRange": "$160,000 - $230,000",
+    "requirements": ["Go", "Solidity", "EVM Mechanics", "L2s", "Rollups", "Distributed Systems"],
+    "applyLink": "https://cryptojobslist.com/solidity"
+  },
+  {
+    "id": "sei-senior-smart-contract-engineer",
+    "title": "Senior Smart Contract Engineer",
+    "company": "Sei Development Foundation",
+    "type": "EVM",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": ["Solidity", "Rust", "Cosmos SDK", "Smart Contract Development", "Gas Optimization"],
+    "applyLink": "https://cryptojobslist.com/solidity"
   }
 ]

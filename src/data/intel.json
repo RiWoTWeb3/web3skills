@@ -1,37 +1,37 @@
 [
   {
-    "title": "Uniswap v4 Mainnet Launch Intel",
-    "category": "INFRA",
-    "summary": "Uniswap v4 introduces 'hooks', allowing for customized liquidity pools and dynamic fees. The security of these hooks is now a primary focus for DeFi auditors.",
-    "date": "2025-04-05",
-    "sourceLink": "https://uniswap.org"
+    "title": "Ostium Protocol Bug Bounty Launch",
+    "category": "BOUNTY",
+    "summary": "Ostium Protocol, a decentralized exchange for RWAs on Arbitrum, launches a bug bounty program with rewards up to $100,000 for critical vulnerabilities.",
+    "date": "2025-04-29",
+    "sourceLink": "https://immunefi.com/bug-bounty/ostium/information/"
   },
   {
-    "title": "Solana Firedancer v1.2 Performance Benchmark",
+    "title": "dRPC Launches NodeHaus for Foundations",
     "category": "INFRA",
-    "summary": "New benchmarks for Firedancer show significant improvements in block processing speed and network stability under extreme load conditions.",
-    "date": "2025-04-02",
-    "sourceLink": "https://solana.com"
+    "summary": "dRPC introduces NodeHaus, an infrastructure platform providing real-time RPC monitoring and control for L1 and L2 foundations to optimize ecosystem growth.",
+    "date": "2025-04-24",
+    "sourceLink": "https://www.theblock.co/amp/post/351884/drpc-launches-nodehaus-an-infra-platform-for-web3-foundations-to-boost-blockchain-access-efficiency"
   },
   {
-    "title": "L2 Bridge Exploit Analysis: $45M Loss",
+    "title": "FOIL Protocol Live on Immunefi",
+    "category": "BOUNTY",
+    "summary": "FOIL Protocol joins Immunefi with a $10,000 maximum bounty. The program focuses on smart contract security for their average price fixing mechanism.",
+    "date": "2025-04-23",
+    "sourceLink": "https://immunefi.com/bug-bounty/foil/scope/"
+  },
+  {
+    "title": "L2 Bridge Vulnerability Patched Post-Analysis",
     "category": "HACK",
-    "summary": "A complex exploit targeting a major L2 bridge protocol was identified. The attack used a flaw in the cross-chain message verification logic.",
-    "date": "2025-03-28",
+    "summary": "Detailed post-mortem of a recently patched vulnerability in a major L2 bridge. The flaw involved incorrect state validation during cross-chain withdrawals.",
+    "date": "2025-04-15",
     "sourceLink": "https://rekt.news"
   },
   {
-    "title": "Immunefi 2025 Bug Bounty Report",
+    "title": "Movement Labs Attackathon Concludes",
     "category": "BOUNTY",
-    "summary": "Immunefi reports a 30% increase in critical vulnerability findings in 2025, with major payouts reaching new highs for infrastructure-level exploits.",
-    "date": "2025-03-25",
-    "sourceLink": "https://immunefi.com"
-  },
-  {
-    "title": "New ERC-4337 Account Abstraction Updates",
-    "category": "INFRA",
-    "summary": "Recent updates to the Account Abstraction standard improve gas efficiency for user operations and simplify multi-chain wallet management.",
-    "date": "2025-03-20",
-    "sourceLink": "https://ethereum.org"
+    "summary": "The Movement Labs Attackathon on Immunefi has concluded with a $400,000 reward pool, focusing on Move-based blockchain security and execution environments.",
+    "date": "2025-04-04",
+    "sourceLink": "https://immunefi.com/audit-competition/movement-labs-attackathon/information/"
   }
 ]
