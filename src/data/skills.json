@@ -15,7 +15,7 @@
     "Foundry", "Hardhat", "Truffle", "Remix", "Ganache", "Anchor CLI",
     "Solana CLI", "Design Tools", "Adobe Creative Suite", "AI Design Tools",
     "Postman", "VS Code Extensions", "Docker", "Git Advanced", "GitHub Actions",
-    "Vercel", "Railway", "Render"
+    "Vercel", "Railway", "Render", "Linux"
   ],
   "Security Tools": [
     "Slither", "Echidna", "Certora", "Mythril", "Manticore", "Trail of Bits Tools",
@@ -35,12 +35,12 @@
     "Blockchain Fundamentals", "EVM Mechanics", "Smart Contract Development",
     "Production EVM Smart Contracts", "High-TVL Contracts", "AMMs", "Oracles",
     "DeFi Understanding", "DeFi Products", "dApps", "Developer Infrastructure",
-    "L2s", "Bridges", "ERC-4337", "ZK Proofs", "ZK Rollups", "ZK-SNARKs",
+    "L2s", "Bridges", "ERC-4337", "ZK Proofs", "ZK Rollups", "Rollups", "ZK-SNARKs",
     "ZK-STARKs", "EIPs Contributions", "MEV", "Consensus Mechanisms", "Tokenomics",
     "NFT Standards", "Cross-chain Protocols", "Web3 Wallets", "IPFS", "The Graph",
     "Chainlink Oracles", "Uniswap V2/V3/V4", "Curve Finance", "Aave Protocol",
     "Compound Protocol", "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus",
-    "Sonic Chain"
+    "Sonic Chain", "Ethereum", "Cosmos SDK"
   ],
   "Solana/SVM Blockchain": [
     "Solana Fundamentals", "Solana Program Development", "Anchor Framework",

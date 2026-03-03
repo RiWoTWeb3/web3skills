@@ -8,7 +8,8 @@
     "experience": "Junior/Senior level",
     "salaryRange": "$102,000 - $180,000",
     "requirements": ["Solidity", "Rust", "Go", "Smart Contract Auditing", "Vulnerability Assessment", "Blockchain Fundamentals", "EVM Mechanics"],
-    "applyLink": "https://www.indeed.com/q-web3-solidity-jobs.html"
+    "applyLink": "https://www.indeed.com/q-web3-solidity-jobs.html",
+    "isSystemExample": true
   },
   {
     "id": "nightsea-backend-engineer",
@@ -19,7 +20,8 @@
     "experience": "Mid level",
     "salaryRange": "$150,000 - $210,000",
     "requirements": ["Go", "Solidity", "Frontend-Backend Integration", "Database Design", "System Architecture", "Web3 Experience"],
-    "applyLink": "https://www.indeed.com/q-web3-solidity-jobs.html"
+    "applyLink": "https://www.indeed.com/q-web3-solidity-jobs.html",
+    "isSystemExample": true
   },
   {
     "id": "bitgo-senior-software-engineer-stablecoins",
@@ -30,7 +32,8 @@
     "experience": "Senior level",
     "salaryRange": "$180,000 - $220,000",
     "requirements": ["Solidity", "TypeScript", "EVM Mechanics", "Blockchain Fundamentals", "Smart Contract Development"],
-    "applyLink": "https://web3.career/senior+solidity-jobs"
+    "applyLink": "https://web3.career/senior+solidity-jobs",
+    "isSystemExample": true
   },
   {
     "id": "rain-software-engineer-solana",

@@ -1,93 +1,93 @@
 [
   {
+    "title": "Ostium Protocol Bug Bounty Launch",
+    "category": "BOUNTY",
+    "summary": "Ostium Protocol is offering up to $100,000 in bug bounties for findings related to its RWA perpetuals exchange on Arbitrum.",
+    "date": "2025-04-29",
+    "sourceLink": "https://immunefi.com/bounty/ostium/"
+  },
+  {
     "title": "UPCX Protocol Exploit: $70M Loss",
     "category": "HACK",
     "summary": "A major exploit targeting the UPCX protocol resulted in a $70M loss in April 2025. The attack involved a vulnerability in the protocol's liquidity management system.",
     "date": "2025-04-25",
-    "sourceLink": "https://rekt.news"
-  },
-  {
-    "title": "KiloEx Vulnerability Incident: $7.5M",
-    "category": "HACK",
-    "summary": "KiloEx experienced a security incident resulting in $7.5M in lost funds. Security researchers identified an edge case in the platform's trading engine.",
-    "date": "2025-04-20",
-    "sourceLink": "https://rekt.news"
-  },
-  {
-    "title": "Loopscale Security Breach: $5.8M Loss",
-    "category": "HACK",
-    "summary": "Loopscale was targeted in a security breach that led to a $5.8M loss. The attack focused on a flaw in the cross-chain collateralization logic.",
-    "date": "2025-04-18",
-    "sourceLink": "https://rekt.news"
-  },
-  {
-    "title": "ZKsync Incident Analysis: $5.0M",
-    "category": "HACK",
-    "summary": "A ZKsync ecosystem project was exploited for $5.0M. The incident highlights the ongoing challenges in securing rollup-based infrastructure.",
-    "date": "2025-04-15",
-    "sourceLink": "https://rekt.news"
-  },
-  {
-    "title": "Term Labs Exploit: $1.5M Loss",
-    "category": "HACK",
-    "summary": "Term Labs suffered a $1.5M exploit due to a bug in its interest rate calculation module. The issue has since been patched by the team.",
-    "date": "2025-04-12",
-    "sourceLink": "https://rekt.news"
+    "sourceLink": "https://rekt.news/upcx-exploit/"
   },
   {
     "title": "USDN Synthetic Dollar Bug Bounty",
     "category": "BOUNTY",
     "summary": "USDN has launched a new bug bounty program on Immunefi with rewards up to $50,000 for critical vulnerabilities in its synthetic asset logic.",
     "date": "2025-04-21",
-    "sourceLink": "https://immunefi.com"
+    "sourceLink": "https://immunefi.com/bounty/usdn/"
   },
   {
-    "title": "Ostium Protocol Bug Bounty Launch",
-    "category": "BOUNTY",
-    "summary": "Ostium Protocol is offering up to $100,000 in bug bounties for findings related to its RWA perpetuals exchange on Arbitrum.",
-    "date": "2025-04-29",
-    "sourceLink": "https://immunefi.com"
+    "title": "KiloEx Vulnerability Incident: $7.5M",
+    "category": "HACK",
+    "summary": "KiloEx experienced a security incident resulting in $7.5M in lost funds. Security researchers identified an edge case in the platform's trading engine.",
+    "date": "2025-04-20",
+    "sourceLink": "https://rekt.news/kiloex-incident/"
+  },
+  {
+    "title": "Loopscale Security Breach: $5.8M Loss",
+    "category": "HACK",
+    "summary": "Loopscale was targeted in a security breach that led to a $5.8M loss. The attack focused on a flaw in the cross-chain collateralization logic.",
+    "date": "2025-04-18",
+    "sourceLink": "https://rekt.news/loopscale-incident/"
+  },
+  {
+    "title": "ZKsync Incident Analysis: $5.0M",
+    "category": "HACK",
+    "summary": "A ZKsync ecosystem project was exploited for $5.0M. The incident highlights the ongoing challenges in securing rollup-based infrastructure.",
+    "date": "2025-04-15",
+    "sourceLink": "https://rekt.news/zksync-ecosystem-exploit/"
+  },
+  {
+    "title": "Term Labs Exploit: $1.5M Loss",
+    "category": "HACK",
+    "summary": "Term Labs suffered a $1.5M exploit due to a bug in its interest rate calculation module. The issue has since been patched by the team.",
+    "date": "2025-04-12",
+    "sourceLink": "https://rekt.news/term-labs-incident/"
   },
   {
     "title": "Sonic Chain Mainnet Launch",
     "category": "INFRA",
     "summary": "Sonic Chain has officially launched its mainnet, claiming 10,000+ verifiable TPS and full EVM compatibility. It aims to power high-frequency DeFi apps.",
     "date": "2025-04-10",
-    "sourceLink": "https://soniclabs.com"
+    "sourceLink": "https://soniclabs.com/blog/mainnet-launch"
   },
   {
     "title": "Uniswap v4 Mainnet Launch Intel",
     "category": "INFRA",
     "summary": "Uniswap v4 introduces 'hooks', allowing for customized liquidity pools and dynamic fees. The security of these hooks is now a primary focus for DeFi auditors.",
     "date": "2025-04-05",
-    "sourceLink": "https://uniswap.org"
+    "sourceLink": "https://blog.uniswap.org/uniswap-v4-vision"
   },
   {
     "title": "Solana Firedancer v1.2 Performance Benchmark",
     "category": "INFRA",
     "summary": "New benchmarks for Firedancer show significant improvements in block processing speed and network stability under extreme load conditions.",
     "date": "2025-04-02",
-    "sourceLink": "https://solana.com"
+    "sourceLink": "https://solana.com/news/firedancer-benchmarks"
   },
   {
     "title": "L2 Bridge Exploit Analysis: $45M Loss",
     "category": "HACK",
     "summary": "A complex exploit targeting a major L2 bridge protocol was identified. The attack used a flaw in the cross-chain message verification logic.",
     "date": "2025-03-28",
-    "sourceLink": "https://rekt.news"
+    "sourceLink": "https://rekt.news/l2-bridge-exploit/"
   },
   {
     "title": "Immunefi 2025 Bug Bounty Report",
     "category": "BOUNTY",
     "summary": "Immunefi reports a 30% increase in critical vulnerability findings in 2025, with major payouts reaching new highs for infrastructure-level exploits.",
     "date": "2025-03-25",
-    "sourceLink": "https://immunefi.com"
+    "sourceLink": "https://medium.com/immunefi/2025-bug-bounty-report"
   },
   {
     "title": "New ERC-4337 Account Abstraction Updates",
     "category": "INFRA",
     "summary": "Recent updates to the Account Abstraction standard improve gas efficiency for user operations and simplify multi-chain wallet management.",
     "date": "2025-03-20",
-    "sourceLink": "https://ethereum.org"
+    "sourceLink": "https://ethereum.org/en/developers/docs/account-abstraction/"
   }
 ]
