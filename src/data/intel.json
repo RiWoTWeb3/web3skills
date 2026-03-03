@@ -1,5 +1,61 @@
 [
   {
+    "title": "UPCX Protocol Exploit: $70M Loss",
+    "category": "HACK",
+    "summary": "A major exploit targeting the UPCX protocol resulted in a $70M loss in April 2025. The attack involved a vulnerability in the protocol's liquidity management system.",
+    "date": "2025-04-25",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "KiloEx Vulnerability Incident: $7.5M",
+    "category": "HACK",
+    "summary": "KiloEx experienced a security incident resulting in $7.5M in lost funds. Security researchers identified an edge case in the platform's trading engine.",
+    "date": "2025-04-20",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "Loopscale Security Breach: $5.8M Loss",
+    "category": "HACK",
+    "summary": "Loopscale was targeted in a security breach that led to a $5.8M loss. The attack focused on a flaw in the cross-chain collateralization logic.",
+    "date": "2025-04-18",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "ZKsync Incident Analysis: $5.0M",
+    "category": "HACK",
+    "summary": "A ZKsync ecosystem project was exploited for $5.0M. The incident highlights the ongoing challenges in securing rollup-based infrastructure.",
+    "date": "2025-04-15",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "Term Labs Exploit: $1.5M Loss",
+    "category": "HACK",
+    "summary": "Term Labs suffered a $1.5M exploit due to a bug in its interest rate calculation module. The issue has since been patched by the team.",
+    "date": "2025-04-12",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "USDN Synthetic Dollar Bug Bounty",
+    "category": "BOUNTY",
+    "summary": "USDN has launched a new bug bounty program on Immunefi with rewards up to $50,000 for critical vulnerabilities in its synthetic asset logic.",
+    "date": "2025-04-21",
+    "sourceLink": "https://immunefi.com"
+  },
+  {
+    "title": "Ostium Protocol Bug Bounty Launch",
+    "category": "BOUNTY",
+    "summary": "Ostium Protocol is offering up to $100,000 in bug bounties for findings related to its RWA perpetuals exchange on Arbitrum.",
+    "date": "2025-04-29",
+    "sourceLink": "https://immunefi.com"
+  },
+  {
+    "title": "Sonic Chain Mainnet Launch",
+    "category": "INFRA",
+    "summary": "Sonic Chain has officially launched its mainnet, claiming 10,000+ verifiable TPS and full EVM compatibility. It aims to power high-frequency DeFi apps.",
+    "date": "2025-04-10",
+    "sourceLink": "https://soniclabs.com"
+  },
+  {
     "title": "Uniswap v4 Mainnet Launch Intel",
     "category": "INFRA",
     "summary": "Uniswap v4 introduces 'hooks', allowing for customized liquidity pools and dynamic fees. The security of these hooks is now a primary focus for DeFi auditors.",
