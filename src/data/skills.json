@@ -39,7 +39,8 @@
     "ZK-STARKs", "EIPs Contributions", "MEV", "Consensus Mechanisms", "Tokenomics",
     "NFT Standards", "Cross-chain Protocols", "Web3 Wallets", "IPFS", "The Graph",
     "Chainlink Oracles", "Uniswap V2/V3/V4", "Curve Finance", "Aave Protocol",
-    "Compound Protocol", "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus"
+    "Compound Protocol", "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus",
+    "Sonic Chain"
   ],
   "Solana/SVM Blockchain": [
     "Solana Fundamentals", "Solana Program Development", "Anchor Framework",
