@@ -1,6 +1,97 @@
 [
   {
-    "date": "2026-03-01",
+    "date": "2025-04-29",
+    "type": "news",
+    "title": "Ostium Protocol Bug Bounty Launch",
+    "description": "Ostium Protocol is offering up to $100,000 in bug bounties for findings related to its RWA perpetuals exchange on Arbitrum.",
+    "link": "https://immunefi.com"
+  },
+  {
+    "date": "2025-04-29",
+    "type": "job",
+    "title": "Software Engineer - Solana at Rain",
+    "description": "Rain is seeking a Software Engineer to own Solana programs end-to-end. Salary: $140k - $240k. Location: New York / Remote.",
+    "link": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
+  },
+  {
+    "date": "2025-04-25",
+    "type": "hack",
+    "title": "UPCX Protocol Exploit: $70M Loss",
+    "description": "A major exploit targeting the UPCX protocol resulted in a $70M loss. The attack involved a vulnerability in the protocol's liquidity management system.",
+    "link": "https://rekt.news"
+  },
+  {
+    "date": "2025-04-25",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Provable",
+    "description": "Provable is searching for a senior protocol engineer to design and maintain privacy-preserving ZK protocols. Required: 5+ years SWE, 2-3+ years Rust. Remote.",
+    "link": "https://jobs.ashbyhq.com/provable/e73124b0-b9d0-40f1-bcee-12410ff30b28"
+  },
+  {
+    "date": "2025-04-21",
+    "type": "news",
+    "title": "USDN Synthetic Dollar Bug Bounty",
+    "description": "USDN has launched a new bug bounty program on Immunefi with rewards up to $50,000 for critical vulnerabilities in its synthetic asset logic.",
+    "link": "https://immunefi.com"
+  },
+  {
+    "date": "2025-04-20",
+    "type": "hack",
+    "title": "KiloEx Vulnerability Incident: $7.5M",
+    "description": "KiloEx experienced a security incident resulting in $7.5M in lost funds. Security researchers identified an edge case in the platform's trading engine.",
+    "link": "https://rekt.news"
+  },
+  {
+    "date": "2025-04-20",
+    "type": "job",
+    "title": "Senior Software Engineer - Stablecoins at Bitgo",
+    "description": "Bitgo is hiring a Senior Software Engineer for its stablecoin ecosystem. Expertise in Solidity and EVM mechanics required. Remote.",
+    "link": "https://web3.career/senior+solidity-jobs"
+  },
+  {
+    "date": "2025-04-18",
+    "type": "hack",
+    "title": "Loopscale Security Breach: $5.8M Loss",
+    "description": "Loopscale was targeted in a security breach that led to a $5.8M loss. The attack focused on a flaw in the cross-chain collateralization logic.",
+    "link": "https://rekt.news"
+  },
+  {
+    "date": "2025-04-18",
+    "type": "job",
+    "title": "Backend Engineer at NIGHTSEA INC",
+    "description": "NIGHTSEA INC is seeking a Backend Engineer with expertise in Golang and Solidity to support its stablecoin ecosystem. Salary: $150k - $210k.",
+    "link": "https://www.indeed.com/q-web3-solidity-jobs.html"
+  },
+  {
+    "date": "2025-04-15",
+    "type": "hack",
+    "title": "ZKsync Incident Analysis: $5.0M",
+    "description": "A ZKsync ecosystem project was exploited for $5.0M. The incident highlights the ongoing challenges in securing rollup-based infrastructure.",
+    "link": "https://rekt.news"
+  },
+  {
+    "date": "2025-04-15",
+    "type": "job",
+    "title": "Blockchain Security Engineer at CertiK",
+    "description": "CertiK is seeking a Blockchain Security Engineer with expertise in Solidity, Rust, or Golang. Salary: $102k - $180k. Remote.",
+    "link": "https://www.indeed.com/q-web3-solidity-jobs.html"
+  },
+  {
+    "date": "2025-04-12",
+    "type": "hack",
+    "title": "Term Labs Exploit: $1.5M Loss",
+    "description": "Term Labs suffered a $1.5M exploit due to a bug in its interest rate calculation module. The issue has since been patched by the team.",
+    "link": "https://rekt.news"
+  },
+  {
+    "date": "2025-04-10",
+    "type": "news",
+    "title": "Sonic Chain Mainnet Launch",
+    "description": "Sonic Chain has officially launched its mainnet, claiming 10,000+ verifiable TPS and full EVM compatibility. It aims to power high-frequency DeFi apps.",
+    "link": "https://soniclabs.com"
+  },
+  {
+    "date": "2025-03-01",
     "type": "job",
     "title": "Senior Protocol Engineer at Provable",
     "description": "Provable is searching for a senior protocol engineer to design and maintain privacy-preserving ZK protocols. Required: 5+ years SWE, 2-3+ years Rust. Remote.",

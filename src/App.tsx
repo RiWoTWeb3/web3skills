@@ -28,9 +28,10 @@ interface JobListing {
   id: string;
   title: string;
   company: string;
+  type: 'EVM' | 'SVM' | 'Backend';
   workType: string;
   experience: string;
-  salary: string;
+  salaryRange: string;
   requirements: string[];
   applyLink: string;
 }
@@ -1322,26 +1323,22 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     <span className={`px-3 py-1 text-[10px] font-mono border ${
                       darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 border-blue-200 rounded-full'
                     }`}>
-                      AVAILABLE ROLE
+                      {job.isSystemExample ? 'SYSTEM EXAMPLE' : 'AVAILABLE ROLE'}
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                     <div>
                       <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Company</p>
                       <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.company}</p>
                     </div>
                     <div>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Type</p>
-                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.workType}</p>
-                    </div>
-                    <div>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Experience</p>
-                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.experience}</p>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Stack</p>
+                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.type}</p>
                     </div>
                     <div>
                       <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Salary</p>
-                      <p className={`font-bold ${darkMode ? 'text-accent-blue' : 'text-green-600'}`}>{job.salary}</p>
+                      <p className={`font-bold ${darkMode ? 'text-accent-blue' : 'text-green-600'}`}>{job.salaryRange}</p>
                     </div>
                   </div>
 
