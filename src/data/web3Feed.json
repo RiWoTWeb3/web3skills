@@ -1,5 +1,48 @@
 [
   {
+    "date": "2026-03-02",
+    "type": "job",
+    "title": "Senior Rust Engineer at Monad Labs",
+    "description": "Monad is building a high-performance EVM-equivalent L1. Seeking Senior Rust Engineers to optimize the execution engine and networking stack. Remote.",
+    "link": "https://monad.xyz/jobs"
+  },
+  {
+    "date": "2026-03-02",
+    "type": "job",
+    "title": "Solana Program Developer at Jito Foundation",
+    "description": "Jito is looking for developers to build and maintain high-performance Solana programs for the Jito network. Required: Rust, Solana SDK. Remote.",
+    "link": "https://www.jito.network/careers"
+  },
+  {
+    "date": "2026-03-02",
+    "type": "job",
+    "title": "Full Stack Engineer (EVM) at Uniswap Labs",
+    "description": "Join the team building the most popular decentralized exchange. Looking for engineers with experience in React, TypeScript, and Solidity/EVM. Remote.",
+    "link": "https://uniswap.org/jobs"
+  },
+  {
+    "date": "2026-03-02",
+    "type": "news",
+    "title": "Base announces Interop Roadmap for Seamless L2 Connectivity",
+    "description": "Base unveils plans for enhanced interoperability between Ethereum Layer 2s, aiming to reduce friction for users and developers across the ecosystem.",
+    "link": "https://base.mirror.xyz/"
+  },
+  {
+    "date": "2026-03-02",
+    "type": "news",
+    "title": "Starknet v0.14.0 Goes Live on Mainnet",
+    "description": "The latest Starknet upgrade brings significant performance improvements and reduced transaction costs, furthering its goal of scalable Ethereum L2 solutions.",
+    "link": "https://starknet.io/blog/"
+  },
+  {
+    "date": "2026-03-02",
+    "type": "hack",
+    "title": "YieldFi Protocol awards $500k Critical Bug Bounty",
+    "description": "A security researcher successfully identified a critical vulnerability in YieldFi's vault logic, preventing a potential $20M exploit. The bug was patched immediately.",
+    "link": "https://immunefi.com/bounty/yieldfi/"
+  },
+  {
+    "date": "2026-03-01",
     "date": "2025-04-29",
     "type": "news",
     "title": "Ostium Protocol Bug Bounty Launch",
