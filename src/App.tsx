@@ -1054,7 +1054,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             href="https://discord.gg/qMd7jwV7UG"
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center gap-2 transition-colors ${
+            className={`inline-flex items-center gap-2 whitespace-nowrap transition-colors ${
               darkMode ? 'btn-industrial-primary px-8 py-3' : 'bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium'
             }`}
           >
@@ -1063,10 +1063,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             <ArrowRight size={18} />
           </a>
           <a
-            href="https://github.com/RiWoT"
+            href="https://github.com/orgs/RiWoTWeb3/repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center gap-2 transition-colors ${
+            className={`inline-flex items-center gap-2 whitespace-nowrap transition-colors ${
               darkMode ? 'btn-glass-dark px-8 py-3 border-white/10 text-xs font-mono uppercase tracking-widest' : 'bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium'
             }`}
           >
@@ -1316,16 +1316,34 @@ const JobsView = ({ darkMode, displaySkills }) => {
               className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-8 transition-all duration-300 relative overflow-hidden`}
             >
               {darkMode && <div className="corner-bottom" />}
-              <div className="flex flex-col md:flex-row justify-between items-start gap-8 relative z-10">
-                <div className="flex-1 space-y-6">
-                  <div className="flex flex-wrap items-center gap-3">
+              <div className="space-y-6 relative z-10">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6">
+                  <div className="space-y-3">
                     <h3 className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
-                    <span className={`px-3 py-1 text-[10px] font-mono border ${
+                    <span className={`inline-flex px-3 py-1 text-[10px] font-mono border ${
                       darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 border-blue-200 rounded-full'
                     }`}>
                       {job.isSystemExample ? 'SYSTEM EXAMPLE' : 'AVAILABLE ROLE'}
                     </span>
                   </div>
+
+                  <div className="flex flex-wrap items-center gap-3 md:justify-end md:text-right">
+                    <div>
+                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Alignment</p>
+                      <p className={`text-4xl leading-none font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
+                    </div>
+                    <a
+                      href={job.applyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center gap-2 text-[10px] font-mono uppercase tracking-widest px-3 py-2 border transition-all whitespace-nowrap self-end md:self-auto ${
+                        darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue hover:bg-accent-blue/20 rounded-[2px]' : 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 rounded'
+                      }`}
+                    >
+                      Protocol Link <ExternalLink size={12} />
+                    </a>
+                  </div>
+                </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                     <div>
@@ -1361,7 +1379,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     </div>
                   </div>
 
-                  {missingSkills.length > 0 && (
+                {missingSkills.length > 0 && (
                     <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
                       <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
                       <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
@@ -1369,27 +1387,8 @@ const JobsView = ({ darkMode, displaySkills }) => {
                       </p>
                     </div>
                   )}
-                </div>
-
-                <div className="flex flex-col items-end gap-6 w-full md:w-auto">
-                  <div className="text-right">
-                    <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Alignment</p>
-                    <p className={`text-5xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{alignment.toFixed(0)}%</p>
                   </div>
-                  <div className="flex flex-col gap-3 w-full md:w-auto min-w-[140px]">
-                    <a
-                      href={job.applyLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest p-3 border transition-all ${
-                        darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue hover:bg-accent-blue/20' : 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100'
-                      }`}
-                    >
-                      Protocol Link <ExternalLink size={14} />
-                    </a>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           );
         })}
@@ -1475,9 +1474,10 @@ const NewsView = ({ darkMode }) => {
                     href={item.sourceLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest border border-transparent hover:border-current px-0 py-1 transition-all ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}
+                    className={`inline-flex items-center gap-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-widest border border-transparent hover:border-current px-0 py-1 transition-all ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}
                   >
-                    Establish Secure Link <ExternalLink size={12} />
+                    <span>Establish Secure Link</span>
+                    <ExternalLink size={12} className="shrink-0" />
                   </a>
                   {darkMode && <div className="text-[8px] font-mono text-slate-700 uppercase tracking-tighter">Verified_Source_Protocol // 0x...{item.title.length.toString(16)}</div>}
                 </div>
@@ -1683,11 +1683,16 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
         <div className="space-y-12">
           {career.roadmap.map((phase, index) => (
             <div key={index} className="relative">
-              <div className={`flex items-start gap-6 ${darkMode ? 'border-accent-blue/10' : 'border-gray-200'} border-l-2 pl-8 pb-12`}>
-                <div className={`absolute -left-[15px] top-0 ${darkMode ? 'bg-[#070B12] border-accent-blue text-accent-blue shadow-[0_0_10px_rgba(0,255,255,0.3)] rounded-[4px]' : 'bg-white border-blue-600 text-blue-600 rounded-full'} border-2 font-mono w-8 h-8 flex items-center justify-center text-xs z-10 mt-[2px]`}>
-                  {String(index + 1).padStart(2, '0')}
+              <div className="flex items-start gap-4 pb-12">
+                <div className="flex flex-col items-center self-stretch">
+                  <div className={`${darkMode ? 'bg-[#070B12] border-accent-blue text-accent-blue shadow-[0_0_10px_rgba(0,255,255,0.3)] rounded-[4px]' : 'bg-white border-blue-600 text-blue-600 rounded-full'} border-2 font-mono w-8 h-8 flex items-center justify-center text-xs shrink-0`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  {index < career.roadmap.length - 1 && (
+                    <div className={`w-px flex-1 mt-3 ${darkMode ? 'bg-accent-blue/10' : 'bg-gray-200'}`} />
+                  )}
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 pt-1">
                   <div className="flex flex-wrap items-center gap-4 mb-6">
                     <h3 className={`text-xl font-bold ${darkMode ? 'text-white font-mono uppercase tracking-tight' : 'text-gray-900'}`}>
                       {phase.phase}
@@ -2021,7 +2026,7 @@ const Footer = ({ darkMode }) => (
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/mirmohmmadluqman/web3skills"
+              href="https://github.com/RiWoTWeb3"
               target="_blank"
               rel="noopener noreferrer"
               className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-accent-blue border-accent-blue/20' : 'bg-gray-100 text-gray-700 p-2 rounded-lg'}`}
@@ -2049,7 +2054,7 @@ const Footer = ({ darkMode }) => (
           <div className="space-y-4">
             <h4 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-900 font-bold'}`}>Resources</h4>
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-              <li><a href="https://github.com/RiWoT" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>RiWoT Org</a></li>
+              <li><a href="https://github.com/RiWoTWeb3" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>RiWoT Org</a></li>
               <li><a href="https://discord.gg/qMd7jwV7UG" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Discord</a></li>
             </ul>
           </div>
