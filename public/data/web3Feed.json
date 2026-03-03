@@ -1,38 +1,38 @@
 [
   {
-    "date": "2026-02-28",
+    "date": "2026-03-03",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Provable",
+    "description": "Provable is hiring a Senior Protocol Engineer to design and implement zero-knowledge protocols. Focus: Rust, Cryptography, Distributed Systems.",
+    "link": "https://network.bondex.app/job/provable/senior-protocol-engineer/8574566"
+  },
+  {
+    "date": "2026-03-03",
+    "type": "job",
+    "title": "Senior Software Engineer - Prime at Alpaca",
+    "description": "Alpaca is looking for a Senior Software Engineer for its Prime brokerage infrastructure. Focus: Go, Rust, Distributed Systems.",
+    "link": "https://job-boards.greenhouse.io/alpaca/jobs/5808481004"
+  },
+  {
+    "date": "2026-03-03",
     "type": "job",
     "title": "Software Engineer - Solana at Rain",
-    "description": "Rain is hiring a Software Engineer for Solana development. Salary range: $140k - $240k. Location: New York / Remote.",
-    "link": "https://web3.career/rust-jobs"
+    "description": "Rain is hiring a Software Engineer for Solana development. Salary range: $140k - $240k. Focus: Rust, Anchor, Solana Web3.js.",
+    "link": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
   },
   {
-    "date": "2026-02-28",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Jumpcrypto is seeking a Crypto Production Engineer. Salary range: $150k - $200k. Remote.",
-    "link": "https://web3.career/rust+solana-jobs"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "job",
-    "title": "Rust Developer at 1010 trading",
-    "description": "1010 trading is looking for a Rust Developer for EVM Systems & Trading Infrastructure. Remote.",
-    "link": "https://web3.career/evm-jobs"
-  },
-  {
-    "date": "2026-02-28",
+    "date": "2026-03-02",
     "type": "news",
-    "title": "TRM Labs reaches unicorn status with $70M Series C",
-    "description": "Blockchain intelligence firm TRM Labs has achieved unicorn status after raising $70 million in a Series C funding round to expand its compliance and risk management tools.",
-    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
+    "title": "ParaFi Capital and Jupiter Invest in Web3 Infrastructure",
+    "description": "ParaFi Capital and Jupiter have announced a strategic investment in decentralized infrastructure projects to enhance Solana ecosystem's scalability and liquidity.",
+    "link": "https://www.theblock.co/post/313883/parafi-capital-jupiter-invest-web3-infrastructure"
   },
   {
-    "date": "2026-02-28",
+    "date": "2026-03-01",
     "type": "news",
-    "title": "Jupiter secures $35M strategic raise for Solana DeFi",
-    "description": "Jupiter, a leading aggregator on Solana, has secured $35 million in strategic funding to further enhance its DeFi infrastructure and ecosystem growth.",
-    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
+    "title": "TRM Labs Launches New Anti-Exploit Tool",
+    "description": "TRM Labs has released a real-time recovery tool for DeFi protocols to track stolen assets across 30+ blockchains, aimed at reducing the impact of cross-chain hacks.",
+    "link": "https://www.trmlabs.com/blog/trm-labs-recovery-tool-defi"
   },
   {
     "date": "2026-02-28",

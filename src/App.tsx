@@ -45,7 +45,7 @@ const skillCategories = {
   'Cloud & DevOps': [
     'AWS', 'GCP', 'Azure', 'CI/CD', 'DevOps Principles', 'Cloud Architecture',
     'Kubernetes', 'Terraform', 'Jenkins', 'Docker Compose', 'Ansible',
-    'CloudFormation', 'Heroku', 'DigitalOcean'
+    'CloudFormation', 'Heroku', 'DigitalOcean', 'Linux', 'Geth', 'Erigon'
   ],
   'Database & Systems': [
     'PostgreSQL', 'MongoDB', 'Redis', 'Supabase', 'Firebase', 'Database Design',
@@ -53,14 +53,14 @@ const skillCategories = {
     'Elasticsearch', 'Prisma', 'TypeORM'
   ],
   'EVM Blockchain & Web3': [
-    'Blockchain Fundamentals', 'EVM Mechanics', 'Smart Contract Development',
+    'Blockchain Fundamentals', 'Ethereum', 'EVM Mechanics', 'Smart Contract Development',
     'Production EVM Smart Contracts', 'High-TVL Contracts', 'AMMs', 'Oracles',
     'DeFi Understanding', 'DeFi Products', 'dApps', 'Developer Infrastructure',
-    'L2s', 'Bridges', 'ERC-4337', 'ZK Proofs', 'ZK Rollups', 'ZK-SNARKs',
+    'L2s', 'Bridges', 'Rollups', 'ERC-4337', 'ZK Proofs', 'ZK Rollups', 'ZK-SNARKs',
     'ZK-STARKs', 'EIPs Contributions', 'MEV', 'Consensus Mechanisms', 'Tokenomics',
     'NFT Standards', 'Cross-chain Protocols', 'Web3 Wallets', 'IPFS', 'The Graph',
     'Chainlink Oracles', 'Uniswap V2/V3/V4', 'Curve Finance', 'Aave Protocol',
-    'Compound Protocol', 'MakerDAO', 'Ethers.js', 'Viem'
+    'Compound Protocol', 'MakerDAO', 'Ethers.js', 'Viem', 'Cosmos SDK'
   ],
   'Solana/SVM Blockchain': [
     'Solana Fundamentals', 'Solana Program Development', 'Anchor Framework',
@@ -119,7 +119,7 @@ const careerPaths = {
     ecosystem: 'EVM',
     description: 'Master Solidity development and build secure, efficient smart contracts for Ethereum and EVM-compatible chains',
     requiredSkills: [
-      'Solidity', 'Foundry', 'Hardhat', 'Smart Contract Development',
+      'Solidity', 'Ethereum', 'Foundry', 'Hardhat', 'Smart Contract Development',
       'Production EVM Smart Contracts', 'EVM Mechanics', 'Security Best Practices',
       'Gas Optimization', 'Unit Testing', 'Integration Testing', 'Fuzz Testing',
       'Ethers.js', 'Viem'
@@ -349,7 +349,7 @@ const careerPaths = {
     ecosystem: 'EVM',
     description: 'Build scalable backend systems and infrastructure for Web3 applications',
     requiredSkills: [
-      'Go', 'Rust', 'Python', 'Distributed Systems', 'API Building & Scaling',
+      'Go', 'Rust', 'Python', 'Linux', 'Geth', 'Erigon', 'Distributed Systems', 'API Building & Scaling',
       'Database Design', 'High-Throughput Systems', 'Kubernetes'
     ],
     roadmap: [
@@ -395,8 +395,8 @@ const careerPaths = {
     ecosystem: 'EVM',
     description: 'Design and architect blockchain systems, L2 solutions, and infrastructure at scale',
     requiredSkills: [
-      'System Architecture', 'Blockchain Fundamentals', 'L2s', 'Bridges',
-      'Distributed Systems', 'High-Throughput Systems', 'EVM Mechanics', 'Consensus Mechanisms'
+      'System Architecture', 'Blockchain Fundamentals', 'Ethereum', 'L2s', 'Rollups', 'Bridges',
+      'Distributed Systems', 'High-Throughput Systems', 'EVM Mechanics', 'Consensus Mechanisms', 'Cosmos SDK'
     ],
     roadmap: [
       {
@@ -840,18 +840,18 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         </div>
       )}
 
-      <div className={`text-center pt-16 pb-12 relative overflow-hidden ${darkMode ? 'bg-[#070B12]' : 'mesh-gradient'}`}>
+      <div className={`text-center pt-8 pb-6 relative overflow-hidden ${darkMode ? 'bg-[#070B12]' : 'mesh-gradient'}`}>
         {darkMode && <div className="absolute inset-0 grid-bg-industrial opacity-[0.05]"></div>}
         <div className="relative z-10">
-          <div className="flex justify-center mb-6">
-            <div className={`${darkMode ? 'bg-accent-blue rounded-2xl' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl'} p-3 border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'} flex items-center justify-center shadow-lg`}>
-              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-12 h-12 md:w-14 md:h-14 object-cover rounded-xl" />
+          <div className="flex justify-center mb-3">
+            <div className={`${darkMode ? 'bg-accent-blue rounded-xl' : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl'} p-2 border ${darkMode ? 'border-cyan-300/50' : 'border-transparent'} flex items-center justify-center shadow-md`}>
+              <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-10 h-10 object-cover rounded-lg" />
             </div>
           </div>
-          <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 ${darkMode ? 'text-white' : 'gradient-text-purple'} leading-tight`}>
+          <h1 className={`text-3xl md:text-5xl font-extrabold mb-3 ${darkMode ? 'text-white' : 'gradient-text-purple'} leading-tight`}>
             {darkMode ? 'SYSTEM.SKILLS.ENGINE' : 'Web3 Skills Learning Platform'}
           </h1>
-          <p className={`text-xl md:text-2xl max-w-3xl mx-auto mb-8 ${darkMode ? 'text-slate-400 font-mono text-sm uppercase tracking-tight' : 'text-gray-700'}`}>
+          <p className={`text-base md:text-lg max-w-2xl mx-auto mb-6 ${darkMode ? 'text-slate-400 font-mono text-xs uppercase tracking-tight' : 'text-gray-700'}`}>
             Master Web3 development with curated resources, track your progress, and join the RiWoT community
           </p>
           {!viewMode && (
@@ -860,22 +860,22 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
                 to="/skills"
                 className={`flex items-center gap-2 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   darkMode
-                    ? 'btn-industrial-primary px-10 py-5 text-lg'
-                    : 'bg-purple-600 hover:bg-purple-700 text-white shadow-xl rounded-xl px-8 py-4 font-bold text-lg'
+                    ? 'btn-industrial-primary px-6 py-3 text-sm'
+                    : 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg rounded-lg px-6 py-3 font-bold text-base'
                 }`}
               >
-                <Rocket size={24} />
+                <Rocket size={18} />
                 {darkMode ? 'START_TRACKING' : 'Initialize Learning'}
               </Link>
               <Link
                 to="/careers"
                 className={`flex items-center gap-2 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
                   darkMode
-                    ? 'btn-glass-dark px-10 py-5 text-lg border-white/10 font-mono uppercase tracking-widest rounded-[4px]'
-                    : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900 shadow-xl rounded-xl px-8 py-4 font-bold text-lg'
+                    ? 'btn-glass-dark px-6 py-3 text-sm border-white/10 font-mono uppercase tracking-widest rounded-[4px]'
+                    : 'bg-white hover:bg-gray-50 border-2 border-purple-300 text-gray-900 shadow-lg rounded-lg px-6 py-3 font-bold text-base'
                 }`}
               >
-                <Target size={24} />
+                <Target size={18} />
                 {darkMode ? 'VIEW_ROADMAPS' : 'Explore Careers'}
               </Link>
             </div>
@@ -883,13 +883,13 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {!viewMode && (
-          <div className={`${darkMode ? 'surface-industrial corner-animate text-white' : 'card-white-light text-gray-900 rounded-2xl'} p-8 group transition-all duration-300 stagger-item overflow-hidden relative`}>
+          <div className={`${darkMode ? 'surface-industrial corner-animate text-white' : 'card-white-light text-gray-900 rounded-2xl'} p-4 group transition-all duration-300 stagger-item overflow-hidden relative`}>
             {darkMode && <div className="corner-bottom" />}
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 ${darkMode ? 'rounded-[4px]' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-black'}`}>
+              <div className="flex items-center gap-2 mb-2">
+                <div className={`w-8 h-8 ${darkMode ? 'rounded-[4px]' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-black'}`}>
                   <TrendingUp className={darkMode ? 'text-black' : 'text-white'} size={24} />
                 </div>
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Your Progress</h3>
@@ -907,11 +907,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           </div>
         )}
 
-        <div className={`${darkMode ? 'surface-industrial corner-animate text-white' : 'gradient-card-purple p-8 rounded-2xl text-white card-lift'} p-8 group transition-all duration-300 stagger-item overflow-hidden relative`}>
+        <div className={`${darkMode ? 'surface-industrial corner-animate text-white' : 'gradient-card-purple rounded-2xl text-white card-lift'} p-4 group transition-all duration-300 stagger-item overflow-hidden relative`}>
           {darkMode && <div className="corner-bottom" />}
           <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 ${darkMode ? 'rounded-[4px]' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-white/20 backdrop-blur-sm'}`}>
+            <div className="flex items-center gap-2 mb-2">
+              <div className={`w-8 h-8 ${darkMode ? 'rounded-[4px]' : 'rounded-xl'} flex items-center justify-center ${darkMode ? 'bg-accent-blue' : 'bg-white/20 backdrop-blur-sm'}`}>
                 <Award className={darkMode ? 'text-black' : 'text-white'} size={24} />
               </div>
               <h3 className="text-lg font-bold">Categories Mastered</h3>
@@ -928,11 +928,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         </div>
 
         {!viewMode && (
-          <div className={`${darkMode ? 'surface-industrial corner-animate' : 'glass-card-light rounded-2xl'} p-8 group transition-all duration-300 stagger-item overflow-hidden relative`}>
+          <div className={`${darkMode ? 'surface-industrial corner-animate' : 'glass-card-light rounded-2xl'} p-4 group transition-all duration-300 stagger-item overflow-hidden relative`}>
             {darkMode && <div className="corner-bottom" />}
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`${darkMode ? 'w-12 h-12 rounded-[4px] bg-accent-blue' : 'w-12 h-12 rounded-xl icon-gradient-blue'} flex items-center justify-center`}>
+              <div className="flex items-center gap-2 mb-2">
+                <div className={`${darkMode ? 'w-8 h-8 rounded-[4px] bg-accent-blue' : 'w-8 h-8 rounded-xl icon-gradient-blue'} flex items-center justify-center`}>
                   <Target className="text-black" size={24} />
                 </div>
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
@@ -946,13 +946,13 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
 
       {!viewMode && (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link
               to="/skills"
-              className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+              className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:from-blue-100 hover:to-blue-200 rounded-2xl'} p-4 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
             >
               {darkMode && <div className="corner-bottom" />}
-              <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-4`} size={36} />
+              <BookOpen className={`${darkMode ? 'text-accent-blue' : 'text-blue-600'} mb-2`} size={24} />
               <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Track Skills</h3>
               <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
                 Browse and track 300+ Web3 skills across 15 categories
@@ -964,10 +964,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
 
             <Link
               to="/careers"
-              className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-8 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+              className={`${darkMode ? 'surface-industrial corner-animate border-accent-blue/10 rounded-[6px]' : 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:from-purple-100 hover:to-purple-200 rounded-2xl'} p-4 border transition-colors text-left group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
             >
               {darkMode && <div className="corner-bottom" />}
-              <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-4`} size={36} />
+              <Target className={`${darkMode ? 'text-accent-blue' : 'text-purple-600'} mb-2`} size={24} />
               <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Explore Careers</h3>
               <p className={`${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-4`}>
                 Discover {Object.keys(careerPaths).length} career paths with detailed roadmaps and resources
@@ -1018,23 +1018,23 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {/* RiWoT Community Section */}
-      <div className={`${darkMode ? 'surface-industrial border-accent-blue/10' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200 rounded-2xl'} p-8 md:p-12 border relative overflow-hidden`}>
+      <div className={`${darkMode ? 'surface-industrial border-accent-blue/10' : 'bg-gradient-to-br from-green-50 to-blue-50 border-green-200 rounded-2xl'} p-6 md:p-8 border relative overflow-hidden`}>
         {darkMode && <div className="absolute inset-0 grid-bg-industrial opacity-[0.03]"></div>}
-        <div className="text-center mb-8 relative z-10">
-          <div className="flex justify-center mb-4">
-            <Users className={darkMode ? 'text-accent-blue' : 'text-green-600'} size={48} />
+        <div className="text-center mb-6 relative z-10">
+          <div className="flex justify-center mb-3">
+            <Users className={darkMode ? 'text-accent-blue' : 'text-green-600'} size={32} />
           </div>
-          <h2 className={`text-3xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             {darkMode ? 'RIWOT_COMMUNITY.CONNECT' : 'Join RiWoT Community'}
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto ${darkMode ? 'text-slate-400 font-mono text-sm' : 'text-gray-600'}`}>
+          <p className={`text-base max-w-2xl mx-auto ${darkMode ? 'text-slate-400 font-mono text-sm' : 'text-gray-600'}`}>
             Connect with Web3 developers, get mentorship, and accelerate your learning journey
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-8 relative z-10">
-          <div className={`${darkMode ? 'bg-white/[0.02] p-6 rounded border border-white/5' : ''}`}>
-            <h3 className={`font-bold text-lg mb-4 ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Target Knowledge:</h3>
+        <div className="grid md:grid-cols-2 gap-4 mb-6 relative z-10">
+          <div className={`${darkMode ? 'bg-white/[0.02] p-4 rounded border border-white/5' : ''}`}>
+            <h3 className={`font-bold text-base mb-3 ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Target Knowledge:</h3>
             <ul className="space-y-3">
               {[
                 'Smart contract development & security',
@@ -1240,11 +1240,11 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
             </div>
 
             {expandedCategories[categoryName] && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-1.5">
                 {filtered.map(skill => (
                   <label
                     key={skill}
-                    className={`flex items-center gap-3 p-3 ${
+                    className={`flex items-center gap-2 p-1.5 ${
                       viewMode ? '' : 'cursor-pointer'
                     } transition-all duration-300 group ${
                       displaySkills[skill]
@@ -1305,41 +1305,41 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
     return (
       <div
         key={careerName}
-        className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[6px]' : 'glass-card-light rounded-2xl'} p-6 transition-all duration-300 group relative overflow-hidden`}
+        className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[4px]' : 'glass-card-light rounded-lg'} p-3 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between`}
       >
         {darkMode && <div className="corner-bottom" />}
         <div className="relative z-10">
-          <div className="flex items-start justify-between mb-4">
+          <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className={`text-xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h3>
-              <p className={`${darkMode ? 'label-industrial text-accent-blue/60' : 'text-xs font-mono uppercase tracking-wider text-gray-600'}`}>{career.ecosystem}</p>
+              <h3 className={`text-sm font-bold mb-0.5 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{careerName}</h3>
+              <p className={`${darkMode ? 'label-industrial text-[9px] text-accent-blue/60' : 'text-[9px] font-mono uppercase tracking-wider text-gray-600'}`}>{career.ecosystem}</p>
             </div>
-            <div className={`${darkMode ? 'bg-accent-blue rounded' : 'icon-gradient-blue rounded-xl'} p-3`}>
-              <Icon className="text-black" size={24} />
+            <div className={`${darkMode ? 'bg-accent-blue rounded-[2px]' : 'icon-gradient-blue rounded-md'} p-1.5`}>
+              <Icon className="text-black" size={14} />
             </div>
           </div>
 
-          <p className={`text-sm mb-4 line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>{career.description}</p>
+          <p className={`text-[10px] mb-2 line-clamp-2 ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{career.description}</p>
 
-          <div className="mb-4">
-            <div className={`${darkMode ? 'progress-bar-dark' : 'progress-bar-light'} mb-2`}>
+          <div className="mb-3">
+            <div className={`${darkMode ? 'progress-bar-dark h-1' : 'progress-bar-light h-1'} mb-1`}>
               <div className="progress-fill" style={{ width: `${match.percentage}%` }} />
             </div>
-            <p className={`text-xs font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-              {match.percentage.toFixed(0)}% alignment • {match.matched}/{match.total} units
+            <p className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>
+              {match.percentage.toFixed(0)}% Match // {match.matched}/{match.total} Units
             </p>
           </div>
-
-          {!viewMode && (
-            <Link
-              to={`/career/${encodeURIComponent(careerName)}`}
-              className={`${darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl'} w-full py-3 px-6 font-bold transition-all duration-300 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
-            >
-              {darkMode ? 'ACCESS_ROADMAP' : 'View Roadmap'}
-              <ArrowRight size={16} />
-            </Link>
-          )}
         </div>
+
+        {!viewMode && (
+          <Link
+            to={`/career/${encodeURIComponent(careerName)}`}
+            className={`${darkMode ? 'btn-industrial-primary py-1.5 text-[9px]' : 'btn-primary-light rounded-md py-1.5 text-[9px]'} w-full font-bold transition-all duration-300 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none uppercase tracking-widest`}
+          >
+            {darkMode ? 'ACCESS_MAP' : 'View Roadmap'}
+            <ArrowRight size={10} />
+          </Link>
+        )}
       </div>
     );
   };
@@ -1360,7 +1360,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           <div className={`h-8 w-1 bg-accent-blue ${darkMode ? '' : 'rounded-full'}`} />
           <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-lg' : 'text-gray-900'}`}>EVM Ecosystem</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {evmCareers.map(([name, career]) => (
             <CareerCard key={name} careerName={name} career={career} />
           ))}
@@ -1372,7 +1372,7 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           <div className={`h-8 w-1 bg-accent-blue ${darkMode ? '' : 'rounded-full'}`} />
           <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-lg' : 'text-gray-900'}`}>Solana Ecosystem</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {solanaCareers.map(([name, career]) => (
             <CareerCard key={name} careerName={name} career={career} />
           ))}
@@ -1463,46 +1463,50 @@ const FeedView = ({ darkMode, feed }) => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filteredFeed.map((item, index) => (
           <div
             key={index}
-            className={`${darkMode ? 'surface-industrial corner-animate' : 'bg-white border-gray-200 rounded-xl'} p-6 border group relative overflow-hidden`}
+            className={`${darkMode ? 'surface-industrial corner-animate border-white/5 rounded-[4px]' : 'bg-white border-gray-200 rounded-lg'} p-3 border group relative overflow-hidden flex flex-col justify-between`}
           >
             {darkMode && <div className="corner-bottom" />}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
-              <div className="flex items-start gap-4 flex-1">
-                <div className={`p-3 rounded-[4px] ${getTypeStyles(item.type)} border`}>
-                  {getIcon(item.type)}
+            <div className="relative z-10 flex-1">
+              <div className="flex items-start gap-3 mb-3">
+                <div className={`p-1.5 rounded-[2px] ${getTypeStyles(item.type)} border flex-shrink-0`}>
+                  {React.cloneElement(getIcon(item.type) as React.ReactElement, { size: 16 })}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className={`text-[10px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 border rounded-[2px] ${getTypeStyles(item.type)}`}>
+                    <span className={`text-[8px] font-mono uppercase tracking-tighter px-1 py-0 border rounded-[1px] ${getTypeStyles(item.type)}`}>
                       {item.type}
                     </span>
-                    <span className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-400'}`}>
+                    <span className={`text-[8px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-400'}`}>
                       {item.date}
                     </span>
                   </div>
-                  <h3 className={`text-lg font-bold ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900 group-hover:text-blue-600'} transition-colors`}>
+                  <h3 className={`text-xs font-bold leading-tight ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900 group-hover:text-blue-600'} transition-colors line-clamp-2`}>
                     {item.title}
                   </h3>
-                  <p className={`text-sm mt-1 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
-                    {item.description}
-                  </p>
                 </div>
               </div>
+              <p className={`text-[10px] leading-relaxed mb-4 ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'} line-clamp-3`}>
+                {item.description}
+              </p>
+            </div>
+
+            <div className="mt-auto pt-2 border-t border-white/5 flex items-center justify-between relative z-10">
               <a
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 text-sm font-mono uppercase tracking-wider transition-all ${
-                  darkMode ? 'text-accent-blue hover:translate-x-1' : 'text-blue-600 hover:text-blue-700'
+                className={`flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-widest transition-all ${
+                  darkMode ? 'text-accent-blue hover:translate-x-0.5' : 'text-blue-600 hover:text-blue-700'
                 }`}
               >
-                {darkMode ? 'ACCESS_SOURCE' : 'View Source'}
-                <ExternalLink size={14} />
+                {darkMode ? 'ACCESS' : 'Link'}
+                <ExternalLink size={10} />
               </a>
+              {darkMode && <div className="text-[7px] font-mono text-slate-800 uppercase tracking-tighter">INFRA:{index.toString(16).padStart(3, '0')}</div>}
             </div>
           </div>
         ))}
