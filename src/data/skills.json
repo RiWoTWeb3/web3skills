@@ -40,7 +40,7 @@
     "NFT Standards", "Cross-chain Protocols", "Web3 Wallets", "IPFS", "The Graph",
     "Chainlink Oracles", "Uniswap V2/V3/V4", "Curve Finance", "Aave Protocol",
     "Compound Protocol", "MakerDAO", "Ethers.js", "Viem", "Arbitrum Stylus",
-    "Sonic Chain"
+    "Sonic Chain", "Parallel EVM", "Monad SDK", "EigenLayer AVS", "Berachain Polaris", "Hyperlane Interop"
   ],
   "Solana/SVM Blockchain": [
     "Solana Fundamentals", "Solana Program Development", "Anchor Framework",
