@@ -18,7 +18,7 @@ import {
 
 import skillCategoriesRaw from './data/skills.json';
 import jobsDataRaw from './data/jobs.json';
-import intelDataRaw from './data/web3Feed.json';
+import intelDataRaw from './data/intel.json';
 
 // --- Types & Data ---
 
@@ -38,10 +38,10 @@ interface JobListing {
 
 interface IntelItem {
   title: string;
-  type: 'job' | 'news' | 'hack';
-  description: string;
+  category: 'HACK' | 'INFRA' | 'BOUNTY';
+  summary: string;
   date: string;
-  link: string;
+  sourceLink: string;
 }
 
 const jobsData = jobsDataRaw as JobListing[];
@@ -977,16 +977,16 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
             <div key={i} className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-gray-50 border border-gray-100 rounded-xl'}`}>
               <div className="flex items-center gap-2 mb-2">
                 <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
-                  item.type === 'hack' ? (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200') :
-                  item.type === 'news' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200') :
+                  item.category === 'HACK' ? (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200') :
+                  item.category === 'INFRA' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200') :
                   (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-50 text-green-600 border-green-200')
                 }`}>
-                  {item.type.toUpperCase()}
+                  {item.category}
                 </span>
                 <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
               </div>
               <h4 className={`font-bold text-sm mb-2 line-clamp-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
-              <p className={`text-xs leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{item.description}</p>
+              <p className={`text-xs leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{item.summary}</p>
             </div>
           ))}
         </div>
@@ -1398,29 +1398,29 @@ const JobsView = ({ darkMode, displaySkills }) => {
 };
 
 const NewsView = ({ darkMode }) => {
-  const getCategoryColor = (type: string) => {
-    switch (type) {
-      case 'hack': return darkMode ? 'text-red-500' : 'text-red-600';
-      case 'news': return darkMode ? 'text-accent-blue' : 'text-blue-600';
-      case 'job': return darkMode ? 'text-green-500' : 'text-green-600';
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'HACK': return darkMode ? 'text-red-500' : 'text-red-600';
+      case 'INFRA': return darkMode ? 'text-accent-blue' : 'text-blue-600';
+      case 'BOUNTY': return darkMode ? 'text-green-500' : 'text-green-600';
       default: return darkMode ? 'text-white' : 'text-gray-900';
     }
   };
 
-  const getCategoryBg = (type: string) => {
-    switch (type) {
-      case 'hack': return darkMode ? 'bg-red-500/10 border-red-500/30' : 'bg-red-50 border-red-200';
-      case 'news': return darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200';
-      case 'job': return darkMode ? 'bg-green-500/10 border-green-500/30' : 'bg-green-50 border-green-200';
+  const getCategoryBg = (category: string) => {
+    switch (category) {
+      case 'HACK': return darkMode ? 'bg-red-500/10 border-red-500/30' : 'bg-red-50 border-red-200';
+      case 'INFRA': return darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200';
+      case 'BOUNTY': return darkMode ? 'bg-green-500/10 border-green-500/30' : 'bg-green-50 border-green-200';
       default: return darkMode ? 'bg-white/5 border-white/10' : 'bg-gray-50 border-gray-200';
     }
   };
 
-  const getCategoryIcon = (type: string) => {
-    switch (type) {
-      case 'hack': return <ShieldAlert className="flex-shrink-0" size={18} />;
-      case 'news': return <Newspaper className="flex-shrink-0" size={18} />;
-      case 'job': return <Briefcase className="flex-shrink-0" size={18} />;
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'HACK': return <ShieldAlert className="flex-shrink-0" size={18} />;
+      case 'INFRA': return <Newspaper className="flex-shrink-0" size={18} />;
+      case 'BOUNTY': return <Award className="flex-shrink-0" size={18} />;
       default: return <Server className="flex-shrink-0" size={18} />;
     }
   };
@@ -1443,19 +1443,19 @@ const NewsView = ({ darkMode }) => {
             className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all overflow-hidden relative`}
           >
             {darkMode && <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">
-              {getCategoryIcon(item.type)}
+              {getCategoryIcon(item.category)}
             </div>}
 
             <div className="flex items-start gap-6 relative z-10">
-              <div className={`mt-1 p-2 rounded ${getCategoryBg(item.type)} ${getCategoryColor(item.type)}`}>
-                {getCategoryIcon(item.type)}
+              <div className={`mt-1 p-2 rounded ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
+                {getCategoryIcon(item.category)}
               </div>
 
               <div className="flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
-                    <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.type)} ${getCategoryColor(item.type)}`}>
-                      {item.type.toUpperCase()}
+                    <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
+                      {item.category}
                     </span>
                     <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
                   </div>
@@ -1466,12 +1466,12 @@ const NewsView = ({ darkMode }) => {
                 </h3>
 
                 <p className={`text-sm leading-relaxed mb-6 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
-                  {item.description}
+                  {item.summary}
                 </p>
 
                 <div className="flex items-center justify-between">
                   <a
-                    href={item.link}
+                    href={item.sourceLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-flex items-center gap-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-widest border border-transparent hover:border-current px-0 py-1 transition-all ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}

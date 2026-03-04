@@ -1,10 +1,38 @@
 [
   {
+    "title": "Hyperlane V3 Mainnet Expansion",
+    "category": "INFRA",
+    "summary": "Hyperlane expands its permissionless interoperability layer to 5 new chains, introducing V3 hooks for custom security models and cross-chain governance.",
+    "date": "2025-05-02",
+    "sourceLink": "https://www.hyperlane.xyz/blog"
+  },
+  {
+    "title": "EigenLayer AVS Security Framework Release",
+    "category": "INFRA",
+    "summary": "EigenLayer releases a comprehensive security framework for Actively Validated Services (AVS), focusing on slashing conditions and operator decentralization.",
+    "date": "2025-05-01",
+    "sourceLink": "https://www.eigenlayer.xyz/blog"
+  },
+  {
+    "title": "Monad Devnet Milestone: 10k TPS Reached",
+    "category": "INFRA",
+    "summary": "Monad's internal devnet achieves a stable 10,000 transactions per second in a distributed environment, validating its parallel EVM architecture.",
+    "date": "2025-04-30",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
     "title": "UPCX Protocol Exploit: $70M Loss",
     "category": "HACK",
     "summary": "A major exploit targeting the UPCX protocol resulted in a $70M loss in April 2025. The attack involved a vulnerability in the protocol's liquidity management system.",
     "date": "2025-04-25",
     "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "USDN Synthetic Dollar Bug Bounty",
+    "category": "BOUNTY",
+    "summary": "USDN has launched a new bug bounty program on Immunefi with rewards up to $50,000 for critical vulnerabilities in its synthetic asset logic.",
+    "date": "2025-04-21",
+    "sourceLink": "https://immunefi.com"
   },
   {
     "title": "KiloEx Vulnerability Incident: $7.5M",
@@ -33,13 +61,6 @@
     "summary": "Term Labs suffered a $1.5M exploit due to a bug in its interest rate calculation module. The issue has since been patched by the team.",
     "date": "2025-04-12",
     "sourceLink": "https://rekt.news"
-  },
-  {
-    "title": "USDN Synthetic Dollar Bug Bounty",
-    "category": "BOUNTY",
-    "summary": "USDN has launched a new bug bounty program on Immunefi with rewards up to $50,000 for critical vulnerabilities in its synthetic asset logic.",
-    "date": "2025-04-21",
-    "sourceLink": "https://immunefi.com"
   },
   {
     "title": "Ostium Protocol Bug Bounty Launch",
