@@ -1,5 +1,53 @@
 [
   {
+    "id": "travoom-senior-rust-backend-engineer",
+    "title": "Senior Rust Backend Engineer",
+    "company": "Travoom",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "EVM",
+      "Backend"
+    ],
+    "applyLink": "https://jobs.ashbyhq.com/travoom/76506a7c-6744-42b7-873b-3132797e884e"
+  },
+  {
+    "id": "odos-smart-contracts-engineer",
+    "title": "Smart Contracts Engineer (EVM)",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Smart Contract Development",
+      "Foundry"
+    ],
+    "applyLink": "https://www.odos.xyz/careers"
+  },
+  {
+    "id": "rain-software-engineer-solana-2026",
+    "title": "Software Engineer (Solana)",
+    "company": "Rain",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$140,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Anchor Framework",
+      "Solana Program Development"
+    ],
+    "applyLink": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
+  },
+  {
     "id": "monad-senior-software-engineer-consensus",
     "title": "Senior Software Engineer, Consensus",
     "company": "Monad Labs",
@@ -7,7 +55,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$200,000 - $250,000",
-    "requirements": ["Rust", "Consensus Mechanisms", "Distributed Systems", "Parallel EVM", "Monad SDK"],
+    "requirements": [
+      "Rust",
+      "Consensus Mechanisms",
+      "Distributed Systems",
+      "Parallel EVM",
+      "Monad SDK"
+    ],
     "applyLink": "https://monad.xyz/jobs",
     "isSystemExample": true
   },
@@ -19,7 +73,13 @@
     "workType": "Remote",
     "experience": "Mid/Senior level",
     "salaryRange": "$180,000 - $230,000",
-    "requirements": ["Solidity", "Go", "EigenLayer AVS", "Smart Contract Development", "Distributed Systems"],
+    "requirements": [
+      "Solidity",
+      "Go",
+      "EigenLayer AVS",
+      "Smart Contract Development",
+      "Distributed Systems"
+    ],
     "applyLink": "https://www.eigenlayer.xyz/careers",
     "isSystemExample": true
   },
@@ -31,7 +91,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$190,000 - $240,000",
-    "requirements": ["Go", "Consensus Mechanisms", "Berachain Polaris", "EVM Mechanics", "Distributed Systems"],
+    "requirements": [
+      "Go",
+      "Consensus Mechanisms",
+      "Berachain Polaris",
+      "EVM Mechanics",
+      "Distributed Systems"
+    ],
     "applyLink": "https://berachain.com/careers",
     "isSystemExample": true
   },
@@ -43,7 +109,13 @@
     "workType": "Remote",
     "experience": "Mid level",
     "salaryRange": "$160,000 - $210,000",
-    "requirements": ["Rust", "TypeScript", "Hyperlane Interop", "Bridges", "Cross-chain Protocols"],
+    "requirements": [
+      "Rust",
+      "TypeScript",
+      "Hyperlane Interop",
+      "Bridges",
+      "Cross-chain Protocols"
+    ],
     "applyLink": "https://www.hyperlane.xyz/careers",
     "isSystemExample": true
   },
@@ -55,7 +127,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$210,000 - $260,000",
-    "requirements": ["Rust", "Ethereum", "MEV", "Distributed Systems", "Go"],
+    "requirements": [
+      "Rust",
+      "Ethereum",
+      "MEV",
+      "Distributed Systems",
+      "Go"
+    ],
     "applyLink": "https://jobs.ashbyhq.com/flashbots.net",
     "isSystemExample": true
   },
@@ -67,7 +145,13 @@
     "workType": "Remote",
     "experience": "Expert level",
     "salaryRange": "$180,000 - $240,000",
-    "requirements": ["Solana Fundamentals", "Rust", "System Architecture", "Solana Program Development", "Communication"],
+    "requirements": [
+      "Solana Fundamentals",
+      "Rust",
+      "System Architecture",
+      "Solana Program Development",
+      "Communication"
+    ],
     "applyLink": "https://web3.career/web3-companies/solanafoundation",
     "isSystemExample": true
   },
@@ -79,7 +163,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$220,000 - $270,000",
-    "requirements": ["Solidity", "EVM Mechanics", "DeFi Understanding", "High-TVL Contracts", "Foundry"],
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "DeFi Understanding",
+      "High-TVL Contracts",
+      "Foundry"
+    ],
     "applyLink": "https://uniswap.org/jobs",
     "isSystemExample": true
   },
@@ -91,7 +181,13 @@
     "workType": "Remote",
     "experience": "Mid/Senior level",
     "salaryRange": "$150,000 - $220,000",
-    "requirements": ["Smart Contract Auditing", "Solidity", "Security Tools Experience", "Vulnerability Assessment", "Audit Report Writing"],
+    "requirements": [
+      "Smart Contract Auditing",
+      "Solidity",
+      "Security Tools Experience",
+      "Vulnerability Assessment",
+      "Audit Report Writing"
+    ],
     "applyLink": "https://openzeppelin.com/jobs",
     "isSystemExample": true
   },
@@ -103,7 +199,13 @@
     "workType": "Remote",
     "experience": "Mid level",
     "salaryRange": "$140,000 - $190,000",
-    "requirements": ["Go", "Oracles", "Distributed Systems", "Chainlink Oracles", "System Design"],
+    "requirements": [
+      "Go",
+      "Oracles",
+      "Distributed Systems",
+      "Chainlink Oracles",
+      "System Design"
+    ],
     "applyLink": "https://chainlinklabs.com/jobs",
     "isSystemExample": true
   },
@@ -115,7 +217,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$180,000 - $230,000",
-    "requirements": ["Go", "L2s", "ZK Proofs", "Cryptography", "EVM Mechanics"],
+    "requirements": [
+      "Go",
+      "L2s",
+      "ZK Proofs",
+      "Cryptography",
+      "EVM Mechanics"
+    ],
     "applyLink": "https://polygon.technology/careers",
     "isSystemExample": true
   },
@@ -127,7 +235,15 @@
     "workType": "Remote",
     "experience": "Junior/Senior level",
     "salaryRange": "$102,000 - $180,000",
-    "requirements": ["Solidity", "Rust", "Go", "Smart Contract Auditing", "Vulnerability Assessment", "Blockchain Fundamentals", "EVM Mechanics"],
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Go",
+      "Smart Contract Auditing",
+      "Vulnerability Assessment",
+      "Blockchain Fundamentals",
+      "EVM Mechanics"
+    ],
     "applyLink": "https://www.indeed.com/q-web3-solidity-jobs.html"
   },
   {
@@ -138,7 +254,14 @@
     "workType": "Hybrid remote",
     "experience": "Mid level",
     "salaryRange": "$150,000 - $210,000",
-    "requirements": ["Go", "Solidity", "Frontend-Backend Integration", "Database Design", "System Architecture", "Web3 Experience"],
+    "requirements": [
+      "Go",
+      "Solidity",
+      "Frontend-Backend Integration",
+      "Database Design",
+      "System Architecture",
+      "Web3 Experience"
+    ],
     "applyLink": "https://www.indeed.com/q-web3-solidity-jobs.html"
   },
   {
@@ -149,7 +272,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$180,000 - $220,000",
-    "requirements": ["Solidity", "TypeScript", "EVM Mechanics", "Blockchain Fundamentals", "Smart Contract Development"],
+    "requirements": [
+      "Solidity",
+      "TypeScript",
+      "EVM Mechanics",
+      "Blockchain Fundamentals",
+      "Smart Contract Development"
+    ],
     "applyLink": "https://web3.career/senior+solidity-jobs"
   },
   {
@@ -160,7 +289,13 @@
     "workType": "New York / Remote",
     "experience": "Mid/Senior level",
     "salaryRange": "$140,000 - $240,000",
-    "requirements": ["Rust", "Solana Fundamentals", "Solana Program Development", "Anchor Framework", "Solana Web3.js"],
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Solana Program Development",
+      "Anchor Framework",
+      "Solana Web3.js"
+    ],
     "applyLink": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
   },
   {
@@ -171,7 +306,14 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "Competitive",
-    "requirements": ["C++", "Go", "Rust", "Distributed Systems", "Algorithmic Trading", "System Design"],
+    "requirements": [
+      "C++",
+      "Go",
+      "Rust",
+      "Distributed Systems",
+      "Algorithmic Trading",
+      "System Design"
+    ],
     "applyLink": "https://app.welcometothejungle.com/jobs/cpc7XK9B",
     "isSystemExample": true
   },
@@ -184,7 +326,13 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "Competitive",
-    "requirements": ["Rust", "ZK Proofs", "Cryptography", "Distributed Systems", "System Architecture"],
+    "requirements": [
+      "Rust",
+      "ZK Proofs",
+      "Cryptography",
+      "Distributed Systems",
+      "System Architecture"
+    ],
     "applyLink": "https://jobs.ashbyhq.com/provable/e73124b0-b9d0-40f1-bcee-12410ff30b28"
   },
   {
@@ -195,7 +343,19 @@
     "workType": "Hybrid",
     "experience": "Entry level",
     "salaryRange": "$230,000 - $250,000",
-    "requirements": ["Python", "Rust", "Go", "Git Advanced", "Distributed Systems", "Algorithmic Trading", "Blockchain Fundamentals", "EVM Mechanics", "Smart Contract Development", "Foundry", "System Design"],
+    "requirements": [
+      "Python",
+      "Rust",
+      "Go",
+      "Git Advanced",
+      "Distributed Systems",
+      "Algorithmic Trading",
+      "Blockchain Fundamentals",
+      "EVM Mechanics",
+      "Smart Contract Development",
+      "Foundry",
+      "System Design"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/graduate-defi-algorithmic-trader-wintermute-t"
   },
   {
@@ -206,7 +366,18 @@
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "Competitive",
-    "requirements": ["Rust", "High-Throughput Systems", "Low-Latency Systems", "Distributed Systems", "Database Design", "Autonomy", "Communication", "Collaboration", "Web3 Experience", "Solana Fundamentals"],
+    "requirements": [
+      "Rust",
+      "High-Throughput Systems",
+      "Low-Latency Systems",
+      "Distributed Systems",
+      "Database Design",
+      "Autonomy",
+      "Communication",
+      "Collaboration",
+      "Web3 Experience",
+      "Solana Fundamentals"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/senior-rust-engineer-helius"
   },
   {
@@ -217,7 +388,16 @@
     "workType": "Remote",
     "experience": "Mid level",
     "salaryRange": "Competitive",
-    "requirements": ["Rust", "Distributed Systems", "Database Design", "Autonomy", "Communication", "Collaboration", "Web3 Experience", "Solana Fundamentals"],
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Database Design",
+      "Autonomy",
+      "Communication",
+      "Collaboration",
+      "Web3 Experience",
+      "Solana Fundamentals"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/rust-engineer-helius"
   },
   {
@@ -228,7 +408,21 @@
     "workType": "Remote",
     "experience": "Expert / Leader",
     "salaryRange": "Competitive",
-    "requirements": ["React", "Next.js", "TypeScript", "Go", "API Building & Scaling", "Database Design", "System Design", "System Architecture", "CI/CD", "DevOps Principles", "Communication", "Mentoring", "Solana Fundamentals"],
+    "requirements": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Go",
+      "API Building & Scaling",
+      "Database Design",
+      "System Design",
+      "System Architecture",
+      "CI/CD",
+      "DevOps Principles",
+      "Communication",
+      "Mentoring",
+      "Solana Fundamentals"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/staff-software-engineer-full-stack-helius"
   },
   {
@@ -239,18 +433,52 @@
     "workType": "Remote / Hybrid",
     "experience": "Senior level",
     "salaryRange": "$210,000 - $232,000",
-    "requirements": ["Cloud Architecture", "Large-Scale Cloud Systems", "Distributed Systems", "Time-Series Observability", "Mentoring", "Leadership", "Passion for Web3", "TypeScript", "AWS"],
+    "requirements": [
+      "Cloud Architecture",
+      "Large-Scale Cloud Systems",
+      "Distributed Systems",
+      "Time-Series Observability",
+      "Mentoring",
+      "Leadership",
+      "Passion for Web3",
+      "TypeScript",
+      "AWS"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/senior-backend-engineer-uniswap"
   },
   {
     "id": "uniswap-eng-manager-protocol",
-    "title": "Engineering Manager – Protocol",
+    "title": "Engineering Manager \u2013 Protocol",
     "company": "Uniswap Labs",
     "type": "EVM",
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "$360,000 - $390,000",
-    "requirements": ["Solidity", "Huff", "Yul", "Leadership", "Mentoring", "High-TVL Contracts", "EVM Mechanics", "AMMs", "Oracles", "DeFi Understanding", "Communication", "Smart Contract Auditing", "Formal Verification", "Fuzz Testing", "L2s", "Bridges", "ERC-4337", "ZK Proofs", "Foundry", "Hardhat", "Slither", "Echidna", "Certora"],
+    "requirements": [
+      "Solidity",
+      "Huff",
+      "Yul",
+      "Leadership",
+      "Mentoring",
+      "High-TVL Contracts",
+      "EVM Mechanics",
+      "AMMs",
+      "Oracles",
+      "DeFi Understanding",
+      "Communication",
+      "Smart Contract Auditing",
+      "Formal Verification",
+      "Fuzz Testing",
+      "L2s",
+      "Bridges",
+      "ERC-4337",
+      "ZK Proofs",
+      "Foundry",
+      "Hardhat",
+      "Slither",
+      "Echidna",
+      "Certora"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/engineering-manager-protocol-uniswap"
   },
   {
@@ -261,7 +489,17 @@
     "workType": "Remote",
     "experience": "Expert / Leadership level",
     "salaryRange": "$254,000 - $283,000",
-    "requirements": ["UI/UX Design", "Leadership", "Mentoring", "Design Tools", "Adobe Creative Suite", "AI Design Tools", "Align with Business Goals", "dApps", "DeFi Products"],
+    "requirements": [
+      "UI/UX Design",
+      "Leadership",
+      "Mentoring",
+      "Design Tools",
+      "Adobe Creative Suite",
+      "AI Design Tools",
+      "Align with Business Goals",
+      "dApps",
+      "DeFi Products"
+    ],
     "applyLink": "https://jobs.cyfrin.io/jobs/senior-design-lead-uniswap"
   }
 ]

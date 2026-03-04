@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-04",
+    "type": "news",
+    "title": "Lido V3 Upgrade Proposal",
+    "description": "The Lido community is reviewing a proposal for V3, which introduces a modular architecture for node operators and enhanced staking efficiency.",
+    "link": "https://research.lido.fi/"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "hack",
+    "title": "FlashBridge Protocol White-Hat Report",
+    "description": "A critical vulnerability in FlashBridge's cross-chain settlement logic was reported by a white-hat hacker, preventing a potential $2.5M exploit.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "job",
+    "title": "Senior Rust Backend Engineer at Travoom",
+    "description": "Design and evolve the backend architecture powering a global, real-time social platform natively in Rust. Remote.",
+    "link": "https://jobs.ashbyhq.com/travoom/76506a7c-6744-42b7-873b-3132797e884e"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "job",
+    "title": "Smart Contracts Engineer (EVM) at Odos",
+    "description": "Build and operate distributed, low-latency services for Odos swap infrastructure across 15+ EVM chains. Remote.",
+    "link": "https://www.odos.xyz/careers"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "job",
+    "title": "Software Engineer (Solana) at Rain",
+    "description": "Join Rain to build the future of Solana programs. Experience with Rust and Solana SDK required. Remote.",
+    "link": "https://web3.career/solana-jobs"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "news",
+    "title": "Arbitrum Stylus Mainnet Milestone",
+    "description": "Arbitrum Stylus achieves a major adoption milestone with over 500 projects deploying C++ and Rust based smart contracts on the L2.",
+    "link": "https://arbitrum.io/blog"
+  },
+  {
     "date": "2025-05-02",
     "type": "news",
     "title": "Hyperlane V3 Mainnet Expansion",
