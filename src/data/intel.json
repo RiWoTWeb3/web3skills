@@ -1,5 +1,26 @@
 [
   {
+    "title": "Lido V3 Upgrade Proposal",
+    "category": "INFRA",
+    "summary": "The Lido community is reviewing a proposal for V3, which introduces a modular architecture for node operators and enhanced staking efficiency.",
+    "date": "2026-03-04",
+    "sourceLink": "https://research.lido.fi/"
+  },
+  {
+    "title": "Arbitrum Stylus Mainnet Milestone",
+    "category": "INFRA",
+    "summary": "Arbitrum Stylus reaches a major milestone on its path to mainnet, allowing developers to write smart contracts in Rust and C++ with EVM compatibility.",
+    "date": "2026-03-04",
+    "sourceLink": "https://arbitrum.io/stylus"
+  },
+  {
+    "title": "FlashBridge Protocol White-Hat Report",
+    "category": "HACK",
+    "summary": "A critical vulnerability in FlashBridge's cross-chain settlement logic was reported by a white-hat hacker, preventing a potential $2.5M exploit.",
+    "date": "2026-03-04",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Hyperlane V3 Mainnet Expansion",
     "category": "INFRA",
     "summary": "Hyperlane expands its permissionless interoperability layer to 5 new chains, introducing V3 hooks for custom security models and cross-chain governance.",
