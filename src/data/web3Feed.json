@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-05",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Help build, manage, and maintain a sophisticated validator infrastructure and tooling for one of the world's top proprietary trading firms. Remote.",
+    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Jito Labs",
+    "description": "Join the team building high-performance Solana protocol infrastructure. Focus on consensus, networking, and MEV optimization. Remote.",
+    "link": "https://web3.career/senior-protocol-engineer-jito-wtf/146320"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "job",
+    "title": "Senior Golang Engineer (Prysm) at Offchain Labs",
+    "description": "Contribute to the Prysm Ethereum consensus client and Arbitrum scaling solutions. Extensive Go production experience required. Remote.",
+    "link": "https://jobera.com/remote-job/senior-golang-engineer-prysm-offchain-labs-remote-worldwide/"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "news",
+    "title": "Solana Alpenglow Upgrade Mainnet Target",
+    "description": "Solana's Alpenglow consensus upgrade targets Q1 2026 mainnet deployment, promising sub-second finality and enhanced network resilience.",
+    "link": "https://www.blockdaemon.com/blog/solana-in-2026-technical-roadmap"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "news",
+    "title": "Solana Firedancer Full Release Performance",
+    "description": "The full release of the Firedancer validator client is set to achieve 1M TPS benchmarks, significantly improving Solana's throughput and redundancy.",
+    "link": "https://www.fool.com/investing/2026/02/11/2-game-changing-updates-coming-to-solana-in-2026/"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "hack",
+    "title": "Inverse Finance Bug Bounty Program Update",
+    "description": "Inverse Finance updates its Immunefi bug bounty, offering rewards up to $100,000 for critical vulnerabilities in its FiRM and DOLA protocols.",
+    "link": "https://immunefi.com/bug-bounty/inversefinance/information/"
+  },
+  {
     "date": "2026-03-04",
     "type": "news",
     "title": "Lido V3 Upgrade Proposal",
