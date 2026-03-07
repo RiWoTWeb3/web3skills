@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "category": "INFRA",
+    "summary": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
+    "date": "2026-03-07",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana ZK-Compression Mainnet Milestone",
+    "category": "INFRA",
+    "summary": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
+    "date": "2026-03-07",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
+    "category": "BOUNTY",
+    "summary": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
+    "date": "2026-03-07",
+    "sourceLink": "https://immunefi.com/bug-bounty/hyperliquid/"
+  },
+  {
     "title": "Lido V3 Upgrade Proposal",
     "category": "INFRA",
     "summary": "The Lido community is reviewing a proposal for V3, which introduces a modular architecture for node operators and enhanced staking efficiency.",
