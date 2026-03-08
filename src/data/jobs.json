@@ -1,5 +1,56 @@
 [
   {
+    "id": "eclipse-labs-senior-rust-engineer",
+    "title": "Senior Rust Engineer",
+    "company": "Eclipse Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana Virtual Machine",
+      "EVM Mechanics",
+      "Layer 2",
+      "Execution Client"
+    ],
+    "applyLink": "https://eclipse.builders/careers"
+  },
+  {
+    "id": "monad-protocol-engineer-2026",
+    "title": "Protocol Engineer",
+    "company": "Monad",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Parallel EVM",
+      "Distributed Systems",
+      "State Optimization",
+      "Geth"
+    ],
+    "applyLink": "https://monad.xyz/jobs"
+  },
+  {
+    "id": "spearbit-smart-contract-auditor",
+    "title": "Smart Contract Auditor",
+    "company": "Spearbit",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Security Auditing",
+      "Foundry",
+      "Invariants"
+    ],
+    "applyLink": "https://spearbit.com/apply"
+  },
+  {
     "id": "travoom-senior-rust-backend-engineer",
     "title": "Senior Rust Backend Engineer",
     "company": "Travoom",

@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-08",
+    "type": "job",
+    "title": "Senior Rust Engineer at Eclipse Labs",
+    "description": "Join the team building the first Ethereum L2 powered by the Solana Virtual Machine. Focus on execution client performance and SVM-EVM interoperability. Remote.",
+    "link": "https://eclipse.builders/careers"
+  },
+  {
+    "date": "2026-03-08",
+    "type": "job",
+    "title": "Protocol Engineer at Monad",
+    "description": "Monad is scaling the EVM to 10k+ TPS. Seeking engineers to work on the parallel execution engine and state storage optimizations. Remote.",
+    "link": "https://monad.xyz/jobs"
+  },
+  {
+    "date": "2026-03-08",
+    "type": "job",
+    "title": "Smart Contract Auditor at Spearbit",
+    "description": "Participate in high-stakes security reviews for top DeFi and infrastructure projects. Required: deep Solidity/EVM knowledge and auditing experience. Remote.",
+    "link": "https://spearbit.com/apply"
+  },
+  {
+    "date": "2026-03-08",
+    "type": "news",
+    "title": "Monad Labs Launches Devnet V2 with Parallel Execution Enhancements",
+    "description": "Monad Labs has officially upgraded its public devnet to V2, introducing improved parallelized EVM execution and optimized database access for developers.",
+    "link": "https://monad.xyz/blog"
+  },
+  {
+    "date": "2026-03-08",
+    "type": "news",
+    "title": "EigenLayer Stage 4 Roadmap Unveiled",
+    "description": "EigenLayer unveils Stage 4 of its protocol, focusing on full permissionless AVS deployment and cross-AVS security orchestration.",
+    "link": "https://www.eigenlayer.xyz/"
+  },
+  {
+    "date": "2026-03-08",
+    "type": "hack",
+    "title": "Unizen Protocol Bug Bounty Payout: $250k",
+    "description": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-05",
     "type": "job",
     "title": "Crypto Production Engineer at Jumpcrypto",
@@ -369,19 +411,5 @@
     "title": "TRM Labs reaches unicorn status with $70M Series C",
     "description": "Blockchain intelligence firm TRM Labs has achieved unicorn status after raising $70 million in a Series C funding round to expand its compliance and risk management tools.",
     "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "news",
-    "title": "Jupiter secures $35M strategic raise for Solana DeFi",
-    "description": "Jupiter, a leading aggregator on Solana, has secured $35 million in strategic funding to further enhance its DeFi infrastructure and ecosystem growth.",
-    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "hack",
-    "title": "IoTeX ioTube bridge hacked for $4.4M",
-    "description": "The IoTeX ioTube cross-chain bridge was exploited for approximately $4.4 million due to a compromised private key used for a malicious contract upgrade.",
-    "link": "https://www.halborn.com/blog/post/explained-the-iotex-hack-february-2026"
   }
 ]

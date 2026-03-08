@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Labs Launches Devnet V2 with Parallel Execution Enhancements",
+    "category": "INFRA",
+    "summary": "Monad Labs has officially upgraded its public devnet to V2, introducing improved parallelized EVM execution and optimized database access for developers.",
+    "date": "2026-03-08",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "EigenLayer Stage 4 Roadmap Unveiled",
+    "category": "INFRA",
+    "summary": "EigenLayer unveils Stage 4 of its protocol, focusing on full permissionless AVS deployment and cross-AVS security orchestration.",
+    "date": "2026-03-08",
+    "sourceLink": "https://www.eigenlayer.xyz/"
+  },
+  {
+    "title": "Unizen Protocol Bug Bounty Payout: $250k",
+    "category": "BOUNTY",
+    "summary": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
+    "date": "2026-03-08",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Lido V3 Upgrade Proposal",
     "category": "INFRA",
     "summary": "The Lido community is reviewing a proposal for V3, which introduces a modular architecture for node operators and enhanced staking efficiency.",
