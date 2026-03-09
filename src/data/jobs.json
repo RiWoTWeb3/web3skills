@@ -1,5 +1,27 @@
 [
   {
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
+    "id": "nethermind-web3-security-triager",
+    "title": "Web3 Security Triager",
+    "company": "Nethermind",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solidity",
+      "Solana",
+      "Security",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://cryptocurrencyjobs.co/solidity/web3-security-triager-nethermind/"
+  },
+  {
+    "id": "nethermind-founding-protocol-engineer-web3-ai",
+    "title": "Founding Protocol Engineer (Web3 + AI)",
+    "company": "Nethermind",
+=======
     "id": "eclipse-labs-senior-rust-engineer",
     "title": "Senior Rust Engineer",
     "company": "Eclipse Labs",
@@ -20,11 +42,37 @@
     "id": "monad-protocol-engineer-2026",
     "title": "Protocol Engineer",
     "company": "Monad",
+>>>>>>> main
     "type": "EVM",
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "Competitive",
     "requirements": [
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
+      "EVM Mechanics",
+      "Solidity",
+      "Python",
+      "Protocol Engineer",
+      "AI"
+    ],
+    "applyLink": "https://cryptocurrencyjobs.co/solidity/founding-protocol-engineer-web3-ai-nethermind/"
+  },
+  {
+    "id": "cow-dao-senior-smart-contract-engineer",
+    "title": "Senior Smart Contract Engineer",
+    "company": "CoW DAO",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Smart Contract Development",
+      "DeFi Understanding"
+    ],
+    "applyLink": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
+=======
       "Rust",
       "Parallel EVM",
       "Distributed Systems",
@@ -49,6 +97,7 @@
       "Invariants"
     ],
     "applyLink": "https://spearbit.com/apply"
+>>>>>>> main
   },
   {
     "id": "travoom-senior-rust-backend-engineer",

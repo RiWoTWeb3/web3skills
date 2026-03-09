@@ -1,5 +1,47 @@
 [
   {
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
+    "date": "2026-03-07",
+    "type": "job",
+    "title": "Web3 Security Triager at Nethermind",
+    "description": "Join the Nethermind team to analyze and triage security findings across AuditAgent and AgentArena. Required: Rust, Solidity, and Solana experience. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/web3-security-triager-nethermind/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "job",
+    "title": "Founding Protocol Engineer (Web3 + AI) at Nethermind",
+    "description": "Design and build the next generation of Web3 and AI protocols. Expertise in EVM, Solidity, and Python required. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/founding-protocol-engineer-web3-ai-nethermind/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "job",
+    "title": "Senior Smart Contract Engineer at CoW DAO",
+    "description": "Build and secure the CoW Protocol settlement layer. Required: Strong experience in Solidity, Rust, and DeFi mechanisms. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "description": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "news",
+    "title": "Solana ZK-Compression Mainnet Milestone",
+    "description": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "hack",
+    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
+    "description": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
+    "link": "https://immunefi.com/bug-bounty/hyperliquid/"
+=======
     "date": "2026-03-08",
     "type": "job",
     "title": "Senior Rust Engineer at Eclipse Labs",
@@ -40,6 +82,7 @@
     "title": "Unizen Protocol Bug Bounty Payout: $250k",
     "description": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
     "link": "https://immunefi.com/blog/"
+>>>>>>> main
   },
   {
     "date": "2026-03-05",
@@ -411,5 +454,15 @@
     "title": "TRM Labs reaches unicorn status with $70M Series C",
     "description": "Blockchain intelligence firm TRM Labs has achieved unicorn status after raising $70 million in a Series C funding round to expand its compliance and risk management tools.",
     "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
+  },
+  {
+    "date": "2026-02-28",
+    "type": "news",
+    "title": "Jupiter secures $35M strategic raise for Solana DeFi",
+    "description": "Jupiter, a leading aggregator on Solana, has secured $35 million in strategic funding to further enhance its DeFi infrastructure and ecosystem growth.",
+    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
+=======
+>>>>>>> main
   }
 ]
