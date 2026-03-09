@@ -1,26 +1,26 @@
 [
   {
-<<<<<<< chore/data-update-2026-03-07-6012978460242155166
-    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "title": "Ethereum 2026 Roadmap Unveiled: Glamsterdam and Hegot\u00e1",
     "category": "INFRA",
-    "summary": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
-    "date": "2026-03-07",
-    "sourceLink": "https://ethereum-magicians.org/"
+    "summary": "The Ethereum Foundation defines the 2026 roadmap focusing on predictable engineering delivery and core upgrades for scaling (Glamsterdam) and privacy (Hegot\u00e1).",
+    "date": "2026-03-09",
+    "sourceLink": "https://www.kucoin.com/news/flash/ethereum-2026-ef-outlines-protocol-roadmap-enters-engineering-upgrade-era"
   },
   {
-    "title": "Solana ZK-Compression Mainnet Milestone",
+    "title": "Solana Alpenglow Mainnet Target: Early 2026",
     "category": "INFRA",
-    "summary": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
-    "date": "2026-03-07",
-    "sourceLink": "https://solana.com/news"
+    "summary": "Solana's Alpenglow upgrade, featuring a new consensus protocol for sub-second finality, targets early 2026 mainnet deployment.",
+    "date": "2026-03-09",
+    "sourceLink": "https://bingx.com/en/learn/article/what-are-alpenglow-and-firedancer-upgrades-on-solana-and-will-boost-speed-100x"
   },
   {
-    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
-    "category": "BOUNTY",
-    "summary": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
-    "date": "2026-03-07",
-    "sourceLink": "https://immunefi.com/bug-bounty/hyperliquid/"
-=======
+    "title": "Cetus Protocol Mathematical Exploit Analysis: $223M",
+    "category": "HACK",
+    "summary": "A detailed analysis reveals the Cetus Protocol was exploited via a mathematical error in liquidity calculations, resulting in a loss of an estimated $223 million.",
+    "date": "2026-03-09",
+    "sourceLink": "https://www.halborn.com/blog/post/year-in-review-the-biggest-defi-hacks-of-2025"
+  },
+  {
     "title": "Monad Labs Launches Devnet V2 with Parallel Execution Enhancements",
     "category": "INFRA",
     "summary": "Monad Labs has officially upgraded its public devnet to V2, introducing improved parallelized EVM execution and optimized database access for developers.",
@@ -40,7 +40,27 @@
     "summary": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
     "date": "2026-03-08",
     "sourceLink": "https://immunefi.com/blog/"
->>>>>>> main
+  },
+  {
+    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "category": "INFRA",
+    "summary": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
+    "date": "2026-03-07",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana ZK-Compression Mainnet Milestone",
+    "category": "INFRA",
+    "summary": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
+    "date": "2026-03-07",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
+    "category": "BOUNTY",
+    "summary": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
+    "date": "2026-03-07",
+    "sourceLink": "https://immunefi.com/bug-bounty/hyperliquid/"
   },
   {
     "title": "Lido V3 Upgrade Proposal",
