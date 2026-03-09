@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
     "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
     "category": "INFRA",
     "summary": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
@@ -19,6 +20,27 @@
     "summary": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
     "date": "2026-03-07",
     "sourceLink": "https://immunefi.com/bug-bounty/hyperliquid/"
+=======
+    "title": "Monad Labs Launches Devnet V2 with Parallel Execution Enhancements",
+    "category": "INFRA",
+    "summary": "Monad Labs has officially upgraded its public devnet to V2, introducing improved parallelized EVM execution and optimized database access for developers.",
+    "date": "2026-03-08",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "EigenLayer Stage 4 Roadmap Unveiled",
+    "category": "INFRA",
+    "summary": "EigenLayer unveils Stage 4 of its protocol, focusing on full permissionless AVS deployment and cross-AVS security orchestration.",
+    "date": "2026-03-08",
+    "sourceLink": "https://www.eigenlayer.xyz/"
+  },
+  {
+    "title": "Unizen Protocol Bug Bounty Payout: $250k",
+    "category": "BOUNTY",
+    "summary": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
+    "date": "2026-03-08",
+    "sourceLink": "https://immunefi.com/blog/"
+>>>>>>> main
   },
   {
     "title": "Lido V3 Upgrade Proposal",

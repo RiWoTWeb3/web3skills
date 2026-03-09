@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
     "id": "nethermind-web3-security-triager",
     "title": "Web3 Security Triager",
     "company": "Nethermind",
@@ -20,11 +21,34 @@
     "id": "nethermind-founding-protocol-engineer-web3-ai",
     "title": "Founding Protocol Engineer (Web3 + AI)",
     "company": "Nethermind",
+=======
+    "id": "eclipse-labs-senior-rust-engineer",
+    "title": "Senior Rust Engineer",
+    "company": "Eclipse Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana Virtual Machine",
+      "EVM Mechanics",
+      "Layer 2",
+      "Execution Client"
+    ],
+    "applyLink": "https://eclipse.builders/careers"
+  },
+  {
+    "id": "monad-protocol-engineer-2026",
+    "title": "Protocol Engineer",
+    "company": "Monad",
+>>>>>>> main
     "type": "EVM",
     "workType": "Remote",
     "experience": "Senior level",
     "salaryRange": "Competitive",
     "requirements": [
+<<<<<<< chore/data-update-2026-03-07-6012978460242155166
       "EVM Mechanics",
       "Solidity",
       "Python",
@@ -48,6 +72,32 @@
       "DeFi Understanding"
     ],
     "applyLink": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
+=======
+      "Rust",
+      "Parallel EVM",
+      "Distributed Systems",
+      "State Optimization",
+      "Geth"
+    ],
+    "applyLink": "https://monad.xyz/jobs"
+  },
+  {
+    "id": "spearbit-smart-contract-auditor",
+    "title": "Smart Contract Auditor",
+    "company": "Spearbit",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Security Auditing",
+      "Foundry",
+      "Invariants"
+    ],
+    "applyLink": "https://spearbit.com/apply"
+>>>>>>> main
   },
   {
     "id": "travoom-senior-rust-backend-engineer",
