@@ -1,26 +1,26 @@
 [
   {
-<<<<<<< chore/data-update-2026-03-07-6012978460242155166
-    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "title": "Nethermind Launches AI-Driven AuditAgent Beta",
     "category": "INFRA",
-    "summary": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
-    "date": "2026-03-07",
-    "sourceLink": "https://ethereum-magicians.org/"
+    "summary": "Nethermind's new AuditAgent beta employs advanced AI to automate smart contract security triaging across EVM and Solana ecosystems.",
+    "date": "2026-03-10",
+    "sourceLink": "https://nethermind.io/blog"
   },
   {
-    "title": "Solana ZK-Compression Mainnet Milestone",
+    "title": "XMTP Protocol Reaches 1M Monthly Active Users Milestone",
     "category": "INFRA",
-    "summary": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
-    "date": "2026-03-07",
-    "sourceLink": "https://solana.com/news"
+    "summary": "The XMTP network celebrates a major adoption milestone with over 1 million monthly active users utilizing decentralized messaging across 50+ apps.",
+    "date": "2026-03-10",
+    "sourceLink": "https://xmtp.org/blog"
   },
   {
-    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
+    "title": "Keyrock Security Bounty: $150k Payout for Critical Trading Engine Flaw",
     "category": "BOUNTY",
-    "summary": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
-    "date": "2026-03-07",
-    "sourceLink": "https://immunefi.com/bug-bounty/hyperliquid/"
-=======
+    "summary": "Keyrock successfully awarded a $150,000 bug bounty to a researcher who identified a critical vulnerability in its proprietary trading algorithms.",
+    "date": "2026-03-10",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Monad Labs Launches Devnet V2 with Parallel Execution Enhancements",
     "category": "INFRA",
     "summary": "Monad Labs has officially upgraded its public devnet to V2, introducing improved parallelized EVM execution and optimized database access for developers.",
@@ -40,7 +40,27 @@
     "summary": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
     "date": "2026-03-08",
     "sourceLink": "https://immunefi.com/blog/"
->>>>>>> main
+  },
+  {
+    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "category": "INFRA",
+    "summary": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
+    "date": "2026-03-07",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana ZK-Compression Mainnet Milestone",
+    "category": "INFRA",
+    "summary": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
+    "date": "2026-03-07",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
+    "category": "BOUNTY",
+    "summary": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
+    "date": "2026-03-07",
+    "sourceLink": "https://immunefi.com/bug-bounty/hyperliquid/"
   },
   {
     "title": "Lido V3 Upgrade Proposal",

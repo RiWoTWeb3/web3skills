@@ -1,47 +1,47 @@
 [
   {
-<<<<<<< chore/data-update-2026-03-07-6012978460242155166
-    "date": "2026-03-07",
+    "date": "2026-03-10",
     "type": "job",
-    "title": "Web3 Security Triager at Nethermind",
-    "description": "Join the Nethermind team to analyze and triage security findings across AuditAgent and AgentArena. Required: Rust, Solidity, and Solana experience. Remote.",
-    "link": "https://cryptocurrencyjobs.co/solidity/web3-security-triager-nethermind/"
+    "title": "Senior Solidity Engineer at Nethermind",
+    "description": "Design and build secure smart contracts for the next generation of Web3 and AI protocols. Join the Nethermind team. Remote.",
+    "link": "https://nethermind.io/careers/"
   },
   {
-    "date": "2026-03-07",
+    "date": "2026-03-10",
     "type": "job",
-    "title": "Founding Protocol Engineer (Web3 + AI) at Nethermind",
-    "description": "Design and build the next generation of Web3 and AI protocols. Expertise in EVM, Solidity, and Python required. Remote.",
-    "link": "https://cryptocurrencyjobs.co/solidity/founding-protocol-engineer-web3-ai-nethermind/"
+    "title": "Rust Core Developer at XMTP Labs",
+    "description": "Contribute to the core XMTP messaging protocol. Experience with Rust and decentralized networks required. Remote.",
+    "link": "https://xmtp.org/careers"
   },
   {
-    "date": "2026-03-07",
+    "date": "2026-03-10",
     "type": "job",
-    "title": "Senior Smart Contract Engineer at CoW DAO",
-    "description": "Build and secure the CoW Protocol settlement layer. Required: Strong experience in Solidity, Rust, and DeFi mechanisms. Remote.",
-    "link": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
+    "title": "Crypto Options Engineer at Keyrock",
+    "description": "Build high-performance options trading systems for decentralized exchanges. Required: Rust/C++, DeFi knowledge. Remote.",
+    "link": "https://keyrock.eu/careers"
   },
   {
-    "date": "2026-03-07",
+    "date": "2026-03-10",
     "type": "news",
-    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
-    "description": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
-    "link": "https://ethereum-magicians.org/"
+    "title": "Nethermind Launches AI-Driven AuditAgent Beta",
+    "description": "Nethermind's new AuditAgent beta employs advanced AI to automate smart contract security triaging across EVM and Solana ecosystems.",
+    "link": "https://nethermind.io/blog"
   },
   {
-    "date": "2026-03-07",
+    "date": "2026-03-10",
     "type": "news",
-    "title": "Solana ZK-Compression Mainnet Milestone",
-    "description": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
-    "link": "https://solana.com/news"
+    "title": "XMTP Protocol Reaches 1M Monthly Active Users Milestone",
+    "description": "The XMTP network celebrates a major adoption milestone with over 1 million monthly active users utilizing decentralized messaging across 50+ apps.",
+    "link": "https://xmtp.org/blog"
   },
   {
-    "date": "2026-03-07",
+    "date": "2026-03-10",
     "type": "hack",
-    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
-    "description": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
-    "link": "https://immunefi.com/bug-bounty/hyperliquid/"
-=======
+    "title": "Keyrock Security Bounty: $150k Payout for Critical Trading Engine Flaw",
+    "description": "Keyrock successfully awarded a $150,000 bug bounty to a researcher who identified a critical vulnerability in its proprietary trading algorithms.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-08",
     "type": "job",
     "title": "Senior Rust Engineer at Eclipse Labs",
@@ -82,7 +82,132 @@
     "title": "Unizen Protocol Bug Bounty Payout: $250k",
     "description": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
     "link": "https://immunefi.com/blog/"
->>>>>>> main
+  },
+  {
+    "date": "2026-03-07",
+    "type": "job",
+    "title": "Web3 Security Triager at Nethermind",
+    "description": "Join the Nethermind team to analyze and triage security findings across AuditAgent and AgentArena. Required: Rust, Solidity, and Solana experience. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/web3-security-triager-nethermind/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "job",
+    "title": "Founding Protocol Engineer (Web3 + AI) at Nethermind",
+    "description": "Design and build the next generation of Web3 and AI protocols. Expertise in EVM, Solidity, and Python required. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/founding-protocol-engineer-web3-ai-nethermind/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "job",
+    "title": "Senior Smart Contract Engineer at CoW DAO",
+    "description": "Build and secure the CoW Protocol settlement layer. Required: Strong experience in Solidity, Rust, and DeFi mechanisms. Remote.",
+    "link": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
+    "description": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "news",
+    "title": "Solana ZK-Compression Mainnet Milestone",
+    "description": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-03-07",
+    "type": "hack",
+    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
+    "description": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
+    "link": "https://immunefi.com/bug-bounty/hyperliquid/"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Help build, manage, and maintain a sophisticated validator infrastructure and tooling for one of the world's top proprietary trading firms. Remote.",
+    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Jito Labs",
+    "description": "Join the team building high-performance Solana protocol infrastructure. Focus on consensus, networking, and MEV optimization. Remote.",
+    "link": "https://web3.career/senior-protocol-engineer-jito-wtf/146320"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "job",
+    "title": "Senior Golang Engineer (Prysm) at Offchain Labs",
+    "description": "Contribute to the Prysm Ethereum consensus client and Arbitrum scaling solutions. Extensive Go production experience required. Remote.",
+    "link": "https://jobera.com/remote-job/senior-golang-engineer-prysm-offchain-labs-remote-worldwide/"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "news",
+    "title": "Solana Alpenglow Upgrade Mainnet Target",
+    "description": "Solana's Alpenglow consensus upgrade targets Q1 2026 mainnet deployment, promising sub-second finality and enhanced network resilience.",
+    "link": "https://www.blockdaemon.com/blog/solana-in-2026-technical-roadmap"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "news",
+    "title": "Solana Firedancer Full Release Performance",
+    "description": "The full release of the Firedancer validator client is set to achieve 1M TPS benchmarks, significantly improving Solana's throughput and redundancy.",
+    "link": "https://www.fool.com/investing/2026/02/11/2-game-changing-updates-coming-to-solana-in-2026/"
+  },
+  {
+    "date": "2026-03-05",
+    "type": "hack",
+    "title": "Inverse Finance Bug Bounty Program Update",
+    "description": "Inverse Finance updates its Immunefi bug bounty, offering rewards up to $100,000 for critical vulnerabilities in its FiRM and DOLA protocols.",
+    "link": "https://immunefi.com/bug-bounty/inversefinance/information/"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "news",
+    "title": "Lido V3 Upgrade Proposal",
+    "description": "The Lido community is reviewing a proposal for V3, which introduces a modular architecture for node operators and enhanced staking efficiency.",
+    "link": "https://research.lido.fi/"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "hack",
+    "title": "FlashBridge Protocol White-Hat Report",
+    "description": "A critical vulnerability in FlashBridge's cross-chain settlement logic was reported by a white-hat hacker, preventing a potential $2.5M exploit.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "job",
+    "title": "Senior Rust Backend Engineer at Travoom",
+    "description": "Design and evolve the backend architecture powering a global, real-time social platform natively in Rust. Remote.",
+    "link": "https://jobs.ashbyhq.com/travoom/76506a7c-6744-42b7-873b-3132797e884e"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "job",
+    "title": "Smart Contracts Engineer (EVM) at Odos",
+    "description": "Build and operate distributed, low-latency services for Odos swap infrastructure across 15+ EVM chains. Remote.",
+    "link": "https://www.odos.xyz/careers"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "job",
+    "title": "Software Engineer (Solana) at Rain",
+    "description": "Join Rain to build the future of Solana programs. Experience with Rust and Solana SDK required. Remote.",
+    "link": "https://web3.career/solana-jobs"
+  },
+  {
+    "date": "2026-03-04",
+    "type": "news",
+    "title": "Arbitrum Stylus Mainnet Milestone",
+    "description": "Arbitrum Stylus achieves a major adoption milestone with over 500 projects deploying C++ and Rust based smart contracts on the L2.",
+    "link": "https://arbitrum.io/blog"
   },
   {
     "date": "2026-03-05",
@@ -220,13 +345,6 @@
   {
     "date": "2026-03-03",
     "type": "job",
-    "title": "Software Engineer (Solana) at Rain",
-    "description": "Join Rain to build the future of Solana programs. Experience with Rust and Solana SDK required. Remote.",
-    "link": "https://web3.career/solana-jobs"
-  },
-  {
-    "date": "2026-03-03",
-    "type": "job",
     "title": "Software Engineer (Rust/Trading) at Alpaca",
     "description": "Alpaca is looking for Rust developers for their trading infrastructure. Focus on high-performance systems. Remote.",
     "link": "https://web3.career/remote+rust-jobs"
@@ -300,169 +418,5 @@
     "title": "Ostium Protocol Bug Bounty Launch",
     "description": "Ostium Protocol is offering up to $100,000 in bug bounties for findings related to its RWA perpetuals exchange on Arbitrum.",
     "link": "https://immunefi.com"
-  },
-  {
-    "date": "2025-04-29",
-    "type": "job",
-    "title": "Software Engineer - Solana at Rain",
-    "description": "Rain is seeking a Software Engineer to own Solana programs end-to-end. Salary: $140k - $240k. Location: New York / Remote.",
-    "link": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
-  },
-  {
-    "date": "2025-04-25",
-    "type": "hack",
-    "title": "UPCX Protocol Exploit: $70M Loss",
-    "description": "A major exploit targeting the UPCX protocol resulted in a $70M loss. The attack involved a vulnerability in the protocol's liquidity management system.",
-    "link": "https://rekt.news"
-  },
-  {
-    "date": "2025-04-25",
-    "type": "job",
-    "title": "Senior Protocol Engineer at Provable",
-    "description": "Provable is searching for a senior protocol engineer to design and maintain privacy-preserving ZK protocols. Required: 5+ years SWE, 2-3+ years Rust. Remote.",
-    "link": "https://jobs.ashbyhq.com/provable/e73124b0-b9d0-40f1-bcee-12410ff30b28"
-  },
-  {
-    "date": "2025-04-21",
-    "type": "news",
-    "title": "USDN Synthetic Dollar Bug Bounty",
-    "description": "USDN has launched a new bug bounty program on Immunefi with rewards up to $50,000 for critical vulnerabilities in its synthetic asset logic.",
-    "link": "https://immunefi.com"
-  },
-  {
-    "date": "2025-04-20",
-    "type": "hack",
-    "title": "KiloEx Vulnerability Incident: $7.5M",
-    "description": "KiloEx experienced a security incident resulting in $7.5M in lost funds. Security researchers identified an edge case in the platform's trading engine.",
-    "link": "https://rekt.news"
-  },
-  {
-    "date": "2025-04-20",
-    "type": "job",
-    "title": "Senior Software Engineer - Stablecoins at Bitgo",
-    "description": "Bitgo is hiring a Senior Software Engineer for its stablecoin ecosystem. Expertise in Solidity and EVM mechanics required. Remote.",
-    "link": "https://web3.career/senior+solidity-jobs"
-  },
-  {
-    "date": "2025-04-18",
-    "type": "hack",
-    "title": "Loopscale Security Breach: $5.8M Loss",
-    "description": "Loopscale was targeted in a security breach that led to a $5.8M loss. The attack focused on a flaw in the cross-chain collateralization logic.",
-    "link": "https://rekt.news"
-  },
-  {
-    "date": "2025-04-18",
-    "type": "job",
-    "title": "Backend Engineer at NIGHTSEA INC",
-    "description": "NIGHTSEA INC is seeking a Backend Engineer with expertise in Golang and Solidity to support its stablecoin ecosystem. Salary: $150k - $210k.",
-    "link": "https://www.indeed.com/q-web3-solidity-jobs.html"
-  },
-  {
-    "date": "2025-04-15",
-    "type": "hack",
-    "title": "ZKsync Incident Analysis: $5.0M",
-    "description": "A ZKsync ecosystem project was exploited for $5.0M. The incident highlights the ongoing challenges in securing rollup-based infrastructure.",
-    "link": "https://rekt.news"
-  },
-  {
-    "date": "2025-04-15",
-    "type": "job",
-    "title": "Blockchain Security Engineer at CertiK",
-    "description": "CertiK is seeking a Blockchain Security Engineer with expertise in Solidity, Rust, or Golang. Salary: $102k - $180k. Remote.",
-    "link": "https://www.indeed.com/q-web3-solidity-jobs.html"
-  },
-  {
-    "date": "2025-04-12",
-    "type": "hack",
-    "title": "Term Labs Exploit: $1.5M Loss",
-    "description": "Term Labs suffered a $1.5M exploit due to a bug in its interest rate calculation module. The issue has since been patched by the team.",
-    "link": "https://rekt.news"
-  },
-  {
-    "date": "2025-04-10",
-    "type": "news",
-    "title": "Sonic Chain Mainnet Launch",
-    "description": "Sonic Chain has officially launched its mainnet, claiming 10,000+ verifiable TPS and full EVM compatibility. It aims to power high-frequency DeFi apps.",
-    "link": "https://soniclabs.com"
-  },
-  {
-    "date": "2025-03-01",
-    "type": "job",
-    "title": "Senior Protocol Engineer at Provable",
-    "description": "Provable is searching for a senior protocol engineer to design and maintain privacy-preserving ZK protocols. Required: 5+ years SWE, 2-3+ years Rust. Remote.",
-    "link": "https://jobs.ashbyhq.com/provable/e73124b0-b9d0-40f1-bcee-12410ff30b28"
-  },
-  {
-    "date": "2026-03-01",
-    "type": "job",
-    "title": "Software Engineer - Solana at Rain",
-    "description": "Rain is seeking a Software Engineer to own Solana programs end-to-end. Salary: $140k - $240k. Location: New York / Remote.",
-    "link": "https://jobs.ashbyhq.com/rain/71212e62-8e54-43db-b2ba-a02b9a91b607"
-  },
-  {
-    "date": "2026-03-01",
-    "type": "job",
-    "title": "Senior Software Engineer - Prime at Alpaca",
-    "description": "Alpaca is looking for a senior engineer to build algo trading platforms. Proficiency in C/C++, Go, or Rust required. Remote role.",
-    "link": "https://app.welcometothejungle.com/jobs/cpc7XK9B"
-  },
-  {
-    "date": "2026-03-01",
-    "type": "news",
-    "title": "TRM Labs releases 2026 Crypto Crime Report",
-    "description": "TRM identifies record $158 billion in illicit crypto flows in 2025, highlighting structural shifts in attack vectors toward operational infrastructure.",
-    "link": "https://www.trmlabs.com/reports-and-whitepapers/2026-crypto-crime-report"
-  },
-  {
-    "date": "2026-03-01",
-    "type": "news",
-    "title": "Chainalysis releases 2026 Crypto Crime Report on Ransomware",
-    "description": "Chainalysis report shows total on-chain ransomware payments fell to $820 million in 2025 despite record attacks, as fewer victims pay ransoms.",
-    "link": "https://www.chainalysis.com/blog/crypto-ransomware-2026/"
-  },
-  {
-    "date": "2026-03-01",
-    "type": "hack",
-    "title": "IoTeX ioTube Bridge Exploit Analysis",
-    "description": "The IoTeX ioTube cross-chain bridge was exploited for approximately $4.4 million in February 2026 due to a compromised private key used for a malicious contract upgrade.",
-    "link": "https://www.halborn.com/blog/post/explained-the-iotex-hack-february-2026"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "job",
-    "title": "Software Engineer - Solana at Rain",
-    "description": "Rain is hiring a Software Engineer for Solana development. Salary range: $140k - $240k. Location: New York / Remote.",
-    "link": "https://web3.career/rust-jobs"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Jumpcrypto is seeking a Crypto Production Engineer. Salary range: $150k - $200k. Remote.",
-    "link": "https://web3.career/rust+solana-jobs"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "job",
-    "title": "Rust Developer at 1010 trading",
-    "description": "1010 trading is looking for a Rust Developer for EVM Systems & Trading Infrastructure. Remote.",
-    "link": "https://web3.career/evm-jobs"
-  },
-  {
-    "date": "2026-02-28",
-    "type": "news",
-    "title": "TRM Labs reaches unicorn status with $70M Series C",
-    "description": "Blockchain intelligence firm TRM Labs has achieved unicorn status after raising $70 million in a Series C funding round to expand its compliance and risk management tools.",
-    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
-<<<<<<< chore/data-update-2026-03-07-6012978460242155166
-  },
-  {
-    "date": "2026-02-28",
-    "type": "news",
-    "title": "Jupiter secures $35M strategic raise for Solana DeFi",
-    "description": "Jupiter, a leading aggregator on Solana, has secured $35 million in strategic funding to further enhance its DeFi infrastructure and ecosystem growth.",
-    "link": "https://www.reddit.com/r/CryptoCurrency/comments/1r039gz/crypto_funding_roundup_feb_28_2026/"
-=======
->>>>>>> main
   }
 ]
