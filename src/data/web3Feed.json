@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-11",
+    "type": "job",
+    "title": "Solana Smart Contracts Engineer at Odos",
+    "description": "Build high-performance Solana programs using Rust/Anchor and interface with Yellowstone Geyser for real-time state tracking. Remote.",
+    "link": "https://www.indeed.com/viewjob?jk=82d6681a22dd3aca"
+  },
+  {
+    "date": "2026-03-11",
+    "type": "job",
+    "title": "Staff Software Engineer (Messaging Protocol - Rust) at XMTP Labs",
+    "description": "Design and maintain the E2EE XMTP messaging protocol. Expertise in Rust and cryptography required. Remote.",
+    "link": "https://jobs.ashbyhq.com/XMTP%20Labs/586c0ee9-47fd-40b4-96b8-03a26236b539"
+  },
+  {
+    "date": "2026-03-11",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Build and maintain sophisticated validator infrastructure and tooling for one of the world's top proprietary trading firms. Remote.",
+    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
+    "date": "2026-03-11",
+    "type": "news",
+    "title": "XMTP Labs Releases Messaging SDK v3 for Mobile",
+    "description": "XMTP Labs has officially launched its v3 SDK, enabling seamless integration of end-to-end encrypted messaging into mobile Web3 applications.",
+    "link": "https://xmtp.org/blog"
+  },
+  {
+    "date": "2026-03-11",
+    "type": "news",
+    "title": "Jumpcrypto Unveils High-Performance Solana Validator Tooling",
+    "description": "Jumpcrypto introduces a new suite of open-source tools designed to optimize Solana validator performance and network resilience.",
+    "link": "https://jumpcrypto.com/news"
+  },
+  {
+    "date": "2026-03-11",
+    "type": "hack",
+    "title": "Jito Labs Awards $250k Bounty for Solana Validator Vulnerability",
+    "description": "Jito Labs successfully awarded a $250,000 bug bounty to a security researcher who identified a critical vulnerability in its validator client.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-10",
     "type": "job",
     "title": "Senior Solidity Engineer at Nethermind",
@@ -376,47 +418,5 @@
     "title": "Senior Rust Engineer at Monad Labs",
     "description": "Monad is building a high-performance EVM-equivalent L1. Seeking Senior Rust Engineers to optimize the execution engine and networking stack. Remote.",
     "link": "https://monad.xyz/jobs"
-  },
-  {
-    "date": "2026-03-02",
-    "type": "job",
-    "title": "Solana Program Developer at Jito Foundation",
-    "description": "Jito is looking for developers to build and maintain high-performance Solana programs for the Jito network. Required: Rust, Solana SDK. Remote.",
-    "link": "https://www.jito.network/careers"
-  },
-  {
-    "date": "2026-03-02",
-    "type": "job",
-    "title": "Full Stack Engineer (EVM) at Uniswap Labs",
-    "description": "Join the team building the most popular decentralized exchange. Looking for engineers with experience in React, TypeScript, and Solidity/EVM. Remote.",
-    "link": "https://uniswap.org/jobs"
-  },
-  {
-    "date": "2026-03-02",
-    "type": "news",
-    "title": "Base announces Interop Roadmap for Seamless L2 Connectivity",
-    "description": "Base unveils plans for enhanced interoperability between Ethereum Layer 2s, aiming to reduce friction for users and developers across the ecosystem.",
-    "link": "https://base.mirror.xyz/"
-  },
-  {
-    "date": "2026-03-02",
-    "type": "news",
-    "title": "Starknet v0.14.0 Goes Live on Mainnet",
-    "description": "The latest Starknet upgrade brings significant performance improvements and reduced transaction costs, furthering its goal of scalable Ethereum L2 solutions.",
-    "link": "https://starknet.io/blog/"
-  },
-  {
-    "date": "2026-03-02",
-    "type": "hack",
-    "title": "YieldFi Protocol awards $500k Critical Bug Bounty",
-    "description": "A security researcher successfully identified a critical vulnerability in YieldFi's vault logic, preventing a potential $20M exploit. The bug was patched immediately.",
-    "link": "https://immunefi.com/bounty/yieldfi/"
-  },
-  {
-    "date": "2025-04-29",
-    "type": "news",
-    "title": "Ostium Protocol Bug Bounty Launch",
-    "description": "Ostium Protocol is offering up to $100,000 in bug bounties for findings related to its RWA perpetuals exchange on Arbitrum.",
-    "link": "https://immunefi.com"
   }
 ]

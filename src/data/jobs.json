@@ -1,5 +1,56 @@
 [
   {
+    "id": "odos-solana-smart-contracts-2026-03-11",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Anchor Framework",
+      "Yellowstone Geyser",
+      "Solana Program Development",
+      "Distributed Services"
+    ],
+    "applyLink": "https://www.indeed.com/viewjob?jk=82d6681a22dd3aca"
+  },
+  {
+    "id": "xmtp-staff-rust-messaging-2026-03-11",
+    "title": "Staff Software Engineer (Messaging Protocol - Rust)",
+    "company": "XMTP Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$230,000 - $265,000",
+    "requirements": [
+      "Rust",
+      "Cryptography",
+      "Communication Protocols",
+      "E2EE",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://jobs.ashbyhq.com/XMTP%20Labs/586c0ee9-47fd-40b4-96b8-03a26236b539"
+  },
+  {
+    "id": "jumpcrypto-prod-engineer-2026-03-11",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Ethereum",
+      "Validator Infrastructure",
+      "Solana",
+      "DeFi",
+      "System Reliability"
+    ],
+    "applyLink": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
     "id": "nethermind-senior-solidity-engineer-2026-03-10",
     "title": "Senior Solidity Engineer",
     "company": "Nethermind",
