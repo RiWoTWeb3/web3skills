@@ -1,5 +1,26 @@
 [
   {
+    "title": "XMTP Labs Releases Messaging SDK v3 for Mobile",
+    "category": "INFRA",
+    "summary": "XMTP Labs has officially launched its v3 SDK, enabling seamless integration of end-to-end encrypted messaging into mobile Web3 applications.",
+    "date": "2026-03-11",
+    "sourceLink": "https://xmtp.org/blog"
+  },
+  {
+    "title": "Jumpcrypto Unveils High-Performance Solana Validator Tooling",
+    "category": "INFRA",
+    "summary": "Jumpcrypto introduces a new suite of open-source tools designed to optimize Solana validator performance and network resilience.",
+    "date": "2026-03-11",
+    "sourceLink": "https://jumpcrypto.com/news"
+  },
+  {
+    "title": "Jito Labs Awards $250k Bounty for Solana Validator Vulnerability",
+    "category": "BOUNTY",
+    "summary": "Jito Labs successfully awarded a $250,000 bug bounty to a security researcher who identified a critical vulnerability in its validator client.",
+    "date": "2026-03-11",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Nethermind Launches AI-Driven AuditAgent Beta",
     "category": "INFRA",
     "summary": "Nethermind's new AuditAgent beta employs advanced AI to automate smart contract security triaging across EVM and Solana ecosystems.",
