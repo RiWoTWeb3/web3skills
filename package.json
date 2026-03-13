@@ -49,11 +49,11 @@
     "recharts": "^2.15.2",
     "sonner": "^2.0.3",
     "tailwind-merge": "*",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "@prisma/client": "^6.19.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@prisma/client": "^6.19.2",
     "@types/node": "^20.10.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "dotenv": "^17.3.1",

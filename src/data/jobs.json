@@ -1,5 +1,59 @@
 [
   {
+    "id": "nethermind-security-triager-2026-03-13",
+    "title": "Web3 Security Triager (AuditAgent & AgentArena)",
+    "company": "Nethermind",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "AI",
+      "Rust",
+      "Security",
+      "Solana",
+      "Solidity",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://cryptocurrencyjobs.co/rust/web3-security-triager-nethermind/"
+  },
+  {
+    "id": "logos-senior-systems-engineer-2026-03-13",
+    "title": "Senior Systems Engineer",
+    "company": "Logos",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "C",
+      "C++",
+      "Rust",
+      "Linux",
+      "Open Source",
+      "Systems Engineer"
+    ],
+    "applyLink": "https://cryptocurrencyjobs.co/rust/senior-systems-engineer-logos/"
+  },
+  {
+    "id": "logos-distributed-systems-evaluation-2026-03-13",
+    "title": "Distributed Systems Evaluation Engineer",
+    "company": "Logos",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Distributed Systems",
+      "Go",
+      "Rust",
+      "Python",
+      "Docker",
+      "Kubernetes"
+    ],
+    "applyLink": "https://cryptocurrencyjobs.co/rust/distributed-systems-evaluation-engineer-logos/"
+  },
+  {
     "id": "odos-solana-smart-contracts-2026-03-11",
     "title": "Solana Smart Contracts Engineer",
     "company": "Odos",

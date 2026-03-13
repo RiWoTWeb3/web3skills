@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Devnet-6 Launch",
+    "category": "INFRA",
+    "summary": "The sixth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and gas efficiency improvements.",
+    "date": "2026-03-13",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Monad Labs Releases Parallel EVM SDK v1",
+    "category": "INFRA",
+    "summary": "Monad Labs has officially launched its first SDK, enabling developers to build high-performance parallelized dApps on the Monad network.",
+    "date": "2026-03-13",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Morpho Blue Awards 00k Bounty for Critical Logic Flaw",
+    "category": "BOUNTY",
+    "summary": "Morpho Blue successfully awarded a 00,000 bug bounty to a security researcher who identified a critical vulnerability in its vault logic.",
+    "date": "2026-03-13",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "XMTP Labs Releases Messaging SDK v3 for Mobile",
     "category": "INFRA",
     "summary": "XMTP Labs has officially launched its v3 SDK, enabling seamless integration of end-to-end encrypted messaging into mobile Web3 applications.",
