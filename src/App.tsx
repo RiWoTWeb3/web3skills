@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert
+  Briefcase, Newspaper, ShieldAlert, Activity, Database, Lock, ShieldCheck,
+  Terminal, HardDrive, Cpu, RefreshCw, AlertTriangle
 } from 'lucide-react';
 import {
   Routes,
@@ -19,6 +20,7 @@ import {
 import skillCategoriesRaw from './data/skills.json';
 import jobsDataRaw from './data/jobs.json';
 import intelDataRaw from './data/intel.json';
+import { feedService, FeedItem } from './services/feedService';
 
 // --- Types & Data ---
 
@@ -973,20 +975,20 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           <Link to="/news" className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}>View All Logs</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {intelData.slice(0, 3).map((item, i) => (
+          {feedService.getLatest().slice(0, 3).map((item, i) => (
             <div key={i} className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-gray-50 border border-gray-100 rounded-xl'}`}>
               <div className="flex items-center gap-2 mb-2">
                 <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
-                  item.category === 'HACK' ? (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200') :
-                  item.category === 'INFRA' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200') :
+                  item.type === 'hack' ? (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200') :
+                  item.type === 'news' ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200') :
                   (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-50 text-green-600 border-green-200')
                 }`}>
-                  {item.category}
+                  {item.type.toUpperCase()}
                 </span>
                 <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
               </div>
               <h4 className={`font-bold text-sm mb-2 line-clamp-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
-              <p className={`text-xs leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{item.summary}</p>
+              <p className={`text-xs leading-relaxed line-clamp-2 ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{item.description}</p>
             </div>
           ))}
         </div>
@@ -1398,29 +1400,35 @@ const JobsView = ({ darkMode, displaySkills }) => {
 };
 
 const NewsView = ({ darkMode }) => {
+  const [feed, setFeed] = useState<FeedItem[]>([]);
+
+  useEffect(() => {
+    setFeed(feedService.getLatest());
+  }, []);
+
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'HACK': return darkMode ? 'text-red-500' : 'text-red-600';
-      case 'INFRA': return darkMode ? 'text-accent-blue' : 'text-blue-600';
-      case 'BOUNTY': return darkMode ? 'text-green-500' : 'text-green-600';
+      case 'hack': return darkMode ? 'text-red-500' : 'text-red-600';
+      case 'news': return darkMode ? 'text-accent-blue' : 'text-blue-600';
+      case 'job': return darkMode ? 'text-green-500' : 'text-green-600';
       default: return darkMode ? 'text-white' : 'text-gray-900';
     }
   };
 
   const getCategoryBg = (category: string) => {
     switch (category) {
-      case 'HACK': return darkMode ? 'bg-red-500/10 border-red-500/30' : 'bg-red-50 border-red-200';
-      case 'INFRA': return darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200';
-      case 'BOUNTY': return darkMode ? 'bg-green-500/10 border-green-500/30' : 'bg-green-50 border-green-200';
+      case 'hack': return darkMode ? 'bg-red-500/10 border-red-500/30' : 'bg-red-50 border-red-200';
+      case 'news': return darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200';
+      case 'job': return darkMode ? 'bg-green-500/10 border-green-500/30' : 'bg-green-50 border-green-200';
       default: return darkMode ? 'bg-white/5 border-white/10' : 'bg-gray-50 border-gray-200';
     }
   };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'HACK': return <ShieldAlert className="flex-shrink-0" size={18} />;
-      case 'INFRA': return <Newspaper className="flex-shrink-0" size={18} />;
-      case 'BOUNTY': return <Award className="flex-shrink-0" size={18} />;
+      case 'hack': return <ShieldAlert className="flex-shrink-0" size={18} />;
+      case 'news': return <Newspaper className="flex-shrink-0" size={18} />;
+      case 'job': return <Briefcase className="flex-shrink-0" size={18} />;
       default: return <Server className="flex-shrink-0" size={18} />;
     }
   };
@@ -1437,25 +1445,25 @@ const NewsView = ({ darkMode }) => {
       </div>
 
       <div className="grid grid-cols-1 gap-4">
-        {intelData.map((item, idx) => (
+        {feed.map((item, idx) => (
           <div
             key={idx}
             className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all overflow-hidden relative`}
           >
             {darkMode && <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">
-              {getCategoryIcon(item.category)}
+              {getCategoryIcon(item.type)}
             </div>}
 
             <div className="flex items-start gap-6 relative z-10">
-              <div className={`mt-1 p-2 rounded ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
-                {getCategoryIcon(item.category)}
+              <div className={`mt-1 p-2 rounded ${getCategoryBg(item.type)} ${getCategoryColor(item.type)}`}>
+                {getCategoryIcon(item.type)}
               </div>
 
               <div className="flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
-                    <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.category)} ${getCategoryColor(item.category)}`}>
-                      {item.category}
+                    <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${getCategoryBg(item.type)} ${getCategoryColor(item.type)}`}>
+                      {item.type.toUpperCase()}
                     </span>
                     <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.date}</span>
                   </div>
@@ -1466,12 +1474,12 @@ const NewsView = ({ darkMode }) => {
                 </h3>
 
                 <p className={`text-sm leading-relaxed mb-6 ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>
-                  {item.summary}
+                  {item.description}
                 </p>
 
                 <div className="flex items-center justify-between">
                   <a
-                    href={item.sourceLink}
+                    href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-flex items-center gap-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-widest border border-transparent hover:border-current px-0 py-1 transition-all ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}
@@ -2072,6 +2080,189 @@ const Footer = ({ darkMode }) => (
   </footer>
 );
 
+// --- Admin Components ---
+
+const AdminPanel = ({ darkMode }) => {
+  const [password, setPassword] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [systemStats, setSystemStats] = useState({
+    activeKeys: 0,
+    totalRPM: 0,
+    totalRPD: 0,
+    keyHealth: [] as any[]
+  });
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // System Requirement: Admin password is fixed for internal infrastructure monitoring
+    if (password === 'antigravity2025') {
+      setIsAuthenticated(true);
+    } else {
+      alert('INVALID_ACCESS_TOKEN');
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      // Simulation of fetching from VirtualRateLimiter & Prisma
+      setSystemStats({
+        activeKeys: 4,
+        totalRPM: 56,
+        totalRPD: 6000,
+        keyHealth: [
+          { id: 'GEMINI_BETA_1', status: 'Active', usage: '124/1500', rpm: '2/14', priority: 1 },
+          { id: 'GEMINI_BETA_2', status: 'Active', usage: '45/1500', rpm: '0/14', priority: 1 },
+          { id: 'GEMINI_PRO_1', status: 'CoolingDown', usage: '890/1500', rpm: '14/14', priority: 2 },
+          { id: 'GEMINI_ULTRA_1', status: 'Active', usage: '12/1500', rpm: '1/14', priority: 1 },
+        ]
+      });
+    }
+  }, [isAuthenticated]);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white shadow-xl rounded-2xl'} p-8 max-w-md w-full relative overflow-hidden`}>
+          {darkMode && <div className="scanline" />}
+          <div className="text-center mb-8">
+            <Lock className={`${darkMode ? 'text-accent-blue' : 'text-gray-900'} mx-auto mb-4`} size={48} />
+            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase tracking-widest' : 'text-gray-900'}`}>Admin Terminal</h2>
+            <p className={`text-sm ${darkMode ? 'text-slate-500 font-mono mt-2' : 'text-gray-600'}`}>RESTRICTED_ACCESS_PROTOCOL</p>
+          </div>
+          <form onSubmit={handleLogin} className="space-y-4">
+            <div>
+              <input
+                type="password"
+                placeholder="ENTER_ACCESS_KEY"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className={`${darkMode ? 'input-glass-dark font-mono text-center w-full' : 'w-full px-4 py-3 border rounded-xl'} focus:outline-none`}
+              />
+            </div>
+            <button
+              type="submit"
+              className={`w-full py-3 px-6 font-bold transition-all duration-300 ${
+                darkMode ? 'btn-industrial-primary' : 'bg-gray-900 text-white rounded-xl'
+              }`}
+            >
+              INITIALIZE_SESSION
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-8 animate-fadeIn">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 className={`text-5xl font-extrabold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            {darkMode ? 'SYSTEM_COMMAND' : 'Admin Dashboard'}
+          </h1>
+          <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+            Live monitoring of the Antigravity infrastructure
+          </p>
+        </div>
+        <div className="flex gap-3">
+          <button className={`p-2 ${darkMode ? 'btn-icon-dark' : 'bg-gray-100 p-2 rounded-lg'}`} title="Restart Engine">
+            <RefreshCw size={20} />
+          </button>
+          <button className={`p-2 ${darkMode ? 'btn-icon-dark text-red-500 border-red-500/20' : 'bg-red-50 text-red-600 p-2 rounded-lg'}`} title="Emergency Stop">
+            <AlertTriangle size={20} />
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {[
+          { label: 'Active Keys', value: systemStats.activeKeys, icon: ShieldCheck, color: 'text-green-500' },
+          { label: 'Total RPM', value: systemStats.totalRPM, icon: Activity, color: 'text-accent-blue' },
+          { label: 'Daily Budget', value: systemStats.totalRPD, icon: Database, color: 'text-purple-500' },
+          { label: 'Uptime', value: '99.9%', icon: HardDrive, color: 'text-yellow-500' },
+        ].map((stat, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border rounded-2xl'} p-6 relative overflow-hidden`}>
+            <div className="flex items-center justify-between mb-2">
+              <stat.icon className={stat.color} size={20} />
+              <span className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{stat.label}</span>
+            </div>
+            <div className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{stat.value}</div>
+            {darkMode && <div className={`absolute bottom-0 left-0 h-1 bg-current opacity-20 ${stat.color.replace('text', 'bg')}`} style={{ width: '40%' }} />}
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className={`lg:col-span-2 ${darkMode ? 'surface-industrial border-white/5' : 'bg-white border rounded-2xl'} p-8`}>
+          <div className="flex items-center justify-between mb-8">
+            <h3 className={`text-xl font-bold ${darkMode ? 'text-white font-mono uppercase' : 'text-gray-900'}`}>
+              <Cpu className="inline-block mr-2" size={20} />
+              Virtual Rate Limiter Hub
+            </h3>
+            <span className={`text-[10px] font-mono px-2 py-1 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/30' : 'bg-blue-50 text-blue-600 border'}`}>
+              AUTO_RECOVERY: ACTIVE
+            </span>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className={`border-b ${darkMode ? 'border-white/10' : 'border-gray-100'}`}>
+                  <th className={`pb-4 text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Identifier</th>
+                  <th className={`pb-4 text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Status</th>
+                  <th className={`pb-4 text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Load (RPM)</th>
+                  <th className={`pb-4 text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Daily Yield</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-transparent">
+                {systemStats.keyHealth.map((key, i) => (
+                  <tr key={i} className={`group ${darkMode ? 'hover:bg-white/[0.02]' : 'hover:bg-gray-50'}`}>
+                    <td className="py-4 font-mono text-xs">{key.id}</td>
+                    <td className="py-4">
+                      <span className={`px-2 py-0.5 rounded-[2px] text-[10px] font-mono border ${
+                        key.status === 'Active'
+                          ? (darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-50 text-green-600')
+                          : (darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600')
+                      }`}>
+                        {key.status}
+                      </span>
+                    </td>
+                    <td className="py-4 font-mono text-xs">{key.rpm}</td>
+                    <td className="py-4 font-mono text-xs">{key.usage}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border rounded-2xl'} p-8`}>
+          <h3 className={`text-xl font-bold mb-6 ${darkMode ? 'text-white font-mono uppercase' : 'text-gray-900'}`}>
+            <Terminal className="inline-block mr-2" size={20} />
+            System Console
+          </h3>
+          <div className={`font-mono text-[10px] space-y-2 h-64 overflow-y-auto p-4 ${darkMode ? 'bg-black/40 rounded border border-white/5' : 'bg-gray-900 text-green-400 rounded p-4'}`}>
+            <p className="text-accent-blue">[11:57:04] INITIALIZING_RECOVERY_PROTOCOL...</p>
+            <p className="text-green-400">[11:57:05] Key 'GEMINI_BETA_2' revived from CoolingDown</p>
+            <p className="text-slate-500">[11:57:12] Heartbeat check: OK</p>
+            <p className="text-yellow-400">[12:01:45] Quota-Stretcher engaged on Job #A-944</p>
+            <p className="text-slate-500">[12:05:00] Daily Data Aggregator cycle: COMPLETED</p>
+            <p className="text-white">_</p>
+          </div>
+          <div className="mt-4 flex gap-2">
+            <input
+              type="text"
+              placeholder="Enter command..."
+              className={`flex-1 text-[10px] font-mono p-2 ${darkMode ? 'bg-white/5 border border-white/10 text-white' : 'bg-gray-100 border text-gray-900'}`}
+            />
+            <button className={`px-4 py-1 text-[10px] font-mono ${darkMode ? 'bg-accent-blue text-black' : 'bg-gray-900 text-white'}`}>EXEC</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // --- Main App Component ---
 
 const App = () => {
@@ -2365,6 +2556,7 @@ const App = () => {
                 getCareerMatch={getCareerMatch}
               />
             } />
+            <Route path="/notadmin" element={<AdminPanel darkMode={darkMode} />} />
             <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />
 
           </Routes>
