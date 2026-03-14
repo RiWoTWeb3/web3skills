@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
+    "category": "INFRA",
+    "summary": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",
+    "date": "2026-03-14",
+    "sourceLink": "https://www.binance.com/en/ethereum-upgrade"
+  },
+  {
+    "title": "Solana Alpenglow Upgrade Targets Sub-Second Finality",
+    "category": "INFRA",
+    "summary": "Solana's upcoming Alpenglow consensus upgrade promises to reduce finality to as low as 100-150 milliseconds while improving network resilience.",
+    "date": "2026-03-14",
+    "sourceLink": "https://www.fool.com/investing/2026/02/11/2-game-changing-updates-coming-to-solana-in-2026/"
+  },
+  {
+    "title": "PepetoSwap Cross-Chain Bridge Vulnerability Identified",
+    "category": "BOUNTY",
+    "summary": "An AI-driven security scan for PepetoSwap identified a critical flaw in its cross-chain bridging logic, preventing potential drainage.",
+    "date": "2026-03-14",
+    "sourceLink": "https://markets.businessinsider.com/news/stocks/crypto-news-pepeto-update-amount-raised-above-7-96-million-as-ethereum-price-prediction-points-to-new-all-time-high-1035924891"
+  },
+  {
     "title": "XMTP Labs Releases Messaging SDK v3 for Mobile",
     "category": "INFRA",
     "summary": "XMTP Labs has officially launched its v3 SDK, enabling seamless integration of end-to-end encrypted messaging into mobile Web3 applications.",

@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-14",
+    "type": "job",
+    "title": "Solana Smart Contracts Engineer at Odos",
+    "description": "Build and operate distributed, low-latency services that power Solana DEX Aggregator. Experience with Rust and Solana required. Remote.",
+    "link": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=f8674917a807d8d2"
+  },
+  {
+    "date": "2026-03-14",
+    "type": "job",
+    "title": "Senior Blockchain Security Engineer at CertiK",
+    "description": "Lead advanced blockchain investigations and analyze smart contract interactions. Required: Solidity, Rust, and Go. Remote.",
+    "link": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=7d427218357f8303"
+  },
+  {
+    "date": "2026-03-14",
+    "type": "job",
+    "title": "Principal Blockchain Engineer at The Nuclear Company",
+    "description": "Integrate blockchain capabilities into core products, focusing on robust, scalable systems for digital contracts. Remote.",
+    "link": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=4d9e96f8c47796d4"
+  },
+  {
+    "date": "2026-03-14",
+    "type": "news",
+    "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
+    "description": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",
+    "link": "https://www.binance.com/en/ethereum-upgrade"
+  },
+  {
+    "date": "2026-03-14",
+    "type": "news",
+    "title": "Solana Alpenglow Upgrade Targets Sub-Second Finality",
+    "description": "Solana's upcoming Alpenglow consensus upgrade promises to reduce finality to as low as 100-150 milliseconds while improving network resilience.",
+    "link": "https://www.fool.com/investing/2026/02/11/2-game-changing-updates-coming-to-solana-in-2026/"
+  },
+  {
+    "date": "2026-03-14",
+    "type": "hack",
+    "title": "PepetoSwap Cross-Chain Bridge Vulnerability Identified",
+    "description": "An AI-driven security scan for PepetoSwap identified a critical flaw in its cross-chain bridging logic, preventing potential drainage.",
+    "link": "https://markets.businessinsider.com/news/stocks/crypto-news-pepeto-update-amount-raised-above-7-96-million-as-ethereum-price-prediction-points-to-new-all-time-high-1035924891"
+  },
+  {
     "date": "2026-03-11",
     "type": "job",
     "title": "Solana Smart Contracts Engineer at Odos",
@@ -375,48 +417,6 @@
     "type": "job",
     "title": "Senior Software Engineer, Consensus at Monad Labs",
     "description": "Monad is building a high-performance parallel EVM. Seeking engineers to work on consensus mechanisms and distributed systems. Remote.",
-    "link": "https://monad.xyz/jobs"
-  },
-  {
-    "date": "2026-03-03",
-    "type": "job",
-    "title": "Senior Backend Engineer (EVM/Rust) at Unlimit Pro",
-    "description": "Unlimit Pro is seeking a Senior Backend Engineer to work on EVM and Rust based systems. Remote position with competitive salary.",
-    "link": "https://web3.career/remote+rust-jobs"
-  },
-  {
-    "date": "2026-03-03",
-    "type": "job",
-    "title": "Software Engineer (Rust/Trading) at Alpaca",
-    "description": "Alpaca is looking for Rust developers for their trading infrastructure. Focus on high-performance systems. Remote.",
-    "link": "https://web3.career/remote+rust-jobs"
-  },
-  {
-    "date": "2026-03-03",
-    "type": "news",
-    "title": "Monad Labs Launches Public Devnet",
-    "description": "Monad Labs has officially launched its public devnet, introducing parallelized EVM execution to developers for testing high-throughput dApps.",
-    "link": "https://monad.xyz/blog"
-  },
-  {
-    "date": "2026-03-03",
-    "type": "news",
-    "title": "EigenLayer Releases Stage 3 Roadmap",
-    "description": "EigenLayer unveils Stage 3 of its protocol, focusing on permissionless AVS deployment and enhanced restaking capabilities.",
-    "link": "https://www.eigenlayer.xyz/"
-  },
-  {
-    "date": "2026-03-03",
-    "type": "hack",
-    "title": "SuperVault Protocol Exploit: $12M Loss",
-    "description": "DeFi protocol SuperVault was exploited for $12M due to a logic error in its collateral management contract. The team is investigating.",
-    "link": "https://rekt.news"
-  },
-  {
-    "date": "2026-03-02",
-    "type": "job",
-    "title": "Senior Rust Engineer at Monad Labs",
-    "description": "Monad is building a high-performance EVM-equivalent L1. Seeking Senior Rust Engineers to optimize the execution engine and networking stack. Remote.",
     "link": "https://monad.xyz/jobs"
   }
 ]
