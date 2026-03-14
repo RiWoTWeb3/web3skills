@@ -1,5 +1,55 @@
 [
   {
+    "id": "odos-solana-smart-contracts-2026-03-14",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Kubernetes",
+      "AWS",
+      "DEX Aggregator"
+    ],
+    "applyLink": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=f8674917a807d8d2"
+  },
+  {
+    "id": "certik-senior-security-engineer-2026-03-14",
+    "title": "Senior Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "02,000 - 80,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Go",
+      "Smart Contract Auditing",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=7d427218357f8303"
+  },
+  {
+    "id": "nuclear-company-principal-blockchain-2026-03-14",
+    "title": "Principal Blockchain Engineer",
+    "company": "The Nuclear Company",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "98,000 - 28,000",
+    "requirements": [
+      "Blockchain Integration",
+      "System Architecture",
+      "Scalable Systems",
+      "Digital Contracts"
+    ],
+    "applyLink": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=4d9e96f8c47796d4"
+  },
+  {
     "id": "odos-solana-smart-contracts-2026-03-11",
     "title": "Solana Smart Contracts Engineer",
     "company": "Odos",
@@ -648,7 +698,7 @@
   },
   {
     "id": "uniswap-eng-manager-protocol",
-    "title": "Engineering Manager \u2013 Protocol",
+    "title": "Engineering Manager – Protocol",
     "company": "Uniswap Labs",
     "type": "EVM",
     "workType": "Remote",

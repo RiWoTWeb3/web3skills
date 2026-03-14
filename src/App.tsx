@@ -17,35 +17,14 @@ import {
 } from 'react-router-dom';
 
 import skillCategoriesRaw from './data/skills.json';
-import jobsDataRaw from './data/jobs.json';
-import intelDataRaw from './data/intel.json';
+import { feedService, JobListing, IntelItem } from './services/feedService';
 
 // --- Types & Data ---
 
 const skillCategories = skillCategoriesRaw as Record<string, string[]>;
 
-interface JobListing {
-  id: string;
-  title: string;
-  company: string;
-  type: 'EVM' | 'SVM' | 'Backend';
-  workType: string;
-  experience: string;
-  salaryRange: string;
-  requirements: string[];
-  applyLink: string;
-}
-
-interface IntelItem {
-  title: string;
-  category: 'HACK' | 'INFRA' | 'BOUNTY';
-  summary: string;
-  date: string;
-  sourceLink: string;
-}
-
-const jobsData = jobsDataRaw as JobListing[];
-const intelData = intelDataRaw as IntelItem[];
+const jobsData = feedService.getJobs();
+const intelData = feedService.getIntel();
 
 const careerPaths = {
   'EVM Smart Contract Developer': {
