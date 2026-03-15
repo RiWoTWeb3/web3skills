@@ -522,11 +522,24 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
-const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
+const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
   const location = useLocation();
+  const darkMode = theme === 'dark';
+
+  const cycleTheme = () => {
+    if (theme === 'dark') setTheme('light');
+    else if (theme === 'light') setTheme('recommended');
+    else setTheme('dark');
+  };
+
+  const getThemeIcon = () => {
+    if (theme === 'dark') return <Sun size={22} />;
+    if (theme === 'light') return <div className="w-5.5 h-5.5 bg-accent-blue rounded-sm p-0.5"><img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Logo" className="w-full h-full object-cover" /></div>;
+    return <Moon size={22} />;
+  };
 
   return (
-    <nav className={`${darkMode ? 'navbar-industrial mx-0 md:mx-0 top-0 rounded-none border-b' : 'navbar-light top-4 mx-4 md:mx-8 rounded-2xl'} sticky z-40 transition-all duration-300 focus-visible:outline-none`}>
+    <nav className={`${theme === 'dark' ? 'navbar-industrial mx-0 md:mx-0 top-0 rounded-none border-b' : theme === 'recommended' ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 top-0 mx-0 md:mx-0' : 'navbar-light top-4 mx-4 md:mx-8 rounded-2xl'} sticky z-40 transition-all duration-300 focus-visible:outline-none`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[4px]">
@@ -617,10 +630,11 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             )}
             
             <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-yellow-300' : 'btn-glass-light text-purple-600'}`}
+              onClick={cycleTheme}
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${theme === 'dark' ? 'btn-icon-dark text-yellow-300' : theme === 'recommended' ? 'p-2 rounded-lg hover:bg-slate-100 text-slate-600' : 'btn-glass-light text-purple-600'}`}
+              title={`Switch to ${theme === 'dark' ? 'Light' : theme === 'light' ? 'Recommended' : 'Dark'} Mode`}
             >
-              {darkMode ? <Sun size={22} /> : <Moon size={22} />}
+              {getThemeIcon()}
             </button>
           </div>
 
@@ -697,10 +711,13 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
-                onClick={() => setDarkMode(!darkMode)}
-                className={`flex-1 py-2 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}
+                onClick={cycleTheme}
+                className={`flex-1 py-2 rounded-lg ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-600'}`}
               >
-                {darkMode ? <Sun className="text-white mx-auto" size={20} /> : <Moon className="text-gray-600 mx-auto" size={20} />}
+                <div className="flex items-center justify-center gap-2">
+                  {getThemeIcon()}
+                  <span className="text-sm font-medium capitalize">{theme} Mode</span>
+                </div>
               </button>
             </div>
           </div>
@@ -2070,10 +2087,16 @@ const App = () => {
     return initialSkills;
   });
 
-  const [darkMode, setDarkMode] = useState(() => {
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('web3skills_theme');
+    if (savedTheme) return savedTheme;
+    // Fallback to old localStorage key for compatibility
     const savedDarkMode = localStorage.getItem('web3skills_darkmode');
-    return savedDarkMode !== null ? JSON.parse(savedDarkMode) : true;
+    if (savedDarkMode !== null) return JSON.parse(savedDarkMode) ? 'dark' : 'light';
+    return 'dark';
   });
+
+  const darkMode = theme === 'dark';
 
   const [searchQuery, setSearchQuery] = useState('');
   const [filterComplete, setFilterComplete] = useState('all');
@@ -2108,13 +2131,15 @@ const App = () => {
   }, [skills]);
 
   useEffect(() => {
-    localStorage.setItem('web3skills_darkmode', JSON.stringify(darkMode));
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    localStorage.setItem('web3skills_theme', theme);
+    const root = document.documentElement;
+    root.classList.remove('dark', 'theme-recommended');
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else if (theme === 'recommended') {
+      root.classList.add('theme-recommended');
     }
-  }, [darkMode]);
+  }, [theme]);
 
   useEffect(() => {
     localStorage.setItem('web3skills_expanded', JSON.stringify(expandedCategories));
@@ -2270,17 +2295,17 @@ const App = () => {
   const overallProgress = useMemo(() => totalSkills > 0 ? (checkedSkillsCount / totalSkills) * 100 : 0, [totalSkills, checkedSkillsCount]);
 
   return (
-    <div className={`min-h-screen transition-all relative overflow-hidden ${darkMode ? 'bg-dark-theme text-white' : 'bg-light-theme text-gray-900'}`}>
-      {darkMode && <div className="noise-overlay" />}
-      {darkMode && <div className="scanline" />}
+    <div className={`min-h-screen transition-all relative overflow-hidden ${theme === 'dark' ? 'bg-dark-theme text-white' : theme === 'recommended' ? 'theme-recommended' : 'bg-light-theme text-gray-900'}`}>
+      {theme === 'dark' && <div className="noise-overlay" />}
+      {theme === 'dark' && <div className="scanline" />}
 
       
-      <div className={`absolute inset-0 ${darkMode ? 'grid-bg-industrial' : 'grid-pattern-light'} opacity-[0.04]`}></div>
+      <div className={`absolute inset-0 ${theme === 'dark' ? 'grid-bg-industrial' : theme === 'recommended' ? '' : 'grid-pattern-light'} opacity-[0.04]`}></div>
       
       <div className="relative z-10">
         <Navigation
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
+          theme={theme}
+          setTheme={setTheme}
           setShowShareModal={setShowShareModal}
           setShowViewModal={setShowViewModal}
           viewMode={viewMode}

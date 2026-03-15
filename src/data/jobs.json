@@ -1,5 +1,56 @@
 [
   {
+    "id": "odos-solana-smart-contracts-2026-03-15",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Anchor Framework",
+      "DEX Aggregator",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://www.indeed.com/q-solana-l-remote-jobs.html"
+  },
+  {
+    "id": "magic-eden-evm-engineer-2026-03-15",
+    "title": "EVM Engineer",
+    "company": "Magic Eden",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "NFT Marketplaces",
+      "Smart Contract Development",
+      "TypeScript"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/evm-engineer-magic-eden-remote"
+  },
+  {
+    "id": "certik-blockchain-security-engineer-2026-03-15",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Smart Contract Auditing",
+      "Solidity",
+      "Rust",
+      "Go",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://www.indeed.com/q-Blockchain-Engineer-Rust-l-Remote-jobs.html"
+  },
+  {
     "id": "odos-solana-smart-contracts-2026-03-14",
     "title": "Solana Smart Contracts Engineer",
     "company": "Odos",
@@ -698,7 +749,7 @@
   },
   {
     "id": "uniswap-eng-manager-protocol",
-    "title": "Engineering Manager – Protocol",
+    "title": "Engineering Manager \u2013 Protocol",
     "company": "Uniswap Labs",
     "type": "EVM",
     "workType": "Remote",

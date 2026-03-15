@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-6 Launches with EIP-7702 Optimizations",
+    "category": "INFRA",
+    "summary": "The latest Pectra devnet introduces significant enhancements to account abstraction and validator entry/exit flows, signaling progress toward the 2026 upgrade.",
+    "date": "2026-03-15",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana Firedancer v1.5 Milestone Reached on Testnet",
+    "category": "INFRA",
+    "summary": "Firedancer's latest iteration demonstrates sustained 1M TPS throughput on testnet, bringing the high-performance validator client closer to mainnet canary release.",
+    "date": "2026-03-15",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "OmniBridge Logic Exploit: $500k White-Hat Bounty Awarded",
+    "category": "BOUNTY",
+    "summary": "A critical vulnerability in OmniBridge's cross-chain message sequencing was identified by a security researcher, preventing a potential multi-million dollar drainage.",
+    "date": "2026-03-15",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
     "category": "INFRA",
     "summary": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",

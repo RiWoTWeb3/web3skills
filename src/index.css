@@ -481,6 +481,75 @@
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
   }
 
+  /* Recommended Mode - Minimalist Professional UI */
+  .theme-recommended {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .theme-recommended h1,
+  .theme-recommended h2,
+  .theme-recommended h3,
+  .theme-recommended h4 {
+    font-family: 'Merriweather', serif;
+    color: #0f172a;
+  }
+
+  .theme-recommended .surface-industrial,
+  .theme-recommended .glass-card-light,
+  .theme-recommended .card-white-light {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+
+  .theme-recommended .surface-industrial:hover,
+  .theme-recommended .glass-card-light:hover,
+  .theme-recommended .card-white-light:hover {
+    transform: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+  }
+
+  .theme-recommended .btn-industrial-primary,
+  .theme-recommended .btn-primary-light {
+    background: #0f172a;
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+
+  .theme-recommended .btn-industrial-primary:hover,
+  .theme-recommended .btn-primary-light:hover {
+    background: #334155;
+    transform: none;
+  }
+
+  .theme-recommended .progress-bar-dark,
+  .theme-recommended .progress-bar-light {
+    background: #f1f5f9;
+    height: 6px;
+    border-radius: 3px;
+  }
+
+  .theme-recommended .progress-fill {
+    background: #0f172a;
+  }
+
+  /* Suppress Industrial Elements in Recommended Mode */
+  .theme-recommended .noise-overlay,
+  .theme-recommended .scanline,
+  .theme-recommended .grid-bg-industrial,
+  .theme-recommended .grid-pattern-light,
+  .theme-recommended .corner-animate::before,
+  .theme-recommended .corner-animate::after,
+  .theme-recommended .corner-bottom::before,
+  .theme-recommended .corner-bottom::after {
+    display: none !important;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
