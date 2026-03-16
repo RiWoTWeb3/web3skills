@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert
+  Briefcase, Newspaper, ShieldAlert,
+  Lock, Settings, Activity, Database, AlertTriangle
 } from 'lucide-react';
 import {
   Routes,
@@ -13,7 +14,8 @@ import {
   Link,
   useNavigate,
   useLocation,
-  useParams
+  useParams,
+  Navigate
 } from 'react-router-dom';
 
 import skillCategoriesRaw from './data/skills.json';
@@ -1376,6 +1378,93 @@ const JobsView = ({ darkMode, displaySkills }) => {
   );
 };
 
+const AdminView = ({ darkMode }) => {
+  return (
+    <div className="space-y-8 animate-fadeIn">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h1 className={`text-4xl font-extrabold ${darkMode ? 'text-white font-mono' : 'text-gray-900'}`}>
+            {darkMode ? 'SYSTEM_MONITOR' : 'System Monitor'}
+          </h1>
+          <p className={`mt-2 ${darkMode ? 'text-accent-blue/60 font-mono text-xs uppercase' : 'text-gray-600'}`}>
+            Operational Status: 0xDEADBEEF // Active
+          </p>
+        </div>
+        <div className={`px-4 py-2 rounded-[4px] border ${darkMode ? 'bg-green-500/10 border-green-500/30 text-green-400' : 'bg-green-50 border-green-200 text-green-700'} flex items-center gap-2`}>
+          <Activity size={16} />
+          <span className="text-xs font-mono font-bold uppercase tracking-widest">Live Node</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border rounded-xl'} p-6`}>
+          <div className="flex items-center gap-3 mb-4 text-accent-blue">
+            <Database size={20} />
+            <h3 className="font-bold uppercase text-xs tracking-widest">API Key Pool</h3>
+          </div>
+          <div className="space-y-4">
+            {[
+              { id: 'KEY-01', status: 'Active', load: '12%' },
+              { id: 'KEY-02', status: 'Active', load: '45%' },
+              { id: 'KEY-03', status: 'Cooling', load: '98%' },
+            ].map(key => (
+              <div key={key.id} className="flex items-center justify-between">
+                <span className="text-xs font-mono text-slate-400">{key.id}</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-20 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-accent-blue" style={{ width: key.load }} />
+                  </div>
+                  <span className={`text-[10px] font-mono ${key.status === 'Active' ? 'text-green-400' : 'text-yellow-400'}`}>{key.status}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border rounded-xl'} p-6 md:col-span-2`}>
+          <div className="flex items-center gap-3 mb-4 text-accent-blue">
+            <Settings size={20} />
+            <h3 className="font-bold uppercase text-xs tracking-widest">Audit Engine Status</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Pending', value: '12', icon: Activity },
+              { label: 'Active', value: '3', icon: Zap },
+              { label: 'Completed', value: '1,248', icon: CheckCircle },
+              { label: 'Critical', value: '42', icon: AlertTriangle },
+            ].map(stat => (
+              <div key={stat.label} className="p-3 bg-white/[0.02] border border-white/5 rounded">
+                <p className="text-[10px] font-mono text-slate-500 uppercase mb-1">{stat.label}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xl font-bold text-white">{stat.value}</span>
+                  <stat.icon size={14} className="text-accent-blue/40" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className={`${darkMode ? 'surface-industrial' : 'bg-white border rounded-xl'} p-6`}>
+        <h3 className={`text-sm font-bold mb-4 uppercase tracking-[0.2em] ${darkMode ? 'text-white' : 'text-gray-900'}`}>Live Intelligence Stream</h3>
+        <div className="space-y-2">
+          {[
+            '0x...4a2b: Analyzing Compound V3 integration logic...',
+            '0x...9e1c: Reentrancy pattern detected in unknown contract.',
+            '0x...f3d9: Gemini-2.0-Flash instance spawned for job 492.',
+            'System: Quota-Stretcher stretched RPM to 14/15.',
+          ].map((log, i) => (
+            <div key={i} className="font-mono text-[10px] text-slate-500 flex gap-3">
+              <span className="text-accent-blue/40">[{new Date().toLocaleTimeString()}]</span>
+              <span>{log}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const NewsView = ({ darkMode }) => {
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -2334,6 +2423,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/notadmin" element={
+              <AdminView
                 darkMode={darkMode}
               />
             } />

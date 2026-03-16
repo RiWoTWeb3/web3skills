@@ -1,5 +1,57 @@
 [
   {
+    "id": "xmtp-staff-software-engineer-2026-03-16",
+    "title": "Staff Software Engineer (Messaging Protocol)",
+    "company": "XMTP Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$230,000 - $265,000",
+    "requirements": [
+      "Rust",
+      "Cryptography",
+      "Messaging Protocols",
+      "E2EE",
+      "Distributed Systems",
+      "Go"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "temporal-solana-engineer-2026-03-16",
+    "title": "Solana Engineer",
+    "company": "Temporal",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Solana Runtime",
+      "Distributed Systems",
+      "System Architecture"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "asymmetric-security-engineer-2026-03-16",
+    "title": "Security Engineer",
+    "company": "Asymmetric Research",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "EVM Mechanics",
+      "Smart Contract Auditing",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://web3.career/evm+remote-jobs"
+  },
+  {
     "id": "odos-solana-smart-contracts-2026-03-14",
     "title": "Solana Smart Contracts Engineer",
     "company": "Odos",

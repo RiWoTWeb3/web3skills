@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-16",
+    "type": "job",
+    "title": "Staff Software Engineer (Messaging Protocol) at XMTP Labs",
+    "description": "Build and maintain the E2EE XMTP messaging protocol for mobile platforms. Expertise in Rust and cryptography required. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "job",
+    "title": "Solana Engineer at Temporal",
+    "description": "Join Temporal to build high-performance Solana infrastructure. Deep knowledge of Rust and Solana runtime required. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "job",
+    "title": "Security Engineer at Asymmetric Research",
+    "description": "Focus on protocol security and smart contract auditing for leading Web3 projects. Experience with EVM and SVM required. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "news",
+    "title": "Chainalysis Releases 2026 Crypto Crime Report",
+    "description": "New report highlights shifting patterns in crypto theft, with a focus on individual wallet compromises and sophisticated social engineering.",
+    "link": "https://www.chainalysis.com/blog/crypto-hacking-stolen-funds-2026/"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "news",
+    "title": "Bybit Hack Recovery: Major Milestone Reached",
+    "description": "Security teams report significant progress in tracing and freezing funds from the historic $1.4B breach, improving recovery outlook.",
+    "link": "https://www.webopedia.com/crypto/learn/biggest-crypto-hacks-2025/"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "hack",
+    "title": "IoTeX Cross-Chain Bridge Exploited for $4.3M",
+    "description": "Attacker gained access to a validator private key, allowing unauthorized token transfers from reserves. Investigation ongoing.",
+    "link": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-february-2026"
+  },
+  {
     "date": "2026-03-14",
     "type": "job",
     "title": "Solana Smart Contracts Engineer at Odos",
@@ -376,47 +418,5 @@
     "title": "Arbitrum Stylus Mainnet Milestone",
     "description": "Arbitrum Stylus achieves a major adoption milestone with over 500 projects deploying C++ and Rust based smart contracts on the L2.",
     "link": "https://arbitrum.io/blog"
-  },
-  {
-    "date": "2025-05-02",
-    "type": "news",
-    "title": "Hyperlane V3 Mainnet Expansion",
-    "description": "Hyperlane expands its permissionless interoperability layer to 5 new chains, introducing V3 hooks for custom security models and cross-chain governance.",
-    "link": "https://www.hyperlane.xyz/blog"
-  },
-  {
-    "date": "2025-05-02",
-    "type": "job",
-    "title": "Interoperability Engineer at Hyperlane",
-    "description": "Hyperlane is seeking an Interoperability Engineer to build cross-chain infrastructure. Experience with Rust and TypeScript required. Remote.",
-    "link": "https://www.hyperlane.xyz/careers"
-  },
-  {
-    "date": "2025-05-01",
-    "type": "news",
-    "title": "EigenLayer AVS Security Framework Release",
-    "description": "EigenLayer releases a comprehensive security framework for Actively Validated Services (AVS), focusing on slashing conditions and operator decentralization.",
-    "link": "https://www.eigenlayer.xyz/blog"
-  },
-  {
-    "date": "2025-05-01",
-    "type": "job",
-    "title": "Protocol Engineer - AVS Development at EigenLayer",
-    "description": "Join EigenLayer to design and build security models for AVS. Required: Solidity, Go, and knowledge of distributed systems. Remote.",
-    "link": "https://www.eigenlayer.xyz/careers"
-  },
-  {
-    "date": "2025-04-30",
-    "type": "news",
-    "title": "Monad Devnet Milestone: 10k TPS Reached",
-    "description": "Monad's internal devnet achieves a stable 10,000 transactions per second in a distributed environment, validating its parallel EVM architecture.",
-    "link": "https://monad.xyz/blog"
-  },
-  {
-    "date": "2025-04-30",
-    "type": "job",
-    "title": "Senior Software Engineer, Consensus at Monad Labs",
-    "description": "Monad is building a high-performance parallel EVM. Seeking engineers to work on consensus mechanisms and distributed systems. Remote.",
-    "link": "https://monad.xyz/jobs"
   }
 ]

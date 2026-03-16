@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model KeyPool {
+  id          String   @id @default(cuid())
+  key         String
+  model       String   @default("gemini-1.5-flash")
+  status      String   @default("Active") // Active, CoolingDown, Exhausted
+  priority    Int      @default(1)
+  current_rpm Int      @default(0)
+  daily_usage Int      @default(0)
+  last_used   DateTime @default(now())
+}
+
+model VulnerabilityEvidence {
+  id                 String   @id @default(cuid())
+  job_id             String
+  phase_found        Int
+  severity           String
+  vulnerability_type String
+  file_path          String
+  line_numbers       String
+  code_snippet       String
+  ai_reasoning       String
+  advocate_counter   String?
+  judge_verdict      String?
+  is_confirmed       Boolean  @default(false)
+  confidence         Float    @default(0.0)
+  created_at         DateTime @default(now())
+}
+
+model AuditJobs {
+  id                   String   @id @default(cuid())
+  project_path         String
+  current_phase        Int      @default(1)
+  last_processed_file  String?
+  last_processed_line  Int      @default(0)
+  is_running           Boolean  @default(false)
+  created_at           DateTime @default(now())
+  updated_at           DateTime @updatedAt
+}

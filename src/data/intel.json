@@ -1,5 +1,26 @@
 [
   {
+    "title": "IoTeX Cross-Chain Bridge Exploited for $4.3M",
+    "category": "HACK",
+    "summary": "Attacker gained access to a validator private key, allowing unauthorized token transfers from reserves. Investigation ongoing.",
+    "date": "2026-03-16",
+    "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-february-2026"
+  },
+  {
+    "title": "Chainalysis Releases 2026 Crypto Crime Report",
+    "category": "INFRA",
+    "summary": "New report highlights shifting patterns in crypto theft, with a focus on individual wallet compromises and sophisticated social engineering.",
+    "date": "2026-03-16",
+    "sourceLink": "https://www.chainalysis.com/blog/crypto-hacking-stolen-funds-2026/"
+  },
+  {
+    "title": "Bybit Hack Recovery: Major Milestone Reached",
+    "category": "INFRA",
+    "summary": "Security teams report significant progress in tracing and freezing funds from the historic $1.4B breach, improving recovery outlook.",
+    "date": "2026-03-16",
+    "sourceLink": "https://www.webopedia.com/crypto/learn/biggest-crypto-hacks-2025/"
+  },
+  {
     "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
     "category": "INFRA",
     "summary": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",
