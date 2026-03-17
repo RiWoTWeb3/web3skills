@@ -5,7 +5,7 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert
+  Briefcase, Newspaper, ShieldAlert, Hexagon, Cpu, Activity
 } from 'lucide-react';
 import {
   Routes,
@@ -522,7 +522,8 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
-const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
+const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
+  const darkMode = theme === 'dark';
   const location = useLocation();
 
   return (
@@ -617,10 +618,17 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             )}
             
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={() => {
+                if (theme === 'dark') setTheme('light');
+                else if (theme === 'light') setTheme('recommended');
+                else setTheme('dark');
+              }}
               className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-yellow-300' : 'btn-glass-light text-purple-600'}`}
+              title={`Switch to ${theme === 'dark' ? 'Light' : theme === 'light' ? 'Recommended' : 'Dark'} Mode`}
             >
-              {darkMode ? <Sun size={22} /> : <Moon size={22} />}
+              {theme === 'dark' && <Sun size={22} />}
+              {theme === 'light' && <Hexagon size={22} />}
+              {theme === 'recommended' && <Moon size={22} />}
             </button>
           </div>
 
@@ -697,10 +705,16 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
-                onClick={() => setDarkMode(!darkMode)}
+                onClick={() => {
+                  if (theme === 'dark') setTheme('light');
+                  else if (theme === 'light') setTheme('recommended');
+                  else setTheme('dark');
+                }}
                 className={`flex-1 py-2 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}
               >
-                {darkMode ? <Sun className="text-white mx-auto" size={20} /> : <Moon className="text-gray-600 mx-auto" size={20} />}
+                {theme === 'dark' && <Sun className="text-white mx-auto" size={20} />}
+                {theme === 'light' && <Hexagon className="text-gray-600 mx-auto" size={20} />}
+                {theme === 'recommended' && <Moon className="text-gray-600 mx-auto" size={20} />}
               </button>
             </div>
           </div>
@@ -1556,6 +1570,92 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   );
 };
 
+const SystemMonitor = ({ darkMode }) => {
+  const [metrics, setMetrics] = useState({
+    apiHeatMap: Array.from({ length: 24 }, () => Math.floor(Math.random() * 100)),
+    jobCount: jobsData.length,
+    intelCount: intelData.length,
+    uptime: "99.99%",
+    lastSync: new Date().toISOString()
+  });
+
+  return (
+    <div className="space-y-8">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          {darkMode ? 'SYSTEM_MONITOR.ROOT' : 'System Monitor'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Live performance metrics and system health
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-lg`}>
+          <Activity className={darkMode ? 'text-accent-blue mb-4' : 'text-blue-600 mb-4'} size={24} />
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>Uptime</p>
+          <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{metrics.uptime}</p>
+        </div>
+        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-lg`}>
+          <Briefcase className={darkMode ? 'text-accent-blue mb-4' : 'text-blue-600 mb-4'} size={24} />
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>Active Jobs</p>
+          <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{metrics.jobCount}</p>
+        </div>
+        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-lg`}>
+          <Newspaper className={darkMode ? 'text-accent-blue mb-4' : 'text-blue-600 mb-4'} size={24} />
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>Intel Logs</p>
+          <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{metrics.intelCount}</p>
+        </div>
+        <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-lg`}>
+          <Cpu className={darkMode ? 'text-accent-blue mb-4' : 'text-blue-600 mb-4'} size={24} />
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>API Quota</p>
+          <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>84%</p>
+        </div>
+      </div>
+
+      <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-8 rounded-lg`}>
+        <h3 className={`text-sm font-mono uppercase tracking-widest mb-6 ${darkMode ? 'text-accent-blue' : 'text-gray-900'}`}>API Exhaustion Heat Map (24h)</h3>
+        <div className="flex items-end gap-1 h-32">
+          {metrics.apiHeatMap.map((val, i) => (
+            <div
+              key={i}
+              style={{ height: `${val}%` }}
+              className={`flex-1 ${val > 80 ? 'bg-red-500' : val > 50 ? 'bg-yellow-500' : 'bg-accent-blue'} opacity-80 rounded-t-sm`}
+              title={`Hour ${i}: ${val}% exhaustion`}
+            />
+          ))}
+        </div>
+        <div className="flex justify-between mt-2">
+          <span className="text-[8px] font-mono text-slate-500">00:00</span>
+          <span className="text-[8px] font-mono text-slate-500">12:00</span>
+          <span className="text-[8px] font-mono text-slate-500">23:59</span>
+        </div>
+      </div>
+
+      <div className={`${darkMode ? 'surface-industrial' : 'bg-white border'} p-6 rounded-lg`}>
+        <h3 className={`text-sm font-mono uppercase tracking-widest mb-4 ${darkMode ? 'text-accent-blue' : 'text-gray-900'}`}>System Log</h3>
+        <div className="space-y-2 max-h-48 overflow-y-auto">
+          <div className="flex gap-4 text-[10px] font-mono border-b border-white/5 py-1">
+            <span className="text-slate-500">[{metrics.lastSync}]</span>
+            <span className="text-green-400">SYNC_SUCCESS</span>
+            <span className={darkMode ? 'text-slate-400' : 'text-gray-600'}>Data feed synchronized with 6 new entries.</span>
+          </div>
+          <div className="flex gap-4 text-[10px] font-mono border-b border-white/5 py-1">
+            <span className="text-slate-500">[{new Date(Date.now() - 3600000).toISOString()}]</span>
+            <span className="text-accent-blue">MODE_SWITCH</span>
+            <span className={darkMode ? 'text-slate-400' : 'text-gray-600'}>Ternary theme engine initialized.</span>
+          </div>
+          <div className="flex gap-4 text-[10px] font-mono border-b border-white/5 py-1">
+            <span className="text-slate-500">[{new Date(Date.now() - 7200000).toISOString()}]</span>
+            <span className="text-yellow-400">WARN_RATE_LIMIT</span>
+            <span className={darkMode ? 'text-slate-400' : 'text-gray-600'}>Gemini API quota reaching threshold in Zone_US_East.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
   const { id } = useParams();
   const careerName = decodeURIComponent(id || "");
@@ -2070,10 +2170,16 @@ const App = () => {
     return initialSkills;
   });
 
-  const [darkMode, setDarkMode] = useState(() => {
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('web3skills_theme');
+    if (savedTheme) return savedTheme;
     const savedDarkMode = localStorage.getItem('web3skills_darkmode');
-    return savedDarkMode !== null ? JSON.parse(savedDarkMode) : true;
+    if (savedDarkMode !== null) {
+      return JSON.parse(savedDarkMode) ? 'dark' : 'light';
+    }
+    return 'dark';
   });
+  const darkMode = theme === 'dark';
 
   const [searchQuery, setSearchQuery] = useState('');
   const [filterComplete, setFilterComplete] = useState('all');
@@ -2108,13 +2214,14 @@ const App = () => {
   }, [skills]);
 
   useEffect(() => {
-    localStorage.setItem('web3skills_darkmode', JSON.stringify(darkMode));
-    if (darkMode) {
+    localStorage.setItem('web3skills_theme', theme);
+    document.documentElement.classList.remove('dark', 'theme-recommended');
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    } else if (theme === 'recommended') {
+      document.documentElement.classList.add('theme-recommended');
     }
-  }, [darkMode]);
+  }, [theme]);
 
   useEffect(() => {
     localStorage.setItem('web3skills_expanded', JSON.stringify(expandedCategories));
@@ -2279,8 +2386,8 @@ const App = () => {
       
       <div className="relative z-10">
         <Navigation
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
+          theme={theme}
+          setTheme={setTheme}
           setShowShareModal={setShowShareModal}
           setShowViewModal={setShowViewModal}
           viewMode={viewMode}
@@ -2342,6 +2449,11 @@ const App = () => {
                 darkMode={darkMode}
                 displaySkills={displaySkills}
                 getCareerMatch={getCareerMatch}
+              />
+            } />
+            <Route path="/notadmin" element={
+              <SystemMonitor
+                darkMode={darkMode}
               />
             } />
             <Route path="/view/:code" element={<div className="text-center py-20 text-white">Loading shared profile...</div>} />

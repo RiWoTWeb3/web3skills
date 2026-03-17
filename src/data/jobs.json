@@ -1,5 +1,56 @@
 [
   {
+    "id": "odos-evm-engineer-2026-03-17",
+    "title": "Smart Contracts Engineer (EVM)",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Smart Contract Development",
+      "Foundry",
+      "DEX Aggregator"
+    ],
+    "applyLink": "https://www.odos.xyz/careers"
+  },
+  {
+    "id": "xmtp-staff-engineer-2026-03-17",
+    "title": "Staff Software Engineer (Messaging Protocol)",
+    "company": "XMTP Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "30,000 - 65,000",
+    "requirements": [
+      "Rust",
+      "Messaging Protocols",
+      "Cryptography",
+      "Smart Contract Development",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://jobs.ashbyhq.com/XMTP%20Labs"
+  },
+  {
+    "id": "flashbots-senior-backend-rust-2026-03-17",
+    "title": "Senior Backend Engineer (Rust)",
+    "company": "Flashbots",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "10,000 - 60,000",
+    "requirements": [
+      "Rust",
+      "Ethereum",
+      "MEV",
+      "Distributed Systems",
+      "Infrastructure"
+    ],
+    "applyLink": "https://jobs.ashbyhq.com/flashbots.net"
+  },
+  {
     "id": "odos-solana-smart-contracts-2026-03-14",
     "title": "Solana Smart Contracts Engineer",
     "company": "Odos",
@@ -698,7 +749,7 @@
   },
   {
     "id": "uniswap-eng-manager-protocol",
-    "title": "Engineering Manager – Protocol",
+    "title": "Engineering Manager \u2013 Protocol",
     "company": "Uniswap Labs",
     "type": "EVM",
     "workType": "Remote",

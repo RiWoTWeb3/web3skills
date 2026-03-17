@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-6 Launch",
+    "category": "INFRA",
+    "summary": "The sixth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS and EOF implementation refinements.",
+    "date": "2026-03-17",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana Firedancer 'Sunflare' Beta Release",
+    "category": "INFRA",
+    "summary": "Jito Labs and Jump Crypto announce the 'Sunflare' beta release of Firedancer, introducing improved networking efficiency.",
+    "date": "2026-03-17",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Orbit Protocol Rewards $150k for Critical Vulnerability findings",
+    "category": "BOUNTY",
+    "summary": "Orbit Protocol successfully awarded a $150,000 bug bounty to a researcher who identified a critical flaw in its lending logic.",
+    "date": "2026-03-17",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
     "category": "INFRA",
     "summary": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",

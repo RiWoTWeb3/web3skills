@@ -416,6 +416,7 @@
   }
 
   :root {
+    --font-serif: "Merriweather", serif;
     --bg-light: #e8eaf6;
     --bg-light-secondary: #f5f5ff;
     --bg-light-card: #ffffffb3;
@@ -2045,6 +2046,40 @@
   .bg-dark-theme {
     background: var(--bg-dark);
     position: relative;
+  }
+
+  .theme-recommended {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #1a1a1a !important;
+    font-family: var(--font-sans) !important;
+  }
+
+  .theme-recommended h1,
+  .theme-recommended h2,
+  .theme-recommended h3,
+  .theme-recommended h4 {
+    font-family: var(--font-serif) !important;
+    color: #111 !important;
+  }
+
+  .theme-recommended .scanline,
+  .theme-recommended .noise-overlay,
+  .theme-recommended .grid-bg-industrial,
+  .theme-recommended .grid-pattern-light,
+  .theme-recommended .corner-animate::before,
+  .theme-recommended .corner-animate::after,
+  .theme-recommended .corner-bottom::before,
+  .theme-recommended .corner-bottom::after {
+    display: none !important;
+  }
+
+  .theme-recommended .surface-industrial,
+  .theme-recommended .glass-card-light {
+    background: #fff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+    border-radius: 8px !important;
   }
 
   .glass-card-light {
