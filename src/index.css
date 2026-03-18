@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -2568,6 +2569,35 @@
     animation: 8s linear infinite scanline;
     pointer-events: none;
     z-index: 5;
+  }
+
+  .theme-recommended {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+  }
+
+  .theme-recommended h1,
+  .theme-recommended h2,
+  .theme-recommended h3,
+  .theme-recommended h4 {
+    font-family: 'Merriweather', serif !important;
+  }
+
+  .theme-recommended .grid-bg-industrial,
+  .theme-recommended .scanline,
+  .theme-recommended .noise-overlay,
+  .theme-recommended .corner-animate::before,
+  .theme-recommended .corner-animate::after,
+  .theme-recommended .corner-bottom::before,
+  .theme-recommended .corner-bottom::after {
+    display: none !important;
+  }
+
+  .theme-recommended .surface-industrial {
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
 }
 

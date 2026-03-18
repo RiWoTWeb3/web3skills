@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-18",
+    "type": "job",
+    "title": "Staff Software Engineer (Messaging Protocol - Mobile) at XMTP Labs",
+    "description": "Lead the development of the E2EE XMTP messaging protocol for mobile platforms. Experience with cryptography and distributed systems required. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-18",
+    "type": "job",
+    "title": "Founding Full Stack Engineer at Stand",
+    "description": "Architect and maintain infrastructure for data-autonomous products. Collaborate with design and product teams to craft high-quality user experiences. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-18",
+    "type": "job",
+    "title": "Co-founder & Lead Engineer at Povi",
+    "description": "Own the technical vision, architecture, and backend development for a newly launched Web3 venture. Equity-focused role. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-18",
+    "type": "news",
+    "title": "Jiuzi Holdings & AetheriumX $30M Strategic Investment",
+    "description": "Jiuzi Holdings announces a $30M investment into AetheriumX's Distributed Capital Intelligence Protocol (DCIP) to enhance Web3 infrastructure.",
+    "link": "https://www.prnewswire.com/news-releases/jiuzi-holdings-and-aetheriumx-sign-strategic-mou-for-30m-investment-into-web3-302714568.html"
+  },
+  {
+    "date": "2026-03-18",
+    "type": "news",
+    "title": "PillNet AI Ecosystem Launch",
+    "description": "PillNet AI launches an integrated ecosystem combining AI-powered security tools, trading signals, and DeFi infrastructure on a quantum-resistant blockchain.",
+    "link": "https://www.tradingview.com/news/chainwire:e8190096e094b:0-pillnet-ai-is-live-the-intelligence-layer-of-web3/"
+  },
+  {
+    "date": "2026-03-18",
+    "type": "hack",
+    "title": "Solana Ecosystem Bug Bounty: $200k Payout",
+    "description": "A major Solana DeFi protocol successfully awarded a $200,000 bug bounty to a security researcher who identified a critical vulnerability in its liquidity pool logic.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-14",
     "type": "job",
     "title": "Solana Smart Contracts Engineer at Odos",
@@ -376,47 +418,5 @@
     "title": "Arbitrum Stylus Mainnet Milestone",
     "description": "Arbitrum Stylus achieves a major adoption milestone with over 500 projects deploying C++ and Rust based smart contracts on the L2.",
     "link": "https://arbitrum.io/blog"
-  },
-  {
-    "date": "2025-05-02",
-    "type": "news",
-    "title": "Hyperlane V3 Mainnet Expansion",
-    "description": "Hyperlane expands its permissionless interoperability layer to 5 new chains, introducing V3 hooks for custom security models and cross-chain governance.",
-    "link": "https://www.hyperlane.xyz/blog"
-  },
-  {
-    "date": "2025-05-02",
-    "type": "job",
-    "title": "Interoperability Engineer at Hyperlane",
-    "description": "Hyperlane is seeking an Interoperability Engineer to build cross-chain infrastructure. Experience with Rust and TypeScript required. Remote.",
-    "link": "https://www.hyperlane.xyz/careers"
-  },
-  {
-    "date": "2025-05-01",
-    "type": "news",
-    "title": "EigenLayer AVS Security Framework Release",
-    "description": "EigenLayer releases a comprehensive security framework for Actively Validated Services (AVS), focusing on slashing conditions and operator decentralization.",
-    "link": "https://www.eigenlayer.xyz/blog"
-  },
-  {
-    "date": "2025-05-01",
-    "type": "job",
-    "title": "Protocol Engineer - AVS Development at EigenLayer",
-    "description": "Join EigenLayer to design and build security models for AVS. Required: Solidity, Go, and knowledge of distributed systems. Remote.",
-    "link": "https://www.eigenlayer.xyz/careers"
-  },
-  {
-    "date": "2025-04-30",
-    "type": "news",
-    "title": "Monad Devnet Milestone: 10k TPS Reached",
-    "description": "Monad's internal devnet achieves a stable 10,000 transactions per second in a distributed environment, validating its parallel EVM architecture.",
-    "link": "https://monad.xyz/blog"
-  },
-  {
-    "date": "2025-04-30",
-    "type": "job",
-    "title": "Senior Software Engineer, Consensus at Monad Labs",
-    "description": "Monad is building a high-performance parallel EVM. Seeking engineers to work on consensus mechanisms and distributed systems. Remote.",
-    "link": "https://monad.xyz/jobs"
   }
 ]
