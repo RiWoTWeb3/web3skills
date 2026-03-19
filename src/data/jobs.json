@@ -1,5 +1,56 @@
 [
   {
+    "id": "xmtp-staff-mobile-2026-03-18",
+    "title": "Staff Software Engineer (Messaging Protocol - Mobile)",
+    "company": "XMTP Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$230,000 - $265,000",
+    "requirements": [
+      "Mobile Development",
+      "Cryptography",
+      "Distributed Systems",
+      "E2EE",
+      "Protocol Design"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "stand-founding-fullstack-2026-03-18",
+    "title": "Founding Full Stack Engineer",
+    "company": "Stand",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$110,000 - $190,000",
+    "requirements": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Infrastructure",
+      "Product Design"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "povi-cofounder-lead-2026-03-18",
+    "title": "Co-founder & Lead Engineer",
+    "company": "Povi",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "Equity-based",
+    "requirements": [
+      "Architecture",
+      "Backend Development",
+      "Technical Vision",
+      "Startups",
+      "Web3"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "odos-solana-smart-contracts-2026-03-14",
     "title": "Solana Smart Contracts Engineer",
     "company": "Odos",
@@ -698,7 +749,7 @@
   },
   {
     "id": "uniswap-eng-manager-protocol",
-    "title": "Engineering Manager – Protocol",
+    "title": "Engineering Manager \u2013 Protocol",
     "company": "Uniswap Labs",
     "type": "EVM",
     "workType": "Remote",

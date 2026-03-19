@@ -522,11 +522,27 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
-const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
+const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
   const location = useLocation();
+  const darkMode = theme === 'dark';
+
+  const toggleTheme = (e: any) => {
+    const nextTheme = theme === 'dark' ? 'light' : theme === 'light' ? 'recommended' : 'dark';
+
+    // @ts-ignore
+    if (!document.startViewTransition) {
+      setTheme(nextTheme);
+      return;
+    }
+
+    // @ts-ignore
+    document.startViewTransition(() => {
+      setTheme(nextTheme);
+    });
+  };
 
   return (
-    <nav className={`${darkMode ? 'navbar-industrial mx-0 md:mx-0 top-0 rounded-none border-b' : 'navbar-light top-4 mx-4 md:mx-8 rounded-2xl'} sticky z-40 transition-all duration-300 focus-visible:outline-none`}>
+    <nav className={`${theme === 'dark' ? 'navbar-industrial mx-0 md:mx-0 top-0 rounded-none border-b' : theme === 'light' ? 'navbar-light top-4 mx-4 md:mx-8 rounded-2xl' : 'bg-white border-b top-0 mx-0 md:mx-0 rounded-none'} sticky z-40 transition-all duration-300 focus-visible:outline-none`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[4px]">
@@ -617,10 +633,10 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             )}
             
             <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${darkMode ? 'btn-icon-dark text-yellow-300' : 'btn-glass-light text-purple-600'}`}
+              onClick={toggleTheme}
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${theme === 'dark' ? 'btn-icon-dark text-yellow-300' : theme === 'light' ? 'btn-glass-light text-purple-600' : 'p-2 rounded hover:bg-gray-100 text-gray-900'}`}
             >
-              {darkMode ? <Sun size={22} /> : <Moon size={22} />}
+              {theme === 'dark' ? <Sun size={22} /> : theme === 'light' ? <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Light mode" className="w-5.5 h-5.5" /> : <Moon size={22} />}
             </button>
           </div>
 
@@ -697,10 +713,10 @@ const Navigation = ({ darkMode, setDarkMode, setShowShareModal, setShowViewModal
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
-                onClick={() => setDarkMode(!darkMode)}
-                className={`flex-1 py-2 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}
+                onClick={toggleTheme}
+                className={`flex-1 py-2 rounded-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}
               >
-                {darkMode ? <Sun className="text-white mx-auto" size={20} /> : <Moon className="text-gray-600 mx-auto" size={20} />}
+                {theme === 'dark' ? <Sun className="text-white mx-auto" size={20} /> : theme === 'light' ? <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Light mode" className="w-5 h-5 mx-auto" /> : <Moon className="text-gray-900 mx-auto" size={20} />}
               </button>
             </div>
           </div>
@@ -1252,6 +1268,9 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
 };
 
 const JobsView = ({ darkMode, displaySkills }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState('All');
+
   const getJobAlignment = (requirements: string[]) => {
     const matched = requirements.filter(req => displaySkills[req]);
     return (matched.length / requirements.length) * 100;
@@ -1260,6 +1279,17 @@ const JobsView = ({ darkMode, displaySkills }) => {
   const getMissingSkills = (requirements: string[]) => {
     return requirements.filter(req => !displaySkills[req]);
   };
+
+  const filteredJobs = jobsData.filter(job => {
+    const matchesSearch =
+      job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.requirements.some(req => req.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    const matchesCategory = categoryFilter === 'All' || job.type === categoryFilter;
+
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="space-y-8">
@@ -1284,8 +1314,40 @@ const JobsView = ({ darkMode, displaySkills }) => {
         </div>
       </div>
 
+      <div className={`${darkMode ? 'surface-industrial' : 'glass-card-light rounded-2xl'} p-6`}>
+        <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex-1">
+            <div className="relative">
+              <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-accent-blue' : 'text-gray-500'}`} size={20} />
+              <input
+                type="text"
+                placeholder={darkMode ? 'SEARCH_JOBS_REGISTRY...' : 'Search jobs, companies, or skills...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`${darkMode ? 'input-glass-dark font-mono rounded-[4px]' : 'input-glass-light rounded-xl'} w-full pl-12 pr-4 py-3 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+              />
+            </div>
+          </div>
+          <div className="flex gap-2">
+            {['All', 'EVM', 'SVM', 'Backend'].map(cat => (
+              <button
+                key={cat}
+                onClick={() => setCategoryFilter(cat)}
+                className={`px-5 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                  categoryFilter === cat
+                    ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl')
+                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 gap-8">
-        {jobsData.map(job => {
+        {filteredJobs.length > 0 ? filteredJobs.map(job => {
           const alignment = getJobAlignment(job.requirements);
           const missingSkills = getMissingSkills(job.requirements);
 
@@ -1370,7 +1432,13 @@ const JobsView = ({ darkMode, displaySkills }) => {
               
             </div>
           );
-        })}
+        }) : (
+          <div className={`text-center py-20 ${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-gray-50 border-gray-200 rounded-2xl'}`}>
+            <XCircle className={`mx-auto mb-4 ${darkMode ? 'text-slate-600' : 'text-gray-400'}`} size={48} />
+            <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>No matching opportunities found</h3>
+            <p className={`mt-2 ${darkMode ? 'text-slate-400 font-mono text-sm' : 'text-gray-600'}`}>Adjust your search or filter criteria to see more roles.</p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -2070,10 +2138,20 @@ const App = () => {
     return initialSkills;
   });
 
-  const [darkMode, setDarkMode] = useState(() => {
+  const [theme, setTheme] = useState<'dark' | 'light' | 'recommended'>(() => {
+    const savedTheme = localStorage.getItem('web3skills_theme');
+    if (savedTheme) return savedTheme as 'dark' | 'light' | 'recommended';
+
+    // Fallback for legacy darkmode key
     const savedDarkMode = localStorage.getItem('web3skills_darkmode');
-    return savedDarkMode !== null ? JSON.parse(savedDarkMode) : true;
+    if (savedDarkMode !== null) {
+      return JSON.parse(savedDarkMode) ? 'dark' : 'light';
+    }
+
+    return 'dark';
   });
+
+  const darkMode = theme === 'dark';
 
   const [searchQuery, setSearchQuery] = useState('');
   const [filterComplete, setFilterComplete] = useState('all');
@@ -2108,13 +2186,16 @@ const App = () => {
   }, [skills]);
 
   useEffect(() => {
-    localStorage.setItem('web3skills_darkmode', JSON.stringify(darkMode));
-    if (darkMode) {
+    localStorage.setItem('web3skills_theme', theme);
+    document.documentElement.classList.remove('dark', 'light', 'theme-recommended');
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    } else if (theme === 'light') {
+      document.documentElement.classList.add('light');
+    } else if (theme === 'recommended') {
+      document.documentElement.classList.add('theme-recommended');
     }
-  }, [darkMode]);
+  }, [theme]);
 
   useEffect(() => {
     localStorage.setItem('web3skills_expanded', JSON.stringify(expandedCategories));
@@ -2279,8 +2360,8 @@ const App = () => {
       
       <div className="relative z-10">
         <Navigation
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
+          theme={theme}
+          setTheme={setTheme}
           setShowShareModal={setShowShareModal}
           setShowViewModal={setShowViewModal}
           viewMode={viewMode}

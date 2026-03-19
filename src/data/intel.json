@@ -1,5 +1,26 @@
 [
   {
+    "title": "Jiuzi Holdings & AetheriumX $30M Strategic Investment",
+    "category": "INFRA",
+    "summary": "Jiuzi Holdings announces a $30M investment into AetheriumX's Distributed Capital Intelligence Protocol (DCIP) to enhance Web3 infrastructure.",
+    "date": "2026-03-18",
+    "sourceLink": "https://www.prnewswire.com/news-releases/jiuzi-holdings-and-aetheriumx-sign-strategic-mou-for-30m-investment-into-web3-302714568.html"
+  },
+  {
+    "title": "PillNet AI Ecosystem Launch",
+    "category": "INFRA",
+    "summary": "PillNet AI launches an integrated ecosystem combining AI-powered security tools, trading signals, and DeFi infrastructure on a quantum-resistant blockchain.",
+    "date": "2026-03-18",
+    "sourceLink": "https://www.tradingview.com/news/chainwire:e8190096e094b:0-pillnet-ai-is-live-the-intelligence-layer-of-web3/"
+  },
+  {
+    "title": "Solana Ecosystem Bug Bounty: $200k Payout",
+    "category": "BOUNTY",
+    "summary": "A major Solana DeFi protocol successfully awarded a $200,000 bug bounty to a security researcher who identified a critical vulnerability in its liquidity pool logic.",
+    "date": "2026-03-18",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
     "category": "INFRA",
     "summary": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",
