@@ -1,5 +1,26 @@
 [
   {
+    "title": "SEC & CFTC Issue Joint Guidance on Digital Commodities",
+    "category": "INFRA",
+    "summary": "A 68-page joint interpretive release explicitly names 16 crypto assets, including Bitcoin, Ether, and Solana, as digital commodities rather than securities.",
+    "date": "2026-03-19",
+    "sourceLink": "https://www.fintechweekly.com/news/sec-bitcoin-ether-solana-digital-commodities-not-securities-march-2026"
+  },
+  {
+    "title": "Solana Targets $115 Amid Institutional Demand",
+    "category": "INFRA",
+    "summary": "Solana eyes a breakout toward $115 following positive regulatory guidance and strong institutional demand for SOL ETFs from major investors.",
+    "date": "2026-03-19",
+    "sourceLink": "https://www.tradingview.com/news/newsbtc:9e8f3080a094b:0-solana-eyes-clear-path-towards-115-amid-sec-guidance-sol-etfs-demand/"
+  },
+  {
+    "title": "System Example: DeFi Bug Bounty Payout - $500k",
+    "category": "BOUNTY",
+    "summary": "A major DeFi protocol successfully awarded a $500,000 bug bounty to a security researcher who identified a critical logic flaw in its settlement engine.",
+    "date": "2026-03-19",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Jiuzi Holdings & AetheriumX $30M Strategic Investment",
     "category": "INFRA",
     "summary": "Jiuzi Holdings announces a $30M investment into AetheriumX's Distributed Capital Intelligence Protocol (DCIP) to enhance Web3 infrastructure.",
