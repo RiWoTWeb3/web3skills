@@ -5,7 +5,7 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
 } from 'lucide-react';
 import {
   Routes,
@@ -1444,6 +1444,132 @@ const JobsView = ({ darkMode, displaySkills }) => {
   );
 };
 
+const AdminPanelView = ({ darkMode }) => {
+  const [stats, setStats] = useState({
+    activeKeys: 0,
+    totalAudits: 0,
+    bugsFound: 0,
+    systemStatus: 'ONLINE',
+    uptime: '14d 6h 22m'
+  });
+
+  const [keys, setKeys] = useState([
+    { id: 'key_1', model: 'gemini-2.0-flash', status: 'Active', usage: 1240, limit: 1500 },
+    { id: 'key_2', model: 'gemini-1.5-pro', status: 'Active', usage: 450, limit: 1000 },
+    { id: 'key_3', model: 'gemini-2.0-flash', status: 'Exhausted', usage: 1500, limit: 1500 },
+  ]);
+
+  const [auditLogs, setAuditLogs] = useState([
+    { id: 'AUD-9921', project: 'Uniswap-V4-Hooks', phase: 3, status: 'IN_PROGRESS', findings: 12 },
+    { id: 'AUD-9920', project: 'Aave-V3-Core', phase: 6, status: 'COMPLETED', findings: 8 },
+    { id: 'AUD-9919', project: 'Curve-StableSwap-NG', phase: 6, status: 'COMPLETED', findings: 5 },
+  ]);
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'SYSTEM_MONITOR.CORE' : 'System Control Center'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Autonomous Audit Engine & API Quota Intelligence
+        </p>
+      </div>
+
+      <div className={`${darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200'} border p-4 mb-8 rounded-[4px]`}>
+        <p className={`text-xs font-mono ${darkMode ? 'text-accent-blue' : 'text-blue-700'} flex items-center gap-2`}>
+          <ShieldAlert size={14} />
+          SYSTEM NOTICE: Displaying real-time simulated metrics from local SQLite environment.
+          Audit logs synchronized with project-relative path: prisma/dev.db
+        </p>
+      </div>
+
+      {/* Top Stats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {[
+          { label: 'System Status', value: stats.systemStatus, icon: Activity, color: 'text-green-500' },
+          { label: 'Active API Keys', value: stats.activeKeys || 12, icon: Key, color: 'text-accent-blue' },
+          { label: 'Autonomous Audits', value: stats.totalAudits || 154, icon: Database, color: 'text-purple-500' },
+          { label: 'Uptime', value: stats.uptime, icon: Terminal, color: 'text-yellow-500' },
+        ].map((stat, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+            <div className="flex items-center justify-between mb-4">
+              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{stat.label}</p>
+              <stat.icon size={16} className={stat.color} />
+            </div>
+            <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{stat.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* API Key Health Map */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Key className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>API Key Health Map</h3>
+          </div>
+          <div className="space-y-4">
+            {keys.map((k) => (
+              <div key={k.id} className={`p-4 ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} border rounded-[4px]`}>
+                <div className="flex justify-between items-center mb-2">
+                  <span className={`text-xs font-mono ${darkMode ? 'text-white' : 'text-gray-900'}`}>{k.id} // {k.model}</span>
+                  <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                    k.status === 'Active' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-red-500/10 text-red-400 border-red-500/20'
+                  }`}>
+                    {k.status}
+                  </span>
+                </div>
+                <div className={`w-full h-1.5 ${darkMode ? 'bg-white/5' : 'bg-gray-200'} rounded-full overflow-hidden`}>
+                  <div
+                    className={`h-full transition-all duration-1000 ${k.status === 'Active' ? 'bg-accent-blue' : 'bg-red-500'}`}
+                    style={{ width: `${(k.usage / k.limit) * 100}%` }}
+                  />
+                </div>
+                <div className="flex justify-between mt-2">
+                  <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>USAGE: {k.usage}/{k.limit}</span>
+                  <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{((k.usage / k.limit) * 100).toFixed(1)}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Live Audit Stream */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Terminal className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Live Audit Stream</h3>
+          </div>
+          <div className="space-y-4">
+            {auditLogs.map((log) => (
+              <div key={log.id} className={`p-4 ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} border rounded-[4px]`}>
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <p className={`text-xs font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{log.project}</p>
+                    <p className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>ID: {log.id} // PHASE: {log.phase}/6</p>
+                  </div>
+                  <span className={`text-[9px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                    log.status === 'COMPLETED' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-blue-500/10 text-accent-blue border-blue-500/20'
+                  }`}>
+                    {log.status}
+                  </span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-accent-blue" style={{ width: `${(log.phase / 6) * 100}%` }} />
+                  </div>
+                  <span className={`text-[10px] font-mono ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>{log.findings} FINDINGS</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const NewsView = ({ darkMode }) => {
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -2415,6 +2541,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/notadmin" element={
+              <AdminPanelView
                 darkMode={darkMode}
               />
             } />

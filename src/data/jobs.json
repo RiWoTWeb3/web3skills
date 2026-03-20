@@ -1,5 +1,56 @@
 [
   {
+    "id": "veda-svm-engineer-2026-03-19",
+    "title": "Smart Contract Engineer (SVM)",
+    "company": "Veda",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$72,000 - $90,000+",
+    "requirements": [
+      "Rust",
+      "Solana Virtual Machine",
+      "Vault Architecture",
+      "DeFi Protocols",
+      "Blockchain Security"
+    ],
+    "applyLink": "https://web3.career/smart-contract-engineer-svm-veda/147442"
+  },
+  {
+    "id": "helius-staff-backend-streaming-2026-03-19",
+    "title": "Staff Backend Engineer (Data Streaming)",
+    "company": "Helius",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$87,000 - $150,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Data Streaming",
+      "Backend Infrastructure",
+      "Low-Latency Systems"
+    ],
+    "applyLink": "https://web3.career/staff-backend-engineer-data-streaming-helius/147441"
+  },
+  {
+    "id": "layerzero-systems-engineer-2026-03-19",
+    "title": "Systems Engineer",
+    "company": "LayerZero Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$84,000 - $150,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Omnichain Protocols",
+      "System Optimization",
+      "Blockchain Fundamentals"
+    ],
+    "applyLink": "https://web3.career/systems-engineer-layerzerolabs/147406"
+  },
+  {
     "id": "xmtp-staff-mobile-2026-03-18",
     "title": "Staff Software Engineer (Messaging Protocol - Mobile)",
     "company": "XMTP Labs",

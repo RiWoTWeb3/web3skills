@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-19",
+    "type": "job",
+    "title": "Smart Contract Engineer (SVM) at Veda",
+    "description": "Design and build vault infrastructure for DeFi at scale on the Solana Virtual Machine using Rust. Remote.",
+    "link": "https://web3.career/smart-contract-engineer-svm-veda/147442"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "job",
+    "title": "Staff Backend Engineer (Data Streaming) at Helius",
+    "description": "Build high-performance data streaming services for the Solana ecosystem. Expertise in Rust and Solana required. Remote.",
+    "link": "https://web3.career/staff-backend-engineer-data-streaming-helius/147441"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "job",
+    "title": "Systems Engineer at LayerZero Labs",
+    "description": "Develop and optimize core infrastructure for omnichain interoperability. Strong distributed systems and Rust skills needed. Remote.",
+    "link": "https://web3.career/systems-engineer-layerzerolabs/147406"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "news",
+    "title": "SEC & CFTC Issue Joint Guidance on Digital Commodities",
+    "description": "A joint interpretation explicitly names 16 crypto assets, including Bitcoin, Ether, and Solana, as digital commodities.",
+    "link": "https://www.fintechweekly.com/news/sec-bitcoin-ether-solana-digital-commodities-not-securities-march-2026"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "news",
+    "title": "Solana Targets $115 Amid Institutional Demand",
+    "description": "Solana eyes a breakout toward $115 following positive regulatory guidance and strong institutional demand for SOL ETFs.",
+    "link": "https://www.tradingview.com/news/newsbtc:9e8f3080a094b:0-solana-eyes-clear-path-towards-115-amid-sec-guidance-sol-etfs-demand/"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "hack",
+    "title": "System Example: DeFi Bug Bounty Payout - $500k",
+    "description": "A major DeFi protocol successfully awarded a $500,000 bug bounty to a security researcher who identified a critical vulnerability.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-18",
     "type": "job",
     "title": "Staff Software Engineer (Messaging Protocol - Mobile) at XMTP Labs",
@@ -362,61 +404,5 @@
     "title": "Solana Alpenglow Upgrade Mainnet Target",
     "description": "Solana's Alpenglow consensus upgrade targets Q1 2026 mainnet deployment, promising sub-second finality and enhanced network resilience.",
     "link": "https://www.blockdaemon.com/blog/solana-in-2026-technical-roadmap"
-  },
-  {
-    "date": "2026-03-05",
-    "type": "news",
-    "title": "Solana Firedancer Full Release Performance",
-    "description": "The full release of the Firedancer validator client is set to achieve 1M TPS benchmarks, significantly improving Solana's throughput and redundancy.",
-    "link": "https://www.fool.com/investing/2026/02/11/2-game-changing-updates-coming-to-solana-in-2026/"
-  },
-  {
-    "date": "2026-03-05",
-    "type": "hack",
-    "title": "Inverse Finance Bug Bounty Program Update",
-    "description": "Inverse Finance updates its Immunefi bug bounty, offering rewards up to $100,000 for critical vulnerabilities in its FiRM and DOLA protocols.",
-    "link": "https://immunefi.com/bug-bounty/inversefinance/information/"
-  },
-  {
-    "date": "2026-03-04",
-    "type": "news",
-    "title": "Lido V3 Upgrade Proposal",
-    "description": "The Lido community is reviewing a proposal for V3, which introduces a modular architecture for node operators and enhanced staking efficiency.",
-    "link": "https://research.lido.fi/"
-  },
-  {
-    "date": "2026-03-04",
-    "type": "hack",
-    "title": "FlashBridge Protocol White-Hat Report",
-    "description": "A critical vulnerability in FlashBridge's cross-chain settlement logic was reported by a white-hat hacker, preventing a potential $2.5M exploit.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-04",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Design and evolve the backend architecture powering a global, real-time social platform natively in Rust. Remote.",
-    "link": "https://jobs.ashbyhq.com/travoom/76506a7c-6744-42b7-873b-3132797e884e"
-  },
-  {
-    "date": "2026-03-04",
-    "type": "job",
-    "title": "Smart Contracts Engineer (EVM) at Odos",
-    "description": "Build and operate distributed, low-latency services for Odos swap infrastructure across 15+ EVM chains. Remote.",
-    "link": "https://www.odos.xyz/careers"
-  },
-  {
-    "date": "2026-03-04",
-    "type": "job",
-    "title": "Software Engineer (Solana) at Rain",
-    "description": "Join Rain to build the future of Solana programs. Experience with Rust and Solana SDK required. Remote.",
-    "link": "https://web3.career/solana-jobs"
-  },
-  {
-    "date": "2026-03-04",
-    "type": "news",
-    "title": "Arbitrum Stylus Mainnet Milestone",
-    "description": "Arbitrum Stylus achieves a major adoption milestone with over 500 projects deploying C++ and Rust based smart contracts on the L2.",
-    "link": "https://arbitrum.io/blog"
   }
 ]
