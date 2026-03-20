@@ -90,5 +90,11 @@
     "Frontend-Backend Integration", "Wallet Connection", "Transaction Signing",
     "Smart Contract Interaction", "Web3 Authentication", "Decentralized Storage",
     "Event Listening", "Multi-chain Support", "Gas Estimation", "Error Handling"
+  ],
+  "Data Engineering & Analytics": [
+    "SQL", "Subgraphs", "Data Engineering Basics", "ETL Pipelines",
+    "RPC Infrastructure", "ClickHouse", "Spark", "Kafka", "Dune Analytics",
+    "Apache Flink", "Indexer Node Ops", "Airflow", "dbt", "Real-time Analytics",
+    "Big Data Architecture", "Data Modeling"
   ]
 }

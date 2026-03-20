@@ -502,6 +502,60 @@ const careerPaths = {
         ]
       }
     ]
+  },
+  'Web3 Data Engineer': {
+    icon: Database,
+    ecosystem: 'Cross-chain',
+    description: 'Build data pipelines, indexers, and analytics infrastructure for blockchain protocols and dApps',
+    requiredSkills: [
+      'Python', 'SQL', 'The Graph', 'Subgraphs', 'Blockchain Fundamentals',
+      'Data Engineering Basics', 'ETL Pipelines', 'PostgreSQL', 'RPC Infrastructure',
+      'ClickHouse', 'Spark', 'Kafka'
+    ],
+    roadmap: [
+      {
+        phase: 'Data Foundation',
+        duration: '1 month',
+        skills: ['Python', 'SQL Basics', 'PostgreSQL', 'Data Engineering Basics'],
+        resources: [
+          { name: 'Python for Data Science', url: 'https://www.datacamp.com/courses/intro-to-python-for-data-science', type: 'FREE' },
+          { name: 'SQL for Data Analysis', url: 'https://www.udacity.com/course/sql-for-data-analysis--ud170', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Web3 Data Extraction',
+        duration: '1.5 months',
+        skills: ['The Graph', 'Subgraphs', 'RPC Infrastructure', 'Dune Analytics'],
+        resources: [
+          { name: 'The Graph Documentation', url: 'https://thegraph.com/docs', type: 'FREE' },
+          { name: 'Dune Analytics University', url: 'https://dune.com/docs/learning/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Big Data & Indexing',
+        duration: '2 months',
+        skills: ['ClickHouse', 'Kafka', 'Spark', 'Apache Flink', 'Indexer Node Ops'],
+        resources: [
+          { name: 'ClickHouse Training', url: 'https://clickhouse.com/learn', type: 'FREE' },
+          { name: 'Confluent Kafka Foundation', url: 'https://developer.confluent.io/learn-kafka/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Production Pipelines',
+        duration: '1.5 months',
+        skills: ['Airflow', 'dbt', 'Cloud Infrastructure', 'Real-time Analytics'],
+        resources: [
+          { name: 'Astronomer Airflow Guide', url: 'https://www.astronomer.io/guides/', type: 'FREE' },
+          { name: 'dbt Fundamentals', url: 'https://courses.getdbt.com/courses/fundamentals', type: 'FREE' }
+        ]
+      }
+    ],
+    outcomes: {
+      junior: '$90k-$130k',
+      mid: '$130k-$180k',
+      senior: '$180k-$240k+',
+      lead: '$240k-$350k+'
+    }
   }
 };
 
@@ -551,9 +605,15 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
                 <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-[2px]" />
               </div>
               <div>
-                <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Antigravity <span className={darkMode ? 'text-white' : 'text-accent-blue'}>Bughunter-CFD</span>
-                </h1>
+                <div className="flex items-center gap-2">
+                  <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Antigravity <span className={darkMode ? 'text-white' : 'text-accent-blue'}>Bughunter-CFD</span>
+                  </h1>
+                  <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] border ${darkMode ? 'bg-green-500/10 border-green-500/20' : 'bg-green-50 border-green-200'}`}>
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    <span className={`text-[8px] font-mono font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>LIVE</span>
+                  </div>
+                </div>
                 <p className={`${darkMode ? 'label-industrial text-accent-blue/60' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-600'}`}>System.Core.v2</p>
               </div>
             </div>
@@ -1666,6 +1726,7 @@ const NewsView = ({ darkMode }) => {
 const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
   const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
+  const crossChainCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Cross-chain');
 
   const CareerCard = ({ careerName, career }) => {
     const match = getCareerMatch(careerName);
@@ -1746,6 +1807,20 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           ))}
         </div>
       </div>
+
+      {crossChainCareers.length > 0 && (
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            <div className={`h-8 w-1 bg-accent-blue ${darkMode ? '' : 'rounded-full'}`} />
+            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-lg' : 'text-gray-900'}`}>Cross-chain & Infrastructure</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {crossChainCareers.map(([name, career]) => (
+              <CareerCard key={name} careerName={name} career={career} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

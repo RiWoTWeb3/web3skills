@@ -1,5 +1,56 @@
 [
   {
+    "id": "triton-one-rust-svm-2026-03-20",
+    "title": "Rust/SVM Engineer",
+    "company": "Triton One",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "RPC Infrastructure",
+      "High-Throughput Systems",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://triton.one/careers"
+  },
+  {
+    "id": "asymmetric-research-evm-security-2026-03-20",
+    "title": "EVM Security Researcher",
+    "company": "Asymmetric Research",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Smart Contract Auditing",
+      "DeFi Protocols",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://asymmetric.research/careers"
+  },
+  {
+    "id": "phantom-backend-core-2026-03-20",
+    "title": "Backend Engineer (Core)",
+    "company": "Phantom",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Go",
+      "TypeScript",
+      "Backend Infrastructure",
+      "Wallet Integration",
+      "Scalable Systems"
+    ],
+    "applyLink": "https://phantom.app/jobs"
+  },
+  {
     "id": "veda-svm-engineer-2026-03-19",
     "title": "Smart Contract Engineer (SVM)",
     "company": "Veda",

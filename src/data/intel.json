@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Mainnet Target Confirmed",
+    "category": "INFRA",
+    "summary": "Core developers confirmed October 2026 for the Ethereum Pectra upgrade, introducing EIP-7251 for increased max effective balance and account abstraction improvements.",
+    "date": "2026-03-20",
+    "sourceLink": "https://ethereum.org/en/roadmap/pectra/"
+  },
+  {
+    "title": "Solana Firedancer Client Achieves 1M TPS Milestone",
+    "category": "INFRA",
+    "summary": "The Jump-built Firedancer validator client hits 1 million TPS benchmark in testnet settings, marking a massive scalability breakthrough for Solana.",
+    "date": "2026-03-20",
+    "sourceLink": "https://solana.com/news/firedancer-update-2026"
+  },
+  {
+    "title": "Morpho Blue Security Bounty: $250k Payout",
+    "category": "BOUNTY",
+    "summary": "Morpho Blue successfully awarded a $250,000 bug bounty to a researcher who identified a critical finding in its core lending logic, preventing potential risk.",
+    "date": "2026-03-20",
+    "sourceLink": "https://immunefi.com/blog/morpho-blue-bounty-payout/"
+  },
+  {
     "title": "SEC & CFTC Issue Joint Guidance on Digital Commodities",
     "category": "INFRA",
     "summary": "A 68-page joint interpretive release explicitly names 16 crypto assets, including Bitcoin, Ether, and Solana, as digital commodities rather than securities.",

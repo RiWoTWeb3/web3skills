@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-20",
+    "type": "job",
+    "title": "Rust/SVM Engineer at Triton One",
+    "description": "Design and optimize high-performance RPC infrastructure for the Solana ecosystem. Remote.",
+    "link": "https://triton.one/careers"
+  },
+  {
+    "date": "2026-03-20",
+    "type": "job",
+    "title": "EVM Security Researcher at Asymmetric Research",
+    "description": "Conduct deep security analysis and audits of complex EVM smart contracts and DeFi protocols. Remote.",
+    "link": "https://asymmetric.research/careers"
+  },
+  {
+    "date": "2026-03-20",
+    "type": "job",
+    "title": "Backend Engineer (Core) at Phantom",
+    "description": "Scale the backend infrastructure for the world's leading Solana and multi-chain wallet. Remote.",
+    "link": "https://phantom.app/jobs"
+  },
+  {
+    "date": "2026-03-20",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Mainnet Target Confirmed",
+    "description": "Core devs confirm October 2026 target for Pectra upgrade, introducing EIP-7251 and account abstraction improvements.",
+    "link": "https://ethereum.org/en/roadmap/pectra/"
+  },
+  {
+    "date": "2026-03-20",
+    "type": "news",
+    "title": "Solana Firedancer Client Achieves 1M TPS Milestone",
+    "description": "Firedancer validator client hits 1 million TPS benchmark in testnet, significantly boosting Solana scalability.",
+    "link": "https://solana.com/news/firedancer-update-2026"
+  },
+  {
+    "date": "2026-03-20",
+    "type": "hack",
+    "title": "Morpho Blue Security Bounty: $250k Payout",
+    "description": "Morpho Blue successfully awarded a $250,000 bug bounty for a critical finding in its core lending logic.",
+    "link": "https://immunefi.com/blog/morpho-blue-bounty-payout/"
+  },
+  {
     "date": "2026-03-19",
     "type": "job",
     "title": "Smart Contract Engineer (SVM) at Veda",
@@ -376,33 +418,5 @@
     "title": "Arbitrum Stylus Mainnet Milestone",
     "description": "Arbitrum Stylus achieves a major adoption milestone with over 500 projects deploying C++ and Rust based smart contracts on the L2.",
     "link": "https://arbitrum.io/blog"
-  },
-  {
-    "date": "2026-03-05",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Help build, manage, and maintain a sophisticated validator infrastructure and tooling for one of the world's top proprietary trading firms. Remote.",
-    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
-  },
-  {
-    "date": "2026-03-05",
-    "type": "job",
-    "title": "Senior Protocol Engineer at Jito Labs",
-    "description": "Join the team building high-performance Solana protocol infrastructure. Focus on consensus, networking, and MEV optimization. Remote.",
-    "link": "https://web3.career/senior-protocol-engineer-jito-wtf/146320"
-  },
-  {
-    "date": "2026-03-05",
-    "type": "job",
-    "title": "Senior Golang Engineer (Prysm) at Offchain Labs",
-    "description": "Contribute to the Prysm Ethereum consensus client and Arbitrum scaling solutions. Extensive Go production experience required. Remote.",
-    "link": "https://jobera.com/remote-job/senior-golang-engineer-prysm-offchain-labs-remote-worldwide/"
-  },
-  {
-    "date": "2026-03-05",
-    "type": "news",
-    "title": "Solana Alpenglow Upgrade Mainnet Target",
-    "description": "Solana's Alpenglow consensus upgrade targets Q1 2026 mainnet deployment, promising sub-second finality and enhanced network resilience.",
-    "link": "https://www.blockdaemon.com/blog/solana-in-2026-technical-roadmap"
   }
 ]
