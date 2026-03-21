@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Devnet-6 Launches",
+    "category": "INFRA",
+    "summary": "The sixth devnet for the Ethereum Pectra upgrade is now live, introducing final refinements to EIP-7702 and preliminary peer-das testing for improved scalability.",
+    "date": "2026-03-21",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana Firedancer Stable Release Mainnet Performance",
+    "category": "INFRA",
+    "summary": "The Firedancer validator client stable release achieves sustained 800k TPS benchmarks on mainnet-beta, significantly increasing network redundancy.",
+    "date": "2026-03-21",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "System Example: Multi-Chain Bridge Bug Bounty - $1.2M",
+    "category": "BOUNTY",
+    "summary": "A critical logic flaw in a major cross-chain bridge's message verification system was identified by a white-hat researcher, resulting in a record-breaking $1.2M bounty.",
+    "date": "2026-03-21",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "SEC & CFTC Issue Joint Guidance on Digital Commodities",
     "category": "INFRA",
     "summary": "A 68-page joint interpretive release explicitly names 16 crypto assets, including Bitcoin, Ether, and Solana, as digital commodities rather than securities.",
