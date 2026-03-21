@@ -522,6 +522,37 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
+const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
+  <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex justify-around items-center`}>
+    <div className="text-center">
+      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Total Jobs</p>
+      <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{totalJobs}</p>
+    </div>
+    <div className={`h-12 w-px ${darkMode ? 'bg-white/10' : 'bg-gray-200'}`} />
+    <div className="text-center">
+      <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Intel Logs</p>
+      <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{totalIntel}</p>
+    </div>
+  </div>
+);
+
+const TrendingSkills = ({ darkMode, trendingSkills }) => (
+  <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+    <div className="flex items-center gap-2 mb-4">
+      <TrendingUp size={16} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+      <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Trending Skills</h3>
+    </div>
+    <div className="flex flex-wrap gap-2">
+      {trendingSkills.map(([skill, count]) => (
+        <div key={skill} className={`px-3 py-1 border ${darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue rounded-[2px]' : 'bg-blue-50 border-blue-200 text-blue-700 rounded-full'} flex items-center gap-2`}>
+          <span className="text-[10px] font-mono font-bold uppercase">{skill}</span>
+          <span className={`text-[9px] ${darkMode ? 'text-cyan-300/60' : 'text-blue-500/60'}`}>({count})</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
   const location = useLocation();
   const darkMode = theme === 'dark';
@@ -735,6 +766,18 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
     }, Object.keys(careerPaths)[0]);
   }, [getCareerMatch]);
 
+  const trendingSkills = useMemo(() => {
+    const counts: Record<string, number> = {};
+    jobsData.forEach(job => {
+      job.requirements.forEach(req => {
+        counts[req] = (counts[req] || 0) + 1;
+      });
+    });
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3);
+  }, []);
+
   return (
     <div className="space-y-12">
       {viewMode && (
@@ -832,6 +875,13 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           )}
         </div>
       </div>
+
+      {!viewMode && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
+          <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {!viewMode && (

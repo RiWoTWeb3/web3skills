@@ -1,5 +1,55 @@
 [
   {
+    "id": "fun-protocol-engineer-2026-03-21",
+    "title": "Protocol Engineer",
+    "company": "Fun",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Protocol Engineer",
+      "Blockchain",
+      "Crypto",
+      "DeFi",
+      "Rust"
+    ],
+    "applyLink": "https://web3.career/protocol-engineer-fun/147443"
+  },
+  {
+    "id": "crossmint-it-client-2026-03-21",
+    "title": "IT / Client Platform Engineer",
+    "company": "Crossmint",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$110,000 - $140,000",
+    "requirements": [
+      "AWS",
+      "Blockchain",
+      "Golang",
+      "System Design",
+      "Rust"
+    ],
+    "applyLink": "https://web3.career/it-client-platform-engineer-spain-crossmint/147444"
+  },
+  {
+    "id": "stellar-senior-cli-2026-03-21",
+    "title": "Senior Software Engineer, CLI",
+    "company": "Stellar Development Foundation",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $170,000",
+    "requirements": [
+      "Rust",
+      "CLI",
+      "Distributed Systems",
+      "Blockchain Fundamentals"
+    ],
+    "applyLink": "https://cryptojobslist.com/stellar-development-foundation/senior-software-engineer-cli"
+  },
+  {
     "id": "veda-svm-engineer-2026-03-19",
     "title": "Smart Contract Engineer (SVM)",
     "company": "Veda",
@@ -125,7 +175,7 @@
     "type": "Backend",
     "workType": "Remote",
     "experience": "Senior level",
-    "salaryRange": "02,000 - 80,000",
+    "salaryRange": "$102,000 - $180,000",
     "requirements": [
       "Solidity",
       "Rust",
@@ -142,7 +192,7 @@
     "type": "EVM",
     "workType": "Remote",
     "experience": "Expert level",
-    "salaryRange": "98,000 - 28,000",
+    "salaryRange": "$198,000 - $228,000",
     "requirements": [
       "Blockchain Integration",
       "System Architecture",
