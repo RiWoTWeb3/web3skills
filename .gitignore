@@ -26,3 +26,13 @@ output/
 # --- Backups / Old versions ---
 Saves/
 Docs/
+
+# --- Prisma / DB ---
+prisma/dev.db
+prisma/dev.db-journal
+
+# --- Playwright / Testing ---
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

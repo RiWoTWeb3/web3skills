@@ -1503,17 +1503,53 @@ const AdminPanelView = ({ darkMode }) => {
     uptime: '14d 6h 22m'
   });
 
-  const [keys, setKeys] = useState([
-    { id: 'key_1', model: 'gemini-2.0-flash', status: 'Active', usage: 1240, limit: 1500 },
-    { id: 'key_2', model: 'gemini-1.5-pro', status: 'Active', usage: 450, limit: 1000 },
-    { id: 'key_3', model: 'gemini-2.0-flash', status: 'Exhausted', usage: 1500, limit: 1500 },
-  ]);
+  const [keys, setKeys] = useState([]);
 
-  const [auditLogs, setAuditLogs] = useState([
-    { id: 'AUD-9921', project: 'Uniswap-V4-Hooks', phase: 3, status: 'IN_PROGRESS', findings: 12 },
-    { id: 'AUD-9920', project: 'Aave-V3-Core', phase: 6, status: 'COMPLETED', findings: 8 },
-    { id: 'AUD-9919', project: 'Curve-StableSwap-NG', phase: 6, status: 'COMPLETED', findings: 5 },
-  ]);
+  const [auditLogs, setAuditLogs] = useState([]);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const res = await fetch('http://localhost:3001/api/stats');
+        const data = await res.json();
+        if (!data.error) setStats(data);
+      } catch (e) {
+        console.error('Failed to fetch stats', e);
+      }
+    };
+
+    const fetchKeys = async () => {
+      try {
+        const res = await fetch('http://localhost:3001/api/keys');
+        const data = await res.json();
+        if (!data.error) setKeys(data);
+      } catch (e) {
+        console.error('Failed to fetch keys', e);
+      }
+    };
+
+    const fetchAudits = async () => {
+      try {
+        const res = await fetch('http://localhost:3001/api/audits');
+        const data = await res.json();
+        if (!data.error) setAuditLogs(data);
+      } catch (e) {
+        console.error('Failed to fetch audits', e);
+      }
+    };
+
+    fetchStats();
+    fetchKeys();
+    fetchAudits();
+
+    const interval = setInterval(() => {
+      fetchStats();
+      fetchKeys();
+      fetchAudits();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="space-y-8 animate-slideUp">

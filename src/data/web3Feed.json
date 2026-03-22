@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-22",
+    "type": "job",
+    "title": "Founding Full Stack Engineer at Stand",
+    "description": "Architect and maintain infrastructure for data-autonomous products. Collaborate with design and product teams to craft high-quality user experiences. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-22",
+    "type": "job",
+    "title": "Staff Software Engineer (Messaging Protocol - Mobile) at XMTP Labs",
+    "description": "Lead the development of the E2EE XMTP messaging protocol for mobile platforms. Experience with cryptography and distributed systems required. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-22",
+    "type": "job",
+    "title": "Co-founder & Lead Engineer at Povi",
+    "description": "Own the technical vision, architecture, and backend development for a newly launched Web3 venture. Equity-focused role. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-22",
+    "type": "news",
+    "title": "The Tomorrow Company Launches AI-Native Finance Infrastructure Layer",
+    "description": "The Tomorrow Company announces its launch, aiming to build the foundational infrastructure for AI-native digital finance and tokenized real-world assets.",
+    "link": "https://www.acnnewswire.com/press-release/english/105376/"
+  },
+  {
+    "date": "2026-03-22",
+    "type": "news",
+    "title": "System Example: QuantumShield Protocol Devnet-1 Goes Live",
+    "description": "QuantumShield has launched its first devnet, introducing post-quantum cryptographic primitives to the EVM ecosystem for enhanced long-term security.",
+    "link": "https://github.com/RiWoT"
+  },
+  {
+    "date": "2026-03-22",
+    "type": "hack",
+    "title": "System Example: Euler Finance v2 Critical Vulnerability Disclosure - $1M Bounty",
+    "description": "A critical vulnerability in the Euler Finance v2 vault logic was identified by a security researcher, resulting in a $1,000,000 bug bounty payout.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-21",
     "type": "job",
     "title": "Protocol Engineer at Fun",

@@ -1,5 +1,26 @@
 [
   {
+    "title": "The Tomorrow Company Launches AI-Native Finance Infrastructure Layer",
+    "category": "INFRA",
+    "summary": "The Tomorrow Company announces its launch, aiming to build the foundational infrastructure for AI-native digital finance and tokenized real-world assets.",
+    "date": "2026-03-22",
+    "sourceLink": "https://www.acnnewswire.com/press-release/english/105376/"
+  },
+  {
+    "title": "System Example: QuantumShield Protocol Devnet-1 Goes Live",
+    "category": "INFRA",
+    "summary": "QuantumShield has launched its first devnet, introducing post-quantum cryptographic primitives to the EVM ecosystem for enhanced long-term security.",
+    "date": "2026-03-22",
+    "sourceLink": "https://github.com/RiWoT"
+  },
+  {
+    "title": "System Example: Euler Finance v2 Critical Vulnerability Disclosure - $1M Bounty",
+    "category": "BOUNTY",
+    "summary": "A critical vulnerability in the Euler Finance v2 vault logic was identified by a security researcher, resulting in a $1,000,000 bug bounty payout.",
+    "date": "2026-03-22",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Pectra Upgrade Devnet-6 Launches",
     "category": "INFRA",
     "summary": "The sixth devnet for the Ethereum Pectra upgrade is now live, introducing final refinements to EIP-7702 and preliminary peer-das testing for improved scalability.",

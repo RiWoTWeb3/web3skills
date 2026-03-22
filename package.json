@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@hono/node-server": "^1.19.9",
+    "@hono/node-server": "^1.19.11",
     "@jsr/supabase__supabase-js": "^2.49.8",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -36,7 +36,7 @@
     "clsx": "*",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
-    "hono": "*",
+    "hono": "^4.12.8",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.487.0",
     "next-themes": "^0.4.6",
@@ -64,8 +64,9 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:all": "npm run server & vite",
     "build": "vite build",
-    "server": "ts-node src/server/index.ts",
+    "server": "ts-node --compiler-options '{\"module\": \"commonjs\", \"skipLibCheck\": true, \"esModuleInterop\": true}' src/server/index.ts",
     "audit:init": "npx prisma migrate dev --name init"
   }
 }
