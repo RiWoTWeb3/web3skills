@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-23",
+    "type": "job",
+    "title": "Rust Developer \u2014 EVM Systems at 1010 trading",
+    "description": "Develop EVM-compatible systems and high-performance trading infrastructure using Rust. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-03-23",
+    "type": "job",
+    "title": "Zk Research Engineer at Nomos",
+    "description": "Join the Zones team to research and implement zero-knowledge proofs and blockchain privacy solutions. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-03-23",
+    "type": "job",
+    "title": "Development Relations Engineer at Switchboard",
+    "description": "Lead developer relations and foster the ecosystem for Switchboard decentralized oracle network. Remote.",
+    "link": "https://cryptojobslist.com/rust_solana"
+  },
+  {
+    "date": "2026-03-23",
+    "type": "news",
+    "title": "Web3 Infrastructure Market Projected to reach $28.85B by 2030",
+    "description": "Global Web3 infrastructure market is seeing rapid growth, with projections reaching nearly $30B by the end of the decade.",
+    "link": "https://www.einpresswire.com/article/895730537/the-web3-infrastructure-market-is-projected-to-grow-to-28-85-billion-by-2030"
+  },
+  {
+    "date": "2026-03-23",
+    "type": "news",
+    "title": "March 2025 DeFi Security Review: Five $1M+ Hacks",
+    "description": "Halborn reports that March 2025 saw five major DeFi hacks exceeding $1M each, totaling $44.4M in potential losses.",
+    "link": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-march-2025"
+  },
+  {
+    "date": "2026-03-23",
+    "type": "hack",
+    "title": "Bybit Exchange Security Breach - $1.46 Billion Loss",
+    "description": "A massive security breach at Bybit resulted in one of the largest crypto thefts in history, highlighting exchange vulnerability.",
+    "link": "https://www.webopedia.com/crypto/learn/biggest-crypto-hacks-2025/"
+  },
+  {
     "date": "2026-03-21",
     "type": "job",
     "title": "Protocol Engineer at Fun",

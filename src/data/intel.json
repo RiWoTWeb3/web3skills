@@ -1,5 +1,26 @@
 [
   {
+    "title": "Web3 Infrastructure Market Projected to reach $28.85B by 2030",
+    "category": "INFRA",
+    "summary": "Global Web3 infrastructure market is seeing rapid growth, with projections reaching nearly $30B by the end of the decade as adoption scales.",
+    "date": "2026-03-23",
+    "sourceLink": "https://www.einpresswire.com/article/895730537/the-web3-infrastructure-market-is-projected-to-grow-to-28-85-billion-by-2030"
+  },
+  {
+    "title": "March 2025 DeFi Security Review: Five $1M+ Hacks",
+    "category": "INFRA",
+    "summary": "Halborn reports that March 2025 saw five major DeFi hacks exceeding $1M each, totaling $44.4M in potential losses for the ecosystem.",
+    "date": "2026-03-23",
+    "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-march-2025"
+  },
+  {
+    "title": "Bybit Exchange Security Breach - $1.46 Billion Loss",
+    "category": "HACK",
+    "summary": "A massive security breach at Bybit resulted in one of the largest crypto thefts in history ($1.46B), highlighting critical exchange vulnerabilities.",
+    "date": "2026-03-23",
+    "sourceLink": "https://www.webopedia.com/crypto/learn/biggest-crypto-hacks-2025/"
+  },
+  {
     "title": "Ethereum Pectra Upgrade Devnet-6 Launches",
     "category": "INFRA",
     "summary": "The sixth devnet for the Ethereum Pectra upgrade is now live, introducing final refinements to EIP-7702 and preliminary peer-das testing for improved scalability.",

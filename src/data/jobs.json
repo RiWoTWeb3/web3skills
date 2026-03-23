@@ -1,5 +1,56 @@
 [
   {
+    "id": "1010-trading-rust-evm-2026-03-23",
+    "title": "Rust Developer \u2014 EVM Systems",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "EVM Mechanics",
+      "Blockchain",
+      "Trading Infrastructure",
+      "Systems Programming"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "nomos-zk-research-2026-03-23",
+    "title": "Zk Research Engineer",
+    "company": "Nomos",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "ZK Proofs",
+      "Cryptography",
+      "Blockchain Fundamentals",
+      "Research"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "switchboard-dev-rel-2026-03-23",
+    "title": "Development Relations Engineer",
+    "company": "Switchboard",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$90,000 - $150,000",
+    "requirements": [
+      "Rust",
+      "Oracles",
+      "Developer Relations",
+      "Communication",
+      "Technical Writing"
+    ],
+    "applyLink": "https://cryptojobslist.com/rust_solana"
+  },
+  {
     "id": "fun-protocol-engineer-2026-03-21",
     "title": "Protocol Engineer",
     "company": "Fun",

@@ -522,6 +522,34 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
+const SkillOfTheDay = ({ darkMode }) => {
+  const [skill, setSkill] = useState('');
+
+  useEffect(() => {
+    const allSkills = Object.values(skillCategories).flat();
+    const randomSkill = allSkills[Math.floor(Math.random() * allSkills.length)];
+    setSkill(randomSkill);
+  }, []);
+
+  if (!skill) return null;
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/10' : 'bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200 rounded-xl'} p-6 border relative overflow-hidden group`}>
+      <div className="flex items-center gap-3 mb-4">
+        <div className={`w-10 h-10 ${darkMode ? 'rounded-[4px] bg-accent-blue' : 'rounded-xl bg-indigo-600'} flex items-center justify-center`}>
+          <GraduationCap className={darkMode ? 'text-black' : 'text-white'} size={20} />
+        </div>
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Skill of the Day</h3>
+      </div>
+      <p className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-indigo-900'}`}>{skill}</p>
+      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-indigo-700/70'}`}>Expand your knowledge by mastering this technical module today.</p>
+      {darkMode && <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+        <GraduationCap size={80} />
+      </div>}
+    </div>
+  );
+};
+
 const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
   <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex justify-around items-center`}>
     <div className="text-center">
@@ -591,6 +619,10 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
           </Link>
           
           <div className="hidden md:flex items-center space-x-2">
+            <div className="flex items-center gap-2 px-3 py-1 mr-2 border border-green-500/30 bg-green-500/5 rounded-full">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
+              <span className="text-[10px] font-mono font-bold text-green-500 tracking-widest uppercase">Live Pulse</span>
+            </div>
             {!viewMode && (
               <Link
                 to="/"
@@ -877,9 +909,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
+        <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
 
