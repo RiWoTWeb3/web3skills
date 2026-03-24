@@ -1,5 +1,56 @@
 [
   {
+    "id": "semiotic-labs-rust-engineer-2026-03-24",
+    "title": "Rust Engineer",
+    "company": "Semiotic Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Distributed Protocols",
+      "Cryptography",
+      "Web3",
+      "Payment Rails"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "anza-senior-software-engineer-2026-03-24",
+    "title": "Senior Software Engineer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Agave Client",
+      "Systems Engineering",
+      "Blockchain"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "fireblocks-mobile-engineer-2026-03-24",
+    "title": "Mobile Engineer",
+    "company": "Fireblocks",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$177,000 - $230,000",
+    "requirements": [
+      "Mobile Development",
+      "Wallet Infrastructure",
+      "Security",
+      "Cryptography",
+      "Web3"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "fun-protocol-engineer-2026-03-21",
     "title": "Protocol Engineer",
     "company": "Fun",

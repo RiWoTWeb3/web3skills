@@ -553,6 +553,39 @@ const TrendingSkills = ({ darkMode, trendingSkills }) => (
   </div>
 );
 
+const SkillOfTheDay = ({ darkMode }) => {
+  const [skill, setSkill] = useState<{ name: string; category: string } | null>(null);
+
+  useEffect(() => {
+    const categories = Object.keys(skillCategories);
+    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    const categorySkills = skillCategories[randomCategory];
+    const randomSkill = categorySkills[Math.floor(Math.random() * categorySkills.length)];
+    setSkill({ name: randomSkill, category: randomCategory });
+  }, []);
+
+  if (!skill) return null;
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-200 rounded-xl'} p-6 border flex flex-col justify-center`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Zap size={16} className={darkMode ? 'text-accent-blue' : 'text-indigo-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Skill Highlight</h3>
+      </div>
+      <div className="space-y-2">
+        <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{skill.name}</p>
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Category: {skill.category}</p>
+        <Link
+          to="/skills"
+          className={`inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest mt-2 ${darkMode ? 'text-accent-blue hover:underline' : 'text-indigo-600 hover:underline'}`}
+        >
+          Track in Tree <ArrowRight size={12} />
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
   const location = useLocation();
   const darkMode = theme === 'dark';
@@ -877,9 +910,10 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
+          <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
 
@@ -1621,6 +1655,19 @@ const AdminPanelView = ({ darkMode }) => {
 };
 
 const NewsView = ({ darkMode }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState('All');
+
+  const filteredIntel = intelData.filter(item => {
+    const matchesSearch =
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.summary.toLowerCase().includes(searchQuery.toLowerCase());
+
+    const matchesCategory = categoryFilter === 'All' || item.category === categoryFilter;
+
+    return matchesSearch && matchesCategory;
+  });
+
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'HACK': return darkMode ? 'text-red-500' : 'text-red-600';
@@ -1659,8 +1706,40 @@ const NewsView = ({ darkMode }) => {
         </p>
       </div>
 
+      <div className={`${darkMode ? 'surface-industrial' : 'glass-card-light rounded-2xl'} p-6 mb-8`}>
+        <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex-1">
+            <div className="relative">
+              <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-accent-blue' : 'text-gray-500'}`} size={20} />
+              <input
+                type="text"
+                placeholder={darkMode ? 'SEARCH_INTEL_REGISTRY...' : 'Search news, hacks, or bounties...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`${darkMode ? 'input-glass-dark font-mono rounded-[4px]' : 'input-glass-light rounded-xl'} w-full pl-12 pr-4 py-3 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+              />
+            </div>
+          </div>
+          <div className="flex gap-2">
+            {['All', 'HACK', 'INFRA', 'BOUNTY'].map(cat => (
+              <button
+                key={cat}
+                onClick={() => setCategoryFilter(cat)}
+                className={`px-5 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                  categoryFilter === cat
+                    ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl')
+                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 gap-4">
-        {intelData.map((item, idx) => (
+        {filteredIntel.length > 0 ? filteredIntel.map((item, idx) => (
           <div
             key={idx}
             className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border group hover:border-accent-blue/30 transition-all overflow-hidden relative`}
@@ -1707,7 +1786,13 @@ const NewsView = ({ darkMode }) => {
               </div>
             </div>
           </div>
-        ))}
+        )) : (
+          <div className={`text-center py-20 ${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-gray-50 border-gray-200 rounded-2xl'}`}>
+            <XCircle className={`mx-auto mb-4 ${darkMode ? 'text-slate-600' : 'text-gray-400'}`} size={48} />
+            <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>No intel logs found</h3>
+            <p className={`mt-2 ${darkMode ? 'text-slate-400 font-mono text-sm' : 'text-gray-600'}`}>Adjust your search or filter criteria to see more intel.</p>
+          </div>
+        )}
       </div>
     </div>
   );
