@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Devnet-7 Launches",
+    "category": "INFRA",
+    "summary": "The seventh devnet for the Ethereum Pectra upgrade is now live, focusing on testing Verkle tree integrations and blobs throughput optimizations.",
+    "date": "2026-03-24",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Monad Testnet Reaches 1M Wallets Milestone",
+    "category": "INFRA",
+    "summary": "Monad's public testnet has surpassed 1 million unique wallets, demonstrating strong developer and user interest in parallelized EVM execution.",
+    "date": "2026-03-24",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Cross-Chain Protocol Bug Bounty: $800k Payout",
+    "category": "BOUNTY",
+    "summary": "A critical vulnerability in a major cross-chain messaging protocol was safely disclosed by a researcher, earning an $800,000 reward.",
+    "date": "2026-03-24",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Pectra Upgrade Devnet-6 Launches",
     "category": "INFRA",
     "summary": "The sixth devnet for the Ethereum Pectra upgrade is now live, introducing final refinements to EIP-7702 and preliminary peer-das testing for improved scalability.",

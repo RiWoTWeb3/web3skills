@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-24",
+    "type": "job",
+    "title": "Rust Engineer at Semiotic Labs",
+    "description": "Join Semiotic Labs as a Rust Engineer. Requirements: Rust, Distributed Protocols, Cryptography. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-24",
+    "type": "job",
+    "title": "Senior Software Engineer at Anza",
+    "description": "Join Anza as a Senior Software Engineer. Requirements: Rust, Solana, Agave Client. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-24",
+    "type": "job",
+    "title": "Mobile Engineer at Fireblocks",
+    "description": "Join Fireblocks as a Mobile Engineer. Requirements: Mobile Development, Wallet Infrastructure, Security. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-24",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Devnet-7 Launches",
+    "description": "The seventh devnet for the Ethereum Pectra upgrade is now live, focusing on testing Verkle tree integrations and blobs throughput optimizations.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-03-24",
+    "type": "news",
+    "title": "Monad Testnet Reaches 1M Wallets Milestone",
+    "description": "Monad's public testnet has surpassed 1 million unique wallets, demonstrating strong developer and user interest in parallelized EVM execution.",
+    "link": "https://monad.xyz/blog"
+  },
+  {
+    "date": "2026-03-24",
+    "type": "hack",
+    "title": "Cross-Chain Protocol Bug Bounty: $800k Payout",
+    "description": "A critical vulnerability in a major cross-chain messaging protocol was safely disclosed by a researcher, earning an $800,000 reward.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-21",
     "type": "job",
     "title": "Protocol Engineer at Fun",
