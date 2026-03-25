@@ -18,6 +18,12 @@ Thumbs.db
 # --- Testing / Coverage ---
 coverage/
 *.tsbuildinfo
+test-results/
+playwright-report/
+
+# --- Database / SQLite ---
+prisma/dev.db
+prisma/dev.db-journal
 
 # --- Vercel / Output ---
 .vercel/
