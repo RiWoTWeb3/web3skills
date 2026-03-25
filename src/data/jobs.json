@@ -1,5 +1,56 @@
 [
   {
+    "id": "semiotic-labs-rust-engineer-2026-03-25",
+    "title": "Rust Engineer",
+    "company": "Semiotic Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Distributed Protocols",
+      "Cryptography",
+      "Web3",
+      "Payment Rails"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "anza-senior-software-engineer-2026-03-25",
+    "title": "Senior Software Engineer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Agave Client",
+      "Systems Engineering",
+      "Blockchain"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "odos-solana-smart-contracts-2026-03-25",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor Framework",
+      "Smart Contract Development",
+      "DEX Aggregator"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "semiotic-labs-rust-engineer-2026-03-24",
     "title": "Rust Engineer",
     "company": "Semiotic Labs",

@@ -1537,17 +1537,30 @@ const AdminPanelView = ({ darkMode }) => {
     uptime: '14d 6h 22m'
   });
 
-  const [keys, setKeys] = useState([
-    { id: 'key_1', model: 'gemini-2.0-flash', status: 'Active', usage: 1240, limit: 1500 },
-    { id: 'key_2', model: 'gemini-1.5-pro', status: 'Active', usage: 450, limit: 1000 },
-    { id: 'key_3', model: 'gemini-2.0-flash', status: 'Exhausted', usage: 1500, limit: 1500 },
-  ]);
+  const [keys, setKeys] = useState([]);
+  const [auditLogs, setAuditLogs] = useState([]);
 
-  const [auditLogs, setAuditLogs] = useState([
-    { id: 'AUD-9921', project: 'Uniswap-V4-Hooks', phase: 3, status: 'IN_PROGRESS', findings: 12 },
-    { id: 'AUD-9920', project: 'Aave-V3-Core', phase: 6, status: 'COMPLETED', findings: 8 },
-    { id: 'AUD-9919', project: 'Curve-StableSwap-NG', phase: 6, status: 'COMPLETED', findings: 5 },
-  ]);
+  useEffect(() => {
+    const fetchAdminData = async () => {
+      try {
+        const [statsRes, keysRes, auditsRes] = await Promise.all([
+          fetch('/api/stats'),
+          fetch('/api/keys'),
+          fetch('/api/audits')
+        ]);
+
+        if (statsRes.ok) setStats(await statsRes.json());
+        if (keysRes.ok) setKeys(await keysRes.json());
+        if (auditsRes.ok) setAuditLogs(await auditsRes.json());
+      } catch (error) {
+        console.error('Failed to fetch admin data:', error);
+      }
+    };
+
+    fetchAdminData();
+    const interval = setInterval(fetchAdminData, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="space-y-8 animate-slideUp">

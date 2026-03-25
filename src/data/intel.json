@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-8 Launch",
+    "category": "INFRA",
+    "summary": "The eighth devnet for the Ethereum Pectra upgrade is now live, focusing on final refinements to EIP-7702 and preliminary testing of blobs throughput.",
+    "date": "2026-03-25",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana Mainnet Performance Upgrade V1.18",
+    "category": "INFRA",
+    "summary": "Solana v1.18 mainnet-beta release significantly improves packet filtering and validator efficiency under high network load.",
+    "date": "2026-03-25",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "DeFi Protocol Bug Bounty: $1.2M Payout",
+    "category": "BOUNTY",
+    "summary": "A critical logic vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a $1.2M reward.",
+    "date": "2026-03-25",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Pectra Upgrade Devnet-7 Launches",
     "category": "INFRA",
     "summary": "The seventh devnet for the Ethereum Pectra upgrade is now live, focusing on testing Verkle tree integrations and blobs throughput optimizations.",

@@ -65,7 +65,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "server": "ts-node src/server/index.ts",
-    "audit:init": "npx prisma migrate dev --name init"
+    "server": "npx ts-node --compiler-options '{\"module\": \"commonjs\", \"skipLibCheck\": true}' src/server/index.ts",
+    "audit:init": "npx prisma migrate dev --name init",
+    "dev:all": "npm run server & vite"
   }
 }
