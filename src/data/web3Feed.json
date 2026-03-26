@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-26",
+    "type": "job",
+    "title": "Senior Blockchain Security Engineer at CertiK",
+    "description": "Lead advanced blockchain investigations and analyze smart contract interactions. Required: Solidity, Rust, and Go. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "job",
+    "title": "Rust Engineer at Keyrock",
+    "description": "Develop and optimise low-latency options trading systems using Rust. Collaborate with quants and traders. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "job",
+    "title": "Solana Smart Contracts Engineer at Odos",
+    "description": "Build and operate distributed, low-latency services that power Solana DEX Aggregator. Experience with Rust and Solana required. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "news",
+    "title": "Ethereum Post-Quantum Interop Devnet-3 Live",
+    "description": "The third interop devnet for Ethereum's post-quantum roadmap is now live, testing single-layer PQ signature aggregation.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "news",
+    "title": "Monad Devnet V3 Benchmark: 12k TPS",
+    "description": "Monad's internal Devnet V3 achieved a stable 12,000 TPS, showcasing the power of parallelized EVM execution and custom state DB.",
+    "link": "https://monad.xyz/blog"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "hack",
+    "title": "L2 Bridge Security Bounty: $1.5M Payout",
+    "description": "A critical logic vulnerability in a major L2 bridge protocol was identified and safely disclosed, earning a $1.5M white-hat reward.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-25",
     "type": "job",
     "title": "Rust Engineer at Semiotic Labs",
@@ -376,40 +418,5 @@
     "title": "Web3 Security Triager at Nethermind",
     "description": "Join the Nethermind team to analyze and triage security findings across AuditAgent and AgentArena. Required: Rust, Solidity, and Solana experience. Remote.",
     "link": "https://cryptocurrencyjobs.co/solidity/web3-security-triager-nethermind/"
-  },
-  {
-    "date": "2026-03-07",
-    "type": "job",
-    "title": "Founding Protocol Engineer (Web3 + AI) at Nethermind",
-    "description": "Design and build the next generation of Web3 and AI protocols. Expertise in EVM, Solidity, and Python required. Remote.",
-    "link": "https://cryptocurrencyjobs.co/solidity/founding-protocol-engineer-web3-ai-nethermind/"
-  },
-  {
-    "date": "2026-03-07",
-    "type": "job",
-    "title": "Senior Smart Contract Engineer at CoW DAO",
-    "description": "Build and secure the CoW Protocol settlement layer. Required: Strong experience in Solidity, Rust, and DeFi mechanisms. Remote.",
-    "link": "https://cryptocurrencyjobs.co/solidity/senior-smart-contract-engineer-cow-dao/"
-  },
-  {
-    "date": "2026-03-07",
-    "type": "news",
-    "title": "Ethereum Pectra Upgrade Devnet-5 Launches",
-    "description": "The fifth devnet for the Ethereum Pectra upgrade is now live, introducing refined EIP-7702 implementation and account abstraction enhancements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-07",
-    "type": "news",
-    "title": "Solana ZK-Compression Mainnet Milestone",
-    "description": "Solana's ZK-Compression implementation achieves a major milestone, reducing on-chain state costs by up to 100x for large-scale token deployments.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-07",
-    "type": "hack",
-    "title": "Hyperliquid Bug Bounty Reward: $1M Payout",
-    "description": "Hyperliquid successfully awarded a $1,000,000 bug bounty to a security researcher who identified a critical vulnerability in the L1 settlement engine.",
-    "link": "https://immunefi.com/bug-bounty/hyperliquid/"
   }
 ]

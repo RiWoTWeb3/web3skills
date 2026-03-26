@@ -615,9 +615,15 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
                 <img src="https://i.postimg.cc/G25Xszzm/Web3-Skills-LOGO.png" alt="Web3 Skills Logo" className="w-full h-full object-cover rounded-[2px]" />
               </div>
               <div>
-                <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Antigravity <span className={darkMode ? 'text-white' : 'text-accent-blue'}>Bughunter-CFD</span>
-                </h1>
+                <div className="flex items-center gap-2">
+                  <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Antigravity <span className={darkMode ? 'text-white' : 'text-accent-blue'}>Bughunter-CFD</span>
+                  </h1>
+                  <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[8px] font-mono font-bold text-green-500 tracking-tighter">LIVE</span>
+                  </div>
+                </div>
                 <p className={`${darkMode ? 'label-industrial text-accent-blue/60' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-600'}`}>System.Core.v2</p>
               </div>
             </div>
@@ -1633,33 +1639,63 @@ const AdminPanelView = ({ darkMode }) => {
         </div>
 
         {/* Live Audit Stream */}
-        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
-          <div className="flex items-center gap-3 mb-6">
-            <Terminal className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Live Audit Stream</h3>
-          </div>
-          <div className="space-y-4">
-            {auditLogs.map((log) => (
-              <div key={log.id} className={`p-4 ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} border rounded-[4px]`}>
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <p className={`text-xs font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{log.project}</p>
-                    <p className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>ID: {log.id} // PHASE: {log.phase}/6</p>
+        <div className="space-y-8">
+          <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+            <div className="flex items-center gap-3 mb-6">
+              <Terminal className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+              <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Live Audit Stream</h3>
+            </div>
+            <div className="space-y-4">
+              {auditLogs.map((log) => (
+                <div key={log.id} className={`p-4 ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} border rounded-[4px]`}>
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <p className={`text-xs font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{log.project}</p>
+                      <p className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>ID: {log.id} // PHASE: {log.phase}/6</p>
+                    </div>
+                    <span className={`text-[9px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                      log.status === 'COMPLETED' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-blue-500/10 text-accent-blue border-blue-500/20'
+                    }`}>
+                      {log.status}
+                    </span>
                   </div>
-                  <span className={`text-[9px] font-mono px-2 py-0.5 border rounded-[2px] ${
-                    log.status === 'COMPLETED' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-blue-500/10 text-accent-blue border-blue-500/20'
+                  <div className="flex items-center gap-4">
+                    <div className="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-accent-blue" style={{ width: `${(log.phase / 6) * 100}%` }} />
+                    </div>
+                    <span className={`text-[10px] font-mono ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>{log.findings} FINDINGS</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* System Intelligence Logs */}
+          <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+            <div className="flex items-center gap-3 mb-6">
+              <Activity className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+              <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>System Intelligence Logs</h3>
+            </div>
+            <div className="space-y-2 font-mono text-[10px]">
+              {[
+                { time: '10:45:22', msg: 'Core engine data refresh cycle initialized.', type: 'info' },
+                { time: '10:45:25', msg: 'Indexing 3 new job entries from verified providers.', type: 'success' },
+                { time: '10:45:28', msg: 'Analyzing L2 Bridge security report - logic vulnerability detected.', type: 'warning' },
+                { time: '10:45:30', msg: 'Synchronizing intelligence feed with Ethereum Devnet-3 updates.', type: 'info' },
+                { time: '10:45:32', msg: 'Cache invalidated. System.Core.v2 operational.', type: 'success' }
+              ].map((log, i) => (
+                <div key={i} className="flex gap-3 items-center border-b border-white/5 pb-2 last:border-0">
+                  <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>[{log.time}]</span>
+                  <span className={`${
+                    log.type === 'success' ? 'text-green-500' :
+                    log.type === 'warning' ? 'text-yellow-500' :
+                    darkMode ? 'text-accent-blue' : 'text-blue-600'
                   }`}>
-                    {log.status}
+                    {log.msg}
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-accent-blue" style={{ width: `${(log.phase / 6) * 100}%` }} />
-                  </div>
-                  <span className={`text-[10px] font-mono ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>{log.findings} FINDINGS</span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

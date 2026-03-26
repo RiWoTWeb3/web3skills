@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Post-Quantum Interop Devnet-3 Live",
+    "category": "INFRA",
+    "summary": "The third interop devnet for Ethereum's post-quantum roadmap is now live, testing single-layer PQ signature aggregation and client interoperability.",
+    "date": "2026-03-26",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Monad Devnet V3 Benchmark: 12k TPS",
+    "category": "INFRA",
+    "summary": "Monad's internal Devnet V3 achieved a stable 12,000 TPS in a distributed environment, validating parallelized EVM execution at scale.",
+    "date": "2026-03-26",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "L2 Bridge Security Bounty: $1.5M Payout",
+    "category": "BOUNTY",
+    "summary": "A critical logic vulnerability in a major L2 bridge protocol was identified by a white-hat researcher, resulting in a $1.5M payout.",
+    "date": "2026-03-26",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Pectra Devnet-8 Launch",
     "category": "INFRA",
     "summary": "The eighth devnet for the Ethereum Pectra upgrade is now live, focusing on final refinements to EIP-7702 and preliminary testing of blobs throughput.",
