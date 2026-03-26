@@ -1,5 +1,55 @@
 [
   {
+    "id": "certik-senior-security-engineer-2026-03-26",
+    "title": "Senior Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Go",
+      "Smart Contract Auditing",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "keyrock-rust-engineer-2026-03-26",
+    "title": "Rust Engineer",
+    "company": "Keyrock",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$120,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Low-Latency Systems",
+      "Options Trading",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "odos-solana-smart-contracts-2026-03-26",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$130,000 - $185,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor Framework",
+      "DEX Aggregator",
+      "Distributed Services"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "semiotic-labs-rust-engineer-2026-03-25",
     "title": "Rust Engineer",
     "company": "Semiotic Labs",
