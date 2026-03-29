@@ -17,6 +17,7 @@ import {
 } from 'react-router-dom';
 
 import skillCategoriesRaw from './data/skills.json';
+import systemHealthRaw from './data/system_health.json';
 import { feedService, JobListing, IntelItem } from './services/feedService';
 
 // --- Types & Data ---
@@ -1534,6 +1535,52 @@ const JobsView = ({ darkMode, displaySkills }) => {
   );
 };
 
+const DataRefreshStatus = ({ darkMode }) => {
+  const health = systemHealthRaw;
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <Activity className={darkMode ? 'text-accent-blue' : 'text-cyan-600'} size={20} />
+          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Data Sync Intelligence</h3>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className={`text-[10px] font-mono px-2 py-0.5 rounded-[2px] ${health.status === 'HEALTHY' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
+            {health.status}
+          </span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="space-y-1">
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Last Synchronization</p>
+          <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{new Date(health.lastSync).toLocaleString()}</p>
+        </div>
+        <div className="space-y-1">
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync Protocol</p>
+          <p className={`text-sm font-bold ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>RIWOT_DATA_AGGREGATOR_V2</p>
+        </div>
+        <div className="space-y-1">
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Network Latency</p>
+          <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>42ms</p>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <p className={`text-[10px] font-mono uppercase tracking-widest mb-3 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync History</p>
+        <div className="flex gap-2">
+          {health.syncHistory.map((h, i) => (
+            <div key={i} className={`px-3 py-1.5 border rounded-[2px] flex items-center gap-2 ${darkMode ? 'bg-white/[0.02] border-white/10' : 'bg-white border-gray-100'}`}>
+              <div className={`w-1.5 h-1.5 rounded-full ${h.status === 'SUCCESS' ? 'bg-green-500' : 'bg-red-500'}`} />
+              <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>{h.date} // +{h.itemsAdded}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AdminPanelView = ({ darkMode }) => {
   const [stats, setStats] = useState({
     activeKeys: 0,
@@ -1586,6 +1633,8 @@ const AdminPanelView = ({ darkMode }) => {
           Audit logs synchronized with project-relative path: prisma/dev.db
         </p>
       </div>
+
+      <DataRefreshStatus darkMode={darkMode} />
 
       {/* Top Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

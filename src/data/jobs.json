@@ -1,5 +1,55 @@
 [
   {
+    "id": "nexus-backend-engineer-latam-2026-03-29",
+    "title": "Backend Engineer (Contract - LATAM)",
+    "company": "Nexus",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$157,000 - $175,000",
+    "requirements": [
+      "Rust",
+      "Go",
+      "AWS",
+      "Blockchain",
+      "Docker"
+    ],
+    "applyLink": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
+  },
+  {
+    "id": "1010-trading-rust-developer-evm-2026-03-29",
+    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "EVM",
+      "Ethereum",
+      "Trading Infrastructure",
+      "Low-Latency"
+    ],
+    "applyLink": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
+  },
+  {
+    "id": "alchemy-product-lead-solana-2026-03-29",
+    "title": "Product Lead, Solana",
+    "company": "Alchemy",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$135,000 - $350,000",
+    "requirements": [
+      "Solana",
+      "Product Strategy",
+      "API Development",
+      "Infrastructure"
+    ],
+    "applyLink": "https://cryptojobslist.com/solana"
+  },
+  {
     "id": "certik-senior-security-engineer-2026-03-26",
     "title": "Senior Blockchain Security Engineer",
     "company": "CertiK",
