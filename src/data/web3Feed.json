@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-29",
+    "type": "job",
+    "title": "Backend Engineer (Contract - LATAM) at Nexus",
+    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
+    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
+  },
+  {
+    "date": "2026-03-29",
+    "type": "job",
+    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
+    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
+    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
+  },
+  {
+    "date": "2026-03-29",
+    "type": "job",
+    "title": "Product Lead, Solana at Alchemy",
+    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
+    "link": "https://cryptojobslist.com/solana"
+  },
+  {
+    "date": "2026-03-29",
+    "type": "news",
+    "title": "Ethereum Pectra Devnet-9 Live",
+    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-03-29",
+    "type": "news",
+    "title": "Solana Mainnet Performance Upgrade V1.19",
+    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-03-29",
+    "type": "hack",
+    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
+    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-26",
     "type": "job",
     "title": "Senior Blockchain Security Engineer at CertiK",
@@ -376,47 +418,5 @@
     "title": "Senior Rust Engineer at Eclipse Labs",
     "description": "Join the team building the first Ethereum L2 powered by the Solana Virtual Machine. Focus on execution client performance and SVM-EVM interoperability. Remote.",
     "link": "https://eclipse.builders/careers"
-  },
-  {
-    "date": "2026-03-08",
-    "type": "job",
-    "title": "Protocol Engineer at Monad",
-    "description": "Monad is scaling the EVM to 10k+ TPS. Seeking engineers to work on the parallel execution engine and state storage optimizations. Remote.",
-    "link": "https://monad.xyz/jobs"
-  },
-  {
-    "date": "2026-03-08",
-    "type": "job",
-    "title": "Smart Contract Auditor at Spearbit",
-    "description": "Participate in high-stakes security reviews for top DeFi and infrastructure projects. Required: deep Solidity/EVM knowledge and auditing experience. Remote.",
-    "link": "https://spearbit.com/apply"
-  },
-  {
-    "date": "2026-03-08",
-    "type": "news",
-    "title": "Monad Labs Launches Devnet V2 with Parallel Execution Enhancements",
-    "description": "Monad Labs has officially upgraded its public devnet to V2, introducing improved parallelized EVM execution and optimized database access for developers.",
-    "link": "https://monad.xyz/blog"
-  },
-  {
-    "date": "2026-03-08",
-    "type": "news",
-    "title": "EigenLayer Stage 4 Roadmap Unveiled",
-    "description": "EigenLayer unveils Stage 4 of its protocol, focusing on full permissionless AVS deployment and cross-AVS security orchestration.",
-    "link": "https://www.eigenlayer.xyz/"
-  },
-  {
-    "date": "2026-03-08",
-    "type": "hack",
-    "title": "Unizen Protocol Bug Bounty Payout: $250k",
-    "description": "Unizen awarded a $250,000 bounty to a security researcher who identified a potential logic flaw in its cross-chain swap engine, preventing a significant exploit.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-07",
-    "type": "job",
-    "title": "Web3 Security Triager at Nethermind",
-    "description": "Join the Nethermind team to analyze and triage security findings across AuditAgent and AgentArena. Required: Rust, Solidity, and Solana experience. Remote.",
-    "link": "https://cryptocurrencyjobs.co/solidity/web3-security-triager-nethermind/"
   }
 ]
