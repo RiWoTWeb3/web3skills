@@ -1592,19 +1592,22 @@ const AdminPanelView = ({ darkMode }) => {
 
   const [keys, setKeys] = useState([]);
   const [auditLogs, setAuditLogs] = useState([]);
+  const [logs, setLogs] = useState([]);
 
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const [statsRes, keysRes, auditsRes] = await Promise.all([
+        const [statsRes, keysRes, auditsRes, logsRes] = await Promise.all([
           fetch('/api/stats'),
           fetch('/api/keys'),
-          fetch('/api/audits')
+          fetch('/api/audits'),
+          fetch('/api/logs')
         ]);
 
         if (statsRes.ok) setStats(await statsRes.json());
         if (keysRes.ok) setKeys(await keysRes.json());
         if (auditsRes.ok) setAuditLogs(await auditsRes.json());
+        if (logsRes.ok) setLogs(await logsRes.json());
       } catch (error) {
         console.error('Failed to fetch admin data:', error);
       }
@@ -1726,13 +1729,7 @@ const AdminPanelView = ({ darkMode }) => {
               <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>System Intelligence Logs</h3>
             </div>
             <div className="space-y-2 font-mono text-[10px]">
-              {[
-                { time: '10:45:22', msg: 'Core engine data refresh cycle initialized.', type: 'info' },
-                { time: '10:45:25', msg: 'Indexing 3 new job entries from verified providers.', type: 'success' },
-                { time: '10:45:28', msg: 'Analyzing L2 Bridge security report - logic vulnerability detected.', type: 'warning' },
-                { time: '10:45:30', msg: 'Synchronizing intelligence feed with Ethereum Devnet-3 updates.', type: 'info' },
-                { time: '10:45:32', msg: 'Cache invalidated. System.Core.v2 operational.', type: 'success' }
-              ].map((log, i) => (
+              {logs.map((log, i) => (
                 <div key={i} className="flex gap-3 items-center border-b border-white/5 pb-2 last:border-0">
                   <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>[{log.time}]</span>
                   <span className={`${

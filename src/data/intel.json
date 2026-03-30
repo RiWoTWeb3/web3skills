@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Glamsterdam Upgrade Finalized",
+    "category": "INFRA",
+    "summary": "Ethereum developers have finalized the scope for the Glamsterdam upgrade, focusing on enshrined Proposer-Builder Separation (ePBS).",
+    "date": "2026-03-30",
+    "sourceLink": "https://ethereum.org/en/developers/"
+  },
+  {
+    "title": "Solana Alpenglow Testnet Milestone",
+    "category": "INFRA",
+    "summary": "Solana Alpenglow reaches v0.8 on testnet, achieving 150ms finality times in a geo-distributed environment.",
+    "date": "2026-03-30",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Solana Firedancer Bug Bounty: $500k",
+    "category": "BOUNTY",
+    "summary": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
+    "date": "2026-03-30",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Ethereum Pectra Devnet-9 Live",
     "category": "INFRA",
     "summary": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
