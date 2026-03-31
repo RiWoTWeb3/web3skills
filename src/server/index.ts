@@ -1,6 +1,8 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { prisma } from '../lib/db';
+import fs from 'fs/promises';
+import path from 'path';
 
 const app = new Hono();
 
@@ -63,6 +65,17 @@ app.get('/api/audits', async (c: any) => {
     }));
 
     return c.json(mappedAudits);
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
+// System Logs endpoint
+app.get('/api/logs', async (c: any) => {
+  try {
+    const logsPath = path.join(process.cwd(), 'src/data/system_logs.json');
+    const logsData = await fs.readFile(logsPath, 'utf-8');
+    return c.json(JSON.parse(logsData));
   } catch (error: any) {
     return c.json({ error: error.message }, 500);
   }

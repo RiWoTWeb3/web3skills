@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-03-30",
+    "type": "job",
+    "title": "Senior Backend Blockchain Engineer at Blocknative",
+    "description": "Join Blocknative as a Senior Backend Blockchain Engineer. Requirements: Go, EVM Mechanics, Distributed Systems. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-03-30",
+    "type": "job",
+    "title": "RWA Senior Infrastructure Engineer at Aware Fund",
+    "description": "Join Aware Fund as a RWA Senior Infrastructure Engineer. Requirements: SRE, Cloud Architecture, Rust. Remote.",
+    "link": "https://cryptojobslist.com/remote"
+  },
+  {
+    "date": "2026-03-30",
+    "type": "job",
+    "title": "React Native Mobile Developer at GRVT",
+    "description": "Join GRVT as a React Native Mobile Developer. Requirements: React Native, TypeScript, Mobile Security. Remote.",
+    "link": "https://cryptojobslist.com/remote"
+  },
+  {
+    "date": "2026-03-30",
+    "type": "news",
+    "title": "Ethereum Glamsterdam Upgrade Finalized",
+    "description": "Ethereum developers have finalized the scope for the Glamsterdam upgrade, focusing on enshrined Proposer-Builder Separation (ePBS).",
+    "link": "https://ethereum.org/en/developers/"
+  },
+  {
+    "date": "2026-03-30",
+    "type": "news",
+    "title": "Solana Alpenglow Testnet Milestone",
+    "description": "Solana Alpenglow reaches v0.8 on testnet, achieving 150ms finality times in a geo-distributed environment.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-03-30",
+    "type": "hack",
+    "title": "Solana Firedancer Bug Bounty: $500k",
+    "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-03-29",
     "type": "job",
     "title": "Backend Engineer (Contract - LATAM) at Nexus",
@@ -376,47 +418,5 @@
     "title": "Senior Solidity Engineer at Nethermind",
     "description": "Design and build secure smart contracts for the next generation of Web3 and AI protocols. Join the Nethermind team. Remote.",
     "link": "https://nethermind.io/careers/"
-  },
-  {
-    "date": "2026-03-10",
-    "type": "job",
-    "title": "Rust Core Developer at XMTP Labs",
-    "description": "Contribute to the core XMTP messaging protocol. Experience with Rust and decentralized networks required. Remote.",
-    "link": "https://xmtp.org/careers"
-  },
-  {
-    "date": "2026-03-10",
-    "type": "job",
-    "title": "Crypto Options Engineer at Keyrock",
-    "description": "Build high-performance options trading systems for decentralized exchanges. Required: Rust/C++, DeFi knowledge. Remote.",
-    "link": "https://keyrock.eu/careers"
-  },
-  {
-    "date": "2026-03-10",
-    "type": "news",
-    "title": "Nethermind Launches AI-Driven AuditAgent Beta",
-    "description": "Nethermind's new AuditAgent beta employs advanced AI to automate smart contract security triaging across EVM and Solana ecosystems.",
-    "link": "https://nethermind.io/blog"
-  },
-  {
-    "date": "2026-03-10",
-    "type": "news",
-    "title": "XMTP Protocol Reaches 1M Monthly Active Users Milestone",
-    "description": "The XMTP network celebrates a major adoption milestone with over 1 million monthly active users utilizing decentralized messaging across 50+ apps.",
-    "link": "https://xmtp.org/blog"
-  },
-  {
-    "date": "2026-03-10",
-    "type": "hack",
-    "title": "Keyrock Security Bounty: $150k Payout for Critical Trading Engine Flaw",
-    "description": "Keyrock successfully awarded a $150,000 bug bounty to a researcher who identified a critical vulnerability in its proprietary trading algorithms.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-08",
-    "type": "job",
-    "title": "Senior Rust Engineer at Eclipse Labs",
-    "description": "Join the team building the first Ethereum L2 powered by the Solana Virtual Machine. Focus on execution client performance and SVM-EVM interoperability. Remote.",
-    "link": "https://eclipse.builders/careers"
   }
 ]
