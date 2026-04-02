@@ -3,67 +3,67 @@ import os
 from datetime import datetime
 
 # Today's Date
-today = "2026-03-30"
+today = "2026-04-02"
 
 # New Jobs
 new_jobs = [
     {
-        "id": "blocknative-backend-engineer-2026-03-30",
-        "title": "Senior Backend Blockchain Engineer",
-        "company": "Blocknative",
+        "id": "certik-senior-security-engineer-2026-04-02",
+        "title": "Senior Level Blockchain Security Engineer",
+        "company": "CertiK",
         "type": "EVM",
         "workType": "Remote",
         "experience": "Senior level",
-        "salaryRange": "$160,000 - $220,000",
-        "requirements": ["Go", "EVM Mechanics", "Distributed Systems", "Infrastructure"],
-        "applyLink": "https://web3.career/evm+remote-jobs"
+        "salaryRange": "$102,000 - $180,000",
+        "requirements": ["Solidity", "Rust", "Go", "Smart Contract Security"],
+        "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
     },
     {
-        "id": "aware-fund-infrastructure-engineer-2026-03-30",
-        "title": "RWA Senior Infrastructure Engineer",
-        "company": "Aware Fund",
+        "id": "travoom-senior-rust-backend-2026-04-02",
+        "title": "Senior Rust Backend Engineer",
+        "company": "Travoom",
         "type": "Backend",
         "workType": "Remote",
         "experience": "Senior level",
-        "salaryRange": "$150,000 - $300,000",
-        "requirements": ["SRE", "Cloud Architecture", "Rust", "Distributed Systems"],
-        "applyLink": "https://cryptojobslist.com/remote"
+        "salaryRange": "$110,000 - $190,000",
+        "requirements": ["Rust", "Distributed Systems", "Backend Architecture"],
+        "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
     },
     {
-        "id": "grvt-mobile-developer-2026-03-30",
-        "title": "React Native Mobile Developer",
-        "company": "GRVT",
-        "type": "Backend",
+        "id": "rho-labs-senior-fullstack-2026-04-02",
+        "title": "Senior Full Stack Engineer",
+        "company": "Rho Labs",
+        "type": "EVM",
         "workType": "Remote",
         "experience": "Senior level",
-        "salaryRange": "$130,000 - $160,000",
-        "requirements": ["React Native", "TypeScript", "Mobile Security", "Web3 Wallets"],
-        "applyLink": "https://cryptojobslist.com/remote"
+        "salaryRange": "$75,000 - $120,000",
+        "requirements": ["React", "Web3", "DeFi", "TypeScript"],
+        "applyLink": "https://cryptojobslist.com/web3"
     }
 ]
 
 # New Intel
 new_intel = [
     {
-        "title": "Ethereum Glamsterdam Upgrade Finalized",
+        "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
         "category": "INFRA",
-        "summary": "Ethereum developers have finalized the scope for the Glamsterdam upgrade, focusing on enshrined Proposer-Builder Separation (ePBS).",
+        "summary": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
         "date": today,
-        "sourceLink": "https://ethereum.org/en/developers/"
+        "sourceLink": "https://www.mexc.com/news/992865"
     },
     {
-        "title": "Solana Alpenglow Testnet Milestone",
+        "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
         "category": "INFRA",
-        "summary": "Solana Alpenglow reaches v0.8 on testnet, achieving 150ms finality times in a geo-distributed environment.",
+        "summary": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
         "date": today,
-        "sourceLink": "https://solana.com/news"
+        "sourceLink": "https://www.mexc.com/news/992865"
     },
     {
-        "title": "Solana Firedancer Bug Bounty: $500k",
-        "category": "BOUNTY",
-        "summary": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
+        "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
+        "category": "HACK",
+        "summary": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
         "date": today,
-        "sourceLink": "https://immunefi.com/blog/"
+        "sourceLink": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
     }
 ]
 
@@ -88,11 +88,11 @@ new_feed_items = [
 
 # New Logs
 new_logs = [
-    { "time": "09:00:05", "msg": "Daily data aggregation cycle started for 2026-03-30.", "type": "info" },
-    { "time": "09:00:12", "msg": f"Indexed {len(new_jobs)} new remote engineering roles.", "type": "success" },
-    { "time": "09:00:18", "msg": "Parsed 2 infrastructure launches and 1 security bounty.", "type": "success" },
-    { "time": "09:00:25", "msg": "Updating system health metrics and sync history.", "type": "info" },
-    { "time": "09:00:30", "msg": "Web3 Data Update [2026-03-30] complete.", "type": "success" }
+    { "time": "09:15:00", "msg": "Daily data aggregation cycle started for 2026-04-02.", "type": "info" },
+    { "time": "09:15:10", "msg": f"Indexed {len(new_jobs)} new remote engineering roles from CertiK, Travoom, and Rho Labs.", "type": "success" },
+    { "time": "09:15:20", "msg": "Parsed March exploit report and Ethereum roadmap updates.", "type": "success" },
+    { "time": "09:15:30", "msg": "Updating system health metrics and sync history.", "type": "info" },
+    { "time": "09:15:40", "msg": "Web3 Data Update [2026-04-02] complete.", "type": "success" }
 ]
 
 def update_json_file(filepath, new_items, limit=None, prepend=True):

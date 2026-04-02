@@ -587,6 +587,65 @@ const SkillOfTheDay = ({ darkMode }) => {
   );
 };
 
+const DailyMission = ({ darkMode, displaySkills }) => {
+  const [mission, setMission] = useState<{ name: string; category: string } | null>(null);
+
+  useEffect(() => {
+    const incompleteSkills: { name: string; category: string }[] = [];
+    Object.entries(skillCategories).forEach(([category, skills]) => {
+      skills.forEach(skill => {
+        if (!displaySkills[skill]) {
+          incompleteSkills.push({ name: skill, category });
+        }
+      });
+    });
+
+    if (incompleteSkills.length > 0) {
+      const randomSkill = incompleteSkills[Math.floor(Math.random() * incompleteSkills.length)];
+      setMission(randomSkill);
+    }
+  }, [displaySkills]);
+
+  if (!mission) return null;
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 bg-accent-blue/5' : 'bg-gradient-to-br from-orange-50 to-amber-50 border-orange-200 rounded-xl'} p-8 border relative overflow-hidden group`}>
+      {darkMode && <div className="scanline" />}
+      <div className="flex items-center justify-between mb-4 relative z-10">
+        <div className="flex items-center gap-3">
+          <Target className={darkMode ? 'text-accent-blue' : 'text-orange-600'} size={24} />
+          <h3 className={`text-sm font-mono uppercase tracking-[0.2em] ${darkMode ? 'text-white' : 'text-gray-900'}`}>Daily Mission</h3>
+        </div>
+        <div className={`px-2 py-0.5 rounded-[2px] border ${darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue' : 'bg-orange-100 border-orange-200 text-orange-700'} text-[10px] font-mono font-bold animate-pulse`}>
+          CORE_OBJECTIVE
+        </div>
+      </div>
+
+      <div className="space-y-4 relative z-10">
+        <div>
+          <p className={`text-xs font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Target Module:</p>
+          <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{mission.name}</p>
+        </div>
+        <p className={`text-xs leading-relaxed ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+          Focus your analysis on <span className="font-bold underline">{mission.name}</span> within the <span className="font-bold">{mission.category}</span> domain today to expand your technical coverage.
+        </p>
+        <Link
+          to="/skills"
+          className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest px-4 py-2 transition-all ${
+            darkMode ? 'bg-accent-blue text-black font-bold hover:bg-cyan-300' : 'bg-orange-600 text-white rounded-lg hover:bg-orange-700'
+          }`}
+        >
+          Initialize Module <ArrowRight size={14} />
+        </Link>
+      </div>
+
+      {darkMode && <div className="absolute -bottom-6 -right-6 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">
+        <Target size={120} />
+      </div>}
+    </div>
+  );
+};
+
 const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, viewMode, mobileMenuOpen, setMobileMenuOpen }) => {
   const location = useLocation();
   const darkMode = theme === 'dark';
@@ -797,7 +856,7 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
   );
 };
 
-const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSkills, totalSkills, overallProgress, getCareerMatch, getCategoryProgress, exportData, importData }) => {
+const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSkills, totalSkills, overallProgress, getCareerMatch, getCategoryProgress, exportData, importData, displaySkills }) => {
   const bestMatchName = useMemo(() => {
     return Object.keys(careerPaths).reduce((best, name) => {
       const match = getCareerMatch(name);
@@ -2739,6 +2798,7 @@ const App = () => {
                 getCategoryProgress={getCategoryProgress}
                 exportData={exportData}
                 importData={importData}
+                displaySkills={displaySkills}
               />
             } />
             <Route path="/skills" element={
