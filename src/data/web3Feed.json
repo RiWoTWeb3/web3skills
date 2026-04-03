@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-02",
+    "type": "job",
+    "title": "Senior Level Blockchain Security Engineer at CertiK",
+    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "date": "2026-04-02",
+    "type": "job",
+    "title": "Senior Rust Backend Engineer at Travoom",
+    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "date": "2026-04-02",
+    "type": "job",
+    "title": "Senior Full Stack Engineer at Rho Labs",
+    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
+    "link": "https://cryptojobslist.com/web3"
+  },
+  {
+    "date": "2026-04-02",
+    "type": "news",
+    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
+    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
+    "link": "https://www.mexc.com/news/992865"
+  },
+  {
+    "date": "2026-04-02",
+    "type": "news",
+    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
+    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
+    "link": "https://www.mexc.com/news/992865"
+  },
+  {
+    "date": "2026-04-02",
+    "type": "hack",
+    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
+    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
+    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
+  },
+  {
     "date": "2026-03-30",
     "type": "job",
     "title": "Senior Backend Blockchain Engineer at Blocknative",
@@ -376,47 +418,5 @@
     "title": "PepetoSwap Cross-Chain Bridge Vulnerability Identified",
     "description": "An AI-driven security scan for PepetoSwap identified a critical flaw in its cross-chain bridging logic, preventing potential drainage.",
     "link": "https://markets.businessinsider.com/news/stocks/crypto-news-pepeto-update-amount-raised-above-7-96-million-as-ethereum-price-prediction-points-to-new-all-time-high-1035924891"
-  },
-  {
-    "date": "2026-03-11",
-    "type": "job",
-    "title": "Staff Software Engineer (Messaging Protocol - Rust) at XMTP Labs",
-    "description": "Design and maintain the E2EE XMTP messaging protocol. Expertise in Rust and cryptography required. Remote.",
-    "link": "https://jobs.ashbyhq.com/XMTP%20Labs/586c0ee9-47fd-40b4-96b8-03a26236b539"
-  },
-  {
-    "date": "2026-03-11",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Build and maintain sophisticated validator infrastructure and tooling for one of the world's top proprietary trading firms. Remote.",
-    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
-  },
-  {
-    "date": "2026-03-11",
-    "type": "news",
-    "title": "XMTP Labs Releases Messaging SDK v3 for Mobile",
-    "description": "XMTP Labs has officially launched its v3 SDK, enabling seamless integration of end-to-end encrypted messaging into mobile Web3 applications.",
-    "link": "https://xmtp.org/blog"
-  },
-  {
-    "date": "2026-03-11",
-    "type": "news",
-    "title": "Jumpcrypto Unveils High-Performance Solana Validator Tooling",
-    "description": "Jumpcrypto introduces a new suite of open-source tools designed to optimize Solana validator performance and network resilience.",
-    "link": "https://jumpcrypto.com/news"
-  },
-  {
-    "date": "2026-03-11",
-    "type": "hack",
-    "title": "Jito Labs Awards $250k Bounty for Solana Validator Vulnerability",
-    "description": "Jito Labs successfully awarded a $250,000 bug bounty to a security researcher who identified a critical vulnerability in its validator client.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-10",
-    "type": "job",
-    "title": "Senior Solidity Engineer at Nethermind",
-    "description": "Design and build secure smart contracts for the next generation of Web3 and AI protocols. Join the Nethermind team. Remote.",
-    "link": "https://nethermind.io/careers/"
   }
 ]
