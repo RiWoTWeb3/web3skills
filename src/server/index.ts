@@ -33,7 +33,7 @@ app.get('/api/keys', async (c: any) => {
   try {
     const keys = await prisma.keyPool.findMany();
     // Ensure limit is returned for UI percentage calculation
-    const keysWithLimit = keys.map(k => ({
+    const keysWithLimit = keys.map((k: any) => ({
       ...k,
       limit: k.model === 'gemini-1.5-pro' ? 1000 : 1500
     }));

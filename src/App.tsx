@@ -15,6 +15,15 @@ import {
   useLocation,
   useParams
 } from 'react-router-dom';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Cell
+} from 'recharts';
 
 import skillCategoriesRaw from './data/skills.json';
 import systemHealthRaw from './data/system_health.json';
@@ -1113,7 +1122,13 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-3">
             <ShieldAlert className={darkMode ? 'text-accent-blue' : 'text-red-600'} size={24} />
-            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-sm tracking-widest' : 'text-gray-900'}`}>Latest System Intel</h2>
+            <div className="flex items-center gap-3">
+              <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-sm tracking-widest' : 'text-gray-900'}`}>Latest System Intel</h2>
+              <div className="flex items-center gap-2 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[8px] font-mono font-bold text-green-500 tracking-tighter">SYNC_OK // 2026-04-05</span>
+              </div>
+            </div>
           </div>
           <Link to="/news" className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}>View All Logs</Link>
         </div>
@@ -1596,6 +1611,8 @@ const JobsView = ({ darkMode, displaySkills }) => {
 
 const DataRefreshStatus = ({ darkMode }) => {
   const health = systemHealthRaw;
+  const chartData = [...health.syncHistory].reverse();
+
   return (
     <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-200 rounded-xl'} p-6 border mb-8`}>
       <div className="flex items-center justify-between mb-6">
@@ -1610,30 +1627,61 @@ const DataRefreshStatus = ({ darkMode }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="space-y-1">
-          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Last Synchronization</p>
-          <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{new Date(health.lastSync).toLocaleString()}</p>
-        </div>
-        <div className="space-y-1">
-          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync Protocol</p>
-          <p className={`text-sm font-bold ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>RIWOT_DATA_AGGREGATOR_V2</p>
-        </div>
-        <div className="space-y-1">
-          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Network Latency</p>
-          <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>42ms</p>
-        </div>
-      </div>
-
-      <div className="mt-6">
-        <p className={`text-[10px] font-mono uppercase tracking-widest mb-3 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync History</p>
-        <div className="flex gap-2">
-          {health.syncHistory.map((h, i) => (
-            <div key={i} className={`px-3 py-1.5 border rounded-[2px] flex items-center gap-2 ${darkMode ? 'bg-white/[0.02] border-white/10' : 'bg-white border-gray-100'}`}>
-              <div className={`w-1.5 h-1.5 rounded-full ${h.status === 'SUCCESS' ? 'bg-green-500' : 'bg-red-500'}`} />
-              <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>{h.date} // +{h.itemsAdded}</span>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-1">
+              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Last Synchronization</p>
+              <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{new Date(health.lastSync).toLocaleString()}</p>
             </div>
-          ))}
+            <div className="space-y-1">
+              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync Protocol</p>
+              <p className={`text-sm font-bold ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>RIWOT_DATA_AGGREGATOR_V2</p>
+            </div>
+            <div className="space-y-1">
+              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Network Latency</p>
+              <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>42ms</p>
+            </div>
+            <div className="space-y-1">
+              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Health Status</p>
+              <p className={`text-sm font-bold ${darkMode ? 'text-green-500' : 'text-green-600'}`}>OPTIMIZED</p>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <p className={`text-[10px] font-mono uppercase tracking-widest mb-3 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync History</p>
+            <div className="flex flex-wrap gap-2">
+              {health.syncHistory.map((h, i) => (
+                <div key={i} className={`px-3 py-1.5 border rounded-[2px] flex items-center gap-2 ${darkMode ? 'bg-white/[0.02] border-white/10' : 'bg-white border-gray-100'}`}>
+                  <div className={`w-1.5 h-1.5 rounded-full ${h.status === 'SUCCESS' ? 'bg-green-500' : 'bg-red-500'}`} />
+                  <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-300' : 'text-gray-600'}`}>{h.date} // +{h.itemsAdded}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className={`h-48 w-full ${darkMode ? 'bg-black/20' : 'bg-white/50'} rounded-lg p-4 border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
+          <p className={`text-[10px] font-mono uppercase tracking-widest mb-4 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Sync Volume Trend</p>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={chartData}>
+              <XAxis dataKey="date" hide />
+              <YAxis hide />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: darkMode ? '#0f172a' : '#fff',
+                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                  fontSize: '10px',
+                  fontFamily: 'monospace'
+                }}
+              />
+              <Bar dataKey="itemsAdded">
+                {chartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={darkMode ? '#00f2ff' : '#2563eb'} fillOpacity={0.6 + (index / chartData.length) * 0.4} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </div>
@@ -1756,13 +1804,13 @@ const AdminPanelView = ({ darkMode }) => {
               <Terminal className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
               <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Live Audit Stream</h3>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {auditLogs.map((log) => (
-                <div key={log.id} className={`p-4 ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} border rounded-[4px]`}>
-                  <div className="flex justify-between items-start mb-3">
+                <div key={log.id} className={`p-3 ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} border rounded-[4px]`}>
+                  <div className="flex justify-between items-start mb-2">
                     <div>
                       <p className={`text-xs font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{log.project}</p>
-                      <p className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>ID: {log.id} // PHASE: {log.phase}/6</p>
+                      <p className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>ID: {log.id} // PHASE: {log.phase}/6</p>
                     </div>
                     <span className={`text-[9px] font-mono px-2 py-0.5 border rounded-[2px] ${
                       log.status === 'COMPLETED' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-blue-500/10 text-accent-blue border-blue-500/20'
