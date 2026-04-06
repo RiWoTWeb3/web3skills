@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-05",
+    "type": "job",
+    "title": "Staff Software Engineer at Circle",
+    "description": "Join Circle as a Staff Software Engineer. Requirements: Blockchain Systems, Tokenization, Infrastructure. Remote.",
+    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-04-05",
+    "type": "job",
+    "title": "Chief Technology Officer (CTO) at Semiotic.AI",
+    "description": "Join Semiotic.AI as a Chief Technology Officer (CTO). Requirements: Systems Architecture, AI-to-AI Micropayments, Product Strategy. Remote.",
+    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-04-05",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Blockchain, Crypto, DeFi. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-04-05",
+    "type": "news",
+    "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
+    "description": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
+    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
+  },
+  {
+    "date": "2026-04-05",
+    "type": "news",
+    "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
+    "description": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
+    "link": "https://www.mexc.com/news/992894"
+  },
+  {
+    "date": "2026-04-05",
+    "type": "hack",
+    "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
+    "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
+    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
+  },
+  {
     "date": "2026-04-02",
     "type": "job",
     "title": "Senior Level Blockchain Security Engineer at CertiK",
@@ -376,47 +418,5 @@
     "title": "Solana Ecosystem Bug Bounty: $200k Payout",
     "description": "A major Solana DeFi protocol successfully awarded a $200,000 bug bounty to a security researcher who identified a critical vulnerability in its liquidity pool logic.",
     "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "job",
-    "title": "Solana Smart Contracts Engineer at Odos",
-    "description": "Build and operate distributed, low-latency services that power Solana DEX Aggregator. Experience with Rust and Solana required. Remote.",
-    "link": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=f8674917a807d8d2"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "job",
-    "title": "Senior Blockchain Security Engineer at CertiK",
-    "description": "Lead advanced blockchain investigations and analyze smart contract interactions. Required: Solidity, Rust, and Go. Remote.",
-    "link": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=7d427218357f8303"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "job",
-    "title": "Principal Blockchain Engineer at The Nuclear Company",
-    "description": "Integrate blockchain capabilities into core products, focusing on robust, scalable systems for digital contracts. Remote.",
-    "link": "https://www.indeed.com/q-rust-solana-l-remote-jobs.html?vjk=4d9e96f8c47796d4"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "news",
-    "title": "Ethereum Glamsterdam Upgrade Scheduled for H1 2026",
-    "description": "The Glamsterdam upgrade focuses on improving MEV fairness and Layer-1 efficiency through enshrined Proposer-Builder Separation (ePBS).",
-    "link": "https://www.binance.com/en/ethereum-upgrade"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "news",
-    "title": "Solana Alpenglow Upgrade Targets Sub-Second Finality",
-    "description": "Solana's upcoming Alpenglow consensus upgrade promises to reduce finality to as low as 100-150 milliseconds while improving network resilience.",
-    "link": "https://www.fool.com/investing/2026/02/11/2-game-changing-updates-coming-to-solana-in-2026/"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "hack",
-    "title": "PepetoSwap Cross-Chain Bridge Vulnerability Identified",
-    "description": "An AI-driven security scan for PepetoSwap identified a critical flaw in its cross-chain bridging logic, preventing potential drainage.",
-    "link": "https://markets.businessinsider.com/news/stocks/crypto-news-pepeto-update-amount-raised-above-7-96-million-as-ethereum-price-prediction-points-to-new-all-time-high-1035924891"
   }
 ]

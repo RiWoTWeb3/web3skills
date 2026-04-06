@@ -1,5 +1,53 @@
 [
   {
+    "id": "circle-staff-software-engineer-2026-04-05",
+    "title": "Staff Software Engineer",
+    "company": "Circle",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Blockchain Systems",
+      "Tokenization",
+      "Infrastructure",
+      "Go"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+  },
+  {
+    "id": "semiotic-cto-2026-04-05",
+    "title": "Chief Technology Officer (CTO)",
+    "company": "Semiotic.AI",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Executive level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Systems Architecture",
+      "AI-to-AI Micropayments",
+      "Product Strategy",
+      "Rust"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+  },
+  {
+    "id": "jumpcrypto-prod-engineer-2026-04-05",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Blockchain",
+      "Crypto",
+      "DeFi",
+      "Ethereum"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
     "id": "certik-senior-security-engineer-2026-04-02",
     "title": "Senior Level Blockchain Security Engineer",
     "company": "CertiK",

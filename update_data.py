@@ -3,67 +3,67 @@ import os
 from datetime import datetime
 
 # Today's Date
-today = "2026-04-02"
+today = "2026-04-05"
 
 # New Jobs
 new_jobs = [
     {
-        "id": "certik-senior-security-engineer-2026-04-02",
-        "title": "Senior Level Blockchain Security Engineer",
-        "company": "CertiK",
-        "type": "EVM",
-        "workType": "Remote",
-        "experience": "Senior level",
-        "salaryRange": "$102,000 - $180,000",
-        "requirements": ["Solidity", "Rust", "Go", "Smart Contract Security"],
-        "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-    },
-    {
-        "id": "travoom-senior-rust-backend-2026-04-02",
-        "title": "Senior Rust Backend Engineer",
-        "company": "Travoom",
+        "id": "circle-staff-software-engineer-2026-04-05",
+        "title": "Staff Software Engineer",
+        "company": "Circle",
         "type": "Backend",
         "workType": "Remote",
-        "experience": "Senior level",
-        "salaryRange": "$110,000 - $190,000",
-        "requirements": ["Rust", "Distributed Systems", "Backend Architecture"],
-        "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+        "experience": "Staff level",
+        "salaryRange": "$180,000 - $250,000",
+        "requirements": ["Blockchain Systems", "Tokenization", "Infrastructure", "Go"],
+        "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
     },
     {
-        "id": "rho-labs-senior-fullstack-2026-04-02",
-        "title": "Senior Full Stack Engineer",
-        "company": "Rho Labs",
-        "type": "EVM",
+        "id": "semiotic-cto-2026-04-05",
+        "title": "Chief Technology Officer (CTO)",
+        "company": "Semiotic.AI",
+        "type": "Backend",
         "workType": "Remote",
-        "experience": "Senior level",
-        "salaryRange": "$75,000 - $120,000",
-        "requirements": ["React", "Web3", "DeFi", "TypeScript"],
-        "applyLink": "https://cryptojobslist.com/web3"
+        "experience": "Executive level",
+        "salaryRange": "Competitive",
+        "requirements": ["Systems Architecture", "AI-to-AI Micropayments", "Product Strategy", "Rust"],
+        "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+    },
+    {
+        "id": "jumpcrypto-prod-engineer-2026-04-05",
+        "title": "Crypto Production Engineer",
+        "company": "Jumpcrypto",
+        "type": "Backend",
+        "workType": "Remote",
+        "experience": "Mid/Senior level",
+        "salaryRange": "$150,000 - $200,000",
+        "requirements": ["Blockchain", "Crypto", "DeFi", "Ethereum"],
+        "applyLink": "https://web3.career/remote+solana-jobs"
     }
 ]
 
 # New Intel
 new_intel = [
     {
-        "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
+        "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
         "category": "INFRA",
-        "summary": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
+        "summary": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
         "date": today,
-        "sourceLink": "https://www.mexc.com/news/992865"
+        "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
     },
     {
-        "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
+        "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
         "category": "INFRA",
-        "summary": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
+        "summary": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
         "date": today,
-        "sourceLink": "https://www.mexc.com/news/992865"
+        "sourceLink": "https://www.mexc.com/news/992894"
     },
     {
-        "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
+        "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
         "category": "HACK",
-        "summary": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
+        "summary": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
         "date": today,
-        "sourceLink": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
+        "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
     }
 ]
 
@@ -88,11 +88,11 @@ new_feed_items = [
 
 # New Logs
 new_logs = [
-    { "time": "09:15:00", "msg": "Daily data aggregation cycle started for 2026-04-02.", "type": "info" },
-    { "time": "09:15:10", "msg": f"Indexed {len(new_jobs)} new remote engineering roles from CertiK, Travoom, and Rho Labs.", "type": "success" },
-    { "time": "09:15:20", "msg": "Parsed March exploit report and Ethereum roadmap updates.", "type": "success" },
-    { "time": "09:15:30", "msg": "Updating system health metrics and sync history.", "type": "info" },
-    { "time": "09:15:40", "msg": "Web3 Data Update [2026-04-02] complete.", "type": "success" }
+    { "time": "10:20:00", "msg": "Daily data aggregation cycle started for 2026-04-05.", "type": "info" },
+    { "time": "10:20:10", "msg": f"Indexed {len(new_jobs)} new remote roles from Circle, Semiotic.AI, and Jumpcrypto.", "type": "success" },
+    { "time": "10:20:20", "msg": "Parsed AI Agent security incident and GTBS ecosystem updates.", "type": "success" },
+    { "time": "10:20:30", "msg": "Updating system health metrics and sync history.", "type": "info" },
+    { "time": "10:20:40", "msg": "Web3 Data Update [2026-04-05] complete.", "type": "success" }
 ]
 
 def update_json_file(filepath, new_items, limit=None, prepend=True):
