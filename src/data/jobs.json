@@ -1,5 +1,53 @@
 [
   {
+    "id": "jito-senior-software-engineer-2026-04-06",
+    "title": "Senior Software Engineer - Special Projects",
+    "company": "Jito Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$200,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "DeFi",
+      "Solana",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "cowdao-senior-backend-engineer-2026-04-06",
+    "title": "Senior Backend Engineer (Rust)",
+    "company": "CoW DAO",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Salary not specified",
+    "requirements": [
+      "Rust",
+      "Ethereum",
+      "DeFi",
+      "Backend Architecture"
+    ],
+    "applyLink": "https://web3.career/web3-companies/cowdao"
+  },
+  {
+    "id": "chainlink-sre-2026-04-06",
+    "title": "Site Reliability Engineer",
+    "company": "Chainlink Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "Salary not specified",
+    "requirements": [
+      "SRE",
+      "Infrastructure",
+      "Go",
+      "Cloud Architecture"
+    ],
+    "applyLink": "https://web3.career/web3-companies/chainlinklabs"
+  },
+  {
     "id": "circle-staff-software-engineer-2026-04-05",
     "title": "Staff Software Engineer",
     "company": "Circle",

@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-06",
+    "type": "job",
+    "title": "Senior Software Engineer - Special Projects at Jito Labs",
+    "description": "Join Jito Labs as a Senior Software Engineer - Special Projects. Requirements: Rust, DeFi, Solana. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-04-06",
+    "type": "job",
+    "title": "Senior Backend Engineer (Rust) at CoW DAO",
+    "description": "Join CoW DAO as a Senior Backend Engineer (Rust). Requirements: Rust, Ethereum, DeFi. Remote.",
+    "link": "https://web3.career/web3-companies/cowdao"
+  },
+  {
+    "date": "2026-04-06",
+    "type": "job",
+    "title": "Site Reliability Engineer at Chainlink Labs",
+    "description": "Join Chainlink Labs as a Site Reliability Engineer. Requirements: SRE, Infrastructure, Go. Remote.",
+    "link": "https://web3.career/web3-companies/chainlinklabs"
+  },
+  {
+    "date": "2026-04-06",
+    "type": "news",
+    "title": "Chainlink Runtime Environment (CRE) Mainnet Beta Launch",
+    "description": "Chainlink officially launches the CRE Mainnet Beta, a major architectural shift to enable modular and scalable decentralized services.",
+    "link": "https://web3.career/web3-companies/chainlinklabs"
+  },
+  {
+    "date": "2026-04-06",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Devnet-10 Live",
+    "description": "The tenth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-04-06",
+    "type": "hack",
+    "title": "Prisma Finance $12M Exploit Recovery",
+    "description": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
+    "link": "https://cryptojobslist.com/web3"
+  },
+  {
     "date": "2026-04-05",
     "type": "job",
     "title": "Staff Software Engineer at Circle",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "System Example: DeFi Bug Bounty Payout - $500k",
     "description": "A major DeFi protocol successfully awarded a $500,000 bug bounty to a security researcher who identified a critical vulnerability.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-18",
-    "type": "job",
-    "title": "Staff Software Engineer (Messaging Protocol - Mobile) at XMTP Labs",
-    "description": "Lead the development of the E2EE XMTP messaging protocol for mobile platforms. Experience with cryptography and distributed systems required. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-03-18",
-    "type": "job",
-    "title": "Founding Full Stack Engineer at Stand",
-    "description": "Architect and maintain infrastructure for data-autonomous products. Collaborate with design and product teams to craft high-quality user experiences. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-03-18",
-    "type": "job",
-    "title": "Co-founder & Lead Engineer at Povi",
-    "description": "Own the technical vision, architecture, and backend development for a newly launched Web3 venture. Equity-focused role. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-03-18",
-    "type": "news",
-    "title": "Jiuzi Holdings & AetheriumX $30M Strategic Investment",
-    "description": "Jiuzi Holdings announces a $30M investment into AetheriumX's Distributed Capital Intelligence Protocol (DCIP) to enhance Web3 infrastructure.",
-    "link": "https://www.prnewswire.com/news-releases/jiuzi-holdings-and-aetheriumx-sign-strategic-mou-for-30m-investment-into-web3-302714568.html"
-  },
-  {
-    "date": "2026-03-18",
-    "type": "news",
-    "title": "PillNet AI Ecosystem Launch",
-    "description": "PillNet AI launches an integrated ecosystem combining AI-powered security tools, trading signals, and DeFi infrastructure on a quantum-resistant blockchain.",
-    "link": "https://www.tradingview.com/news/chainwire:e8190096e094b:0-pillnet-ai-is-live-the-intelligence-layer-of-web3/"
-  },
-  {
-    "date": "2026-03-18",
-    "type": "hack",
-    "title": "Solana Ecosystem Bug Bounty: $200k Payout",
-    "description": "A major Solana DeFi protocol successfully awarded a $200,000 bug bounty to a security researcher who identified a critical vulnerability in its liquidity pool logic.",
     "link": "https://immunefi.com/blog/"
   }
 ]
