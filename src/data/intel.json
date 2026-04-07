@@ -1,5 +1,26 @@
 [
   {
+    "title": "Chainalysis Unveils AI Agents for On-Chain Security",
+    "category": "INFRA",
+    "summary": "Chainalysis officially introduces enterprise-grade AI agents designed to fight on-chain crime and ensure data integrity within blockchain systems.",
+    "date": "2026-04-07",
+    "sourceLink": "https://coingeek.com/chainalysis-unveils-ai-agents-to-fight-on-chain-crime/"
+  },
+  {
+    "title": "Giant Wallet Launches G-Gift on BSC",
+    "category": "INFRA",
+    "summary": "Giant Wallet V2.1.0 debuts G-Gift, a social token gifting feature on Binance Smart Chain enabling simplified multi-recipient crypto distribution.",
+    "date": "2026-04-07",
+    "sourceLink": "https://cryptoslate.com/press-releases/giant-wallet-launches-g-gift-a-social-token-gifting-feature-on-binance-smart-chain/"
+  },
+  {
+    "title": "PeckShield Reports $52M Exploit Losses in March",
+    "category": "HACK",
+    "summary": "Security firm PeckShield highlights that crypto exploits reached $52 million in losses during March, signaling continued vulnerability in the ecosystem.",
+    "date": "2026-04-07",
+    "sourceLink": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
+  },
+  {
     "title": "Chainlink Runtime Environment (CRE) Mainnet Beta Launch",
     "category": "INFRA",
     "summary": "Chainlink officially launches the CRE Mainnet Beta, a major architectural shift to enable modular and scalable decentralized services.",

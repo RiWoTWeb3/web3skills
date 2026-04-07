@@ -1893,6 +1893,18 @@ const NewsView = ({ darkMode }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
 
+  const stats = useMemo(() => {
+    const counts = { HACK: 0, INFRA: 0, BOUNTY: 0, OTHER: 0 };
+    intelData.forEach(item => {
+      if (counts.hasOwnProperty(item.category)) {
+        counts[item.category as keyof typeof counts]++;
+      } else {
+        counts.OTHER++;
+      }
+    });
+    return counts;
+  }, [intelData]);
+
   const filteredIntel = intelData.filter(item => {
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -1939,6 +1951,24 @@ const NewsView = ({ darkMode }) => {
         <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
           Latest updates from the blockchain ecosystem
         </p>
+      </div>
+
+      {/* Intel Stats Feature */}
+      <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 rounded-2xl'} p-6 border mb-8 grid grid-cols-2 md:grid-cols-4 gap-4`}>
+        {[
+          { label: 'Total Logs', value: intelData.length, icon: Database, color: 'text-accent-blue' },
+          { label: 'Security Hacks', value: stats.HACK, icon: ShieldAlert, color: 'text-red-500' },
+          { label: 'Infra Updates', value: stats.INFRA, icon: Newspaper, color: 'text-blue-500' },
+          { label: 'Bug Bounties', value: stats.BOUNTY, icon: Award, color: 'text-green-500' },
+        ].map((s, i) => (
+          <div key={i} className="space-y-1">
+            <div className="flex items-center gap-2">
+              <s.icon size={14} className={s.color} />
+              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{s.label}</p>
+            </div>
+            <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{s.value}</p>
+          </div>
+        ))}
       </div>
 
       <div className={`${darkMode ? 'surface-industrial' : 'glass-card-light rounded-2xl'} p-6 mb-8`}>

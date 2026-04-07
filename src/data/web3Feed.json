@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-07",
+    "type": "job",
+    "title": "Principal Software Development Engineer - Rust at Zscaler",
+    "description": "Join Zscaler as a Principal Software Development Engineer - Rust. Requirements: Rust, LLM, Networking. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-07",
+    "type": "job",
+    "title": "Senior Software Engineer at OKX",
+    "description": "Join OKX as a Senior Software Engineer. Requirements: Rust, Backend, Web3. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-07",
+    "type": "job",
+    "title": "Senior Backend Engineer (Rust) at CoW DAO",
+    "description": "Join CoW DAO as a Senior Backend Engineer (Rust). Requirements: Rust, Ethereum, DeFi. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-07",
+    "type": "news",
+    "title": "Chainalysis Unveils AI Agents for On-Chain Security",
+    "description": "Chainalysis officially introduces enterprise-grade AI agents designed to fight on-chain crime and ensure data integrity within blockchain systems.",
+    "link": "https://coingeek.com/chainalysis-unveils-ai-agents-to-fight-on-chain-crime/"
+  },
+  {
+    "date": "2026-04-07",
+    "type": "news",
+    "title": "Giant Wallet Launches G-Gift on BSC",
+    "description": "Giant Wallet V2.1.0 debuts G-Gift, a social token gifting feature on Binance Smart Chain enabling simplified multi-recipient crypto distribution.",
+    "link": "https://cryptoslate.com/press-releases/giant-wallet-launches-g-gift-a-social-token-gifting-feature-on-binance-smart-chain/"
+  },
+  {
+    "date": "2026-04-07",
+    "type": "hack",
+    "title": "PeckShield Reports $52M Exploit Losses in March",
+    "description": "Security firm PeckShield highlights that crypto exploits reached $52 million in losses during March, signaling continued vulnerability in the ecosystem.",
+    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
+  },
+  {
     "date": "2026-04-06",
     "type": "job",
     "title": "Senior Software Engineer - Special Projects at Jito Labs",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "System Example: Multi-Chain Bridge Bug Bounty - $1.2M",
     "description": "A critical logic flaw in a major cross-chain bridge's message verification system was identified, resulting in a $1.2M bounty payout.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-19",
-    "type": "job",
-    "title": "Smart Contract Engineer (SVM) at Veda",
-    "description": "Design and build vault infrastructure for DeFi at scale on the Solana Virtual Machine using Rust. Remote.",
-    "link": "https://web3.career/smart-contract-engineer-svm-veda/147442"
-  },
-  {
-    "date": "2026-03-19",
-    "type": "job",
-    "title": "Staff Backend Engineer (Data Streaming) at Helius",
-    "description": "Build high-performance data streaming services for the Solana ecosystem. Expertise in Rust and Solana required. Remote.",
-    "link": "https://web3.career/staff-backend-engineer-data-streaming-helius/147441"
-  },
-  {
-    "date": "2026-03-19",
-    "type": "job",
-    "title": "Systems Engineer at LayerZero Labs",
-    "description": "Develop and optimize core infrastructure for omnichain interoperability. Strong distributed systems and Rust skills needed. Remote.",
-    "link": "https://web3.career/systems-engineer-layerzerolabs/147406"
-  },
-  {
-    "date": "2026-03-19",
-    "type": "news",
-    "title": "SEC & CFTC Issue Joint Guidance on Digital Commodities",
-    "description": "A joint interpretation explicitly names 16 crypto assets, including Bitcoin, Ether, and Solana, as digital commodities.",
-    "link": "https://www.fintechweekly.com/news/sec-bitcoin-ether-solana-digital-commodities-not-securities-march-2026"
-  },
-  {
-    "date": "2026-03-19",
-    "type": "news",
-    "title": "Solana Targets $115 Amid Institutional Demand",
-    "description": "Solana eyes a breakout toward $115 following positive regulatory guidance and strong institutional demand for SOL ETFs.",
-    "link": "https://www.tradingview.com/news/newsbtc:9e8f3080a094b:0-solana-eyes-clear-path-towards-115-amid-sec-guidance-sol-etfs-demand/"
-  },
-  {
-    "date": "2026-03-19",
-    "type": "hack",
-    "title": "System Example: DeFi Bug Bounty Payout - $500k",
-    "description": "A major DeFi protocol successfully awarded a $500,000 bug bounty to a security researcher who identified a critical vulnerability.",
     "link": "https://immunefi.com/blog/"
   }
 ]

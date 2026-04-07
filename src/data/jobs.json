@@ -1,5 +1,53 @@
 [
   {
+    "id": "zscaler-principal-rust-engineer-2026-04-07",
+    "title": "Principal Software Development Engineer - Rust",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$220,000 - $280,000",
+    "requirements": [
+      "Rust",
+      "LLM",
+      "Networking",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "okx-senior-rust-engineer-2026-04-07",
+    "title": "Senior Software Engineer",
+    "company": "OKX",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Backend",
+      "Web3",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "cowdao-senior-backend-engineer-2026-04-07",
+    "title": "Senior Backend Engineer (Rust)",
+    "company": "CoW DAO",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Salary not specified",
+    "requirements": [
+      "Rust",
+      "Ethereum",
+      "DeFi",
+      "Backend Architecture"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "jito-senior-software-engineer-2026-04-06",
     "title": "Senior Software Engineer - Special Projects",
     "company": "Jito Labs",
