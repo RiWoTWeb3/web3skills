@@ -17,8 +17,9 @@ test('Verify HomePage and Admin Panel Updates', async ({ page }) => {
   }
 
   // Verify Freshness Indicator on HomePage
-  const freshnessIndicator = page.locator('text=SYNC_OK // 2026-04-05');
+  const freshnessIndicator = page.locator('text=SYNC_OK // 2026-04-06');
   await expect(freshnessIndicator).toBeVisible();
+  await expect(page.locator('text=SYNC_HEARTBEAT')).toBeVisible();
   await page.screenshot({ path: '/home/jules/verification/homepage_freshness.png' });
 
   // Go to Admin Panel
@@ -32,5 +33,8 @@ test('Verify HomePage and Admin Panel Updates', async ({ page }) => {
   const liveAuditTitle = page.locator('text=Live Audit Stream');
   await expect(liveAuditTitle).toBeVisible();
 
-  await page.screenshot({ path: '/home/jules/verification/admin_panel_enhanced.png' });
+  const kbCoverage = page.locator('text=KB Coverage');
+  await expect(kbCoverage).toBeVisible();
+
+  await page.screenshot({ path: '/home/jules/verification/admin_panel_enhanced.png', fullPage: true });
 });

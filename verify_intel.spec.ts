@@ -15,6 +15,6 @@ test('Capture Intel Section', async ({ page }) => {
   const intelSection = page.locator('text=Latest System Intel');
   await intelSection.scrollIntoViewIfNeeded();
 
-  await expect(page.locator('text=SYNC_OK // 2026-04-05')).toBeVisible();
+  await expect(page.locator('text=SYNC_OK // 2026-04-06')).toBeVisible();
   await page.screenshot({ path: '/home/jules/verification/homepage_intel_section.png' });
 });

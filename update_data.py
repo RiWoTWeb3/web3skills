@@ -3,67 +3,67 @@ import os
 from datetime import datetime
 
 # Today's Date
-today = "2026-04-05"
+today = "2026-04-06"
 
 # New Jobs
 new_jobs = [
     {
-        "id": "circle-staff-software-engineer-2026-04-05",
-        "title": "Staff Software Engineer",
-        "company": "Circle",
-        "type": "Backend",
+        "id": "jito-senior-software-engineer-2026-04-06",
+        "title": "Senior Software Engineer - Special Projects",
+        "company": "Jito Labs",
+        "type": "SVM",
         "workType": "Remote",
-        "experience": "Staff level",
-        "salaryRange": "$180,000 - $250,000",
-        "requirements": ["Blockchain Systems", "Tokenization", "Infrastructure", "Go"],
-        "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+        "experience": "Senior level",
+        "salaryRange": "$200,000 - $250,000",
+        "requirements": ["Rust", "DeFi", "Solana", "Systems Engineering"],
+        "applyLink": "https://web3.career/rust+solana-jobs"
     },
     {
-        "id": "semiotic-cto-2026-04-05",
-        "title": "Chief Technology Officer (CTO)",
-        "company": "Semiotic.AI",
-        "type": "Backend",
+        "id": "cowdao-senior-backend-engineer-2026-04-06",
+        "title": "Senior Backend Engineer (Rust)",
+        "company": "CoW DAO",
+        "type": "EVM",
         "workType": "Remote",
-        "experience": "Executive level",
-        "salaryRange": "Competitive",
-        "requirements": ["Systems Architecture", "AI-to-AI Micropayments", "Product Strategy", "Rust"],
-        "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+        "experience": "Senior level",
+        "salaryRange": "Salary not specified",
+        "requirements": ["Rust", "Ethereum", "DeFi", "Backend Architecture"],
+        "applyLink": "https://web3.career/web3-companies/cowdao"
     },
     {
-        "id": "jumpcrypto-prod-engineer-2026-04-05",
-        "title": "Crypto Production Engineer",
-        "company": "Jumpcrypto",
+        "id": "chainlink-sre-2026-04-06",
+        "title": "Site Reliability Engineer",
+        "company": "Chainlink Labs",
         "type": "Backend",
         "workType": "Remote",
         "experience": "Mid/Senior level",
-        "salaryRange": "$150,000 - $200,000",
-        "requirements": ["Blockchain", "Crypto", "DeFi", "Ethereum"],
-        "applyLink": "https://web3.career/remote+solana-jobs"
+        "salaryRange": "Salary not specified",
+        "requirements": ["SRE", "Infrastructure", "Go", "Cloud Architecture"],
+        "applyLink": "https://web3.career/web3-companies/chainlinklabs"
     }
 ]
 
 # New Intel
 new_intel = [
     {
-        "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
+        "title": "Chainlink Runtime Environment (CRE) Mainnet Beta Launch",
         "category": "INFRA",
-        "summary": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
+        "summary": "Chainlink officially launches the CRE Mainnet Beta, a major architectural shift to enable modular and scalable decentralized services.",
         "date": today,
-        "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
+        "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
     },
     {
-        "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
+        "title": "Ethereum Pectra Upgrade Devnet-10 Live",
         "category": "INFRA",
-        "summary": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
+        "summary": "The tenth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
         "date": today,
-        "sourceLink": "https://www.mexc.com/news/992894"
+        "sourceLink": "https://ethereum-magicians.org/"
     },
     {
-        "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
+        "title": "Prisma Finance $12M Exploit Recovery",
         "category": "HACK",
-        "summary": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
+        "summary": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
         "date": today,
-        "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
+        "sourceLink": "https://cryptojobslist.com/web3"
     }
 ]
 
@@ -88,11 +88,10 @@ new_feed_items = [
 
 # New Logs
 new_logs = [
-    { "time": "10:20:00", "msg": "Daily data aggregation cycle started for 2026-04-05.", "type": "info" },
-    { "time": "10:20:10", "msg": f"Indexed {len(new_jobs)} new remote roles from Circle, Semiotic.AI, and Jumpcrypto.", "type": "success" },
-    { "time": "10:20:20", "msg": "Parsed AI Agent security incident and GTBS ecosystem updates.", "type": "success" },
-    { "time": "10:20:30", "msg": "Updating system health metrics and sync history.", "type": "info" },
-    { "time": "10:20:40", "msg": "Web3 Data Update [2026-04-05] complete.", "type": "success" }
+    { "time": "11:05:00", "msg": "Daily data aggregation cycle started for 2026-04-06.", "type": "info" },
+    { "time": "11:05:10", "msg": f"Indexed {len(new_jobs)} new remote roles from Jito Labs, CoW DAO, and Chainlink Labs.", "type": "success" },
+    { "time": "11:05:20", "msg": "Parsed Chainlink CRE launch and Ethereum Pectra Devnet-10 updates.", "type": "success" },
+    { "time": "11:05:30", "msg": "Web3 Data Update [2026-04-06] complete.", "type": "success" }
 ]
 
 def update_json_file(filepath, new_items, limit=None, prepend=True):
@@ -126,7 +125,7 @@ if os.path.exists(health_file):
     with open(health_file, 'r') as f:
         health = json.load(f)
 
-    health['lastSync'] = datetime.utcnow().isoformat() + "Z"
+    health['lastSync'] = datetime.utcnow().isoformat().replace('+00:00', '') + "Z"
     health['status'] = 'HEALTHY'
     new_sync = { "date": today, "status": "SUCCESS", "itemsAdded": len(new_feed_items) }
     health['syncHistory'] = [new_sync] + [h for h in health['syncHistory'] if h['date'] != today]

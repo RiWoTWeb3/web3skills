@@ -688,9 +688,19 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
                   <h1 className={`font-bold text-xl tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                     Antigravity <span className={darkMode ? 'text-white' : 'text-accent-blue'}>Bughunter-CFD</span>
                   </h1>
-                  <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[8px] font-mono font-bold text-green-500 tracking-tighter">LIVE</span>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-[8px] font-mono font-bold text-green-500 tracking-tighter">LIVE</span>
+                    </div>
+                    <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full ${
+                      (new Date().getTime() - new Date(systemHealthRaw.lastSync).getTime()) < 86400000
+                        ? 'bg-cyan-500/10 border-cyan-500/20 text-cyan-500'
+                        : 'bg-yellow-500/10 border-yellow-500/20 text-yellow-500'
+                    } border`}>
+                      <Activity size={8} className="animate-pulse" />
+                      <span className="text-[8px] font-mono font-bold tracking-tighter">SYNC_HEARTBEAT</span>
+                    </div>
                   </div>
                 </div>
                 <p className={`${darkMode ? 'label-industrial text-accent-blue/60' : 'text-[10px] font-mono uppercase tracking-[0.2em] text-gray-600'}`}>System.Core.v2</p>
@@ -1126,7 +1136,7 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
               <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-sm tracking-widest' : 'text-gray-900'}`}>Latest System Intel</h2>
               <div className="flex items-center gap-2 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[8px] font-mono font-bold text-green-500 tracking-tighter">SYNC_OK // 2026-04-05</span>
+                  <span className="text-[8px] font-mono font-bold text-green-500 tracking-tighter">SYNC_OK // {intelData[0]?.date || 'RECENT'}</span>
               </div>
             </div>
           </div>
@@ -1701,6 +1711,29 @@ const AdminPanelView = ({ darkMode }) => {
   const [auditLogs, setAuditLogs] = useState([]);
   const [logs, setLogs] = useState([]);
 
+  const coverage = useMemo(() => {
+    const allSkills = Object.values(skillCategories).flat();
+    const coveredSkills = new Set();
+
+    jobsData.forEach(job => {
+      job.requirements.forEach(req => coveredSkills.add(req));
+    });
+
+    intelData.forEach(item => {
+      allSkills.forEach(skill => {
+        if (item.title.includes(skill) || item.summary.includes(skill)) {
+          coveredSkills.add(skill);
+        }
+      });
+    });
+
+    return {
+      percentage: (coveredSkills.size / allSkills.length) * 100,
+      count: coveredSkills.size,
+      total: allSkills.length
+    };
+  }, []);
+
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
@@ -1752,7 +1785,7 @@ const AdminPanelView = ({ darkMode }) => {
           { label: 'System Status', value: stats.systemStatus, icon: Activity, color: 'text-green-500' },
           { label: 'Active API Keys', value: stats.activeKeys || 12, icon: Key, color: 'text-accent-blue' },
           { label: 'Autonomous Audits', value: stats.totalAudits || 154, icon: Database, color: 'text-purple-500' },
-          { label: 'Uptime', value: stats.uptime, icon: Terminal, color: 'text-yellow-500' },
+          { label: 'KB Coverage', value: `${coverage.percentage.toFixed(1)}%`, icon: BookOpen, color: 'text-orange-500' },
         ].map((stat, i) => (
           <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
             <div className="flex items-center justify-between mb-4">
