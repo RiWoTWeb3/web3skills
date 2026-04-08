@@ -3,23 +3,34 @@ import os
 from datetime import datetime
 
 # Today's Date
-today = "2026-04-06"
+today = "2026-04-07"
 
 # New Jobs
 new_jobs = [
     {
-        "id": "jito-senior-software-engineer-2026-04-06",
-        "title": "Senior Software Engineer - Special Projects",
-        "company": "Jito Labs",
-        "type": "SVM",
+        "id": "zscaler-principal-rust-engineer-2026-04-07",
+        "title": "Principal Software Development Engineer - Rust",
+        "company": "Zscaler",
+        "type": "Backend",
         "workType": "Remote",
-        "experience": "Senior level",
-        "salaryRange": "$200,000 - $250,000",
-        "requirements": ["Rust", "DeFi", "Solana", "Systems Engineering"],
-        "applyLink": "https://web3.career/rust+solana-jobs"
+        "experience": "Lead level",
+        "salaryRange": "$220,000 - $280,000",
+        "requirements": ["Rust", "LLM", "Networking", "Systems Engineering"],
+        "applyLink": "https://web3.career/remote+rust-jobs"
     },
     {
-        "id": "cowdao-senior-backend-engineer-2026-04-06",
+        "id": "okx-senior-rust-engineer-2026-04-07",
+        "title": "Senior Software Engineer",
+        "company": "OKX",
+        "type": "Backend",
+        "workType": "Remote",
+        "experience": "Senior level",
+        "salaryRange": "$180,000 - $240,000",
+        "requirements": ["Rust", "Backend", "Web3", "Distributed Systems"],
+        "applyLink": "https://web3.career/remote+rust-jobs"
+    },
+    {
+        "id": "cowdao-senior-backend-engineer-2026-04-07",
         "title": "Senior Backend Engineer (Rust)",
         "company": "CoW DAO",
         "type": "EVM",
@@ -27,43 +38,32 @@ new_jobs = [
         "experience": "Senior level",
         "salaryRange": "Salary not specified",
         "requirements": ["Rust", "Ethereum", "DeFi", "Backend Architecture"],
-        "applyLink": "https://web3.career/web3-companies/cowdao"
-    },
-    {
-        "id": "chainlink-sre-2026-04-06",
-        "title": "Site Reliability Engineer",
-        "company": "Chainlink Labs",
-        "type": "Backend",
-        "workType": "Remote",
-        "experience": "Mid/Senior level",
-        "salaryRange": "Salary not specified",
-        "requirements": ["SRE", "Infrastructure", "Go", "Cloud Architecture"],
-        "applyLink": "https://web3.career/web3-companies/chainlinklabs"
+        "applyLink": "https://web3.career/remote+rust-jobs"
     }
 ]
 
 # New Intel
 new_intel = [
     {
-        "title": "Chainlink Runtime Environment (CRE) Mainnet Beta Launch",
+        "title": "Chainalysis Unveils AI Agents for On-Chain Security",
         "category": "INFRA",
-        "summary": "Chainlink officially launches the CRE Mainnet Beta, a major architectural shift to enable modular and scalable decentralized services.",
+        "summary": "Chainalysis officially introduces enterprise-grade AI agents designed to fight on-chain crime and ensure data integrity within blockchain systems.",
         "date": today,
-        "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+        "sourceLink": "https://coingeek.com/chainalysis-unveils-ai-agents-to-fight-on-chain-crime/"
     },
     {
-        "title": "Ethereum Pectra Upgrade Devnet-10 Live",
+        "title": "Giant Wallet Launches G-Gift on BSC",
         "category": "INFRA",
-        "summary": "The tenth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
+        "summary": "Giant Wallet V2.1.0 debuts G-Gift, a social token gifting feature on Binance Smart Chain enabling simplified multi-recipient crypto distribution.",
         "date": today,
-        "sourceLink": "https://ethereum-magicians.org/"
+        "sourceLink": "https://cryptoslate.com/press-releases/giant-wallet-launches-g-gift-a-social-token-gifting-feature-on-binance-smart-chain/"
     },
     {
-        "title": "Prisma Finance $12M Exploit Recovery",
+        "title": "PeckShield Reports $52M Exploit Losses in March",
         "category": "HACK",
-        "summary": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
+        "summary": "Security firm PeckShield highlights that crypto exploits reached $52 million in losses during March, signaling continued vulnerability in the ecosystem.",
         "date": today,
-        "sourceLink": "https://cryptojobslist.com/web3"
+        "sourceLink": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
     }
 ]
 
@@ -88,10 +88,10 @@ new_feed_items = [
 
 # New Logs
 new_logs = [
-    { "time": "11:05:00", "msg": "Daily data aggregation cycle started for 2026-04-06.", "type": "info" },
-    { "time": "11:05:10", "msg": f"Indexed {len(new_jobs)} new remote roles from Jito Labs, CoW DAO, and Chainlink Labs.", "type": "success" },
-    { "time": "11:05:20", "msg": "Parsed Chainlink CRE launch and Ethereum Pectra Devnet-10 updates.", "type": "success" },
-    { "time": "11:05:30", "msg": "Web3 Data Update [2026-04-06] complete.", "type": "success" }
+    { "time": "09:15:00", "msg": "Daily data aggregation cycle started for 2026-04-07.", "type": "info" },
+    { "time": "09:15:15", "msg": f"Indexed 3 new remote Rust roles from Zscaler, OKX, and CoW DAO.", "type": "success" },
+    { "time": "09:15:25", "msg": "Parsed Chainalysis AI Agent launch and Giant Wallet BSC integration updates.", "type": "success" },
+    { "time": "09:15:35", "msg": "Web3 Data Update [2026-04-07] complete.", "type": "success" }
 ]
 
 def update_json_file(filepath, new_items, limit=None, prepend=True):
