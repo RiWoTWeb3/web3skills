@@ -17,7 +17,7 @@ test('Verify HomePage and Admin Panel Updates', async ({ page }) => {
   }
 
   // Verify Freshness Indicator on HomePage
-  const freshnessIndicator = page.locator('text=SYNC_OK // 2026-04-06');
+  const freshnessIndicator = page.locator('text=SYNC_OK // 2026-04-10');
   await expect(freshnessIndicator).toBeVisible();
   await expect(page.locator('text=SYNC_HEARTBEAT')).toBeVisible();
   await page.screenshot({ path: '/home/jules/verification/homepage_freshness.png' });
@@ -35,6 +35,11 @@ test('Verify HomePage and Admin Panel Updates', async ({ page }) => {
 
   const kbCoverage = page.locator('text=KB Coverage');
   await expect(kbCoverage).toBeVisible();
+
+  // Verify Bug Bounty Spotlight exists on Home
+  await page.goto('http://localhost:3000/');
+  const bugBountyTitle = page.locator('text=Bug Bounty Spotlight');
+  await expect(bugBountyTitle).toBeVisible();
 
   await page.screenshot({ path: '/home/jules/verification/admin_panel_enhanced.png', fullPage: true });
 });

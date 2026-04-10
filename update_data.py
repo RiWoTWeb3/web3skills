@@ -3,41 +3,41 @@ import os
 from datetime import datetime
 
 # Today's Date
-today = "2026-04-07"
+today = datetime.now().strftime("%Y-%m-%d")
 
 # New Jobs
 new_jobs = [
     {
-        "id": "zscaler-principal-rust-engineer-2026-04-07",
-        "title": "Principal Software Development Engineer - Rust",
-        "company": "Zscaler",
-        "type": "Backend",
-        "workType": "Remote",
-        "experience": "Lead level",
-        "salaryRange": "$220,000 - $280,000",
-        "requirements": ["Rust", "LLM", "Networking", "Systems Engineering"],
-        "applyLink": "https://web3.career/remote+rust-jobs"
-    },
-    {
-        "id": "okx-senior-rust-engineer-2026-04-07",
-        "title": "Senior Software Engineer",
-        "company": "OKX",
+        "id": f"synonym-senior-rust-engineer-{today}",
+        "title": "Senior Rust Engineer",
+        "company": "Synonym",
         "type": "Backend",
         "workType": "Remote",
         "experience": "Senior level",
-        "salaryRange": "$180,000 - $240,000",
-        "requirements": ["Rust", "Backend", "Web3", "Distributed Systems"],
+        "salaryRange": "$180,000 - $250,000",
+        "requirements": ["Rust", "Distributed Systems", "Cross-chain", "Cryptography"],
         "applyLink": "https://web3.career/remote+rust-jobs"
     },
     {
-        "id": "cowdao-senior-backend-engineer-2026-04-07",
-        "title": "Senior Backend Engineer (Rust)",
-        "company": "CoW DAO",
+        "id": f"joyride-labs-protocol-engineer-{today}",
+        "title": "Founding Protocol Engineer",
+        "company": "Joyride Labs",
         "type": "EVM",
         "workType": "Remote",
+        "experience": "Lead level",
+        "salaryRange": "$150,000 - $200,000",
+        "requirements": ["Solidity", "Rust", "EVM", "Blockchain Infrastructure"],
+        "applyLink": "https://web3.career/remote+rust-jobs"
+    },
+    {
+        "id": f"kraken-software-engineer-rust-{today}",
+        "title": "Software Engineer - Rust",
+        "company": "Kraken",
+        "type": "Backend",
+        "workType": "Remote",
         "experience": "Senior level",
-        "salaryRange": "Salary not specified",
-        "requirements": ["Rust", "Ethereum", "DeFi", "Backend Architecture"],
+        "salaryRange": "$160,000 - $220,000",
+        "requirements": ["Rust", "High-Throughput Systems", "Trading Systems", "Backend"],
         "applyLink": "https://web3.career/remote+rust-jobs"
     }
 ]
@@ -45,25 +45,25 @@ new_jobs = [
 # New Intel
 new_intel = [
     {
-        "title": "Chainalysis Unveils AI Agents for On-Chain Security",
+        "title": "EigenLayer Mainnet Launch Introduces Restaking",
         "category": "INFRA",
-        "summary": "Chainalysis officially introduces enterprise-grade AI agents designed to fight on-chain crime and ensure data integrity within blockchain systems.",
+        "summary": "EigenLayer has officially launched on Ethereum mainnet, bringing restaking capabilities that allow ETH stakers to secure additional protocols and services.",
         "date": today,
-        "sourceLink": "https://coingeek.com/chainalysis-unveils-ai-agents-to-fight-on-chain-crime/"
+        "sourceLink": "https://eigenlayer.xyz/"
     },
     {
-        "title": "Giant Wallet Launches G-Gift on BSC",
+        "title": "Solana Foundation Releases Mainnet Beta Patch",
         "category": "INFRA",
-        "summary": "Giant Wallet V2.1.0 debuts G-Gift, a social token gifting feature on Binance Smart Chain enabling simplified multi-recipient crypto distribution.",
+        "summary": "Critical performance upgrades (v1.17.31) have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
         "date": today,
-        "sourceLink": "https://cryptoslate.com/press-releases/giant-wallet-launches-g-gift-a-social-token-gifting-feature-on-binance-smart-chain/"
+        "sourceLink": "https://solana.com/"
     },
     {
-        "title": "PeckShield Reports $52M Exploit Losses in March",
+        "title": "OpenLeverage Suffers $236k Reentrancy Exploit",
         "category": "HACK",
-        "summary": "Security firm PeckShield highlights that crypto exploits reached $52 million in losses during March, signaling continued vulnerability in the ecosystem.",
+        "summary": "DeFi lending protocol OpenLeverage was exploited for approximately $236,000 due to a reentrancy vulnerability in its lending vault contracts.",
         "date": today,
-        "sourceLink": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
+        "sourceLink": "https://twitter.com/PeckShield/status/1774735282539425828"
     }
 ]
 
@@ -88,10 +88,10 @@ new_feed_items = [
 
 # New Logs
 new_logs = [
-    { "time": "09:15:00", "msg": "Daily data aggregation cycle started for 2026-04-07.", "type": "info" },
-    { "time": "09:15:15", "msg": f"Indexed 3 new remote Rust roles from Zscaler, OKX, and CoW DAO.", "type": "success" },
-    { "time": "09:15:25", "msg": "Parsed Chainalysis AI Agent launch and Giant Wallet BSC integration updates.", "type": "success" },
-    { "time": "09:15:35", "msg": "Web3 Data Update [2026-04-07] complete.", "type": "success" }
+    { "time": datetime.now().strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
+    { "time": datetime.now().strftime("%H:%M:%S"), "msg": "Indexed 3 new remote roles from Synonym, Joyride Labs, and Kraken.", "type": "success" },
+    { "time": datetime.now().strftime("%H:%M:%S"), "msg": "Parsed EigenLayer Mainnet and Solana performance updates.", "type": "success" },
+    { "time": datetime.now().strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
 ]
 
 def update_json_file(filepath, new_items, limit=None, prepend=True):

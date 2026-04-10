@@ -1,5 +1,26 @@
 [
   {
+    "title": "EigenLayer Mainnet Launch Introduces Restaking",
+    "category": "INFRA",
+    "summary": "EigenLayer has officially launched on Ethereum mainnet, bringing restaking capabilities that allow ETH stakers to secure additional protocols and services.",
+    "date": "2026-04-10",
+    "sourceLink": "https://eigenlayer.xyz/"
+  },
+  {
+    "title": "Solana Foundation Releases Mainnet Beta Patch",
+    "category": "INFRA",
+    "summary": "Critical performance upgrades (v1.17.31) have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
+    "date": "2026-04-10",
+    "sourceLink": "https://solana.com/"
+  },
+  {
+    "title": "OpenLeverage Suffers $236k Reentrancy Exploit",
+    "category": "HACK",
+    "summary": "DeFi lending protocol OpenLeverage was exploited for approximately $236,000 due to a reentrancy vulnerability in its lending vault contracts.",
+    "date": "2026-04-10",
+    "sourceLink": "https://twitter.com/PeckShield/status/1774735282539425828"
+  },
+  {
     "title": "Chainalysis Unveils AI Agents for On-Chain Security",
     "category": "INFRA",
     "summary": "Chainalysis officially introduces enterprise-grade AI agents designed to fight on-chain crime and ensure data integrity within blockchain systems.",

@@ -596,6 +596,80 @@ const SkillOfTheDay = ({ darkMode }) => {
   );
 };
 
+const BugBountySpotlight = ({ darkMode }) => {
+  const bounties = [
+    {
+      protocol: 'Synthetix',
+      reward: '$1,000,000',
+      type: 'Smart Contract / Critical',
+      link: 'https://immunefi.com/bounty/synthetix/'
+    },
+    {
+      protocol: 'Aave',
+      reward: '$500,000',
+      type: 'Smart Contract / High',
+      link: 'https://immunefi.com/bounty/aave/'
+    },
+    {
+      protocol: 'Compound',
+      reward: '$250,000',
+      type: 'Blockchain / Critical',
+      link: 'https://immunefi.com/bounty/compound/'
+    }
+  ];
+
+  const [bounty, setBounty] = useState(bounties[0]);
+
+  useEffect(() => {
+    setBounty(bounties[Math.floor(Math.random() * bounties.length)]);
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 bg-accent-blue/5' : 'bg-gradient-to-br from-red-50 to-orange-50 border-red-200 rounded-xl'} p-8 border relative overflow-hidden group`}>
+      {darkMode && <div className="scanline" />}
+      <div className="flex items-center justify-between mb-4 relative z-10">
+        <div className="flex items-center gap-3">
+          <ShieldAlert className={darkMode ? 'text-accent-blue' : 'text-red-600'} size={24} />
+          <h3 className={`text-sm font-mono uppercase tracking-[0.2em] ${darkMode ? 'text-white' : 'text-gray-900'}`}>Bug Bounty Spotlight</h3>
+        </div>
+        <div className={`px-2 py-0.5 rounded-[2px] border ${darkMode ? 'bg-red-500/10 border-red-500/30 text-red-500' : 'bg-red-100 border-red-200 text-red-700'} text-[10px] font-mono font-bold animate-pulse`}>
+          HIGH_YIELD_ALERT
+        </div>
+      </div>
+
+      <div className="space-y-4 relative z-10">
+        <div>
+          <p className={`text-xs font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Target Protocol:</p>
+          <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{bounty.protocol}</p>
+        </div>
+        <div className="flex gap-4">
+          <div>
+            <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Max Reward</p>
+            <p className={`text-xl font-bold ${darkMode ? 'text-accent-blue' : 'text-green-600'}`}>{bounty.reward}</p>
+          </div>
+          <div>
+            <p className={`text-[10px] font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Type</p>
+            <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{bounty.type}</p>
+          </div>
+        </div>
+        <p className={`text-xs leading-relaxed ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+          Apply your <span className="font-bold underline">Security Auditing</span> skills to identify critical vulnerabilities and secure the ecosystem.
+        </p>
+        <a
+          href={bounty.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest px-4 py-2 transition-all ${
+            darkMode ? 'bg-red-500 text-white font-bold hover:bg-red-600' : 'bg-red-600 text-white rounded-lg hover:bg-red-700'
+          }`}
+        >
+          View Bounty <ExternalLink size={14} />
+        </a>
+      </div>
+    </div>
+  );
+};
+
 const DailyMission = ({ darkMode, displaySkills }) => {
   const [mission, setMission] = useState<{ name: string; category: string } | null>(null);
 
@@ -999,6 +1073,13 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SkillOfTheDay darkMode={darkMode} />
+        </div>
+      )}
+
+      {!viewMode && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
+          <BugBountySpotlight darkMode={darkMode} />
         </div>
       )}
 

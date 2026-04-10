@@ -1,5 +1,53 @@
 [
   {
+    "id": "synonym-senior-rust-engineer-2026-04-10",
+    "title": "Senior Rust Engineer",
+    "company": "Synonym",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Cross-chain",
+      "Cryptography"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "joyride-labs-protocol-engineer-2026-04-10",
+    "title": "Founding Protocol Engineer",
+    "company": "Joyride Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "EVM",
+      "Blockchain Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "kraken-software-engineer-rust-2026-04-10",
+    "title": "Software Engineer - Rust",
+    "company": "Kraken",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "High-Throughput Systems",
+      "Trading Systems",
+      "Backend"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "zscaler-principal-rust-engineer-2026-04-07",
     "title": "Principal Software Development Engineer - Rust",
     "company": "Zscaler",

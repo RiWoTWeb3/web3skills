@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-10",
+    "type": "job",
+    "title": "Senior Rust Engineer at Synonym",
+    "description": "Join Synonym as a Senior Rust Engineer. Requirements: Rust, Distributed Systems, Cross-chain. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-10",
+    "type": "job",
+    "title": "Founding Protocol Engineer at Joyride Labs",
+    "description": "Join Joyride Labs as a Founding Protocol Engineer. Requirements: Solidity, Rust, EVM. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-10",
+    "type": "job",
+    "title": "Software Engineer - Rust at Kraken",
+    "description": "Join Kraken as a Software Engineer - Rust. Requirements: Rust, High-Throughput Systems, Trading Systems. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-10",
+    "type": "news",
+    "title": "EigenLayer Mainnet Launch Introduces Restaking",
+    "description": "EigenLayer has officially launched on Ethereum mainnet, bringing restaking capabilities that allow ETH stakers to secure additional protocols and services.",
+    "link": "https://eigenlayer.xyz/"
+  },
+  {
+    "date": "2026-04-10",
+    "type": "news",
+    "title": "Solana Foundation Releases Mainnet Beta Patch",
+    "description": "Critical performance upgrades (v1.17.31) have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
+    "link": "https://solana.com/"
+  },
+  {
+    "date": "2026-04-10",
+    "type": "hack",
+    "title": "OpenLeverage Suffers $236k Reentrancy Exploit",
+    "description": "DeFi lending protocol OpenLeverage was exploited for approximately $236,000 due to a reentrancy vulnerability in its lending vault contracts.",
+    "link": "https://twitter.com/PeckShield/status/1774735282539425828"
+  },
+  {
     "date": "2026-04-07",
     "type": "job",
     "title": "Principal Software Development Engineer - Rust at Zscaler",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Cross-Chain Protocol Bug Bounty: $800k Payout",
     "description": "A critical vulnerability in a major cross-chain messaging protocol was safely disclosed by a researcher, earning an $800,000 reward.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-21",
-    "type": "job",
-    "title": "Protocol Engineer at Fun",
-    "description": "Develop core protocol infrastructure for a leading DeFi project. Experience with Rust and distributed systems required. Remote.",
-    "link": "https://web3.career/protocol-engineer-fun/147443"
-  },
-  {
-    "date": "2026-03-21",
-    "type": "job",
-    "title": "IT / Client Platform Engineer at Crossmint",
-    "description": "Optimize and scale client-facing infrastructure for Web3 onboarding. Expertise in AWS and system architecture required. Remote.",
-    "link": "https://web3.career/it-client-platform-engineer-spain-crossmint/147444"
-  },
-  {
-    "date": "2026-03-21",
-    "type": "job",
-    "title": "Senior Software Engineer, CLI at Stellar Development Foundation",
-    "description": "Lead the development of the Stellar CLI and developer tooling. Strong Rust background and focus on DX needed. Remote.",
-    "link": "https://cryptojobslist.com/stellar-development-foundation/senior-software-engineer-cli"
-  },
-  {
-    "date": "2026-03-21",
-    "type": "news",
-    "title": "Ethereum Pectra Upgrade Devnet-6 Launches",
-    "description": "The sixth devnet for the Ethereum Pectra upgrade is now live, introducing final refinements to EIP-7702 and preliminary peer-das testing.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-21",
-    "type": "news",
-    "title": "Solana Firedancer Stable Release Mainnet Performance",
-    "description": "The Firedancer validator client stable release achieves sustained 800k TPS benchmarks on mainnet-beta, increasing network redundancy.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-21",
-    "type": "hack",
-    "title": "System Example: Multi-Chain Bridge Bug Bounty - $1.2M",
-    "description": "A critical logic flaw in a major cross-chain bridge's message verification system was identified, resulting in a $1.2M bounty payout.",
     "link": "https://immunefi.com/blog/"
   }
 ]
