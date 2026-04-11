@@ -1,5 +1,53 @@
 [
   {
+    "id": "anza-senior-solana-engineer-2026-04-11",
+    "title": "Senior Solana Engineer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Agave Client",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "spearbit-security-researcher-2026-04-11",
+    "title": "Smart Contract Security Researcher",
+    "company": "Spearbit",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Security Auditing",
+      "Foundry"
+    ],
+    "applyLink": "https://spearbit.com/apply"
+  },
+  {
+    "id": "monad-labs-backend-engineer-2026-04-11",
+    "title": "Backend Engineer",
+    "company": "Monad Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$200,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Consensus Mechanisms",
+      "Distributed Systems",
+      "Parallel EVM"
+    ],
+    "applyLink": "https://monad.xyz/jobs"
+  },
+  {
     "id": "synonym-senior-rust-engineer-2026-04-10",
     "title": "Senior Rust Engineer",
     "company": "Synonym",
