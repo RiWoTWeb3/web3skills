@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Devnet Phase 1 Live",
+    "category": "INFRA",
+    "summary": "Monad has launched Phase 1 of its public devnet, allowing developers to test parallel EVM execution in a live environment.",
+    "date": "2026-04-11",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Ethereum L2 TVL Reaches New All-Time High",
+    "category": "INFRA",
+    "summary": "Total Value Locked across Ethereum Layer 2 solutions has surpassed $50 billion, signaling strong adoption of scaling solutions.",
+    "date": "2026-04-11",
+    "sourceLink": "https://l2beat.com"
+  },
+  {
+    "title": "Berry Protocol Oracle Exploit: $2.1M Lost",
+    "category": "HACK",
+    "summary": "A price oracle manipulation attack on Berry Protocol resulted in the loss of $2.1 million in stablecoins.",
+    "date": "2026-04-11",
+    "sourceLink": "https://rekt.news"
+  },
+  {
     "title": "EigenLayer Mainnet Launch Introduces Restaking",
     "category": "INFRA",
     "summary": "EigenLayer has officially launched on Ethereum mainnet, bringing restaking capabilities that allow ETH stakers to secure additional protocols and services.",

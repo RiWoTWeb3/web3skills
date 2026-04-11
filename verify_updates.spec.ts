@@ -17,7 +17,7 @@ test('Verify HomePage and Admin Panel Updates', async ({ page }) => {
   }
 
   // Verify Freshness Indicator on HomePage
-  const freshnessIndicator = page.locator('text=SYNC_OK // 2026-04-10');
+  const freshnessIndicator = page.locator('text=SYNC_OK // 2026-04-11');
   await expect(freshnessIndicator).toBeVisible();
   await expect(page.locator('text=SYNC_HEARTBEAT')).toBeVisible();
   await page.screenshot({ path: '/home/jules/verification/homepage_freshness.png' });
