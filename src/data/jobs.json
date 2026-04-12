@@ -1,5 +1,53 @@
 [
   {
+    "id": "travoom-senior-rust-backend-2026-04-12",
+    "title": "Senior Rust Backend Engineer",
+    "company": "Travoom",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Backend Architecture",
+      "Messaging Systems"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "id": "certik-blockchain-security-expert-2026-04-12",
+    "title": "Blockchain Security Expert",
+    "company": "CertiK",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contract Auditing",
+      "Security Assessments",
+      "Web3"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "id": "fireblocks-mobile-engineer-2026-04-12",
+    "title": "Mobile Engineer",
+    "company": "Fireblocks",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$177,000 - $230,000",
+    "requirements": [
+      "Mobile Development",
+      "Wallet Infrastructure",
+      "Security",
+      "TypeScript"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
     "id": "synonym-senior-rust-engineer-2026-04-10",
     "title": "Senior Rust Engineer",
     "company": "Synonym",
