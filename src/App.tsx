@@ -1526,6 +1526,7 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
 const JobsView = ({ darkMode, displaySkills }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
+  const [salaryFilter, setSalaryFilter] = useState(0);
 
   const getJobAlignment = (requirements: string[]) => {
     const matched = requirements.filter(req => displaySkills[req]);
@@ -1544,7 +1545,11 @@ const JobsView = ({ darkMode, displaySkills }) => {
 
     const matchesCategory = categoryFilter === 'All' || job.type === categoryFilter;
 
-    return matchesSearch && matchesCategory;
+    const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/);
+    const minSalary = salaryMatch ? parseInt(salaryMatch[1].replace(/,/g, '')) : 0;
+    const matchesSalary = minSalary >= salaryFilter;
+
+    return matchesSearch && matchesCategory && matchesSalary;
   });
 
   return (
@@ -1599,6 +1604,20 @@ const JobsView = ({ darkMode, displaySkills }) => {
               </button>
             ))}
           </div>
+        </div>
+
+        <div className="mt-4 flex items-center gap-4">
+          <label className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Min Salary:</label>
+          <select
+            value={salaryFilter}
+            onChange={(e) => setSalaryFilter(parseInt(e.target.value))}
+            className={`${darkMode ? 'bg-[#0f172a] border-white/10 text-white rounded-[4px]' : 'bg-white border-gray-300 text-gray-900 rounded-lg'} text-xs font-mono px-3 py-2 focus:ring-2 focus:ring-accent-blue outline-none`}
+          >
+            <option value={0}>Any Range</option>
+            <option value={100000}>$100,000+</option>
+            <option value={150000}>$150,000+</option>
+            <option value={200000}>$200,000+</option>
+          </select>
         </div>
       </div>
 
@@ -1790,6 +1809,7 @@ const AdminPanelView = ({ darkMode }) => {
 
   const [keys, setKeys] = useState([]);
   const [auditLogs, setAuditLogs] = useState([]);
+  const [findings, setFindings] = useState([]);
   const [logs, setLogs] = useState([]);
 
   const coverage = useMemo(() => {
@@ -1818,16 +1838,18 @@ const AdminPanelView = ({ darkMode }) => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const [statsRes, keysRes, auditsRes, logsRes] = await Promise.all([
+        const [statsRes, keysRes, auditsRes, findingsRes, logsRes] = await Promise.all([
           fetch('/api/stats'),
           fetch('/api/keys'),
           fetch('/api/audits'),
+          fetch('/api/findings'),
           fetch('/api/logs')
         ]);
 
         if (statsRes.ok) setStats(await statsRes.json());
         if (keysRes.ok) setKeys(await keysRes.json());
         if (auditsRes.ok) setAuditLogs(await auditsRes.json());
+        if (findingsRes.ok) setFindings(await findingsRes.json());
         if (logsRes.ok) setLogs(await logsRes.json());
       } catch (error) {
         console.error('Failed to fetch admin data:', error);
@@ -1877,6 +1899,31 @@ const AdminPanelView = ({ darkMode }) => {
           </div>
         ))}
       </div>
+
+      {findings.length > 0 && (
+        <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 bg-accent-blue/5' : 'bg-red-50 border-red-200'} p-6 border mb-8 rounded-[4px]`}>
+          <div className="flex items-center gap-3 mb-6">
+            <ShieldAlert className={darkMode ? 'text-accent-blue' : 'text-red-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Recent Critical Findings</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {findings.map((finding: any) => (
+              <div key={finding.id} className={`${darkMode ? 'bg-black/40 border-white/5' : 'bg-white border-gray-100'} p-4 border rounded-[2px]`}>
+                <div className="flex justify-between items-start mb-2">
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-[2px] ${
+                    finding.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
+                  }`}>
+                    {finding.severity}
+                  </span>
+                  <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{finding.vulnerability_type}</span>
+                </div>
+                <p className={`text-xs font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{finding.file_path}</p>
+                <p className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-gray-600'} line-clamp-2`}>{finding.ai_reasoning}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* API Key Health Map */}
@@ -2728,6 +2775,45 @@ const Footer = ({ darkMode }) => (
 
 // --- Main App Component ---
 
+const SystemStatusBanner = ({ darkMode }) => {
+  const [block, setBlock] = useState(19456782);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlock(prev => prev + Math.floor(Math.random() * 2));
+    }, 12000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className={`w-full py-1.5 px-4 flex items-center justify-between border-b ${
+      darkMode
+        ? 'bg-accent-blue/5 border-accent-blue/20 text-accent-blue'
+        : 'bg-blue-600 text-white border-blue-700'
+    }`}>
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Activity size={12} className="animate-pulse" />
+          <span className="text-[10px] font-mono font-bold tracking-[0.2em]">AUTONOMOUS_AUDITOR: ACTIVE_SCANNING</span>
+        </div>
+        <div className={`hidden md:block h-3 w-px ${darkMode ? 'bg-accent-blue/20' : 'bg-white/20'}`} />
+        <div className="hidden md:flex items-center gap-2">
+          <Terminal size={12} />
+          <span className="text-[10px] font-mono opacity-80 uppercase">Primary_Node: 0x8a7...f2e</span>
+        </div>
+      </div>
+      <div className="flex items-center gap-4 text-[10px] font-mono">
+        <span className="opacity-80">BLOCK: {block}</span>
+        <span className="hidden sm:inline opacity-80">TIME: {new Date().toLocaleTimeString()}</span>
+        <div className="flex items-center gap-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
+          <span className="font-bold">STATUS_OK</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -2966,6 +3052,7 @@ const App = () => {
       <div className={`absolute inset-0 ${darkMode ? 'grid-bg-industrial' : 'grid-pattern-light'} opacity-[0.04]`}></div>
       
       <div className="relative z-10">
+        <SystemStatusBanner darkMode={darkMode} />
         <Navigation
           theme={theme}
           setTheme={setTheme}

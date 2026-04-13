@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Testnet Milestone: 1 Million Unique Wallets Surpassed",
+    "category": "INFRA",
+    "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
+    "date": "2026-04-12",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Ethereum Pectra Devnet-11: Testing EIP-7702 refinements",
+    "category": "INFRA",
+    "summary": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
+    "date": "2026-04-12",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
+    "category": "HACK",
+    "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+    "date": "2026-04-12",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "EigenLayer Mainnet Launch Introduces Restaking",
     "category": "INFRA",
     "summary": "EigenLayer has officially launched on Ethereum mainnet, bringing restaking capabilities that allow ETH stakers to secure additional protocols and services.",

@@ -1,5 +1,5 @@
 import { serve } from '@hono/node-server';
-import { Hono } from 'hono';
+import { Hono, Context } from 'hono';
 import { prisma } from '../lib/db';
 import fs from 'fs/promises';
 import path from 'path';
@@ -7,10 +7,10 @@ import path from 'path';
 const app = new Hono();
 
 // Health check
-app.get('/', (c: any) => c.text('RiWoT Backend Server - Port 3001'));
+app.get('/', (c: Context) => c.text('RiWoT Backend Server - Port 3001'));
 
 // API Stats endpoint
-app.get('/api/stats', async (c: any) => {
+app.get('/api/stats', async (c: Context) => {
   try {
     const keysCount = await prisma.keyPool.count({ where: { status: 'Active' } });
     const auditsCount = await prisma.auditJobs.count();
@@ -29,7 +29,7 @@ app.get('/api/stats', async (c: any) => {
 });
 
 // API Keys endpoint
-app.get('/api/keys', async (c: any) => {
+app.get('/api/keys', async (c: Context) => {
   try {
     const keys = await prisma.keyPool.findMany();
     // Ensure limit is returned for UI percentage calculation
@@ -44,7 +44,7 @@ app.get('/api/keys', async (c: any) => {
 });
 
 // API Audits endpoint
-app.get('/api/audits', async (c: any) => {
+app.get('/api/audits', async (c: Context) => {
   try {
     const audits = await prisma.auditJobs.findMany({
       take: 10,
@@ -70,8 +70,21 @@ app.get('/api/audits', async (c: any) => {
   }
 });
 
+// API Findings endpoint
+app.get('/api/findings', async (c: Context) => {
+  try {
+    const findings = await prisma.vulnerabilityEvidence.findMany({
+      take: 6,
+      orderBy: { createdAt: 'desc' }
+    });
+    return c.json(findings);
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
 // System Logs endpoint
-app.get('/api/logs', async (c: any) => {
+app.get('/api/logs', async (c: Context) => {
   try {
     const logsPath = path.join(process.cwd(), 'src/data/system_logs.json');
     const logsData = await fs.readFile(logsPath, 'utf-8');
