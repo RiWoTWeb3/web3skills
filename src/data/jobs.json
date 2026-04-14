@@ -1,5 +1,53 @@
 [
   {
+    "id": "odos-evm-engineer-2026-04-14",
+    "title": "Smart Contracts Engineer EVM",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "EVM Mechanics",
+      "Smart Contract Development"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "odos-solana-engineer-2026-04-14",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana Program Development",
+      "Anchor Framework",
+      "Solana Fundamentals"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "bitgo-defi-engineer-2026-04-14",
+    "title": "Software Engineer, DeFi Team",
+    "company": "BitGo",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$130,000 - $185,000",
+    "requirements": [
+      "Go",
+      "Distributed Systems",
+      "DeFi Understanding",
+      "Backend & API"
+    ],
+    "applyLink": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
     "id": "travoom-senior-rust-backend-2026-04-12",
     "title": "Senior Rust Backend Engineer",
     "company": "Travoom",
