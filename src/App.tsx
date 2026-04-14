@@ -1537,6 +1537,17 @@ const JobsView = ({ darkMode, displaySkills }) => {
     return requirements.filter(req => !displaySkills[req]);
   };
 
+  const getBestCareerFit = (requirements: string[]) => {
+    let bestMatch = { name: 'General Web3', count: 0 };
+    Object.entries(careerPaths).forEach(([name, path]) => {
+      const matchCount = requirements.filter(req => path.requiredSkills.includes(req)).length;
+      if (matchCount > bestMatch.count) {
+        bestMatch = { name, count: matchCount };
+      }
+    });
+    return bestMatch.name;
+  };
+
   const filteredJobs = jobsData.filter(job => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -1625,6 +1636,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
         {filteredJobs.length > 0 ? filteredJobs.map(job => {
           const alignment = getJobAlignment(job.requirements);
           const missingSkills = getMissingSkills(job.requirements);
+          const bestFit = getBestCareerFit(job.requirements);
 
           return (
             <div
@@ -1636,11 +1648,23 @@ const JobsView = ({ darkMode, displaySkills }) => {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6">
                   <div className="space-y-3">
                     <h3 className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{job.title}</h3>
-                    <span className={`inline-flex px-3 py-1 text-[10px] font-mono border ${
-                      darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 border-blue-200 rounded-full'
-                    }`}>
-                      {job.isSystemExample ? 'SYSTEM EXAMPLE' : 'AVAILABLE ROLE'}
-                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      <span className={`inline-flex px-3 py-1 text-[10px] font-mono border ${
+                        darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-blue-100 text-blue-700 border-blue-200 rounded-full'
+                      }`}>
+                        {job.isSystemExample ? 'SYSTEM EXAMPLE' : 'AVAILABLE ROLE'}
+                      </span>
+                      {bestFit !== 'General Web3' && (
+                        <Link
+                          to={`/career/${encodeURIComponent(bestFit)}`}
+                          className={`inline-flex px-3 py-1 text-[10px] font-mono border ${
+                            darkMode ? 'bg-purple-500/10 text-purple-400 border-purple-500/30 rounded-[2px] hover:bg-purple-500/20' : 'bg-purple-50 text-purple-700 border-purple-200 rounded-full hover:bg-purple-100'
+                          } transition-colors`}
+                        >
+                          BEST FIT: {bestFit.toUpperCase()}
+                        </Link>
+                      )}
+                    </div>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3 md:justify-end md:text-right">
@@ -1835,6 +1859,16 @@ const AdminPanelView = ({ darkMode }) => {
     };
   }, []);
 
+  const marketData = useMemo(() => {
+    const counts = { EVM: 0, SVM: 0, Backend: 0 };
+    jobsData.forEach(job => {
+      if (counts.hasOwnProperty(job.type)) {
+        counts[job.type as keyof typeof counts]++;
+      }
+    });
+    return Object.entries(counts).map(([name, value]) => ({ name, value }));
+  }, []);
+
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
@@ -1881,6 +1915,40 @@ const AdminPanelView = ({ darkMode }) => {
       </div>
 
       <DataRefreshStatus darkMode={darkMode} />
+
+      {/* Market Distribution Chart */}
+      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+        <div className="flex items-center gap-3 mb-6">
+          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+        </div>
+        <div className="h-64 w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={marketData} layout="vertical">
+              <XAxis type="number" hide />
+              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+              <Tooltip
+                cursor={{ fill: 'transparent' }}
+                contentStyle={{
+                  backgroundColor: darkMode ? '#0f172a' : '#fff',
+                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                  fontSize: '10px',
+                  fontFamily: 'monospace'
+                }}
+              />
+              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                {marketData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                    fillOpacity={0.8}
+                  />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
 
       {/* Top Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

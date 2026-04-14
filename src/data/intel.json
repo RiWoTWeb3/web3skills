@@ -1,5 +1,26 @@
 [
   {
+    "title": "Deutsche B\u00f6rse Group Invests $200 Million in Kraken Parent",
+    "category": "INFRA",
+    "summary": "Deutsche B\u00f6rse has acquired a 1.5% stake in Kraken's parent company, Payward, for $200 million, deepening a strategic partnership for institutional crypto access.",
+    "date": "2026-04-14",
+    "sourceLink": "https://cointelegraph.com/news/deutsche-borse-invest-200m-kraken-exchange"
+  },
+  {
+    "title": "Hacken Q1 2026 Security Report: $482M Lost to Web3 Exploits",
+    "category": "INFRA",
+    "summary": "Hacken's latest report reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
+    "date": "2026-04-14",
+    "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
+  },
+  {
+    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+    "category": "HACK",
+    "summary": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
+    "date": "2026-04-14",
+    "sourceLink": "https://rekt.news/drift-protocol-rekt"
+  },
+  {
     "title": "Monad Testnet Milestone: 1 Million Unique Wallets Surpassed",
     "category": "INFRA",
     "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",

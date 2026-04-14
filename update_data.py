@@ -26,67 +26,65 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
 def main():
     # Today's Date
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = "2026-04-14"
 
-    # This data would typically be fetched from an API or scraper
-    # For this automation task, we use the identified data for today
     new_jobs = [
         {
-            "id": f"travoom-senior-rust-backend-{today}",
-            "title": "Senior Rust Backend Engineer",
-            "company": "Travoom",
-            "type": "Backend",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$160,000 - $220,000",
-            "requirements": ["Rust", "Distributed Systems", "Backend Architecture", "Messaging Systems"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-        },
-        {
-            "id": f"certik-blockchain-security-expert-{today}",
-            "title": "Blockchain Security Expert",
-            "company": "CertiK",
+            "id": f"odos-evm-engineer-{today}",
+            "title": "Smart Contracts Engineer EVM",
+            "company": "Odos",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$120,000 - $180,000",
-            "requirements": ["Solidity", "Smart Contract Auditing", "Security Assessments", "Web3"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+            "salaryRange": "$140,000 - $190,000",
+            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
         },
         {
-            "id": f"fireblocks-mobile-engineer-{today}",
-            "title": "Mobile Engineer",
-            "company": "Fireblocks",
-            "type": "Backend",
+            "id": f"odos-solana-engineer-{today}",
+            "title": "Solana Smart Contracts Engineer",
+            "company": "Odos",
+            "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$177,000 - $230,000",
-            "requirements": ["Mobile Development", "Wallet Infrastructure", "Security", "TypeScript"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+            "salaryRange": "$140,000 - $190,000",
+            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+        },
+        {
+            "id": f"bitgo-defi-engineer-{today}",
+            "title": "Software Engineer, DeFi Team",
+            "company": "BitGo",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$130,000 - $185,000",
+            "requirements": ["Go", "Distributed Systems", "DeFi Understanding", "Backend & API"],
+            "applyLink": "https://huntd.tech/jobs/web3-solana"
         }
     ]
 
     new_intel = [
         {
-            "title": "Monad Testnet Milestone: 1 Million Unique Wallets Surpassed",
+            "title": "Deutsche Börse Group Invests $200 Million in Kraken Parent",
             "category": "INFRA",
-            "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
+            "summary": "Deutsche Börse has acquired a 1.5% stake in Kraken's parent company, Payward, for $200 million, deepening a strategic partnership for institutional crypto access.",
             "date": today,
-            "sourceLink": "https://monad.xyz/blog"
+            "sourceLink": "https://cointelegraph.com/news/deutsche-borse-invest-200m-kraken-exchange"
         },
         {
-            "title": "Ethereum Pectra Devnet-11: Testing EIP-7702 refinements",
+            "title": "Hacken Q1 2026 Security Report: $482M Lost to Web3 Exploits",
             "category": "INFRA",
-            "summary": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
+            "summary": "Hacken's latest report reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
             "date": today,
-            "sourceLink": "https://ethereum-magicians.org/"
+            "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
+            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
             "category": "HACK",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "summary": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://rekt.news/drift-protocol-rekt"
         }
     ]
 
