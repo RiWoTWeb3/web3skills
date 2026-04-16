@@ -517,15 +517,31 @@ const careerPaths = {
 
 // --- Helper Functions ---
 
+const skillSynonyms: Record<string, string[]> = {
+  'Solidity': ['EVM Mechanics', 'Smart Contract Development', 'Production EVM Smart Contracts'],
+  'Rust': ['Solana Program Development', 'Anchor Framework', 'Distributed Systems'],
+  'EVM Mechanics': ['Solidity', 'Foundry', 'Hardhat'],
+  'Solana Fundamentals': ['Rust', 'Anchor Framework', 'PDAs'],
+  'TypeScript': ['JavaScript', 'React', 'Next.js'],
+  'Backend & API': ['Distributed Systems', 'Node.js', 'PostgreSQL'],
+  'Smart Contract Auditing': ['Security Best Practices', 'Vulnerability Assessment', 'Slither'],
+};
+
+const hasSkillOrSynonym = (skill: string, userSkills: Record<string, boolean>) => {
+  if (userSkills[skill]) return true;
+  const synonyms = skillSynonyms[skill] || [];
+  return synonyms.some(syn => userSkills[syn]);
+};
+
 const matchRoadmapSkill = (roadmapSkill, userSkills) => {
-  if (userSkills[roadmapSkill]) return true;
+  if (hasSkillOrSynonym(roadmapSkill, userSkills)) return true;
   if (roadmapSkill.endsWith(' Basics')) {
     const baseSkill = roadmapSkill.replace(' Basics', '');
-    if (userSkills[baseSkill]) return true;
+    if (hasSkillOrSynonym(baseSkill, userSkills)) return true;
   }
   if (roadmapSkill.endsWith(' Advanced')) {
     const baseSkill = roadmapSkill.replace(' Advanced', '');
-    if (userSkills[baseSkill]) return true;
+    if (hasSkillOrSynonym(baseSkill, userSkills)) return true;
   }
   return false;
 };
@@ -1529,7 +1545,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
   const [salaryFilter, setSalaryFilter] = useState(0);
 
   const getJobAlignment = (requirements: string[]) => {
-    const matched = requirements.filter(req => displaySkills[req]);
+    const matched = requirements.filter(req => hasSkillOrSynonym(req, displaySkills));
     return (matched.length / requirements.length) * 100;
   };
 
@@ -1707,12 +1723,12 @@ const JobsView = ({ darkMode, displaySkills }) => {
                         <div
                           key={req}
                           className={`flex items-center gap-2 px-3 py-1.5 border ${
-                            displaySkills[req]
+                            hasSkillOrSynonym(req, displaySkills)
                               ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-green-50 text-green-700 border-green-200 rounded')
                               : (darkMode ? 'bg-white/[0.02] text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-100 text-gray-500 border-gray-200 rounded')
                           }`}
                         >
-                          {displaySkills[req] ? <CheckCircle size={12} className="text-accent-blue" /> : <Circle size={12} className="opacity-30" />}
+                          {hasSkillOrSynonym(req, displaySkills) ? <CheckCircle size={12} className="text-accent-blue" /> : <Circle size={12} className="opacity-30" />}
                           <span className="text-[11px] font-mono">{req}</span>
                         </div>
                       ))}
@@ -1822,6 +1838,96 @@ const DataRefreshStatus = ({ darkMode }) => {
   );
 };
 
+const KeyHealthHeatmap = ({ darkMode, keys }) => {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'Active': return 'bg-green-500';
+      case 'Exhausted': return 'bg-red-500';
+      case 'RateLimited': return 'bg-yellow-500';
+      default: return 'bg-slate-700';
+    }
+  };
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <Layout className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Key Health Heatmap</h3>
+        </div>
+        <div className="flex gap-4">
+          {['Healthy', 'Exhausted', 'RateLimited'].map(status => (
+            <div key={status} className="flex items-center gap-2">
+              <div className={`w-2 h-2 rounded-full ${getStatusColor(status === 'Healthy' ? 'Active' : status)}`} />
+              <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{status}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-2">
+        {keys.map((k) => (
+          <div
+            key={k.id}
+            className="group relative"
+          >
+            <div className={`aspect-square rounded-[2px] ${getStatusColor(k.status)} opacity-80 hover:opacity-100 transition-all cursor-crosshair shadow-[inset_0_0_10px_rgba(0,0,0,0.2)]`} />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 p-2 bg-black text-white text-[9px] font-mono rounded border border-white/10 opacity-0 group-hover:opacity-100 pointer-events-none z-20 shadow-xl">
+              <p className="border-b border-white/10 pb-1 mb-1">{k.id}</p>
+              <p>MODEL: {k.model}</p>
+              <p>USAGE: {k.usage}/{k.limit}</p>
+              <p>STATUS: {k.status.toUpperCase()}</p>
+            </div>
+          </div>
+        ))}
+        {Array.from({ length: Math.max(0, 48 - keys.length) }).map((_, i) => (
+          <div key={`empty-${i}`} className={`aspect-square rounded-[2px] ${darkMode ? 'bg-white/5' : 'bg-gray-100'} border border-dashed ${darkMode ? 'border-white/5' : 'border-gray-200'}`} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} border flex flex-col h-[400px]`}>
+      <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
+        <div className="flex items-center gap-2">
+          <Terminal size={14} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+          <h3 className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>System Intelligence Terminal</h3>
+        </div>
+        <div className="flex gap-1.5">
+          <div className="w-2 h-2 rounded-full bg-red-500/50" />
+          <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
+          <div className="w-2 h-2 rounded-full bg-green-500/50" />
+        </div>
+      </div>
+      <div className="flex-1 overflow-y-auto p-4 font-mono text-[10px] space-y-1.5 scrollbar-thin">
+        {logs.map((log, i) => (
+          <div key={i} className="flex gap-3 group">
+            <span className={darkMode ? 'text-slate-600' : 'text-gray-400'}>[{log.time}]</span>
+            <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>riwot@system:~$</span>
+            <span className={`${
+              log.type === 'success' ? 'text-green-500' :
+              log.type === 'warning' ? 'text-yellow-500' :
+              log.type === 'error' ? 'text-red-500' :
+              darkMode ? 'text-accent-blue' : 'text-blue-600'
+            }`}>
+              {log.msg}
+            </span>
+            {log.type === 'success' && <Check size={10} className="text-green-500 opacity-0 group-hover:opacity-100" />}
+          </div>
+        ))}
+        <div className="flex gap-3 animate-pulse">
+          <span className={darkMode ? 'text-slate-600' : 'text-gray-400'}>[{new Date().toLocaleTimeString()}]</span>
+          <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>riwot@system:~$</span>
+          <span className={darkMode ? 'text-accent-blue' : 'text-blue-600'}>awaiting_next_aggregation_cycle...</span>
+          <span className="w-1.5 h-3 bg-accent-blue inline-block" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AdminPanelView = ({ darkMode }) => {
   const [stats, setStats] = useState({
     activeKeys: 0,
@@ -1915,6 +2021,8 @@ const AdminPanelView = ({ darkMode }) => {
       </div>
 
       <DataRefreshStatus darkMode={darkMode} />
+
+      <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
       {/* Market Distribution Chart */}
       <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
@@ -2058,27 +2166,7 @@ const AdminPanelView = ({ darkMode }) => {
             </div>
           </div>
 
-          {/* System Intelligence Logs */}
-          <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
-            <div className="flex items-center gap-3 mb-6">
-              <Activity className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-              <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>System Intelligence Logs</h3>
-            </div>
-            <div className="space-y-2 font-mono text-[10px]">
-              {logs.map((log, i) => (
-                <div key={i} className="flex gap-3 items-center border-b border-white/5 pb-2 last:border-0">
-                  <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>[{log.time}]</span>
-                  <span className={`${
-                    log.type === 'success' ? 'text-green-500' :
-                    log.type === 'warning' ? 'text-yellow-500' :
-                    darkMode ? 'text-accent-blue' : 'text-blue-600'
-                  }`}>
-                    {log.msg}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <SystemIntelligenceTerminal darkMode={darkMode} logs={logs} />
         </div>
       </div>
     </div>
@@ -2426,14 +2514,14 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
                 darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30 rounded-[4px]' : 'bg-gray-50 rounded'
               }`}
             >
-              {displaySkills.hasOwnProperty(skill) && displaySkills[skill] ? (
+              {hasSkillOrSynonym(skill, displaySkills) ? (
                 <CheckCircle className="text-accent-blue flex-shrink-0" size={20} />
               ) : (
                 <Circle className={darkMode ? 'text-white/10' : 'text-gray-300'} size={20} />
               )}
               <span
                 className={`text-sm font-medium ${
-                  displaySkills[skill]
+                  hasSkillOrSynonym(skill, displaySkills)
                     ? (darkMode ? 'text-white' : 'text-gray-900')
                     : (darkMode ? 'text-slate-400' : 'text-gray-600')
                 } ${darkMode ? 'font-mono uppercase text-xs tracking-tight' : ''}`}
@@ -3012,7 +3100,7 @@ const App = () => {
 
     const currentSkills = viewMode ? (sharedSkills || skills) : skills;
     const matchedSkills = career.requiredSkills.filter(
-      skill => currentSkills.hasOwnProperty(skill) && currentSkills[skill]
+      skill => hasSkillOrSynonym(skill, currentSkills)
     );
 
     return {

@@ -1,5 +1,53 @@
 [
   {
+    "id": "odos-evm-engineer-2026-04-16",
+    "title": "Smart Contracts Engineer EVM",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "EVM Mechanics",
+      "Smart Contract Development"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "odos-solana-engineer-2026-04-16",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana Program Development",
+      "Anchor Framework",
+      "Solana Fundamentals"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "paradex-sdet-2026-04-16",
+    "title": "Senior/Principal SDET",
+    "company": "Paradex",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "TypeScript",
+      "Distributed Systems",
+      "Testing",
+      "Web3"
+    ],
+    "applyLink": "https://cryptojobslist.com/remote"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-14",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
