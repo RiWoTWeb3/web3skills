@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-16",
+    "type": "job",
+    "title": "Smart Contracts Engineer EVM at Odos",
+    "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-04-16",
+    "type": "job",
+    "title": "Solana Smart Contracts Engineer at Odos",
+    "description": "Join Odos as a Solana Smart Contracts Engineer. Requirements: Rust, Solana Program Development, Anchor Framework. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-04-16",
+    "type": "job",
+    "title": "Senior/Principal SDET at Paradex",
+    "description": "Join Paradex as a Senior/Principal SDET. Requirements: TypeScript, Distributed Systems, Testing. Remote.",
+    "link": "https://cryptojobslist.com/remote"
+  },
+  {
+    "date": "2026-04-16",
+    "type": "news",
+    "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+    "description": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+    "link": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+  },
+  {
+    "date": "2026-04-16",
+    "type": "news",
+    "title": "Franklin Templeton Expands RWAs on Monad Network",
+    "description": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+    "link": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+  },
+  {
+    "date": "2026-04-16",
+    "type": "hack",
+    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+    "description": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+    "link": "https://rekt.news/drift-protocol-rekt"
+  },
+  {
     "date": "2026-04-14",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
     "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "job",
-    "title": "Senior Blockchain Security Engineer at CertiK",
-    "description": "Lead advanced blockchain investigations and analyze smart contract interactions. Required: Solidity, Rust, and Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "job",
-    "title": "Rust Engineer at Keyrock",
-    "description": "Develop and optimise low-latency options trading systems using Rust. Collaborate with quants and traders. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "job",
-    "title": "Solana Smart Contracts Engineer at Odos",
-    "description": "Build and operate distributed, low-latency services that power Solana DEX Aggregator. Experience with Rust and Solana required. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "news",
-    "title": "Ethereum Post-Quantum Interop Devnet-3 Live",
-    "description": "The third interop devnet for Ethereum's post-quantum roadmap is now live, testing single-layer PQ signature aggregation.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "news",
-    "title": "Monad Devnet V3 Benchmark: 12k TPS",
-    "description": "Monad's internal Devnet V3 achieved a stable 12,000 TPS, showcasing the power of parallelized EVM execution and custom state DB.",
-    "link": "https://monad.xyz/blog"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "hack",
-    "title": "L2 Bridge Security Bounty: $1.5M Payout",
-    "description": "A critical logic vulnerability in a major L2 bridge protocol was identified and safely disclosed, earning a $1.5M white-hat reward.",
     "link": "https://immunefi.com/blog/"
   }
 ]

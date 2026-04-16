@@ -26,7 +26,7 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
 def main():
     # Today's Date
-    today = "2026-04-14"
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     new_jobs = [
         {
@@ -52,37 +52,37 @@ def main():
             "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
         },
         {
-            "id": f"bitgo-defi-engineer-{today}",
-            "title": "Software Engineer, DeFi Team",
-            "company": "BitGo",
+            "id": f"paradex-sdet-{today}",
+            "title": "Senior/Principal SDET",
+            "company": "Paradex",
             "type": "Backend",
             "workType": "Remote",
-            "experience": "Mid-Senior level",
-            "salaryRange": "$130,000 - $185,000",
-            "requirements": ["Go", "Distributed Systems", "DeFi Understanding", "Backend & API"],
-            "applyLink": "https://huntd.tech/jobs/web3-solana"
+            "experience": "Senior level",
+            "salaryRange": "$150,000 - $200,000",
+            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
+            "applyLink": "https://cryptojobslist.com/remote"
         }
     ]
 
     new_intel = [
         {
-            "title": "Deutsche Börse Group Invests $200 Million in Kraken Parent",
+            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
             "category": "INFRA",
-            "summary": "Deutsche Börse has acquired a 1.5% stake in Kraken's parent company, Payward, for $200 million, deepening a strategic partnership for institutional crypto access.",
+            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
             "date": today,
-            "sourceLink": "https://cointelegraph.com/news/deutsche-borse-invest-200m-kraken-exchange"
+            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
         },
         {
-            "title": "Hacken Q1 2026 Security Report: $482M Lost to Web3 Exploits",
+            "title": "Franklin Templeton Expands RWAs on Monad Network",
             "category": "INFRA",
-            "summary": "Hacken's latest report reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
+            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
             "date": today,
-            "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
+            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
         },
         {
             "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
             "category": "HACK",
-            "summary": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
+            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
             "date": today,
             "sourceLink": "https://rekt.news/drift-protocol-rekt"
         }
