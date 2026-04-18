@@ -1,5 +1,26 @@
 [
   {
+    "title": "Circle Unveils USDC Bridge for Native Cross-Chain Transfers",
+    "category": "INFRA",
+    "summary": "Circle has launched the USDC Bridge, a new tool enhancing its Cross-Chain Transfer Protocol (CCTP) to enable native, secure stablecoin movements across supported networks.",
+    "date": "2026-04-18",
+    "sourceLink": "https://cointelegraph.com/news/circle-launches-usdc-bridge-native-cross-chain-transfers"
+  },
+  {
+    "title": "Kraken Parent Company to Acquire CFTC-Regulated Bitnomial",
+    "category": "INFRA",
+    "summary": "Payward, the operator of Kraken, is acquiring Bitnomial to integrate its CFTC-regulated derivatives exchange and clearinghouse licenses into its global ecosystem.",
+    "date": "2026-04-18",
+    "sourceLink": "https://cointelegraph.com/news/kraken-parent-acquire-cftc-bitnomial"
+  },
+  {
+    "title": "Hyperbridge MMR Proof Exploit Results in $2.5M Loss",
+    "category": "HACK",
+    "summary": "A missing bounds check in Hyperbridge's MMR proof verifier allowed attackers to forge proofs, leading to the unauthorized minting of DOT and $2.5 million in total losses.",
+    "date": "2026-04-18",
+    "sourceLink": "https://rekt.news/hyperbridge-rekt"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

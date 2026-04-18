@@ -1,5 +1,53 @@
 [
   {
+    "id": "espresso-security-lead-2026-04-18",
+    "title": "Security Engineering Lead",
+    "company": "Espresso",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Solidity",
+      "Smart Contract Auditing",
+      "EVM Mechanics",
+      "Security Engineering"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "anza-senior-engineer-2026-04-18",
+    "title": "Senior Software Engineer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Systems Engineering",
+      "Blockchain"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "semiotic-rust-engineer-2026-04-18",
+    "title": "Rust Engineer",
+    "company": "Semiotic Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Distributed Protocols",
+      "Cryptography",
+      "Web3"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
