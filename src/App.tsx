@@ -1887,6 +1887,60 @@ const KeyHealthHeatmap = ({ darkMode, keys }) => {
   );
 };
 
+const SystemRoadmap = ({ darkMode }) => {
+  const objectives = [
+    { title: 'Virtual Rate Limiter', status: 'COMPLETED', progress: 100, description: 'Multi-key cycling and quota management strategy.' },
+    { title: 'Agentic Ensemble', status: 'ACTIVE', progress: 75, description: 'Hunter-Advocate-Judge loop for deep vulnerability analysis.' },
+    { title: 'Infinite Audit Engine', status: 'PLANNED', progress: 15, description: 'Continuous autonomous scanning of open-source repositories.' },
+    { title: 'Admin Control Center', status: 'EVOLVING', progress: 65, description: 'Industrial-grade system observability and management.' }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <Target className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>System Evolution Roadmap</h3>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse" />
+          <span className="text-[10px] font-mono text-slate-500">v3.0_PLANNING</span>
+        </div>
+      </div>
+      <div className="space-y-6">
+        {objectives.map((obj, i) => (
+          <div key={i} className="space-y-2">
+            <div className="flex justify-between items-end">
+              <div>
+                <p className={`text-xs font-bold ${darkMode ? 'text-white font-mono' : 'text-gray-900'}`}>{obj.title}</p>
+                <p className={`text-[10px] ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{obj.description}</p>
+              </div>
+              <span className={`text-[9px] font-mono px-2 py-0.5 rounded-[2px] ${
+                obj.status === 'COMPLETED' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
+                obj.status === 'ACTIVE' ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/20' :
+                obj.status === 'EVOLVING' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
+                'bg-white/5 text-slate-500 border border-white/10'
+              }`}>
+                {obj.status}
+              </span>
+            </div>
+            <div className={`w-full h-1 ${darkMode ? 'bg-white/5' : 'bg-gray-100'} rounded-full overflow-hidden`}>
+              <div
+                className={`h-full ${
+                  obj.status === 'COMPLETED' ? 'bg-green-500' :
+                  obj.status === 'EVOLVING' ? 'bg-purple-500' :
+                  'bg-accent-blue'
+                } transition-all duration-1000`}
+                style={{ width: `${obj.progress}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   return (
     <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} border flex flex-col h-[400px]`}>
@@ -1941,6 +1995,25 @@ const AdminPanelView = ({ darkMode }) => {
   const [auditLogs, setAuditLogs] = useState([]);
   const [findings, setFindings] = useState([]);
   const [logs, setLogs] = useState([]);
+  const [isScanning, setIsScanning] = useState(false);
+
+  const triggerScan = async () => {
+    setIsScanning(true);
+    try {
+      const res = await fetch('/api/trigger-scan', { method: 'POST' });
+      if (res.ok) {
+        // Refresh logs after a short delay
+        setTimeout(async () => {
+          const logsRes = await fetch('/api/logs');
+          if (logsRes.ok) setLogs(await logsRes.json());
+          setIsScanning(false);
+        }, 1500);
+      }
+    } catch (error) {
+      console.error('Failed to trigger scan:', error);
+      setIsScanning(false);
+    }
+  };
 
   const coverage = useMemo(() => {
     const allSkills = Object.values(skillCategories).flat();
@@ -2020,7 +2093,36 @@ const AdminPanelView = ({ darkMode }) => {
         </p>
       </div>
 
-      <DataRefreshStatus darkMode={darkMode} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <DataRefreshStatus darkMode={darkMode} />
+        <SystemRoadmap darkMode={darkMode} />
+      </div>
+
+      {/* System Operations */}
+      <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8 flex flex-wrap items-center justify-between gap-6`}>
+        <div className="flex items-center gap-4">
+          <div className={`${darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue' : 'bg-blue-50 border-blue-200 text-blue-600'} p-3 border rounded-[4px]`}>
+            <Zap size={24} className={isScanning ? 'animate-pulse' : ''} />
+          </div>
+          <div>
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>System Operations</h3>
+            <p className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>EXPERT_OVERRIDE_ENABLED // PRIORITY_1</p>
+          </div>
+        </div>
+        <div className="flex gap-3">
+          <button
+            onClick={triggerScan}
+            disabled={isScanning}
+            className={`px-6 py-3 font-mono text-[10px] font-bold uppercase tracking-widest transition-all ${
+              isScanning
+                ? 'bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700'
+                : (darkMode ? 'bg-accent-blue text-black hover:bg-cyan-300' : 'bg-blue-600 text-white hover:bg-blue-700 rounded-lg')
+            }`}
+          >
+            {isScanning ? 'SCAN_IN_PROGRESS...' : 'Trigger Autonomous Scan'}
+          </button>
+        </div>
+      </div>
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
