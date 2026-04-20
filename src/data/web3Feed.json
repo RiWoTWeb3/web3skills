@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-20",
+    "type": "job",
+    "title": "Rust Engineer at Hibachi",
+    "description": "Join Hibachi as a Rust Engineer. Requirements: Rust, AWS, Backend. Remote.",
+    "link": "https://web3.career/rust-engineer-hibachi/147340"
+  },
+  {
+    "date": "2026-04-20",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Blockchain, Crypto, DeFi. Remote.",
+    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
+    "date": "2026-04-20",
+    "type": "job",
+    "title": "Senior Software Engineer HSM at Bitgo",
+    "description": "Join Bitgo as a Senior Software Engineer HSM. Requirements: Bitcoin, Blockchain, Go. Remote.",
+    "link": "https://web3.career/senior-software-engineer-hsm-bitgo/100066"
+  },
+  {
+    "date": "2026-04-20",
+    "type": "news",
+    "title": "Monad Labs Secures $225M Series A Led by Paradigm",
+    "description": "Monad Labs raised $225 million to build a high-performance parallelized EVM layer-1 blockchain capable of 10,000 TPS.",
+    "link": "https://www.bitget.com/academy/monad-blockchain-guide"
+  },
+  {
+    "date": "2026-04-20",
+    "type": "news",
+    "title": "EigenLayer Mainnet Officially Launches with Restaking",
+    "description": "EigenLayer has officially launched its mainnet, enabling restaking and a new ecosystem of Actively Validated Services (AVSs).",
+    "link": "https://eigenlayer.xyz/"
+  },
+  {
+    "date": "2026-04-20",
+    "type": "hack",
+    "title": "Hedgey Finance Exploit: $44.7M Drained Across Multiple Chains",
+    "description": "Hedgey Finance was exploited for approximately $44.7 million due to a vulnerability in its token claim contracts on Arbitrum and Base.",
+    "link": "https://rekt.news/hedgey-finance-rekt/"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

@@ -25,66 +25,66 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
     print(f"Updated {filepath}")
 
 def main():
-    # Today's Date
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Today's Date (Simulated as 2026-04-20 as per plan)
+    today = "2026-04-20"
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
+            "id": f"hibachi-rust-engineer-{today}",
+            "title": "Rust Engineer",
+            "company": "Hibachi",
+            "type": "Backend",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "experience": "Mid-Senior",
+            "salaryRange": "$150,000 - $200,000",
+            "requirements": ["Rust", "AWS", "Backend", "Blockchain"],
+            "applyLink": "https://web3.career/rust-engineer-hibachi/147340"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"jump-crypto-production-{today}",
+            "title": "Crypto Production Engineer",
+            "company": "Jumpcrypto",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
             "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "requirements": ["Blockchain", "Crypto", "DeFi", "Ethereum"],
+            "applyLink": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+        },
+        {
+            "id": f"bitgo-senior-hsm-{today}",
+            "title": "Senior Software Engineer HSM",
+            "company": "Bitgo",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$165,000 - $210,000",
+            "requirements": ["Bitcoin", "Blockchain", "Go", "Security"],
+            "applyLink": "https://web3.career/senior-software-engineer-hsm-bitgo/100066"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Monad Labs Secures $225M Series A Led by Paradigm",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Monad Labs raised $225 million to build a high-performance parallelized EVM layer-1 blockchain capable of 10,000 TPS.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://www.bitget.com/academy/monad-blockchain-guide"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "EigenLayer Mainnet Officially Launches with Restaking",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "EigenLayer has officially launched its mainnet, enabling restaking and a new ecosystem of Actively Validated Services (AVSs).",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://eigenlayer.xyz/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Hedgey Finance Exploit: $44.7M Drained Across Multiple Chains",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "Hedgey Finance was exploited for approximately $44.7 million due to a vulnerability in its token claim contracts on Arbitrum and Base.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://rekt.news/hedgey-finance-rekt/"
         }
     ]
 
