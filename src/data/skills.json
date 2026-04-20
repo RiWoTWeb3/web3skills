@@ -90,5 +90,10 @@
     "Frontend-Backend Integration", "Wallet Connection", "Transaction Signing",
     "Smart Contract Interaction", "Web3 Authentication", "Decentralized Storage",
     "Event Listening", "Multi-chain Support", "Gas Estimation", "Error Handling"
+  ],
+  "Data Engineering & Analytics": [
+    "SQL", "Subgraphs", "ClickHouse", "Apache Flink", "dbt", "Dune Analytics",
+    "Flipside Crypto", "BigQuery", "Data Modeling", "ETL Pipelines",
+    "Graph Protocol", "Indexing Services", "Blockchain Data Warehousing"
   ]
 }

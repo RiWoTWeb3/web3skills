@@ -1,5 +1,53 @@
 [
   {
+    "id": "hibachi-rust-engineer-2026-04-20",
+    "title": "Rust Engineer",
+    "company": "Hibachi",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "AWS",
+      "Backend",
+      "Blockchain"
+    ],
+    "applyLink": "https://web3.career/rust-engineer-hibachi/147340"
+  },
+  {
+    "id": "jump-crypto-production-2026-04-20",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Blockchain",
+      "Crypto",
+      "DeFi",
+      "Ethereum"
+    ],
+    "applyLink": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
+    "id": "bitgo-senior-hsm-2026-04-20",
+    "title": "Senior Software Engineer HSM",
+    "company": "Bitgo",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$165,000 - $210,000",
+    "requirements": [
+      "Bitcoin",
+      "Blockchain",
+      "Go",
+      "Security"
+    ],
+    "applyLink": "https://web3.career/senior-software-engineer-hsm-bitgo/100066"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

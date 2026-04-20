@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Labs Secures $225M Series A Led by Paradigm",
+    "category": "INFRA",
+    "summary": "Monad Labs raised $225 million to build a high-performance parallelized EVM layer-1 blockchain capable of 10,000 TPS.",
+    "date": "2026-04-20",
+    "sourceLink": "https://www.bitget.com/academy/monad-blockchain-guide"
+  },
+  {
+    "title": "EigenLayer Mainnet Officially Launches with Restaking",
+    "category": "INFRA",
+    "summary": "EigenLayer has officially launched its mainnet, enabling restaking and a new ecosystem of Actively Validated Services (AVSs).",
+    "date": "2026-04-20",
+    "sourceLink": "https://eigenlayer.xyz/"
+  },
+  {
+    "title": "Hedgey Finance Exploit: $44.7M Drained Across Multiple Chains",
+    "category": "HACK",
+    "summary": "Hedgey Finance was exploited for approximately $44.7 million due to a vulnerability in its token claim contracts on Arbitrum and Base.",
+    "date": "2026-04-20",
+    "sourceLink": "https://rekt.news/hedgey-finance-rekt/"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

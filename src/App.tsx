@@ -512,6 +512,59 @@ const careerPaths = {
         ]
       }
     ]
+  },
+  'Web3 Data Engineer': {
+    icon: Database,
+    ecosystem: 'Cross-chain',
+    description: 'Build data pipelines and analytics infrastructure to extract insights from multi-chain blockchain data',
+    requiredSkills: [
+      'SQL', 'Subgraphs', 'ClickHouse', 'Apache Flink', 'dbt', 'Dune Analytics',
+      'Blockchain Data Warehousing', 'Data Modeling', 'ETL Pipelines', 'Python'
+    ],
+    roadmap: [
+      {
+        phase: 'Data Fundamentals',
+        duration: '1 month',
+        skills: ['SQL', 'Python', 'Database Design', 'Blockchain Fundamentals'],
+        resources: [
+          { name: 'Dune Analytics Docs', url: 'https://docs.dune.com', type: 'FREE' },
+          { name: 'Mode SQL Tutorial', url: 'https://mode.com/sql-tutorial/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'On-Chain Indexing',
+        duration: '1.5 months',
+        skills: ['The Graph', 'Subgraphs', 'GraphQL', 'Indexing Services'],
+        resources: [
+          { name: 'The Graph Academy', url: 'https://thegraph.com/academy/', type: 'FREE' },
+          { name: 'Goldsky Documentation', url: 'https://docs.goldsky.com', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Big Data & Real-time',
+        duration: '2 months',
+        skills: ['ClickHouse', 'Apache Flink', 'ETL Pipelines', 'Data Modeling'],
+        resources: [
+          { name: 'ClickHouse Documentation', url: 'https://clickhouse.com/docs', type: 'FREE' },
+          { name: 'Apache Flink Training', url: 'https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/introduction/', type: 'FREE' }
+        ]
+      },
+      {
+        phase: 'Analytics Engineering',
+        duration: '1 month',
+        skills: ['dbt', 'BigQuery', 'Blockchain Data Warehousing', 'Flipside Crypto'],
+        resources: [
+          { name: 'dbt Fundamentals', url: 'https://courses.getdbt.com/courses/fundamentals', type: 'FREE' },
+          { name: 'Flipside Crypto Docs', url: 'https://docs.flipsidecrypto.com', type: 'FREE' }
+        ]
+      }
+    ],
+    outcomes: {
+      junior: '$90k-$130k',
+      mid: '$130k-$190k',
+      senior: '$190k-$260k',
+      lead: '$260k-$350k+'
+    }
   }
 };
 
@@ -1887,6 +1940,42 @@ const KeyHealthHeatmap = ({ darkMode, keys }) => {
   );
 };
 
+const SystemCapacityMonitor = ({ darkMode, keys }) => {
+  const aggregateStats = useMemo(() => {
+    const totalLimit = keys.reduce((acc, k) => acc + (k.limit || 0), 0);
+    const totalUsage = keys.reduce((acc, k) => acc + (k.usage || 0), 0);
+    const percentage = totalLimit > 0 ? (totalUsage / totalLimit) * 100 : 0;
+    return { totalLimit, totalUsage, percentage };
+  }, [keys]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <Activity className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>System API Capacity</h3>
+        </div>
+        <span className={`text-xs font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>
+          AGGREGATE_USAGE: {aggregateStats.percentage.toFixed(1)}%
+        </span>
+      </div>
+      <div className={`w-full h-4 ${darkMode ? 'bg-white/5' : 'bg-gray-100'} rounded-full overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-200'}`}>
+        <div
+          className={`h-full transition-all duration-1000 ${aggregateStats.percentage > 80 ? 'bg-red-500' : aggregateStats.percentage > 50 ? 'bg-yellow-500' : 'bg-accent-blue'}`}
+          style={{ width: `${aggregateStats.percentage}%` }}
+        />
+      </div>
+      <div className="flex justify-between mt-3 text-[10px] font-mono tracking-widest">
+        <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>0%</span>
+        <span className={darkMode ? 'text-slate-400' : 'text-gray-600'}>
+          {aggregateStats.totalUsage.toLocaleString()} / {aggregateStats.totalLimit.toLocaleString()} REQ
+        </span>
+        <span className={darkMode ? 'text-slate-500' : 'text-gray-500'}>100%</span>
+      </div>
+    </div>
+  );
+};
+
 const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   return (
     <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} border flex flex-col h-[400px]`}>
@@ -2001,15 +2090,47 @@ const AdminPanelView = ({ darkMode }) => {
     return () => clearInterval(interval);
   }, []);
 
+  const [isScanning, setIsScanning] = useState(false);
+
+  const triggerScan = async () => {
+    setIsScanning(true);
+    try {
+      const res = await fetch('/api/trigger-scan', { method: 'POST' });
+      if (res.ok) {
+        // Log refresh is handled by the main useEffect interval
+      }
+    } catch (error) {
+      console.error('Failed to trigger scan:', error);
+    } finally {
+      setTimeout(() => setIsScanning(false), 2000);
+    }
+  };
+
   return (
     <div className="space-y-8 animate-slideUp">
-      <div className="mb-8">
-        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
-          {darkMode ? 'SYSTEM_MONITOR.CORE' : 'System Control Center'}
-        </h1>
-        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
-          Autonomous Audit Engine & API Quota Intelligence
-        </p>
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+        <div>
+          <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+            {darkMode ? 'SYSTEM_MONITOR.CORE' : 'System Control Center'}
+          </h1>
+          <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+            Autonomous Audit Engine & API Quota Intelligence
+          </p>
+        </div>
+        <button
+          onClick={triggerScan}
+          disabled={isScanning}
+          className={`px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center gap-2 ${
+            isScanning
+              ? 'bg-yellow-500 text-black cursor-wait'
+              : darkMode
+                ? 'btn-industrial-primary'
+                : 'bg-blue-600 hover:bg-blue-700 text-white rounded-lg'
+          }`}
+        >
+          {isScanning ? <Activity size={14} className="animate-spin" /> : <Zap size={14} />}
+          {isScanning ? 'SCANNING...' : 'Trigger Manual Scan'}
+        </button>
       </div>
 
       <div className={`${darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200'} border p-4 mb-8 rounded-[4px]`}>
@@ -2021,6 +2142,8 @@ const AdminPanelView = ({ darkMode }) => {
       </div>
 
       <DataRefreshStatus darkMode={darkMode} />
+
+      <SystemCapacityMonitor darkMode={darkMode} keys={keys} />
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
@@ -2350,6 +2473,7 @@ const NewsView = ({ darkMode }) => {
 const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
   const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
+  const crossChainCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Cross-chain');
 
   const CareerCard = ({ careerName, career }) => {
     const match = getCareerMatch(careerName);
@@ -2430,6 +2554,20 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           ))}
         </div>
       </div>
+
+      {crossChainCareers.length > 0 && (
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            <div className={`h-8 w-1 bg-accent-blue ${darkMode ? '' : 'rounded-full'}`} />
+            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white font-mono uppercase text-lg' : 'text-gray-900'}`}>Cross-chain & Infrastructure</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {crossChainCareers.map(([name, career]) => (
+              <CareerCard key={name} careerName={name} career={career} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
