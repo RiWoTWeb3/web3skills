@@ -24,6 +24,7 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
+import { Command } from 'cmdk';
 
 import skillCategoriesRaw from './data/skills.json';
 import systemHealthRaw from './data/system_health.json';
@@ -1975,6 +1976,36 @@ const AdminPanelView = ({ darkMode }) => {
     return Object.entries(counts).map(([name, value]) => ({ name, value }));
   }, []);
 
+  const skillMarketData = useMemo(() => {
+    const parseSalary = (salaryRange: string) => {
+      if (!salaryRange || salaryRange.includes('not specified') || salaryRange.includes('Competitive') || salaryRange.includes('Equity')) return null;
+      const matches = salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/g);
+      if (!matches) return null;
+      const values = matches.map(m => parseInt(m.replace(/[$,]/g, '')));
+      if (values.length === 1) return values[0];
+      return (values[0] + values[1]) / 2;
+    };
+
+    const skillSalaries: Record<string, number[]> = {};
+    jobsData.forEach(job => {
+      const avgSalary = parseSalary(job.salaryRange);
+      if (avgSalary) {
+        job.requirements.forEach(req => {
+          if (!skillSalaries[req]) skillSalaries[req] = [];
+          skillSalaries[req].push(avgSalary);
+        });
+      }
+    });
+
+    return Object.entries(skillSalaries)
+      .map(([name, salaries]) => ({
+        name,
+        avg: Math.round(salaries.reduce((a, b) => a + b, 0) / salaries.length)
+      }))
+      .sort((a, b) => b.avg - a.avg)
+      .slice(0, 10);
+  }, []);
+
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
@@ -2024,37 +2055,73 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        {/* Market Distribution Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {marketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                      fillOpacity={0.8}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={marketData} layout="vertical">
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
-              <Tooltip
-                cursor={{ fill: 'transparent' }}
-                contentStyle={{
-                  backgroundColor: darkMode ? '#0f172a' : '#fff',
-                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
-                  fontSize: '10px',
-                  fontFamily: 'monospace'
-                }}
-              />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                {marketData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
-                    fillOpacity={0.8}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+
+        {/* Skill Market Value Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <TrendingUp className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={skillMarketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={9} width={100} />
+                <Tooltip
+                  formatter={(value) => [`$${value.toLocaleString()}`, 'Avg Salary']}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="avg" radius={[0, 4, 4, 0]}>
+                  {skillMarketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={darkMode ? '#00f2ff' : '#2563eb'}
+                      fillOpacity={0.4 + (index / skillMarketData.length) * 0.6}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
@@ -3022,6 +3089,7 @@ const App = () => {
   const [shareInput, setShareInput] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showPolicyModal, setShowPolicyModal] = useState(false);
+  const [commandOpen, setCommandOpen] = useState(false);
 
   useEffect(() => {
     const policyAccepted = localStorage.getItem('web3skills_policy_accepted');
@@ -3049,6 +3117,18 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('web3skills_expanded', JSON.stringify(expandedCategories));
   }, [expandedCategories]);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setCommandOpen((open) => !open);
+      }
+    };
+
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
 
   const handleViewShared = useCallback((code) => {
     try {
@@ -3308,6 +3388,70 @@ const App = () => {
         />
       )}
       {showPolicyModal && <PolicyModal darkMode={darkMode} setShowPolicyModal={setShowPolicyModal} />}
+
+      <Command.Dialog
+        open={commandOpen}
+        onOpenChange={setCommandOpen}
+        label="Global Command Menu"
+        className={`fixed inset-0 z-[60] flex items-start justify-center pt-[20vh] bg-black/60 backdrop-blur-sm p-4`}
+      >
+        <div className={`w-full max-w-[640px] overflow-hidden rounded-xl border ${darkMode ? 'bg-[#0f172a] border-white/10' : 'bg-white border-gray-200'} shadow-2xl animate-in zoom-in-95 duration-200`}>
+          <div className="flex items-center px-4 border-b border-white/5">
+            <Search className={`mr-2 h-4 w-4 shrink-0 opacity-50 ${darkMode ? 'text-white' : 'text-gray-900'}`} />
+            <Command.Input
+              placeholder="Search system registry..."
+              className={`flex h-12 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 ${darkMode ? 'text-white' : 'text-gray-900'}`}
+            />
+          </div>
+          <Command.List className="max-h-[300px] overflow-y-auto p-2">
+            <Command.Empty className="py-6 text-center text-sm opacity-50">No results found.</Command.Empty>
+            <Command.Group heading={<span className="px-2 text-[10px] font-mono uppercase tracking-widest opacity-50">Navigation</span>}>
+              {[
+                { label: 'Home', icon: Target, path: '/' },
+                { label: 'Skill Tree', icon: BookOpen, path: '/skills' },
+                { label: 'Career Roadmaps', icon: Target, path: '/careers' },
+                { label: 'Job Board', icon: Briefcase, path: '/jobs' },
+                { label: 'Intel Feed', icon: Newspaper, path: '/news' },
+                { label: 'System Control', icon: Activity, path: '/notadmin' },
+              ].map((item) => (
+                <Command.Item
+                  key={item.path}
+                  onSelect={() => {
+                    navigate(item.path);
+                    setCommandOpen(false);
+                  }}
+                  className={`flex cursor-default select-none items-center rounded-md px-3 py-2 text-sm outline-none aria-selected:bg-accent-blue/10 aria-selected:text-accent-blue transition-colors gap-3 ${darkMode ? 'text-slate-300' : 'text-gray-700'}`}
+                >
+                  <item.icon className="h-4 w-4" />
+                  <span className="font-medium">{item.label}</span>
+                </Command.Item>
+              ))}
+            </Command.Group>
+
+            <Command.Group heading={<span className="px-2 text-[10px] font-mono uppercase tracking-widest opacity-50 mt-4 block">Quick Themes</span>}>
+              {[
+                { label: 'Switch to Light', icon: Sun, value: 'light' },
+                { label: 'Switch to Dark', icon: Moon, value: 'dark' },
+              ].map((item) => (
+                <Command.Item
+                  key={item.value}
+                  onSelect={() => {
+                    setTheme(item.value as any);
+                    setCommandOpen(false);
+                  }}
+                  className={`flex cursor-default select-none items-center rounded-md px-3 py-2 text-sm outline-none aria-selected:bg-accent-blue/10 aria-selected:text-accent-blue transition-colors gap-3 ${darkMode ? 'text-slate-300' : 'text-gray-700'}`}
+                >
+                  <item.icon className="h-4 w-4" />
+                  <span className="font-medium">{item.label}</span>
+                </Command.Item>
+              ))}
+            </Command.Group>
+          </Command.List>
+          <div className="flex items-center border-t border-white/5 px-4 py-2 opacity-50">
+            <p className="text-[10px] font-mono uppercase tracking-tighter">ESC to close // ↵ to select</p>
+          </div>
+        </div>
+      </Command.Dialog>
     </div>
   );
 };
