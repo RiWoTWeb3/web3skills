@@ -1,5 +1,26 @@
 [
   {
+    "title": "KYC giant Sumsub hit by undetected breach",
+    "category": "INFRA",
+    "summary": "KYC giant Sumsub verifies millions of users for over 4,000 clients, but an 18-month undetected breach has raised serious security questions.",
+    "date": "2026-04-21",
+    "sourceLink": "https://rekt.news/who-vets-vetters"
+  },
+  {
+    "title": "Offchain Labs Enterprise Expansion",
+    "category": "INFRA",
+    "summary": "Offchain Labs appoints Head of Enterprise to drive adoption of Arbitrum technology in traditional corporate sectors.",
+    "date": "2026-04-21",
+    "sourceLink": "https://web3.career/head-of-enterprise-offchainlabs/148741"
+  },
+  {
+    "title": "Hyperbridge MMR proof verifier exploit: $2.5M loss",
+    "category": "HACK",
+    "summary": "A missing bounds check in Hyperbridge's MMR proof verifier allowed forged proofs to pass, leading to $2.5 million in losses.",
+    "date": "2026-04-21",
+    "sourceLink": "https://rekt.news/hyperbridge-rekt"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

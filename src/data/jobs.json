@@ -1,5 +1,53 @@
 [
   {
+    "id": "lightcone-staff-engineer-2026-04-21",
+    "title": "Staff Engineer Solana",
+    "company": "lightcone.trade",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$225,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor Framework",
+      "System Infrastructure"
+    ],
+    "applyLink": "https://web3.career/staff-engineer-solana-lightcone-trade/148761"
+  },
+  {
+    "id": "wallet-sdet-2026-04-21",
+    "title": "SDET",
+    "company": "Wallet",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$76,000 - $92,000",
+    "requirements": [
+      "Quality Assurance",
+      "Blockchain",
+      "Kotlin",
+      "Testing"
+    ],
+    "applyLink": "https://web3.career/sdet-wallet/148758"
+  },
+  {
+    "id": "tether-senior-fullstack-2026-04-21",
+    "title": "Senior Fullstack Developer",
+    "company": "Tether",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$115,000 - $138,000",
+    "requirements": [
+      "Bitcoin",
+      "Full Stack",
+      "Dev",
+      "Node.js"
+    ],
+    "applyLink": "https://web3.career/senior-fullstack-developer-100-remote-worldwide-tetheroperationslimited/148696"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
