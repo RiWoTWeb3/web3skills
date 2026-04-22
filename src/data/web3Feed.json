@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-22",
+    "type": "job",
+    "title": "Senior Backend Solana Rust Engineer at Inner Circle Agency",
+    "description": "Join Inner Circle Agency as a Senior Backend Solana Rust Engineer. Requirements: Rust, Solana, Systems Engineering. Remote.",
+    "link": "https://www.ziprecruiter.com/Jobs/Solana"
+  },
+  {
+    "date": "2026-04-22",
+    "type": "job",
+    "title": "Senior Smart Contract Engineer at Veda Tech Labs",
+    "description": "Join Veda Tech Labs as a Senior Smart Contract Engineer. Requirements: Solidity, Smart Contract Development, DeFi Understanding. Remote.",
+    "link": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "date": "2026-04-22",
+    "type": "job",
+    "title": "Rust Developer - EVM Systems & Trading Infrastructure at 1010 trading",
+    "description": "Join 1010 trading as a Rust Developer - EVM Systems & Trading Infrastructure. Requirements: Rust, EVM, Trading Infrastructure. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-04-22",
+    "type": "news",
+    "title": "AI+Web3 Era Financial Infrastructure Forum Convenes in Hong Kong",
+    "description": "Co-hosted by HashKey Group and ChainInsight, the closed-door forum in Hong Kong explores the shift toward a 'machine economy' where AI agents act as native Web3 users.",
+    "link": "https://www.kucoin.com/news/flash/ai-web3-forum-to-explore-financial-infrastructure-in-hong-kong"
+  },
+  {
+    "date": "2026-04-22",
+    "type": "news",
+    "title": "Machine Economy Milestone: AI Agents Execute 140M On-Chain Transactions",
+    "description": "Real-world data highlights AI agents reaching 140 million transactions totaling $43 million, with 98.6% of value settled in USDC stablecoins.",
+    "link": "https://www.kucoin.com/news/flash/ai-web3-forum-to-explore-financial-infrastructure-in-hong-kong"
+  },
+  {
+    "date": "2026-04-22",
+    "type": "hack",
+    "title": "$290M Cross-Protocol Contagion Exploit Triggers DeFi Shock",
+    "description": "A sophisticated exploit has resulted in a $290M loss, triggering a cross-protocol contagion event affecting at least nine other platforms across the DeFi ecosystem.",
+    "link": "https://www.moneyweb.co.za/moneyweb-crypto/crypto-hack-worth-290m-triggers-defi-contagion-shock/"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]
