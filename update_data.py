@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"wormhole-senior-product-{today}",
+            "title": "Senior Product Engineer",
+            "company": "Wormhole Labs",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$87,000 - $115,000",
+            "requirements": ["Crypto", "Solana", "TypeScript", "Rust"],
+            "applyLink": "https://web3.career/remote+solana-jobs"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"helius-staff-backend-{today}",
+            "title": "Staff Backend Engineer",
+            "company": "Helius",
             "type": "Backend",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "experience": "Staff level",
+            "salaryRange": "$84,000 - $150,000",
+            "requirements": ["Node", "Rust", "Backend Engineer", "Distributed Systems"],
+            "applyLink": "https://web3.career/remote+solana-jobs"
+        },
+        {
+            "id": f"lightcone-staff-solana-{today}",
+            "title": "Staff Engineer (Solana)",
+            "company": "lightcone.trade",
+            "type": "SVM",
+            "workType": "Remote",
+            "experience": "Staff level",
+            "salaryRange": "$225,000 - $250,000",
+            "requirements": ["Rust", "Solana", "Smart Contract Development", "Performance"],
+            "applyLink": "https://web3.career/remote+solana-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Consensys and European Bank Partner for MiCA-Compliant Stablecoin on MetaMask",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "A major partnership brings the MiCA-compliant USD CoinVertible to MetaMask, bridging traditional finance and Web3 infrastructure.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://www.jdsupra.com/legalnews/weekly-blockchain-blog-april-2026-3-2819103/"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Institutional 'Earn' Native On-Chain Lending Launched with Morpho and Aave",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "A new 'Earn' feature allows institutions to supply stablecoin balances to Morpho and Aave with institutional-grade security.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://www.jdsupra.com/legalnews/weekly-blockchain-blog-april-2026-3-2819103/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "$292 Million DeFi Hack on rsETH Bridge; Lazarus Group Suspected",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "Kelp DAO's rsETH bridge was hit for $292M via a forged message exploit on LayerZero; Lazarus Group is the suspected culprit.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.theblock.co/post/398239/kelp-dao-exploiter-begins-moving-stolen-funds-across-chains-after-arbitrum-eth-freeze"
         }
     ]
 

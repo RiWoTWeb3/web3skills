@@ -546,6 +546,66 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
   return false;
 };
 
+const SkillGapAnalyzer = ({ darkMode, requirements, userSkills, careerPathName }) => {
+  const matched = requirements.filter(req => hasSkillOrSynonym(req, userSkills));
+  const missing = requirements.filter(req => !hasSkillOrSynonym(req, userSkills));
+
+  return (
+    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-gray-50 border border-gray-100 rounded-xl'}`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Target size={16} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+        <h4 className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>Skill Gap Analysis</h4>
+      </div>
+
+      <div className="space-y-4">
+        <div>
+          <p className={`text-[10px] font-mono uppercase mb-2 ${darkMode ? 'text-green-400/70' : 'text-green-600/70'}`}>Matched Units ({matched.length})</p>
+          <div className="flex flex-wrap gap-1.5">
+            {matched.map(skill => (
+              <span key={skill} className={`px-2 py-0.5 text-[9px] font-mono border rounded-[2px] ${darkMode ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-green-50 text-green-700 border-green-200'}`}>
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {missing.length > 0 && (
+          <div>
+            <p className={`text-[10px] font-mono uppercase mb-2 ${darkMode ? 'text-red-400/70' : 'text-red-600/70'}`}>Missing Units ({missing.length})</p>
+            <div className="flex flex-wrap gap-1.5">
+              {missing.map(skill => (
+                <span key={skill} className={`px-2 py-0.5 text-[9px] font-mono border rounded-[2px] ${darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-700 border-red-200'}`}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+            <div className={`mt-4 pt-4 border-t ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
+              <p className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-gray-500'} italic mb-2`}>
+                Recommended Path:
+              </p>
+              {careerPathName && careerPaths[careerPathName] ? (
+                <Link
+                  to={`/career/${encodeURIComponent(careerPathName)}`}
+                  className={`inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}
+                >
+                  Explore {careerPathName} Roadmap <ArrowRight size={10} />
+                </Link>
+              ) : (
+                <Link
+                  to="/skills"
+                  className={`inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'}`}
+                >
+                  Review Skill Tree <ArrowRight size={10} />
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 // --- Components ---
 
 const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
@@ -1716,33 +1776,12 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     </div>
                   </div>
 
-                  <div>
-                    <p className={`text-[10px] font-mono uppercase tracking-widest mb-3 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Required Stack</p>
-                    <div className="flex flex-wrap gap-2">
-                      {job.requirements.map(req => (
-                        <div
-                          key={req}
-                          className={`flex items-center gap-2 px-3 py-1.5 border ${
-                            hasSkillOrSynonym(req, displaySkills)
-                              ? (darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/30 rounded-[2px]' : 'bg-green-50 text-green-700 border-green-200 rounded')
-                              : (darkMode ? 'bg-white/[0.02] text-slate-500 border-white/10 rounded-[2px]' : 'bg-gray-100 text-gray-500 border-gray-200 rounded')
-                          }`}
-                        >
-                          {hasSkillOrSynonym(req, displaySkills) ? <CheckCircle size={12} className="text-accent-blue" /> : <Circle size={12} className="opacity-30" />}
-                          <span className="text-[11px] font-mono">{req}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                {missingSkills.length > 0 && (
-                    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
-                      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
-                        To align with this role, consider learning: <span className="font-bold">{missingSkills.join(', ')}</span>
-                      </p>
-                    </div>
-                  )}
+                  <SkillGapAnalyzer
+                    darkMode={darkMode}
+                    requirements={job.requirements}
+                    userSkills={displaySkills}
+                    careerPathName={bestFit !== 'General Web3' ? bestFit : null}
+                  />
                   </div>
               
             </div>
@@ -2485,51 +2524,58 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           </div>
         </div>
 
-        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-blue-50 border-blue-200 rounded-2xl'} p-8`}>
-          <div className="flex justify-between items-center mb-4">
-            <span className={`text-sm font-mono uppercase tracking-[0.2em] ${darkMode ? 'text-accent-blue' : 'text-gray-900'}`}>{darkMode ? 'COMPATIBILITY_ALIGNMENT' : 'System Compatibility'}</span>
-            <span className={`text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
-              {match.matched}/{match.total} Units
-            </span>
-          </div>
-    <div className={`w-full ${darkMode ? 'bg-white/5' : 'bg-white'} ${darkMode ? 'rounded-none' : 'rounded-full'} h-3 overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
-            <div
-              className={`bg-accent-blue h-full ${darkMode ? 'rounded-none' : 'rounded-full'} transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(0,255,255,0.5)]`}
-              style={{ width: `${match.percentage}%` }}
-            />
-          </div>
-          <p className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-500'} mt-3`}>
-            {match.percentage.toFixed(1)}% Alignment
-          </p>
-        </div>
-      </div>
-
-      <div className={`${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-white border-gray-200 rounded-2xl'} p-8`}>
-        <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-8`}>{darkMode ? 'CORE_PREREQUISITES' : 'Core Prerequisites'}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {career.requiredSkills.map(skill => (
-            <div
-              key={skill}
-              className={`flex items-center gap-3 p-4 transition-all duration-300 ${
-                darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30 rounded-[4px]' : 'bg-gray-50 rounded'
-              }`}
-            >
-              {hasSkillOrSynonym(skill, displaySkills) ? (
-                <CheckCircle className="text-accent-blue flex-shrink-0" size={20} />
-              ) : (
-                <Circle className={darkMode ? 'text-white/10' : 'text-gray-300'} size={20} />
-              )}
-              <span
-                className={`text-sm font-medium ${
-                  hasSkillOrSynonym(skill, displaySkills)
-                    ? (darkMode ? 'text-white' : 'text-gray-900')
-                    : (darkMode ? 'text-slate-400' : 'text-gray-600')
-                } ${darkMode ? 'font-mono uppercase text-xs tracking-tight' : ''}`}
-              >
-                {skill}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-blue-50 border-blue-200 rounded-2xl'} p-8 h-full`}>
+            <div className="flex justify-between items-center mb-4">
+              <span className={`text-sm font-mono uppercase tracking-[0.2em] ${darkMode ? 'text-accent-blue' : 'text-gray-900'}`}>{darkMode ? 'COMPATIBILITY_ALIGNMENT' : 'System Compatibility'}</span>
+              <span className={`text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+                {match.matched}/{match.total} Units
               </span>
             </div>
-          ))}
+            <div className={`w-full ${darkMode ? 'bg-white/5' : 'bg-white'} ${darkMode ? 'rounded-none' : 'rounded-full'} h-3 overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
+              <div
+                className={`bg-accent-blue h-full ${darkMode ? 'rounded-none' : 'rounded-full'} transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(0,255,255,0.5)]`}
+                style={{ width: `${match.percentage}%` }}
+              />
+            </div>
+            <p className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-slate-400' : 'text-gray-500'} mt-3 mb-8`}>
+              {match.percentage.toFixed(1)}% Alignment
+            </p>
+
+            <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-6`}>{darkMode ? 'CORE_PREREQUISITES' : 'Core Prerequisites'}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {career.requiredSkills.map(skill => (
+                <div
+                  key={skill}
+                  className={`flex items-center gap-3 p-3 transition-all duration-300 ${
+                    darkMode ? 'bg-white/[0.03] border border-white/5 hover:border-accent-blue/30 rounded-[4px]' : 'bg-gray-50 rounded'
+                  }`}
+                >
+                  {hasSkillOrSynonym(skill, displaySkills) ? (
+                    <CheckCircle className="text-accent-blue flex-shrink-0" size={16} />
+                  ) : (
+                    <Circle className={darkMode ? 'text-white/10' : 'text-gray-300'} size={16} />
+                  )}
+                  <span
+                    className={`text-xs font-medium ${
+                      hasSkillOrSynonym(skill, displaySkills)
+                        ? (darkMode ? 'text-white' : 'text-gray-900')
+                        : (darkMode ? 'text-slate-400' : 'text-gray-600')
+                    } ${darkMode ? 'font-mono uppercase tracking-tight' : ''}`}
+                  >
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <SkillGapAnalyzer
+            darkMode={darkMode}
+            requirements={career.requiredSkills}
+            userSkills={displaySkills}
+            careerPathName={careerName}
+          />
         </div>
       </div>
 

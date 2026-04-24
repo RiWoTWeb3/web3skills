@@ -1,5 +1,53 @@
 [
   {
+    "id": "wormhole-senior-product-2026-04-24",
+    "title": "Senior Product Engineer",
+    "company": "Wormhole Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$87,000 - $115,000",
+    "requirements": [
+      "Crypto",
+      "Solana",
+      "TypeScript",
+      "Rust"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "helius-staff-backend-2026-04-24",
+    "title": "Staff Backend Engineer",
+    "company": "Helius",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$84,000 - $150,000",
+    "requirements": [
+      "Node",
+      "Rust",
+      "Backend Engineer",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "lightcone-staff-solana-2026-04-24",
+    "title": "Staff Engineer (Solana)",
+    "company": "lightcone.trade",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$225,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Smart Contract Development",
+      "Performance"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
