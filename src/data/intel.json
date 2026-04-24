@@ -1,5 +1,26 @@
 [
   {
+    "title": "Consensys and European Bank Partner for MiCA-Compliant Stablecoin on MetaMask",
+    "category": "INFRA",
+    "summary": "A major partnership brings the MiCA-compliant USD CoinVertible to MetaMask, bridging traditional finance and Web3 infrastructure.",
+    "date": "2026-04-24",
+    "sourceLink": "https://www.jdsupra.com/legalnews/weekly-blockchain-blog-april-2026-3-2819103/"
+  },
+  {
+    "title": "Institutional 'Earn' Native On-Chain Lending Launched with Morpho and Aave",
+    "category": "INFRA",
+    "summary": "A new 'Earn' feature allows institutions to supply stablecoin balances to Morpho and Aave with institutional-grade security.",
+    "date": "2026-04-24",
+    "sourceLink": "https://www.jdsupra.com/legalnews/weekly-blockchain-blog-april-2026-3-2819103/"
+  },
+  {
+    "title": "$292 Million DeFi Hack on rsETH Bridge; Lazarus Group Suspected",
+    "category": "HACK",
+    "summary": "Kelp DAO's rsETH bridge was hit for $292M via a forged message exploit on LayerZero; Lazarus Group is the suspected culprit.",
+    "date": "2026-04-24",
+    "sourceLink": "https://www.theblock.co/post/398239/kelp-dao-exploiter-begins-moving-stolen-funds-across-chains-after-arbitrum-eth-freeze"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
