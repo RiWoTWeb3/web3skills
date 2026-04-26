@@ -1,5 +1,26 @@
 [
   {
+    "title": "LayerZero Infrastructure Breach: Post-Mortem Analysis",
+    "category": "INFRA",
+    "summary": "Analysis of the infrastructure compromise that led to unauthorized bridge message forgery, highlighting critical security gaps in relay nodes.",
+    "date": "2026-04-26",
+    "sourceLink": "https://rekt.news/kelpdao-rekt"
+  },
+  {
+    "title": "Rhea Finance $18.4M Oracle Exploit on NEAR",
+    "category": "INFRA",
+    "summary": "Rhea Finance suffered a significant loss due to an input validation failure in its margin parser, allowing attackers to use fake swap routes as collateral.",
+    "date": "2026-04-26",
+    "sourceLink": "https://rekt.news/rhea-finance-rekt"
+  },
+  {
+    "title": "KelpDAO $290M Exploit via LayerZero Compromise",
+    "category": "HACK",
+    "summary": "DPRK-linked actors walked away with $290M after breaching LayerZero infrastructure to forge malicious bridge messages targeting KelpDAO.",
+    "date": "2026-04-26",
+    "sourceLink": "https://rekt.news/kelpdao-rekt"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
