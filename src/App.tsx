@@ -548,6 +548,43 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
+const SecurityPulse = ({ darkMode }) => {
+  const safetyIndex = useMemo(() => {
+    const last7Days = new Date();
+    last7Days.setDate(last7Days.getDate() - 7);
+    const recentHacks = intelData.filter(item =>
+      item.category === 'HACK' && new Date(item.date) >= last7Days
+    );
+    return Math.max(0, 100 - (recentHacks.length * 20));
+  }, []);
+
+  const getStatus = (index) => {
+    if (index >= 80) return { label: 'OPTIMAL', color: 'text-green-500', bg: 'bg-green-500/10' };
+    if (index >= 50) return { label: 'CAUTION', color: 'text-yellow-500', bg: 'bg-yellow-500/10' };
+    return { label: 'CRITICAL', color: 'text-red-500', bg: 'bg-red-500/10' };
+  };
+
+  const status = getStatus(safetyIndex);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex flex-col justify-center`}>
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <Shield size={16} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+          <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Security Pulse</h3>
+        </div>
+        <span className={`text-[10px] font-mono px-2 py-0.5 rounded-[2px] border ${status.color} ${status.bg} border-current`}>
+          {status.label}
+        </span>
+      </div>
+      <div className="space-y-1">
+        <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{safetyIndex}/100</p>
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Ecosystem Safety Index</p>
+      </div>
+    </div>
+  );
+};
+
 const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
   <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex justify-around items-center`}>
     <div className="text-center">
@@ -1085,7 +1122,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SecurityPulse darkMode={darkMode} />
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SkillOfTheDay darkMode={darkMode} />

@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-26",
+    "type": "job",
+    "title": "Rust Developer \u2014 EVM Systems & Trading Infrastructure at 1010 trading",
+    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems & Trading Infrastructure. Requirements: Rust, EVM, Trading Infrastructure. Remote.",
+    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
+  },
+  {
+    "date": "2026-04-26",
+    "type": "job",
+    "title": "Security Engineer at Ondo Finance",
+    "description": "Join Ondo Finance as a Security Engineer. Requirements: Security, Smart Contract Auditing, Cryptography. Remote.",
+    "link": "https://web3.career/security-engineer-ondofinance/148963"
+  },
+  {
+    "date": "2026-04-26",
+    "type": "job",
+    "title": "Staff Node.js Engineer at Tether",
+    "description": "Join Tether as a Staff Node.js Engineer. Requirements: Node.js, Backend Architecture, Infrastructure. Remote.",
+    "link": "https://web3.career/staff-node-js-engineer-100-remote-tetheroperationslimited/148957"
+  },
+  {
+    "date": "2026-04-26",
+    "type": "news",
+    "title": "LayerZero Infrastructure Breach: Post-Mortem Analysis",
+    "description": "Analysis of the infrastructure compromise that led to unauthorized bridge message forgery, highlighting critical security gaps in relay nodes.",
+    "link": "https://rekt.news/kelpdao-rekt"
+  },
+  {
+    "date": "2026-04-26",
+    "type": "news",
+    "title": "Rhea Finance $18.4M Oracle Exploit on NEAR",
+    "description": "Rhea Finance suffered a significant loss due to an input validation failure in its margin parser, allowing attackers to use fake swap routes as collateral.",
+    "link": "https://rekt.news/rhea-finance-rekt"
+  },
+  {
+    "date": "2026-04-26",
+    "type": "hack",
+    "title": "KelpDAO $290M Exploit via LayerZero Compromise",
+    "description": "DPRK-linked actors walked away with $290M after breaching LayerZero infrastructure to forge malicious bridge messages targeting KelpDAO.",
+    "link": "https://rekt.news/kelpdao-rekt"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

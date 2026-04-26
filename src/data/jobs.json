@@ -1,5 +1,53 @@
 [
   {
+    "id": "1010-trading-rust-evm-2026-04-26",
+    "title": "Rust Developer \u2014 EVM Systems & Trading Infrastructure",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "EVM",
+      "Trading Infrastructure",
+      "Low-Latency"
+    ],
+    "applyLink": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
+  },
+  {
+    "id": "ondo-security-engineer-2026-04-26",
+    "title": "Security Engineer",
+    "company": "Ondo Finance",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$105,000 - $150,000",
+    "requirements": [
+      "Security",
+      "Smart Contract Auditing",
+      "Cryptography",
+      "Solidity"
+    ],
+    "applyLink": "https://web3.career/security-engineer-ondofinance/148963"
+  },
+  {
+    "id": "tether-staff-nodejs-2026-04-26",
+    "title": "Staff Node.js Engineer",
+    "company": "Tether",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$88,000 - $101,000",
+    "requirements": [
+      "Node.js",
+      "Backend Architecture",
+      "Infrastructure",
+      "Bitcoin"
+    ],
+    "applyLink": "https://web3.career/staff-node-js-engineer-100-remote-tetheroperationslimited/148957"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
