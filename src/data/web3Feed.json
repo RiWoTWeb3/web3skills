@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-28",
+    "type": "job",
+    "title": "Security Engineer at Ondo Finance",
+    "description": "Join Ondo Finance as a Security Engineer. Requirements: Security, Blockchain, AWS. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-04-28",
+    "type": "job",
+    "title": "Senior Product Engineer at Wormhole Labs",
+    "description": "Join Wormhole Labs as a Senior Product Engineer. Requirements: Solana, TypeScript, Crypto. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-04-28",
+    "type": "job",
+    "title": "Staff Engineer (Solana) at lightcone.trade",
+    "description": "Join lightcone.trade as a Staff Engineer (Solana). Requirements: Rust, Solana, Remote. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-04-28",
+    "type": "news",
+    "title": "Starknet Quantum Leap v0.14.0: Scaling Throughput 10x",
+    "description": "Starknet's latest v0.14.0 upgrade introduces critical throughput optimizations, aiming for a 10x increase in transaction processing speed.",
+    "link": "https://starkware.co/blog/starknet-v0-14-0/"
+  },
+  {
+    "date": "2026-04-28",
+    "type": "news",
+    "title": "Base L2 Surpasses $10B TVL Following Infrastructure Upgrade",
+    "description": "Base network hits a massive $10 Billion Total Value Locked milestone, driven by improved infrastructure and institutional adoption.",
+    "link": "https://base.mirror.xyz/"
+  },
+  {
+    "date": "2026-04-28",
+    "type": "hack",
+    "title": "Aura Finance Whitehat Save: $1.5M Vulnerability Mitigated",
+    "description": "A critical vulnerability in Aura Finance was safely disclosed by a white-hat researcher, preventing a potential $1.5M exploit.",
+    "link": "https://immunefi.com/blog/aura-finance-whitehat-save/"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

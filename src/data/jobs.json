@@ -1,5 +1,53 @@
 [
   {
+    "id": "ondo-security-engineer-2026-04-28",
+    "title": "Security Engineer",
+    "company": "Ondo Finance",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$105,000 - $150,000",
+    "requirements": [
+      "Security",
+      "Blockchain",
+      "AWS",
+      "Crypto"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "wormhole-product-engineer-2026-04-28",
+    "title": "Senior Product Engineer",
+    "company": "Wormhole Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$87,000 - $115,000",
+    "requirements": [
+      "Solana",
+      "TypeScript",
+      "Crypto",
+      "Engineering"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "lightcone-staff-engineer-2026-04-28",
+    "title": "Staff Engineer (Solana)",
+    "company": "lightcone.trade",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$225,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Remote",
+      "Engineering"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

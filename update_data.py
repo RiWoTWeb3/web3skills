@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
+            "id": f"ondo-security-engineer-{today}",
+            "title": "Security Engineer",
+            "company": "Ondo Finance",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$105,000 - $150,000",
+            "requirements": ["Security", "Blockchain", "AWS", "Crypto"],
+            "applyLink": "https://web3.career/remote+solana-jobs"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"wormhole-product-engineer-{today}",
+            "title": "Senior Product Engineer",
+            "company": "Wormhole Labs",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$87,000 - $115,000",
+            "requirements": ["Solana", "TypeScript", "Crypto", "Engineering"],
+            "applyLink": "https://web3.career/remote+solana-jobs"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
-            "type": "Backend",
+            "id": f"lightcone-staff-engineer-{today}",
+            "title": "Staff Engineer (Solana)",
+            "company": "lightcone.trade",
+            "type": "SVM",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "experience": "Staff level",
+            "salaryRange": "$225,000 - $250,000",
+            "requirements": ["Rust", "Solana", "Remote", "Engineering"],
+            "applyLink": "https://web3.career/remote+solana-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Starknet Quantum Leap v0.14.0: Scaling Throughput 10x",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Starknet's latest v0.14.0 upgrade introduces critical throughput optimizations, aiming for a 10x increase in transaction processing speed.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://starkware.co/blog/starknet-v0-14-0/"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Base L2 Surpasses $10B TVL Following Infrastructure Upgrade",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Base network hits a massive $10 Billion Total Value Locked milestone, driven by improved infrastructure and institutional adoption.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://base.mirror.xyz/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-            "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "title": "Aura Finance Whitehat Save: $1.5M Vulnerability Mitigated",
+            "category": "BOUNTY",
+            "summary": "A critical vulnerability in Aura Finance was safely disclosed by a white-hat researcher, preventing a potential $1.5M exploit.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://immunefi.com/blog/aura-finance-whitehat-save/"
         }
     ]
 
