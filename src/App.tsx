@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { 
-  BookOpen, Code, Shield, DollarSign, Layout, Server, Network, 
+  BookOpen, Code, Shield, ShieldCheck, DollarSign, Layout, Server, Network,
   GraduationCap, Palette, Target, TrendingUp, Award, CheckCircle, 
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
@@ -531,6 +531,74 @@ const hasSkillOrSynonym = (skill: string, userSkills: Record<string, boolean>) =
   if (userSkills[skill]) return true;
   const synonyms = skillSynonyms[skill] || [];
   return synonyms.some(syn => userSkills[syn]);
+};
+
+const SkillGapAnalyzer = ({ darkMode, requirements, displaySkills }) => {
+  const missingSkills = requirements.filter(req => !hasSkillOrSynonym(req, displaySkills));
+
+  return (
+    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
+      <div className="flex items-center gap-2 mb-2">
+        <Target size={12} className={darkMode ? 'text-accent-blue' : 'text-orange-600'} />
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Skill Gap Analysis</p>
+      </div>
+      {missingSkills.length > 0 ? (
+        <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+          Critical gaps identified: <span className="font-bold">{missingSkills.join(', ')}</span>.
+          Consider visiting the <Link to="/skills" className="underline hover:text-accent-blue transition-colors">Skill Tree</Link> to initialize these modules.
+        </p>
+      ) : (
+        <p className={`text-xs ${darkMode ? 'text-green-400 font-mono' : 'text-green-700'}`}>
+          No gaps identified. You are fully aligned with this protocol's requirements.
+        </p>
+      )}
+    </div>
+  );
+};
+
+const SecurityPulse = ({ darkMode, intelData }) => {
+  const safetyIndex = useMemo(() => {
+    const recentIncidents = intelData.filter(item => {
+      if (item.category !== 'HACK' && item.category !== 'BOUNTY') return false;
+      const incidentDate = new Date(item.date);
+      const now = new Date();
+      const diffDays = Math.ceil(Math.abs(now.getTime() - incidentDate.getTime()) / (1000 * 60 * 60 * 24));
+      return diffDays <= 7;
+    });
+    return Math.max(0, 100 - recentIncidents.length * 20);
+  }, [intelData]);
+
+  const getStatus = (index) => {
+    if (index >= 80) return { label: 'OPTIMAL', color: 'text-green-500', bg: 'bg-green-500/10 border-green-500/20' };
+    if (index >= 50) return { label: 'CAUTION', color: 'text-yellow-500', bg: 'bg-yellow-500/10 border-yellow-500/20' };
+    return { label: 'CRITICAL', color: 'text-red-500', bg: 'bg-red-500/10 border-red-500/20' };
+  };
+
+  const status = getStatus(safetyIndex);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <Shield className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={16} />
+          <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Security Pulse</h3>
+        </div>
+        <div className={`px-2 py-0.5 rounded-[2px] border ${status.bg} ${status.color} text-[8px] font-mono font-bold animate-pulse`}>
+          {status.label}
+        </div>
+      </div>
+      <div className="flex items-end gap-3">
+        <p className={`text-4xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{safetyIndex}</p>
+        <p className={`text-[10px] font-mono uppercase tracking-widest mb-1.5 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Safety Index</p>
+      </div>
+      <div className={`w-full h-1 mt-4 ${darkMode ? 'bg-white/5' : 'bg-gray-100'} rounded-full overflow-hidden`}>
+        <div
+          className={`h-full transition-all duration-1000 ${safetyIndex >= 80 ? 'bg-green-500' : safetyIndex >= 50 ? 'bg-yellow-500' : 'bg-red-500'}`}
+          style={{ width: `${safetyIndex}%` }}
+        />
+      </div>
+    </div>
+  );
 };
 
 const matchRoadmapSkill = (roadmapSkill, userSkills) => {
@@ -1085,7 +1153,8 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SecurityPulse darkMode={darkMode} intelData={intelData} />
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SkillOfTheDay darkMode={darkMode} />
@@ -1735,14 +1804,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     </div>
                   </div>
 
-                {missingSkills.length > 0 && (
-                    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
-                      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
-                        To align with this role, consider learning: <span className="font-bold">{missingSkills.join(', ')}</span>
-                      </p>
-                    </div>
-                  )}
+                <SkillGapAnalyzer darkMode={darkMode} requirements={job.requirements} displaySkills={displaySkills} />
                   </div>
               
             </div>
@@ -1887,6 +1949,43 @@ const KeyHealthHeatmap = ({ darkMode, keys }) => {
   );
 };
 
+const SystemCapacityMonitor = ({ darkMode, keys }) => {
+  const aggregateUsage = useMemo(() => {
+    if (keys.length === 0) return { percentage: 0, current: 0, total: 0 };
+    const current = keys.reduce((acc, k) => acc + k.usage, 0);
+    const total = keys.reduce((acc, k) => acc + (k.limit || 0), 0);
+    return {
+      percentage: total > 0 ? (current / total) * 100 : 0,
+      current,
+      total
+    };
+  }, [keys]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <Activity size={16} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+          <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>System Capacity Monitor</h3>
+        </div>
+        <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>
+          AGGREGATE_QUOTA: {aggregateUsage.percentage.toFixed(1)}%
+        </span>
+      </div>
+      <div className={`w-full h-2 ${darkMode ? 'bg-white/5' : 'bg-gray-100'} rounded-full overflow-hidden mb-4`}>
+        <div
+          className={`h-full transition-all duration-1000 ${aggregateUsage.percentage > 80 ? 'bg-red-500' : 'bg-accent-blue'}`}
+          style={{ width: `${aggregateUsage.percentage}%` }}
+        />
+      </div>
+      <div className="flex justify-between items-center">
+        <p className={`text-[10px] font-mono ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>TOTAL_REQUESTS_PROCESSED</p>
+        <p className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{aggregateUsage.current.toLocaleString()} / {aggregateUsage.total.toLocaleString()}</p>
+      </div>
+    </div>
+  );
+};
+
 const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   return (
     <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} border flex flex-col h-[400px]`}>
@@ -1975,6 +2074,28 @@ const AdminPanelView = ({ darkMode }) => {
     return Object.entries(counts).map(([name, value]) => ({ name, value }));
   }, []);
 
+  const skillValueData = useMemo(() => {
+    const skillSalaries: Record<string, number[]> = {};
+    jobsData.forEach(job => {
+      const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/);
+      if (salaryMatch) {
+        const salary = parseInt(salaryMatch[1].replace(/,/g, ''));
+        job.requirements.forEach(req => {
+          if (!skillSalaries[req]) skillSalaries[req] = [];
+          skillSalaries[req].push(salary);
+        });
+      }
+    });
+
+    return Object.entries(skillSalaries)
+      .map(([name, salaries]) => ({
+        name,
+        value: Math.round(salaries.reduce((a, b) => a + b, 0) / salaries.length)
+      }))
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 8);
+  }, []);
+
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
@@ -2024,37 +2145,76 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+      <SystemCapacityMonitor darkMode={darkMode} keys={keys} />
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        {/* Market Distribution Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {marketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                      fillOpacity={0.8}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={marketData} layout="vertical">
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
-              <Tooltip
-                cursor={{ fill: 'transparent' }}
-                contentStyle={{
-                  backgroundColor: darkMode ? '#0f172a' : '#fff',
-                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
-                  fontSize: '10px',
-                  fontFamily: 'monospace'
-                }}
-              />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                {marketData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
-                    fillOpacity={0.8}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+
+        {/* Skill Value Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <DollarSign className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={skillValueData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} width={100} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  formatter={(value) => [`$${value.toLocaleString()}`, 'Avg Salary']}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {skillValueData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={darkMode ? '#00f2ff' : '#2563eb'}
+                      fillOpacity={0.4 + (index / skillValueData.length) * 0.6}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
@@ -2173,6 +2333,39 @@ const AdminPanelView = ({ darkMode }) => {
   );
 };
 
+const IntelDistributionChart = ({ darkMode, stats }) => {
+  const data = [
+    { name: 'Security Hacks', value: stats.HACK, color: '#ef4444' },
+    { name: 'Infra Updates', value: stats.INFRA, color: '#2563eb' },
+    { name: 'Bug Bounties', value: stats.BOUNTY, color: '#10b981' },
+  ];
+
+  return (
+    <div className={`h-48 w-full ${darkMode ? 'bg-black/20' : 'bg-white/50'} rounded-lg p-4 border ${darkMode ? 'border-white/5' : 'border-gray-100'}`}>
+      <p className={`text-[10px] font-mono uppercase tracking-widest mb-4 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Intelligence Distribution</p>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data}>
+          <XAxis dataKey="name" hide />
+          <YAxis hide />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: darkMode ? '#0f172a' : '#fff',
+              border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+              fontSize: '10px',
+              fontFamily: 'monospace'
+            }}
+          />
+          <Bar dataKey="value">
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} fillOpacity={0.8} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
 const NewsView = ({ darkMode }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
@@ -2238,21 +2431,26 @@ const NewsView = ({ darkMode }) => {
       </div>
 
       {/* Intel Stats Feature */}
-      <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 rounded-2xl'} p-6 border mb-8 grid grid-cols-2 md:grid-cols-4 gap-4`}>
-        {[
-          { label: 'Total Logs', value: intelData.length, icon: Database, color: 'text-accent-blue' },
-          { label: 'Security Hacks', value: stats.HACK, icon: ShieldAlert, color: 'text-red-500' },
-          { label: 'Infra Updates', value: stats.INFRA, icon: Newspaper, color: 'text-blue-500' },
-          { label: 'Bug Bounties', value: stats.BOUNTY, icon: Award, color: 'text-green-500' },
-        ].map((s, i) => (
-          <div key={i} className="space-y-1">
-            <div className="flex items-center gap-2">
-              <s.icon size={14} className={s.color} />
-              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{s.label}</p>
-            </div>
-            <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{s.value}</p>
+      <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 rounded-2xl'} p-6 border mb-8`}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-6">
+            {[
+              { label: 'Total Logs', value: intelData.length, icon: Database, color: 'text-accent-blue' },
+              { label: 'Security Hacks', value: stats.HACK, icon: ShieldAlert, color: 'text-red-500' },
+              { label: 'Infra Updates', value: stats.INFRA, icon: Newspaper, color: 'text-blue-500' },
+              { label: 'Bug Bounties', value: stats.BOUNTY, icon: Award, color: 'text-green-500' },
+            ].map((s, i) => (
+              <div key={i} className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <s.icon size={14} className={s.color} />
+                  <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{s.label}</p>
+                </div>
+                <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{s.value}</p>
+              </div>
+            ))}
           </div>
-        ))}
+          <IntelDistributionChart darkMode={darkMode} stats={stats} />
+        </div>
       </div>
 
       <div className={`${darkMode ? 'surface-industrial' : 'glass-card-light rounded-2xl'} p-6 mb-8`}>

@@ -1,5 +1,26 @@
 [
   {
+    "title": "Starknet Quantum Leap v0.14.0: Scaling Throughput 10x",
+    "category": "INFRA",
+    "summary": "Starknet's latest v0.14.0 upgrade introduces critical throughput optimizations, aiming for a 10x increase in transaction processing speed.",
+    "date": "2026-04-28",
+    "sourceLink": "https://starkware.co/blog/starknet-v0-14-0/"
+  },
+  {
+    "title": "Base L2 Surpasses $10B TVL Following Infrastructure Upgrade",
+    "category": "INFRA",
+    "summary": "Base network hits a massive $10 Billion Total Value Locked milestone, driven by improved infrastructure and institutional adoption.",
+    "date": "2026-04-28",
+    "sourceLink": "https://base.mirror.xyz/"
+  },
+  {
+    "title": "Aura Finance Whitehat Save: $1.5M Vulnerability Mitigated",
+    "category": "HACK",
+    "summary": "A critical vulnerability in Aura Finance was safely disclosed by a white-hat researcher, preventing a potential $1.5M exploit.",
+    "date": "2026-04-28",
+    "sourceLink": "https://immunefi.com/blog/aura-finance-whitehat-save/"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
