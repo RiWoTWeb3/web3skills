@@ -1,5 +1,26 @@
 [
   {
+    "title": "Four Pillars Secures $20M Series A Led by Pantera Capital",
+    "category": "INFRA",
+    "summary": "Blockchain research firm Four Pillars raised $20M to expand into a comprehensive Web3 solutions partner, bridging the gap between Asia-Global and TradFi-Web3 markets.",
+    "date": "2026-04-30",
+    "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260427cn44076/four-pillars-secures-series-a-led-by-pantera-capital-to-expand-as-a-web3-solution-company"
+  },
+  {
+    "title": "Alphea Unveils AI-Native Layer 1 at Hong Kong Web3 Festival",
+    "category": "INFRA",
+    "summary": "Alphea debuted its decentralized execution environment purpose-built for autonomous AI agents, handling execution, memory, and verifiable compute as native primitives.",
+    "date": "2026-04-30",
+    "sourceLink": "https://markets.businessinsider.com/news/stocks/alphea-unveils-ai-native-layer-1-execution-network-at-hong-kong-web3-festival-2026-1036078741"
+  },
+  {
+    "title": "Kelp DAO Exploit Impact: LayerZero Commits 10,000 ETH",
+    "category": "HACK",
+    "summary": "Following the Kelp DAO exploit, LayerZero has committed 10,000 ETH to the DeFi United recovery effort, as Sector TVL dropped significantly.",
+    "date": "2026-04-30",
+    "sourceLink": "https://www.theblock.co/post/399275/layerzero-commits-10000-eth-to-defi-united-effort"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

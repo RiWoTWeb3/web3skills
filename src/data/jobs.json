@@ -1,5 +1,53 @@
 [
   {
+    "id": "odos-solana-engineer-2026-04-30",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor Framework",
+      "Solana Fundamentals"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+  },
+  {
+    "id": "1010-trading-rust-evm-2026-04-30",
+    "title": "Rust Developer \u2014 EVM Systems",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "EVM",
+      "Ethereum",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "id": "hibachi-rust-engineer-2026-04-30",
+    "title": "Rust Engineer",
+    "company": "Hibachi",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Backend",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/evm+remote-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
