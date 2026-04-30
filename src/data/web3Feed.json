@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-04-30",
+    "type": "job",
+    "title": "Solana Smart Contracts Engineer at Odos",
+    "description": "Join Odos as a Solana Smart Contracts Engineer. Requirements: Rust, Solana, Anchor Framework. Remote.",
+    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-04-30",
+    "type": "job",
+    "title": "Rust Developer \u2014 EVM Systems at 1010 trading",
+    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems. Requirements: Rust, EVM, Ethereum. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-04-30",
+    "type": "job",
+    "title": "Rust Engineer at Hibachi",
+    "description": "Join Hibachi as a Rust Engineer. Requirements: Rust, Distributed Systems, Backend. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-04-30",
+    "type": "news",
+    "title": "Four Pillars Secures $20M Series A Led by Pantera Capital",
+    "description": "Blockchain research firm Four Pillars raised $20M to expand into a comprehensive Web3 solutions partner, bridging the gap between Asia-Global and TradFi-Web3 markets.",
+    "link": "https://www.morningstar.com/news/pr-newswire/20260427cn44076/four-pillars-secures-series-a-led-by-pantera-capital-to-expand-as-a-web3-solution-company"
+  },
+  {
+    "date": "2026-04-30",
+    "type": "news",
+    "title": "Alphea Unveils AI-Native Layer 1 at Hong Kong Web3 Festival",
+    "description": "Alphea debuted its decentralized execution environment purpose-built for autonomous AI agents, handling execution, memory, and verifiable compute as native primitives.",
+    "link": "https://markets.businessinsider.com/news/stocks/alphea-unveils-ai-native-layer-1-execution-network-at-hong-kong-web3-festival-2026-1036078741"
+  },
+  {
+    "date": "2026-04-30",
+    "type": "hack",
+    "title": "Kelp DAO Exploit Impact: LayerZero Commits 10,000 ETH",
+    "description": "Following the Kelp DAO exploit, LayerZero has committed 10,000 ETH to the DeFi United recovery effort, as Sector TVL dropped significantly.",
+    "link": "https://www.theblock.co/post/399275/layerzero-commits-10000-eth-to-defi-united-effort"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

@@ -30,17 +30,6 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
             "id": f"odos-solana-engineer-{today}",
             "title": "Solana Smart Contracts Engineer",
             "company": "Odos",
@@ -48,43 +37,54 @@ def main():
             "workType": "Remote",
             "experience": "Senior level",
             "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "requirements": ["Rust", "Solana", "Anchor Framework", "Solana Fundamentals"],
+            "applyLink": "https://www.indeed.com/q-web3-l-remote-jobs.html"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"1010-trading-rust-evm-{today}",
+            "title": "Rust Developer — EVM Systems",
+            "company": "1010 trading",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "Competitive",
+            "requirements": ["Rust", "EVM", "Ethereum", "Distributed Systems"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
+        },
+        {
+            "id": f"hibachi-rust-engineer-{today}",
+            "title": "Rust Engineer",
+            "company": "Hibachi",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "Competitive",
+            "requirements": ["Rust", "Distributed Systems", "Backend", "Web3"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Four Pillars Secures $20M Series A Led by Pantera Capital",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Blockchain research firm Four Pillars raised $20M to expand into a comprehensive Web3 solutions partner, bridging the gap between Asia-Global and TradFi-Web3 markets.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260427cn44076/four-pillars-secures-series-a-led-by-pantera-capital-to-expand-as-a-web3-solution-company"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Alphea Unveils AI-Native Layer 1 at Hong Kong Web3 Festival",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Alphea debuted its decentralized execution environment purpose-built for autonomous AI agents, handling execution, memory, and verifiable compute as native primitives.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://markets.businessinsider.com/news/stocks/alphea-unveils-ai-native-layer-1-execution-network-at-hong-kong-web3-festival-2026-1036078741"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Kelp DAO Exploit Impact: LayerZero Commits 10,000 ETH",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "Following the Kelp DAO exploit, LayerZero has committed 10,000 ETH to the DeFi United recovery effort, as Sector TVL dropped significantly.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.theblock.co/post/399275/layerzero-commits-10000-eth-to-defi-united-effort"
         }
     ]
 
