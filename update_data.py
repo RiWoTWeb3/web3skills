@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
+            "id": f"certik-security-engineer-{today}",
+            "title": "Blockchain Security Engineer",
+            "company": "CertiK",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$102,000 - $180,000",
+            "requirements": ["Solidity", "Rust", "Golang", "Security Auditing"],
+            "applyLink": "https://www.indeed.com/q-solidity-l-remote-jobs.html"
+        },
+        {
             "id": f"odos-evm-engineer-{today}",
             "title": "Smart Contracts Engineer EVM",
             "company": "Odos",
             "type": "EVM",
             "workType": "Remote",
-            "experience": "Senior level",
+            "experience": "Mid-Senior level",
             "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "requirements": ["Solidity", "EVM Mechanics", "Foundry", "Smart Contract Development"],
+            "applyLink": "https://www.indeed.com/q-solidity-l-remote-jobs.html"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"veda-svm-engineer-{today}",
+            "title": "Smart Contract Engineer SVM",
+            "company": "Veda",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
-            "type": "Backend",
-            "workType": "Remote",
-            "experience": "Senior level",
             "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "requirements": ["Rust", "Solana Program Development", "SVM architecture", "DeFi"],
+            "applyLink": "https://bebee.com/ph/jobs/smart-contract-engineer-svm-remote-world-work-from-home--theirstack-664390961"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Chainlink CCIP Expands Cross-Chain Interoperability to Major L2s",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Chainlink's Cross-Chain Interoperability Protocol (CCIP) has officially expanded its support to multiple high-performance Layer 2 networks, enabling secure token transfers and programmable messaging across fragmented ecosystems.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://binance.com/en/square"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Celestia Mocha Testnet Upgraded for 2026 Modular Scaling Roadmap",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "The Celestia Mocha testnet successfully completed a hard fork to implement new data availability sampling optimizations, paving the way for the 2026 modular scaling milestones.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://binance.com/en/square"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "EigenLayer Mitigates Critical Bridge Vulnerability via Whitehat Disclosure",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "EigenLayer security teams successfully mitigated a potential critical vulnerability in their cross-chain bridge architecture following a responsible disclosure by a whitehat security researcher, securing over $20B in TVL.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://binance.com/en/square"
         }
     ]
 

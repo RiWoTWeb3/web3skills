@@ -1,5 +1,53 @@
 [
   {
+    "id": "certik-security-engineer-2026-05-01",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Golang",
+      "Security Auditing"
+    ],
+    "applyLink": "https://www.indeed.com/q-solidity-l-remote-jobs.html"
+  },
+  {
+    "id": "odos-evm-engineer-2026-05-01",
+    "title": "Smart Contracts Engineer EVM",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Foundry",
+      "Smart Contract Development"
+    ],
+    "applyLink": "https://www.indeed.com/q-solidity-l-remote-jobs.html"
+  },
+  {
+    "id": "veda-svm-engineer-2026-05-01",
+    "title": "Smart Contract Engineer SVM",
+    "company": "Veda",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana Program Development",
+      "SVM architecture",
+      "DeFi"
+    ],
+    "applyLink": "https://bebee.com/ph/jobs/smart-contract-engineer-svm-remote-world-work-from-home--theirstack-664390961"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

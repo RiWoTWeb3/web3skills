@@ -1,5 +1,26 @@
 [
   {
+    "title": "Chainlink CCIP Expands Cross-Chain Interoperability to Major L2s",
+    "category": "INFRA",
+    "summary": "Chainlink's Cross-Chain Interoperability Protocol (CCIP) has officially expanded its support to multiple high-performance Layer 2 networks, enabling secure token transfers and programmable messaging across fragmented ecosystems.",
+    "date": "2026-05-01",
+    "sourceLink": "https://binance.com/en/square"
+  },
+  {
+    "title": "Celestia Mocha Testnet Upgraded for 2026 Modular Scaling Roadmap",
+    "category": "INFRA",
+    "summary": "The Celestia Mocha testnet successfully completed a hard fork to implement new data availability sampling optimizations, paving the way for the 2026 modular scaling milestones.",
+    "date": "2026-05-01",
+    "sourceLink": "https://binance.com/en/square"
+  },
+  {
+    "title": "EigenLayer Mitigates Critical Bridge Vulnerability via Whitehat Disclosure",
+    "category": "HACK",
+    "summary": "EigenLayer security teams successfully mitigated a potential critical vulnerability in their cross-chain bridge architecture following a responsible disclosure by a whitehat security researcher, securing over $20B in TVL.",
+    "date": "2026-05-01",
+    "sourceLink": "https://binance.com/en/square"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

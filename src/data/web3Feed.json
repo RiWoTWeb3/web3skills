@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-01",
+    "type": "job",
+    "title": "Blockchain Security Engineer at CertiK",
+    "description": "Join CertiK as a Blockchain Security Engineer. Requirements: Solidity, Rust, Golang. Remote.",
+    "link": "https://www.indeed.com/q-solidity-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-05-01",
+    "type": "job",
+    "title": "Smart Contracts Engineer EVM at Odos",
+    "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, EVM Mechanics, Foundry. Remote.",
+    "link": "https://www.indeed.com/q-solidity-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-05-01",
+    "type": "job",
+    "title": "Smart Contract Engineer SVM at Veda",
+    "description": "Join Veda as a Smart Contract Engineer SVM. Requirements: Rust, Solana Program Development, SVM architecture. Remote.",
+    "link": "https://bebee.com/ph/jobs/smart-contract-engineer-svm-remote-world-work-from-home--theirstack-664390961"
+  },
+  {
+    "date": "2026-05-01",
+    "type": "news",
+    "title": "Chainlink CCIP Expands Cross-Chain Interoperability to Major L2s",
+    "description": "Chainlink's Cross-Chain Interoperability Protocol (CCIP) has officially expanded its support to multiple high-performance Layer 2 networks, enabling secure token transfers and programmable messaging across fragmented ecosystems.",
+    "link": "https://binance.com/en/square"
+  },
+  {
+    "date": "2026-05-01",
+    "type": "news",
+    "title": "Celestia Mocha Testnet Upgraded for 2026 Modular Scaling Roadmap",
+    "description": "The Celestia Mocha testnet successfully completed a hard fork to implement new data availability sampling optimizations, paving the way for the 2026 modular scaling milestones.",
+    "link": "https://binance.com/en/square"
+  },
+  {
+    "date": "2026-05-01",
+    "type": "hack",
+    "title": "EigenLayer Mitigates Critical Bridge Vulnerability via Whitehat Disclosure",
+    "description": "EigenLayer security teams successfully mitigated a potential critical vulnerability in their cross-chain bridge architecture following a responsible disclosure by a whitehat security researcher, securing over $20B in TVL.",
+    "link": "https://binance.com/en/square"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]
