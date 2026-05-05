@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Glamsterdam Upgrade Parallel Execution Live on Devnet",
+    "category": "INFRA",
+    "summary": "The Ethereum Glamsterdam fork introduced parallel transaction processing on the latest devnet, aiming to scale Layer-1 to 10k TPS.",
+    "date": "2026-05-05",
+    "sourceLink": "https://ambcrypto.com/ethereum-how-eths-2026-upgrades-aim-to-reshape-the-network/"
+  },
+  {
+    "title": "Franklin Templeton Monad RWA Expansion",
+    "category": "INFRA",
+    "summary": "Franklin Templeton has successfully integrated its institutional RWA platform with the Monad parallelized EVM network.",
+    "date": "2026-05-05",
+    "sourceLink": "https://flitpay.com/blog/ethereum-pectra-upgrade-eips-release-date-and-how-will-it-affect-eth-price"
+  },
+  {
+    "title": "Toobit Web & Mobile Bug Bounty Update",
+    "category": "BOUNTY",
+    "summary": "Toobit has increased its bug bounty rewards on HackenProof, offering up to 0,000 for critical web and mobile vulnerabilities.",
+    "date": "2026-05-05",
+    "sourceLink": "https://hackenproof.com/programs"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

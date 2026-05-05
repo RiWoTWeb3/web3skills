@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-05",
+    "type": "job",
+    "title": "Startup CTO co-founder role (Rust) at Travoom",
+    "description": "Join Travoom as a Startup CTO co-founder role (Rust). Requirements: Rust, Blockchain, Executive Leadership. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-05-05",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Ethereum, DeFi, Blockchain Infrastructure. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-05-05",
+    "type": "job",
+    "title": "Security Engineer at Ondo Finance",
+    "description": "Join Ondo Finance as a Security Engineer. Requirements: Smart Contract Auditing, Security Best Practices, Solidity. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-05-05",
+    "type": "news",
+    "title": "Ethereum Glamsterdam Upgrade Parallel Execution Live on Devnet",
+    "description": "The Ethereum Glamsterdam fork introduced parallel transaction processing on the latest devnet, aiming to scale Layer-1 to 10k TPS.",
+    "link": "https://ambcrypto.com/ethereum-how-eths-2026-upgrades-aim-to-reshape-the-network/"
+  },
+  {
+    "date": "2026-05-05",
+    "type": "news",
+    "title": "Franklin Templeton Monad RWA Expansion",
+    "description": "Franklin Templeton has successfully integrated its institutional RWA platform with the Monad parallelized EVM network.",
+    "link": "https://flitpay.com/blog/ethereum-pectra-upgrade-eips-release-date-and-how-will-it-affect-eth-price"
+  },
+  {
+    "date": "2026-05-05",
+    "type": "hack",
+    "title": "Toobit Web & Mobile Bug Bounty Update",
+    "description": "Toobit has increased its bug bounty rewards on HackenProof, offering up to 0,000 for critical web and mobile vulnerabilities.",
+    "link": "https://hackenproof.com/programs"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

@@ -1,5 +1,53 @@
 [
   {
+    "id": "travoom-cto-2026-05-05",
+    "title": "Startup CTO co-founder role (Rust)",
+    "company": "Travoom",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Executive level",
+    "salaryRange": "$112,000 - $120,000",
+    "requirements": [
+      "Rust",
+      "Blockchain",
+      "Executive Leadership",
+      "System Architecture"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "jumpcrypto-production-engineer-2026-05-05",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Ethereum",
+      "DeFi",
+      "Blockchain Infrastructure",
+      "Go"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "ondo-finance-security-engineer-2026-05-05",
+    "title": "Security Engineer",
+    "company": "Ondo Finance",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$105,000 - $150,000",
+    "requirements": [
+      "Smart Contract Auditing",
+      "Security Best Practices",
+      "Solidity",
+      "Vulnerability Assessment"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
