@@ -1928,6 +1928,81 @@ const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   );
 };
 
+const SkillMarketValueChart = ({ darkMode, jobs }) => {
+  const skillValues = useMemo(() => {
+    const totals: Record<string, { sum: number; count: number }> = {};
+    const salaryRegex = /\$(\d{1,3}(?:,\d{3})*)/;
+
+    jobs.forEach(job => {
+      const match = job.salaryRange.match(salaryRegex);
+      if (match) {
+        const value = parseInt(match[1].replace(/,/g, ''));
+        job.requirements.forEach(req => {
+          if (!totals[req]) totals[req] = { sum: 0, count: 0 };
+          totals[req].sum += value;
+          totals[req].count += 1;
+        });
+      }
+    });
+
+    return Object.entries(totals)
+      .map(([skill, data]) => ({
+        skill,
+        avgValue: Math.round(data.sum / data.count)
+      }))
+      .sort((a, b) => b.avgValue - a.avgValue)
+      .slice(0, 8);
+  }, [jobs]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center gap-3 mb-6">
+        <DollarSign className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+        <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+      </div>
+      <div className="h-72 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={skillValues} margin={{ left: 20, right: 20, bottom: 20 }}>
+            <XAxis
+              dataKey="skill"
+              stroke={darkMode ? '#94a3b8' : '#64748b'}
+              fontSize={10}
+              tickLine={false}
+              axisLine={false}
+              interval={0}
+              angle={-45}
+              textAnchor="end"
+              height={60}
+            />
+            <YAxis
+              hide
+            />
+            <Tooltip
+              cursor={{ fill: 'transparent' }}
+              contentStyle={{
+                backgroundColor: darkMode ? '#0f172a' : '#fff',
+                border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                fontSize: '10px',
+                fontFamily: 'monospace'
+              }}
+              formatter={(value: number) => [`$${value.toLocaleString()}`, 'Avg Salary']}
+            />
+            <Bar dataKey="avgValue" radius={[4, 4, 0, 0]}>
+              {skillValues.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={darkMode ? '#00f2ff' : '#2563eb'}
+                  fillOpacity={0.4 + (index / skillValues.length) * 0.6}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
 const AdminPanelView = ({ darkMode }) => {
   const [stats, setStats] = useState({
     activeKeys: 0,
@@ -2024,7 +2099,8 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Market Distribution Chart */}
       <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
         <div className="flex items-center gap-3 mb-6">
           <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
@@ -2056,6 +2132,9 @@ const AdminPanelView = ({ darkMode }) => {
             </BarChart>
           </ResponsiveContainer>
         </div>
+      </div>
+
+      <SkillMarketValueChart darkMode={darkMode} jobs={jobsData} />
       </div>
 
       {/* Top Stats Grid */}
@@ -2434,6 +2513,64 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   );
 };
 
+const SkillGapAnalyzer = ({ darkMode, requiredSkills, displaySkills, roadmap }) => {
+  const gaps = useMemo(() => {
+    return requiredSkills.map(skill => {
+      const isMet = hasSkillOrSynonym(skill, displaySkills);
+      // Find which roadmap phase this skill belongs to
+      let moduleLink = null;
+      roadmap.forEach(phase => {
+        if (phase.skills.some(s => s === skill || s.replace(' Basics', '') === skill || s.replace(' Advanced', '') === skill)) {
+          // Find the first FREE resource in this phase as a module link
+          const freeResource = phase.resources.find(r => r.type === 'FREE');
+          if (freeResource) moduleLink = freeResource.url;
+        }
+      });
+      return { skill, isMet, moduleLink };
+    });
+  }, [requiredSkills, displaySkills, roadmap]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-8 mb-8 border`}>
+      <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-6 flex items-center gap-2`}>
+        <Target size={18} />
+        {darkMode ? 'SKILL_GAP_ANALYSIS' : 'Skill Gap Analysis'}
+      </h2>
+      <div className="space-y-4">
+        {gaps.map((gap, i) => (
+          <div key={i} className="flex items-center justify-between p-3 rounded-[4px] border border-white/5 bg-white/[0.01]">
+            <div className="flex items-center gap-3">
+              {gap.isMet ? (
+                <CheckCircle className="text-green-500" size={16} />
+              ) : (
+                <XCircle className="text-red-500" size={16} />
+              )}
+              <span className={`text-sm font-mono ${gap.isMet ? (darkMode ? 'text-white' : 'text-gray-900') : (darkMode ? 'text-slate-500' : 'text-gray-400')}`}>
+                {gap.skill}
+              </span>
+            </div>
+            {!gap.isMet && gap.moduleLink && (
+              <a
+                href={gap.moduleLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 border transition-all ${
+                  darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue hover:bg-accent-blue/20' : 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100'
+                }`}
+              >
+                Start Module <ExternalLink size={10} className="inline ml-1" />
+              </a>
+            )}
+            {gap.isMet && (
+              <span className="text-[10px] font-mono text-green-500 uppercase tracking-tighter">Verified</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
   const { id } = useParams();
   const careerName = decodeURIComponent(id || "");
@@ -2503,6 +2640,13 @@ const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
           </p>
         </div>
       </div>
+
+      <SkillGapAnalyzer
+        darkMode={darkMode}
+        requiredSkills={career.requiredSkills}
+        displaySkills={displaySkills}
+        roadmap={career.roadmap}
+      />
 
       <div className={`${darkMode ? 'surface-industrial border-white/5 rounded-[6px]' : 'bg-white border-gray-200 rounded-2xl'} p-8`}>
         <h2 className={`${darkMode ? 'label-industrial text-accent-blue/80' : 'text-sm font-mono uppercase tracking-[0.2em] text-gray-900'} mb-8`}>{darkMode ? 'CORE_PREREQUISITES' : 'Core Prerequisites'}</h2>

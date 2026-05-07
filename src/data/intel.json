@@ -1,5 +1,26 @@
 [
   {
+    "title": "SubQuery Network Launches Decentralised Gnosis RPC",
+    "category": "INFRA",
+    "summary": "SubQuery has officially launched its decentralised RPC for Gnosis, powered by its global community of node operators to ensure high availability and censorship resistance.",
+    "date": "2026-05-07",
+    "sourceLink": "https://subquery.medium.com/subquery-your-indexing-partner-for-unichain-mainnet-799d89016391"
+  },
+  {
+    "title": "SubQuery Network Adds Indexing Support for Solana and Monad",
+    "category": "INFRA",
+    "summary": "Expanding its multi-chain capabilities, SubQuery now provides lightning-fast indexing support for both Solana and the Monad public testnet.",
+    "date": "2026-05-07",
+    "sourceLink": "https://subquery.network/about"
+  },
+  {
+    "title": "Critical Logic Vulnerability Disclosure on Immunefi: $1.2M Payout",
+    "category": "HACK",
+    "summary": "A white-hat researcher has been awarded $1.2 million via Immunefi for disclosing a critical logic vulnerability in a major cross-chain protocol, preventing a potential nine-figure loss.",
+    "date": "2026-05-07",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
