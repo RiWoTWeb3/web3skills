@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"asymmetric-rust-security-{today}",
+            "title": "Rust Security Tooling/Automation Engineer",
+            "company": "asymmetric.re",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$140,000 - $200,000",
+            "requirements": ["Rust", "Security Tools Experience", "Automation", "Blockchain Fundamentals"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
+        },
+        {
+            "id": f"vac-test-automation-{today}",
+            "title": "Test Automation Engineer (Vac QA)",
+            "company": "Vac",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$130,000 - $180,000",
+            "requirements": ["Rust", "Testing", "Distributed Systems", "QA"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
+        },
+        {
+            "id": f"okx-quant-rust-{today}",
+            "title": "Quant Developer (Rust)",
+            "company": "OKX",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$122,000 - $180,000",
+            "requirements": ["Rust", "Trading Systems", "Low-Latency Systems", "Distributed Systems"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "SubQuery Network Launches Decentralised Gnosis RPC",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "SubQuery has officially launched its decentralised RPC for Gnosis, powered by its global community of node operators to ensure high availability and censorship resistance.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://subquery.medium.com/subquery-your-indexing-partner-for-unichain-mainnet-799d89016391"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "SubQuery Network Adds Indexing Support for Solana and Monad",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Expanding its multi-chain capabilities, SubQuery now provides lightning-fast indexing support for both Solana and the Monad public testnet.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://subquery.network/about"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Critical Logic Vulnerability Disclosure on Immunefi: $1.2M Payout",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "A white-hat researcher has been awarded $1.2 million via Immunefi for disclosing a critical logic vulnerability in a major cross-chain protocol, preventing a potential nine-figure loss.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://immunefi.com/blog/"
         }
     ]
 

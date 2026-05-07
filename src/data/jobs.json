@@ -1,5 +1,53 @@
 [
   {
+    "id": "asymmetric-rust-security-2026-05-07",
+    "title": "Rust Security Tooling/Automation Engineer",
+    "company": "asymmetric.re",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Security Tools Experience",
+      "Automation",
+      "Blockchain Fundamentals"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "vac-test-automation-2026-05-07",
+    "title": "Test Automation Engineer (Vac QA)",
+    "company": "Vac",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$130,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Testing",
+      "Distributed Systems",
+      "QA"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "okx-quant-rust-2026-05-07",
+    "title": "Quant Developer (Rust)",
+    "company": "OKX",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$122,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Trading Systems",
+      "Low-Latency Systems",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
