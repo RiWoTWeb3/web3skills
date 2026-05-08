@@ -1,5 +1,53 @@
 [
   {
+    "id": "odos-evm-engineer-2026-05-08",
+    "title": "Smart Contracts Engineer EVM",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "EVM Mechanics",
+      "Smart Contract Development"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "odos-solana-engineer-2026-05-08",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana Program Development",
+      "Anchor Framework",
+      "Solana Fundamentals"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "travoom-rust-backend-2026-05-08",
+    "title": "Senior Rust Backend Engineer",
+    "company": "Travoom",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Backend Architecture",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

@@ -52,39 +52,39 @@ def main():
             "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"travoom-rust-backend-{today}",
+            "title": "Senior Rust Backend Engineer",
+            "company": "Travoom",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Rust", "Distributed Systems", "Backend Architecture", "Systems Engineering"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "RedStone Launches Settlement Layer for RWA Liquidity",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "RedStone has launched a dedicated settlement layer aimed at bridging the liquidity gap for Real-World Assets (RWAs) in DeFi lending markets.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://cointelegraph.com/news/redstone-settlement-layer-rwa-liquidity-gap-defi-lending"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Shinhan Card Taps Solana for Stablecoin Payments",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "South Korean credit card giant Shinhan Card is partnering with the Solana Foundation to test stablecoin payments and non-custodial wallet solutions.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://cointelegraph.com/news/south-korean-credit-card-giant-partners-with-solana-for-stablecoin-payments-defi-infrastructure"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "TrustedVolumes Hit by $6.7M Exploit",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "TrustedVolumes was targeted in a $6.7 million exploit. 1inch has denied any breach of its own protocols in relation to the incident.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://cointelegraph.com/news/1inch-fusion-resolver-trusted-volumes-floats-bounty-after-67m-exploit"
         }
     ]
 

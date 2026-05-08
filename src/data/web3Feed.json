@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-08",
+    "type": "job",
+    "title": "Smart Contracts Engineer EVM at Odos",
+    "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-05-08",
+    "type": "job",
+    "title": "Solana Smart Contracts Engineer at Odos",
+    "description": "Join Odos as a Solana Smart Contracts Engineer. Requirements: Rust, Solana Program Development, Anchor Framework. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-05-08",
+    "type": "job",
+    "title": "Senior Rust Backend Engineer at Travoom",
+    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "date": "2026-05-08",
+    "type": "news",
+    "title": "RedStone Launches Settlement Layer for RWA Liquidity",
+    "description": "RedStone has launched a dedicated settlement layer aimed at bridging the liquidity gap for Real-World Assets (RWAs) in DeFi lending markets.",
+    "link": "https://cointelegraph.com/news/redstone-settlement-layer-rwa-liquidity-gap-defi-lending"
+  },
+  {
+    "date": "2026-05-08",
+    "type": "news",
+    "title": "Shinhan Card Taps Solana for Stablecoin Payments",
+    "description": "South Korean credit card giant Shinhan Card is partnering with the Solana Foundation to test stablecoin payments and non-custodial wallet solutions.",
+    "link": "https://cointelegraph.com/news/south-korean-credit-card-giant-partners-with-solana-for-stablecoin-payments-defi-infrastructure"
+  },
+  {
+    "date": "2026-05-08",
+    "type": "hack",
+    "title": "TrustedVolumes Hit by $6.7M Exploit",
+    "description": "TrustedVolumes was targeted in a $6.7 million exploit. 1inch has denied any breach of its own protocols in relation to the incident.",
+    "link": "https://cointelegraph.com/news/1inch-fusion-resolver-trusted-volumes-floats-bounty-after-67m-exploit"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]
