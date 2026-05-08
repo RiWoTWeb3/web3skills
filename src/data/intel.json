@@ -1,5 +1,26 @@
 [
   {
+    "title": "RedStone Launches Settlement Layer for RWA Liquidity",
+    "category": "INFRA",
+    "summary": "RedStone has launched a dedicated settlement layer aimed at bridging the liquidity gap for Real-World Assets (RWAs) in DeFi lending markets.",
+    "date": "2026-05-08",
+    "sourceLink": "https://cointelegraph.com/news/redstone-settlement-layer-rwa-liquidity-gap-defi-lending"
+  },
+  {
+    "title": "Shinhan Card Taps Solana for Stablecoin Payments",
+    "category": "INFRA",
+    "summary": "South Korean credit card giant Shinhan Card is partnering with the Solana Foundation to test stablecoin payments and non-custodial wallet solutions.",
+    "date": "2026-05-08",
+    "sourceLink": "https://cointelegraph.com/news/south-korean-credit-card-giant-partners-with-solana-for-stablecoin-payments-defi-infrastructure"
+  },
+  {
+    "title": "TrustedVolumes Hit by $6.7M Exploit",
+    "category": "HACK",
+    "summary": "TrustedVolumes was targeted in a $6.7 million exploit. 1inch has denied any breach of its own protocols in relation to the incident.",
+    "date": "2026-05-08",
+    "sourceLink": "https://cointelegraph.com/news/1inch-fusion-resolver-trusted-volumes-floats-bounty-after-67m-exploit"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
