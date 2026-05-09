@@ -1,5 +1,53 @@
 [
   {
+    "id": "certik-security-expert-2026-05-09",
+    "title": "Blockchain Security Expert (Security Audit Track)",
+    "company": "CertiK",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contract Auditing",
+      "Security Best Practices",
+      "EVM Mechanics"
+    ],
+    "applyLink": "https://web3.career/web3-companies/certik"
+  },
+  {
+    "id": "paradex-sdet-2026-05-09",
+    "title": "Senior/Principal SDET",
+    "company": "Paradex",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "TypeScript",
+      "Distributed Systems",
+      "Testing",
+      "Web3"
+    ],
+    "applyLink": "https://cryptojobslist.com/remote"
+  },
+  {
+    "id": "binance-staff-engineer-2026-05-09",
+    "title": "Staff Software Engineer (Consumer Money)",
+    "company": "Binance",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$127,000 - $568,000",
+    "requirements": [
+      "Go",
+      "Distributed Systems",
+      "High-Throughput Systems",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/engineer-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

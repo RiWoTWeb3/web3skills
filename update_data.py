@@ -30,26 +30,15 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
+            "id": f"certik-security-expert-{today}",
+            "title": "Blockchain Security Expert (Security Audit Track)",
+            "company": "CertiK",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$120,000 - $180,000",
+            "requirements": ["Solidity", "Smart Contract Auditing", "Security Best Practices", "EVM Mechanics"],
+            "applyLink": "https://web3.career/web3-companies/certik"
         },
         {
             "id": f"paradex-sdet-{today}",
@@ -61,30 +50,41 @@ def main():
             "salaryRange": "$150,000 - $200,000",
             "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
             "applyLink": "https://cryptojobslist.com/remote"
+        },
+        {
+            "id": f"binance-staff-engineer-{today}",
+            "title": "Staff Software Engineer (Consumer Money)",
+            "company": "Binance",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Staff level",
+            "salaryRange": "$127,000 - $568,000",
+            "requirements": ["Go", "Distributed Systems", "High-Throughput Systems", "Web3"],
+            "applyLink": "https://web3.career/engineer-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Corpay Integrates JP Morgan Kinexys and BVNK for Blockchain Settlement",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Corpay adds blockchain-based settlement rails for cross-border payments via JP Morgan's Kinexys private blockchain and BVNK for stablecoin interoperability.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://thepaypers.com/crypto-web3-and-cbdc/news/corpay-adds-blockchain-settlement-rails-via-jp-morgan-and-bvnk"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "OwlTing Launches OwlPay Agent Wallet for AI Transacting",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "OwlTing Group launches OwlPay Agent Wallet, a self-custody digital wallet enabling AI agents to autonomously execute stablecoin payments under user authorization.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://thepaypers.com/crypto-web3-and-cbdc/news/owlting-launches-ai-agent-wallet-for-stablecoin-payments"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Hacken Q1 2026 Report: $482M Lost to Web3 Exploits",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "Hacken reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
         }
     ]
 
@@ -107,10 +107,10 @@ def main():
     ]
 
     new_logs = [
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily Web3 data update for {today} started.", "type": "info" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Aggregated {len(new_jobs)} engineering roles.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Captured {len(new_intel)} news and security events.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"System data feed for {today} is now live.", "type": "success" }
     ]
 
     # Update main data files
