@@ -1,5 +1,26 @@
 [
   {
+    "title": "Corpay Integrates JP Morgan Kinexys and BVNK for Blockchain Settlement",
+    "category": "INFRA",
+    "summary": "Corpay adds blockchain-based settlement rails for cross-border payments via JP Morgan's Kinexys private blockchain and BVNK for stablecoin interoperability.",
+    "date": "2026-05-09",
+    "sourceLink": "https://thepaypers.com/crypto-web3-and-cbdc/news/corpay-adds-blockchain-settlement-rails-via-jp-morgan-and-bvnk"
+  },
+  {
+    "title": "OwlTing Launches OwlPay Agent Wallet for AI Transacting",
+    "category": "INFRA",
+    "summary": "OwlTing Group launches OwlPay Agent Wallet, a self-custody digital wallet enabling AI agents to autonomously execute stablecoin payments under user authorization.",
+    "date": "2026-05-09",
+    "sourceLink": "https://thepaypers.com/crypto-web3-and-cbdc/news/owlting-launches-ai-agent-wallet-for-stablecoin-payments"
+  },
+  {
+    "title": "Hacken Q1 2026 Report: $482M Lost to Web3 Exploits",
+    "category": "HACK",
+    "summary": "Hacken reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
+    "date": "2026-05-09",
+    "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-09",
+    "type": "job",
+    "title": "Blockchain Security Expert (Security Audit Track) at CertiK",
+    "description": "Join CertiK as a Blockchain Security Expert (Security Audit Track). Requirements: Solidity, Smart Contract Auditing, Security Best Practices. Remote.",
+    "link": "https://web3.career/web3-companies/certik"
+  },
+  {
+    "date": "2026-05-09",
+    "type": "job",
+    "title": "Senior/Principal SDET at Paradex",
+    "description": "Join Paradex as a Senior/Principal SDET. Requirements: TypeScript, Distributed Systems, Testing. Remote.",
+    "link": "https://cryptojobslist.com/remote"
+  },
+  {
+    "date": "2026-05-09",
+    "type": "job",
+    "title": "Staff Software Engineer (Consumer Money) at Binance",
+    "description": "Join Binance as a Staff Software Engineer (Consumer Money). Requirements: Go, Distributed Systems, High-Throughput Systems. Remote.",
+    "link": "https://web3.career/engineer-jobs"
+  },
+  {
+    "date": "2026-05-09",
+    "type": "news",
+    "title": "Corpay Integrates JP Morgan Kinexys and BVNK for Blockchain Settlement",
+    "description": "Corpay adds blockchain-based settlement rails for cross-border payments via JP Morgan's Kinexys private blockchain and BVNK for stablecoin interoperability.",
+    "link": "https://thepaypers.com/crypto-web3-and-cbdc/news/corpay-adds-blockchain-settlement-rails-via-jp-morgan-and-bvnk"
+  },
+  {
+    "date": "2026-05-09",
+    "type": "news",
+    "title": "OwlTing Launches OwlPay Agent Wallet for AI Transacting",
+    "description": "OwlTing Group launches OwlPay Agent Wallet, a self-custody digital wallet enabling AI agents to autonomously execute stablecoin payments under user authorization.",
+    "link": "https://thepaypers.com/crypto-web3-and-cbdc/news/owlting-launches-ai-agent-wallet-for-stablecoin-payments"
+  },
+  {
+    "date": "2026-05-09",
+    "type": "hack",
+    "title": "Hacken Q1 2026 Report: $482M Lost to Web3 Exploits",
+    "description": "Hacken reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
+    "link": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]
