@@ -548,6 +548,60 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
+const SkillGapAnalyzer = ({ requirements, displaySkills, bestFit, darkMode }) => {
+  const matched = requirements.filter(req => hasSkillOrSynonym(req, displaySkills));
+  const missing = requirements.filter(req => !hasSkillOrSynonym(req, displaySkills));
+
+  if (missing.length === 0) {
+    return (
+      <div className={`p-4 ${darkMode ? 'bg-green-500/10 border border-green-500/20' : 'bg-green-50 border border-green-100'} rounded-xl flex items-center gap-3`}>
+        <CheckCircle className="text-green-500" size={18} />
+        <p className={`text-sm ${darkMode ? 'text-green-400' : 'text-green-700'} font-medium`}>
+          Perfect alignment! You have all required skills for this role.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`p-5 ${darkMode ? 'bg-white/[0.02] border border-white/5' : 'bg-orange-50 border border-orange-100'} rounded-xl space-y-4`}>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Target className={darkMode ? 'text-accent-blue' : 'text-orange-600'} size={18} />
+          <h4 className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Skill Gap Analysis</h4>
+        </div>
+        <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>
+          {matched.length}/{requirements.length} MATCHED
+        </span>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {missing.map(skill => (
+          <span key={skill} className={`px-2 py-1 text-[9px] font-mono border ${darkMode ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-red-50 text-red-600 border-red-200'} rounded`}>
+            {skill}
+          </span>
+        ))}
+      </div>
+
+      {bestFit !== 'General Web3' && (
+        <div className="pt-2 border-t border-dashed border-gray-200 dark:border-white/10">
+          <p className={`text-xs mb-3 ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+            Bridge the gap by following the <span className="font-bold">{bestFit}</span> roadmap:
+          </p>
+          <Link
+            to={`/career/${encodeURIComponent(bestFit)}`}
+            className={`inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest px-4 py-2 transition-all ${
+              darkMode ? 'bg-accent-blue text-black font-bold hover:bg-cyan-300' : 'bg-orange-600 text-white rounded-lg hover:bg-orange-700'
+            }`}
+          >
+            Start Learning <ArrowRight size={12} />
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
   <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex justify-around items-center`}>
     <div className="text-center">
@@ -1735,14 +1789,12 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     </div>
                   </div>
 
-                {missingSkills.length > 0 && (
-                    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
-                      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
-                        To align with this role, consider learning: <span className="font-bold">{missingSkills.join(', ')}</span>
-                      </p>
-                    </div>
-                  )}
+                <SkillGapAnalyzer
+                  requirements={job.requirements}
+                  displaySkills={displaySkills}
+                  bestFit={bestFit}
+                  darkMode={darkMode}
+                />
                   </div>
               
             </div>
@@ -1887,6 +1939,68 @@ const KeyHealthHeatmap = ({ darkMode, keys }) => {
   );
 };
 
+const SkillMarketValueChart = ({ darkMode }) => {
+  const skillValues = useMemo(() => {
+    const values: Record<string, { total: number; count: number }> = {};
+
+    jobsData.forEach(job => {
+      const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/);
+      if (salaryMatch) {
+        const salary = parseInt(salaryMatch[1].replace(/,/g, ''));
+        job.requirements.forEach(skill => {
+          if (!values[skill]) values[skill] = { total: 0, count: 0 };
+          values[skill].total += salary;
+          values[skill].count += 1;
+        });
+      }
+    });
+
+    return Object.entries(values)
+      .map(([name, data]) => ({
+        name,
+        avgValue: Math.round(data.total / data.count)
+      }))
+      .sort((a, b) => b.avgValue - a.avgValue)
+      .slice(0, 8);
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center gap-3 mb-6">
+        <DollarSign className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+        <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+      </div>
+      <div className="h-64 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={skillValues}>
+            <XAxis dataKey="name" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} tickLine={false} axisLine={false} />
+            <YAxis hide />
+            <Tooltip
+              cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+              contentStyle={{
+                backgroundColor: darkMode ? '#0f172a' : '#fff',
+                border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                fontSize: '10px',
+                fontFamily: 'monospace'
+              }}
+              formatter={(value: number) => [`$${value.toLocaleString()}`, 'Avg Salary']}
+            />
+            <Bar dataKey="avgValue" radius={[4, 4, 0, 0]}>
+              {skillValues.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={darkMode ? '#00f2ff' : '#2563eb'}
+                  fillOpacity={0.4 + (index / skillValues.length) * 0.6}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
 const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   return (
     <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} border flex flex-col h-[400px]`}>
@@ -2024,37 +2138,41 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
-        </div>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={marketData} layout="vertical">
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
-              <Tooltip
-                cursor={{ fill: 'transparent' }}
-                contentStyle={{
-                  backgroundColor: darkMode ? '#0f172a' : '#fff',
-                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
-                  fontSize: '10px',
-                  fontFamily: 'monospace'
-                }}
-              />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                {marketData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
-                    fillOpacity={0.8}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <SkillMarketValueChart darkMode={darkMode} />
+
+        {/* Market Distribution Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {marketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                      fillOpacity={0.8}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 

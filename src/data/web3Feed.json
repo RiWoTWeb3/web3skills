@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-10",
+    "type": "job",
+    "title": "Senior Rust Engineer at Hibachi",
+    "description": "Join Hibachi as a Senior Rust Engineer. Requirements: Rust, Solana, Anchor Framework. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-05-10",
+    "type": "job",
+    "title": "Protocol Engineer at Monad Labs",
+    "description": "Join Monad Labs as a Protocol Engineer. Requirements: C++, Go, EVM Mechanics. Remote.",
+    "link": "https://monad.xyz/blog"
+  },
+  {
+    "date": "2026-05-10",
+    "type": "job",
+    "title": "Full Stack Web3 Engineer at Spectral",
+    "description": "Join Spectral as a Full Stack Web3 Engineer. Requirements: React, TypeScript, Solidity. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-05-10",
+    "type": "news",
+    "title": "Monad Devnet V3 Benchmark: 12k TPS achieved",
+    "description": "Monad's internal Devnet V3 achieved a stable 12,000 TPS in a distributed environment, validating parallelized EVM execution at scale.",
+    "link": "https://monad.xyz/blog"
+  },
+  {
+    "date": "2026-05-10",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Timeline Refined",
+    "description": "Ethereum developers have refined the Pectra upgrade timeline, targeting Q4 2026 for mainnet deployment with focus on PeerDAS and EIP-7702.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-05-10",
+    "type": "hack",
+    "title": "Mobius DAO Exploit: $2.15M Lost",
+    "description": "The Mobius DAO smart contract contained a mathematical bug in its minting function, resulting in an estimated $2.15 million loss.",
+    "link": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-may-2025"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

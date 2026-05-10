@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Devnet V3 Benchmark: 12k TPS achieved",
+    "category": "INFRA",
+    "summary": "Monad's internal Devnet V3 achieved a stable 12,000 TPS in a distributed environment, validating parallelized EVM execution at scale.",
+    "date": "2026-05-10",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Ethereum Pectra Upgrade Timeline Refined",
+    "category": "INFRA",
+    "summary": "Ethereum developers have refined the Pectra upgrade timeline, targeting Q4 2026 for mainnet deployment with focus on PeerDAS and EIP-7702.",
+    "date": "2026-05-10",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Mobius DAO Exploit: $2.15M Lost",
+    "category": "HACK",
+    "summary": "The Mobius DAO smart contract contained a mathematical bug in its minting function, resulting in an estimated $2.15 million loss.",
+    "date": "2026-05-10",
+    "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-may-2025"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
