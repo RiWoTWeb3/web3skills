@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"hibachi-rust-engineer-{today}",
+            "title": "Senior Rust Engineer",
+            "company": "Hibachi",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$150,000 - $220,000",
+            "requirements": ["Rust", "Solana", "Anchor Framework", "Solana Program Development"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
-            "type": "Backend",
+            "id": f"monad-protocol-engineer-{today}",
+            "title": "Protocol Engineer",
+            "company": "Monad Labs",
+            "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$160,000 - $240,000",
+            "requirements": ["C++", "Go", "EVM Mechanics", "Distributed Systems"],
+            "applyLink": "https://monad.xyz/blog"
+        },
+        {
+            "id": f"spectral-full-stack-{today}",
+            "title": "Full Stack Web3 Engineer",
+            "company": "Spectral",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$130,000 - $180,000",
+            "requirements": ["React", "TypeScript", "Solidity", "Smart Contract Development"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Monad Devnet V3 Benchmark: 12k TPS achieved",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Monad's internal Devnet V3 achieved a stable 12,000 TPS in a distributed environment, validating parallelized EVM execution at scale.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://monad.xyz/blog"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Ethereum Pectra Upgrade Timeline Refined",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Ethereum developers have refined the Pectra upgrade timeline, targeting Q4 2026 for mainnet deployment with focus on PeerDAS and EIP-7702.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://ethereum-magicians.org/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Mobius DAO Exploit: $2.15M Lost",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "The Mobius DAO smart contract contained a mathematical bug in its minting function, resulting in an estimated $2.15 million loss.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-may-2025"
         }
     ]
 
