@@ -1,5 +1,53 @@
 [
   {
+    "id": "1010-trading-rust-evm-2026-05-11",
+    "title": "Rust Developer \u2014 EVM Systems & Trading Infrastructure",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "EVM Mechanics",
+      "Trading Infrastructure",
+      "Solidity"
+    ],
+    "applyLink": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "id": "ddnd-senior-infra-2026-05-11",
+    "title": "Senior Web3 Infrastructure Engineer",
+    "company": "DDND",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$130,000 - $180,000",
+    "requirements": [
+      "Web3",
+      "DeFi",
+      "Infrastructure",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://cryptojobslist.com/remote_solana"
+  },
+  {
+    "id": "hibachi-production-engineer-2026-05-11",
+    "title": "Production Engineer",
+    "company": "Hibachi",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "EVM",
+      "Blockchain Infrastructure",
+      "SRE",
+      "Go"
+    ],
+    "applyLink": "https://web3.career/evm+remote-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

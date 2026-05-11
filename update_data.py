@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
+            "id": f"1010-trading-rust-evm-{today}",
+            "title": "Rust Developer — EVM Systems & Trading Infrastructure",
+            "company": "1010 trading",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Rust", "EVM Mechanics", "Trading Infrastructure", "Solidity"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"ddnd-senior-infra-{today}",
+            "title": "Senior Web3 Infrastructure Engineer",
+            "company": "DDND",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$130,000 - $180,000",
+            "requirements": ["Web3", "DeFi", "Infrastructure", "Distributed Systems"],
+            "applyLink": "https://cryptojobslist.com/remote_solana"
+        },
+        {
+            "id": f"hibachi-production-engineer-{today}",
+            "title": "Production Engineer",
+            "company": "Hibachi",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$140,000 - $190,000",
+            "requirements": ["EVM", "Blockchain Infrastructure", "SRE", "Go"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Solv Protocol Launches Bitcoin Economy Infrastructure",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Solv Protocol is building the $1 trillion Bitcoin economy through a full-stack suite of financial services optimized for BTC holders, activating Bitcoin as a capital-efficient asset.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://hackenproof.com/programs?categories=DeFi"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "dYdX Chain v4 Open Source Perpetual Futures Protocol",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "dYdX v4 launches as an application-specific blockchain using the Cosmos SDK, featuring a fully on-chain orderbook and matching engine for decentralized perpetuals.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://cantina.xyz/bounties/dydx"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "DeFi Platform TrustedVolumes Hit By $6.7M Hack",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "TrustedVolumes suffered a smart contract exploit draining $6.7M in assets due to a vulnerability in the protocol's core signature validation logic.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.tradingview.com/news/newsbtc:849c83f08094b:0-defi-platform-trustedvolumes-hit-by-6-7m-hack-as-2026-exploits-surge/"
         }
     ]
 

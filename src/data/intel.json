@@ -1,5 +1,26 @@
 [
   {
+    "title": "Solv Protocol Launches Bitcoin Economy Infrastructure",
+    "category": "INFRA",
+    "summary": "Solv Protocol is building the $1 trillion Bitcoin economy through a full-stack suite of financial services optimized for BTC holders, activating Bitcoin as a capital-efficient asset.",
+    "date": "2026-05-11",
+    "sourceLink": "https://hackenproof.com/programs?categories=DeFi"
+  },
+  {
+    "title": "dYdX Chain v4 Open Source Perpetual Futures Protocol",
+    "category": "INFRA",
+    "summary": "dYdX v4 launches as an application-specific blockchain using the Cosmos SDK, featuring a fully on-chain orderbook and matching engine for decentralized perpetuals.",
+    "date": "2026-05-11",
+    "sourceLink": "https://cantina.xyz/bounties/dydx"
+  },
+  {
+    "title": "DeFi Platform TrustedVolumes Hit By $6.7M Hack",
+    "category": "HACK",
+    "summary": "TrustedVolumes suffered a smart contract exploit draining $6.7M in assets due to a vulnerability in the protocol's core signature validation logic.",
+    "date": "2026-05-11",
+    "sourceLink": "https://www.tradingview.com/news/newsbtc:849c83f08094b:0-defi-platform-trustedvolumes-hit-by-6-7m-hack-as-2026-exploits-surge/"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
