@@ -1,5 +1,53 @@
 [
   {
+    "id": "certik-security-engineer-2026-05-13",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Golang",
+      "Smart Contract Auditing"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "decircle-solana-engineer-2026-05-13",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "deCircle (Odos)",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "DEX Aggregator"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
+    "id": "raretalent-smart-contract-2026-05-13",
+    "title": "Smart Contract Engineer",
+    "company": "RareTalent",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$200,000 - $250,000",
+    "requirements": [
+      "Solidity",
+      "Foundry",
+      "EVM",
+      "Rust"
+    ],
+    "applyLink": "https://raretalent.xyz/jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

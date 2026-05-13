@@ -1,5 +1,26 @@
 [
   {
+    "title": "Lido Alliance: An Ethereum-Aligned Ecosystem Proposal",
+    "category": "INFRA",
+    "summary": "Lido DAO considers the 'Lido Alliance', a framework for an Ethereum-aligned ecosystem to foster decentralized validation and stETH adoption.",
+    "date": "2026-05-13",
+    "sourceLink": "https://research.lido.fi/t/lido-alliance-an-ethereum-aligned-ecosystem/7475"
+  },
+  {
+    "title": "Starknet Parallel Execution Roadmap Update",
+    "category": "INFRA",
+    "summary": "Starknet introduces transaction parallelization in its 2024 roadmap, aimed at increasing throughput and achieving faster L2 finality.",
+    "date": "2026-05-13",
+    "sourceLink": "https://www.theblock.co/post/283593/starknet-parallel-execution"
+  },
+  {
+    "title": "Sonne Finance Exploited for $20M on Optimism",
+    "category": "HACK",
+    "summary": "Sonne Finance suffered a $20 million exploit due to a known precision loss vulnerability in its lending pools on the Optimism network.",
+    "date": "2026-05-13",
+    "sourceLink": "https://www.certik.com/blog/sonne-finance-incident-analysis"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

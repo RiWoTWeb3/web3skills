@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"certik-security-engineer-{today}",
+            "title": "Blockchain Security Engineer",
+            "company": "CertiK",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$102,000 - $180,000",
+            "requirements": ["Solidity", "Rust", "Golang", "Smart Contract Auditing"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+        },
+        {
+            "id": f"decircle-solana-engineer-{today}",
+            "title": "Solana Smart Contracts Engineer",
+            "company": "deCircle (Odos)",
+            "type": "SVM",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$140,000 - $190,000",
+            "requirements": ["Rust", "Solana", "Anchor", "DEX Aggregator"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+        },
+        {
+            "id": f"raretalent-smart-contract-{today}",
+            "title": "Smart Contract Engineer",
+            "company": "RareTalent",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$200,000 - $250,000",
+            "requirements": ["Solidity", "Foundry", "EVM", "Rust"],
+            "applyLink": "https://raretalent.xyz/jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Lido Alliance: An Ethereum-Aligned Ecosystem Proposal",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Lido DAO considers the 'Lido Alliance', a framework for an Ethereum-aligned ecosystem to foster decentralized validation and stETH adoption.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://research.lido.fi/t/lido-alliance-an-ethereum-aligned-ecosystem/7475"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Starknet Parallel Execution Roadmap Update",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Starknet introduces transaction parallelization in its 2024 roadmap, aimed at increasing throughput and achieving faster L2 finality.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://www.theblock.co/post/283593/starknet-parallel-execution"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Sonne Finance Exploited for $20M on Optimism",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "Sonne Finance suffered a $20 million exploit due to a known precision loss vulnerability in its lending pools on the Optimism network.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.certik.com/blog/sonne-finance-incident-analysis"
         }
     ]
 
