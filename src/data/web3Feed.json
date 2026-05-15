@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-15",
+    "type": "job",
+    "title": "Senior Backend Solana Rust Engineer at Inner Circle",
+    "description": "Join Inner Circle as a Senior Backend Solana Rust Engineer. Requirements: Rust, Solana Program Development, Solana Fundamentals. Remote.",
+    "link": "https://www.ziprecruiter.com/Jobs/Solana"
+  },
+  {
+    "date": "2026-05-15",
+    "type": "job",
+    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
+    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM Mechanics, Ethereum. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-05-15",
+    "type": "job",
+    "title": "Production Engineer at Hibachi",
+    "description": "Join Hibachi as a Production Engineer. Requirements: SRE, Infrastructure, AWS. Remote.",
+    "link": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "date": "2026-05-15",
+    "type": "news",
+    "title": "Sonic Labs Mainnet Launch Targets 10k TPS with EVM Compatibility",
+    "description": "Sonic Labs has officially launched its high-performance blockchain, achieving over 10,000 transactions per second with full EVM compatibility to scale decentralized applications.",
+    "link": "https://soniclabs.com"
+  },
+  {
+    "date": "2026-05-15",
+    "type": "news",
+    "title": "Coinbase Expands Institutional Web3 Infrastructure for RWA Tokenization",
+    "description": "Coinbase announces major updates to its institutional suite, enabling enterprise-grade tokenization of Real-World Assets (RWA) on Base and Ethereum mainnet.",
+    "link": "https://coinbase.com/blog"
+  },
+  {
+    "date": "2026-05-15",
+    "type": "hack",
+    "title": "Sonne Finance targeted by $20M flashloan exploit",
+    "description": "DeFi lending protocol Sonne Finance suffered a $20 million loss due to a flashloan exploit targeting a known vulnerability in its Compound Finance fork logic.",
+    "link": "https://rekt.news"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

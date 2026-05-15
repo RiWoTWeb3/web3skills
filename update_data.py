@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"inner-circle-solana-engineer-{today}",
+            "title": "Senior Backend Solana Rust Engineer",
+            "company": "Inner Circle",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$110,000 - $160,000",
+            "requirements": ["Rust", "Solana Program Development", "Solana Fundamentals", "Backend Architecture"],
+            "applyLink": "https://www.ziprecruiter.com/Jobs/Solana"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
-            "type": "Backend",
+            "id": f"1010-trading-rust-evm-{today}",
+            "title": "Rust Developer — EVM Systems Trading Infrastructure",
+            "company": "1010 trading",
+            "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Rust", "EVM Mechanics", "Ethereum", "Trading Systems"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
+        },
+        {
+            "id": f"hibachi-production-engineer-{today}",
+            "title": "Production Engineer",
+            "company": "Hibachi",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Mid level",
+            "salaryRange": "$80,000 - $120,000",
+            "requirements": ["SRE", "Infrastructure", "AWS", "Web3"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Sonic Labs Mainnet Launch Targets 10k TPS with EVM Compatibility",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Sonic Labs has officially launched its high-performance blockchain, achieving over 10,000 transactions per second with full EVM compatibility to scale decentralized applications.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://soniclabs.com"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Coinbase Expands Institutional Web3 Infrastructure for RWA Tokenization",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Coinbase announces major updates to its institutional suite, enabling enterprise-grade tokenization of Real-World Assets (RWA) on Base and Ethereum mainnet.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://coinbase.com/blog"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Sonne Finance targeted by $20M flashloan exploit",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "DeFi lending protocol Sonne Finance suffered a $20 million loss due to a flashloan exploit targeting a known vulnerability in its Compound Finance fork logic.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://rekt.news"
         }
     ]
 
