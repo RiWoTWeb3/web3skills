@@ -1,5 +1,26 @@
 [
   {
+    "title": "Sonic Labs Mainnet Launch Targets 10k TPS with EVM Compatibility",
+    "category": "INFRA",
+    "summary": "Sonic Labs has officially launched its high-performance blockchain, achieving over 10,000 transactions per second with full EVM compatibility to scale decentralized applications.",
+    "date": "2026-05-15",
+    "sourceLink": "https://soniclabs.com"
+  },
+  {
+    "title": "Coinbase Expands Institutional Web3 Infrastructure for RWA Tokenization",
+    "category": "INFRA",
+    "summary": "Coinbase announces major updates to its institutional suite, enabling enterprise-grade tokenization of Real-World Assets (RWA) on Base and Ethereum mainnet.",
+    "date": "2026-05-15",
+    "sourceLink": "https://coinbase.com/blog"
+  },
+  {
+    "title": "Sonne Finance targeted by $20M flashloan exploit",
+    "category": "HACK",
+    "summary": "DeFi lending protocol Sonne Finance suffered a $20 million loss due to a flashloan exploit targeting a known vulnerability in its Compound Finance fork logic.",
+    "date": "2026-05-15",
+    "sourceLink": "https://rekt.news"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
