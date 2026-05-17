@@ -1,5 +1,53 @@
 [
   {
+    "id": "anza-consensus-engineer-2026-05-17",
+    "title": "Senior Software Engineer, Consensus",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Distributed Systems",
+      "Solana Program Development"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs.html"
+  },
+  {
+    "id": "hibachi-evm-systems-2026-05-17",
+    "title": "Rust Developer \u2014 EVM Systems",
+    "company": "Hibachi",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "EVM Mechanics",
+      "Smart Contract Development",
+      "Solidity"
+    ],
+    "applyLink": "https://web3.career/evm+remote-jobs"
+  },
+  {
+    "id": "raretalent-solana-engineer-2026-05-17",
+    "title": "Solana Smart Contract Engineer",
+    "company": "RareTalent",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$200,000 - $280,000",
+    "requirements": [
+      "Rust",
+      "Solana Program Development",
+      "Anchor Framework",
+      "Solana Fundamentals"
+    ],
+    "applyLink": "https://raretalent.xyz/jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"anza-consensus-engineer-{today}",
+            "title": "Senior Software Engineer, Consensus",
+            "company": "Anza",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$180,000 - $300,000",
+            "requirements": ["Rust", "Solana Fundamentals", "Distributed Systems", "Solana Program Development"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-jobs.html"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
-            "type": "Backend",
+            "id": f"hibachi-evm-systems-{today}",
+            "title": "Rust Developer — EVM Systems",
+            "company": "Hibachi",
+            "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$150,000 - $250,000",
+            "requirements": ["Rust", "EVM Mechanics", "Smart Contract Development", "Solidity"],
+            "applyLink": "https://web3.career/evm+remote-jobs"
+        },
+        {
+            "id": f"raretalent-solana-engineer-{today}",
+            "title": "Solana Smart Contract Engineer",
+            "company": "RareTalent",
+            "type": "SVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$200,000 - $280,000",
+            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
+            "applyLink": "https://raretalent.xyz/jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Monad Labs Mainnet Launch Protocol Initialized",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
-            "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
-        },
-        {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
-            "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "The high-performance parallelized EVM network Monad has officially initialized its mainnet launch sequence, enabling ultra-high throughput for dApps.",
             "date": today,
             "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-            "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "title": "EigenLayer AVS Ecosystem Growth Surge",
+            "category": "INFRA",
+            "summary": "Multiple new Actively Validated Services (AVS) have successfully deployed on EigenLayer, significantly expanding the restaking utility across Ethereum.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.coindesk.com/tag/eigenlayer/"
+        },
+        {
+            "title": "KelpDAO rsETH Minting Vulnerability Exploited",
+            "category": "HACK",
+            "summary": "Attackers exploited a critical vulnerability in KelpDAO's rsETH minting logic, allowing for unauthorized token creation. Security teams have paused the protocol.",
+            "date": today,
+            "sourceLink": "https://bpi.com/crypto-hacks-and-defi-runs/"
         }
     ]
 
