@@ -1973,7 +1973,32 @@ const AdminPanelView = ({ darkMode }) => {
       }
     });
     return Object.entries(counts).map(([name, value]) => ({ name, value }));
-  }, []);
+  }, [jobsData]);
+
+  const skillMarketValueData = useMemo(() => {
+    const skillSalaries: Record<string, number[]> = {};
+
+    jobsData.forEach(job => {
+      const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/g);
+      if (salaryMatch) {
+        const salaries = salaryMatch.map(s => parseInt(s.replace(/[$,]/g, ''), 10));
+        const avgSalary = salaries.reduce((a, b) => a + b, 0) / salaries.length;
+
+        job.requirements.forEach(req => {
+          if (!skillSalaries[req]) skillSalaries[req] = [];
+          skillSalaries[req].push(avgSalary);
+        });
+      }
+    });
+
+    return Object.entries(skillSalaries)
+      .map(([name, values]) => ({
+        name,
+        avg: Math.round(values.reduce((a, b) => a + b, 0) / values.length)
+      }))
+      .sort((a, b) => b.avg - a.avg)
+      .slice(0, 10);
+  }, [jobsData]);
 
   useEffect(() => {
     const fetchAdminData = async () => {
@@ -2024,37 +2049,73 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        {/* Market Distribution Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {marketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                      fillOpacity={0.8}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={marketData} layout="vertical">
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
-              <Tooltip
-                cursor={{ fill: 'transparent' }}
-                contentStyle={{
-                  backgroundColor: darkMode ? '#0f172a' : '#fff',
-                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
-                  fontSize: '10px',
-                  fontFamily: 'monospace'
-                }}
-              />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                {marketData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
-                    fillOpacity={0.8}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+
+        {/* Skill Market Value Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <DollarSign className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={skillMarketValueData}>
+                <XAxis dataKey="name" hide />
+                <YAxis stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} tickFormatter={(value) => `$${value/1000}k`} />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                  formatter={(value) => [`$${(value as number).toLocaleString()}`, 'Avg Salary']}
+                />
+                <Bar dataKey="avg" radius={[4, 4, 0, 0]}>
+                  {skillMarketValueData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={darkMode ? '#00f2ff' : '#2563eb'}
+                      fillOpacity={0.4 + (index / skillMarketValueData.length) * 0.6}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
@@ -2189,6 +2250,14 @@ const NewsView = ({ darkMode }) => {
     return counts;
   }, [intelData]);
 
+  const intelDistributionData = useMemo(() => {
+    return [
+      { name: 'Security Hacks', value: stats.HACK, color: '#ef4444' },
+      { name: 'Infrastructure', value: stats.INFRA, color: '#00f2ff' },
+      { name: 'Bug Bounties', value: stats.BOUNTY, color: '#22c55e' }
+    ];
+  }, [stats]);
+
   const filteredIntel = intelData.filter(item => {
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -2238,21 +2307,48 @@ const NewsView = ({ darkMode }) => {
       </div>
 
       {/* Intel Stats Feature */}
-      <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 rounded-2xl'} p-6 border mb-8 grid grid-cols-2 md:grid-cols-4 gap-4`}>
-        {[
-          { label: 'Total Logs', value: intelData.length, icon: Database, color: 'text-accent-blue' },
-          { label: 'Security Hacks', value: stats.HACK, icon: ShieldAlert, color: 'text-red-500' },
-          { label: 'Infra Updates', value: stats.INFRA, icon: Newspaper, color: 'text-blue-500' },
-          { label: 'Bug Bounties', value: stats.BOUNTY, icon: Award, color: 'text-green-500' },
-        ].map((s, i) => (
-          <div key={i} className="space-y-1">
-            <div className="flex items-center gap-2">
-              <s.icon size={14} className={s.color} />
-              <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{s.label}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className={`lg:col-span-2 ${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 rounded-2xl'} p-6 border grid grid-cols-2 md:grid-cols-4 gap-4`}>
+          {[
+            { label: 'Total Logs', value: intelData.length, icon: Database, color: 'text-accent-blue' },
+            { label: 'Security Hacks', value: stats.HACK, icon: ShieldAlert, color: 'text-red-500' },
+            { label: 'Infra Updates', value: stats.INFRA, icon: Newspaper, color: 'text-blue-500' },
+            { label: 'Bug Bounties', value: stats.BOUNTY, icon: Award, color: 'text-green-500' },
+          ].map((s, i) => (
+            <div key={i} className="space-y-1">
+              <div className="flex items-center gap-2">
+                <s.icon size={14} className={s.color} />
+                <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{s.label}</p>
+              </div>
+              <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{s.value}</p>
             </div>
-            <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{s.value}</p>
+          ))}
+        </div>
+
+        <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white border-slate-200 rounded-2xl'} p-6 border`}>
+          <p className={`text-[10px] font-mono uppercase tracking-widest mb-4 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Intel Distribution</p>
+          <div className="h-24 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={intelDistributionData}>
+                <XAxis dataKey="name" hide />
+                <YAxis hide />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value">
+                  {intelDistributionData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} fillOpacity={0.8} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
-        ))}
+        </div>
       </div>
 
       <div className={`${darkMode ? 'surface-industrial' : 'glass-card-light rounded-2xl'} p-6 mb-8`}>
