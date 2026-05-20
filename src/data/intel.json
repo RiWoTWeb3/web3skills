@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Public Testnet Milestone: 1 Million Unique Wallets Surpassed",
+    "category": "INFRA",
+    "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
+    "date": "2026-05-20",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Ethereum Pectra Devnet-11 goes live with EIP-7702 refinements",
+    "category": "INFRA",
+    "summary": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
+    "date": "2026-05-20",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Sonne Finance exploited for $20M in a flash loan attack",
+    "category": "HACK",
+    "summary": "DeFi lending protocol Sonne Finance was exploited for approximately $20 million due to a flash loan attack on its Optimism deployment.",
+    "date": "2026-05-20",
+    "sourceLink": "https://rekt.news/sonne-finance-rekt"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

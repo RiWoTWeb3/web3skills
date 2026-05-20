@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-20",
+    "type": "job",
+    "title": "Staff Site Reliability Engineer at Zscaler",
+    "description": "Join Zscaler as a Staff Site Reliability Engineer. Requirements: AWS, Golang, Java. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-05-20",
+    "type": "job",
+    "title": "Quant Developer (Rust) at OKX",
+    "description": "Join OKX as a Quant Developer (Rust). Requirements: Rust, AWS, Distributed Systems. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-05-20",
+    "type": "job",
+    "title": "Principal Protocol Engineer at Solana Foundation",
+    "description": "Join Solana Foundation as a Principal Protocol Engineer. Requirements: Rust, Solana, Blockchain Architecture. Remote.",
+    "link": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "date": "2026-05-20",
+    "type": "news",
+    "title": "Monad Public Testnet Milestone: 1 Million Unique Wallets Surpassed",
+    "description": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
+    "link": "https://monad.xyz/blog"
+  },
+  {
+    "date": "2026-05-20",
+    "type": "news",
+    "title": "Ethereum Pectra Devnet-11 goes live with EIP-7702 refinements",
+    "description": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-05-20",
+    "type": "hack",
+    "title": "Sonne Finance exploited for $20M in a flash loan attack",
+    "description": "DeFi lending protocol Sonne Finance was exploited for approximately $20 million due to a flash loan attack on its Optimism deployment.",
+    "link": "https://rekt.news/sonne-finance-rekt"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

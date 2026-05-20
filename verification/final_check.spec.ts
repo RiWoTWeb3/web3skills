@@ -9,12 +9,12 @@ test.describe('RiWoT Platform Verification', () => {
 
   test('Daily Data Update Verification', async ({ page }) => {
     await page.goto('http://localhost:3000/#/news');
-    // Check for today's data (2026-04-16)
-    const newsItem = page.locator('text=2026-04-16').first();
+    // Check for today's data (2026-05-20)
+    const newsItem = page.locator('text=2026-05-20').first();
     await expect(newsItem).toBeVisible();
 
-    const clawNews = page.locator('text=Claw Intelligence').first();
-    await expect(clawNews).toBeVisible();
+    const monadNews = page.locator('text=Monad Public Testnet Milestone').first();
+    await expect(monadNews).toBeVisible();
   });
 
   test('Admin Panel Enhancements Verification', async ({ page }) => {

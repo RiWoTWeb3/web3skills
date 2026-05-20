@@ -26,65 +26,65 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
 def main():
     # Today's Date
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = "2026-05-20"
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"zscaler-sre-{today}",
+            "title": "Staff Site Reliability Engineer",
+            "company": "Zscaler",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$115,000 - $165,000",
+            "requirements": ["AWS", "Golang", "Java", "SRE"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
+        },
+        {
+            "id": f"okx-quant-rust-{today}",
+            "title": "Quant Developer (Rust)",
+            "company": "OKX",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$122,000 - $180,000",
+            "requirements": ["Rust", "AWS", "Distributed Systems", "Trading Systems"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
+        },
+        {
+            "id": f"solana-protocol-engineer-{today}",
+            "title": "Principal Protocol Engineer",
+            "company": "Solana Foundation",
+            "type": "SVM",
+            "workType": "Remote",
+            "experience": "Principal level",
+            "salaryRange": "$180,000 - $250,000",
+            "requirements": ["Rust", "Solana", "Blockchain Architecture", "Solana Fundamentals"],
+            "applyLink": "https://web3.career/rust+solana-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Monad Public Testnet Milestone: 1 Million Unique Wallets Surpassed",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://monad.xyz/blog"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Ethereum Pectra Devnet-11 goes live with EIP-7702 refinements",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://ethereum-magicians.org/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Sonne Finance exploited for $20M in a flash loan attack",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "DeFi lending protocol Sonne Finance was exploited for approximately $20 million due to a flash loan attack on its Optimism deployment.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://rekt.news/sonne-finance-rekt"
         }
     ]
 

@@ -1,5 +1,53 @@
 [
   {
+    "id": "zscaler-sre-2026-05-20",
+    "title": "Staff Site Reliability Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$115,000 - $165,000",
+    "requirements": [
+      "AWS",
+      "Golang",
+      "Java",
+      "SRE"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "okx-quant-rust-2026-05-20",
+    "title": "Quant Developer (Rust)",
+    "company": "OKX",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$122,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "AWS",
+      "Distributed Systems",
+      "Trading Systems"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "solana-protocol-engineer-2026-05-20",
+    "title": "Principal Protocol Engineer",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Principal level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Blockchain Architecture",
+      "Solana Fundamentals"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
