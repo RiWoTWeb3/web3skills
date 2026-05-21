@@ -1,5 +1,53 @@
 [
   {
+    "id": "aptos-labs-security-engineer-2026-05-21",
+    "title": "Information Security Engineer, Product",
+    "company": "Aptos Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Security Auditing",
+      "Vulnerability Research",
+      "Move"
+    ],
+    "applyLink": "https://www.ziprecruiter.com/c/Aptos/Job/Information-Security-Engineer,-Product/-in-Remote,US?jid=e3b9e87380f13f2e"
+  },
+  {
+    "id": "xion-senior-protocol-engineer-2026-05-21",
+    "title": "Senior Protocol Engineer",
+    "company": "XION",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Go",
+      "Cosmos SDK",
+      "IBC",
+      "Protocol Design"
+    ],
+    "applyLink": "https://www.builtinnyc.com/company/xion-xionburntcom/jobs"
+  },
+  {
+    "id": "espresso-systems-security-lead-2026-05-21",
+    "title": "Security Engineering Lead",
+    "company": "Espresso Systems",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$160,000 - $230,000",
+    "requirements": [
+      "Rust",
+      "Systems Engineering",
+      "Security Architecture",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://www.simplyhired.com/search?q=web3+rust&l=remote"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
