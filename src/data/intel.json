@@ -1,5 +1,26 @@
 [
   {
+    "title": "Federal Reserve Monetary Policy Meeting Minutes Published",
+    "category": "INFRA",
+    "summary": "The Federal Reserve released minutes from its latest policy meeting, providing insights into future interest rate trajectories and economic outlook for 2026.",
+    "date": "2026-05-21",
+    "sourceLink": "https://www.binance.com/en/square/post/05-01-2026-key-web3-events-scheduled-for-may-2026-318335237967522"
+  },
+  {
+    "title": "Haun Ventures Announces New $1 Billion Fund",
+    "category": "INFRA",
+    "summary": "Diogo Monica of Haun Ventures announced a new $1 billion fund in May 2026 to support high-potential early-stage Web3 startups and digital asset infrastructure.",
+    "date": "2026-05-21",
+    "sourceLink": "https://markets.businessinsider.com/news/stocks/the-most-promising-startups-in-web3-are-pitching-at-the-louvre-in-front-of-a-world-class-jury-1036174768"
+  },
+  {
+    "title": "Gala Games Security Incident: $22M Exploit Case Study",
+    "category": "HACK",
+    "summary": "A deep-dive into the May 2024 Gala Games exploit where unauthorized access to a privileged account led to the minting of 5 billion GALA tokens.",
+    "date": "2026-05-21",
+    "sourceLink": "https://therecord.media/gala-games-cryptocurrency-theft"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"aptos-labs-security-engineer-{today}",
+            "title": "Information Security Engineer, Product",
+            "company": "Aptos Labs",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$150,000 - $220,000",
+            "requirements": ["Rust", "Security Auditing", "Vulnerability Research", "Move"],
+            "applyLink": "https://www.ziprecruiter.com/c/Aptos/Job/Information-Security-Engineer,-Product/-in-Remote,US?jid=e3b9e87380f13f2e"
+        },
+        {
+            "id": f"xion-senior-protocol-engineer-{today}",
+            "title": "Senior Protocol Engineer",
+            "company": "XION",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$120,000 - $180,000",
+            "requirements": ["Go", "Cosmos SDK", "IBC", "Protocol Design"],
+            "applyLink": "https://www.builtinnyc.com/company/xion-xionburntcom/jobs"
+        },
+        {
+            "id": f"espresso-systems-security-lead-{today}",
+            "title": "Security Engineering Lead",
+            "company": "Espresso Systems",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Lead level",
+            "salaryRange": "$160,000 - $230,000",
+            "requirements": ["Rust", "Systems Engineering", "Security Architecture", "Distributed Systems"],
+            "applyLink": "https://www.simplyhired.com/search?q=web3+rust&l=remote"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Federal Reserve Monetary Policy Meeting Minutes Published",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "The Federal Reserve released minutes from its latest policy meeting, providing insights into future interest rate trajectories and economic outlook for 2026.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://www.binance.com/en/square/post/05-01-2026-key-web3-events-scheduled-for-may-2026-318335237967522"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Haun Ventures Announces New $1 Billion Fund",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Diogo Monica of Haun Ventures announced a new $1 billion fund in May 2026 to support high-potential early-stage Web3 startups and digital asset infrastructure.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://markets.businessinsider.com/news/stocks/the-most-promising-startups-in-web3-are-pitching-at-the-louvre-in-front-of-a-world-class-jury-1036174768"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Gala Games Security Incident: $22M Exploit Case Study",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "A deep-dive into the May 2024 Gala Games exploit where unauthorized access to a privileged account led to the minting of 5 billion GALA tokens.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://therecord.media/gala-games-cryptocurrency-theft"
         }
     ]
 
