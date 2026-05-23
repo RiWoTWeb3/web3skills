@@ -1,5 +1,98 @@
 [
   {
+    "id": "solana-rust-2026-05-23",
+    "title": "Senior Rust Engineer",
+    "company": "Solana Foundation",
+    "location": "Remote",
+    "salary": "$160,000 - $240,000",
+    "stack": [
+      "Rust",
+      "Solana Program Development",
+      "Distributed Systems"
+    ],
+    "link": "https://solana.com/jobs",
+    "posted": "2026-05-23",
+    "type": "SVM"
+  },
+  {
+    "id": "uniswap-solidity-2026-05-23",
+    "title": "Smart Contract Engineer",
+    "company": "Uniswap Labs",
+    "location": "Remote",
+    "salary": "$150,000 - $220,000",
+    "stack": [
+      "Solidity",
+      "EVM Mechanics",
+      "DeFi Architecture"
+    ],
+    "link": "https://uniswap.org/jobs",
+    "posted": "2026-05-23",
+    "type": "EVM"
+  },
+  {
+    "id": "chainlink-backend-2026-05-23",
+    "title": "Backend Engineer (Go/Rust)",
+    "company": "Chainlink Labs",
+    "location": "Remote",
+    "salary": "$140,000 - $210,000",
+    "stack": [
+      "Go",
+      "Rust",
+      "Distributed Systems"
+    ],
+    "link": "https://chainlinklabs.com/jobs",
+    "posted": "2026-05-23",
+    "type": "Backend"
+  },
+  {
+    "id": "inner-circle-solana-2026-05-23",
+    "title": "Senior Backend Solana Rust Engineer",
+    "company": "Inner Circle Agency",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$110,000 - $160,000",
+    "requirements": [
+      "Rust",
+      "Solana Program Development",
+      "Solana Fundamentals",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://www.ziprecruiter.com/Jobs/Solana"
+  },
+  {
+    "id": "1010-trading-evm-2026-05-23",
+    "title": "Rust Developer - EVM Systems",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "EVM Mechanics",
+      "Solidity",
+      "Trading Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "nexus-senior-engineer-2026-05-23",
+    "title": "Senior Web3 Engineer",
+    "company": "Nexus",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Web3",
+      "TypeScript"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

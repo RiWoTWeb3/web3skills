@@ -1,0 +1,14 @@
+
+> Web3 Skills Learning Platform@0.1.0 dev
+> vite
+
+
+  VITE v6.3.5  ready in 332 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+11:50:07 AM [vite] (client) hmr update /src/App.tsx
+11:52:13 AM [vite] (client) hmr update /src/App.tsx
+11:52:13 AM [vite] (client) hmr update /src/App.tsx
+11:52:13 AM [vite] (client) hmr update /src/App.tsx
+11:52:13 AM [vite] (client) hmr update /src/App.tsx
