@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-23",
+    "category": "INFRA",
+    "title": "Stripe Completes $1.1B Acquisition of Stablecoin Bridge",
+    "content": "Stripe CEO Patrick Collison confirmed the acquisition, signaling a massive push into stablecoin-powered financial infrastructure.",
+    "source": "Stripe Newsroom"
+  },
+  {
+    "date": "2026-05-23",
+    "category": "INFRA",
+    "title": "Vitalik Buterin Unveils 'The Verge' Roadmap Updates",
+    "content": "The update focuses on statelessness and reducing node requirements to allow even mobile devices to verify the Ethereum chain.",
+    "source": "Vitalik.ca"
+  },
+  {
+    "date": "2026-05-23",
+    "category": "HACK",
+    "title": "Radiant Capital Suffers $50M Multi-Sig Exploit",
+    "content": "Malware compromised the frontends of multi-sig signers, leading to unauthorized approvals and contract upgrades on BSC and Arbitrum.",
+    "source": "Radiant Security Team"
+  },
+  {
+    "title": "SEC Approves Rule Changes for Spot Ether ETFs",
+    "category": "INFRA",
+    "summary": "In a landmark decision, the US SEC has approved rule changes (19b-4 forms) for eight spot Ether ETFs, paving the way for mainstream Ethereum investment products.",
+    "date": "2026-05-23",
+    "sourceLink": "https://www.mayerbrown.com/en/insights/publications/2024/05/sec-approves-listings-of-spot-ether-etfs-waiting-is-the-hardest-part"
+  },
+  {
+    "title": "Uniswap v4 Roadmap: Tentative Launch set for Q3 2024",
+    "category": "INFRA",
+    "summary": "Uniswap Foundation reveals v4 will feature 'hooks' for custom liquidity pool logic and leverage EIP-1153 for significant gas optimizations.",
+    "date": "2026-05-23",
+    "sourceLink": "https://blockworks.com/news/uniswap-foundation-v4-launch-announcement"
+  },
+  {
+    "title": "Gala Games Suffers $200M Minting Exploit",
+    "category": "HACK",
+    "summary": "A compromise of a privileged account allowed an attacker to unauthorizedly mint 5 billion GALA tokens, highlighting ongoing security risks in decentralized gaming treasury management.",
+    "date": "2026-05-23",
+    "sourceLink": "https://www.theblock.co/post/295520/gala-games-hacked-gala-token-plummets"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

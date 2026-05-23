@@ -1,5 +1,89 @@
 [
   {
+    "date": "2026-05-23",
+    "type": "news",
+    "title": "Stripe Completes $1.1B Acquisition of Stablecoin Bridge",
+    "description": "In a major move for crypto infrastructure, Stripe has finalized its largest acquisition to date, bringing Bridge's stablecoin platform into its global payments stack.",
+    "link": "https://stripe.com/newsroom"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "hack",
+    "title": "Radiant Capital Suffers $50M Multi-Sig Exploit",
+    "description": "A sophisticated malware attack targeting multi-sig signers led to a $50 million drain on Radiant Capital. North Korean threat actors are suspected.",
+    "link": "https://radiant.capital"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "job",
+    "title": "Senior Rust Engineer - Solana Core",
+    "description": "The Solana Foundation is seeking a Senior Rust Engineer to contribute to the performance and scalability of the Solana validator client.",
+    "link": "https://solana.com/jobs"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "news",
+    "title": "Vitalik Buterin Unveils 'The Verge' Roadmap Updates",
+    "description": "The new Ethereum roadmap focus centers on 'The Verge', aiming to make nodes stateless and allowing verification via SNARKs for extreme decentralization.",
+    "link": "https://vitalik.eth.limo"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "job",
+    "title": "Smart Contract Engineer (Solidity)",
+    "description": "Join Uniswap Labs to build the future of decentralized finance, focusing on v4 hooks and next-generation AMM designs.",
+    "link": "https://uniswap.org/jobs"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "job",
+    "title": "Backend Engineer (Go/Rust)",
+    "description": "Chainlink Labs is hiring engineers to build secure oracle networks and cross-chain communication protocols.",
+    "link": "https://chainlinklabs.com/jobs"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "job",
+    "title": "Senior Backend Solana Rust Engineer at Inner Circle Agency",
+    "description": "Join Inner Circle Agency as a Senior Backend Solana Rust Engineer. Focus on SVM development. Remote.",
+    "link": "https://www.ziprecruiter.com/Jobs/Solana"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "job",
+    "title": "Rust Developer - EVM Systems at 1010 trading",
+    "description": "Join 1010 trading as a Rust Developer - EVM Systems. Focus on EVM development. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "job",
+    "title": "Senior Web3 Engineer at Nexus",
+    "description": "Join Nexus as a Senior Web3 Engineer. Focus on Backend development. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "news",
+    "title": "SEC Approves Rule Changes for Spot Ether ETFs",
+    "description": "In a landmark decision, the US SEC has approved rule changes (19b-4 forms) for eight spot Ether ETFs, paving the way for mainstream Ethereum investment products.",
+    "link": "https://www.mayerbrown.com/en/insights/publications/2024/05/sec-approves-listings-of-spot-ether-etfs-waiting-is-the-hardest-part"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "news",
+    "title": "Uniswap v4 Roadmap: Tentative Launch set for Q3 2024",
+    "description": "Uniswap Foundation reveals v4 will feature 'hooks' for custom liquidity pool logic and leverage EIP-1153 for significant gas optimizations.",
+    "link": "https://blockworks.com/news/uniswap-foundation-v4-launch-announcement"
+  },
+  {
+    "date": "2026-05-23",
+    "type": "hack",
+    "title": "Gala Games Suffers $200M Minting Exploit",
+    "description": "A compromise of a privileged account allowed an attacker to unauthorizedly mint 5 billion GALA tokens, highlighting ongoing security risks in decentralized gaming treasury management.",
+    "link": "https://www.theblock.co/post/295520/gala-games-hacked-gala-token-plummets"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -334,89 +418,5 @@
     "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
     "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
     "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
-  },
-  {
-    "date": "2026-03-30",
-    "type": "job",
-    "title": "Senior Backend Blockchain Engineer at Blocknative",
-    "description": "Join Blocknative as a Senior Backend Blockchain Engineer. Requirements: Go, EVM Mechanics, Distributed Systems. Remote.",
-    "link": "https://web3.career/evm+remote-jobs"
-  },
-  {
-    "date": "2026-03-30",
-    "type": "job",
-    "title": "RWA Senior Infrastructure Engineer at Aware Fund",
-    "description": "Join Aware Fund as a RWA Senior Infrastructure Engineer. Requirements: SRE, Cloud Architecture, Rust. Remote.",
-    "link": "https://cryptojobslist.com/remote"
-  },
-  {
-    "date": "2026-03-30",
-    "type": "job",
-    "title": "React Native Mobile Developer at GRVT",
-    "description": "Join GRVT as a React Native Mobile Developer. Requirements: React Native, TypeScript, Mobile Security. Remote.",
-    "link": "https://cryptojobslist.com/remote"
-  },
-  {
-    "date": "2026-03-30",
-    "type": "news",
-    "title": "Ethereum Glamsterdam Upgrade Finalized",
-    "description": "Ethereum developers have finalized the scope for the Glamsterdam upgrade, focusing on enshrined Proposer-Builder Separation (ePBS).",
-    "link": "https://ethereum.org/en/developers/"
-  },
-  {
-    "date": "2026-03-30",
-    "type": "news",
-    "title": "Solana Alpenglow Testnet Milestone",
-    "description": "Solana Alpenglow reaches v0.8 on testnet, achieving 150ms finality times in a geo-distributed environment.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-30",
-    "type": "hack",
-    "title": "Solana Firedancer Bug Bounty: $500k",
-    "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
-    "link": "https://immunefi.com/blog/"
   }
 ]

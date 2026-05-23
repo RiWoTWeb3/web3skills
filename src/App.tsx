@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  ShieldCheck
 } from 'lucide-react';
 import {
   Routes,
@@ -562,6 +563,55 @@ const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
   </div>
 );
 
+const SecurityPulse = ({ darkMode, intelData }) => {
+  const safetyIndex = useMemo(() => {
+    const now = new Date().getTime();
+    const recentHacks = intelData.filter(item => {
+      const itemTime = new Date(item.date).getTime();
+      return item.category === 'HACK' &&
+             (now - itemTime) < 7 * 24 * 60 * 60 * 1000 &&
+             itemTime <= now;
+    }).length;
+    return Math.max(0, 100 - recentHacks * 20);
+  }, [intelData]);
+
+  const getStatus = (index) => {
+    if (index >= 80) return { label: 'OPTIMAL', color: 'text-green-500', bg: 'bg-green-500/10' };
+    if (index >= 50) return { label: 'CAUTION', color: 'text-yellow-500', bg: 'bg-yellow-500/10' };
+    return { label: 'CRITICAL', color: 'text-red-500', bg: 'bg-red-500/10' };
+  };
+
+  const status = getStatus(safetyIndex);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <ShieldCheck size={16} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+          <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Security Pulse</h3>
+        </div>
+        <div className={`px-2 py-0.5 rounded-[2px] border ${status.bg} ${status.color} border-current/20 text-[8px] font-mono font-bold`}>
+          {status.label}
+        </div>
+      </div>
+      <div className="flex items-end justify-between">
+        <div>
+          <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{safetyIndex}%</p>
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Safety Index</p>
+        </div>
+        <div className="flex gap-1 mb-1">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className={`w-1 h-4 rounded-full ${i < safetyIndex / 20 ? status.color.replace('text-', 'bg-') : (darkMode ? 'bg-white/5' : 'bg-gray-100')}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const TrendingSkills = ({ darkMode, trendingSkills }) => (
   <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
     <div className="flex items-center gap-2 mb-4">
@@ -1085,8 +1135,9 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
+          <SecurityPulse darkMode={darkMode} intelData={intelData} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SkillOfTheDay darkMode={darkMode} />
         </div>
