@@ -612,6 +612,48 @@ const SkillOfTheDay = ({ darkMode }) => {
   );
 };
 
+const DailyLearningStreak = ({ darkMode }) => {
+  const [streak, setStreak] = useState(0);
+
+  useEffect(() => {
+    const lastActivity = localStorage.getItem('web3skills_last_activity');
+    const currentStreak = parseInt(localStorage.getItem('web3skills_streak') || '0', 10);
+    const today = new Date().toISOString().split('T')[0];
+
+    if (lastActivity === today) {
+      setStreak(currentStreak);
+    } else {
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+      if (lastActivity === yesterdayStr) {
+        const newStreak = currentStreak + 1;
+        localStorage.setItem('web3skills_streak', newStreak.toString());
+        localStorage.setItem('web3skills_last_activity', today);
+        setStreak(newStreak);
+      } else {
+        localStorage.setItem('web3skills_streak', '1');
+        localStorage.setItem('web3skills_last_activity', today);
+        setStreak(1);
+      }
+    }
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-orange-50 to-amber-50 border-orange-200 rounded-xl'} p-6 border flex flex-col justify-center`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Award size={16} className={darkMode ? 'text-accent-blue' : 'text-orange-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Learning Streak</h3>
+      </div>
+      <div className="space-y-2">
+        <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{streak} Days</p>
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Maintain your momentum. Connect daily.</p>
+      </div>
+    </div>
+  );
+};
+
 const BugBountySpotlight = ({ darkMode }) => {
   const bounties = [
     {
@@ -1085,10 +1127,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SkillOfTheDay darkMode={darkMode} />
+          <DailyLearningStreak darkMode={darkMode} />
         </div>
       )}
 
@@ -1937,6 +1980,7 @@ const AdminPanelView = ({ darkMode }) => {
     uptime: '14d 6h 22m'
   });
 
+  const [isScanning, setIsScanning] = useState(false);
   const [keys, setKeys] = useState([]);
   const [auditLogs, setAuditLogs] = useState([]);
   const [findings, setFindings] = useState([]);
@@ -1965,6 +2009,26 @@ const AdminPanelView = ({ darkMode }) => {
     };
   }, []);
 
+  const handleTriggerScan = async () => {
+    setIsScanning(true);
+    try {
+      const res = await fetch('/api/trigger-scan', { method: 'POST' });
+      if (res.ok) {
+        // Refresh logs after a short delay
+        setTimeout(async () => {
+          const logsRes = await fetch('/api/logs');
+          if (logsRes.ok) setLogs(await logsRes.json());
+          setIsScanning(false);
+        }, 1500);
+      } else {
+        setIsScanning(false);
+      }
+    } catch (error) {
+      console.error('Scan trigger failed:', error);
+      setIsScanning(false);
+    }
+  };
+
   const marketData = useMemo(() => {
     const counts = { EVM: 0, SVM: 0, Backend: 0 };
     jobsData.forEach(job => {
@@ -1974,6 +2038,28 @@ const AdminPanelView = ({ darkMode }) => {
     });
     return Object.entries(counts).map(([name, value]) => ({ name, value }));
   }, []);
+
+  const skillMarketData = useMemo(() => {
+    const skillSalaries: Record<string, number[]> = {};
+    jobsData.forEach(job => {
+      const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/);
+      if (salaryMatch) {
+        const salary = parseInt(salaryMatch[1].replace(/,/g, ''), 10);
+        job.requirements.forEach(req => {
+          if (!skillSalaries[req]) skillSalaries[req] = [];
+          skillSalaries[req].push(salary);
+        });
+      }
+    });
+
+    return Object.entries(skillSalaries)
+      .map(([name, salaries]) => ({
+        name,
+        avgSalary: Math.round(salaries.reduce((a, b) => a + b, 0) / salaries.length)
+      }))
+      .sort((a, b) => b.avgSalary - a.avgSalary)
+      .slice(0, 8);
+  }, [jobsData]);
 
   useEffect(() => {
     const fetchAdminData = async () => {
@@ -2003,13 +2089,38 @@ const AdminPanelView = ({ darkMode }) => {
 
   return (
     <div className="space-y-8 animate-slideUp">
-      <div className="mb-8">
-        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
-          {darkMode ? 'SYSTEM_MONITOR.CORE' : 'System Control Center'}
-        </h1>
-        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
-          Autonomous Audit Engine & API Quota Intelligence
-        </p>
+      <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+            {darkMode ? 'SYSTEM_MONITOR.CORE' : 'System Control Center'}
+          </h1>
+          <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+            Autonomous Audit Engine & API Quota Intelligence
+          </p>
+        </div>
+        <button
+          onClick={handleTriggerScan}
+          disabled={isScanning}
+          className={`px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] transition-all flex items-center gap-3 ${
+            isScanning
+              ? 'bg-yellow-500/20 text-yellow-500 border border-yellow-500/30 cursor-wait'
+              : darkMode
+                ? 'btn-industrial-primary'
+                : 'bg-blue-600 hover:bg-blue-700 text-white rounded-lg'
+          }`}
+        >
+          {isScanning ? (
+            <>
+              <Activity size={14} className="animate-pulse" />
+              SCANNING...
+            </>
+          ) : (
+            <>
+              <Zap size={14} />
+              Trigger Manual Scan
+            </>
+          )}
+        </button>
       </div>
 
       <div className={`${darkMode ? 'bg-accent-blue/10 border-accent-blue/30' : 'bg-blue-50 border-blue-200'} border p-4 mb-8 rounded-[4px]`}>
@@ -2024,37 +2135,73 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        {/* Market Distribution Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {marketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                      fillOpacity={0.8}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={marketData} layout="vertical">
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
-              <Tooltip
-                cursor={{ fill: 'transparent' }}
-                contentStyle={{
-                  backgroundColor: darkMode ? '#0f172a' : '#fff',
-                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
-                  fontSize: '10px',
-                  fontFamily: 'monospace'
-                }}
-              />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                {marketData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
-                    fillOpacity={0.8}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+
+        {/* Skill Market Value Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+          <div className="flex items-center gap-3 mb-6">
+            <DollarSign className={darkMode ? 'text-accent-blue' : 'text-green-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={skillMarketData}>
+                <XAxis dataKey="name" hide />
+                <YAxis hide />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                  formatter={(value) => [`$${value.toLocaleString()}`, 'Avg Salary']}
+                />
+                <Bar dataKey="avgSalary" radius={[4, 4, 0, 0]}>
+                  {skillMarketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={darkMode ? '#00f2ff' : '#10b981'}
+                      fillOpacity={0.4 + (index / skillMarketData.length) * 0.6}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 

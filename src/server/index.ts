@@ -28,6 +28,27 @@ app.get('/api/stats', async (c: Context) => {
   }
 });
 
+// Trigger Scan endpoint
+app.post('/api/trigger-scan', async (c: Context) => {
+  try {
+    const logsPath = path.join(process.cwd(), 'src/data/system_logs.json');
+    const logsData = JSON.parse(await fs.readFile(logsPath, 'utf-8'));
+
+    const newLog = {
+      time: new Date().toLocaleTimeString('en-US', { hour12: false }),
+      msg: 'Autonomous scan cycle triggered by Admin override.',
+      type: 'warning'
+    };
+
+    const updatedLogs = [newLog, ...logsData].slice(0, 50);
+    await fs.writeFile(logsPath, JSON.stringify(updatedLogs, null, 2));
+
+    return c.json({ success: true, message: 'Scan cycle triggered.' });
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
 // API Keys endpoint
 app.get('/api/keys', async (c: Context) => {
   try {

@@ -1,5 +1,26 @@
 [
   {
+    "title": "Echo Protocol Regains Control of Admin Keys After $76.7M Unauthorized eBTC Minting",
+    "category": "INFRA",
+    "summary": "Echo Protocol has regained control of its admin keys and burned remaining unauthorized eBTC after a compromise on the Monad network.",
+    "date": "2026-05-24",
+    "sourceLink": "https://www.ccn.com/news/crypto/echo-protocol-admin-key-exploit-bridge-security/"
+  },
+  {
+    "title": "Curvance Protocol Pauses eBTC Markets Following Monad Security Incident",
+    "category": "INFRA",
+    "summary": "Curvance has paused affected Echo eBTC markets as a precaution following the detection of abnormal minting activity on Monad.",
+    "date": "2026-05-24",
+    "sourceLink": "https://www.ccn.com/news/crypto/echo-protocol-admin-key-exploit-bridge-security/"
+  },
+  {
+    "title": "Echo Protocol Admin Key Compromise Analysis: $76.7M Unauthorized Mint on Monad",
+    "category": "HACK",
+    "summary": "A compromised admin key on Monad enabled an attacker to mint millions in unauthorized eBTC, highlighting critical bridge security risks.",
+    "date": "2026-05-24",
+    "sourceLink": "https://www.ccn.com/news/crypto/echo-protocol-admin-key-exploit-bridge-security/"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

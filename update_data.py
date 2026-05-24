@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
+            "id": f"raretalent-senior-protocol-engineer-{today}",
+            "title": "Senior Protocol Engineer",
+            "company": "RareTalent",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$400,000+",
+            "requirements": ["Rust", "MEV", "Consensus", "EVM"],
+            "applyLink": "https://raretalent.xyz/jobs"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"raretalent-solana-engineer-{today}",
+            "title": "Solana Smart Contract Engineer",
+            "company": "RareTalent",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$200,000+",
+            "requirements": ["Rust", "Solana", "Anchor", "DeFi"],
+            "applyLink": "https://raretalent.xyz/jobs"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"kraken-qa-automation-{today}",
+            "title": "QA Automation Engineer",
+            "company": "Kraken",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "Competitive",
+            "requirements": ["Python", "Rust", "CI/CD", "Testing"],
+            "applyLink": "https://sailonchain.com/jobs/skill/rust"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Echo Protocol Regains Control of Admin Keys After $76.7M Unauthorized eBTC Minting",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Echo Protocol has regained control of its admin keys and burned remaining unauthorized eBTC after a compromise on the Monad network.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://www.ccn.com/news/crypto/echo-protocol-admin-key-exploit-bridge-security/"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Curvance Protocol Pauses eBTC Markets Following Monad Security Incident",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Curvance has paused affected Echo eBTC markets as a precaution following the detection of abnormal minting activity on Monad.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://www.ccn.com/news/crypto/echo-protocol-admin-key-exploit-bridge-security/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Echo Protocol Admin Key Compromise Analysis: $76.7M Unauthorized Mint on Monad",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "A compromised admin key on Monad enabled an attacker to mint millions in unauthorized eBTC, highlighting critical bridge security risks.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://www.ccn.com/news/crypto/echo-protocol-admin-key-exploit-bridge-security/"
         }
     ]
 

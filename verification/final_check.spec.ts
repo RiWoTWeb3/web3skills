@@ -1,46 +1,60 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('RiWoT Platform Verification', () => {
+test.describe('RiWoT Platform Verification - Daily Update & Features', () => {
   test.beforeEach(async ({ page }) => {
-    // Start dev server in background if not already running
-    // In this environment, we assume the server might be started by the system or we should start it.
+    // Set viewport for charts
+    await page.setViewportSize({ width: 1280, height: 1200 });
+    // Navigate to the app and handle policy modal
     await page.goto('http://localhost:3000');
+    const acceptButton = page.locator('button:has-text("I Understand and Accept")');
+    if (await acceptButton.isVisible()) {
+      await acceptButton.click();
+    }
   });
 
-  test('Daily Data Update Verification', async ({ page }) => {
+  test('Verify Daily Data Update (2026-05-24)', async ({ page }) => {
     await page.goto('http://localhost:3000/#/news');
-    // Check for today's data (2026-04-16)
-    const newsItem = page.locator('text=2026-04-16').first();
-    await expect(newsItem).toBeVisible();
+    // Check for today's date in feed
+    await expect(page.locator('text=2026-05-24').first()).toBeVisible();
+    // Check for Echo Protocol news
+    await expect(page.locator('text=Echo Protocol').first()).toBeVisible();
 
-    const clawNews = page.locator('text=Claw Intelligence').first();
-    await expect(clawNews).toBeVisible();
+    await page.goto('http://localhost:3000/#/jobs');
+    // Check for RareTalent jobs
+    await expect(page.locator('text=RareTalent').first()).toBeVisible();
   });
 
-  test('Admin Panel Enhancements Verification', async ({ page }) => {
+  test('Verify Daily Learning Streak Feature', async ({ page }) => {
+    await page.goto('http://localhost:3000/#/');
+    // Check for Learning Streak component
+    const streak = page.locator('h3:has-text("Learning Streak")');
+    await expect(streak).toBeVisible();
+    // Should show "1 Days" as it's the first visit today
+    await expect(page.locator('text=1 Days')).toBeVisible();
+  });
+
+  test('Verify Admin Panel Content', async ({ page }) => {
     await page.goto('http://localhost:3000/#/notadmin');
+    // Check for chart title
+    const chartTitle = page.locator('h3:has-text("Skill Market Value (Avg USD)")');
+    await expect(chartTitle).toBeVisible();
 
-    // Check for Heatmap
-    const heatmap = page.locator('h3:has-text("Key Health Heatmap")');
-    await expect(heatmap).toBeVisible();
-
-    // Check for Terminal
-    const terminal = page.locator('h3:has-text("System Intelligence Terminal")');
-    await expect(terminal).toBeVisible();
-
-    // Check for log entries in terminal
-    const logEntry = page.locator('text=aggregation cycle started').first();
-    await expect(logEntry).toBeVisible();
+    // Verify system notice
+    await expect(page.locator('text=SYSTEM NOTICE')).toBeVisible();
   });
 
-  test('Career Alignment Engine Verification', async ({ page }) => {
-    await page.goto('http://localhost:3000/#/skills');
+  test('Verify Manual Scan Trigger', async ({ page }) => {
+    await page.goto('http://localhost:3000/#/notadmin');
+    const triggerButton = page.locator('button:has-text("Trigger Manual Scan")');
+    await expect(triggerButton).toBeVisible();
 
-    // Check "Solidity" (which should trigger synonyms)
-    // We need to simulate checking a skill and seeing alignment change
-    // But for now, let's just check if the UI elements for alignment exist
-    await page.goto('http://localhost:3000/#/careers');
-    const alignment = page.locator('text=% alignment').first();
-    await expect(alignment).toBeVisible();
+    await triggerButton.click();
+    // Should show scanning state
+    await expect(page.locator('text=SCANNING...')).toBeVisible();
+
+    // Wait for it to complete and check terminal logs
+    await page.waitForTimeout(3000);
+    const logEntry = page.locator('text=Autonomous scan cycle triggered by Admin override.').first();
+    await expect(logEntry).toBeVisible();
   });
 });

@@ -1,5 +1,53 @@
 [
   {
+    "id": "raretalent-senior-protocol-engineer-2026-05-24",
+    "title": "Senior Protocol Engineer",
+    "company": "RareTalent",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$400,000+",
+    "requirements": [
+      "Rust",
+      "MEV",
+      "Consensus",
+      "EVM"
+    ],
+    "applyLink": "https://raretalent.xyz/jobs"
+  },
+  {
+    "id": "raretalent-solana-engineer-2026-05-24",
+    "title": "Solana Smart Contract Engineer",
+    "company": "RareTalent",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$200,000+",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "DeFi"
+    ],
+    "applyLink": "https://raretalent.xyz/jobs"
+  },
+  {
+    "id": "kraken-qa-automation-2026-05-24",
+    "title": "QA Automation Engineer",
+    "company": "Kraken",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Python",
+      "Rust",
+      "CI/CD",
+      "Testing"
+    ],
+    "applyLink": "https://sailonchain.com/jobs/skill/rust"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
