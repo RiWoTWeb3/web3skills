@@ -1,5 +1,53 @@
 [
   {
+    "id": "inner-circle-solana-engineer-2026-05-26",
+    "title": "Senior Backend Solana Rust Engineer",
+    "company": "Inner Circle",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$43,000 - $111,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Backend",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://www.ziprecruiter.com/Jobs/Solana"
+  },
+  {
+    "id": "1010-trading-rust-evm-2026-05-26",
+    "title": "Rust Developer \u2014 EVM Systems",
+    "company": "1010 trading",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "EVM",
+      "Ethereum",
+      "Trading Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "nexus-tech-lead-2026-05-26",
+    "title": "Tech Lead Engineer",
+    "company": "Nexus",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Go",
+      "AWS",
+      "Technical Leadership"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

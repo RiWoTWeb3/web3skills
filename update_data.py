@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
+            "id": f"inner-circle-solana-engineer-{today}",
+            "title": "Senior Backend Solana Rust Engineer",
+            "company": "Inner Circle",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "salaryRange": "$43,000 - $111,000",
+            "requirements": ["Rust", "Solana", "Backend", "Systems Engineering"],
+            "applyLink": "https://www.ziprecruiter.com/Jobs/Solana"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
-            "type": "Backend",
+            "id": f"1010-trading-rust-evm-{today}",
+            "title": "Rust Developer — EVM Systems",
+            "company": "1010 trading",
+            "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$150,000 - $250,000",
+            "requirements": ["Rust", "EVM", "Ethereum", "Trading Infrastructure"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
+        },
+        {
+            "id": f"nexus-tech-lead-{today}",
+            "title": "Tech Lead Engineer",
+            "company": "Nexus",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Lead level",
+            "salaryRange": "$120,000 - $180,000",
+            "requirements": ["Rust", "Go", "AWS", "Technical Leadership"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Bhutan’s GMC offers quick licenses, bank accounts to lure crypto firms",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Gelephu Mindfulness City in Bhutan is offering a faster licensing track with banking and zero-tax incentives to attract regulated crypto firms.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://cointelegraph.com/news/bhutans-gelephu-offers-quick-licences-bank-accounts-crypto-firms"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "UAE free zone launches blockchain-based business IDs for registered firms",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "The UAE Innovation City introduced AI on-chain business IDs for registered firms, enhancing transparency and verifiable credentials in the region.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://cointelegraph.com/news/uae-innovation-city-introduces-ai-onchain-business-ids"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-            "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "title": "AI drives surge in ‘bug bounty’ reports, but the ‘slop’ is rising too",
+            "category": "BOUNTY",
+            "summary": "AI tools are accelerating the discovery and reporting of potential vulnerabilities, but researchers warn of an increase in low-quality or irrelevant reports.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://cointelegraph.com/news/ai-crypto-bug-bounty-submissions-surge"
         }
     ]
 

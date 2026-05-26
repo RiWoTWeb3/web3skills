@@ -548,6 +548,98 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 
 // --- Components ---
 
+const SecurityPulse = ({ darkMode, intelData }) => {
+  const safetyIndex = useMemo(() => {
+    const now = new Date();
+    const weekAgo = new Date();
+    weekAgo.setDate(weekAgo.getDate() - 7);
+
+    const recentHacks = intelData.filter(item => {
+      const itemDate = new Date(item.date);
+      return (item.category === 'HACK' || item.category === 'BOUNTY') &&
+             itemDate >= weekAgo && itemDate <= now;
+    });
+
+    return Math.max(0, 100 - recentHacks.length * 20);
+  }, [intelData]);
+
+  const status = safetyIndex > 80 ? 'STABLE' : safetyIndex > 50 ? 'CAUTION' : 'CRITICAL';
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-3 mb-4">
+        <Activity size={18} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+        <h3 className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Security Pulse Index</h3>
+      </div>
+      <div className="flex items-end justify-between">
+        <div>
+          <p className={`text-4xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{safetyIndex}</p>
+          <p className={`text-[10px] font-mono mt-1 ${
+            status === 'STABLE' ? 'text-green-500' :
+            status === 'CAUTION' ? 'text-yellow-500' : 'text-red-500'
+          }`}>SYSTEM_STATUS: {status}</p>
+        </div>
+        <div className="w-24 h-12">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={[{v: safetyIndex}]}>
+              <Bar dataKey="v" fill={
+                status === 'STABLE' ? '#22c55e' :
+                status === 'CAUTION' ? '#eab308' : '#ef4444'
+              } radius={[2, 2, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DailyLearningStreak = ({ darkMode }) => {
+  const [streak, setStreak] = useState(0);
+
+  useEffect(() => {
+    const today = new Date().toISOString().split('T')[0];
+    const lastVisit = localStorage.getItem('web3skills_last_visit');
+    const currentStreak = parseInt(localStorage.getItem('web3skills_streak') || '0', 10);
+
+    if (lastVisit === today) {
+      setStreak(currentStreak);
+    } else {
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+      if (lastVisit === yesterdayStr) {
+        const newStreak = currentStreak + 1;
+        localStorage.setItem('web3skills_streak', newStreak.toString());
+        localStorage.setItem('web3skills_last_visit', today);
+        setStreak(newStreak);
+      } else {
+        localStorage.setItem('web3skills_streak', '1');
+        localStorage.setItem('web3skills_last_visit', today);
+        setStreak(1);
+      }
+    }
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex items-center justify-between`}>
+      <div className="flex items-center gap-3">
+        <div className={`${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-orange-100 text-orange-600'} p-2 rounded-lg`}>
+          <Zap size={20} className={streak > 0 ? 'animate-pulse' : ''} />
+        </div>
+        <div>
+          <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Learning Streak</p>
+          <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{streak} Days</p>
+        </div>
+      </div>
+      <div className={`text-[10px] font-mono ${darkMode ? 'text-accent-blue/60' : 'text-gray-400'}`}>
+        {streak >= 7 ? 'ELITE_STATUS' : 'DAILY_SYNC'}
+      </div>
+    </div>
+  );
+};
+
 const SystemMetrics = ({ darkMode, totalJobs, totalIntel }) => (
   <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex justify-around items-center`}>
     <div className="text-center">
@@ -1085,9 +1177,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
+        <SecurityPulse darkMode={darkMode} intelData={intelData} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
+        <DailyLearningStreak darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
@@ -1539,6 +1633,41 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
   );
 };
 
+const SkillGapAnalyzer = ({ requirements, displaySkills, darkMode, bestFit }) => {
+  const missingSkills = requirements.filter(req => !hasSkillOrSynonym(req, displaySkills));
+
+  if (missingSkills.length === 0) return null;
+
+  return (
+    <div className={`p-4 ${darkMode ? 'bg-accent-blue/5 border border-accent-blue/20 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Target size={14} className={darkMode ? 'text-accent-blue' : 'text-orange-600'} />
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Skill Gap Analysis</p>
+      </div>
+      <div className="space-y-3">
+        <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+          Critical modules missing for 100% alignment:
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {missingSkills.map(skill => (
+            <Link
+              key={skill}
+              to={bestFit !== 'General Web3' ? `/career/${encodeURIComponent(bestFit)}` : '/careers'}
+              className={`text-[10px] font-mono px-2 py-1 border transition-all ${
+                darkMode
+                  ? 'bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20'
+                  : 'bg-red-50 text-red-600 border-red-200 hover:bg-red-100'
+              }`}
+            >
+              RESOLVE_{skill.toUpperCase().replace(/\s+/g, '_')}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const JobsView = ({ darkMode, displaySkills }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
@@ -1735,14 +1864,12 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     </div>
                   </div>
 
-                {missingSkills.length > 0 && (
-                    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
-                      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
-                        To align with this role, consider learning: <span className="font-bold">{missingSkills.join(', ')}</span>
-                      </p>
-                    </div>
-                  )}
+                <SkillGapAnalyzer
+                  requirements={job.requirements}
+                  displaySkills={displaySkills}
+                  darkMode={darkMode}
+                  bestFit={bestFit}
+                />
                   </div>
               
             </div>
@@ -1928,6 +2055,59 @@ const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   );
 };
 
+const SkillMarketValue = ({ darkMode, jobsData }) => {
+  const skillSalaries = useMemo(() => {
+    const data: Record<string, { total: number; count: number }> = {};
+
+    jobsData.forEach(job => {
+      const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/);
+      if (salaryMatch) {
+        const salary = parseInt(salaryMatch[1].replace(/,/g, ''), 10);
+        job.requirements.forEach(req => {
+          if (!data[req]) data[req] = { total: 0, count: 0 };
+          data[req].total += salary;
+          data[req].count += 1;
+        });
+      }
+    });
+
+    return Object.entries(data)
+      .map(([name, stats]) => ({
+        name,
+        avg: Math.round(stats.total / stats.count)
+      }))
+      .sort((a, b) => b.avg - a.avg)
+      .slice(0, 8);
+  }, [jobsData]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center gap-3 mb-6">
+        <DollarSign className={darkMode ? 'text-accent-blue' : 'text-green-600'} size={20} />
+        <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Skill Market Value (Avg USD)</h3>
+      </div>
+      <div className="h-64 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={skillSalaries}>
+            <XAxis dataKey="name" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} tick={{ dy: 10 }} />
+            <YAxis hide />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: darkMode ? '#0f172a' : '#fff',
+                border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                fontSize: '10px',
+                fontFamily: 'monospace'
+              }}
+              formatter={(value: number) => [`$${value.toLocaleString()}`, 'Avg Salary']}
+            />
+            <Bar dataKey="avg" fill={darkMode ? '#00f2ff' : '#2563eb'} radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
 const AdminPanelView = ({ darkMode }) => {
   const [stats, setStats] = useState({
     activeKeys: 0,
@@ -2024,37 +2204,41 @@ const AdminPanelView = ({ darkMode }) => {
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
 
-      {/* Market Distribution Chart */}
-      <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
-        <div className="flex items-center gap-3 mb-6">
-          <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
-          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
-        </div>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={marketData} layout="vertical">
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
-              <Tooltip
-                cursor={{ fill: 'transparent' }}
-                contentStyle={{
-                  backgroundColor: darkMode ? '#0f172a' : '#fff',
-                  border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
-                  fontSize: '10px',
-                  fontFamily: 'monospace'
-                }}
-              />
-              <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                {marketData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
-                    fillOpacity={0.8}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <SkillMarketValue darkMode={darkMode} jobsData={jobsData} />
+
+        {/* Market Distribution Chart */}
+        <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+          <div className="flex items-center gap-3 mb-6">
+            <Briefcase className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+            <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Market Opportunity Distribution</h3>
+          </div>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={marketData} layout="vertical">
+                <XAxis type="number" hide />
+                <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={12} width={80} />
+                <Tooltip
+                  cursor={{ fill: 'transparent' }}
+                  contentStyle={{
+                    backgroundColor: darkMode ? '#0f172a' : '#fff',
+                    border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                    fontSize: '10px',
+                    fontFamily: 'monospace'
+                  }}
+                />
+                <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+                  {marketData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.name === 'EVM' ? '#2563eb' : entry.name === 'SVM' ? '#9333ea' : '#10b981'}
+                      fillOpacity={0.8}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
