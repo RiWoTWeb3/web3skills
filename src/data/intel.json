@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad Devnet V4 Stress Test Reaches 15k TPS",
+    "category": "INFRA",
+    "summary": "Monad's latest Devnet V4 stress test achieved a sustained 15,000 TPS, showcasing the power of parallelized EVM execution in high-load scenarios.",
+    "date": "2026-05-27",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Ethereum Pectra Devnet-12 Operational",
+    "category": "INFRA",
+    "summary": "Devnet-12 for the Ethereum Pectra upgrade is now live, focusing on large-scale testing of EIP-7702 and preliminary Verkle tree performance benchmarks.",
+    "date": "2026-05-27",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Sonne Finance Exploited for $20M in Flashloan Attack",
+    "category": "HACK",
+    "summary": "DeFi lending protocol Sonne Finance suffered a $20 million exploit due to a known vulnerability in its Compound-forked contracts being triggered via a flashloan.",
+    "date": "2026-05-27",
+    "sourceLink": "https://rekt.news/sonne-finance-rekt"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

@@ -1,5 +1,53 @@
 [
   {
+    "id": "unstoppable-rust-engineer-2026-05-27",
+    "title": "Software Engineer - Rust",
+    "company": "Unstoppable Finance",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$90,000 - $150,000",
+    "requirements": [
+      "Rust",
+      "DeFi",
+      "Solidity",
+      "Web3"
+    ],
+    "applyLink": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
+    "id": "bitgo-defi-engineer-2026-05-27",
+    "title": "Software Engineer, DeFi Team",
+    "company": "BitGo",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$66,000 - $120,000",
+    "requirements": [
+      "Go",
+      "Distributed Systems",
+      "DeFi Understanding",
+      "Web3"
+    ],
+    "applyLink": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
+    "id": "moment-house-web3-engineer-2026-05-27",
+    "title": "Web3 Engineer",
+    "company": "Moment House",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$102,000 - $156,000",
+    "requirements": [
+      "Solidity",
+      "Node.js",
+      "React",
+      "Web3"
+    ],
+    "applyLink": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
+            "id": f"unstoppable-rust-engineer-{today}",
+            "title": "Software Engineer - Rust",
+            "company": "Unstoppable Finance",
+            "type": "Backend",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "experience": "Mid-Senior level",
+            "salaryRange": "$90,000 - $150,000",
+            "requirements": ["Rust", "DeFi", "Solidity", "Web3"],
+            "applyLink": "https://huntd.tech/jobs/web3-solana"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
+            "id": f"bitgo-defi-engineer-{today}",
+            "title": "Software Engineer, DeFi Team",
+            "company": "BitGo",
+            "type": "Backend",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "experience": "Mid level",
+            "salaryRange": "$66,000 - $120,000",
+            "requirements": ["Go", "Distributed Systems", "DeFi Understanding", "Web3"],
+            "applyLink": "https://huntd.tech/jobs/web3-solana"
         },
         {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"moment-house-web3-engineer-{today}",
+            "title": "Web3 Engineer",
+            "company": "Moment House",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$102,000 - $156,000",
+            "requirements": ["Solidity", "Node.js", "React", "Web3"],
+            "applyLink": "https://huntd.tech/jobs/web3-solana"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Monad Devnet V4 Stress Test Reaches 15k TPS",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Monad's latest Devnet V4 stress test achieved a sustained 15,000 TPS, showcasing the power of parallelized EVM execution in high-load scenarios.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://monad.xyz/blog"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Ethereum Pectra Devnet-12 Operational",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Devnet-12 for the Ethereum Pectra upgrade is now live, focusing on large-scale testing of EIP-7702 and preliminary Verkle tree performance benchmarks.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://ethereum-magicians.org/"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "Sonne Finance Exploited for $20M in Flashloan Attack",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "DeFi lending protocol Sonne Finance suffered a $20 million exploit due to a known vulnerability in its Compound-forked contracts being triggered via a flashloan.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://rekt.news/sonne-finance-rekt"
         }
     ]
 
