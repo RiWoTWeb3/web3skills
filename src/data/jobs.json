@@ -1,5 +1,53 @@
 [
   {
+    "id": "cow-dao-senior-backend-rust-2026-05-28",
+    "title": "Senior Backend Engineer Rust",
+    "company": "CoW DAO",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solidity",
+      "Docker",
+      "Kubernetes"
+    ],
+    "applyLink": "https://web3.career/senior-backend-engineer-rust-cow-dao/149797"
+  },
+  {
+    "id": "zscaler-principal-sre-2026-05-28",
+    "title": "Principal Site Reliability Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$161,000 - $230,000",
+    "requirements": [
+      "Go",
+      "AWS",
+      "Cloud Architecture",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://web3.career/principal-site-reliability-engineer-zscaler/99847"
+  },
+  {
+    "id": "jumpcrypto-production-engineer-2026-05-28",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid/Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Ethereum",
+      "DeFi",
+      "Blockchain",
+      "Rust"
+    ],
+    "applyLink": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",

@@ -25,66 +25,66 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
     print(f"Updated {filepath}")
 
 def main():
-    # Today's Date
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Today's Date - Using 2026-05-28 as per the environment date found earlier
+    today = "2026-05-28"
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
+            "id": f"cow-dao-senior-backend-rust-{today}",
+            "title": "Senior Backend Engineer Rust",
+            "company": "CoW DAO",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
             "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+            "requirements": ["Rust", "Solidity", "Docker", "Kubernetes"],
+            "applyLink": "https://web3.career/senior-backend-engineer-rust-cow-dao/149797"
         },
         {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"zscaler-principal-sre-{today}",
+            "title": "Principal Site Reliability Engineer",
+            "company": "Zscaler",
             "type": "Backend",
             "workType": "Remote",
-            "experience": "Senior level",
+            "experience": "Lead level",
+            "salaryRange": "$161,000 - $230,000",
+            "requirements": ["Go", "AWS", "Cloud Architecture", "Systems Engineering"],
+            "applyLink": "https://web3.career/principal-site-reliability-engineer-zscaler/99847"
+        },
+        {
+            "id": f"jumpcrypto-production-engineer-{today}",
+            "title": "Crypto Production Engineer",
+            "company": "Jumpcrypto",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Mid/Senior level",
             "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "requirements": ["Ethereum", "DeFi", "Blockchain", "Rust"],
+            "applyLink": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Jupiter Exchange Launches Offerbook P2P Lending Platform in Public Beta",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Jupiter launches Offerbook on Solana, allowing users to borrow against tokens and NFTs with fixed terms and no price-based liquidation risk.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://cryptobriefing.com/jupiter-offerbook-solana-lending-beta/"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "Circle's Arc Enables AI Agents Through SumPlus Partnership",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "Circle Arc integrates AI agents from SumPlus to power automated trading and security monitoring on its stablecoin-native layer-1 network.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://www.binance.com/en/square/post/327780687219697"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "THORChain Rekt III: $10.7M Drained via TSS Exploit",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "A malicious node exploited THORChain's GG20 TSS signing stack to reconstruct private keys and drain vaults across multiple chains.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://rekt.news/thorchain-rekt3"
         }
     ]
 

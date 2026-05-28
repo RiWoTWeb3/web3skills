@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-05-28",
+    "type": "job",
+    "title": "Senior Backend Engineer Rust at CoW DAO",
+    "description": "Join CoW DAO as a Senior Backend Engineer Rust. Requirements: Rust, Solidity, Docker. Remote.",
+    "link": "https://web3.career/senior-backend-engineer-rust-cow-dao/149797"
+  },
+  {
+    "date": "2026-05-28",
+    "type": "job",
+    "title": "Principal Site Reliability Engineer at Zscaler",
+    "description": "Join Zscaler as a Principal Site Reliability Engineer. Requirements: Go, AWS, Cloud Architecture. Remote.",
+    "link": "https://web3.career/principal-site-reliability-engineer-zscaler/99847"
+  },
+  {
+    "date": "2026-05-28",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Ethereum, DeFi, Blockchain. Remote.",
+    "link": "https://web3.career/crypto-production-engineer-jumpcrypto/89562"
+  },
+  {
+    "date": "2026-05-28",
+    "type": "news",
+    "title": "Jupiter Exchange Launches Offerbook P2P Lending Platform in Public Beta",
+    "description": "Jupiter launches Offerbook on Solana, allowing users to borrow against tokens and NFTs with fixed terms and no price-based liquidation risk.",
+    "link": "https://cryptobriefing.com/jupiter-offerbook-solana-lending-beta/"
+  },
+  {
+    "date": "2026-05-28",
+    "type": "news",
+    "title": "Circle's Arc Enables AI Agents Through SumPlus Partnership",
+    "description": "Circle Arc integrates AI agents from SumPlus to power automated trading and security monitoring on its stablecoin-native layer-1 network.",
+    "link": "https://www.binance.com/en/square/post/327780687219697"
+  },
+  {
+    "date": "2026-05-28",
+    "type": "hack",
+    "title": "THORChain Rekt III: $10.7M Drained via TSS Exploit",
+    "description": "A malicious node exploited THORChain's GG20 TSS signing stack to reconstruct private keys and drain vaults across multiple chains.",
+    "link": "https://rekt.news/thorchain-rekt3"
+  },
+  {
     "date": "2026-04-16",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
@@ -375,48 +417,6 @@
     "type": "hack",
     "title": "Solana Firedancer Bug Bounty: $500k",
     "description": "Jump Crypto announces a $500,000 bounty for critical vulnerabilities in the Firedancer validator client prior to full mainnet release.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Backend Engineer (Contract - LATAM) at Nexus",
-    "description": "Join Nexus as a Backend Engineer (Contract - LATAM). Requirements: Rust, Go, AWS. Remote.",
-    "link": "https://web3.career/backend-engineer-contract-latam-nexus/148035"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Rust Developer \u2014 EVM Systems Trading Infrastructure at 1010 trading",
-    "description": "Join 1010 trading as a Rust Developer \u2014 EVM Systems Trading Infrastructure. Requirements: Rust, EVM, Ethereum. Remote.",
-    "link": "https://web3.career/rust-developer-evm-systems-trading-infrastructure-1010-trading/143407"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "job",
-    "title": "Product Lead, Solana at Alchemy",
-    "description": "Join Alchemy as a Product Lead, Solana. Requirements: Solana, Product Strategy, API Development. Remote.",
-    "link": "https://cryptojobslist.com/solana"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-9 Live",
-    "description": "The ninth devnet for the Ethereum Pectra upgrade is now live, focusing on PeerDAS scaling and EIP-7702 account abstraction refinements.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "news",
-    "title": "Solana Mainnet Performance Upgrade V1.19",
-    "description": "Solana v1.19 mainnet-beta release introduces a new scheduler for improved transaction prioritization during high congestion.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-03-29",
-    "type": "hack",
-    "title": "DeFi Protocol Bug Bounty: $2.5M Payout",
-    "description": "A critical vulnerability in a major cross-chain bridge was safely disclosed by a white-hat researcher, earning a record $2.5M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
   }
 ]

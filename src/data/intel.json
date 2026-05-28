@@ -1,5 +1,26 @@
 [
   {
+    "title": "Jupiter Exchange Launches Offerbook P2P Lending Platform in Public Beta",
+    "category": "INFRA",
+    "summary": "Jupiter launches Offerbook on Solana, allowing users to borrow against tokens and NFTs with fixed terms and no price-based liquidation risk.",
+    "date": "2026-05-28",
+    "sourceLink": "https://cryptobriefing.com/jupiter-offerbook-solana-lending-beta/"
+  },
+  {
+    "title": "Circle's Arc Enables AI Agents Through SumPlus Partnership",
+    "category": "INFRA",
+    "summary": "Circle Arc integrates AI agents from SumPlus to power automated trading and security monitoring on its stablecoin-native layer-1 network.",
+    "date": "2026-05-28",
+    "sourceLink": "https://www.binance.com/en/square/post/327780687219697"
+  },
+  {
+    "title": "THORChain Rekt III: $10.7M Drained via TSS Exploit",
+    "category": "HACK",
+    "summary": "A malicious node exploited THORChain's GG20 TSS signing stack to reconstruct private keys and drain vaults across multiple chains.",
+    "date": "2026-05-28",
+    "sourceLink": "https://rekt.news/thorchain-rekt3"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
