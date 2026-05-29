@@ -1,5 +1,26 @@
 [
   {
+    "title": "Re7 Labs Expands Onchain Operator Strategy",
+    "category": "INFRA",
+    "summary": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
+    "date": "2026-05-29",
+    "sourceLink": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
+  },
+  {
+    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
+    "category": "INFRA",
+    "summary": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
+    "date": "2026-05-29",
+    "sourceLink": "https://cryptojobslist.com/research/web3-workforce-report"
+  },
+  {
+    "title": "New Market Trading Exploit: $3.98M Drained",
+    "category": "HACK",
+    "summary": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
+    "date": "2026-05-29",
+    "sourceLink": "https://rekt.news/newmarkettrading-rekt"
+  },
+  {
     "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
     "category": "INFRA",
     "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",

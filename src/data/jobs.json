@@ -1,5 +1,53 @@
 [
   {
+    "id": "kaia-protocol-engineer-2026-05-29",
+    "title": "Senior Protocol Engineer",
+    "company": "Kaia Labs Limited",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $180,000",
+    "requirements": [
+      "Blockchain Protocols",
+      "Distributed Systems",
+      "Go",
+      "Web3"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
+  },
+  {
+    "id": "stellar-backend-engineer-2026-05-29",
+    "title": "Backend Engineer, Integrations & APIs",
+    "company": "Stellar Development Foundation",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": [
+      "Go",
+      "API Design",
+      "Distributed Systems",
+      "Stellar Network"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
+  },
+  {
+    "id": "hyrotrader-trading-systems-2026-05-29",
+    "title": "Senior Low-Latency Trading Systems Engineer",
+    "company": "HyroTrader",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$60,000 - $120,000",
+    "requirements": [
+      "Low-Latency",
+      "Trading Systems",
+      "Rust",
+      "C++"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
+  },
+  {
     "id": "odos-evm-engineer-2026-04-16",
     "title": "Smart Contracts Engineer EVM",
     "company": "Odos",
