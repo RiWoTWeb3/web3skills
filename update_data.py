@@ -30,61 +30,61 @@ def main():
 
     new_jobs = [
         {
-            "id": f"odos-evm-engineer-{today}",
-            "title": "Smart Contracts Engineer EVM",
-            "company": "Odos",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Rust", "EVM Mechanics", "Smart Contract Development"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"odos-solana-engineer-{today}",
-            "title": "Solana Smart Contracts Engineer",
-            "company": "Odos",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Rust", "Solana Program Development", "Anchor Framework", "Solana Fundamentals"],
-            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-        },
-        {
-            "id": f"paradex-sdet-{today}",
-            "title": "Senior/Principal SDET",
-            "company": "Paradex",
+            "id": f"kaia-protocol-engineer-{today}",
+            "title": "Senior Protocol Engineer",
+            "company": "Kaia Labs Limited",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["TypeScript", "Distributed Systems", "Testing", "Web3"],
-            "applyLink": "https://cryptojobslist.com/remote"
+            "salaryRange": "$140,000 - $180,000",
+            "requirements": ["Blockchain Protocols", "Distributed Systems", "Go", "Web3"],
+            "applyLink": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
+        },
+        {
+            "id": f"stellar-backend-engineer-{today}",
+            "title": "Backend Engineer, Integrations & APIs",
+            "company": "Stellar Development Foundation",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$140,000 - $210,000",
+            "requirements": ["Go", "API Design", "Distributed Systems", "Stellar Network"],
+            "applyLink": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
+        },
+        {
+            "id": f"hyrotrader-trading-systems-{today}",
+            "title": "Senior Low-Latency Trading Systems Engineer",
+            "company": "HyroTrader",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$60,000 - $120,000",
+            "requirements": ["Low-Latency", "Trading Systems", "Rust", "C++"],
+            "applyLink": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
         }
     ]
 
     new_intel = [
         {
-            "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
+            "title": "Re7 Labs Expands Onchain Operator Strategy",
             "category": "INFRA",
-            "summary": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
+            "summary": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
             "date": today,
-            "sourceLink": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
+            "sourceLink": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
         },
         {
-            "title": "Franklin Templeton Expands RWAs on Monad Network",
+            "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
             "category": "INFRA",
-            "summary": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
+            "summary": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
             "date": today,
-            "sourceLink": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
+            "sourceLink": "https://cryptojobslist.com/research/web3-workforce-report"
         },
         {
-            "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
+            "title": "New Market Trading Exploit: $3.98M Drained",
             "category": "HACK",
-            "summary": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
+            "summary": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
             "date": today,
-            "sourceLink": "https://rekt.news/drift-protocol-rekt"
+            "sourceLink": "https://rekt.news/newmarkettrading-rekt"
         }
     ]
 
