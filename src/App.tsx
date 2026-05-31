@@ -1616,6 +1616,67 @@ const SkillsView = ({ darkMode, viewMode, searchQuery, setSearchQuery, filterCom
   );
 };
 
+const SkillGapAnalyzer = ({ darkMode, requirements, userSkills }) => {
+  const analysis = useMemo(() => {
+    const matched = requirements.filter(req => hasSkillOrSynonym(req, userSkills));
+    const missing = requirements.filter(req => !hasSkillOrSynonym(req, userSkills));
+    const percentage = requirements.length > 0 ? (matched.length / requirements.length) * 100 : 0;
+
+    const missingWithRoadmaps = missing.map(skill => {
+      const roadmap = Object.entries(careerPaths).find(([_, path]) =>
+        path.requiredSkills.includes(skill)
+      )?.[0];
+      return { skill, roadmap };
+    });
+
+    return { matched, missing: missingWithRoadmaps, percentage };
+  }, [requirements, userSkills]);
+
+  return (
+    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-blue-50 border border-blue-100 rounded-xl'}`}>
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <Target size={14} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+          <h4 className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Skill Gap Analysis</h4>
+        </div>
+        <span className={`text-[10px] font-mono font-bold ${analysis.percentage > 70 ? 'text-green-500' : analysis.percentage > 40 ? 'text-yellow-500' : 'text-red-500'}`}>
+          {analysis.percentage.toFixed(0)}% MATCH
+        </span>
+      </div>
+
+      <div className="space-y-3">
+        {analysis.missing.length > 0 ? (
+          <div>
+            <p className={`text-[9px] font-mono uppercase ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-2`}>Priority Learning Modules:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {analysis.missing.map(({ skill, roadmap }) => (
+                <div key={skill} className={`flex flex-col p-2 border ${darkMode ? 'bg-black/20 border-white/5' : 'bg-white border-gray-200'} rounded-[2px]`}>
+                  <span className={`text-[10px] font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{skill}</span>
+                  {roadmap ? (
+                    <Link
+                      to={`/career/${encodeURIComponent(roadmap)}`}
+                      className={`text-[9px] font-mono mt-1 ${darkMode ? 'text-accent-blue hover:underline' : 'text-blue-600 hover:underline'} flex items-center gap-1`}
+                    >
+                      View in {roadmap} <ArrowRight size={8} />
+                    </Link>
+                  ) : (
+                    <span className={`text-[8px] font-mono mt-1 ${darkMode ? 'text-slate-600' : 'text-gray-400'}`}>General Ecosystem Skill</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2 text-green-500 bg-green-500/10 p-2 rounded-[2px] border border-green-500/20">
+            <CheckCircle size={14} />
+            <span className="text-[10px] font-mono uppercase font-bold">Full Protocol Alignment Achieved</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const JobsView = ({ darkMode, displaySkills }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
@@ -1812,14 +1873,11 @@ const JobsView = ({ darkMode, displaySkills }) => {
                     </div>
                   </div>
 
-                {missingSkills.length > 0 && (
-                    <div className={`p-4 ${darkMode ? 'bg-white/[0.02] border border-white/5 rounded-[4px]' : 'bg-orange-50 border border-orange-100 rounded-xl'}`}>
-                      <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue' : 'text-orange-700'}`}>Recommended Learning</p>
-                      <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
-                        To align with this role, consider learning: <span className="font-bold">{missingSkills.join(', ')}</span>
-                      </p>
-                    </div>
-                  )}
+                  <SkillGapAnalyzer
+                    darkMode={darkMode}
+                    requirements={job.requirements}
+                    userSkills={displaySkills}
+                  />
                   </div>
               
             </div>
@@ -2005,6 +2063,39 @@ const SystemIntelligenceTerminal = ({ darkMode, logs }) => {
   );
 };
 
+const SystemCapacityMonitor = ({ darkMode, keys }) => {
+  const stats = useMemo(() => {
+    const totalLimit = keys.reduce((acc, k) => acc + (k.limit || 0), 0);
+    const totalUsage = keys.reduce((acc, k) => acc + (k.usage || 0), 0);
+    const percentage = totalLimit > 0 ? (totalUsage / totalLimit) * 100 : 0;
+    return { totalLimit, totalUsage, percentage };
+  }, [keys]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <Activity className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+          <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Aggregate System Capacity</h3>
+        </div>
+        <span className={`text-xs font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+          {stats.totalUsage.toLocaleString()} / {stats.totalLimit.toLocaleString()} Requests
+        </span>
+      </div>
+      <div className={`w-full h-4 ${darkMode ? 'bg-white/5' : 'bg-gray-100'} rounded-full overflow-hidden border ${darkMode ? 'border-white/5' : 'border-gray-200'}`}>
+        <div
+          className={`h-full transition-all duration-1000 ${stats.percentage > 80 ? 'bg-red-500' : stats.percentage > 50 ? 'bg-yellow-500' : 'bg-accent-blue'}`}
+          style={{ width: `${stats.percentage}%` }}
+        />
+      </div>
+      <div className="flex justify-between mt-2">
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Quota Consumption</p>
+        <p className={`text-[10px] font-mono font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{stats.percentage.toFixed(1)}%</p>
+      </div>
+    </div>
+  );
+};
+
 const AdminPanelView = ({ darkMode, jobsData, intelData }) => {
   const [stats, setStats] = useState({
     activeKeys: 0,
@@ -2124,6 +2215,8 @@ const AdminPanelView = ({ darkMode, jobsData, intelData }) => {
       <DataRefreshStatus darkMode={darkMode} />
 
       <KeyHealthHeatmap darkMode={darkMode} keys={keys} />
+
+      <SystemCapacityMonitor darkMode={darkMode} keys={keys} />
 
       {/* Market Distribution Chart */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -2310,6 +2403,66 @@ const AdminPanelView = ({ darkMode, jobsData, intelData }) => {
   );
 };
 
+const SystemIntelligenceSummary = ({ darkMode, intelData }) => {
+  const summary = useMemo(() => {
+    const recentHacks = intelData.filter(item => {
+      const diff = (new Date().getTime() - new Date(item.date).getTime()) / (1000 * 3600 * 24);
+      return item.category === 'HACK' && diff <= 14;
+    }).length;
+
+    const mainFocus = intelData.slice(0, 10).reduce((acc: Record<string, number>, item) => {
+      acc[item.category] = (acc[item.category] || 0) + 1;
+      return acc;
+    }, {});
+
+    const topCategory = Object.entries(mainFocus).sort((a, b) => b[1] - a[1])[0][0];
+
+    let alertLevel = 'LOW';
+    if (recentHacks > 3) alertLevel = 'CRITICAL';
+    else if (recentHacks > 1) alertLevel = 'ELEVATED';
+
+    return { recentHacks, topCategory, alertLevel };
+  }, [intelData]);
+
+  return (
+    <div className={`${darkMode ? 'bg-accent-blue/5 border-accent-blue/20' : 'bg-slate-50 border-slate-200'} border p-6 mb-8 rounded-[4px] relative overflow-hidden`}>
+      {darkMode && <div className="scanline" />}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+        <div className="flex items-center gap-4">
+          <div className={`p-3 rounded-[2px] ${
+            summary.alertLevel === 'CRITICAL' ? 'bg-red-500 text-white' :
+            summary.alertLevel === 'ELEVATED' ? 'bg-yellow-500 text-black' :
+            'bg-accent-blue text-black'
+          }`}>
+            <ShieldAlert size={24} />
+          </div>
+          <div>
+            <h3 className={`text-sm font-mono uppercase tracking-[0.2em] font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>System Intelligence Summary</h3>
+            <p className={`text-xs font-mono ${darkMode ? 'text-slate-400' : 'text-gray-500'} mt-1`}>
+              Primary Network Focus: <span className={darkMode ? 'text-accent-blue' : 'text-blue-600'}>{summary.topCategory}</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="flex gap-8">
+          <div className="text-center">
+            <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>Threat Level</p>
+            <p className={`text-lg font-bold ${
+              summary.alertLevel === 'CRITICAL' ? 'text-red-500' :
+              summary.alertLevel === 'ELEVATED' ? 'text-yellow-500' :
+              'text-green-500'
+            }`}>{summary.alertLevel}</p>
+          </div>
+          <div className="text-center">
+            <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>Recent Exploits</p>
+            <p className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{summary.recentHacks}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const NewsView = ({ darkMode }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
@@ -2373,6 +2526,8 @@ const NewsView = ({ darkMode }) => {
           Latest updates from the blockchain ecosystem
         </p>
       </div>
+
+      <SystemIntelligenceSummary darkMode={darkMode} intelData={intelData} />
 
       {/* Intel Stats Feature */}
       <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-slate-50 to-blue-50 border-slate-200 rounded-2xl'} p-6 border mb-8 grid grid-cols-2 md:grid-cols-4 gap-4`}>
