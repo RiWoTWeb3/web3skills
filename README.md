@@ -1,3 +1,6 @@
+# NOTE:
+- This project is now beeing managed and updated by AI. It as an experimented, conducted to check capabilites of AI. Visit live on [Web3Skills
+](https://web3skills.vercel.app/#/)
 # Web3 Career Skills Tracker
 
 A clean, minimal, and comprehensive skills tracking tool for Web3 professionals. Track your progress, explore career paths, and connect with the RiWoT community.
