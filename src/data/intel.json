@@ -1,5 +1,26 @@
 [
   {
+    "title": "Chainlink Cross-Chain Runtime Environment (CRE) Beta Launch",
+    "category": "INFRA",
+    "summary": "Chainlink has officially launched the CRE on mainnet, providing a unified developer experience for building cross-chain dApps with off-chain computation.",
+    "date": "2026-06-02",
+    "sourceLink": "https://blog.chain.link/"
+  },
+  {
+    "title": "Monad Public Testnet Surpasses 1M Unique Wallets",
+    "category": "INFRA",
+    "summary": "The highly anticipated parallelized EVM Monad has reached a major milestone on its public testnet, demonstrating high throughput and developer adoption.",
+    "date": "2026-06-02",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "Radiant Capital Protocol Exploit: $50M Loss",
+    "category": "HACK",
+    "summary": "DeFi lending protocol Radiant Capital suffered a significant exploit on its BSC and Arbitrum deployments, leading to a loss of approximately $50M in assets.",
+    "date": "2026-06-02",
+    "sourceLink": "https://radiant.capital"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
@@ -77,13 +98,6 @@
     "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
   },
   {
-    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-    "category": "HACK",
-    "summary": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
-    "date": "2026-04-14",
-    "sourceLink": "https://rekt.news/drift-protocol-rekt"
-  },
-  {
     "title": "Monad Testnet Milestone: 1 Million Unique Wallets Surpassed",
     "category": "INFRA",
     "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
@@ -96,13 +110,6 @@
     "summary": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
     "date": "2026-04-12",
     "sourceLink": "https://ethereum-magicians.org/"
-  },
-  {
-    "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-    "category": "HACK",
-    "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
-    "date": "2026-04-12",
-    "sourceLink": "https://immunefi.com/blog/"
   },
   {
     "title": "EigenLayer Mainnet Launch Introduces Restaking",

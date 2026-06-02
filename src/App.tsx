@@ -1057,9 +1057,12 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       });
     });
     return Object.entries(counts)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3);
+      .sort((a, b) => b[1] - a[1]);
   }, []);
+
+  const nextRecommendedSkill = useMemo(() => {
+    return trendingSkills.find(([skill]) => !displaySkills[skill]);
+  }, [trendingSkills, displaySkills]);
 
   return (
     <div className="space-y-12">
@@ -1169,10 +1172,47 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          {nextRecommendedSkill ? (
+            <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 bg-accent-blue/5' : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200 rounded-xl'} p-8 border relative overflow-hidden group`}>
+              {darkMode && <div className="scanline" />}
+              <div className="flex items-center justify-between mb-4 relative z-10">
+                <div className="flex items-center gap-3">
+                  <TrendingUp className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={24} />
+                  <h3 className={`text-sm font-mono uppercase tracking-[0.2em] ${darkMode ? 'text-white' : 'text-gray-900'}`}>Market Demand</h3>
+                </div>
+                <div className={`px-2 py-0.5 rounded-[2px] border ${darkMode ? 'bg-accent-blue/10 border-accent-blue/30 text-accent-blue' : 'bg-blue-100 border-blue-200 text-blue-700'} text-[10px] font-mono font-bold`}>
+                  RECOMMENDED
+                </div>
+              </div>
+              <div className="space-y-4 relative z-10">
+                <div>
+                  <p className={`text-xs font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Next Priority Skill:</p>
+                  <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{nextRecommendedSkill[0]}</p>
+                </div>
+                <p className={`text-xs leading-relaxed ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>
+                  Required in <span className="font-bold underline">{nextRecommendedSkill[1]} active listings</span>. Mastering this will significantly expand your market reach.
+                </p>
+                <Link
+                  to="/skills"
+                  className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest px-4 py-2 transition-all ${
+                    darkMode ? 'bg-accent-blue text-black font-bold hover:bg-cyan-300' : 'bg-blue-600 text-white rounded-lg hover:bg-blue-700'
+                  }`}
+                >
+                  Analyze Skill <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 rounded-xl'} p-8 border flex flex-col justify-center items-center text-center`}>
+              <CheckCircle className="text-green-500 mb-4" size={48} />
+              <h3 className={`text-sm font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>Market Saturated</h3>
+              <p className={`text-xs ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>You have mastered all high-demand skills currently in the registry!</p>
+            </div>
+          )}
         </div>
       )}
 
@@ -2639,6 +2679,64 @@ const NewsView = ({ darkMode }) => {
   );
 };
 
+const CareerAlignmentAnalytics = ({ darkMode, getCareerMatch }) => {
+  const chartData = useMemo(() => {
+    return Object.keys(careerPaths).map(name => ({
+      name: name.split(' ').map(w => w[0]).join(''),
+      fullName: name,
+      percentage: Math.round(getCareerMatch(name).percentage)
+    })).sort((a, b) => b.percentage - a.percentage);
+  }, [getCareerMatch]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/10' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-8`}>
+      <div className="flex items-center gap-3 mb-6">
+        <Activity className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+        <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Professional Readiness Matrix</h3>
+      </div>
+      <div className="h-64 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={chartData}>
+            <XAxis dataKey="name" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} tickLine={false} axisLine={false} />
+            <YAxis hide domain={[0, 100]} />
+            <Tooltip
+              cursor={{ fill: darkMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.02)' }}
+              content={({ active, payload }) => {
+                if (active && payload && payload.length) {
+                  return (
+                    <div className={`${darkMode ? 'bg-[#0f172a] border-white/10' : 'bg-white border-gray-200'} p-3 border shadow-xl rounded-[2px]`}>
+                      <p className={`text-[10px] font-mono font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{payload[0].payload.fullName}</p>
+                      <p className={`text-lg font-bold ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`}>{payload[0].value}% MATCH</p>
+                    </div>
+                  );
+                }
+                return null;
+              }}
+            />
+            <Bar dataKey="percentage" radius={[2, 2, 0, 0]}>
+              {chartData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={darkMode ? '#00f2ff' : '#2563eb'}
+                  fillOpacity={0.3 + (entry.percentage / 100) * 0.7}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+        {chartData.slice(0, 4).map(item => (
+          <div key={item.name} className="flex items-center gap-2">
+            <div className={`w-1.5 h-1.5 rounded-full ${darkMode ? 'bg-accent-blue' : 'bg-blue-600'}`} />
+            <span className={`text-[9px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>{item.name}: {item.fullName}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
   const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
@@ -2698,6 +2796,8 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           Explore Web3 career paths with detailed roadmaps
         </p>
       </div>
+
+      <CareerAlignmentAnalytics darkMode={darkMode} getCareerMatch={getCareerMatch} />
 
       <div>
         <div className="flex items-center gap-2 mb-4">
