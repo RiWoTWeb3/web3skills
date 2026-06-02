@@ -1,51 +1,48 @@
 [
   {
-    "id": "helius-staff-performance-2026-05-31",
-    "title": "Staff Performance Engineer, Trading Infrastructure",
-    "company": "Helius",
+    "id": "solana-foundation-engineer-2026-06-02",
+    "title": "Core Runtime Engineer",
+    "company": "Solana Foundation",
     "type": "SVM",
     "workType": "Remote",
-    "experience": "Expert level",
-    "salaryRange": "$180,000 - $250,000",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
     "requirements": [
       "Rust",
       "Solana",
-      "Trading Infrastructure",
-      "Performance Engineering"
+      "Systems Programming"
     ],
-    "applyLink": "https://web3.career/remote+solana-jobs"
+    "applyLink": "https://solana.com/jobs"
   },
   {
-    "id": "cow-dao-senior-backend-2026-05-31",
-    "title": "Senior Backend Engineer (Rust)",
-    "company": "CoW DAO",
-    "type": "EVM",
+    "id": "blockchain-senior-backend-2026-06-02",
+    "title": "Senior BackEnd Engineer (Blockchain)",
+    "company": "Blockchain",
+    "type": "Backend",
     "workType": "Remote",
     "experience": "Senior level",
-    "salaryRange": "$150,000 - $210,000",
+    "salaryRange": "$105,000 - $150,000",
     "requirements": [
       "Rust",
-      "Ethereum",
-      "DeFi",
-      "Solvers"
+      "Backend",
+      "Blockchain"
     ],
-    "applyLink": "https://web3.career/remote+rust-jobs"
+    "applyLink": "https://web3.career/senior-back-end-engineer-trading-platform-blockchain/98044"
   },
   {
-    "id": "jumpcrypto-prod-engineer-2026-05-31",
-    "title": "Crypto Production Engineer",
-    "company": "Jumpcrypto",
+    "id": "okx-quant-developer-2026-06-02",
+    "title": "Quant Developer Rust",
+    "company": "OKX",
     "type": "Backend",
     "workType": "Remote",
     "experience": "Mid-Senior level",
-    "salaryRange": "$150,000 - $200,000",
+    "salaryRange": "$122,000 - $180,000",
     "requirements": [
-      "Go",
-      "Distributed Systems",
-      "Ethereum",
-      "Validator Infrastructure"
+      "Rust",
+      "AWS",
+      "Liquidity Platform"
     ],
-    "applyLink": "https://web3.career/remote+solana-jobs"
+    "applyLink": "https://web3.career/quant-developer-rust-liquidity-platform-delta-one-systematic-trading-okx/145502"
   },
   {
     "id": "helius-staff-performance-2026-05-31",
