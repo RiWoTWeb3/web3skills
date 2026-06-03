@@ -1,5 +1,26 @@
 [
   {
+    "title": "Bondex Ecosystem Expansion: Acquisition of web3.career",
+    "category": "INFRA",
+    "summary": "Bondex has officially integrated web3.career into its ecosystem, aiming to create a comprehensive professional network and job board for the Web3 space.",
+    "date": "2026-06-03",
+    "sourceLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "title": "AWS Web3 Startup Solutions Architect Program Launch",
+    "category": "INFRA",
+    "summary": "Amazon Web Services (AWS) has launched a new specialized program for Web3 startups, providing dedicated architectural support and infrastructure resources.",
+    "date": "2026-06-03",
+    "sourceLink": "https://cryptojobslist.com/web3"
+  },
+  {
+    "title": "New Market Trading Exploit: $3.98M Drained",
+    "category": "HACK",
+    "summary": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains, resulting in a loss of $3.98M.",
+    "date": "2026-06-03",
+    "sourceLink": "https://rekt.news/newmarkettrading-rekt"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
