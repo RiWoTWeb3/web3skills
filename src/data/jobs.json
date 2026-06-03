@@ -1,5 +1,101 @@
 [
   {
+    "id": "m0-issuance-eng-lead-2026-06-03",
+    "title": "Issuance Engineering Lead",
+    "company": "M0",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "EVM",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "mlabs-blockchain-indexer-2026-06-03",
+    "title": "Blockchain Engineer (Indexers)",
+    "company": "MLabs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Indexing",
+      "PostgreSQL"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "anza-senior-software-2026-06-03",
+    "title": "Senior Software Engineer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Agave Client",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "m0-issuance-eng-lead-2026-06-03",
+    "title": "Issuance Engineering Lead",
+    "company": "M0",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Lead level",
+    "salaryRange": "$105,000 - $107,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "EVM",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/rust+solana-jobs"
+  },
+  {
+    "id": "mlabs-blockchain-indexer-2026-06-03",
+    "title": "Blockchain Engineer (Indexers)",
+    "company": "MLabs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Indexing",
+      "PostgreSQL"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "binance-java-defi-2026-06-03",
+    "title": "Java Engineer \u2014 DeFi/Web3",
+    "company": "Binance",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "Competitive",
+    "requirements": [
+      "Java",
+      "DeFi",
+      "Web3",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://cryptojobslist.com/web3"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
