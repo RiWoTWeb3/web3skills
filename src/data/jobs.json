@@ -1,5 +1,53 @@
 [
   {
+    "id": "helius-staff-performance-2026-06-04",
+    "title": "Staff Performance Engineer, Trading Infrastructure",
+    "company": "Helius",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Trading Infrastructure",
+      "Performance Engineering"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "cow-dao-senior-backend-2026-06-04",
+    "title": "Senior Backend Engineer (Rust)",
+    "company": "CoW DAO",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Rust",
+      "Ethereum",
+      "DeFi",
+      "Solvers"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "jumpcrypto-prod-engineer-2026-06-04",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Go",
+      "Distributed Systems",
+      "Ethereum",
+      "Validator Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

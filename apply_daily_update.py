@@ -67,23 +67,23 @@ def main():
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Auddia Inc. to Develop AI-Native, Web3-Enabled OS MCFN-OS",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "Auddia Inc. announced milestones for MCFN-OS, an AI-native and Web3-enabled operating system designed to power agentic AI and blockchain-anchored trust infrastructure.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://www.quiverquant.com/news/Auddia+Inc.+Engages+Platform+Architect+to+Develop+AI-Native%2C+Web3-Enabled+Operating+System+MCFN-OS+with+First+Module+Set+for+Q3+2026+Release"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Philippine Blockchain Week 2026: Decoded to Deployed",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "PBW 2026 marks a shift from blockchain potential to real-world deployment, showcasing systems in finance, gaming, and public infrastructure.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://coingeek.com/philippine-blockchain-week-2026-marks-shift-from-web3-potential-to-real-world-deployment/"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
+            "title": "Critical Logic Vulnerability Disclosure: $1.2M Bug Bounty",
             "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "summary": "A white-hat researcher earned a $1.2M payout on Immunefi for identifying and safely disclosing a critical logic vulnerability in a major cross-chain protocol.",
             "date": today,
             "sourceLink": "https://immunefi.com/blog/"
         }
@@ -109,8 +109,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles for Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates for MCFN-OS and PBW 2026.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
