@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  HelpCircle, MessageSquare, Lightbulb
 } from 'lucide-react';
 import {
   Routes,
@@ -583,6 +584,40 @@ const SecurityPulse = ({ darkMode, intelData }) => {
   );
 };
 
+const ProjectIdeas = ({ darkMode }) => {
+  const ideas = [
+    { title: "DeFi Yield Aggregator", desc: "Build a protocol that automatically shifts funds between lending pools for highest APY.", skills: ["Solidity", "Foundry", "DeFi"] },
+    { title: "NFT Fractionalizer", desc: "Create a system to fractionalize high-value NFTs into tradable ERC-20 tokens.", skills: ["Solidity", "React", "NFT Standards"] },
+    { title: "ZK Voting System", desc: "Implement a privacy-preserving voting mechanism using Zero-Knowledge proofs.", skills: ["Circom", "Solidity", "ZK Proofs"] },
+    { title: "Solana AMM", desc: "Develop a high-performance automated market maker using the Anchor framework.", skills: ["Rust", "Anchor", "Solana"] },
+    { title: "Cross-chain Bridge", desc: "Construct a secure messaging bridge between EVM and SVM networks.", skills: ["Rust", "Solidity", "LayerZero"] }
+  ];
+
+  const [idea, setIdea] = useState(ideas[0]);
+
+  useEffect(() => {
+    setIdea(ideas[Math.floor(Math.random() * ideas.length)]);
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 rounded-xl'} p-6 border flex flex-col justify-center`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-emerald-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Idea</h3>
+      </div>
+      <div className="space-y-2">
+        <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{idea.title}</p>
+        <p className={`text-[10px] leading-relaxed ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{idea.desc}</p>
+        <div className="flex flex-wrap gap-1.5 mt-2">
+          {idea.skills.map(s => (
+            <span key={s} className={`text-[8px] font-mono px-1.5 py-0.5 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-emerald-100 text-emerald-700'}`}>{s}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DailyLearningStreak = ({ darkMode }) => {
   const [streak, setStreak] = useState(0);
 
@@ -926,6 +961,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1069,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1225,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -2726,6 +2783,50 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   );
 };
 
+const InterviewPrepView = ({ darkMode }) => {
+  const qa = [
+    { q: "What is the difference between call, delegatecall, and staticcall?", a: "call executes code in the target contract's context. delegatecall executes target code in the caller's context (preserving msg.sender and storage). staticcall is like call but disallows any state changes." },
+    { q: "How does the Solana account model differ from Ethereum?", a: "Ethereum uses an account-based model with state stored in accounts. Solana separates logic (programs) from data (accounts), where programs are stateless and accounts hold data and rent." },
+    { q: "What are reentrancy attacks and how to prevent them?", a: "A reentrancy attack occurs when a contract calls an external contract before updating its state. Prevent by using the Checks-Effects-Interactions pattern or reentrancy guards." },
+    { q: "Explain the concept of 'rent' on Solana.", a: "Accounts on Solana require a minimum balance (rent) to stay on-chain. Accounts can be rent-exempt by maintaining a balance equivalent to 2 years of rent." },
+    { q: "What is the purpose of the 'indexed' keyword in Solidity events?", a: "It allows the parameter to be searchable in the transaction logs. Up to 3 parameters can be indexed per event." }
+  ];
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Technical Q&A for Web3 Engineers
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {qa.map((item, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-8 border`}>
+            <div className="flex items-start gap-4">
+              <div className={`${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-100 text-blue-600'} p-3 rounded-[4px] font-bold font-mono`}>
+                Q
+              </div>
+              <div className="space-y-4">
+                <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.q}</h3>
+                <div className="flex items-start gap-4">
+                  <div className={`${darkMode ? 'bg-green-500/10 text-green-500' : 'bg-green-100 text-green-600'} p-3 rounded-[4px] font-bold font-mono`}>
+                    A
+                  </div>
+                  <p className={`text-lg leading-relaxed ${darkMode ? 'text-slate-300 font-mono text-sm' : 'text-gray-700'}`}>{item.a}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const CareerDetailView = ({ darkMode, displaySkills, getCareerMatch }) => {
   const { id } = useParams();
   const careerName = decodeURIComponent(id || "");
@@ -3198,6 +3299,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3660,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />
