@@ -31,59 +31,59 @@ def main():
     # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
+            "id": f"helius-senior-rust-{today}",
+            "title": "Senior Rust Engineer",
             "company": "Helius",
             "type": "SVM",
             "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
+            "experience": "Senior level",
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Rust", "Solana", "High-performance Systems"],
             "applyLink": "https://web3.career/remote+solana-jobs"
         },
         {
-            "id": f"cow-dao-senior-backend-{today}",
-            "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
+            "id": f"odos-smart-contracts-{today}",
+            "title": "Smart Contracts Engineer (EVM)",
+            "company": "Odos",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
-            "applyLink": "https://web3.career/remote+rust-jobs"
+            "salaryRange": "$150,000 - $200,000",
+            "requirements": ["Solidity", "Ethers.js", "DeFi"],
+            "applyLink": "https://web3.career/remote+evm-jobs"
         },
         {
-            "id": f"jumpcrypto-prod-engineer-{today}",
-            "title": "Crypto Production Engineer",
-            "company": "Jumpcrypto",
+            "id": f"certik-blockchain-security-{today}",
+            "title": "Blockchain Security Engineer",
+            "company": "CertiK",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "salaryRange": "$102,000 - $180,000",
+            "requirements": ["Solidity", "Rust", "Security Auditing"],
+            "applyLink": "https://web3.career/remote-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Ethereum Pectra Upgrade Phase 1 Enters Final Testing",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "The first phase of the highly anticipated Pectra upgrade has entered final testing on Devnet 5, bringing account abstraction improvements closer to mainnet.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://ethereum.org/en/developers/docs/upgrades/pectra/"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Solana Firedancer Reaches Stable Beta",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "Jump Crypto's Firedancer client has officially reached stable beta on Solana mainnet, promising significant throughput improvements and client diversity.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://jumpcrypto.com/firedancer/"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
+            "title": "L2 Bridge Vulnerability: $2.5M Bounty Paid",
             "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "summary": "Immunefi confirms a $2.5 million payout for a critical vulnerability found in a major Layer 2 bridge protocol, preventing a potential nine-figure exploit.",
             "date": today,
             "sourceLink": "https://immunefi.com/blog/"
         }
@@ -109,8 +109,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, Odos, and CertiK.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Ethereum Pectra and Solana Firedancer.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 

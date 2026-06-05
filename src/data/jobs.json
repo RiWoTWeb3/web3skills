@@ -1,5 +1,95 @@
 [
   {
+    "id": "helius-senior-rust-2026-06-05",
+    "title": "Senior Rust Engineer",
+    "company": "Helius",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "High-performance Systems"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "odos-smart-contracts-2026-06-05",
+    "title": "Smart Contracts Engineer (EVM)",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Solidity",
+      "Ethers.js",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+evm-jobs"
+  },
+  {
+    "id": "certik-blockchain-security-2026-06-05",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Security Auditing"
+    ],
+    "applyLink": "https://web3.career/remote-jobs"
+  },
+  {
+    "id": "helius-senior-rust-2026-06-05",
+    "title": "Senior Rust Engineer",
+    "company": "Helius",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "High-performance Systems"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "odos-smart-contracts-2026-06-05",
+    "title": "Smart Contracts Engineer (EVM)",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Solidity",
+      "Ethers.js",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+evm-jobs"
+  },
+  {
+    "id": "certik-blockchain-security-2026-06-05",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Security Auditing"
+    ],
+    "applyLink": "https://web3.career/remote-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
