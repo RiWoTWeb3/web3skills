@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Phase 1 Enters Final Testing",
+    "category": "INFRA",
+    "summary": "The first phase of the highly anticipated Pectra upgrade has entered final testing on Devnet 5, bringing account abstraction improvements closer to mainnet.",
+    "date": "2026-06-05",
+    "sourceLink": "https://ethereum.org/en/developers/docs/upgrades/pectra/"
+  },
+  {
+    "title": "Solana Firedancer Reaches Stable Beta",
+    "category": "INFRA",
+    "summary": "Jump Crypto's Firedancer client has officially reached stable beta on Solana mainnet, promising significant throughput improvements and client diversity.",
+    "date": "2026-06-05",
+    "sourceLink": "https://jumpcrypto.com/firedancer/"
+  },
+  {
+    "title": "L2 Bridge Vulnerability: $2.5M Bounty Paid",
+    "category": "BOUNTY",
+    "summary": "Immunefi confirms a $2.5 million payout for a critical vulnerability found in a major Layer 2 bridge protocol, preventing a potential nine-figure exploit.",
+    "date": "2026-06-05",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

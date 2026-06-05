@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, HelpCircle, MessageSquare
 } from 'lucide-react';
 import {
   Routes,
@@ -583,6 +584,56 @@ const SecurityPulse = ({ darkMode, intelData }) => {
   );
 };
 
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: "Solidity",
+      projects: [
+        { name: "DeFi Lending Protocol", description: "Build a simplified Aave-like protocol for collateralized loans." },
+        { name: "NFT Marketplace", description: "Create a decentralized marketplace for minting and trading NFTs." }
+      ]
+    },
+    {
+      title: "Rust / Solana",
+      projects: [
+        { name: "AMM on Solana", description: "Implement a constant product market maker using the Anchor framework." },
+        { name: "On-chain Governance", description: "Build a DAO system for proposing and voting on program updates." }
+      ]
+    },
+    {
+      title: "ZK Proofs",
+      projects: [
+        { name: "Private Voting System", description: "Use Circom/snarkjs to build a voting system with anonymous ballots." },
+        { name: "ZK-Rollup Prototype", description: "Build a basic rollup that batches transactions and submits proofs to L1." }
+      ]
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-yellow-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Ideas</h3>
+      </div>
+      <div className="space-y-4">
+        {projects.map((category, i) => (
+          <div key={i}>
+            <p className={`text-[10px] font-mono uppercase tracking-widest mb-2 ${darkMode ? 'text-accent-blue/70' : 'text-blue-600'}`}>{category.title}</p>
+            <div className="space-y-2">
+              {category.projects.map((project, j) => (
+                <div key={j} className={`p-2 border ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} rounded`}>
+                  <p className={`text-xs font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{project.name}</p>
+                  <p className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-gray-500'}`}>{project.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const DailyLearningStreak = ({ darkMode }) => {
   const [streak, setStreak] = useState(0);
 
@@ -926,6 +977,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1085,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1241,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -2463,6 +2536,129 @@ const SystemIntelligenceSummary = ({ darkMode, intelData }) => {
   );
 };
 
+const InterviewPrepView = ({ darkMode }) => {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const questions = [
+    {
+      category: 'Solidity',
+      question: 'What is the difference between transfer, send, and call?',
+      answer: 'transfer and send are older methods with a 2300 gas limit, while call is the current recommended way to send Ether as it forwards all remaining gas and handles complex fallback functions. call returns a boolean success value that must be checked.'
+    },
+    {
+      category: 'Solidity',
+      question: 'Explain the check-effects-interactions pattern.',
+      answer: 'This pattern prevents reentrancy attacks by first performing all state checks, then updating the state (effects), and only then interacting with external contracts (interactions like sending Ether).'
+    },
+    {
+      category: 'Solana',
+      question: 'What is a PDA (Program Derived Address)?',
+      answer: 'A PDA is an address that looks like a public key but does not have a corresponding private key. It is derived from a program ID and a set of seeds. PDAs allow programs to programmatically sign for accounts.'
+    },
+    {
+      category: 'Solana',
+      question: 'How does the account model in Solana differ from Ethereum?',
+      answer: 'Ethereum uses an account-based model where state is stored within the account. Solana separates logic (programs) from state (data accounts). Programs are stateless and operate on data passed in through accounts.'
+    },
+    {
+      category: 'Infrastructure',
+      question: 'What are the main types of Layer 2 scaling solutions?',
+      answer: 'The two primary types are Optimistic Rollups (like Optimism and Arbitrum), which assume transactions are valid and use fraud proofs, and ZK-Rollups (like zkSync and Polygon zkEVM), which use cryptographic validity proofs (zero-knowledge proofs).'
+    },
+    {
+      category: 'Security',
+      question: 'What is a flash loan attack?',
+      answer: 'A flash loan attack involves borrowing a large amount of assets without collateral, using that capital to manipulate market prices or exploit protocol logic within a single transaction, and repaying the loan at the end of that transaction.'
+    }
+  ];
+
+  const categories = ['All', ...new Set(questions.map(q => q.category))];
+
+  const filteredQuestions = questions.filter(q => {
+    const matchesCategory = activeCategory === 'All' || q.category === activeCategory;
+    const matchesSearch = q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          q.answer.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-shadow text-gray-900'}`}>
+          {darkMode ? 'INTERVIEW_PREP.PROTOCOLS' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Master technical Q&A for Web3 engineering roles
+        </p>
+      </div>
+
+      <div className={`${darkMode ? 'surface-industrial' : 'glass-card-light rounded-2xl'} p-6`}>
+        <div className="flex flex-col md:flex-row gap-3">
+          <div className="flex-1">
+            <div className="relative">
+              <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-accent-blue' : 'text-gray-500'}`} size={20} />
+              <input
+                type="text"
+                placeholder={darkMode ? 'SEARCH_QUESTION_DB...' : 'Search questions or answers...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`${darkMode ? 'input-glass-dark font-mono rounded-[4px]' : 'input-glass-light rounded-xl'} w-full pl-12 pr-4 py-3 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none`}
+              />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                  activeCategory === cat
+                    ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl')
+                    : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {filteredQuestions.map((q, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border`}>
+            <div className="flex items-center gap-3 mb-4">
+              <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200'
+              }`}>
+                {q.category}
+              </span>
+            </div>
+            <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{q.question}</h3>
+            <div className={`p-4 ${darkMode ? 'bg-black/20 border-l-2 border-accent-blue' : 'bg-gray-50 border-l-2 border-blue-600'} rounded-r-lg`}>
+              <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-300' : 'text-gray-700'}`}>{q.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className={`${darkMode ? 'bg-accent-blue/5 border-accent-blue/20' : 'bg-blue-50 border-blue-200'} border p-6 rounded-2xl flex items-center justify-between`}>
+        <div className="flex items-center gap-4">
+          <HelpCircle className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={32} />
+          <div>
+            <h4 className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Need more help?</h4>
+            <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>Join the community for mock interviews and peer reviews.</p>
+          </div>
+        </div>
+        <a href="https://discord.gg/qMd7jwV7UG" target="_blank" rel="noopener noreferrer" className={darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl'}>
+          Join Discord
+        </a>
+      </div>
+    </div>
+  );
+};
+
 const NewsView = ({ darkMode }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
@@ -3198,6 +3394,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3755,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />
