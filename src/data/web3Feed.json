@@ -1,5 +1,40 @@
 [
   {
+    "date": "2026-06-06",
+    "type": "job",
+    "title": "Chief Technology Officer at Semiotic Labs",
+    "description": "Join Semiotic Labs as a Chief Technology Officer. Requirements: Rust, Systems Architecture, Distributed Protocols. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "date": "2026-06-06",
+    "type": "job",
+    "title": "Rust Engineer at deCircle",
+    "description": "Join deCircle as a Rust Engineer. Requirements: Rust, Distributed Protocols, Cryptography. Remote.",
+    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "date": "2026-06-06",
+    "type": "news",
+    "title": "Ethereum Foundation Announces Protocol Priorities for 2026",
+    "description": "The Ethereum Foundation introduced new strategic tracks for 2026, focusing on Scaling L1, Scaling Blobs, and improving overall user experience.",
+    "link": "https://blog.ethereum.org/2026/02/18/protocol-priorities-update-2026"
+  },
+  {
+    "date": "2026-06-06",
+    "type": "news",
+    "title": "Ethereum Mainnet Gas Limit Reaches 60M Milestone",
+    "description": "The Ethereum community has successfully raised the mainnet gas limit to 60M, doubling the previous 30M limit to increase transaction throughput.",
+    "link": "https://blog.ethereum.org/2026/02/18/protocol-priorities-update-2026"
+  },
+  {
+    "date": "2026-06-06",
+    "type": "hack",
+    "title": "Gravity Bridge $5.4M Exploit",
+    "description": "An attacker minted worthless tokens on Osmosis and poisoned the Gravity Bridge token registry with a fabricated denom string, draining $5.4M.",
+    "link": "https://rekt.news/gravity-bridge-rekt"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -383,40 +418,5 @@
     "title": "Senior Level Blockchain Security Engineer at CertiK",
     "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
     "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]

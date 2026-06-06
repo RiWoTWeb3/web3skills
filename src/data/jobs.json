@@ -1,5 +1,53 @@
 [
   {
+    "id": "semiotic-labs-cto-2026-06-06",
+    "title": "Chief Technology Officer",
+    "company": "Semiotic Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$250,000 - $400,000",
+    "requirements": [
+      "Rust",
+      "Systems Architecture",
+      "Distributed Protocols",
+      "AI"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "id": "decirle-rust-engineer-2026-06-06",
+    "title": "Rust Engineer",
+    "company": "deCircle",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Distributed Protocols",
+      "Cryptography",
+      "Scalable Systems"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "id": "odos-solana-engineer-2026-06-06",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "DEX Aggregator",
+      "Kubernetes"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

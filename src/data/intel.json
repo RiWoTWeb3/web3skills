@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Foundation Announces Protocol Priorities for 2026",
+    "category": "INFRA",
+    "summary": "The Ethereum Foundation introduced new strategic tracks for 2026, focusing on Scaling L1, Scaling Blobs, and improving overall user experience.",
+    "date": "2026-06-06",
+    "sourceLink": "https://blog.ethereum.org/2026/02/18/protocol-priorities-update-2026"
+  },
+  {
+    "title": "Ethereum Mainnet Gas Limit Reaches 60M Milestone",
+    "category": "INFRA",
+    "summary": "The Ethereum community has successfully raised the mainnet gas limit to 60M, doubling the previous 30M limit to increase transaction throughput.",
+    "date": "2026-06-06",
+    "sourceLink": "https://blog.ethereum.org/2026/02/18/protocol-priorities-update-2026"
+  },
+  {
+    "title": "Gravity Bridge $5.4M Exploit",
+    "category": "HACK",
+    "summary": "An attacker minted worthless tokens on Osmosis and poisoned the Gravity Bridge token registry with a fabricated denom string, draining $5.4M.",
+    "date": "2026-06-04",
+    "sourceLink": "https://rekt.news/gravity-bridge-rekt"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

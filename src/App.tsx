@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  HelpCircle, Lightbulb, MessageSquare
 } from 'lucide-react';
 import {
   Routes,
@@ -551,10 +552,10 @@ const matchRoadmapSkill = (roadmapSkill, userSkills) => {
 const SecurityPulse = ({ darkMode, intelData }) => {
   const safetyIndex = useMemo(() => {
     const recentEvents = intelData.filter(item => {
-      const eventDate = new Date(item.date);
-      const now = new Date();
-      const diffDays = (now.getTime() - eventDate.getTime()) / (1000 * 3600 * 24);
-      return (item.category === 'HACK' || item.category === 'BOUNTY') && diffDays <= 7;
+      const eventTime = new Date(item.date).getTime();
+      const nowTime = new Date().getTime();
+      const diffDays = (nowTime - eventTime) / (1000 * 3600 * 24);
+      return (item.category === 'HACK' || item.category === 'BOUNTY') && diffDays <= 7 && eventTime <= nowTime;
     });
     return Math.max(0, 100 - recentEvents.length * 20);
   }, [intelData]);
@@ -588,7 +589,7 @@ const DailyLearningStreak = ({ darkMode }) => {
 
   useEffect(() => {
     const lastVisit = localStorage.getItem('web3skills_last_visit');
-    const currentStreak = parseInt(localStorage.getItem('web3skills_streak') || '0');
+    const currentStreak = parseInt(localStorage.getItem('web3skills_streak') || '0', 10);
     const today = new Date().toDateString();
 
     if (lastVisit === today) {
@@ -653,6 +654,48 @@ const TrendingSkills = ({ darkMode, trendingSkills }) => (
     </div>
   </div>
 );
+
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: "DeFi Lending Protocol",
+      skill: "Solidity",
+      description: "Build a minimal Aave-like lending pool with deposit, withdraw, and collateralized borrowing features."
+    },
+    {
+      title: "Solana AMM",
+      skill: "Rust",
+      description: "Implement a constant-product market maker on Solana using the Anchor framework and SPL tokens."
+    },
+    {
+      title: "ZK-Rollup Explorer",
+      skill: "ZK Proofs",
+      description: "Create a dashboard to visualize state transitions and proof verifications for a ZK-Rollup testnet."
+    }
+  ];
+
+  const [project, setProject] = useState(projects[0]);
+
+  useEffect(() => {
+    setProject(projects[Math.floor(Math.random() * projects.length)]);
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 bg-accent-blue/5' : 'bg-gradient-to-br from-cyan-50 to-indigo-50 border-cyan-200 rounded-xl'} p-6 border flex flex-col justify-center relative overflow-hidden`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-cyan-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Idea</h3>
+      </div>
+      <div className="space-y-2">
+        <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{project.title}</p>
+        <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-accent-blue' : 'text-indigo-600'}`}>Target Skill: {project.skill}</p>
+        <p className={`text-xs leading-relaxed ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+          {project.description}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const SkillOfTheDay = ({ darkMode }) => {
   const [skill, setSkill] = useState<{ name: string; category: string } | null>(null);
@@ -926,6 +969,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1077,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1233,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -1711,7 +1776,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
     const matchesCategory = categoryFilter === 'All' || job.type === categoryFilter;
 
     const salaryMatch = job.salaryRange.match(/\$(\d{1,3}(?:,\d{3})*)/);
-    const minSalary = salaryMatch ? parseInt(salaryMatch[1].replace(/,/g, '')) : 0;
+    const minSalary = salaryMatch ? parseInt(salaryMatch[1].replace(/,/g, ''), 10) : 0;
     const matchesSalary = minSalary >= salaryFilter;
 
     return matchesSearch && matchesCategory && matchesSalary;
@@ -1775,7 +1840,7 @@ const JobsView = ({ darkMode, displaySkills }) => {
           <label className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Min Salary:</label>
           <select
             value={salaryFilter}
-            onChange={(e) => setSalaryFilter(parseInt(e.target.value))}
+            onChange={(e) => setSalaryFilter(parseInt(e.target.value, 10))}
             className={`${darkMode ? 'bg-[#0f172a] border-white/10 text-white rounded-[4px]' : 'bg-white border-gray-300 text-gray-900 rounded-lg'} text-xs font-mono px-3 py-2 focus:ring-2 focus:ring-accent-blue outline-none`}
           >
             <option value={0}>Any Range</option>
@@ -2456,6 +2521,124 @@ const SystemIntelligenceSummary = ({ darkMode, intelData }) => {
           <div className="text-center">
             <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'} mb-1`}>Recent Exploits</p>
             <p className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{summary.recentHacks}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const InterviewPrepView = ({ darkMode }) => {
+  const [activeCategory, setActiveCategory] = useState('Solidity');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const interviewData = [
+    {
+      category: 'Solidity',
+      questions: [
+        {
+          q: "What is the difference between call, delegatecall, and staticcall?",
+          a: "• 'call' executes code in the target contract's context.\n• 'delegatecall' executes code in the caller's context (preserving storage, msg.sender, and msg.value).\n• 'staticcall' is like 'call' but reverts if any state modification is attempted."
+        },
+        {
+          q: "Explain Reentrancy and how to prevent it.",
+          a: "Reentrancy occurs when a contract calls an external contract before updating its state. Prevention: Use the Checks-Effects-Interactions pattern, use ReentrancyGuard (nonReentrant modifier), and update state BEFORE external calls."
+        },
+        {
+          q: "What are the visibility levels in Solidity?",
+          a: "• 'external': Only callable from outside.\n• 'public': Callable internally and externally.\n• 'internal': Callable only within the contract and derived contracts.\n• 'private': Only callable within the contract itself."
+        }
+      ]
+    },
+    {
+      category: 'Rust/Solana',
+      questions: [
+        {
+          q: "What are PDAs (Program Derived Addresses) in Solana?",
+          a: "PDAs are addresses that don't have a private key and are derived from a program ID and seeds. They allow programs to programmatically sign for accounts."
+        },
+        {
+          q: "Explain the ownership model in Rust.",
+          a: "Rust ownership rules: Each value has a variable called its owner; there can only be one owner at a time; when the owner goes out of scope, the value is dropped."
+        }
+      ]
+    },
+    {
+      category: 'Security',
+      questions: [
+        {
+          q: "What is an Oracle Manipulation attack?",
+          a: "It's an attack where an exploit significantly moves the price of an asset on a DEX (like Uniswap) to manipulate a protocol that relies on that price as an oracle for liquidations or collateral."
+        },
+        {
+          q: "Explain the 'Dirty Read' vulnerability in DeFi.",
+          a: "Occurs when a protocol reads state (like balance) that is in the middle of being updated (e.g., during a flash loan), leading to incorrect calculations."
+        }
+      ]
+    }
+  ];
+
+  const filteredData = interviewData.map(cat => ({
+    ...cat,
+    questions: cat.questions.filter(q =>
+      q.q.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      q.a.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  })).filter(cat => cat.questions.length > 0);
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.SYSTEM' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Technical deep-dives for Web3 engineering roles
+        </p>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="md:w-64 space-y-2">
+          {interviewData.map(cat => (
+            <button
+              key={cat.category}
+              onClick={() => setActiveCategory(cat.category)}
+              className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
+                activeCategory === cat.category
+                  ? (darkMode ? 'bg-accent-blue text-black font-bold' : 'bg-blue-600 text-white font-bold')
+                  : (darkMode ? 'hover:bg-white/5 text-slate-400' : 'hover:bg-gray-100 text-gray-600')
+              }`}
+            >
+              {cat.category}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex-1 space-y-6">
+          <div className="relative">
+            <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-accent-blue' : 'text-gray-500'}`} size={20} />
+            <input
+              type="text"
+              placeholder="Search interview questions..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={`${darkMode ? 'input-glass-dark font-mono' : 'input-glass-light'} w-full pl-12 pr-4 py-3 rounded-xl focus:outline-none`}
+            />
+          </div>
+
+          <div className="space-y-4">
+            {filteredData.find(cat => cat.category === activeCategory)?.questions.map((item, i) => (
+              <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border`}>
+                <h3 className={`text-lg font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Q: {item.q}</h3>
+                <div className={`text-sm leading-relaxed whitespace-pre-line ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-700'}`}>
+                  {item.a}
+                </div>
+              </div>
+            )) || (
+              <div className="text-center py-12">
+                <p className={darkMode ? 'text-slate-500' : 'text-gray-500'}>No questions found matching your search.</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -3198,6 +3381,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3742,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />
