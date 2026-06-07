@@ -1,5 +1,53 @@
 [
   {
+    "id": "paradigm-senior-solidity-2026-06-07",
+    "title": "Senior Solidity Engineer",
+    "company": "Paradigm",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$200,000 - $300,000",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Security Best Practices",
+      "Foundry"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "anza-solana-core-2026-06-07",
+    "title": "Solana Core Developer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Distributed Systems",
+      "Core Dev"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "succinct-zk-engineer-2026-06-07",
+    "title": "ZK Proof Engineer",
+    "company": "Succinct",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$170,000 - $230,000",
+    "requirements": [
+      "Rust",
+      "ZK Proofs",
+      "Cryptography",
+      "Performance Engineering"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

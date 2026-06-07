@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  HelpCircle, Lightbulb
 } from 'lucide-react';
 import {
   Routes,
@@ -583,6 +584,50 @@ const SecurityPulse = ({ darkMode, intelData }) => {
   );
 };
 
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: "Solidity Gas Optimizer",
+      description: "Build a tool that analyzes smart contracts for gas-expensive patterns and suggests Yul optimizations.",
+      tags: ["Solidity", "Yul", "Performance"]
+    },
+    {
+      title: "Cross-chain Liquidity Hub",
+      description: "Implement a decentralized bridge that uses ZK Proofs to verify cross-chain asset transfers between L2s.",
+      tags: ["Rust", "ZK Proofs", "Layer 2"]
+    },
+    {
+      title: "SVM Block Explorer",
+      description: "Develop a high-performance explorer for Solana that visualizes program instructions and PDA interactions.",
+      tags: ["Rust", "Solana", "Frontend"]
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-yellow-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Ideas</h3>
+      </div>
+      <div className="space-y-4">
+        {projects.map((p, i) => (
+          <div key={i} className={`p-3 rounded border ${darkMode ? 'bg-white/5 border-white/10' : 'bg-gray-50 border-gray-100'}`}>
+            <h4 className={`text-sm font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{p.title}</h4>
+            <p className={`text-[10px] leading-relaxed mb-2 ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{p.description}</p>
+            <div className="flex gap-1.5">
+              {p.tags.map(t => (
+                <span key={t} className={`text-[8px] font-mono px-1.5 py-0.5 border rounded-[2px] ${darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200'}`}>
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const DailyLearningStreak = ({ darkMode }) => {
   const [streak, setStreak] = useState(0);
 
@@ -926,6 +971,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1079,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1160,19 +1226,20 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SecurityPulse darkMode={darkMode} intelData={intelData} />
           <DailyLearningStreak darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
+          <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
-          <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
 
@@ -2091,6 +2158,76 @@ const SystemCapacityMonitor = ({ darkMode, keys }) => {
       <div className="flex justify-between mt-2">
         <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Quota Consumption</p>
         <p className={`text-[10px] font-mono font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{stats.percentage.toFixed(1)}%</p>
+      </div>
+    </div>
+  );
+};
+
+const InterviewPrepView = ({ darkMode }) => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const questions = [
+    {
+      question: "What is the difference between call, delegatecall, and staticcall in Solidity?",
+      answer: "Call is a standard external call to another contract. Delegatecall executes the target contract's code in the context of the calling contract (preserving msg.sender and storage). Staticcall is similar to call but prevents any state modification during execution.",
+      category: "Solidity"
+    },
+    {
+      question: "How does the Solana account model differ from Ethereum's?",
+      answer: "Ethereum uses an account-based model where state is stored within the contract itself. Solana separates logic (programs) from data (accounts). Programs are stateless and operate on data stored in separate accounts that they have ownership over.",
+      category: "Solana"
+    },
+    {
+      question: "What is a Flash Loan attack and how can it be mitigated?",
+      answer: "A Flash Loan attack uses massive uncollateralized liquidity to manipulate market prices (often via oracles) within a single transaction. Mitigation involves using decentralized oracles (like Chainlink), TWAP (Time-Weighted Average Price), or introducing slippage limits.",
+      category: "Security"
+    },
+    {
+      question: "Explain the concept of 'Rent' in Solana.",
+      answer: "Solana accounts require a minimum balance of SOL to stay 'rent-exempt'. If an account's balance falls below this threshold (calculated based on its data size), it is eventually deleted to reclaim space on the ledger.",
+      category: "Solana"
+    },
+    {
+      question: "What are Opcodes in the EVM and why do they matter for gas?",
+      answer: "Opcodes are the low-level instructions executed by the EVM. Each opcode has a fixed gas cost (e.g., SSTORE is expensive, MLOAD is cheap). Optimization often involves minimizing expensive opcodes, like reducing storage writes.",
+      category: "EVM"
+    }
+  ];
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'TECHNICAL_INTERVIEW.PREP' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Master technical concepts for Web3 engineering roles
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4">
+        {questions.map((q, idx) => (
+          <div
+            key={idx}
+            className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border cursor-pointer transition-all hover:border-accent-blue/30`}
+            onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
+          >
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-4">
+                <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${darkMode ? 'bg-accent-blue/10 text-accent-blue border-accent-blue/20' : 'bg-blue-50 text-blue-600 border-blue-200'}`}>
+                  {q.category}
+                </span>
+                <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{q.question}</h3>
+              </div>
+              {expandedIndex === idx ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            </div>
+            {expandedIndex === idx && (
+              <div className={`mt-4 pt-4 border-t ${darkMode ? 'border-white/5 text-slate-400 font-mono text-sm' : 'border-gray-100 text-gray-600'}`}>
+                <p className="leading-relaxed">{q.answer}</p>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -3198,6 +3335,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3696,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />

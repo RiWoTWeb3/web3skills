@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Mainnet Launch Date Confirmed",
+    "category": "INFRA",
+    "summary": "The Ethereum core developers have reached a consensus on the Pectra upgrade timeline, targeting a mainnet deployment in late Q3 2026. This upgrade includes EIP-7251 and major EVM improvements.",
+    "date": "2026-06-07",
+    "sourceLink": "https://ethereum.org/en/developers/updates/"
+  },
+  {
+    "title": "Solana Firedancer Client Enters Final Beta on Mainnet",
+    "category": "INFRA",
+    "summary": "Jump Crypto's Firedancer validator client has reached its final beta stage on Solana mainnet-beta, demonstrating significant performance gains and enhanced network resilience.",
+    "date": "2026-06-07",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Cross-chain Bridge Signature Malleability Exploit: $15M Recovered",
+    "category": "HACK",
+    "summary": "A sophisticated attack targeting a cross-chain bridge protocol exploited a signature malleability vulnerability. White-hat researchers successfully intercepted and recovered $15M.",
+    "date": "2026-06-07",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
