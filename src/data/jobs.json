@@ -1,5 +1,53 @@
 [
   {
+    "id": "odos-solana-eng-2026-06-08",
+    "title": "Solana Smart Contracts Engineer",
+    "company": "Odos",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "DEX Aggregator"
+    ],
+    "applyLink": "https://inclusivelyremote.com/job/rust-blockchain-developer-solana/"
+  },
+  {
+    "id": "odos-evm-eng-2026-06-08",
+    "title": "Smart Contracts Engineer EVM",
+    "company": "Odos",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$130,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "EVM",
+      "Foundry",
+      "Smart Contract Development"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
+    "id": "semiotic-rust-eng-2026-06-08",
+    "title": "Rust Engineer",
+    "company": "Semiotic Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Rust",
+      "P2P",
+      "Cryptography",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

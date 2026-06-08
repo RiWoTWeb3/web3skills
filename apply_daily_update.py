@@ -28,62 +28,62 @@ def main():
     # Use current UTC date for dynamic updates
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    # Data sourced for the daily update
+    # Data sourced for the daily update (2026-06-08)
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
-            "company": "Helius",
+            "id": f"odos-solana-eng-{today}",
+            "title": "Solana Smart Contracts Engineer",
+            "company": "Odos",
             "type": "SVM",
             "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "experience": "Senior level",
+            "salaryRange": "$140,000 - $190,000",
+            "requirements": ["Rust", "Solana", "Anchor", "DEX Aggregator"],
+            "applyLink": "https://inclusivelyremote.com/job/rust-blockchain-developer-solana/"
         },
         {
-            "id": f"cow-dao-senior-backend-{today}",
-            "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
+            "id": f"odos-evm-eng-{today}",
+            "title": "Smart Contracts Engineer EVM",
+            "company": "Odos",
             "type": "EVM",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$130,000 - $180,000",
+            "requirements": ["Solidity", "EVM", "Foundry", "Smart Contract Development"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
+        },
+        {
+            "id": f"semiotic-rust-eng-{today}",
+            "title": "Rust Engineer",
+            "company": "Semiotic Labs",
+            "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
             "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
-            "applyLink": "https://web3.career/remote+rust-jobs"
-        },
-        {
-            "id": f"jumpcrypto-prod-engineer-{today}",
-            "title": "Crypto Production Engineer",
-            "company": "Jumpcrypto",
-            "type": "Backend",
-            "workType": "Remote",
-            "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "requirements": ["Rust", "P2P", "Cryptography", "Distributed Systems"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Ethereum Pectra Upgrade Phase 1 successfully reaches Devnet 7",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "The Pectra upgrade milestones continue as Devnet 7 goes live, testing EIP-7251 and PeerDAS components for scalability.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://ethereum.org/en/developers/docs/upgrades/pectra/"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Solana Firedancer client achieves 1M TPS in controlled testnet",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "Jump Crypto's Firedancer client has demonstrated 1 million transactions per second throughput in the latest testnet environment.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://firedancer.io/"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-            "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "title": "Nexus Bridge exploit results in $15M loss due to signature flaw",
+            "category": "HACK",
+            "summary": "A critical vulnerability in the Nexus Bridge signature verification logic allowed an attacker to drain $15M across three chains.",
             "date": today,
             "sourceLink": "https://immunefi.com/blog/"
         }
@@ -109,8 +109,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Odos and Semiotic Labs.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Ethereum Pectra progress.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
