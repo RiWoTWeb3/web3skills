@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Phase 1 successfully reaches Devnet 7",
+    "category": "INFRA",
+    "summary": "The Pectra upgrade milestones continue as Devnet 7 goes live, testing EIP-7251 and PeerDAS components for scalability.",
+    "date": "2026-06-08",
+    "sourceLink": "https://ethereum.org/en/developers/docs/upgrades/pectra/"
+  },
+  {
+    "title": "Solana Firedancer client achieves 1M TPS in controlled testnet",
+    "category": "INFRA",
+    "summary": "Jump Crypto's Firedancer client has demonstrated 1 million transactions per second throughput in the latest testnet environment.",
+    "date": "2026-06-08",
+    "sourceLink": "https://firedancer.io/"
+  },
+  {
+    "title": "Nexus Bridge exploit results in $15M loss due to signature flaw",
+    "category": "HACK",
+    "summary": "A critical vulnerability in the Nexus Bridge signature verification logic allowed an attacker to drain $15M across three chains.",
+    "date": "2026-06-08",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
