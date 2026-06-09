@@ -1,5 +1,53 @@
 [
   {
+    "id": "swan-bitcoin-infra-2026-06-09",
+    "title": "Senior Backend Engineer (Bitcoin Infra)",
+    "company": "Swan",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$120,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Bitcoin",
+      "Lightning Network",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote-jobs"
+  },
+  {
+    "id": "okx-senior-rust-2026-06-09",
+    "title": "Senior Rust Developer",
+    "company": "OKX",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "High-Throughput Systems",
+      "Trading Infrastructure",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "connecthum-evm-engineer-2026-06-09",
+    "title": "EVM Smart Contract Engineer",
+    "company": "ConnectHum",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$130,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

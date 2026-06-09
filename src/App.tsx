@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, HelpCircle, MessageSquare
 } from 'lucide-react';
 import {
   Routes,
@@ -588,7 +589,7 @@ const DailyLearningStreak = ({ darkMode }) => {
 
   useEffect(() => {
     const lastVisit = localStorage.getItem('web3skills_last_visit');
-    const currentStreak = parseInt(localStorage.getItem('web3skills_streak') || '0');
+    const currentStreak = parseInt(localStorage.getItem('web3skills_streak') || '0', 10);
     const today = new Date().toDateString();
 
     if (lastVisit === today) {
@@ -618,6 +619,64 @@ const DailyLearningStreak = ({ darkMode }) => {
       <div className="space-y-1">
         <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{streak} Days</p>
         <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Consistency is key</p>
+      </div>
+    </div>
+  );
+};
+
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: "EVM Multi-sig Wallet",
+      description: "Build a multi-signature wallet on Ethereum where transactions require M-of-N approvals.",
+      difficulty: "Intermediate",
+      skills: ["Solidity", "Foundry", "TypeScript"],
+      icon: Shield
+    },
+    {
+      title: "Solana Token Marketplace",
+      description: "Create a decentralized marketplace for SPL tokens with orderbook functionality using Anchor.",
+      difficulty: "Advanced",
+      skills: ["Rust", "Anchor", "React"],
+      icon: Zap
+    },
+    {
+      title: "DeFi Yield Aggregator",
+      description: "Develop a smart contract that automatically moves funds between lending protocols to maximize yield.",
+      difficulty: "Intermediate",
+      skills: ["Solidity", "DeFi Fundamentals", "Hardhat"],
+      icon: TrendingUp
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-yellow-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Ideas</h3>
+      </div>
+      <div className="space-y-4">
+        {projects.map((project, i) => (
+          <div key={i} className={`p-4 border ${darkMode ? 'bg-white/[0.02] border-white/5 rounded-[4px]' : 'bg-gray-50 border-gray-100 rounded-xl'}`}>
+            <div className="flex items-center justify-between mb-2">
+              <h4 className={`font-bold text-sm ${darkMode ? 'text-white' : 'text-gray-900'}`}>{project.title}</h4>
+              <span className={`text-[10px] font-mono px-2 py-0.5 border rounded-[2px] ${
+                project.difficulty === 'Advanced' ? (darkMode ? 'text-red-400 border-red-500/20' : 'text-red-600 border-red-100') :
+                (darkMode ? 'text-green-400 border-green-500/20' : 'text-green-600 border-green-100')
+              }`}>
+                {project.difficulty}
+              </span>
+            </div>
+            <p className={`text-[10px] leading-relaxed mb-3 ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{project.description}</p>
+            <div className="flex flex-wrap gap-1">
+              {project.skills.map(skill => (
+                <span key={skill} className={`text-[8px] font-mono px-1.5 py-0.5 border ${darkMode ? 'bg-accent-blue/10 border-accent-blue/20 text-accent-blue' : 'bg-blue-50 border-blue-100 text-blue-700'}`}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -926,6 +985,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1093,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1160,19 +1240,20 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SecurityPulse darkMode={darkMode} intelData={intelData} />
           <DailyLearningStreak darkMode={darkMode} />
+          <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
-          <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
 
@@ -2639,6 +2720,121 @@ const NewsView = ({ darkMode }) => {
   );
 };
 
+const InterviewPrepView = ({ darkMode }) => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const questions = [
+    {
+      id: 1,
+      q: "What is a reentrancy attack and how do you prevent it?",
+      a: "A reentrancy attack occurs when an external contract call is made before the calling contract's state is updated. Prevention: Use the Checks-Effects-Interactions pattern, or use a ReentrancyGuard (nonReentrant modifier)."
+    },
+    {
+      id: 2,
+      q: "Explain the difference between call, delegatecall, and staticcall.",
+      a: "call: Executes code in target contract with its own context. delegatecall: Executes code in target contract but using the calling contract's storage and msg.sender. staticcall: Similar to call but disallows state modifications."
+    },
+    {
+      id: 3,
+      q: "How does Rust ensure memory safety without a garbage collector?",
+      a: "Rust uses a system of ownership with a set of rules that the compiler checks at compile time: 1. Each value has a variable called its owner. 2. There can only be one owner at a time. 3. When the owner goes out of scope, the value is dropped."
+    },
+    {
+      id: 4,
+      q: "What are PDAs in Solana and why are they used?",
+      a: "Program Derived Addresses (PDAs) are addresses that do not have a private key. They are derived from a program ID and seeds. They allow programs to programmatically sign for accounts and provide a deterministic way to find accounts."
+    },
+    {
+      id: 5,
+      q: "Describe the Ethereum Pectra upgrade and EIP-7702.",
+      a: "Pectra is a combined upgrade (Prague + Electra). EIP-7702 introduces a new transaction type that allows EOA (externally owned accounts) to temporarily set their code during a transaction, enabling account abstraction features for regular wallets."
+    }
+  ];
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Technical Interview Prep'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Master the technical concepts required for top Web3 roles
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4">
+        {questions.map((item) => (
+          <div
+            key={item.id}
+            className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} border overflow-hidden transition-all`}
+          >
+            <button
+              onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
+              className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none"
+            >
+              <span className={`font-bold ${darkMode ? 'text-white font-mono text-sm' : 'text-gray-900'}`}>{item.q}</span>
+              {expandedId === item.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            </button>
+            {expandedId === item.id && (
+              <div className={`px-6 py-4 border-t ${darkMode ? 'border-white/5 bg-accent-blue/5' : 'border-gray-100 bg-blue-50'}`}>
+                <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-300 font-mono' : 'text-gray-700'}`}>
+                  <span className="font-bold text-accent-blue mr-2">ANALYSIS:</span>
+                  {item.a}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const CareerAlignmentAnalytics = ({ darkMode, getCareerMatch }) => {
+  const chartData = useMemo(() => {
+    return Object.keys(careerPaths).map(name => ({
+      name,
+      percentage: Math.round(getCareerMatch(name).percentage)
+    })).sort((a, b) => b.percentage - a.percentage);
+  }, [getCareerMatch]);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border mb-12`}>
+      <div className="flex items-center gap-3 mb-6">
+        <Target className={darkMode ? 'text-accent-blue' : 'text-blue-600'} size={20} />
+        <h3 className={`font-bold ${darkMode ? 'text-white font-mono uppercase text-sm' : 'text-gray-900'}`}>Professional Readiness Matrix</h3>
+      </div>
+      <div className="h-80 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={chartData} layout="vertical">
+            <XAxis type="number" domain={[0, 100]} hide />
+            <YAxis dataKey="name" type="category" stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} width={150} />
+            <Tooltip
+              cursor={{ fill: 'transparent' }}
+              formatter={(value) => [`${value}%`, 'Match']}
+              contentStyle={{
+                backgroundColor: darkMode ? '#0f172a' : '#fff',
+                border: darkMode ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+                fontSize: '10px',
+                fontFamily: 'monospace'
+              }}
+            />
+            <Bar dataKey="percentage" radius={[0, 4, 4, 0]}>
+              {chartData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={darkMode ? '#00f2ff' : '#2563eb'}
+                  fillOpacity={0.4 + (entry.percentage / 100) * 0.6}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
 const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
   const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
@@ -2698,6 +2894,8 @@ const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
           Explore Web3 career paths with detailed roadmaps
         </p>
       </div>
+
+      <CareerAlignmentAnalytics darkMode={darkMode} getCareerMatch={getCareerMatch} />
 
       <div>
         <div className="flex items-center gap-2 mb-4">
@@ -3198,6 +3396,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3757,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />

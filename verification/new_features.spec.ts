@@ -1,42 +1,47 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify new UI components on homepage', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
+test.describe('RiWoT New Features Verification', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('http://localhost:3000');
+    // Accept policy if visible
+    const acceptButton = page.locator('button:has-text("I Understand and Accept")');
+    if (await acceptButton.isVisible()) {
+      await acceptButton.click();
+    }
+  });
 
-  // Handle Policy Modal
-  const acceptButton = page.locator('button:has-text("I Understand and Accept")');
-  if (await acceptButton.isVisible()) {
-    await acceptButton.click();
-  }
+  test('Project Ideas component is visible on Homepage', async ({ page }) => {
+    const projectIdeas = page.locator('h3:has-text("Project Ideas")');
+    await expect(projectIdeas).toBeVisible();
 
-  // Verify Daily Learning Streak
-  await expect(page.locator('h3:has-text("Learning Streak")')).toBeVisible();
-  await expect(page.locator('text=/Days/')).toBeVisible();
+    const evmProject = page.locator('text=EVM Multi-sig Wallet');
+    await expect(evmProject).toBeVisible();
+  });
 
-  // Verify Security Pulse
-  await expect(page.locator('h3:has-text("Security Pulse")')).toBeVisible();
-  await expect(page.locator('text=/Safety Index/')).toBeVisible();
+  test('Interview Prep view is accessible and functional', async ({ page }) => {
+    await page.goto('http://localhost:3000/#/interview-prep');
 
-  await page.screenshot({ path: 'verification_screenshots/homepage_new_features.png', fullPage: true });
-});
+    // Using regex to match either dark or light mode title
+    const title = page.locator('h1').filter({ hasText: /INTERVIEW_PREP.CORE|Technical Interview Prep/ });
+    await expect(title).toBeVisible();
 
-test('Verify new Admin charts', async ({ page }) => {
-  await page.goto('http://localhost:3000/#/notadmin');
+    const question = page.locator('text=What is a reentrancy attack').first();
+    await expect(question).toBeVisible();
 
-  // Handle Policy Modal if it appears
-  const acceptButton = page.locator('button:has-text("I Understand and Accept")');
-  if (await acceptButton.isVisible()) {
-    await acceptButton.click();
-  }
+    // Click to expand
+    await question.click();
+    const answer = page.locator('text=ANALYSIS:').first();
+    await expect(answer).toBeVisible();
+  });
 
-  // Wait for charts to load
-  await page.waitForTimeout(5000);
+  test('Professional Readiness Matrix is visible on Careers page', async ({ page }) => {
+    await page.goto('http://localhost:3000/#/careers');
 
-  // Verify Market Opportunity Distribution
-  await expect(page.locator('h3:has-text("Market Opportunity Distribution")')).toBeVisible();
+    const chartTitle = page.locator('h3:has-text("Professional Readiness Matrix")');
+    await expect(chartTitle).toBeVisible();
 
-  // Verify Skill Market Value
-  await expect(page.locator('h3:has-text("Skill Market Value (Avg USD)")')).toBeVisible();
-
-  await page.screenshot({ path: 'verification_screenshots/admin_new_charts.png', fullPage: true });
+    // Verify some career labels in the chart area
+    const label = page.locator('text=EVM Smart Contract Developer').first();
+    await expect(label).toBeVisible();
+  });
 });

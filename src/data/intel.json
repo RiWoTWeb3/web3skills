@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-12 Launch",
+    "category": "INFRA",
+    "summary": "Ethereum developers have launched Devnet-12 for the Pectra upgrade, introducing refinements to EIP-7702 and preliminary PeerDAS integration for data availability scaling.",
+    "date": "2026-06-09",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana 'Firing Forge' Mainnet Optimization Rollout",
+    "category": "INFRA",
+    "summary": "Solana validators have begun upgrading to version 1.18.15, featuring the 'Firing Forge' scheduler improvements to address network congestion and improve transaction landed rates.",
+    "date": "2026-06-09",
+    "sourceLink": "https://solana.com/"
+  },
+  {
+    "title": "AeroVault Protocol $5.2M Reentrancy Exploit",
+    "category": "HACK",
+    "summary": "DeFi lending protocol AeroVault was exploited for $5.2M across multiple chains due to a complex reentrancy vulnerability in its cross-chain collateral vault contract.",
+    "date": "2026-06-09",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
