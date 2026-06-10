@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, HelpCircle, MessageSquare
 } from 'lucide-react';
 import {
   Routes,
@@ -583,6 +584,141 @@ const SecurityPulse = ({ darkMode, intelData }) => {
   );
 };
 
+const InterviewPrepView = ({ darkMode }) => {
+  const [activeTab, setActiveTab] = useState('EVM');
+
+  const questions = {
+    'EVM': [
+      {
+        q: "What is the difference between transfer, send, and call in Solidity?",
+        a: "Transfer and send have a fixed 2300 gas stipend, making them safer against reentrancy but inflexible for contracts. Call is the modern standard, forwarding all gas and returning a success boolean. It requires manual reentrancy protection."
+      },
+      {
+        q: "Explain the memory, storage, and stack locations.",
+        a: "Storage is persistent on-chain data. Memory is temporary, mutable data within a function call. Stack is used for small local variables and calculations (limit of 1024 elements)."
+      }
+    ],
+    'Security': [
+      {
+        q: "What is a Reentrancy attack and how do you prevent it?",
+        a: "A reentrancy attack occurs when an external call is made from a contract to an untrusted contract, allowing the untrusted contract to call back into the original contract before the first execution is finished. Prevented by using the Checks-Effects-Interactions pattern or reentrancy guards."
+      },
+      {
+        q: "How does the integer overflow/underflow work in Solidity 0.8+?",
+        a: "Since Solidity 0.8.0, the compiler automatically checks for overflows and underflows, reverting the transaction if one occurs. This eliminates the need for SafeMath libraries."
+      }
+    ],
+    'Solana': [
+      {
+        q: "What is the Solana Account Model?",
+        a: "In Solana, programs (smart contracts) are stateless and only contain executable logic. All state is stored in accounts, which must pay 'rent' in SOL to remain on-chain. Accounts are owned by programs."
+      },
+      {
+        q: "What are PDAs (Program Derived Addresses)?",
+        a: "PDAs are addresses that do not have a private key and are derived from a program ID and a set of seeds. They allow programs to programmatically sign for transactions and manage specific accounts."
+      }
+    ]
+  };
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Master technical Web3 concepts and common interview questions
+        </p>
+      </div>
+
+      <div className="flex gap-2 mb-8">
+        {Object.keys(questions).map(tab => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-6 py-3 text-sm font-mono uppercase transition-all ${
+              activeTab === tab
+                ? (darkMode ? 'bg-accent-blue text-black font-bold' : 'bg-blue-600 text-white rounded-lg')
+                : (darkMode ? 'text-slate-400 hover:text-white border border-white/10' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-lg')
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {questions[activeTab].map((item, idx) => (
+          <div key={idx} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-8 border group`}>
+            <div className="flex items-start gap-4 mb-4">
+              <div className={`${darkMode ? 'bg-accent-blue/10 text-accent-blue border border-accent-blue/30' : 'bg-blue-50 text-blue-600'} p-2 rounded-[2px]`}>
+                <HelpCircle size={20} />
+              </div>
+              <h3 className={`text-xl font-bold ${darkMode ? 'text-white group-hover:text-accent-blue transition-colors' : 'text-gray-900'}`}>{item.q}</h3>
+            </div>
+            <div className={`pl-12 border-l-2 ${darkMode ? 'border-accent-blue/20' : 'border-blue-100'}`}>
+              <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{item.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: "DeFi Yield Aggregator",
+      description: "Build a smart contract that automatically moves funds between lending protocols to maximize yield.",
+      difficulty: "Advanced",
+      skills: ["Solidity", "DeFi Understanding", "EVM Mechanics"],
+      icon: DollarSign
+    },
+    {
+      title: "Solana NFT Marketplace",
+      description: "Create a high-performance NFT marketplace using the Anchor framework on Solana.",
+      difficulty: "Intermediate",
+      skills: ["Rust", "Solana Program Development", "Anchor Framework"],
+      icon: Palette
+    },
+    {
+      title: "ZK Identity Verifier",
+      description: "Implement a privacy-preserving identity verification system using Zero-Knowledge Proofs.",
+      difficulty: "Expert",
+      skills: ["ZK Proofs", "Cryptography", "Rust"],
+      icon: Shield
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border flex flex-col`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-yellow-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Idea</h3>
+      </div>
+      <div className="space-y-4 flex-1">
+        {projects.map((project, idx) => (
+          <div key={idx} className={`p-3 border ${darkMode ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50 border-gray-100'} rounded-[4px] group hover:border-accent-blue/30 transition-all`}>
+            <div className="flex items-center justify-between mb-1">
+              <h4 className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{project.title}</h4>
+              <project.icon size={14} className={darkMode ? 'text-accent-blue' : 'text-blue-600'} />
+            </div>
+            <p className={`text-[10px] leading-relaxed mb-2 ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{project.description}</p>
+            <div className="flex flex-wrap gap-1">
+              {project.skills.slice(0, 2).map(skill => (
+                <span key={skill} className={`text-[8px] font-mono px-1.5 py-0.5 rounded-[2px] ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-700'}`}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const DailyLearningStreak = ({ darkMode }) => {
   const [streak, setStreak] = useState(0);
 
@@ -926,6 +1062,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1170,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1160,19 +1317,20 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       </div>
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SystemMetrics darkMode={darkMode} totalJobs={jobsData.length} totalIntel={intelData.length} />
           <TrendingSkills darkMode={darkMode} trendingSkills={trendingSkills} />
           <SecurityPulse darkMode={darkMode} intelData={intelData} />
           <DailyLearningStreak darkMode={darkMode} />
+          <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
-          <SkillOfTheDay darkMode={darkMode} />
         </div>
       )}
 
@@ -3198,6 +3356,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3548,6 +3707,11 @@ const App = () => {
                 darkMode={darkMode}
                 viewMode={viewMode}
                 getCareerMatch={getCareerMatch}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
+                darkMode={darkMode}
               />
             } />
             <Route path="/jobs" element={

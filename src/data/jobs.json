@@ -1,5 +1,53 @@
 [
   {
+    "id": "binance-pioneer-talent-2026-06-10",
+    "title": "Pioneer Talent Program - Software Engineer - Blockchain Security",
+    "company": "Binance",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $220,000",
+    "requirements": [
+      "Blockchain Security",
+      "Solidity",
+      "Smart Contract Auditing",
+      "Rust"
+    ],
+    "applyLink": "https://arc.dev/remote-jobs/web3"
+  },
+  {
+    "id": "consensys-metamask-money-2026-06-10",
+    "title": "Staff Software Engineer - MetaMask (Money Movement)",
+    "company": "Consensys",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $230,000",
+    "requirements": [
+      "Ethereum",
+      "TypeScript",
+      "DeFi",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://web3.career/remote-jobs"
+  },
+  {
+    "id": "xion-senior-protocol-2026-06-10",
+    "title": "Senior Protocol Engineer",
+    "company": "XION (Burnt)",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $260,000",
+    "requirements": [
+      "Rust",
+      "Cosmos SDK",
+      "Distributed Systems",
+      "Go"
+    ],
+    "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

@@ -28,64 +28,64 @@ def main():
     # Use current UTC date for dynamic updates
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    # Data sourced for the daily update
+    # Data sourced for the daily update (2026-06-10)
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
-            "company": "Helius",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
-        },
-        {
-            "id": f"cow-dao-senior-backend-{today}",
-            "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
-            "applyLink": "https://web3.career/remote+rust-jobs"
-        },
-        {
-            "id": f"jumpcrypto-prod-engineer-{today}",
-            "title": "Crypto Production Engineer",
-            "company": "Jumpcrypto",
+            "id": f"binance-pioneer-talent-{today}",
+            "title": "Pioneer Talent Program - Software Engineer - Blockchain Security",
+            "company": "Binance",
             "type": "Backend",
             "workType": "Remote",
             "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "salaryRange": "$140,000 - $220,000",
+            "requirements": ["Blockchain Security", "Solidity", "Smart Contract Auditing", "Rust"],
+            "applyLink": "https://arc.dev/remote-jobs/web3"
+        },
+        {
+            "id": f"consensys-metamask-money-{today}",
+            "title": "Staff Software Engineer - MetaMask (Money Movement)",
+            "company": "Consensys",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$160,000 - $230,000",
+            "requirements": ["Ethereum", "TypeScript", "DeFi", "Smart Contracts"],
+            "applyLink": "https://web3.career/remote-jobs"
+        },
+        {
+            "id": f"xion-senior-protocol-{today}",
+            "title": "Senior Protocol Engineer",
+            "company": "XION (Burnt)",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$180,000 - $260,000",
+            "requirements": ["Rust", "Cosmos SDK", "Distributed Systems", "Go"],
+            "applyLink": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
-            "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "title": "UwU Lend Protocol Exploit: $19.3M Drained",
+            "category": "HACK",
+            "summary": "A sophisticated price manipulation attack targeted UwU Lend, resulting in a loss of $19.3 million across multiple assets. The attacker exploited a logic flaw in the protocol's price oracle implementation.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://slowmist.medium.com/analysis-of-the-uwu-lend-hack-9502b2c06dbe"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "OKX Ventures Launches $10M TON Ecosystem Fund",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "OKX Ventures has announced a new $10 million fund dedicated to supporting developers and projects building on the TON ecosystem, focusing on Telegram-integrated decentralized applications.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://web3.career/web3-companies/okx"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-            "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "title": "Linea Mainnet Successfully Implements EIP-4844",
+            "category": "INFRA",
+            "summary": "Linea has completed its transition to blob-carrying transactions following the EIP-4844 upgrade, resulting in a significant 90% reduction in data availability costs for the network.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://linea.mirror.xyz/"
         }
     ]
 
@@ -109,8 +109,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Binance, Consensys, and XION.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including UwU Lend exploit and Linea upgrade.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
