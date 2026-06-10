@@ -1,5 +1,26 @@
 [
   {
+    "title": "UwU Lend Protocol Exploit: $19.3M Drained",
+    "category": "HACK",
+    "summary": "A sophisticated price manipulation attack targeted UwU Lend, resulting in a loss of $19.3 million across multiple assets. The attacker exploited a logic flaw in the protocol's price oracle implementation.",
+    "date": "2026-06-10",
+    "sourceLink": "https://slowmist.medium.com/analysis-of-the-uwu-lend-hack-9502b2c06dbe"
+  },
+  {
+    "title": "OKX Ventures Launches $10M TON Ecosystem Fund",
+    "category": "INFRA",
+    "summary": "OKX Ventures has announced a new $10 million fund dedicated to supporting developers and projects building on the TON ecosystem, focusing on Telegram-integrated decentralized applications.",
+    "date": "2026-06-10",
+    "sourceLink": "https://web3.career/web3-companies/okx"
+  },
+  {
+    "title": "Linea Mainnet Successfully Implements EIP-4844",
+    "category": "INFRA",
+    "summary": "Linea has completed its transition to blob-carrying transactions following the EIP-4844 upgrade, resulting in a significant 90% reduction in data availability costs for the network.",
+    "date": "2026-06-10",
+    "sourceLink": "https://linea.mirror.xyz/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
