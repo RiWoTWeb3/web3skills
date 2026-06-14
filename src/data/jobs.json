@@ -1,5 +1,101 @@
 [
   {
+    "id": "binance-sr-protocol-2026-06-14",
+    "title": "Senior Protocol Engineer",
+    "company": "Binance",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Go",
+      "Ethereum",
+      "Distributed Systems",
+      "P2P Networking"
+    ],
+    "applyLink": "https://www.binance.com/en/careers"
+  },
+  {
+    "id": "anza-solana-dev-2026-06-14",
+    "title": "Solana Program Developer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$180,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Smart Contract Security"
+    ],
+    "applyLink": "https://anza.xyz/careers"
+  },
+  {
+    "id": "immunefi-security-researcher-2026-06-14",
+    "title": "Smart Contract Security Researcher",
+    "company": "Immunefi",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Solidity",
+      "Security Auditing",
+      "EVM Mechanics",
+      "Bug Bounty"
+    ],
+    "applyLink": "https://immunefi.com/careers"
+  },
+  {
+    "id": "binance-sr-protocol-2026-06-10",
+    "title": "Senior Protocol Engineer",
+    "company": "Binance",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Go",
+      "Ethereum",
+      "Distributed Systems",
+      "P2P Networking"
+    ],
+    "applyLink": "https://www.binance.com/en/careers"
+  },
+  {
+    "id": "anza-solana-dev-2026-06-10",
+    "title": "Solana Program Developer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$180,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Smart Contract Security"
+    ],
+    "applyLink": "https://anza.xyz/careers"
+  },
+  {
+    "id": "immunefi-security-researcher-2026-06-10",
+    "title": "Smart Contract Security Researcher",
+    "company": "Immunefi",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Solidity",
+      "Security Auditing",
+      "EVM Mechanics",
+      "Bug Bounty"
+    ],
+    "applyLink": "https://immunefi.com/careers"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

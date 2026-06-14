@@ -1,5 +1,89 @@
 [
   {
+    "date": "2026-06-14",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Binance",
+    "description": "Join Binance as a Senior Protocol Engineer. Requirements: Go, Ethereum, Distributed Systems. Remote.",
+    "link": "https://www.binance.com/en/careers"
+  },
+  {
+    "date": "2026-06-14",
+    "type": "job",
+    "title": "Solana Program Developer at Anza",
+    "description": "Join Anza as a Solana Program Developer. Requirements: Rust, Solana, Anchor. Remote.",
+    "link": "https://anza.xyz/careers"
+  },
+  {
+    "date": "2026-06-14",
+    "type": "job",
+    "title": "Smart Contract Security Researcher at Immunefi",
+    "description": "Join Immunefi as a Smart Contract Security Researcher. Requirements: Solidity, Security Auditing, EVM Mechanics. Remote.",
+    "link": "https://immunefi.com/careers"
+  },
+  {
+    "date": "2026-06-14",
+    "type": "news",
+    "title": "Ethereum Pectra Devnet-12 Launch",
+    "description": "The twelfth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-06-14",
+    "type": "news",
+    "title": "Solana Mainnet-Beta v1.18.15 Release",
+    "description": "Critical performance upgrades have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
+    "link": "https://solana.com/"
+  },
+  {
+    "date": "2026-06-14",
+    "type": "hack",
+    "title": "UwU Lend Exploit: $19.3M Loss",
+    "description": "UwU Lend was exploited for approximately $19.3 million due to a price oracle manipulation vulnerability.",
+    "link": "https://rekt.news/uwulend-rekt"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Binance",
+    "description": "Join Binance as a Senior Protocol Engineer. Requirements: Go, Ethereum, Distributed Systems. Remote.",
+    "link": "https://www.binance.com/en/careers"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "job",
+    "title": "Solana Program Developer at Anza",
+    "description": "Join Anza as a Solana Program Developer. Requirements: Rust, Solana, Anchor. Remote.",
+    "link": "https://anza.xyz/careers"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "job",
+    "title": "Smart Contract Security Researcher at Immunefi",
+    "description": "Join Immunefi as a Smart Contract Security Researcher. Requirements: Solidity, Security Auditing, EVM Mechanics. Remote.",
+    "link": "https://immunefi.com/careers"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "news",
+    "title": "Ethereum Pectra Devnet-12 Launch",
+    "description": "The twelfth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "news",
+    "title": "Solana Mainnet-Beta v1.18.15 Release",
+    "description": "Critical performance upgrades have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
+    "link": "https://solana.com/"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "hack",
+    "title": "UwU Lend Exploit: $19.3M Loss",
+    "description": "UwU Lend was exploited for approximately $19.3 million due to a price oracle manipulation vulnerability.",
+    "link": "https://rekt.news/uwulend-rekt"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -334,89 +418,5 @@
     "title": "Prisma Finance $12M Exploit Recovery",
     "description": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
     "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Staff Software Engineer at Circle",
-    "description": "Join Circle as a Staff Software Engineer. Requirements: Blockchain Systems, Tokenization, Infrastructure. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Chief Technology Officer (CTO) at Semiotic.AI",
-    "description": "Join Semiotic.AI as a Chief Technology Officer (CTO). Requirements: Systems Architecture, AI-to-AI Micropayments, Product Strategy. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Blockchain, Crypto, DeFi. Remote.",
-    "link": "https://web3.career/remote+solana-jobs"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
-    "description": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
-    "description": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
-    "link": "https://www.mexc.com/news/992894"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "hack",
-    "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
-    "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]

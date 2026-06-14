@@ -1,5 +1,47 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-12 Launch",
+    "category": "INFRA",
+    "summary": "The twelfth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
+    "date": "2026-06-14",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana Mainnet-Beta v1.18.15 Release",
+    "category": "INFRA",
+    "summary": "Critical performance upgrades have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
+    "date": "2026-06-14",
+    "sourceLink": "https://solana.com/"
+  },
+  {
+    "title": "UwU Lend Exploit: $19.3M Loss",
+    "category": "HACK",
+    "summary": "UwU Lend was exploited for approximately $19.3 million due to a price oracle manipulation vulnerability.",
+    "date": "2026-06-14",
+    "sourceLink": "https://rekt.news/uwulend-rekt"
+  },
+  {
+    "title": "Ethereum Pectra Devnet-12 Launch",
+    "category": "INFRA",
+    "summary": "The twelfth devnet for the Ethereum Pectra upgrade is now operational, testing critical EIP-7702 and PeerDAS refinements.",
+    "date": "2026-06-10",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Solana Mainnet-Beta v1.18.15 Release",
+    "category": "INFRA",
+    "summary": "Critical performance upgrades have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
+    "date": "2026-06-10",
+    "sourceLink": "https://solana.com/"
+  },
+  {
+    "title": "UwU Lend Exploit: $19.3M Loss",
+    "category": "HACK",
+    "summary": "UwU Lend was exploited for approximately $19.3 million due to a price oracle manipulation vulnerability.",
+    "date": "2026-06-10",
+    "sourceLink": "https://rekt.news/uwulend-rekt"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
