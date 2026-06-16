@@ -1,5 +1,53 @@
 [
   {
+    "id": "unlimit-pro-blockchain-engineer-2026-06-10",
+    "title": "Blockchain Engineer (Solana/AI)",
+    "company": "Unlimit Pro",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solana",
+      "Rust",
+      "AI/ML",
+      "On-chain Analytics"
+    ],
+    "applyLink": "https://web3.career/blockchain-engineer-unlimit-pro/150411"
+  },
+  {
+    "id": "zscaler-staff-sre-2026-06-10",
+    "title": "Staff Site Reliability Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Expert level",
+    "salaryRange": "$115,000 - $165,000",
+    "requirements": [
+      "Go",
+      "Kubernetes",
+      "AWS",
+      "Reliability Engineering"
+    ],
+    "applyLink": "https://web3.career/staff-site-reliability-engineer-zscaler/106117"
+  },
+  {
+    "id": "kronos-research-quant-trader-2026-06-10",
+    "title": "Experienced Quantitative Trader",
+    "company": "Kronosresearch",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$105,000 - $112,000",
+    "requirements": [
+      "Quantitative Trading",
+      "Blockchain",
+      "Crypto",
+      "Python"
+    ],
+    "applyLink": "https://web3.career/experienced-quantitative-trader-kronosresearch/100108"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

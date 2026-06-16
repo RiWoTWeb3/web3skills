@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-06-10",
+    "type": "job",
+    "title": "Blockchain Engineer (Solana/AI) at Unlimit Pro",
+    "description": "Join Unlimit Pro as a Blockchain Engineer (Solana/AI). Requirements: Solana, Rust, AI/ML. Remote.",
+    "link": "https://web3.career/blockchain-engineer-unlimit-pro/150411"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "job",
+    "title": "Staff Site Reliability Engineer at Zscaler",
+    "description": "Join Zscaler as a Staff Site Reliability Engineer. Requirements: Go, Kubernetes, AWS. Remote.",
+    "link": "https://web3.career/staff-site-reliability-engineer-zscaler/106117"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "job",
+    "title": "Experienced Quantitative Trader at Kronosresearch",
+    "description": "Join Kronosresearch as a Experienced Quantitative Trader. Requirements: Quantitative Trading, Blockchain, Crypto. Remote.",
+    "link": "https://web3.career/experienced-quantitative-trader-kronosresearch/100108"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "news",
+    "title": "Syscoin Bridge Security Recovery and Proof Parsing Coordination",
+    "description": "The Syscoin team successfully coordinated a whitehat recovery of 5B SYS minted from a malformed SPV proof, highlighting critical bridge relay parsing improvements.",
+    "link": "https://rekt.news/syscoin-rekt"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "news",
+    "title": "Bondex Ecosystem Expansion into Web3 Career Infrastructure",
+    "description": "Web3.career (Wagmi) integrates with the Bondex ecosystem to provide human-verified, hire-ready profiles using World ID, streamlining talent acquisition.",
+    "link": "https://web3.career/"
+  },
+  {
+    "date": "2026-06-10",
+    "type": "hack",
+    "title": "TesseraDao Exploit: $2.49M Drained via Admin Key Compromise",
+    "description": "A single compromised admin key allowed an attacker to mint and dump tokens worth $2.49M, funneling funds through Tornado Cash due to lack of multisig controls.",
+    "link": "https://rekt.news/tesseradao-rekt"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -376,47 +418,5 @@
     "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
     "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
     "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]
