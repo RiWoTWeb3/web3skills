@@ -1,5 +1,26 @@
 [
   {
+    "title": "Syscoin Bridge Security Recovery and Proof Parsing Coordination",
+    "category": "INFRA",
+    "summary": "The Syscoin team successfully coordinated a whitehat recovery of 5B SYS minted from a malformed SPV proof, highlighting critical bridge relay parsing improvements.",
+    "date": "2026-06-10",
+    "sourceLink": "https://rekt.news/syscoin-rekt"
+  },
+  {
+    "title": "Bondex Ecosystem Expansion into Web3 Career Infrastructure",
+    "category": "INFRA",
+    "summary": "Web3.career (Wagmi) integrates with the Bondex ecosystem to provide human-verified, hire-ready profiles using World ID, streamlining talent acquisition.",
+    "date": "2026-06-10",
+    "sourceLink": "https://web3.career/"
+  },
+  {
+    "title": "TesseraDao Exploit: $2.49M Drained via Admin Key Compromise",
+    "category": "HACK",
+    "summary": "A single compromised admin key allowed an attacker to mint and dump tokens worth $2.49M, funneling funds through Tornado Cash due to lack of multisig controls.",
+    "date": "2026-06-10",
+    "sourceLink": "https://rekt.news/tesseradao-rekt"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
