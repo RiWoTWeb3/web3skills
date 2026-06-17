@@ -1,5 +1,53 @@
 [
   {
+    "id": "gsr-quant-rust-2026-06-17",
+    "title": "Quant Developer (Rust)",
+    "company": "GSR Markets",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $260,000",
+    "requirements": [
+      "Rust",
+      "Low Latency",
+      "Trading Systems",
+      "Quantitative Analysis"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "jumpcrypto-prod-eng-2026-06-17",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Go",
+      "Distributed Systems",
+      "Ethereum",
+      "Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "okx-senior-backend-2026-06-17",
+    "title": "Senior Backend Engineer",
+    "company": "OKX",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Rust",
+      "Solidity",
+      "Web3",
+      "API Design"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

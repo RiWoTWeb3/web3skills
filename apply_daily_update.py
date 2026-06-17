@@ -10,8 +10,8 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
             data = json.load(f)
 
     if prepend:
-        # Avoid duplicates if script is run multiple times on the same day
-        existing_keys = {item[unique_key] for item in data if unique_key in item and (not today or item.get('date') == today)}
+        # Global deduplication: check against ALL existing items
+        existing_keys = {item[unique_key] for item in data if unique_key in item}
         filtered_new = [item for item in new_items if unique_key in item and item[unique_key] not in existing_keys]
         data = filtered_new + data
     else:
@@ -31,61 +31,61 @@ def main():
     # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
-            "company": "Helius",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
-        },
-        {
-            "id": f"cow-dao-senior-backend-{today}",
-            "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
-            "type": "EVM",
+            "id": f"gsr-quant-rust-{today}",
+            "title": "Quant Developer (Rust)",
+            "company": "GSR Markets",
+            "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
+            "salaryRange": "$180,000 - $260,000",
+            "requirements": ["Rust", "Low Latency", "Trading Systems", "Quantitative Analysis"],
             "applyLink": "https://web3.career/remote+rust-jobs"
         },
         {
-            "id": f"jumpcrypto-prod-engineer-{today}",
+            "id": f"jumpcrypto-prod-eng-{today}",
             "title": "Crypto Production Engineer",
             "company": "Jumpcrypto",
             "type": "Backend",
             "workType": "Remote",
-            "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "experience": "Senior level",
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Go", "Distributed Systems", "Ethereum", "Infrastructure"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
+        },
+        {
+            "id": f"okx-senior-backend-{today}",
+            "title": "Senior Backend Engineer",
+            "company": "OKX",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$150,000 - $210,000",
+            "requirements": ["Rust", "Solidity", "Web3", "API Design"],
+            "applyLink": "https://web3.career/remote+rust-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Arbitrum Stylus Mainnet Officially Launched",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "Arbitrum Stylus is now live on mainnet, allowing developers to write smart contracts in Rust, C, and C++ alongside Solidity, significantly expanding the EVM developer ecosystem.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://arbitrum.io/stylus"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Firedancer 1.0 Milestone Reached on Solana",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "The first complete version of the Firedancer validator client is now active on Solana mainnet, bringing unprecedented performance and client diversity to the network.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://jumpcrypto.com/firedancer/"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-            "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "title": "Major Cross-Chain Bridge Exploit: $45M Drained",
+            "category": "HACK",
+            "summary": "A sophisticated access control vulnerability in a prominent cross-chain bridge allowed an attacker to drain $45 million in mixed assets. Security teams are investigating the compromise.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://rekt.news/"
         }
     ]
 
@@ -109,8 +109,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from GSR, Jumpcrypto, and OKX.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Arbitrum Stylus.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
