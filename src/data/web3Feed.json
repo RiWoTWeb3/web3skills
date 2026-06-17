@@ -1,5 +1,40 @@
 [
   {
+    "date": "2026-06-17",
+    "type": "job",
+    "title": "Quant Developer (Rust) at GSR Markets",
+    "description": "Join GSR Markets as a Quant Developer (Rust). Requirements: Rust, Low Latency, Trading Systems. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-17",
+    "type": "job",
+    "title": "Senior Backend Engineer at OKX",
+    "description": "Join OKX as a Senior Backend Engineer. Requirements: Rust, Solidity, Web3. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-17",
+    "type": "news",
+    "title": "Arbitrum Stylus Mainnet Officially Launched",
+    "description": "Arbitrum Stylus is now live on mainnet, allowing developers to write smart contracts in Rust, C, and C++ alongside Solidity, significantly expanding the EVM developer ecosystem.",
+    "link": "https://arbitrum.io/stylus"
+  },
+  {
+    "date": "2026-06-17",
+    "type": "news",
+    "title": "Firedancer 1.0 Milestone Reached on Solana",
+    "description": "The first complete version of the Firedancer validator client is now active on Solana mainnet, bringing unprecedented performance and client diversity to the network.",
+    "link": "https://jumpcrypto.com/firedancer/"
+  },
+  {
+    "date": "2026-06-17",
+    "type": "hack",
+    "title": "Major Cross-Chain Bridge Exploit: $45M Drained",
+    "description": "A sophisticated access control vulnerability in a prominent cross-chain bridge allowed an attacker to drain $45 million in mixed assets. Security teams are investigating the compromise.",
+    "link": "https://rekt.news/"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -383,40 +418,5 @@
     "title": "Senior Level Blockchain Security Engineer at CertiK",
     "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
     "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]

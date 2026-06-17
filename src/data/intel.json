@@ -1,5 +1,26 @@
 [
   {
+    "title": "Arbitrum Stylus Mainnet Officially Launched",
+    "category": "INFRA",
+    "summary": "Arbitrum Stylus is now live on mainnet, allowing developers to write smart contracts in Rust, C, and C++ alongside Solidity, significantly expanding the EVM developer ecosystem.",
+    "date": "2026-06-17",
+    "sourceLink": "https://arbitrum.io/stylus"
+  },
+  {
+    "title": "Firedancer 1.0 Milestone Reached on Solana",
+    "category": "INFRA",
+    "summary": "The first complete version of the Firedancer validator client is now active on Solana mainnet, bringing unprecedented performance and client diversity to the network.",
+    "date": "2026-06-17",
+    "sourceLink": "https://jumpcrypto.com/firedancer/"
+  },
+  {
+    "title": "Major Cross-Chain Bridge Exploit: $45M Drained",
+    "category": "HACK",
+    "summary": "A sophisticated access control vulnerability in a prominent cross-chain bridge allowed an attacker to drain $45 million in mixed assets. Security teams are investigating the compromise.",
+    "date": "2026-06-17",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
