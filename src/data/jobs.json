@@ -1,5 +1,53 @@
 [
   {
+    "id": "gsr-quant-dev-rust-2026-06-18",
+    "title": "Quant Developer (Rust)",
+    "company": "GSR",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Low-Latency",
+      "Market Making",
+      "Trading Systems"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "uniswap-senior-solidity-2026-06-18",
+    "title": "Senior Solidity Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $260,000",
+    "requirements": [
+      "Solidity",
+      "Uniswap V4",
+      "Smart Contract Security",
+      "EVM Opcodes"
+    ],
+    "applyLink": "https://web3.career/remote+evm-jobs"
+  },
+  {
+    "id": "anza-solana-protocol-2026-06-18",
+    "title": "Solana Protocol Engineer",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Rust",
+      "Solana Core",
+      "Distributed Systems",
+      "Networking"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

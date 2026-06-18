@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Upgrade Devnet-12 Operational",
+    "category": "INFRA",
+    "summary": "The twelfth devnet for Ethereum's Pectra upgrade is now live, focusing on large-scale testing of EIP-7702 and PeerDAS refinements ahead of the 2026 hardfork.",
+    "date": "2026-06-18",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Arbitrum Stylus Mainnet Deployment Progress",
+    "category": "INFRA",
+    "summary": "Arbitrum developers announce major progress on Stylus, enabling smart contracts in Rust, C, and C++ to run alongside Solidity with significantly lower gas costs.",
+    "date": "2026-06-18",
+    "sourceLink": "https://arbitrum.io/stylus"
+  },
+  {
+    "title": "Humanity Protocol $36M Private Key Compromise",
+    "category": "HACK",
+    "summary": "Humanity Protocol suffered an estimated $36M loss due to compromised private keys on a developer's machine, leading to unauthorized H token minting and drainage.",
+    "date": "2026-06-18",
+    "sourceLink": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
