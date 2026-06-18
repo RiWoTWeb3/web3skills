@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-06-18",
+    "type": "job",
+    "title": "Quant Developer (Rust) at GSR",
+    "description": "Join GSR as a Quant Developer (Rust). Requirements: Rust, Low-Latency, Market Making. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-18",
+    "type": "job",
+    "title": "Senior Solidity Engineer at Uniswap Labs",
+    "description": "Join Uniswap Labs as a Senior Solidity Engineer. Requirements: Solidity, Uniswap V4, Smart Contract Security. Remote.",
+    "link": "https://web3.career/remote+evm-jobs"
+  },
+  {
+    "date": "2026-06-18",
+    "type": "job",
+    "title": "Solana Protocol Engineer at Anza",
+    "description": "Join Anza as a Solana Protocol Engineer. Requirements: Rust, Solana Core, Distributed Systems. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-06-18",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade Devnet-12 Operational",
+    "description": "The twelfth devnet for Ethereum's Pectra upgrade is now live, focusing on large-scale testing of EIP-7702 and PeerDAS refinements ahead of the 2026 hardfork.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-06-18",
+    "type": "news",
+    "title": "Arbitrum Stylus Mainnet Deployment Progress",
+    "description": "Arbitrum developers announce major progress on Stylus, enabling smart contracts in Rust, C, and C++ to run alongside Solidity with significantly lower gas costs.",
+    "link": "https://arbitrum.io/stylus"
+  },
+  {
+    "date": "2026-06-18",
+    "type": "hack",
+    "title": "Humanity Protocol $36M Private Key Compromise",
+    "description": "Humanity Protocol suffered an estimated $36M loss due to compromised private keys on a developer's machine, leading to unauthorized H token minting and drainage.",
+    "link": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -376,47 +418,5 @@
     "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
     "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
     "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]

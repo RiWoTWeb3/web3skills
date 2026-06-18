@@ -31,61 +31,61 @@ def main():
     # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
-            "company": "Helius",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
-        },
-        {
-            "id": f"cow-dao-senior-backend-{today}",
-            "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
-            "type": "EVM",
+            "id": f"gsr-quant-dev-rust-{today}",
+            "title": "Quant Developer (Rust)",
+            "company": "GSR",
+            "type": "Backend",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
+            "salaryRange": "$160,000 - $240,000",
+            "requirements": ["Rust", "Low-Latency", "Market Making", "Trading Systems"],
             "applyLink": "https://web3.career/remote+rust-jobs"
         },
         {
-            "id": f"jumpcrypto-prod-engineer-{today}",
-            "title": "Crypto Production Engineer",
-            "company": "Jumpcrypto",
-            "type": "Backend",
+            "id": f"uniswap-senior-solidity-{today}",
+            "title": "Senior Solidity Engineer",
+            "company": "Uniswap Labs",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$180,000 - $260,000",
+            "requirements": ["Solidity", "Uniswap V4", "Smart Contract Security", "EVM Opcodes"],
+            "applyLink": "https://web3.career/remote+evm-jobs"
+        },
+        {
+            "id": f"anza-solana-protocol-{today}",
+            "title": "Solana Protocol Engineer",
+            "company": "Anza",
+            "type": "SVM",
             "workType": "Remote",
             "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
+            "salaryRange": "$150,000 - $210,000",
+            "requirements": ["Rust", "Solana Core", "Distributed Systems", "Networking"],
             "applyLink": "https://web3.career/remote+solana-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Ethereum Pectra Upgrade Devnet-12 Operational",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "The twelfth devnet for Ethereum's Pectra upgrade is now live, focusing on large-scale testing of EIP-7702 and PeerDAS refinements ahead of the 2026 hardfork.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://ethereum-magicians.org/"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Arbitrum Stylus Mainnet Deployment Progress",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "Arbitrum developers announce major progress on Stylus, enabling smart contracts in Rust, C, and C++ to run alongside Solidity with significantly lower gas costs.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://arbitrum.io/stylus"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-            "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "title": "Humanity Protocol $36M Private Key Compromise",
+            "category": "HACK",
+            "summary": "Humanity Protocol suffered an estimated $36M loss due to compromised private keys on a developer's machine, leading to unauthorized H token minting and drainage.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
         }
     ]
 
@@ -109,8 +109,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from GSR, Uniswap, and Anza.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Humanity Protocol hack.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
