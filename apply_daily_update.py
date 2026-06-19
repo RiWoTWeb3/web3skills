@@ -26,66 +26,67 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
 def main():
     # Use current UTC date for dynamic updates
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Use 2026-06-18 as requested for consistency with sandbox environment date
+    today = "2026-06-18"
 
     # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
-            "company": "Helius",
-            "type": "SVM",
+            "id": f"zscaler-staff-sre-{today}",
+            "title": "Staff Site Reliability Engineer",
+            "company": "Zscaler",
+            "type": "Backend",
             "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "experience": "Staff level",
+            "salaryRange": "$115,000 - $165,000",
+            "requirements": ["Rust", "Python", "Golang", "Distributed Systems"],
+            "applyLink": "https://web3.career/staff-site-reliability-engineer-zscaler/106117"
         },
         {
-            "id": f"cow-dao-senior-backend-{today}",
+            "id": f"okx-senior-java-{today}",
+            "title": "Senior Java Engineer",
+            "company": "Okx",
+            "type": "Backend",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$84,000 - $150,000",
+            "requirements": ["Java", "Smart Accounts", "Wallet Infrastructure"],
+            "applyLink": "https://web3.career/senior-java-engineer-wallet-smart-account-team-okx/150561"
+        },
+        {
+            "id": f"offchain-senior-backend-rust-{today}",
             "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
+            "company": "Offchain Labs",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
-            "applyLink": "https://web3.career/remote+rust-jobs"
-        },
-        {
-            "id": f"jumpcrypto-prod-engineer-{today}",
-            "title": "Crypto Production Engineer",
-            "company": "Jumpcrypto",
-            "type": "Backend",
-            "workType": "Remote",
-            "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "salaryRange": "$122,000 - $150,000",
+            "requirements": ["Rust", "Arbitrum", "L2", "Backend Architecture"],
+            "applyLink": "https://web3.career/senior-backend-engineer-rust-offchainlabs/150351"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Standard Chartered to Launch Spot Crypto Trading Desk",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "Standard Chartered is reportedly launching a spot crypto trading desk for Bitcoin and Ether, making it one of the first major global banks to enter spot crypto trading.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://www.bloomberg.com/news/articles/2024-06-21/standard-chartered-is-setting-up-a-spot-crypto-trading-desk"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Tether Launches Alloy (aUSDT) Overcollateralized by Gold",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "Tether has launched Alloy, a new platform for overcollateralized assets, with its first token aUSDT backed by Tether Gold (XAUt), enabling gold-backed stablecoin minting.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://tether.io/news/tether-introduces-alloy-by-tether-a-new-category-of-digital-assets-backed-by-gold/"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-            "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "title": "UwU Lend Exploit: $19.3M Drained via Price Oracle Manipulation",
+            "category": "HACK",
+            "summary": "DeFi lending protocol UwU Lend was exploited for approximately $19.3 million due to a price oracle manipulation vulnerability involving sUSDe.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://slowmist.medium.com/analysis-of-the-uwu-lend-hack-9502b2c06dbe"
         }
     ]
 
@@ -109,8 +110,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Zscaler, Okx, and Offchain Labs.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Standard Chartered spot desk.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
