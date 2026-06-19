@@ -1,5 +1,52 @@
 [
   {
+    "id": "zscaler-staff-sre-2026-06-18",
+    "title": "Staff Site Reliability Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$115,000 - $165,000",
+    "requirements": [
+      "Rust",
+      "Python",
+      "Golang",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/staff-site-reliability-engineer-zscaler/106117"
+  },
+  {
+    "id": "okx-senior-java-2026-06-18",
+    "title": "Senior Java Engineer",
+    "company": "Okx",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$84,000 - $150,000",
+    "requirements": [
+      "Java",
+      "Smart Accounts",
+      "Wallet Infrastructure"
+    ],
+    "applyLink": "https://web3.career/senior-java-engineer-wallet-smart-account-team-okx/150561"
+  },
+  {
+    "id": "offchain-senior-backend-rust-2026-06-18",
+    "title": "Senior Backend Engineer (Rust)",
+    "company": "Offchain Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$122,000 - $150,000",
+    "requirements": [
+      "Rust",
+      "Arbitrum",
+      "L2",
+      "Backend Architecture"
+    ],
+    "applyLink": "https://web3.career/senior-backend-engineer-rust-offchainlabs/150351"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",

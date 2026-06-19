@@ -52,9 +52,9 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.61.0",
     "@prisma/client": "^6.19.2",
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.19.43",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "dotenv": "^17.3.1",
     "playwright": "^1.58.2",

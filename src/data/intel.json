@@ -1,5 +1,26 @@
 [
   {
+    "title": "Standard Chartered to Launch Spot Crypto Trading Desk",
+    "category": "INFRA",
+    "summary": "Standard Chartered is reportedly launching a spot crypto trading desk for Bitcoin and Ether, making it one of the first major global banks to enter spot crypto trading.",
+    "date": "2026-06-18",
+    "sourceLink": "https://www.bloomberg.com/news/articles/2024-06-21/standard-chartered-is-setting-up-a-spot-crypto-trading-desk"
+  },
+  {
+    "title": "Tether Launches Alloy (aUSDT) Overcollateralized by Gold",
+    "category": "INFRA",
+    "summary": "Tether has launched Alloy, a new platform for overcollateralized assets, with its first token aUSDT backed by Tether Gold (XAUt), enabling gold-backed stablecoin minting.",
+    "date": "2026-06-18",
+    "sourceLink": "https://tether.io/news/tether-introduces-alloy-by-tether-a-new-category-of-digital-assets-backed-by-gold/"
+  },
+  {
+    "title": "UwU Lend Exploit: $19.3M Drained via Price Oracle Manipulation",
+    "category": "HACK",
+    "summary": "DeFi lending protocol UwU Lend was exploited for approximately $19.3 million due to a price oracle manipulation vulnerability involving sUSDe.",
+    "date": "2026-06-18",
+    "sourceLink": "https://slowmist.medium.com/analysis-of-the-uwu-lend-hack-9502b2c06dbe"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
