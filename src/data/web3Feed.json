@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-06-20",
+    "type": "job",
+    "title": "Staff Software Engineer: Consumer (Money) at Consensys",
+    "description": "Join Consensys as a Staff Software Engineer: Consumer (Money). Requirements: Solidity, TypeScript, DeFi. Remote.",
+    "link": "https://arc.dev/remote-jobs/web3"
+  },
+  {
+    "date": "2026-06-20",
+    "type": "job",
+    "title": "Remote Web3 Solana Engineer at Alchemy",
+    "description": "Join Alchemy as a Remote Web3 Solana Engineer. Requirements: Rust, Solana, Anchor. Remote.",
+    "link": "https://cryptojobslist.com/remote_solana"
+  },
+  {
+    "date": "2026-06-20",
+    "type": "job",
+    "title": "Web3 Sr. Production Engineer at Zscaler",
+    "description": "Join Zscaler as a Web3 Sr. Production Engineer. Requirements: Automation, Security, Cloud Infrastructure. Remote.",
+    "link": "https://web3.career/sr-production-engineer-zscaler/150565"
+  },
+  {
+    "date": "2026-06-20",
+    "type": "news",
+    "title": "Humanity Protocol Identity Tech: Palm Scans and ZKPs",
+    "description": "Humanity Protocol utilizes palm scans and Zero-Knowledge Proofs (ZKPs) to offer on-chain 'proof of humanity', ensuring identity privacy while maintaining Sybil resistance.",
+    "link": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
+  },
+  {
+    "date": "2026-06-20",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade One-Year Impact Report",
+    "description": "One year after the Pectra upgrade, Ethereum reports significant progress in validator consolidation and Layer 2 scaling, with expanded blob usage and broader smart account adoption.",
+    "link": "https://everstake.one/resources/blog/pectra-anniversary-how-ethereum-changed-2026"
+  },
+  {
+    "date": "2026-06-20",
+    "type": "hack",
+    "title": "Humanity Protocol Exploit: $36M Loss Reported",
+    "description": "Estimated $36M loss in June 2026 due to compromised private keys resulting from a malware infection on a developer's device, highlighting risks in dev-environment security.",
+    "link": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -376,47 +418,5 @@
     "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
     "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
     "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]

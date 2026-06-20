@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, MessageSquare, HelpCircle
 } from 'lucide-react';
 import {
   Routes,
@@ -761,6 +762,51 @@ const BugBountySpotlight = ({ darkMode }) => {
   );
 };
 
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: 'ZK-Rollup Explorer',
+      description: 'Build a dashboard to visualize batch submissions and proof verification for major L2s.',
+      skills: ['ZK Proofs', 'TypeScript', 'Ethers.js'],
+      difficulty: 'Advanced'
+    },
+    {
+      title: 'Cross-chain Bridge Monitor',
+      description: 'Create a real-time alerting system for liquidity imbalances across token bridges.',
+      skills: ['Solidity', 'Go', 'Security'],
+      difficulty: 'Intermediate'
+    },
+    {
+      title: 'Solidity Gas Profiler',
+      description: 'A tool to automate gas consumption analysis for complex smart contract interactions.',
+      skills: ['Solidity', 'Foundry', 'Node.js'],
+      difficulty: 'Mid-Senior'
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-yellow-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Idea</h3>
+      </div>
+      <div className="space-y-4">
+        {projects.map((p, i) => (
+          <div key={i} className={`p-3 rounded ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-gray-50 border border-gray-100'}`}>
+            <h4 className={`text-xs font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{p.title}</h4>
+            <p className={`text-[10px] ${darkMode ? 'text-slate-400' : 'text-gray-600'} mb-2`}>{p.description}</p>
+            <div className="flex flex-wrap gap-1">
+              {p.skills.map(s => (
+                <span key={s} className="px-1.5 py-0.5 bg-accent-blue/10 text-accent-blue border border-accent-blue/20 text-[8px] font-mono rounded-[2px]">{s}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const DailyMission = ({ darkMode, displaySkills }) => {
   const [mission, setMission] = useState<{ name: string; category: string } | null>(null);
 
@@ -926,6 +972,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1080,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1236,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -3158,6 +3226,73 @@ const PolicyModal = ({ darkMode, setShowPolicyModal }) => (
   </div>
 );
 
+const InterviewPrepView = ({ darkMode }) => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  const questions = [
+    {
+      q: "What is a reentrancy attack and how do you prevent it?",
+      a: "A reentrancy attack occurs when a function makes an external call to another untrusted contract before it resolves its own state. The untrusted contract can then call back into the original function, potentially draining funds. Prevention: Use the Checks-Effects-Interactions pattern or a ReentrancyGuard mutex.",
+      category: "Solidity"
+    },
+    {
+      q: "How does Solana's Proof of History (PoH) differ from Proof of Stake (PoS)?",
+      a: "PoH is not a consensus mechanism but a cryptographic clock that provides a way to verify the passage of time between events. It allows Solana to order transactions without all nodes having to agree simultaneously, significantly increasing throughput. PoS is still used for consensus and voting.",
+      category: "Solana"
+    },
+    {
+      q: "What are Zero-Knowledge Proofs (ZKPs)?",
+      a: "ZKPs are cryptographic methods by which one party (the prover) can prove to another party (the verifier) that they know a value x, without conveying any information apart from the fact that they know the value x. Key for privacy and scaling (rollups).",
+      category: "Cryptography"
+    },
+    {
+      q: "Explain the difference between call, delegatecall, and staticcall in EVM.",
+      a: "Call: Standard message call. Delegatecall: Runs code of target contract in context of calling contract (maintains msg.sender and storage). Staticcall: Same as call but disallows state modifications.",
+      category: "EVM"
+    }
+  ];
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Master technical Web3 concepts and protocol internals
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4">
+        {questions.map((item, idx) => (
+          <div
+            key={idx}
+            className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-6 border transition-all cursor-pointer`}
+            onClick={() => setExpanded(expanded === idx ? null : idx)}
+          >
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-4">
+                <div className={`p-2 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-600'}`}>
+                  <HelpCircle size={20} />
+                </div>
+                <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.q}</h3>
+              </div>
+              <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${darkMode ? 'bg-white/5 text-slate-400' : 'bg-gray-100 text-gray-500'}`}>
+                {item.category}
+              </span>
+            </div>
+            {expanded === idx && (
+              <div className={`mt-6 p-4 rounded ${darkMode ? 'bg-black/20 text-slate-300 border-l-2 border-accent-blue' : 'bg-blue-50/50 text-gray-700 border-l-2 border-blue-600'} animate-slideDown`}>
+                <p className="text-sm leading-relaxed whitespace-pre-wrap">{item.a}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Footer = ({ darkMode }) => (
   <footer className={`mt-32 pb-16 ${darkMode ? 'border-accent-blue/10 bg-black/40' : 'border-gray-200'} border-t pt-16`}>
     <div className="max-w-7xl mx-auto px-6">
@@ -3198,6 +3333,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3548,6 +3684,11 @@ const App = () => {
                 darkMode={darkMode}
                 viewMode={viewMode}
                 getCareerMatch={getCareerMatch}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
+                darkMode={darkMode}
               />
             } />
             <Route path="/jobs" element={
