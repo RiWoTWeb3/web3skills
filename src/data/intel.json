@@ -1,5 +1,26 @@
 [
   {
+    "title": "Humanity Protocol Identity Tech: Palm Scans and ZKPs",
+    "category": "INFRA",
+    "summary": "Humanity Protocol utilizes palm scans and Zero-Knowledge Proofs (ZKPs) to offer on-chain 'proof of humanity', ensuring identity privacy while maintaining Sybil resistance.",
+    "date": "2026-06-20",
+    "sourceLink": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
+  },
+  {
+    "title": "Ethereum Pectra Upgrade One-Year Impact Report",
+    "category": "INFRA",
+    "summary": "One year after the Pectra upgrade, Ethereum reports significant progress in validator consolidation and Layer 2 scaling, with expanded blob usage and broader smart account adoption.",
+    "date": "2026-06-20",
+    "sourceLink": "https://everstake.one/resources/blog/pectra-anniversary-how-ethereum-changed-2026"
+  },
+  {
+    "title": "Humanity Protocol Exploit: $36M Loss Reported",
+    "category": "HACK",
+    "summary": "Estimated $36M loss in June 2026 due to compromised private keys resulting from a malware infection on a developer's device, highlighting risks in dev-environment security.",
+    "date": "2026-06-20",
+    "sourceLink": "https://www.halborn.com/blog/post/explained-the-humanity-protocol-hack-june-2026"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

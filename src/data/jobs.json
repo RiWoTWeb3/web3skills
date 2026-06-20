@@ -1,5 +1,53 @@
 [
   {
+    "id": "consensys-staff-sw-engineer-2026-06-20",
+    "title": "Staff Software Engineer: Consumer (Money)",
+    "company": "Consensys",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Staff level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "TypeScript",
+      "DeFi",
+      "Smart Contract Development"
+    ],
+    "applyLink": "https://arc.dev/remote-jobs/web3"
+  },
+  {
+    "id": "alchemy-solana-engineer-2026-06-20",
+    "title": "Remote Web3 Solana Engineer",
+    "company": "Alchemy",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Substream"
+    ],
+    "applyLink": "https://cryptojobslist.com/remote_solana"
+  },
+  {
+    "id": "zscaler-sr-prod-engineer-2026-06-20",
+    "title": "Web3 Sr. Production Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$119,000 - $170,000",
+    "requirements": [
+      "Automation",
+      "Security",
+      "Cloud Infrastructure",
+      "Kubernetes"
+    ],
+    "applyLink": "https://web3.career/sr-production-engineer-zscaler/150565"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
