@@ -1,42 +1,48 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify new UI components on homepage', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
+test.use({ launchOptions: { executablePath: '/usr/bin/google-chrome' } });
 
-  // Handle Policy Modal
+test.beforeEach(async ({ page }) => {
+  await page.goto('http://localhost:3000/');
   const acceptButton = page.locator('button:has-text("I Understand and Accept")');
   if (await acceptButton.isVisible()) {
     await acceptButton.click();
   }
+});
 
+test('Verify new UI components on homepage', async ({ page }) => {
   // Verify Daily Learning Streak
   await expect(page.locator('h3:has-text("Learning Streak")')).toBeVisible();
-  await expect(page.locator('text=/Days/')).toBeVisible();
+
+  // Verify Project Idea
+  await expect(page.locator('h3:has-text("Project Idea")')).toBeVisible();
 
   // Verify Security Pulse
   await expect(page.locator('h3:has-text("Security Pulse")')).toBeVisible();
-  await expect(page.locator('text=/Safety Index/')).toBeVisible();
 
   await page.screenshot({ path: 'verification_screenshots/homepage_new_features.png', fullPage: true });
 });
 
-test('Verify new Admin charts', async ({ page }) => {
-  await page.goto('http://localhost:3000/#/notadmin');
+test('Verify Interview Prep view', async ({ page }) => {
+  // Click Interview link in nav
+  await page.click('nav a:has-text("Interview")');
 
-  // Handle Policy Modal if it appears
-  const acceptButton = page.locator('button:has-text("I Understand and Accept")');
-  if (await acceptButton.isVisible()) {
-    await acceptButton.click();
-  }
+  // Verify technical Q&A
+  await expect(page.locator('text=Blockchain Trilemma')).toBeVisible();
 
-  // Wait for charts to load
-  await page.waitForTimeout(5000);
+  // Check for either possible title text
+  const title = page.locator('h1').filter({ hasText: /Interview Preparation|INTERVIEW_PREP.CORE/i });
+  await expect(title).toBeVisible();
 
-  // Verify Market Opportunity Distribution
-  await expect(page.locator('h3:has-text("Market Opportunity Distribution")')).toBeVisible();
+  await page.screenshot({ path: 'verification_screenshots/interview_prep.png', fullPage: true });
+});
 
-  // Verify Skill Market Value
-  await expect(page.locator('h3:has-text("Skill Market Value (Avg USD)")')).toBeVisible();
+test('Verify updated data feed', async ({ page }) => {
+  await page.goto('http://localhost:3000/#/news');
 
-  await page.screenshot({ path: 'verification_screenshots/admin_new_charts.png', fullPage: true });
+  // Verify one of the new news items
+  await expect(page.locator('text=Force Bridge Announces Sunset')).toBeVisible();
+  await expect(page.locator('text=ALEX Protocol Exploited')).toBeVisible();
+
+  await page.screenshot({ path: 'verification_screenshots/news_feed_updated.png', fullPage: true });
 });

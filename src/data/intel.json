@@ -1,5 +1,26 @@
 [
   {
+    "title": "Force Bridge Announces Sunset and Planned Wind-down",
+    "category": "INFRA",
+    "summary": "Force Bridge has announced it will be sunsetting over the next six months, urging users to migrate assets to alternative cross-chain solutions.",
+    "date": "2026-06-21",
+    "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-june-2025"
+  },
+  {
+    "title": "ALEX Protocol Access Control Vulnerability Identified",
+    "category": "INFRA",
+    "summary": "Weak access controls within the ALEX Protocol were identified as the root cause for recent security concerns, highlighting the need for robust permission management.",
+    "date": "2026-06-21",
+    "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-june-2025"
+  },
+  {
+    "title": "ALEX Protocol Exploited for $8.3M via Malicious Transfer",
+    "category": "HACK",
+    "summary": "An attacker bypassed access controls in ALEX Protocol by creating a fake token and vault, tricking the protocol into calling a malicious transfer function.",
+    "date": "2026-06-21",
+    "sourceLink": "https://www.halborn.com/blog/post/month-in-review-top-defi-hacks-of-june-2025"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

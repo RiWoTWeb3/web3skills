@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, MessageSquare, HelpCircle
 } from 'lucide-react';
 import {
   Routes,
@@ -583,6 +584,71 @@ const SecurityPulse = ({ darkMode, intelData }) => {
   );
 };
 
+const ProjectIdeas = ({ darkMode }) => {
+  const ideas = [
+    {
+      title: "DeFi Yield Aggregator",
+      complexity: "Advanced",
+      tech: ["Solidity", "Foundry", "DeFi"],
+      desc: "Build a vault that automatically shifts capital between different lending protocols to maximize yield."
+    },
+    {
+      title: "Solana NFT Marketplace",
+      complexity: "Intermediate",
+      tech: ["Rust", "Anchor", "React"],
+      desc: "Create a performant marketplace for SPL NFTs using the Anchor framework and Metaplex."
+    },
+    {
+      title: "ZK Proof Voter",
+      complexity: "Expert",
+      tech: ["Circom", "Solidity", "ZK-SNARKs"],
+      desc: "Implement a privacy-preserving voting system where votes are cast without revealing the voter's identity."
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20 bg-accent-blue/5' : 'bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200 rounded-xl'} p-8 border relative overflow-hidden group`}>
+      {darkMode && <div className="scanline" />}
+      <div className="flex items-center justify-between mb-4 relative z-10">
+        <div className="flex items-center gap-3">
+          <Lightbulb className={darkMode ? 'text-accent-blue' : 'text-purple-600'} size={24} />
+          <h3 className={`text-sm font-mono uppercase tracking-[0.2em] ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Idea</h3>
+        </div>
+        <div className={`px-2 py-0.5 rounded-[2px] border ${darkMode ? 'bg-purple-500/10 border-purple-500/30 text-purple-400' : 'bg-purple-100 border-purple-200 text-purple-700'} text-[10px] font-mono font-bold animate-pulse`}>
+          BUILD_MODE
+        </div>
+      </div>
+
+      <div className="space-y-4 relative z-10">
+        {ideas.slice(0, 1).map((idea, i) => (
+          <div key={i}>
+            <p className={`text-xs font-mono uppercase tracking-widest mb-1 ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Recommended Project:</p>
+            <p className={`text-3xl font-extrabold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{idea.title}</p>
+            <div className="flex gap-2 mt-2">
+              {idea.tech.map(t => (
+                <span key={t} className={`text-[9px] font-mono px-1.5 py-0.5 border ${darkMode ? 'bg-white/5 border-white/10 text-slate-400' : 'bg-white border-gray-200 text-gray-500'}`}>
+                  {t}
+                </span>
+              ))}
+            </div>
+            <p className={`text-xs leading-relaxed mt-3 ${darkMode ? 'text-slate-400 font-mono text-[11px]' : 'text-gray-600'}`}>
+              {idea.desc}
+            </p>
+          </div>
+        ))}
+        <Link
+          to="/careers"
+          className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest px-4 py-2 transition-all ${
+            darkMode ? 'bg-purple-600 text-white font-bold hover:bg-purple-700' : 'bg-purple-600 text-white rounded-lg hover:bg-purple-700'
+          }`}
+        >
+          View Roadmaps <ArrowRight size={14} />
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 const DailyLearningStreak = ({ darkMode }) => {
   const [streak, setStreak] = useState(0);
 
@@ -926,6 +992,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1100,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1256,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -2639,6 +2727,75 @@ const NewsView = ({ darkMode }) => {
   );
 };
 
+const InterviewPrepView = ({ darkMode }) => {
+  const [activeCategory, setActiveCategory] = useState('CORE');
+
+  const questions = {
+    'CORE': [
+      { q: "What is the difference between a Hard Fork and a Soft Fork?", a: "A hard fork is a non-backwards-compatible upgrade where nodes must upgrade to continue participating. A soft fork is backwards-compatible where upgraded nodes can still communicate with non-upgraded nodes." },
+      { q: "Explain Proof of Stake (PoS) vs Proof of Work (PoW).", a: "PoW relies on computational power (mining) to secure the network, while PoS relies on economic stake (validators holding tokens) to achieve consensus." },
+      { q: "What are the three components of the Blockchain Trilemma?", a: "Security, Scalability, and Decentralization. It's widely believed that blockchain systems can only truly optimize for two of the three at any given time." }
+    ],
+    'EVM': [
+      { q: "What is the difference between transfer, send, and call in Solidity?", a: "transfer and send have a 2300 gas limit and revert/return false on failure. call is the recommended method for sending ether as it forwards all remaining gas and allows for more flexible error handling." },
+      { q: "What are the common reentrancy attack preventions?", a: "Using the Checks-Effects-Interactions pattern, employing reentrancy guards (like OpenZeppelin's ReentrancyGuard), and ensuring state changes happen before external calls." },
+      { q: "What is the EVM and how does it execute code?", a: "The Ethereum Virtual Machine (EVM) is a stack-based execution engine that processes bytecode instructions (Opcodes) to update the state of the Ethereum network." }
+    ],
+    'SOLANA': [
+      { q: "How does the Solana Account Model work?", a: "Everything in Solana is an account. Accounts store state and metadata. Programs are also accounts marked as executable. Accounts must pay 'rent' in SOL to persist on the network." },
+      { q: "What is Proof of History (PoH)?", a: "PoH is a high-frequency Verifiable Delay Function that provides a cryptographically secure way to order transactions in time before they are added to a block." },
+      { q: "What are PDAs (Program Derived Addresses)?", a: "PDAs are addresses that do not have a private key and are derived from a program ID and seeds. They allow programs to programmatically sign for transactions and manage state." }
+    ]
+  };
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Curated technical Q&A for Web3 Engineering Roles
+        </p>
+      </div>
+
+      <div className="flex gap-2 mb-8">
+        {Object.keys(questions).map(cat => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`px-6 py-3 text-sm font-semibold transition-all focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+              activeCategory === cat
+                ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light rounded-xl')
+                : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase rounded-[4px]' : 'btn-glass-light rounded-xl')
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {questions[activeCategory].map((item, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-8 border`}>
+            <div className="flex gap-4">
+              <div className={`mt-1 p-2 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-600'}`}>
+                <HelpCircle size={20} />
+              </div>
+              <div className="space-y-4">
+                <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.q}</h3>
+                <div className={`p-4 border-l-4 ${darkMode ? 'bg-white/[0.02] border-accent-blue text-slate-300 font-mono text-sm' : 'bg-gray-50 border-blue-600 text-gray-700'}`}>
+                  {item.a}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const CareersView = ({ darkMode, viewMode, getCareerMatch }) => {
   const evmCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'EVM');
   const solanaCareers = Object.entries(careerPaths).filter(([_, career]) => career.ecosystem === 'Solana');
@@ -3198,6 +3355,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3716,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />
