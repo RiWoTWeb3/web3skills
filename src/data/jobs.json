@@ -1,5 +1,53 @@
 [
   {
+    "id": "uniswap-senior-smart-contract-2026-06-22",
+    "title": "Senior Smart Contract Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $260,000",
+    "requirements": [
+      "Solidity",
+      "EVM Mechanics",
+      "Smart Contract Development",
+      "DeFi"
+    ],
+    "applyLink": "https://uniswap.org/jobs"
+  },
+  {
+    "id": "anza-software-engineer-consensus-2026-06-22",
+    "title": "Software Engineer, Consensus",
+    "company": "Anza",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$160,000 - $230,000",
+    "requirements": [
+      "Rust",
+      "Solana Fundamentals",
+      "Distributed Systems",
+      "Consensus Mechanisms"
+    ],
+    "applyLink": "https://apply.workable.com/anza-xyz/"
+  },
+  {
+    "id": "alchemy-backend-distributed-2026-06-22",
+    "title": "Software Engineer (Backend) - Distributed Systems",
+    "company": "Alchemy",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $240,000",
+    "requirements": [
+      "Go",
+      "Distributed Systems",
+      "API Building & Scaling",
+      "Cloud Architecture"
+    ],
+    "applyLink": "https://www.alchemy.com/jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
