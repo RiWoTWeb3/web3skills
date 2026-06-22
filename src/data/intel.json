@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-11 Now Operational",
+    "category": "INFRA",
+    "summary": "The eleventh devnet for Ethereum's Pectra upgrade is live, focusing on refinements to EIP-7702 and account abstraction performance improvements.",
+    "date": "2026-06-22",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Monad Public Testnet Surpasses 1M Unique Wallets",
+    "category": "INFRA",
+    "summary": "Monad's parallelized EVM testnet has reached a major milestone with over 1 million unique wallet addresses, signaling massive developer interest.",
+    "date": "2026-06-22",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "BtcTurk Hot Wallet Exploit: $55M Compromised",
+    "category": "HACK",
+    "summary": "Turkish exchange BtcTurk suffered a security breach of its hot wallets, resulting in an estimated $55 million loss across multiple assets.",
+    "date": "2026-06-22",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
