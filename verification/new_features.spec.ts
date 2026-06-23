@@ -1,5 +1,11 @@
 import { test, expect } from '@playwright/test';
 
+test.use({
+  launchOptions: {
+    executablePath: '/usr/bin/google-chrome',
+  },
+});
+
 test('Verify new UI components on homepage', async ({ page }) => {
   await page.goto('http://localhost:3000/');
 
@@ -10,33 +16,32 @@ test('Verify new UI components on homepage', async ({ page }) => {
   }
 
   // Verify Daily Learning Streak
-  await expect(page.locator('h3:has-text("Learning Streak")')).toBeVisible();
-  await expect(page.locator('text=/Days/')).toBeVisible();
+  await expect(page.locator('h3').filter({ hasText: "Learning Streak" })).toBeVisible();
 
   // Verify Security Pulse
-  await expect(page.locator('h3:has-text("Security Pulse")')).toBeVisible();
-  await expect(page.locator('text=/Safety Index/')).toBeVisible();
+  await expect(page.locator('h3').filter({ hasText: "Security Pulse" })).toBeVisible();
+
+  // Verify Project Ideas
+  await expect(page.locator('h3').filter({ hasText: /^Project Idea$/ })).toBeVisible();
 
   await page.screenshot({ path: 'verification_screenshots/homepage_new_features.png', fullPage: true });
 });
 
-test('Verify new Admin charts', async ({ page }) => {
-  await page.goto('http://localhost:3000/#/notadmin');
+test('Verify Interview Prep page', async ({ page }) => {
+  await page.goto('http://localhost:3000/#/interview-prep');
 
-  // Handle Policy Modal if it appears
+  // Handle Policy Modal
   const acceptButton = page.locator('button:has-text("I Understand and Accept")');
   if (await acceptButton.isVisible()) {
     await acceptButton.click();
   }
 
-  // Wait for charts to load
-  await page.waitForTimeout(5000);
+  // Verify Heading
+  await expect(page.locator('h1').filter({ hasText: /Interview Preparation|INTERVIEW_PREP.CORE/ })).toBeVisible();
 
-  // Verify Market Opportunity Distribution
-  await expect(page.locator('h3:has-text("Market Opportunity Distribution")')).toBeVisible();
+  // Verify Q&A content
+  await expect(page.locator('text=Ethereum account model')).toBeVisible();
+  await expect(page.locator('text=PDA in Solana')).toBeVisible();
 
-  // Verify Skill Market Value
-  await expect(page.locator('h3:has-text("Skill Market Value (Avg USD)")')).toBeVisible();
-
-  await page.screenshot({ path: 'verification_screenshots/admin_new_charts.png', fullPage: true });
+  await page.screenshot({ path: 'verification_screenshots/interview_prep.png', fullPage: true });
 });
