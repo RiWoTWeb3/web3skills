@@ -1,51 +1,49 @@
 [
   {
-    "id": "helius-staff-performance-2026-05-31",
-    "title": "Staff Performance Engineer, Trading Infrastructure",
-    "company": "Helius",
-    "type": "SVM",
+    "id": "kraken-ai-infra-2026-06-23",
+    "title": "Senior Software Engineer \u2013 AI Infrastructure",
+    "company": "Kraken",
+    "type": "Backend",
     "workType": "Remote",
-    "experience": "Expert level",
-    "salaryRange": "$180,000 - $250,000",
+    "experience": "Senior level",
+    "salaryRange": "$150,000 - $220,000",
     "requirements": [
-      "Rust",
-      "Solana",
-      "Trading Infrastructure",
-      "Performance Engineering"
+      "AI Infrastructure",
+      "Python",
+      "Go",
+      "Kubernetes"
     ],
-    "applyLink": "https://web3.career/remote+solana-jobs"
+    "applyLink": "https://cryptojobslist.com/remote"
   },
   {
-    "id": "cow-dao-senior-backend-2026-05-31",
-    "title": "Senior Backend Engineer (Rust)",
-    "company": "CoW DAO",
+    "id": "nethermind-it-lead-2026-06-23",
+    "title": "IT Department Lead",
+    "company": "Nethermind",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$130,000 - $180,000",
+    "requirements": [
+      "Engineering",
+      "IT Management",
+      "Blockchain"
+    ],
+    "applyLink": "https://cryptojobslist.com/remote"
+  },
+  {
+    "id": "kaia-labs-protocol-2026-06-23",
+    "title": "Senior Protocol Engineer",
+    "company": "Kaia Labs Limited",
     "type": "EVM",
     "workType": "Remote",
     "experience": "Senior level",
-    "salaryRange": "$150,000 - $210,000",
+    "salaryRange": "$140,000 - $210,000",
     "requirements": [
-      "Rust",
-      "Ethereum",
-      "DeFi",
-      "Solvers"
-    ],
-    "applyLink": "https://web3.career/remote+rust-jobs"
-  },
-  {
-    "id": "jumpcrypto-prod-engineer-2026-05-31",
-    "title": "Crypto Production Engineer",
-    "company": "Jumpcrypto",
-    "type": "Backend",
-    "workType": "Remote",
-    "experience": "Mid-Senior level",
-    "salaryRange": "$150,000 - $200,000",
-    "requirements": [
+      "Blockchain Protocols",
       "Go",
-      "Distributed Systems",
-      "Ethereum",
-      "Validator Infrastructure"
+      "Distributed Systems"
     ],
-    "applyLink": "https://web3.career/remote+solana-jobs"
+    "applyLink": "https://cryptojobslist.com/remote"
   },
   {
     "id": "helius-staff-performance-2026-05-31",

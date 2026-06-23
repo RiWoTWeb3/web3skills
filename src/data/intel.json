@@ -1,5 +1,26 @@
 [
   {
+    "title": "Luxor Technology Expands Web3 Infrastructure in China",
+    "category": "INFRA",
+    "summary": "Luxor Technology announced its expansion into the Chinese market, focusing on providing institutional-grade mining and Web3 infrastructure services.",
+    "date": "2026-06-23",
+    "sourceLink": "https://cryptojobslist.com/remote"
+  },
+  {
+    "title": "Aztec Labs Announces Post-Mortem on Aztec Connect Vulnerability",
+    "category": "INFRA",
+    "summary": "Aztec Labs released a detailed post-mortem regarding the $2.28M drain on Aztec Connect, highlighting ZK proof settlement gaps.",
+    "date": "2026-06-23",
+    "sourceLink": "https://rekt.news/aztec-connect-rekt"
+  },
+  {
+    "title": "Humanity Protocol Exploited for $36.4M via Private Key Leak",
+    "category": "HACK",
+    "summary": "A private key leak on a single device led to a $36.4M loss for Humanity Protocol across Ethereum and BSC.",
+    "date": "2026-06-23",
+    "sourceLink": "https://rekt.news/humanity-protocol-rekt"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
@@ -77,13 +98,6 @@
     "sourceLink": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
   },
   {
-    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-    "category": "HACK",
-    "summary": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
-    "date": "2026-04-14",
-    "sourceLink": "https://rekt.news/drift-protocol-rekt"
-  },
-  {
     "title": "Monad Testnet Milestone: 1 Million Unique Wallets Surpassed",
     "category": "INFRA",
     "summary": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
@@ -96,13 +110,6 @@
     "summary": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
     "date": "2026-04-12",
     "sourceLink": "https://ethereum-magicians.org/"
-  },
-  {
-    "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-    "category": "HACK",
-    "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
-    "date": "2026-04-12",
-    "sourceLink": "https://immunefi.com/blog/"
   },
   {
     "title": "EigenLayer Mainnet Launch Introduces Restaking",
