@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, HelpCircle, MessageSquare
 } from 'lucide-react';
 import {
   Routes,
@@ -654,6 +655,52 @@ const TrendingSkills = ({ darkMode, trendingSkills }) => (
   </div>
 );
 
+const ProjectIdeas = ({ darkMode }) => {
+  const projects = [
+    {
+      title: "Multi-signature Wallet",
+      description: "Build a secure wallet that requires multiple approvals for transactions.",
+      tech: "Solidity",
+      difficulty: "Intermediate",
+      icon: Shield
+    },
+    {
+      title: "Token Vesting Program",
+      description: "Create a program to release tokens over time to stakeholders.",
+      tech: "Anchor/Rust",
+      difficulty: "Advanced",
+      icon: Zap
+    },
+    {
+      title: "ZK Private Voting",
+      description: "Implement a voting system that maintains voter privacy using ZK Proofs.",
+      tech: "Circom/SnarkJS",
+      difficulty: "Expert",
+      icon: Key
+    }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-yellow-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Ideas</h3>
+      </div>
+      <div className="space-y-4">
+        {projects.map((p, i) => (
+          <div key={i} className="group cursor-pointer">
+            <div className="flex items-center justify-between mb-1">
+              <p className={`text-sm font-bold ${darkMode ? 'text-white group-hover:text-accent-blue' : 'text-gray-900 group-hover:text-blue-600'}`}>{p.title}</p>
+              <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded ${darkMode ? 'bg-white/5 text-slate-400' : 'bg-gray-100 text-gray-500'}`}>{p.difficulty}</span>
+            </div>
+            <p className={`text-xs ${darkMode ? 'text-slate-400 font-mono text-[10px]' : 'text-gray-600'}`}>{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const SkillOfTheDay = ({ darkMode }) => {
   const [skill, setSkill] = useState<{ name: string; category: string } | null>(null);
 
@@ -926,6 +973,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1081,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1237,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -2463,6 +2532,56 @@ const SystemIntelligenceSummary = ({ darkMode, intelData }) => {
   );
 };
 
+const InterviewPrepView = ({ darkMode }) => {
+  const qanda = [
+    {
+      q: "Compare EVM and SVM execution models.",
+      a: "EVM (Ethereum Virtual Machine) uses a serial execution model where transactions are processed one by one. SVM (Solana Virtual Machine) uses Sealevel, which allows for parallel transaction execution by identifying non-overlapping state access through access lists."
+    },
+    {
+      q: "Explain Reentrancy and how to prevent it.",
+      a: "Reentrancy occurs when a contract calls an external contract before updating its state, allowing the external contract to call back into the original contract. Prevention includes using the Checks-Effects-Interactions pattern, or utilizing ReentrancyGuard mutexes."
+    },
+    {
+      q: "What is Account Abstraction (ERC-4337)?",
+      a: "ERC-4337 allows for smart contract wallets without consensus-layer changes. It introduces UserOperations, Bundlers, and Paymasters, enabling features like gasless transactions, social recovery, and batched operations."
+    },
+    {
+      q: "How do Flash Loans work?",
+      a: "Flash loans allow users to borrow any amount of assets without collateral, provided the loan is repaid within the same atomic transaction. If the loan isn't repaid, the entire transaction reverts."
+    }
+  ];
+
+  return (
+    <div className="space-y-8">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Curated technical Q&A for Web3 developers
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {qanda.map((item, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-2xl'} p-8 border group hover:border-accent-blue/30 transition-all`}>
+            <div className="flex items-start gap-4">
+              <div className={`mt-1 p-2 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-600'}`}>
+                <HelpCircle size={20} />
+              </div>
+              <div className="space-y-4">
+                <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.q}</h3>
+                <p className={`text-sm leading-relaxed ${darkMode ? 'text-slate-400 font-mono text-xs' : 'text-gray-600'}`}>{item.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const NewsView = ({ darkMode }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
@@ -3198,6 +3317,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3678,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />

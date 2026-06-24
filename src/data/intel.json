@@ -1,5 +1,47 @@
 [
   {
+    "title": "AIxCrypto Launches RoboShare and AIXC01 at Automate 2026",
+    "category": "INFRA",
+    "summary": "AIxCrypto (Nasdaq: AIXC) debuted RoboShare, a robot rental marketplace, and AIXC01, an infrastructure network for autonomous assets, bridging Embodied AI with Web3.",
+    "date": "2026-06-24",
+    "sourceLink": "https://www.morningstar.com/news/pr-newswire/20260622cn89746/aixcrypto-debuts-at-automate-2026-unveiling-its-eai-web3-robot-ecosystem-strategy-with-the-launch-of-roboshare-and-aixc01"
+  },
+  {
+    "title": "ChainSafe Systems Expands Web3 Infrastructure Suite",
+    "category": "INFRA",
+    "summary": "ChainSafe continues pioneering multi-chain infrastructure with updates to its product suite including Files and Storage on IPFS/Filecoin, further decentralizing cloud storage.",
+    "date": "2026-06-24",
+    "sourceLink": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
+    "title": "Critical Cross-Chain Protocol Logic Flaw Resolved",
+    "category": "BOUNTY",
+    "summary": "A high-impact logic vulnerability in a major cross-chain protocol was disclosed via Immunefi, resulting in a $1.2M bounty payout to a white-hat security researcher.",
+    "date": "2026-06-24",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
+    "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+    "category": "INFRA",
+    "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+    "date": "2026-06-24",
+    "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+  },
+  {
+    "title": "Chainlink Runtime Environment (CRE) Expansion",
+    "category": "INFRA",
+    "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+    "date": "2026-06-24",
+    "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+  },
+  {
+    "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
+    "category": "BOUNTY",
+    "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+    "date": "2026-06-24",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

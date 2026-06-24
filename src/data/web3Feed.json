@@ -1,5 +1,89 @@
 [
   {
+    "date": "2026-06-24",
+    "type": "job",
+    "title": "Protocol Engineer at ChainSafe Systems",
+    "description": "Join ChainSafe Systems as a Protocol Engineer. Requirements: Rust, Go, Ethereum. Remote.",
+    "link": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "job",
+    "title": "Senior Software Engineer at Alpaca",
+    "description": "Join Alpaca as a Senior Software Engineer. Requirements: Rust, Backend, Fintech. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "job",
+    "title": "Senior Backend Software Developer at BitPay",
+    "description": "Join BitPay as a Senior Backend Software Developer. Requirements: Node.js, Ethereum, Payments. Remote.",
+    "link": "https://cryptojobslist.com/remote"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "news",
+    "title": "AIxCrypto Launches RoboShare and AIXC01 at Automate 2026",
+    "description": "AIxCrypto (Nasdaq: AIXC) debuted RoboShare, a robot rental marketplace, and AIXC01, an infrastructure network for autonomous assets, bridging Embodied AI with Web3.",
+    "link": "https://www.morningstar.com/news/pr-newswire/20260622cn89746/aixcrypto-debuts-at-automate-2026-unveiling-its-eai-web3-robot-ecosystem-strategy-with-the-launch-of-roboshare-and-aixc01"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "news",
+    "title": "ChainSafe Systems Expands Web3 Infrastructure Suite",
+    "description": "ChainSafe continues pioneering multi-chain infrastructure with updates to its product suite including Files and Storage on IPFS/Filecoin, further decentralizing cloud storage.",
+    "link": "https://huntd.tech/jobs/web3-solana"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "hack",
+    "title": "Critical Cross-Chain Protocol Logic Flaw Resolved",
+    "description": "A high-impact logic vulnerability in a major cross-chain protocol was disclosed via Immunefi, resulting in a $1.2M bounty payout to a white-hat security researcher.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "job",
+    "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
+    "description": "Join Helius as a Staff Performance Engineer, Trading Infrastructure. Requirements: Rust, Solana, Trading Infrastructure. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "job",
+    "title": "Senior Backend Engineer (Rust) at CoW DAO",
+    "description": "Join CoW DAO as a Senior Backend Engineer (Rust). Requirements: Rust, Ethereum, DeFi. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "job",
+    "title": "Crypto Production Engineer at Jumpcrypto",
+    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Go, Distributed Systems, Ethereum. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "news",
+    "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+    "description": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+    "link": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "news",
+    "title": "Chainlink Runtime Environment (CRE) Expansion",
+    "description": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+    "link": "https://web3.career/web3-companies/chainlinklabs"
+  },
+  {
+    "date": "2026-06-24",
+    "type": "hack",
+    "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
+    "description": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -334,89 +418,5 @@
     "title": "Prisma Finance $12M Exploit Recovery",
     "description": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
     "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Staff Software Engineer at Circle",
-    "description": "Join Circle as a Staff Software Engineer. Requirements: Blockchain Systems, Tokenization, Infrastructure. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Chief Technology Officer (CTO) at Semiotic.AI",
-    "description": "Join Semiotic.AI as a Chief Technology Officer (CTO). Requirements: Systems Architecture, AI-to-AI Micropayments, Product Strategy. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Blockchain, Crypto, DeFi. Remote.",
-    "link": "https://web3.career/remote+solana-jobs"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
-    "description": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
-    "description": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
-    "link": "https://www.mexc.com/news/992894"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "hack",
-    "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
-    "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]
