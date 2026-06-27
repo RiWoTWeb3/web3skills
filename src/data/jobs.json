@@ -1,5 +1,53 @@
 [
   {
+    "id": "ankr-protocol-engineer-2026-06-27",
+    "title": "Senior Protocol Engineer",
+    "company": "Ankr",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Go",
+      "EVM Mechanics",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-ankr"
+  },
+  {
+    "id": "solana-foundation-rust-dev-2026-06-27",
+    "title": "Rust Developer (Core)",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "SVM",
+      "Systems Programming"
+    ],
+    "applyLink": "https://solana.com/careers"
+  },
+  {
+    "id": "ledger-backend-rust-2026-06-27",
+    "title": "Backend Engineer (Rust)",
+    "company": "Ledger",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$130,000 - $190,000",
+    "requirements": [
+      "Rust",
+      "Cryptography",
+      "Backend & API",
+      "PostgreSQL"
+    ],
+    "applyLink": "https://www.ledger.com/careers"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
