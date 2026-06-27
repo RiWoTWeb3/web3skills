@@ -1,5 +1,26 @@
 [
   {
+    "title": "Stripe Expands Web3 Payments to 150 Countries",
+    "category": "INFRA",
+    "summary": "Stripe has launched its crypto onramp and checkout services in over 150 countries, enabling seamless fiat-to-crypto conversions for global dApps.",
+    "date": "2026-06-27",
+    "sourceLink": "https://stripe.com/newsroom"
+  },
+  {
+    "title": "Lufthansa Group Integrates NFT Loyalty Program on Polygon",
+    "category": "INFRA",
+    "summary": "The Lufthansa Group has officially launched its Uptrip loyalty program on the Polygon network, allowing passengers to earn NFTs for their flights.",
+    "date": "2026-06-27",
+    "sourceLink": "https://www.lufthansa.com/uptrip"
+  },
+  {
+    "title": "UwU Lend Exploited for $20M in Flash Loan Attack",
+    "category": "HACK",
+    "summary": "DeFi lending protocol UwU Lend suffered a $20M loss due to a sophisticated flash loan attack targeting its price oracle mechanism.",
+    "date": "2026-06-27",
+    "sourceLink": "https://rekt.news/uwulend-rekt"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

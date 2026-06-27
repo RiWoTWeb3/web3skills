@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-06-27",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Ankr",
+    "description": "Join Ankr as a Senior Protocol Engineer. Requirements: Solidity, Go, EVM Mechanics. Remote.",
+    "link": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-ankr"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "job",
+    "title": "Rust Developer (Core) at Solana Foundation",
+    "description": "Join Solana Foundation as a Rust Developer (Core). Requirements: Rust, Solana, SVM. Remote.",
+    "link": "https://solana.com/careers"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "job",
+    "title": "Backend Engineer (Rust) at Ledger",
+    "description": "Join Ledger as a Backend Engineer (Rust). Requirements: Rust, Cryptography, Backend & API. Remote.",
+    "link": "https://www.ledger.com/careers"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "news",
+    "title": "Stripe Expands Web3 Payments to 150 Countries",
+    "description": "Stripe has launched its crypto onramp and checkout services in over 150 countries, enabling seamless fiat-to-crypto conversions for global dApps.",
+    "link": "https://stripe.com/newsroom"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "news",
+    "title": "Lufthansa Group Integrates NFT Loyalty Program on Polygon",
+    "description": "The Lufthansa Group has officially launched its Uptrip loyalty program on the Polygon network, allowing passengers to earn NFTs for their flights.",
+    "link": "https://www.lufthansa.com/uptrip"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "hack",
+    "title": "UwU Lend Exploited for $20M in Flash Loan Attack",
+    "description": "DeFi lending protocol UwU Lend suffered a $20M loss due to a sophisticated flash loan attack targeting its price oracle mechanism.",
+    "link": "https://rekt.news/uwulend-rekt"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -376,47 +418,5 @@
     "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
     "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
     "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]
