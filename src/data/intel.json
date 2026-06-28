@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Pectra Devnet-12 Launch",
+    "category": "INFRA",
+    "summary": "The twelfth devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance benchmarks.",
+    "date": "2026-06-27",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Monad Parallelized EVM Testnet Expansion",
+    "category": "INFRA",
+    "summary": "Monad's parallel execution testnet reaches new milestones in throughput and latency, demonstrating scalable performance for high-frequency DeFi applications.",
+    "date": "2026-06-27",
+    "sourceLink": "https://monad.xyz/blog"
+  },
+  {
+    "title": "LendHub Protocol $6.5M Exploit",
+    "category": "HACK",
+    "summary": "A logic vulnerability in the vault settlement engine of LendHub allowed an attacker to drain $6.5M in assets across multiple pools.",
+    "date": "2026-06-27",
+    "sourceLink": "https://rekt.news"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

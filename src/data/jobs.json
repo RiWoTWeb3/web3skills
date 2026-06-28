@@ -1,5 +1,53 @@
 [
   {
+    "id": "bitpay-senior-backend-2026-06-27",
+    "title": "Senior Backend Software Developer",
+    "company": "BitPay",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Node.js",
+      "EVM",
+      "TypeScript",
+      "Microservices"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-backend-software-developer-at-bitpay"
+  },
+  {
+    "id": "solana-labs-senior-backend-2026-06-27",
+    "title": "Senior Backend Engineer",
+    "company": "Solana Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$175,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "SVM"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "binance-web3-security-2026-06-27",
+    "title": "Web3 Security Specialist",
+    "company": "Binance",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $200,000",
+    "requirements": [
+      "EVM",
+      "Smart Contract Security",
+      "Vulnerability Research",
+      "Solidity"
+    ],
+    "applyLink": "https://cryptojobslist.com/web3"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
