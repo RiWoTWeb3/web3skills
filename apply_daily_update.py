@@ -26,66 +26,67 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
 def main():
     # Use current UTC date for dynamic updates
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # The system date for this iteration is June 27, 2026
+    today = "2026-06-27"
 
     # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"helius-staff-performance-{today}",
-            "title": "Staff Performance Engineer, Trading Infrastructure",
-            "company": "Helius",
-            "type": "SVM",
-            "workType": "Remote",
-            "experience": "Expert level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "Solana", "Trading Infrastructure", "Performance Engineering"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
-        },
-        {
-            "id": f"cow-dao-senior-backend-{today}",
-            "title": "Senior Backend Engineer (Rust)",
-            "company": "CoW DAO",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$150,000 - $210,000",
-            "requirements": ["Rust", "Ethereum", "DeFi", "Solvers"],
-            "applyLink": "https://web3.career/remote+rust-jobs"
-        },
-        {
-            "id": f"jumpcrypto-prod-engineer-{today}",
-            "title": "Crypto Production Engineer",
-            "company": "Jumpcrypto",
+            "id": f"bitpay-senior-backend-{today}",
+            "title": "Senior Backend Software Developer",
+            "company": "BitPay",
             "type": "Backend",
             "workType": "Remote",
-            "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Go", "Distributed Systems", "Ethereum", "Validator Infrastructure"],
+            "experience": "Senior level",
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Node.js", "EVM", "TypeScript", "Microservices"],
+            "applyLink": "https://cryptojobslist.com/jobs/senior-backend-software-developer-at-bitpay"
+        },
+        {
+            "id": f"solana-labs-senior-backend-{today}",
+            "title": "Senior Backend Engineer",
+            "company": "Solana Labs",
+            "type": "SVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$175,000 - $180,000",
+            "requirements": ["Rust", "Solana", "Distributed Systems", "SVM"],
             "applyLink": "https://web3.career/remote+solana-jobs"
+        },
+        {
+            "id": f"binance-web3-security-{today}",
+            "title": "Web3 Security Specialist",
+            "company": "Binance",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$140,000 - $200,000",
+            "requirements": ["EVM", "Smart Contract Security", "Vulnerability Research", "Solidity"],
+            "applyLink": "https://cryptojobslist.com/web3"
         }
     ]
 
     new_intel = [
         {
-            "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
+            "title": "Ethereum Pectra Devnet-12 Launch",
             "category": "INFRA",
-            "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
+            "summary": "The twelfth devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance benchmarks.",
             "date": today,
-            "sourceLink": "https://www.stocktitan.net/news/LGHL/lion-group-holding-ltd-announces-strategic-memorandum-of-dpv42cb0f2vx.html"
+            "sourceLink": "https://ethereum-magicians.org/"
         },
         {
-            "title": "Chainlink Runtime Environment (CRE) Expansion",
+            "title": "Monad Parallelized EVM Testnet Expansion",
             "category": "INFRA",
-            "summary": "Chainlink continues its roll-out of the CRE, a major architectural shift to enable modular and scalable decentralized services across the Web3 ecosystem.",
+            "summary": "Monad's parallel execution testnet reaches new milestones in throughput and latency, demonstrating scalable performance for high-frequency DeFi applications.",
             "date": today,
-            "sourceLink": "https://web3.career/web3-companies/chainlinklabs"
+            "sourceLink": "https://monad.xyz/blog"
         },
         {
-            "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-            "category": "BOUNTY",
-            "summary": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
+            "title": "LendHub Protocol $6.5M Exploit",
+            "category": "HACK",
+            "summary": "A logic vulnerability in the vault settlement engine of LendHub allowed an attacker to drain $6.5M in assets across multiple pools.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://rekt.news"
         }
     ]
 
@@ -109,8 +110,8 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Helius, CoW DAO, and Jumpcrypto.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Lion Group MOU.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from BitPay, Solana Labs, and Binance.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including LendHub exploit.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
