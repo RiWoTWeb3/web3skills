@@ -5,7 +5,8 @@ import {
   Circle, Download, Upload, Share2, Eye, X, Copy, Check, Moon, Sun,
   ChevronDown, ChevronUp, Search, MessageCircle, Github, ArrowRight,
   Rocket, Users, Zap, Star, ExternalLink, Menu, XCircle, Filter,
-  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal
+  Briefcase, Newspaper, ShieldAlert, Activity, Key, Database, Terminal,
+  Lightbulb, HelpCircle, MessageSquare
 } from 'lucide-react';
 import {
   Routes,
@@ -761,6 +762,62 @@ const BugBountySpotlight = ({ darkMode }) => {
   );
 };
 
+const PROJECT_IDEAS_COLLECTION = [
+  {
+    title: "ZK-based Voting System",
+    difficulty: "Advanced",
+    skills: ["Circom", "Solidity", "Zero Knowledge Proofs"],
+    description: "Build a privacy-preserving voting protocol using SNARKs."
+  },
+  {
+    title: "Gas-Optimized DEX Aggregator",
+    difficulty: "Intermediate",
+    skills: ["Solidity", "Yul", "Uniswap V3 API"],
+    description: "Create a router that finds the best prices across multiple AMMs."
+  },
+  {
+    title: "Solana Subscription Protocol",
+    difficulty: "Intermediate",
+    skills: ["Rust", "Anchor", "Solana Program Library"],
+    description: "Implement recurring payments using PDAs and time-based logic."
+  },
+  {
+    title: "Cross-chain Lending Bridge",
+    difficulty: "Advanced",
+    skills: ["Solidity", "Chainlink CCIP", "Security"],
+    description: "Enable assets to be used as collateral across different L2s."
+  }
+];
+
+const ProjectIdeas = ({ darkMode }) => {
+  const [idea, setIdea] = useState(PROJECT_IDEAS_COLLECTION[0]);
+
+  useEffect(() => {
+    setIdea(PROJECT_IDEAS_COLLECTION[Math.floor(Math.random() * PROJECT_IDEAS_COLLECTION.length)]);
+  }, []);
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 rounded-xl'} p-6 border flex flex-col justify-center`}>
+      <div className="flex items-center gap-2 mb-3">
+        <Lightbulb size={16} className={darkMode ? 'text-accent-blue' : 'text-green-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Project Idea</h3>
+      </div>
+      <div className="space-y-2">
+        <p className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{idea.title}</p>
+        <div className="flex gap-2">
+           <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-green-100 text-green-700'}`}>{idea.difficulty}</span>
+        </div>
+        <p className={`text-[10px] leading-relaxed ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>{idea.description}</p>
+        <div className="flex flex-wrap gap-1 mt-2">
+          {idea.skills.map(s => (
+            <span key={s} className={`text-[8px] font-mono ${darkMode ? 'text-slate-500' : 'text-gray-400'}`}>#{s}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DailyMission = ({ darkMode, displaySkills }) => {
   const [mission, setMission] = useState<{ name: string; category: string } | null>(null);
 
@@ -926,6 +983,16 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
             >
               Intel
             </Link>
+            <Link
+              to="/interview-prep"
+              className={`transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'btn-industrial-primary' : 'btn-primary-light')
+                  : (darkMode ? 'btn-glass-dark text-xs font-mono uppercase tracking-wider' : 'btn-glass-light text-xs font-mono uppercase tracking-wider')
+              }`}
+            >
+              Interview
+            </Link>
             
             {!viewMode && (
               <>
@@ -1024,6 +1091,17 @@ const Navigation = ({ theme, setTheme, setShowShareModal, setShowViewModal, view
               }`}
             >
               Intel Feed
+            </Link>
+            <Link
+              to="/interview-prep"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 text-sm font-medium focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:outline-none ${
+                location.pathname === '/interview-prep'
+                  ? (darkMode ? 'bg-accent-blue text-black rounded-[4px]' : 'bg-blue-50 text-blue-600 rounded-lg')
+                  : (darkMode ? 'text-slate-400 font-mono uppercase rounded-[4px]' : 'text-gray-600 rounded-lg')
+              }`}
+            >
+              Interview Prep
             </Link>
             <div className="flex gap-2 px-4 pt-2">
               <button
@@ -1169,10 +1247,11 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
       )}
 
       {!viewMode && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DailyMission darkMode={darkMode} displaySkills={displaySkills} />
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
+          <ProjectIdeas darkMode={darkMode} />
         </div>
       )}
 
@@ -2091,6 +2170,72 @@ const SystemCapacityMonitor = ({ darkMode, keys }) => {
       <div className="flex justify-between mt-2">
         <p className={`text-[10px] font-mono uppercase tracking-widest ${darkMode ? 'text-slate-500' : 'text-gray-500'}`}>Quota Consumption</p>
         <p className={`text-[10px] font-mono font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{stats.percentage.toFixed(1)}%</p>
+      </div>
+    </div>
+  );
+};
+
+const InterviewPrepView = ({ darkMode }) => {
+  const qa = [
+    {
+      q: "What is the difference between call, delegatecall, and staticcall in Solidity?",
+      a: "• 'call' executes code in another contract with its own storage.\n• 'delegatecall' executes code in another contract but uses the CALLER'S storage (crucial for proxies).\n• 'staticcall' is like 'call' but disallows any state modifications."
+    },
+    {
+      q: "How does the Rust borrow checker handle smart contract state?",
+      a: "In frameworks like Anchor, state is managed through Accounts. The borrow checker ensures that you don't have multiple mutable references to the same account data in a single transaction, preventing data races and certain logic bugs."
+    },
+    {
+      q: "Explain the Check-Effects-Interactions pattern.",
+      a: "It's a security pattern to prevent reentrancy: \n1. Checks: Validate all inputs and preconditions (require statements).\n2. Effects: Update the contract's internal state (e.g., balance = 0).\n3. Interactions: Interact with external contracts or send Ether (e.g., transfer)."
+    },
+    {
+      q: "What are EVM Opcodes and why do they matter for optimization?",
+      a: "Opcodes are the low-level instructions the EVM executes (e.g., PUSH1, SSTORE). Understanding opcodes helps in writing gas-optimized Yul/Solidity by choosing instructions that consume less gas (e.g., using MSTORE vs SSTORE where possible)."
+    }
+  ];
+
+  return (
+    <div className="space-y-8 animate-slideUp">
+      <div className="mb-8">
+        <h1 className={`text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900 text-shadow'}`}>
+          {darkMode ? 'INTERVIEW_PREP.CORE' : 'Interview Preparation'}
+        </h1>
+        <p className={`text-xl ${darkMode ? 'text-slate-400 font-mono text-sm uppercase' : 'text-gray-700'}`}>
+          Technical Q&A for Web3 Engineering Roles
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {qa.map((item, i) => (
+          <div key={i} className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-8 border`}>
+            <div className="flex items-start gap-4">
+              <div className={`mt-1 p-2 rounded ${darkMode ? 'bg-accent-blue/10 text-accent-blue' : 'bg-blue-50 text-blue-600'}`}>
+                <HelpCircle size={20} />
+              </div>
+              <div className="space-y-4">
+                <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.q}</h3>
+                <div className={`text-sm leading-relaxed whitespace-pre-wrap ${darkMode ? 'text-slate-400 font-mono' : 'text-gray-600'}`}>
+                  {item.a}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className={`${darkMode ? 'surface-industrial border-accent-blue/20' : 'bg-blue-50 border-blue-200 rounded-2xl'} p-8 border text-center`}>
+         <MessageSquare className={`mx-auto mb-4 ${darkMode ? 'text-accent-blue' : 'text-blue-600'}`} size={32} />
+         <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Practice with the Community</h3>
+         <p className={`text-sm mb-6 ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>Join our Discord to participate in weekly technical mock interviews.</p>
+         <a
+            href="https://discord.gg/qMd7jwV7UG"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${darkMode ? 'btn-industrial-primary' : 'bg-blue-600 text-white px-6 py-2 rounded-lg'} inline-flex items-center gap-2`}
+          >
+            Join RiWoT Discord <ExternalLink size={16} />
+          </a>
       </div>
     </div>
   );
@@ -3198,6 +3343,7 @@ const Footer = ({ darkMode }) => (
             <ul className={`space-y-2 text-sm font-mono ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
               <li><Link to="/skills" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Skill Tree</Link></li>
               <li><Link to="/careers" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Roadmaps</Link></li>
+              <li><Link to="/interview-prep" className={`${darkMode ? 'hover:text-accent-blue' : 'hover:text-accent-blue'} transition-colors focus-visible:ring-1 focus-visible:ring-accent-blue focus-visible:outline-none rounded-[2px]`}>Interview Prep</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -3558,6 +3704,11 @@ const App = () => {
             } />
             <Route path="/news" element={
               <NewsView
+                darkMode={darkMode}
+              />
+            } />
+            <Route path="/interview-prep" element={
+              <InterviewPrepView
                 darkMode={darkMode}
               />
             } />

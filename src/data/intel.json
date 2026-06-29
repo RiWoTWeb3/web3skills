@@ -1,5 +1,47 @@
 [
   {
+    "title": "Solana Foundation Launches Validator Health Program v2",
+    "category": "INFRA",
+    "summary": "The Solana Foundation has unveiled a new program to incentivize validator health and geographic decentralization, offering performance-based rewards.",
+    "date": "2026-06-29",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Ethereum Pectra Upgrade: Devnet-12 Successfully Operational",
+    "category": "INFRA",
+    "summary": "Ethereum developers successfully launched devnet-12 for the Pectra upgrade, reaching stability within hours and beginning load testing of new EIPs.",
+    "date": "2026-06-29",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Cross-chain Bridge Vulnerability: $15M Recovered via Whitehat Intervention",
+    "category": "HACK",
+    "summary": "A critical vulnerability in a major cross-chain bridge was mitigated by a white-hat hacker, preventing a potential $15M exploit. The protocol has issued a bounty.",
+    "date": "2026-06-29",
+    "sourceLink": "https://rekt.news"
+  },
+  {
+    "title": "Solana Foundation Launches Validator Health Program v2",
+    "category": "INFRA",
+    "summary": "The Solana Foundation has unveiled a new program to incentivize validator health and geographic decentralization, offering performance-based rewards.",
+    "date": "2026-06-27",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Ethereum Pectra Upgrade: Devnet-12 Successfully Operational",
+    "category": "INFRA",
+    "summary": "Ethereum developers successfully launched devnet-12 for the Pectra upgrade, reaching stability within hours and beginning load testing of new EIPs.",
+    "date": "2026-06-27",
+    "sourceLink": "https://ethereum-magicians.org/"
+  },
+  {
+    "title": "Cross-chain Bridge Vulnerability: $15M Recovered via Whitehat Intervention",
+    "category": "HACK",
+    "summary": "A critical vulnerability in a major cross-chain bridge was mitigated by a white-hat hacker, preventing a potential $15M exploit. The protocol has issued a bounty.",
+    "date": "2026-06-27",
+    "sourceLink": "https://rekt.news"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",

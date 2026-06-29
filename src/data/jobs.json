@@ -1,5 +1,101 @@
 [
   {
+    "id": "brave-staff-security-2026-06-29",
+    "title": "Staff Security and Privacy Engineer",
+    "company": "Brave",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $230,000",
+    "requirements": [
+      "Rust",
+      "Security",
+      "Privacy",
+      "C++"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "zscaler-staff-sre-2026-06-29",
+    "title": "Staff Site Reliability Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "SRE",
+      "Infrastructure",
+      "Networking"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "okx-quant-dev-2026-06-29",
+    "title": "Quant Developer (Rust)",
+    "company": "OKX",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Rust",
+      "Trading Systems",
+      "Low-Latency",
+      "Quant"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "brave-staff-security-2026-06-27",
+    "title": "Staff Security and Privacy Engineer",
+    "company": "Brave",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $230,000",
+    "requirements": [
+      "Rust",
+      "Security",
+      "Privacy",
+      "C++"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "zscaler-staff-sre-2026-06-27",
+    "title": "Staff Site Reliability Engineer",
+    "company": "Zscaler",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "SRE",
+      "Infrastructure",
+      "Networking"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "okx-quant-dev-2026-06-27",
+    "title": "Quant Developer (Rust)",
+    "company": "OKX",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Rust",
+      "Trading Systems",
+      "Low-Latency",
+      "Quant"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
     "id": "helius-staff-performance-2026-05-31",
     "title": "Staff Performance Engineer, Trading Infrastructure",
     "company": "Helius",
