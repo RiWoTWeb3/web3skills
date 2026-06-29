@@ -1,5 +1,89 @@
 [
   {
+    "date": "2026-06-29",
+    "type": "job",
+    "title": "Staff Security and Privacy Engineer at Brave",
+    "description": "Join Brave as a Staff Security and Privacy Engineer. Requirements: Rust, Security, Privacy. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "job",
+    "title": "Staff Site Reliability Engineer at Zscaler",
+    "description": "Join Zscaler as a Staff Site Reliability Engineer. Requirements: Rust, SRE, Infrastructure. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "job",
+    "title": "Quant Developer (Rust) at OKX",
+    "description": "Join OKX as a Quant Developer (Rust). Requirements: Rust, Trading Systems, Low-Latency. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "news",
+    "title": "Solana Foundation Launches Validator Health Program v2",
+    "description": "The Solana Foundation has unveiled a new program to incentivize validator health and geographic decentralization, offering performance-based rewards.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade: Devnet-12 Successfully Operational",
+    "description": "Ethereum developers successfully launched devnet-12 for the Pectra upgrade, reaching stability within hours and beginning load testing of new EIPs.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "hack",
+    "title": "Cross-chain Bridge Vulnerability: $15M Recovered via Whitehat Intervention",
+    "description": "A critical vulnerability in a major cross-chain bridge was mitigated by a white-hat hacker, preventing a potential $15M exploit. The protocol has issued a bounty.",
+    "link": "https://rekt.news"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "job",
+    "title": "Staff Security and Privacy Engineer at Brave",
+    "description": "Join Brave as a Staff Security and Privacy Engineer. Requirements: Rust, Security, Privacy. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "job",
+    "title": "Staff Site Reliability Engineer at Zscaler",
+    "description": "Join Zscaler as a Staff Site Reliability Engineer. Requirements: Rust, SRE, Infrastructure. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "job",
+    "title": "Quant Developer (Rust) at OKX",
+    "description": "Join OKX as a Quant Developer (Rust). Requirements: Rust, Trading Systems, Low-Latency. Remote.",
+    "link": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "news",
+    "title": "Solana Foundation Launches Validator Health Program v2",
+    "description": "The Solana Foundation has unveiled a new program to incentivize validator health and geographic decentralization, offering performance-based rewards.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "news",
+    "title": "Ethereum Pectra Upgrade: Devnet-12 Successfully Operational",
+    "description": "Ethereum developers successfully launched devnet-12 for the Pectra upgrade, reaching stability within hours and beginning load testing of new EIPs.",
+    "link": "https://ethereum-magicians.org/"
+  },
+  {
+    "date": "2026-06-27",
+    "type": "hack",
+    "title": "Cross-chain Bridge Vulnerability: $15M Recovered via Whitehat Intervention",
+    "description": "A critical vulnerability in a major cross-chain bridge was mitigated by a white-hat hacker, preventing a potential $15M exploit. The protocol has issued a bounty.",
+    "link": "https://rekt.news"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -334,89 +418,5 @@
     "title": "Prisma Finance $12M Exploit Recovery",
     "description": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
     "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Staff Software Engineer at Circle",
-    "description": "Join Circle as a Staff Software Engineer. Requirements: Blockchain Systems, Tokenization, Infrastructure. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Chief Technology Officer (CTO) at Semiotic.AI",
-    "description": "Join Semiotic.AI as a Chief Technology Officer (CTO). Requirements: Systems Architecture, AI-to-AI Micropayments, Product Strategy. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Blockchain, Crypto, DeFi. Remote.",
-    "link": "https://web3.career/remote+solana-jobs"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
-    "description": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
-    "description": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
-    "link": "https://www.mexc.com/news/992894"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "hack",
-    "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
-    "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]
