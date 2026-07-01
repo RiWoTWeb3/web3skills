@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-06-29",
+    "type": "job",
+    "title": "Senior Rust Engineer, Core Protocol at Solana Foundation",
+    "description": "Join Solana Foundation as a Senior Rust Engineer, Core Protocol. Requirements: Rust, Solana, Distributed Systems. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "job",
+    "title": "Smart Contract Engineer at Uniswap Labs",
+    "description": "Join Uniswap Labs as a Smart Contract Engineer. Requirements: Solidity, Ethereum, Foundry. Remote.",
+    "link": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "job",
+    "title": "Backend Infrastructure Engineer at Chainlink Labs",
+    "description": "Join Chainlink Labs as a Backend Infrastructure Engineer. Requirements: Go, Kubernetes, Ethereum. Remote.",
+    "link": "https://web3.career/remote+backend-jobs"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "news",
+    "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
+    "description": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
+    "link": "https://ethereum.org/en/developers/"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "news",
+    "title": "Solana Firedancer Client Enters Beta Stage",
+    "description": "Jump Crypto announces that the Firedancer validator client has entered beta, promising 1M+ TPS and significant network decentralization.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-06-29",
+    "type": "hack",
+    "title": "DeFi Protocol ShieldSafe Discloses $2M Bug Bounty",
+    "description": "ShieldSafe protocol successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
+    "link": "https://immunefi.com/blog/"
+  },
+  {
     "date": "2026-05-31",
     "type": "job",
     "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
@@ -376,47 +418,5 @@
     "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
     "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
     "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Level Blockchain Security Engineer at CertiK",
-    "description": "Join CertiK as a Senior Level Blockchain Security Engineer. Requirements: Solidity, Rust, Go. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "job",
-    "title": "Senior Full Stack Engineer at Rho Labs",
-    "description": "Join Rho Labs as a Senior Full Stack Engineer. Requirements: React, Web3, DeFi. Remote.",
-    "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "Ethereum Upgrade Roadmap: Glamsterdam and Hegota",
-    "description": "Ethereum developers continue progress on major upgrades like Glamsterdam and Hegota, focusing on scalability and MEV fairness.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "news",
-    "title": "DeepSeek AI Predicts Range-Bound ETH/SOL Prices",
-    "description": "DeepSeek AI outlook points to range-bound price action for Ethereum and Solana in April 2026 due to lack of clear catalysts.",
-    "link": "https://www.mexc.com/news/992865"
-  },
-  {
-    "date": "2026-04-02",
-    "type": "hack",
-    "title": "PeckShield March 2026 Exploit Recap: $52M Lost",
-    "description": "Crypto hack and exploit losses reached $52 million in March 2026 according to PeckShield's monthly security report.",
-    "link": "https://www.theblock.co/post/396010/crypto-hack-exploit-losses-52-million"
   }
 ]

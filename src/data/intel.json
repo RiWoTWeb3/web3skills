@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
+    "category": "INFRA",
+    "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
+    "date": "2026-06-29",
+    "sourceLink": "https://ethereum.org/en/developers/"
+  },
+  {
+    "title": "Solana Firedancer Client Enters Beta Stage",
+    "category": "INFRA",
+    "summary": "Jump Crypto announces that the Firedancer validator client has entered beta, promising 1M+ TPS and significant network decentralization.",
+    "date": "2026-06-29",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "DeFi Protocol ShieldSafe Discloses $2M Bug Bounty",
+    "category": "BOUNTY",
+    "summary": "ShieldSafe protocol successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
+    "date": "2026-06-29",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
     "title": "Lion Group Holding Ltd Announces Strategic MOU with Meili Capital",
     "category": "INFRA",
     "summary": "Lion Group and Meili Capital to explore joint investment vehicles focused on digital assets, Web3, and AI-related opportunities across infrastructure and tokenization sectors.",
