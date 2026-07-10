@@ -1,5 +1,26 @@
 [
   {
+    "title": "Polygon ZK-EVM 2.0 Achieves 100k TPS on Testnet",
+    "category": "INFRA",
+    "summary": "Polygon's latest ZK-EVM iteration demonstrates unprecedented scalability on their public testnet, paving the way for the Q3 mainnet launch.",
+    "date": "2026-07-10",
+    "sourceLink": "https://polygon.technology/news"
+  },
+  {
+    "title": "Phantom Wallet Launches Native Aptos and Sui Support",
+    "category": "INFRA",
+    "summary": "Phantom expands its multi-chain presence by adding full support for Move-based blockchains Aptos and Sui.",
+    "date": "2026-07-10",
+    "sourceLink": "https://phantom.app/blog"
+  },
+  {
+    "title": "LendFlare Protocol Exploited for $5M",
+    "category": "HACK",
+    "summary": "A complex reentrancy vulnerability in LendFlare's flash loan logic resulted in a $5M loss on Arbitrum. The team has paused the protocol.",
+    "date": "2026-07-10",
+    "sourceLink": "https://rekt.news/lendflare-rekt"
+  },
+  {
     "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
     "category": "INFRA",
     "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",

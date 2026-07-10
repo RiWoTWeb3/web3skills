@@ -605,6 +605,66 @@ const SecurityPulse = ({ darkMode, intelData }) => {
   );
 };
 
+const TrendingProtocols = ({ darkMode }) => {
+  const protocols = [
+    { name: 'EigenLayer', type: 'Restaking', growth: '+142%' },
+    { name: 'Monad', type: 'Parallel EVM', growth: '+89%' },
+    { name: 'Berachain', type: 'PoL L1', growth: '+115%' },
+    { name: 'Celestia', type: 'Data Availability', growth: '+76%' }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <TrendingUp size={16} className={darkMode ? 'text-accent-blue' : 'text-green-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Trending Protocols</h3>
+      </div>
+      <div className="space-y-3">
+        {protocols.map((protocol, idx) => (
+          <div key={idx} className={`flex justify-between items-center ${darkMode ? 'border-b border-white/5 pb-2 last:border-0 last:pb-0' : 'border-b border-gray-100 pb-2 last:border-0 last:pb-0'}`}>
+            <div>
+              <div className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{protocol.name}</div>
+              <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{protocol.type}</div>
+            </div>
+            <div className="text-xs font-bold text-green-500">{protocol.growth}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const CommunityEvents = ({ darkMode }) => {
+  const events = [
+    { name: 'ETHGlobal San Francisco', date: 'Oct 18-20, 2026', type: 'Hackathon' },
+    { name: 'Solana Breakpoint', date: 'Sep 24-27, 2026', type: 'Conference' },
+    { name: 'ZK Summit 13', date: 'Nov 12, 2026', type: 'Summit' },
+    { name: 'DeFi Security Standard', date: 'Aug 05, 2026', type: 'Workshop' }
+  ];
+
+  return (
+    <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
+      <div className="flex items-center gap-2 mb-4">
+        <Users size={16} className={darkMode ? 'text-accent-blue' : 'text-purple-600'} />
+        <h3 className={`text-xs font-mono uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>Upcoming Events</h3>
+      </div>
+      <div className="space-y-3">
+        {events.map((event, idx) => (
+          <div key={idx} className={`flex flex-col ${darkMode ? 'border-b border-white/5 pb-2 last:border-0 last:pb-0' : 'border-b border-gray-100 pb-2 last:border-0 last:pb-0'}`}>
+            <div className="flex justify-between items-start mb-1">
+              <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{event.name}</span>
+              <span className={`text-[10px] px-2 py-0.5 rounded-full ${darkMode ? 'bg-purple-900/30 text-purple-400' : 'bg-purple-100 text-purple-800'}`}>
+                {event.type}
+              </span>
+            </div>
+            <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{event.date}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const ProjectIdeas = ({ darkMode }) => {
   return (
     <div className={`${darkMode ? 'surface-industrial border-white/5' : 'bg-white border-gray-200 rounded-xl'} p-6 border`}>
@@ -1252,6 +1312,16 @@ const HomePage = ({ darkMode, viewMode, setViewMode, setSharedSkills, checkedSki
           <BugBountySpotlight darkMode={darkMode} />
           <SkillOfTheDay darkMode={darkMode} />
           <ProjectIdeas darkMode={darkMode} />
+        </div>
+      )}
+
+      {!viewMode && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 mb-6">
+          <TrendingProtocols darkMode={darkMode} />
+          <CommunityEvents darkMode={darkMode} />
+          {/* Placeholders for future widgets to complete the 4-col layout */}
+          <div className={`hidden lg:block ${darkMode ? 'surface-industrial border-white/5 opacity-50' : 'bg-gray-50 border-gray-100 opacity-50'} rounded-xl border border-dashed`}></div>
+          <div className={`hidden lg:block ${darkMode ? 'surface-industrial border-white/5 opacity-50' : 'bg-gray-50 border-gray-100 opacity-50'} rounded-xl border border-dashed`}></div>
         </div>
       )}
 

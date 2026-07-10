@@ -1,5 +1,53 @@
 [
   {
+    "id": "phantom-senior-rust-2026-07-10",
+    "title": "Senior Rust Engineer",
+    "company": "Phantom Wallet",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Cryptography",
+      "Wallets"
+    ],
+    "applyLink": "https://phantom.app/jobs"
+  },
+  {
+    "id": "aave-solidity-2026-07-10",
+    "title": "Lead Solidity Developer",
+    "company": "Aave",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Lead",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Solidity",
+      "DeFi",
+      "Security",
+      "EVM"
+    ],
+    "applyLink": "https://aave.com/careers"
+  },
+  {
+    "id": "monad-protocol-2026-07-10",
+    "title": "Protocol Engineer",
+    "company": "Monad Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $230,000",
+    "requirements": [
+      "C++",
+      "Rust",
+      "EVM",
+      "High Performance"
+    ],
+    "applyLink": "https://monad.xyz/careers"
+  },
+  {
     "id": "solana-foundation-senior-rust-2026-06-29",
     "title": "Senior Rust Engineer, Core Protocol",
     "company": "Solana Foundation",
