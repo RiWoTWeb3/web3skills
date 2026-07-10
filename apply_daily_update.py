@@ -11,7 +11,7 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
     if prepend:
         # Avoid duplicates if script is run multiple times on the same day
-        existing_keys = {item[unique_key] for item in data if unique_key in item and (not today or item.get('date') == today)}
+        existing_keys = {item[unique_key] for item in data if unique_key in item}
         filtered_new = [item for item in new_items if unique_key in item and item[unique_key] not in existing_keys]
         data = filtered_new + data
     else:
@@ -25,68 +25,66 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
     print(f"Updated {filepath}")
 
 def main():
-    # Use current UTC date for dynamic updates
-    # User specified June 29, 2026
-    today = "2026-06-29"
+    # Today's Date
+    today = "2026-07-10"
 
-    # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"solana-foundation-senior-rust-{today}",
-            "title": "Senior Rust Engineer, Core Protocol",
-            "company": "Solana Foundation",
+            "id": f"phantom-senior-rust-{today}",
+            "title": "Senior Rust Engineer",
+            "company": "Phantom Wallet",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$160,000 - $240,000",
-            "requirements": ["Rust", "Solana", "Distributed Systems", "Core Protocol"],
-            "applyLink": "https://web3.career/remote+solana-jobs"
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Rust", "Solana", "Cryptography", "Wallets"],
+            "applyLink": "https://phantom.app/jobs"
         },
         {
-            "id": f"uniswap-labs-smart-contract-{today}",
-            "title": "Smart Contract Engineer",
-            "company": "Uniswap Labs",
+            "id": f"aave-solidity-{today}",
+            "title": "Lead Solidity Developer",
+            "company": "Aave",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Lead",
+            "salaryRange": "$180,000 - $250,000",
+            "requirements": ["Solidity", "DeFi", "Security", "EVM"],
+            "applyLink": "https://aave.com/careers"
+        },
+        {
+            "id": f"monad-protocol-{today}",
+            "title": "Protocol Engineer",
+            "company": "Monad Labs",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Mid-Senior level",
-            "salaryRange": "$150,000 - $220,000",
-            "requirements": ["Solidity", "Ethereum", "Foundry", "DeFi"],
-            "applyLink": "https://web3.career/remote+solidity-jobs"
-        },
-        {
-            "id": f"chainlink-labs-backend-{today}",
-            "title": "Backend Infrastructure Engineer",
-            "company": "Chainlink Labs",
-            "type": "Backend",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $210,000",
-            "requirements": ["Go", "Kubernetes", "Ethereum", "Distributed Systems"],
-            "applyLink": "https://web3.career/remote+backend-jobs"
+            "salaryRange": "$150,000 - $230,000",
+            "requirements": ["C++", "Rust", "EVM", "High Performance"],
+            "applyLink": "https://monad.xyz/careers"
         }
     ]
 
     new_intel = [
         {
-            "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
+            "title": "Polygon ZK-EVM 2.0 Achieves 100k TPS on Testnet",
             "category": "INFRA",
-            "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
+            "summary": "Polygon's latest ZK-EVM iteration demonstrates unprecedented scalability on their public testnet, paving the way for the Q3 mainnet launch.",
             "date": today,
-            "sourceLink": "https://ethereum.org/en/developers/"
+            "sourceLink": "https://polygon.technology/news"
         },
         {
-            "title": "Solana Firedancer Client Enters Beta Stage",
+            "title": "Phantom Wallet Launches Native Aptos and Sui Support",
             "category": "INFRA",
-            "summary": "Jump Crypto announces that the Firedancer validator client has entered beta, promising 1M+ TPS and significant network decentralization.",
+            "summary": "Phantom expands its multi-chain presence by adding full support for Move-based blockchains Aptos and Sui.",
             "date": today,
-            "sourceLink": "https://solana.com/news"
+            "sourceLink": "https://phantom.app/blog"
         },
         {
-            "title": "DeFi Protocol ShieldSafe Discloses $2M Bug Bounty",
-            "category": "BOUNTY",
-            "summary": "ShieldSafe protocol successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
+            "title": "LendFlare Protocol Exploited for $5M",
+            "category": "HACK",
+            "summary": "A complex reentrancy vulnerability in LendFlare's flash loan logic resulted in a $5M loss on Arbitrum. The team has paused the protocol.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://rekt.news/lendflare-rekt"
         }
     ]
 
