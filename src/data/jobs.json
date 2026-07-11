@@ -1,5 +1,197 @@
 [
   {
+    "id": "solana-foundation-senior-rust-2026-07-11",
+    "title": "Senior Rust Engineer",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Core Protocol"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "uniswap-labs-smart-contract-2026-07-11",
+    "title": "Smart Contract Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "certik-security-engineer-2026-07-11",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Golang",
+      "Security"
+    ],
+    "applyLink": "https://indeed.com/remote-web3-jobs"
+  },
+  {
+    "id": "solana-foundation-senior-rust-2026-07-11",
+    "title": "Senior Rust Engineer",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Core Protocol"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "uniswap-labs-smart-contract-2026-07-11",
+    "title": "Smart Contract Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "certik-security-engineer-2026-07-11",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Golang",
+      "Security"
+    ],
+    "applyLink": "https://indeed.com/remote-web3-jobs"
+  },
+  {
+    "id": "solana-foundation-senior-rust-2026-07-11",
+    "title": "Senior Rust Engineer",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Core Protocol"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "uniswap-labs-smart-contract-2026-07-11",
+    "title": "Smart Contract Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "certik-security-engineer-2026-07-11",
+    "title": "Blockchain Security Engineer",
+    "company": "CertiK",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$102,000 - $180,000",
+    "requirements": [
+      "Solidity",
+      "Rust",
+      "Golang",
+      "Security"
+    ],
+    "applyLink": "https://indeed.com/remote-web3-jobs"
+  },
+  {
+    "id": "solana-foundation-senior-rust-2026-06-29",
+    "title": "Senior Rust Engineer, Core Protocol",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Core Protocol"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "uniswap-labs-smart-contract-2026-06-29",
+    "title": "Smart Contract Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "chainlink-labs-backend-2026-06-29",
+    "title": "Backend Infrastructure Engineer",
+    "company": "Chainlink Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": [
+      "Go",
+      "Kubernetes",
+      "Ethereum",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote+backend-jobs"
+  },
+  {
     "id": "solana-foundation-senior-rust-2026-06-29",
     "title": "Senior Rust Engineer, Core Protocol",
     "company": "Solana Foundation",

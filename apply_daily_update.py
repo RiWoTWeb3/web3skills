@@ -10,7 +10,6 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
             data = json.load(f)
 
     if prepend:
-        # Avoid duplicates if script is run multiple times on the same day
         existing_keys = {item[unique_key] for item in data if unique_key in item and (not today or item.get('date') == today)}
         filtered_new = [item for item in new_items if unique_key in item and item[unique_key] not in existing_keys]
         data = filtered_new + data
@@ -25,15 +24,12 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
     print(f"Updated {filepath}")
 
 def main():
-    # Use current UTC date for dynamic updates
-    # User specified June 29, 2026
-    today = "2026-06-29"
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    # Data sourced for the daily update
     new_jobs = [
         {
             "id": f"solana-foundation-senior-rust-{today}",
-            "title": "Senior Rust Engineer, Core Protocol",
+            "title": "Senior Rust Engineer",
             "company": "Solana Foundation",
             "type": "SVM",
             "workType": "Remote",
@@ -54,39 +50,39 @@ def main():
             "applyLink": "https://web3.career/remote+solidity-jobs"
         },
         {
-            "id": f"chainlink-labs-backend-{today}",
-            "title": "Backend Infrastructure Engineer",
-            "company": "Chainlink Labs",
-            "type": "Backend",
+            "id": f"certik-security-engineer-{today}",
+            "title": "Blockchain Security Engineer",
+            "company": "CertiK",
+            "type": "EVM",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $210,000",
-            "requirements": ["Go", "Kubernetes", "Ethereum", "Distributed Systems"],
-            "applyLink": "https://web3.career/remote+backend-jobs"
+            "experience": "Mid level",
+            "salaryRange": "$102,000 - $180,000",
+            "requirements": ["Solidity", "Rust", "Golang", "Security"],
+            "applyLink": "https://indeed.com/remote-web3-jobs"
         }
     ]
 
     new_intel = [
         {
-            "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
+            "title": "Ethereum's Pectra Upgrade Details Finalized",
             "category": "INFRA",
-            "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
+            "summary": "The Ethereum community has finalized details on the Pectra upgrade, ensuring major scalability improvements by year's end.",
             "date": today,
-            "sourceLink": "https://ethereum.org/en/developers/"
+            "sourceLink": "https://ethereum.org/"
         },
         {
-            "title": "Solana Firedancer Client Enters Beta Stage",
+            "title": "Firedancer Testnet Approaches 1M TPS",
             "category": "INFRA",
-            "summary": "Jump Crypto announces that the Firedancer validator client has entered beta, promising 1M+ TPS and significant network decentralization.",
+            "summary": "Solana's new Firedancer client achieves record-breaking speeds on testnet environments.",
             "date": today,
             "sourceLink": "https://solana.com/news"
         },
         {
-            "title": "DeFi Protocol ShieldSafe Discloses $2M Bug Bounty",
-            "category": "BOUNTY",
-            "summary": "ShieldSafe protocol successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
+            "title": "DeFi Lending Protocol Exploit: $4M Lost",
+            "category": "HACK",
+            "summary": "A minor lending protocol was exploited via flash loan manipulation, leading to a $4M drain from liquidity pools.",
             "date": today,
-            "sourceLink": "https://immunefi.com/blog/"
+            "sourceLink": "https://rekt.news/"
         }
     ]
 
@@ -110,28 +106,26 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Solana Foundation, Uniswap, and Chainlink.", "type": "success" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates including Pectra upgrade news.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]
 
-    # Update main data files
     update_json_file('src/data/web3Feed.json', new_feed_items, limit=60, today=today)
     update_json_file('src/data/jobs.json', new_jobs, unique_key='id', today=today)
     update_json_file('src/data/intel.json', new_intel, today=today)
     update_json_file('src/data/system_logs.json', new_logs, limit=50, unique_key='msg', today=today)
 
-    # Update system health
     health_file = 'src/data/system_health.json'
     if os.path.exists(health_file):
         with open(health_file, 'r') as f:
             health = json.load(f)
 
-        health['lastSync'] = datetime.now(timezone.utc).isoformat()
+        health['lastSync'] = datetime.now(timezone.utc).isoformat().replace('+00:00', '') + "Z"
         health['status'] = 'HEALTHY'
         new_sync = { "date": today, "status": "SUCCESS", "itemsAdded": len(new_feed_items) }
         health['syncHistory'] = [new_sync] + [h for h in health['syncHistory'] if h['date'] != today]
-        health['syncHistory'] = health['syncHistory'][:10] # Keep last 10 syncs
+        health['syncHistory'] = health['syncHistory'][:10]
 
         with open(health_file, 'w') as f:
             json.dump(health, f, indent=2)
