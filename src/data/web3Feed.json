@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-07-11",
+    "type": "job",
+    "title": "Senior Rust Engineer at Solana Foundation",
+    "description": "Join Solana Foundation as a Senior Rust Engineer. Requirements: Rust, Solana, Distributed Systems. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-07-11",
+    "type": "job",
+    "title": "Smart Contract Engineer at Uniswap Labs",
+    "description": "Join Uniswap Labs as a Smart Contract Engineer. Requirements: Solidity, Ethereum, Foundry. Remote.",
+    "link": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "date": "2026-07-11",
+    "type": "job",
+    "title": "Blockchain Security Engineer at CertiK",
+    "description": "Join CertiK as a Blockchain Security Engineer. Requirements: Solidity, Rust, Golang. Remote.",
+    "link": "https://indeed.com/remote-web3-jobs"
+  },
+  {
+    "date": "2026-07-11",
+    "type": "news",
+    "title": "Ethereum's Pectra Upgrade Details Finalized",
+    "description": "The Ethereum community has finalized details on the Pectra upgrade, ensuring major scalability improvements by year's end.",
+    "link": "https://ethereum.org/"
+  },
+  {
+    "date": "2026-07-11",
+    "type": "news",
+    "title": "Firedancer Testnet Approaches 1M TPS",
+    "description": "Solana's new Firedancer client achieves record-breaking speeds on testnet environments.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-07-11",
+    "type": "hack",
+    "title": "DeFi Lending Protocol Exploit: $4M Lost",
+    "description": "A minor lending protocol was exploited via flash loan manipulation, leading to a $4M drain from liquidity pools.",
+    "link": "https://rekt.news/"
+  },
+  {
     "date": "2026-06-29",
     "type": "job",
     "title": "Senior Rust Engineer, Core Protocol at Solana Foundation",
@@ -376,47 +418,5 @@
     "title": "Prisma Finance $12M Exploit Recovery",
     "description": "Prisma Finance has successfully recovered $12 million in assets following a significant exploit, coordinated through security audits and community cooperation.",
     "link": "https://cryptojobslist.com/web3"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Staff Software Engineer at Circle",
-    "description": "Join Circle as a Staff Software Engineer. Requirements: Blockchain Systems, Tokenization, Infrastructure. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Chief Technology Officer (CTO) at Semiotic.AI",
-    "description": "Join Semiotic.AI as a Chief Technology Officer (CTO). Requirements: Systems Architecture, AI-to-AI Micropayments, Product Strategy. Remote.",
-    "link": "https://www.indeed.com/q-web3-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "job",
-    "title": "Crypto Production Engineer at Jumpcrypto",
-    "description": "Join Jumpcrypto as a Crypto Production Engineer. Requirements: Blockchain, Crypto, DeFi. Remote.",
-    "link": "https://web3.career/remote+solana-jobs"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "Claw Wallet Launches to Shield On-Chain Assets for AI Agents",
-    "description": "Claw Wallet officially launches as the first purpose-built wallet infrastructure for autonomous AI Agents operating on-chain.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "news",
-    "title": "GTBS Digital Ecosystem Mainnet Launch Set for April 2026",
-    "description": "The GTBS Digital Ecosystem, integrating blockchain, AI, and DeFi, announces mainnet launch for April 2026 to drive real-world adoption.",
-    "link": "https://www.mexc.com/news/992894"
-  },
-  {
-    "date": "2026-04-05",
-    "type": "hack",
-    "title": "OpenClaw AI Trading Agent Liquidation: $250,000 Lost",
-    "description": "A significant liquidation event involving the 'Lobstar Wilde' AI trading agent was reported due to logic misinterpretation, resulting in $250k loss.",
-    "link": "https://www.morningstar.com/news/pr-newswire/20260402ln25813/claw-wallet-launches-to-shield-on-chain-assets-for-ai-agents"
   }
 ]

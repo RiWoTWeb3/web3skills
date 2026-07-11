@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum's Pectra Upgrade Details Finalized",
+    "category": "INFRA",
+    "summary": "The Ethereum community has finalized details on the Pectra upgrade, ensuring major scalability improvements by year's end.",
+    "date": "2026-07-11",
+    "sourceLink": "https://ethereum.org/"
+  },
+  {
+    "title": "Firedancer Testnet Approaches 1M TPS",
+    "category": "INFRA",
+    "summary": "Solana's new Firedancer client achieves record-breaking speeds on testnet environments.",
+    "date": "2026-07-11",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "DeFi Lending Protocol Exploit: $4M Lost",
+    "category": "HACK",
+    "summary": "A minor lending protocol was exploited via flash loan manipulation, leading to a $4M drain from liquidity pools.",
+    "date": "2026-07-11",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
     "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
     "category": "INFRA",
     "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
