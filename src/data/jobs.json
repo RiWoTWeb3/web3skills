@@ -1,5 +1,101 @@
 [
   {
+    "id": "solana-foundation-senior-rust-2026-07-12-1",
+    "title": "Senior Rust Engineer, Infrastructure",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "uniswap-labs-smart-contract-2026-07-12-1",
+    "title": "Protocol Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "chainlink-labs-backend-2026-07-12-1",
+    "title": "Backend Services Engineer",
+    "company": "Chainlink Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": [
+      "Go",
+      "Kubernetes",
+      "Ethereum",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote+backend-jobs"
+  },
+  {
+    "id": "kaia-protocol-engineer-2026-07-12",
+    "title": "Senior Protocol Engineer",
+    "company": "Kaia Labs Limited",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $180,000",
+    "requirements": [
+      "Blockchain Protocols",
+      "Distributed Systems",
+      "Go",
+      "Web3"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
+  },
+  {
+    "id": "stellar-backend-engineer-2026-07-12",
+    "title": "Backend Engineer, Integrations & APIs",
+    "company": "Stellar Development Foundation",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": [
+      "Go",
+      "API Design",
+      "Distributed Systems",
+      "Stellar Network"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
+  },
+  {
+    "id": "hyrotrader-trading-systems-2026-07-12",
+    "title": "Senior Low-Latency Trading Systems Engineer",
+    "company": "HyroTrader",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$60,000 - $120,000",
+    "requirements": [
+      "Low-Latency",
+      "Trading Systems",
+      "Rust",
+      "C++"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
+  },
+  {
     "id": "solana-foundation-senior-rust-2026-06-29",
     "title": "Senior Rust Engineer, Core Protocol",
     "company": "Solana Foundation",

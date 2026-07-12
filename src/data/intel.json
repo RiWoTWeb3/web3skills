@@ -1,5 +1,47 @@
 [
   {
+    "title": "Firedancer Beta Released for Public Testnet",
+    "category": "INFRA",
+    "summary": "Jump Crypto announces that the Firedancer validator client has been released for public testnet, promising 1M+ TPS and significant network decentralization.",
+    "date": "2026-07-12",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Ethereum's Pectra Upgrade Timeline Released",
+    "category": "INFRA",
+    "summary": "The Ethereum community has released the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
+    "date": "2026-07-12",
+    "sourceLink": "https://ethereum.org/en/developers/"
+  },
+  {
+    "title": "DeFi Protocol PolyNetwork Discloses $2M Bug Bounty",
+    "category": "BOUNTY",
+    "summary": "PolyNetwork successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
+    "date": "2026-07-12",
+    "sourceLink": "https://immunefi.com/blog/"
+  },
+  {
+    "title": "Re7 Labs Expands Onchain Operator Strategy",
+    "category": "INFRA",
+    "summary": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
+    "date": "2026-07-12",
+    "sourceLink": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
+  },
+  {
+    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
+    "category": "INFRA",
+    "summary": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
+    "date": "2026-07-12",
+    "sourceLink": "https://cryptojobslist.com/research/web3-workforce-report"
+  },
+  {
+    "title": "New Market Trading Exploit: $3.98M Drained",
+    "category": "HACK",
+    "summary": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
+    "date": "2026-07-12",
+    "sourceLink": "https://rekt.news/newmarkettrading-rekt"
+  },
+  {
     "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
     "category": "INFRA",
     "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
