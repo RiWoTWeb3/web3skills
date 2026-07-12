@@ -10,8 +10,9 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
             data = json.load(f)
 
     if prepend:
-        # Avoid duplicates if script is run multiple times on the same day
-        existing_keys = {item[unique_key] for item in data if unique_key in item and (not today or item.get('date') == today)}
+        # Avoid duplicates globally based on unique_key.
+        # Ensure we don't insert duplicate jobs (like same id).
+        existing_keys = {item[unique_key] for item in data if unique_key in item}
         filtered_new = [item for item in new_items if unique_key in item and item[unique_key] not in existing_keys]
         data = filtered_new + data
     else:
@@ -26,25 +27,24 @@ def update_json_file(filepath, new_items, unique_key='title', limit=None, prepen
 
 def main():
     # Use current UTC date for dynamic updates
-    # User specified June 29, 2026
-    today = "2026-06-29"
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     # Data sourced for the daily update
     new_jobs = [
         {
-            "id": f"solana-foundation-senior-rust-{today}",
-            "title": "Senior Rust Engineer, Core Protocol",
+            "id": f"solana-foundation-senior-rust-{today}-1",
+            "title": "Senior Rust Engineer, Infrastructure",
             "company": "Solana Foundation",
             "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
             "salaryRange": "$160,000 - $240,000",
-            "requirements": ["Rust", "Solana", "Distributed Systems", "Core Protocol"],
+            "requirements": ["Rust", "Solana", "Distributed Systems", "Infrastructure"],
             "applyLink": "https://web3.career/remote+solana-jobs"
         },
         {
-            "id": f"uniswap-labs-smart-contract-{today}",
-            "title": "Smart Contract Engineer",
+            "id": f"uniswap-labs-smart-contract-{today}-1",
+            "title": "Protocol Engineer",
             "company": "Uniswap Labs",
             "type": "EVM",
             "workType": "Remote",
@@ -54,8 +54,8 @@ def main():
             "applyLink": "https://web3.career/remote+solidity-jobs"
         },
         {
-            "id": f"chainlink-labs-backend-{today}",
-            "title": "Backend Infrastructure Engineer",
+            "id": f"chainlink-labs-backend-{today}-1",
+            "title": "Backend Services Engineer",
             "company": "Chainlink Labs",
             "type": "Backend",
             "workType": "Remote",
@@ -68,23 +68,23 @@ def main():
 
     new_intel = [
         {
-            "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
+            "title": "Firedancer Beta Released for Public Testnet",
             "category": "INFRA",
-            "summary": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
-            "date": today,
-            "sourceLink": "https://ethereum.org/en/developers/"
-        },
-        {
-            "title": "Solana Firedancer Client Enters Beta Stage",
-            "category": "INFRA",
-            "summary": "Jump Crypto announces that the Firedancer validator client has entered beta, promising 1M+ TPS and significant network decentralization.",
+            "summary": "Jump Crypto announces that the Firedancer validator client has been released for public testnet, promising 1M+ TPS and significant network decentralization.",
             "date": today,
             "sourceLink": "https://solana.com/news"
         },
         {
-            "title": "DeFi Protocol ShieldSafe Discloses $2M Bug Bounty",
+            "title": "Ethereum's Pectra Upgrade Timeline Released",
+            "category": "INFRA",
+            "summary": "The Ethereum community has released the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
+            "date": today,
+            "sourceLink": "https://ethereum.org/en/developers/"
+        },
+        {
+            "title": "DeFi Protocol PolyNetwork Discloses $2M Bug Bounty",
             "category": "BOUNTY",
-            "summary": "ShieldSafe protocol successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
+            "summary": "PolyNetwork successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
             "date": today,
             "sourceLink": "https://immunefi.com/blog/"
         }
@@ -127,7 +127,7 @@ def main():
         with open(health_file, 'r') as f:
             health = json.load(f)
 
-        health['lastSync'] = datetime.now(timezone.utc).isoformat()
+        health['lastSync'] = datetime.now(timezone.utc).isoformat().replace('+00:00', '') + "Z"
         health['status'] = 'HEALTHY'
         new_sync = { "date": today, "status": "SUCCESS", "itemsAdded": len(new_feed_items) }
         health['syncHistory'] = [new_sync] + [h for h in health['syncHistory'] if h['date'] != today]
