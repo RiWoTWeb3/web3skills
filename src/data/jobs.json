@@ -1,5 +1,101 @@
 [
   {
+    "id": "chainlink-solidity-2026-07-13-1",
+    "title": "Senior Solidity Developer",
+    "company": "Chainlink",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contracts",
+      "DeFi",
+      "EVM"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "magiceden-rust-2026-07-13-1",
+    "title": "Solana Rust Engineer",
+    "company": "Magic Eden",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "aave-protocol-2026-07-13-1",
+    "title": "Protocol Engineer",
+    "company": "Aave",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "solana-foundation-senior-rust-2026-07-13-1",
+    "title": "Senior Rust Engineer, Infrastructure",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Infrastructure"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "uniswap-labs-smart-contract-2026-07-13-1",
+    "title": "Protocol Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "DeFi"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "id": "chainlink-labs-backend-2026-07-13-1",
+    "title": "Backend Services Engineer",
+    "company": "Chainlink Labs",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": [
+      "Go",
+      "Kubernetes",
+      "Ethereum",
+      "Distributed Systems"
+    ],
+    "applyLink": "https://web3.career/remote+backend-jobs"
+  },
+  {
     "id": "solana-foundation-senior-rust-2026-07-12-1",
     "title": "Senior Rust Engineer, Infrastructure",
     "company": "Solana Foundation",
