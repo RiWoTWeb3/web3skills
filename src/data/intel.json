@@ -1,5 +1,26 @@
 [
   {
+    "title": "Ethereum Layer 2 Base reaches 1M daily active users",
+    "category": "INFRA",
+    "summary": "Coinbase's Layer 2 network Base has achieved a new milestone, surpassing 1 million daily active users.",
+    "date": "2026-07-13",
+    "sourceLink": "https://cointelegraph.com/"
+  },
+  {
+    "title": "Solana introduces new token extensions on Mainnet",
+    "category": "INFRA",
+    "summary": "The Solana Foundation has announced the launch of new token extensions, offering advanced features for developers.",
+    "date": "2026-07-13",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "DeFi Protocol XYZ exploited for $5M in flash loan attack",
+    "category": "HACK",
+    "summary": "A sophisticated flash loan attack on DeFi Protocol XYZ resulted in a loss of approximately $5 million.",
+    "date": "2026-07-13",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
     "title": "Firedancer Beta Released for Public Testnet",
     "category": "INFRA",
     "summary": "Jump Crypto announces that the Firedancer validator client has been released for public testnet, promising 1M+ TPS and significant network decentralization.",
