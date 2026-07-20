@@ -60,7 +60,8 @@
     "playwright": "^1.58.2",
     "prisma": "^6.19.2",
     "ts-node": "^10.9.2",
-    "vite": "6.3.5"
+    "typescript": "^5.2.2",
+    "vite": "^6.3.5"
   },
   "scripts": {
     "dev": "vite",

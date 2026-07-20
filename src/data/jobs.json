@@ -1,5 +1,101 @@
 [
   {
+    "id": "monad-rust-2026-07-20-1",
+    "title": "Senior Rust Engineer",
+    "company": "Monad",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "EVM",
+      "Parallel Execution",
+      "Systems Engineering"
+    ],
+    "applyLink": "https://monad.xyz/careers"
+  },
+  {
+    "id": "zellic-solidity-2026-07-20-1",
+    "title": "EVM Smart Contract Auditor",
+    "company": "Zellic",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Security Auditing",
+      "EVM",
+      "Yul"
+    ],
+    "applyLink": "https://zellic.io/careers"
+  },
+  {
+    "id": "helius-solana-2026-07-20-1",
+    "title": "Solana Core Developer",
+    "company": "Helius",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid level",
+    "salaryRange": "$140,000 - $180,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "RPC",
+      "Validator"
+    ],
+    "applyLink": "https://helius.dev/careers"
+  },
+  {
+    "id": "chainlink-solidity-2026-07-20-1",
+    "title": "Senior Solidity Developer",
+    "company": "Chainlink",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contracts",
+      "DeFi",
+      "EVM"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "magiceden-rust-2026-07-20-1",
+    "title": "Solana Rust Engineer",
+    "company": "Magic Eden",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "aave-protocol-2026-07-20-1",
+    "title": "Protocol Engineer",
+    "company": "Aave",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
     "id": "chainlink-solidity-2026-07-13-1",
     "title": "Senior Solidity Developer",
     "company": "Chainlink",

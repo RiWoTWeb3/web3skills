@@ -1,5 +1,26 @@
 [
   {
+    "title": "Monad raises $200M to scale EVM with parallel execution",
+    "category": "INFRA",
+    "summary": "Monad Labs has raised $200 million in a new funding round to build a highly parallelized EVM Layer 1.",
+    "date": "2026-07-20",
+    "sourceLink": "https://cointelegraph.com/"
+  },
+  {
+    "title": "Solana Mainnet upgrade 1.18 rolls out with scheduler improvements",
+    "category": "INFRA",
+    "summary": "Solana's new 1.18 upgrade aims to improve transaction scheduling and network performance during high congestion.",
+    "date": "2026-07-20",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "Hedgey Finance exploited for $44M across Arbitrum and Ethereum",
+    "category": "HACK",
+    "summary": "A vulnerability in the Hedgey Finance smart contracts led to a loss of $44 million in a recent exploit.",
+    "date": "2026-07-20",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
     "title": "Ethereum Layer 2 Base reaches 1M daily active users",
     "category": "INFRA",
     "summary": "Coinbase's Layer 2 network Base has achieved a new milestone, surpassing 1 million daily active users.",
