@@ -52,6 +52,12 @@ const PROJECT_IDEAS_COLLECTION = [
     description: "Develop a zero-knowledge voting system using Circom and SnarkJS.",
     difficulty: "Expert",
     tags: ["ZK", "Circom", "Privacy"]
+  },
+  {
+    title: "EVM: Flash Loan Arbitrage Bot",
+    description: "Create an automated bot to perform arbitrage using Aave flash loans.",
+    difficulty: "Expert",
+    tags: ["DeFi", "Solidity", "EVM", "MEV"]
   }
 ];
 

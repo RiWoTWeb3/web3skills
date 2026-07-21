@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-07-20",
+    "type": "job",
+    "title": "Senior Rust Engineer at Monad",
+    "description": "Join Monad as a Senior Rust Engineer. Requirements: Rust, EVM, Parallel Execution. Remote.",
+    "link": "https://monad.xyz/careers"
+  },
+  {
+    "date": "2026-07-20",
+    "type": "job",
+    "title": "EVM Smart Contract Auditor at Zellic",
+    "description": "Join Zellic as a EVM Smart Contract Auditor. Requirements: Solidity, Security Auditing, EVM. Remote.",
+    "link": "https://zellic.io/careers"
+  },
+  {
+    "date": "2026-07-20",
+    "type": "job",
+    "title": "Solana Core Developer at Helius",
+    "description": "Join Helius as a Solana Core Developer. Requirements: Rust, Solana, RPC. Remote.",
+    "link": "https://helius.dev/careers"
+  },
+  {
+    "date": "2026-07-20",
+    "type": "news",
+    "title": "Monad raises $200M to scale EVM with parallel execution",
+    "description": "Monad Labs has raised $200 million in a new funding round to build a highly parallelized EVM Layer 1.",
+    "link": "https://cointelegraph.com/"
+  },
+  {
+    "date": "2026-07-20",
+    "type": "news",
+    "title": "Solana Mainnet upgrade 1.18 rolls out with scheduler improvements",
+    "description": "Solana's new 1.18 upgrade aims to improve transaction scheduling and network performance during high congestion.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-07-20",
+    "type": "hack",
+    "title": "Hedgey Finance exploited for $44M across Arbitrum and Ethereum",
+    "description": "A vulnerability in the Hedgey Finance smart contracts led to a loss of $44 million in a recent exploit.",
+    "link": "https://rekt.news/"
+  },
+  {
     "date": "2026-07-13",
     "type": "job",
     "title": "Senior Solidity Developer at Chainlink",
@@ -376,47 +418,5 @@
     "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
     "description": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
     "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-04-10",
-    "type": "job",
-    "title": "Senior Rust Engineer at Synonym",
-    "description": "Join Synonym as a Senior Rust Engineer. Requirements: Rust, Distributed Systems, Cross-chain. Remote.",
-    "link": "https://web3.career/remote+rust-jobs"
-  },
-  {
-    "date": "2026-04-10",
-    "type": "job",
-    "title": "Founding Protocol Engineer at Joyride Labs",
-    "description": "Join Joyride Labs as a Founding Protocol Engineer. Requirements: Solidity, Rust, EVM. Remote.",
-    "link": "https://web3.career/remote+rust-jobs"
-  },
-  {
-    "date": "2026-04-10",
-    "type": "job",
-    "title": "Software Engineer - Rust at Kraken",
-    "description": "Join Kraken as a Software Engineer - Rust. Requirements: Rust, High-Throughput Systems, Trading Systems. Remote.",
-    "link": "https://web3.career/remote+rust-jobs"
-  },
-  {
-    "date": "2026-04-10",
-    "type": "news",
-    "title": "EigenLayer Mainnet Launch Introduces Restaking",
-    "description": "EigenLayer has officially launched on Ethereum mainnet, bringing restaking capabilities that allow ETH stakers to secure additional protocols and services.",
-    "link": "https://eigenlayer.xyz/"
-  },
-  {
-    "date": "2026-04-10",
-    "type": "news",
-    "title": "Solana Foundation Releases Mainnet Beta Patch",
-    "description": "Critical performance upgrades (v1.17.31) have been released to address network congestion and improve transaction reliability on the Solana blockchain.",
-    "link": "https://solana.com/"
-  },
-  {
-    "date": "2026-04-10",
-    "type": "hack",
-    "title": "OpenLeverage Suffers $236k Reentrancy Exploit",
-    "description": "DeFi lending protocol OpenLeverage was exploited for approximately $236,000 due to a reentrancy vulnerability in its lending vault contracts.",
-    "link": "https://twitter.com/PeckShield/status/1774735282539425828"
   }
 ]
