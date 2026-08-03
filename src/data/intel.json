@@ -1,5 +1,47 @@
 [
   {
+    "title": "Ethereum Layer 2 TVL hits new high in mid 2026",
+    "category": "INFRA",
+    "summary": "Ethereum Layer 2 scaling solutions have reached a new all-time high in total value locked.",
+    "date": "2026-08-03",
+    "sourceLink": "https://cointelegraph.com/"
+  },
+  {
+    "title": "Solana Foundation unveils new staking program",
+    "category": "INFRA",
+    "summary": "A new delegated staking initiative has been announced by the Solana Foundation to support decentralization.",
+    "date": "2026-08-03",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "DeFi protocol access control vulnerability leads to $2M loss",
+    "category": "HACK",
+    "summary": "A major vulnerability in access control mechanisms of a new DeFi protocol was exploited, resulting in a $2 million loss.",
+    "date": "2026-08-03",
+    "sourceLink": "https://rekt.news/"
+  },
+  {
+    "title": "Re7 Labs Expands Onchain Operator Strategy",
+    "category": "INFRA",
+    "summary": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
+    "date": "2026-08-03",
+    "sourceLink": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
+  },
+  {
+    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
+    "category": "INFRA",
+    "summary": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
+    "date": "2026-08-03",
+    "sourceLink": "https://cryptojobslist.com/research/web3-workforce-report"
+  },
+  {
+    "title": "New Market Trading Exploit: $3.98M Drained",
+    "category": "HACK",
+    "summary": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
+    "date": "2026-08-03",
+    "sourceLink": "https://rekt.news/newmarkettrading-rekt"
+  },
+  {
     "title": "Monad raises $200M to scale EVM with parallel execution",
     "category": "INFRA",
     "summary": "Monad Labs has raised $200 million in a new funding round to build a highly parallelized EVM Layer 1.",

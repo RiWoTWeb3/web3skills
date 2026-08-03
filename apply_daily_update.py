@@ -28,59 +28,59 @@ def main():
 
     new_jobs = [
         {
-            "id": f"chainlink-solidity-{today}-1",
-            "title": "Senior Solidity Developer",
-            "company": "Chainlink",
-            "type": "EVM",
+            "id": f"solana-foundation-security-{today}-1",
+            "title": "Senior IT Security Engineer",
+            "company": "Solana Foundation",
+            "type": "SVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$160,000 - $220,000",
-            "requirements": ["Solidity", "Smart Contracts", "DeFi", "EVM"],
+            "salaryRange": "$126,000 - $171,000",
+            "requirements": ["Security", "Solana", "Rust", "Web3"],
             "applyLink": "https://web3.career/"
         },
         {
-            "id": f"magiceden-rust-{today}-1",
-            "title": "Solana Rust Engineer",
-            "company": "Magic Eden",
-            "type": "SVM",
+            "id": f"jumpcrypto-production-{today}-1",
+            "title": "Crypto Production Engineer",
+            "company": "Jumpcrypto",
+            "type": "Backend",
             "workType": "Remote",
             "experience": "Mid-Senior level",
             "salaryRange": "$150,000 - $200,000",
-            "requirements": ["Rust", "Solana", "Anchor", "Web3"],
+            "requirements": ["Crypto", "Blockchain", "Python", "C++"],
             "applyLink": "https://web3.career/"
         },
         {
-            "id": f"aave-protocol-{today}-1",
-            "title": "Protocol Engineer",
-            "company": "Aave",
+            "id": f"figure-lending-crypto-{today}-1",
+            "title": "Director, Crypto Protocols",
+            "company": "Figure Lending",
             "type": "EVM",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$140,000 - $190,000",
-            "requirements": ["Solidity", "Ethereum", "Foundry", "Smart Contracts"],
-            "applyLink": "https://web3.career/"
+            "experience": "Director",
+            "salaryRange": "$174,000 - $261,000",
+            "requirements": ["Solidity", "Smart Contracts", "EVM", "Engineering Manager"],
+            "applyLink": "https://cryptojobslist.com/"
         }
     ]
 
     new_intel = [
         {
-            "title": "Ethereum Layer 2 Base reaches 1M daily active users",
+            "title": "Ethereum Layer 2 TVL hits new high in mid 2026",
             "category": "INFRA",
-            "summary": "Coinbase's Layer 2 network Base has achieved a new milestone, surpassing 1 million daily active users.",
+            "summary": "Ethereum Layer 2 scaling solutions have reached a new all-time high in total value locked.",
             "date": today,
             "sourceLink": "https://cointelegraph.com/"
         },
         {
-            "title": "Solana introduces new token extensions on Mainnet",
+            "title": "Solana Foundation unveils new staking program",
             "category": "INFRA",
-            "summary": "The Solana Foundation has announced the launch of new token extensions, offering advanced features for developers.",
+            "summary": "A new delegated staking initiative has been announced by the Solana Foundation to support decentralization.",
             "date": today,
             "sourceLink": "https://solana.com/news"
         },
         {
-            "title": "DeFi Protocol XYZ exploited for $5M in flash loan attack",
+            "title": "DeFi protocol access control vulnerability leads to $2M loss",
             "category": "HACK",
-            "summary": "A sophisticated flash loan attack on DeFi Protocol XYZ resulted in a loss of approximately $5 million.",
+            "summary": "A major vulnerability in access control mechanisms of a new DeFi protocol was exploited, resulting in a $2 million loss.",
             "date": today,
             "sourceLink": "https://rekt.news/"
         }
@@ -106,7 +106,7 @@ def main():
 
     new_logs = [
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Daily data aggregation cycle started for {today}.", "type": "info" },
-        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Chainlink, Magic Eden, and Aave.", "type": "success" },
+        { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Indexed {len(new_jobs)} new roles from Solana Foundation, Jumpcrypto, and Figure Lending.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Parsed {len(new_intel)} new intel updates.", "type": "success" },
         { "time": datetime.now(timezone.utc).strftime("%H:%M:%S"), "msg": f"Web3 Data Update [{today}] complete.", "type": "success" }
     ]

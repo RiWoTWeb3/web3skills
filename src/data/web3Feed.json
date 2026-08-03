@@ -1,5 +1,82 @@
 [
   {
+    "date": "2026-08-03",
+    "type": "job",
+    "title": "Senior IT Security Engineer at Solana Foundation",
+    "description": "Join Solana Foundation as a Senior IT Security Engineer. Requirements: Security, Solana, Rust. Remote.",
+    "link": "https://web3.career/"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "job",
+    "title": "Director, Crypto Protocols at Figure Lending",
+    "description": "Join Figure Lending as a Director, Crypto Protocols. Requirements: Solidity, Smart Contracts, EVM. Remote.",
+    "link": "https://cryptojobslist.com/"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "news",
+    "title": "Ethereum Layer 2 TVL hits new high in mid 2026",
+    "description": "Ethereum Layer 2 scaling solutions have reached a new all-time high in total value locked.",
+    "link": "https://cointelegraph.com/"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "news",
+    "title": "Solana Foundation unveils new staking program",
+    "description": "A new delegated staking initiative has been announced by the Solana Foundation to support decentralization.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "hack",
+    "title": "DeFi protocol access control vulnerability leads to $2M loss",
+    "description": "A major vulnerability in access control mechanisms of a new DeFi protocol was exploited, resulting in a $2 million loss.",
+    "link": "https://rekt.news/"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "job",
+    "title": "Senior Protocol Engineer at Kaia Labs Limited",
+    "description": "Join Kaia Labs Limited as a Senior Protocol Engineer. Requirements: Blockchain Protocols, Distributed Systems, Go. Remote.",
+    "link": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "job",
+    "title": "Backend Engineer, Integrations & APIs at Stellar Development Foundation",
+    "description": "Join Stellar Development Foundation as a Backend Engineer, Integrations & APIs. Requirements: Go, API Design, Distributed Systems. Remote.",
+    "link": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "job",
+    "title": "Senior Low-Latency Trading Systems Engineer at HyroTrader",
+    "description": "Join HyroTrader as a Senior Low-Latency Trading Systems Engineer. Requirements: Low-Latency, Trading Systems, Rust. Remote.",
+    "link": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "news",
+    "title": "Re7 Labs Expands Onchain Operator Strategy",
+    "description": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
+    "link": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "news",
+    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
+    "description": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
+    "link": "https://cryptojobslist.com/research/web3-workforce-report"
+  },
+  {
+    "date": "2026-08-03",
+    "type": "hack",
+    "title": "New Market Trading Exploit: $3.98M Drained",
+    "description": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
+    "link": "https://rekt.news/newmarkettrading-rekt"
+  },
+  {
     "date": "2026-07-20",
     "type": "job",
     "title": "Senior Rust Engineer at Monad",
@@ -341,82 +418,5 @@
     "title": "Smart Contracts Engineer EVM at Odos",
     "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
     "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "job",
-    "title": "Solana Smart Contracts Engineer at Odos",
-    "description": "Join Odos as a Solana Smart Contracts Engineer. Requirements: Rust, Solana Program Development, Anchor Framework. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "job",
-    "title": "Software Engineer, DeFi Team at BitGo",
-    "description": "Join BitGo as a Software Engineer, DeFi Team. Requirements: Go, Distributed Systems, DeFi Understanding. Remote.",
-    "link": "https://huntd.tech/jobs/web3-solana"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "news",
-    "title": "Deutsche B\u00f6rse Group Invests $200 Million in Kraken Parent",
-    "description": "Deutsche B\u00f6rse has acquired a 1.5% stake in Kraken's parent company, Payward, for $200 million, deepening a strategic partnership for institutional crypto access.",
-    "link": "https://cointelegraph.com/news/deutsche-borse-invest-200m-kraken-exchange"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "news",
-    "title": "Hacken Q1 2026 Security Report: $482M Lost to Web3 Exploits",
-    "description": "Hacken's latest report reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
-    "link": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "hack",
-    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-    "description": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
-    "link": "https://rekt.news/drift-protocol-rekt"
-  },
-  {
-    "date": "2026-04-12",
-    "type": "job",
-    "title": "Senior Rust Backend Engineer at Travoom",
-    "description": "Join Travoom as a Senior Rust Backend Engineer. Requirements: Rust, Distributed Systems, Backend Architecture. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-12",
-    "type": "job",
-    "title": "Blockchain Security Expert at CertiK",
-    "description": "Join CertiK as a Blockchain Security Expert. Requirements: Solidity, Smart Contract Auditing, Security Assessments. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-12",
-    "type": "job",
-    "title": "Mobile Engineer at Fireblocks",
-    "description": "Join Fireblocks as a Mobile Engineer. Requirements: Mobile Development, Wallet Infrastructure, Security. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-jobs-jobs.html"
-  },
-  {
-    "date": "2026-04-12",
-    "type": "news",
-    "title": "Monad Testnet Milestone: 1 Million Unique Wallets Surpassed",
-    "description": "Monad's public testnet has officially surpassed 1 million unique wallets, demonstrating strong developer interest in its parallelized EVM execution environment.",
-    "link": "https://monad.xyz/blog"
-  },
-  {
-    "date": "2026-04-12",
-    "type": "news",
-    "title": "Ethereum Pectra Devnet-11: Testing EIP-7702 refinements",
-    "description": "The eleventh devnet for the Ethereum Pectra upgrade is now operational, focusing on critical refinements to EIP-7702 and Account Abstraction performance.",
-    "link": "https://ethereum-magicians.org/"
-  },
-  {
-    "date": "2026-04-12",
-    "type": "hack",
-    "title": "DeFi Protocol Reward: $1.2M Payout on Immunefi",
-    "description": "A critical logic vulnerability in a major cross-chain protocol was safely disclosed by a white-hat researcher, earning a $1.2M reward on Immunefi.",
-    "link": "https://immunefi.com/blog/"
   }
 ]
