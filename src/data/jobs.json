@@ -1,5 +1,149 @@
 [
   {
+    "id": "solana-foundation-security-2026-08-03-1",
+    "title": "Senior IT Security Engineer",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$126,000 - $171,000",
+    "requirements": [
+      "Security",
+      "Solana",
+      "Rust",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "jumpcrypto-production-2026-08-03-1",
+    "title": "Crypto Production Engineer",
+    "company": "Jumpcrypto",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Crypto",
+      "Blockchain",
+      "Python",
+      "C++"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "figure-lending-crypto-2026-08-03-1",
+    "title": "Director, Crypto Protocols",
+    "company": "Figure Lending",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Director",
+    "salaryRange": "$174,000 - $261,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contracts",
+      "EVM",
+      "Engineering Manager"
+    ],
+    "applyLink": "https://cryptojobslist.com/"
+  },
+  {
+    "id": "kaia-protocol-engineer-2026-08-03",
+    "title": "Senior Protocol Engineer",
+    "company": "Kaia Labs Limited",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $180,000",
+    "requirements": [
+      "Blockchain Protocols",
+      "Distributed Systems",
+      "Go",
+      "Web3"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
+  },
+  {
+    "id": "stellar-backend-engineer-2026-08-03",
+    "title": "Backend Engineer, Integrations & APIs",
+    "company": "Stellar Development Foundation",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$140,000 - $210,000",
+    "requirements": [
+      "Go",
+      "API Design",
+      "Distributed Systems",
+      "Stellar Network"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
+  },
+  {
+    "id": "hyrotrader-trading-systems-2026-08-03",
+    "title": "Senior Low-Latency Trading Systems Engineer",
+    "company": "HyroTrader",
+    "type": "Backend",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$60,000 - $120,000",
+    "requirements": [
+      "Low-Latency",
+      "Trading Systems",
+      "Rust",
+      "C++"
+    ],
+    "applyLink": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
+  },
+  {
+    "id": "chainlink-solidity-2026-08-03-1",
+    "title": "Senior Solidity Developer",
+    "company": "Chainlink",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contracts",
+      "DeFi",
+      "EVM"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "magiceden-rust-2026-08-03-1",
+    "title": "Solana Rust Engineer",
+    "company": "Magic Eden",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "aave-protocol-2026-08-03-1",
+    "title": "Protocol Engineer",
+    "company": "Aave",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
     "id": "monad-rust-2026-07-20-1",
     "title": "Senior Rust Engineer",
     "company": "Monad",

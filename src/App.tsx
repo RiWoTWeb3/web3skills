@@ -582,7 +582,7 @@ const SecurityPulse = ({ darkMode, intelData }) => {
       const eventDate = new Date(item.date);
       const now = new Date();
       const diffDays = (now.getTime() - eventDate.getTime()) / (1000 * 3600 * 24);
-      return (item.category === 'HACK' || item.category === 'BOUNTY') && diffDays <= 7;
+      return (item.category === 'HACK' || item.category === 'BOUNTY') && diffDays >= 0 && diffDays <= 7;
     });
     return Math.max(0, 100 - recentEvents.length * 20);
   }, [intelData]);
