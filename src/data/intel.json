@@ -1,5 +1,26 @@
 [
   {
+    "title": "Solana's Firedancer validator client hits new testnet milestone",
+    "category": "INFRA",
+    "summary": "Jump Crypto's Firedancer client for Solana reaches a major milestone on testnet, processing over 1M TPS.",
+    "date": "2026-08-17",
+    "sourceLink": "https://blockworks.co"
+  },
+  {
+    "title": "Ethereum's Pectra upgrade successfully deployed on testnet",
+    "category": "INFRA",
+    "summary": "Core developers successfully deployed the Pectra upgrade on the Goerli testnet.",
+    "date": "2026-08-17",
+    "sourceLink": "https://coindesk.com"
+  },
+  {
+    "title": "DeFi lending protocol exploited for $10M due to oracle manipulation",
+    "category": "HACK",
+    "summary": "A popular DeFi lending protocol suffered an oracle manipulation attack leading to a $10M loss.",
+    "date": "2026-08-17",
+    "sourceLink": "https://rekt.news"
+  },
+  {
     "title": "Monad raises $200M to scale EVM with parallel execution",
     "category": "INFRA",
     "summary": "Monad Labs has raised $200 million in a new funding round to build a highly parallelized EVM Layer 1.",

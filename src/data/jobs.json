@@ -1,5 +1,50 @@
 [
   {
+    "id": "jumpcrypto-rust-2026-08-17-1",
+    "title": "Senior Rust Engineer",
+    "company": "Jump Crypto",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "HFT"
+    ],
+    "applyLink": "https://jumpcrypto.com/careers"
+  },
+  {
+    "id": "uniswap-solidity-2026-08-17-1",
+    "title": "EVM Smart Contract Developer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $210,000",
+    "requirements": [
+      "Solidity",
+      "EVM",
+      "DeFi"
+    ],
+    "applyLink": "https://uniswap.org/careers"
+  },
+  {
+    "id": "phantom-rust-2026-08-17-1",
+    "title": "Solana Protocol Engineer",
+    "company": "Phantom",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Cryptography"
+    ],
+    "applyLink": "https://phantom.app/careers"
+  },
+  {
     "id": "monad-rust-2026-07-20-1",
     "title": "Senior Rust Engineer",
     "company": "Monad",
