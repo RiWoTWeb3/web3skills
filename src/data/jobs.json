@@ -1,5 +1,50 @@
 [
   {
+    "id": "monad-senior-rust-engineer-2026-08-24",
+    "title": "Senior Rust Engineer",
+    "company": "Monad",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "EVM",
+      "Parallel Execution"
+    ],
+    "applyLink": "https://web3.career/remote+rust-jobs"
+  },
+  {
+    "id": "jito-solana-core-dev-2026-08-24",
+    "title": "Solana Core Developer",
+    "company": "Jito Labs",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "MEV"
+    ],
+    "applyLink": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "id": "trailofbits-auditor-2026-08-24",
+    "title": "Smart Contract Auditor",
+    "company": "Trail of Bits",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Security",
+      "EVM"
+    ],
+    "applyLink": "https://web3.career/remote+solidity-jobs"
+  },
+  {
     "id": "jumpcrypto-rust-2026-08-17-1",
     "title": "Senior Rust Engineer",
     "company": "Jump Crypto",
