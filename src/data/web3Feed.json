@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-08-24",
+    "type": "job",
+    "title": "Senior Rust Engineer at Monad",
+    "description": "Join Monad as a Senior Rust Engineer. Requirements: Rust, EVM, Parallel Execution. Remote.",
+    "link": "https://monad.xyz/careers"
+  },
+  {
+    "date": "2026-08-24",
+    "type": "job",
+    "title": "Solana Core Developer at Jito Labs",
+    "description": "Join Jito Labs as a Solana Core Developer. Requirements: Rust, Solana, MEV. Remote.",
+    "link": "https://web3.career/remote+solana-jobs"
+  },
+  {
+    "date": "2026-08-24",
+    "type": "job",
+    "title": "Smart Contract Auditor at Trail of Bits",
+    "description": "Join Trail of Bits as a Smart Contract Auditor. Requirements: Solidity, Security, EVM. Remote.",
+    "link": "https://web3.career/remote+solidity-jobs"
+  },
+  {
+    "date": "2026-08-24",
+    "type": "news",
+    "title": "Arbitrum Stylus Mainnet Launch",
+    "description": "Arbitrum Stylus officially launches on mainnet, enabling developers to write smart contracts in Rust, C, and C++ with EVM compatibility.",
+    "link": "https://arbitrum.io/"
+  },
+  {
+    "date": "2026-08-24",
+    "type": "news",
+    "title": "Solana Firedancer Reaches 2M TPS in Testnet",
+    "description": "Jump Crypto's Firedancer client achieves a new milestone, hitting 2 million TPS in a controlled testnet environment.",
+    "link": "https://solana.com/news"
+  },
+  {
+    "date": "2026-08-24",
+    "type": "hack",
+    "title": "DeFi Protocol Radiant Capital Exploited for $4.2M",
+    "description": "Radiant Capital suffers a flash loan attack resulting in a $4.2M loss due to a vulnerability in their cross-chain borrowing logic.",
+    "link": "https://rekt.news/radiant-rekt/"
+  },
+  {
     "date": "2026-08-17",
     "type": "job",
     "title": "Senior Rust Engineer at Jump Crypto",
@@ -40,13 +82,6 @@
     "title": "DeFi lending protocol exploited for $10M due to oracle manipulation",
     "description": "A popular DeFi lending protocol suffered an oracle manipulation attack leading to a $10M loss.",
     "link": "https://rekt.news"
-  },
-  {
-    "date": "2026-07-20",
-    "type": "job",
-    "title": "Senior Rust Engineer at Monad",
-    "description": "Join Monad as a Senior Rust Engineer. Requirements: Rust, EVM, Parallel Execution. Remote.",
-    "link": "https://monad.xyz/careers"
   },
   {
     "date": "2026-07-20",
@@ -383,40 +418,5 @@
     "title": "Smart Contracts Engineer EVM at Odos",
     "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
     "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "job",
-    "title": "Solana Smart Contracts Engineer at Odos",
-    "description": "Join Odos as a Solana Smart Contracts Engineer. Requirements: Rust, Solana Program Development, Anchor Framework. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "job",
-    "title": "Software Engineer, DeFi Team at BitGo",
-    "description": "Join BitGo as a Software Engineer, DeFi Team. Requirements: Go, Distributed Systems, DeFi Understanding. Remote.",
-    "link": "https://huntd.tech/jobs/web3-solana"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "news",
-    "title": "Deutsche B\u00f6rse Group Invests $200 Million in Kraken Parent",
-    "description": "Deutsche B\u00f6rse has acquired a 1.5% stake in Kraken's parent company, Payward, for $200 million, deepening a strategic partnership for institutional crypto access.",
-    "link": "https://cointelegraph.com/news/deutsche-borse-invest-200m-kraken-exchange"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "news",
-    "title": "Hacken Q1 2026 Security Report: $482M Lost to Web3 Exploits",
-    "description": "Hacken's latest report reveals that $482 million was lost across 44 incidents in Q1 2026, with phishing and social engineering driving the majority of losses.",
-    "link": "https://cointelegraph.com/news/web3-hacks-cost-464-million-in-q1-hacken"
-  },
-  {
-    "date": "2026-04-14",
-    "type": "hack",
-    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-    "description": "A sophisticated six-month social engineering campaign by DPRK-linked actors resulted in a $285 million loss for Drift Protocol through a fake token scam.",
-    "link": "https://rekt.news/drift-protocol-rekt"
   }
 ]

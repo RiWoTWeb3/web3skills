@@ -1,5 +1,26 @@
 [
   {
+    "title": "Arbitrum Stylus Mainnet Launch",
+    "category": "INFRA",
+    "summary": "Arbitrum Stylus officially launches on mainnet, enabling developers to write smart contracts in Rust, C, and C++ with EVM compatibility.",
+    "date": "2026-08-24",
+    "sourceLink": "https://arbitrum.io/"
+  },
+  {
+    "title": "Solana Firedancer Reaches 2M TPS in Testnet",
+    "category": "INFRA",
+    "summary": "Jump Crypto's Firedancer client achieves a new milestone, hitting 2 million TPS in a controlled testnet environment.",
+    "date": "2026-08-24",
+    "sourceLink": "https://solana.com/news"
+  },
+  {
+    "title": "DeFi Protocol Radiant Capital Exploited for $4.2M",
+    "category": "HACK",
+    "summary": "Radiant Capital suffers a flash loan attack resulting in a $4.2M loss due to a vulnerability in their cross-chain borrowing logic.",
+    "date": "2026-08-24",
+    "sourceLink": "https://rekt.news/radiant-rekt/"
+  },
+  {
     "title": "Solana's Firedancer validator client hits new testnet milestone",
     "category": "INFRA",
     "summary": "Jump Crypto's Firedancer client for Solana reaches a major milestone on testnet, processing over 1M TPS.",
