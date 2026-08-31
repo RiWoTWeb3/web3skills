@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-08-31",
+    "type": "job",
+    "title": "Senior Cryptography Engineer at a16z crypto",
+    "description": "Join a16z crypto as a Senior Cryptography Engineer. Requirements: Rust, ZK Proofs, Cryptography. Remote.",
+    "link": "https://a16zcrypto.com/jobs"
+  },
+  {
+    "date": "2026-08-31",
+    "type": "job",
+    "title": "L2 Protocol Engineer at Polygon Labs",
+    "description": "Join Polygon Labs as a L2 Protocol Engineer. Requirements: Solidity, Yul, EVM internals. Remote.",
+    "link": "https://polygon.technology/careers"
+  },
+  {
+    "date": "2026-08-31",
+    "type": "job",
+    "title": "Solana Core Developer at Jump Crypto",
+    "description": "Join Jump Crypto as a Solana Core Developer. Requirements: Rust, C++, Low-latency systems. Remote.",
+    "link": "https://jumpcrypto.com/careers"
+  },
+  {
+    "date": "2026-08-31",
+    "type": "news",
+    "title": "Bitcoin\u2019s new quantum defenses, 18.9M SOL cancelled: Hodler\u2019s Digest",
+    "description": "Bitcoin moves toward a post quantum future, Solana validators agree to curb rampant inflation and the bull case from Bernstein is for Bitcoin to peak ...",
+    "link": "https://cointelegraph.com/magazine/bitcoins-new-quantum-defenses-189m-sol-cancelled-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-08-31",
+    "type": "news",
+    "title": "Saylor signals Strategy is \u2018Back\u2019 to Bitcoin buying",
+    "description": "Michael Saylor\u2019s \u201cWe\u2019re Back\u201d post hints Strategy may resume Bitcoin buying after a two-month pause to strengthen its balance sheet.",
+    "link": "https://cointelegraph.com/news/saylor-signals-strategy-is-back-to-bitcoin-buying?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-08-31",
+    "type": "hack",
+    "title": "Cronos halts network after Tectonic exploit involving estimated $75M",
+    "description": "Crypto.com CEO Kris Marszalek said the company\u2019s app and exchange were unaffected by the Tectonic breach and continued operating normally.",
+    "link": "https://cointelegraph.com/news/cronos-network-halt-tectonic-exploit-75-million?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "date": "2026-08-24",
     "type": "job",
     "title": "Senior Rust Engineer at Monad",
@@ -372,48 +414,6 @@
   },
   {
     "date": "2026-04-16",
-    "type": "job",
-    "title": "Smart Contracts Engineer EVM at Odos",
-    "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "job",
-    "title": "Solana Smart Contracts Engineer at Odos",
-    "description": "Join Odos as a Solana Smart Contracts Engineer. Requirements: Rust, Solana Program Development, Anchor Framework. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "job",
-    "title": "Senior/Principal SDET at Paradex",
-    "description": "Join Paradex as a Senior/Principal SDET. Requirements: TypeScript, Distributed Systems, Testing. Remote.",
-    "link": "https://cryptojobslist.com/remote"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "news",
-    "title": "Web3 Smart Layer Protocol Claw Intelligence Secures $3M Seed Funding",
-    "description": "Claw Intelligence, a Web3 smart layer protocol, raised $3 million to accelerate the development of its multi-terminal AI interaction network for on-chain tasks.",
-    "link": "https://www.kucoin.com/news/flash/web3-smart-layer-protocol-claw-intelligence-secures-3m-seed-funding"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "news",
-    "title": "Franklin Templeton Expands RWAs on Monad Network",
-    "description": "Institutional demand for Monad increases as Franklin Templeton expands its Real-World Assets (RWA) offerings onto the high-performance parallelized EVM network.",
-    "link": "https://coinmarketcap.com/cmc-ai/monad/latest-updates/"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "hack",
-    "title": "Drift Protocol Social Engineering Exploit: $285M Drained",
-    "description": "A sophisticated social engineering campaign resulted in a $285 million loss for Drift Protocol, highlighting human vulnerabilities in DeFi platforms.",
-    "link": "https://rekt.news/drift-protocol-rekt"
-  },
-  {
-    "date": "2026-04-14",
     "type": "job",
     "title": "Smart Contracts Engineer EVM at Odos",
     "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
