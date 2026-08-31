@@ -1,5 +1,51 @@
 [
   {
+    "id": "a16z-crypto-rust-2026-08-31",
+    "title": "Senior Cryptography Engineer",
+    "company": "a16z crypto",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "ZK Proofs",
+      "Cryptography"
+    ],
+    "applyLink": "https://a16zcrypto.com/jobs"
+  },
+  {
+    "id": "polygon-solidity-2026-08-31",
+    "title": "L2 Protocol Engineer",
+    "company": "Polygon Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $210,000",
+    "requirements": [
+      "Solidity",
+      "Yul",
+      "EVM internals"
+    ],
+    "applyLink": "https://polygon.technology/careers"
+  },
+  {
+    "id": "jump-crypto-solana-2026-08-31",
+    "title": "Solana Core Developer",
+    "company": "Jump Crypto",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "C++",
+      "Low-latency systems",
+      "Solana"
+    ],
+    "applyLink": "https://jumpcrypto.com/careers"
+  },
+  {
     "id": "monad-senior-rust-engineer-2026-08-24",
     "title": "Senior Rust Engineer",
     "company": "Monad",

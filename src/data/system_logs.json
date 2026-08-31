@@ -1,5 +1,15 @@
 [
   {
+    "time": "04:37:02",
+    "msg": "Daily data aggregation cycle started for 2026-08-31.",
+    "type": "info"
+  },
+  {
+    "time": "04:37:02",
+    "msg": "Web3 Data Update [2026-08-31] complete.",
+    "type": "success"
+  },
+  {
     "time": "04:15:29",
     "msg": "Daily data aggregation cycle started for 2026-08-24.",
     "type": "info"
@@ -237,16 +247,6 @@
   {
     "time": "11:54:15",
     "msg": "Web3 Data Update [2026-04-12] complete.",
-    "type": "success"
-  },
-  {
-    "time": "11:55:00",
-    "msg": "Daily data aggregation cycle started for 2026-04-10.",
-    "type": "info"
-  },
-  {
-    "time": "11:55:15",
-    "msg": "Indexed 3 new remote roles from Synonym, Joyride Labs, and Kraken.",
     "type": "success"
   }
 ]
