@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-09-07",
+    "type": "job",
+    "title": "Senior Systems Engineer at Solana Foundation",
+    "description": "Join Solana Foundation as a Senior Systems Engineer. Requirements: Rust, Systems Programming, Solana. Remote.",
+    "link": "https://solana.com/careers"
+  },
+  {
+    "date": "2026-09-07",
+    "type": "job",
+    "title": "Protocol Developer at Optimism",
+    "description": "Join Optimism as a Protocol Developer. Requirements: Solidity, Layer 2, Go. Remote.",
+    "link": "https://optimism.io/about#careers"
+  },
+  {
+    "date": "2026-09-07",
+    "type": "job",
+    "title": "Zero Knowledge Researcher at Scroll",
+    "description": "Join Scroll as a Zero Knowledge Researcher. Requirements: Rust, ZK-SNARKs, Cryptography. Remote.",
+    "link": "https://scroll.io/careers"
+  },
+  {
+    "date": "2026-09-07",
+    "type": "news",
+    "title": "\u2018White hats\u2019 take 4000 BTC from Liquid, ETFs see best inflows of 2026: Hodler\u2019s Digest",
+    "description": "Purported white hat hackers have taken 4000 Bitcoin from the Liquid sidechain in a major security breach. The Bitcoin ETFs see the best three weeks of...",
+    "link": "https://cointelegraph.com/magazine/white-hats-take-4000-btc-from-liquid-btc-etfs-best-week-of-2026-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-09-07",
+    "type": "news",
+    "title": "Here\u2019s what happened in crypto today",
+    "description": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and cry...",
+    "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-09-07",
+    "type": "hack",
+    "title": "Trezor says data breach affects another 67K US customers",
+    "description": "Trezor said an additional 67,000 US users were affected by its shipping provider\u2019s data breach, opening the path to potential phishing attacks and soc...",
+    "link": "https://cointelegraph.com/news/trezor-data-breach-affects-67k-us-customers?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "date": "2026-08-31",
     "type": "job",
     "title": "Senior Cryptography Engineer at a16z crypto",
@@ -376,47 +418,5 @@
     "title": "Senior Protocol Engineer at Kaia Labs Limited",
     "description": "Join Kaia Labs Limited as a Senior Protocol Engineer. Requirements: Blockchain Protocols, Distributed Systems, Go. Remote.",
     "link": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "job",
-    "title": "Backend Engineer, Integrations & APIs at Stellar Development Foundation",
-    "description": "Join Stellar Development Foundation as a Backend Engineer, Integrations & APIs. Requirements: Go, API Design, Distributed Systems. Remote.",
-    "link": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "job",
-    "title": "Senior Low-Latency Trading Systems Engineer at HyroTrader",
-    "description": "Join HyroTrader as a Senior Low-Latency Trading Systems Engineer. Requirements: Low-Latency, Trading Systems, Rust. Remote.",
-    "link": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "news",
-    "title": "Re7 Labs Expands Onchain Operator Strategy",
-    "description": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
-    "link": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "news",
-    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
-    "description": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
-    "link": "https://cryptojobslist.com/research/web3-workforce-report"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "hack",
-    "title": "New Market Trading Exploit: $3.98M Drained",
-    "description": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
-    "link": "https://rekt.news/newmarkettrading-rekt"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "job",
-    "title": "Smart Contracts Engineer EVM at Odos",
-    "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
   }
 ]
