@@ -1,5 +1,147 @@
 [
   {
+    "id": "solana-foundation-rust-2026-09-07-x",
+    "title": "Senior Systems Engineer",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$175,000 - $225,000",
+    "requirements": [
+      "Rust",
+      "Systems Programming",
+      "Solana",
+      "Performance Optimization"
+    ],
+    "applyLink": "https://solana.com/careers"
+  },
+  {
+    "id": "optimism-solidity-2026-09-07-x",
+    "title": "Protocol Developer",
+    "company": "Optimism",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$165,000 - $215,000",
+    "requirements": [
+      "Solidity",
+      "Layer 2",
+      "Go",
+      "EVM"
+    ],
+    "applyLink": "https://optimism.io/about#careers"
+  },
+  {
+    "id": "scroll-zk-2026-09-07-x",
+    "title": "Zero Knowledge Researcher",
+    "company": "Scroll",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$160,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "ZK-SNARKs",
+      "Cryptography",
+      "Mathematics"
+    ],
+    "applyLink": "https://scroll.io/careers"
+  },
+  {
+    "id": "chainlink-solidity-2026-09-07-1",
+    "title": "Senior Solidity Developer",
+    "company": "Chainlink",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contracts",
+      "DeFi",
+      "EVM"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "magiceden-rust-2026-09-07-1",
+    "title": "Solana Rust Engineer",
+    "company": "Magic Eden",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "aave-protocol-2026-09-07-1",
+    "title": "Protocol Engineer",
+    "company": "Aave",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "a16z-crypto-rust-2026-09-07",
+    "title": "Senior Cryptography Engineer",
+    "company": "a16z crypto",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "ZK Proofs",
+      "Cryptography"
+    ],
+    "applyLink": "https://a16zcrypto.com/jobs"
+  },
+  {
+    "id": "polygon-solidity-2026-09-07",
+    "title": "L2 Protocol Engineer",
+    "company": "Polygon Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $210,000",
+    "requirements": [
+      "Solidity",
+      "Yul",
+      "EVM internals"
+    ],
+    "applyLink": "https://polygon.technology/careers"
+  },
+  {
+    "id": "jump-crypto-solana-2026-09-07",
+    "title": "Solana Core Developer",
+    "company": "Jump Crypto",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $240,000",
+    "requirements": [
+      "Rust",
+      "C++",
+      "Low-latency systems",
+      "Solana"
+    ],
+    "applyLink": "https://jumpcrypto.com/careers"
+  },
+  {
     "id": "a16z-crypto-rust-2026-08-31",
     "title": "Senior Cryptography Engineer",
     "company": "a16z crypto",
