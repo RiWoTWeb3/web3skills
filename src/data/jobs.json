@@ -1,5 +1,53 @@
 [
   {
+    "id": "paradigm-rust-researcher-2026-09-14-1",
+    "title": "Lead Rust Researcher",
+    "company": "Paradigm",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Principal level",
+    "salaryRange": "$220,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Cryptography",
+      "Research",
+      "ZK Proofs"
+    ],
+    "applyLink": "https://paradigm.xyz/careers"
+  },
+  {
+    "id": "uniswap-solidity-protocol-2026-09-14-1",
+    "title": "Smart Contract Protocol Engineer",
+    "company": "Uniswap Labs",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$190,000 - $250,000",
+    "requirements": [
+      "Solidity",
+      "DeFi",
+      "Smart Contracts",
+      "Foundry"
+    ],
+    "applyLink": "https://uniswap.org/careers"
+  },
+  {
+    "id": "monad-core-dev-2026-09-14-1",
+    "title": "Core Blockchain Developer",
+    "company": "Monad",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $260,000",
+    "requirements": [
+      "C++",
+      "Rust",
+      "EVM Architecture",
+      "High Performance"
+    ],
+    "applyLink": "https://monad.xyz/careers"
+  },
+  {
     "id": "a16z-crypto-rust-2026-08-31",
     "title": "Senior Cryptography Engineer",
     "company": "a16z crypto",
