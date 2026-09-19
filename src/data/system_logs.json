@@ -1,5 +1,15 @@
 [
   {
+    "time": "04:14:34",
+    "msg": "Daily data aggregation cycle started for 2026-09-14.",
+    "type": "info"
+  },
+  {
+    "time": "04:14:34",
+    "msg": "Web3 Data Update [2026-09-14] complete.",
+    "type": "success"
+  },
+  {
     "time": "04:37:02",
     "msg": "Daily data aggregation cycle started for 2026-08-31.",
     "type": "info"
@@ -237,16 +247,6 @@
   {
     "time": "11:54:15",
     "msg": "Indexed 3 new roles from Travoom, CertiK, and Fireblocks.",
-    "type": "success"
-  },
-  {
-    "time": "11:54:15",
-    "msg": "Parsed Monad Testnet and Ethereum Pectra updates.",
-    "type": "success"
-  },
-  {
-    "time": "11:54:15",
-    "msg": "Web3 Data Update [2026-04-12] complete.",
     "type": "success"
   }
 ]

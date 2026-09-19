@@ -92,37 +92,37 @@ def main():
     # 2. Get Jobs
     new_jobs = [
          {
-            "id": f"a16z-crypto-rust-{today}",
-            "title": "Senior Cryptography Engineer",
-            "company": "a16z crypto",
+            "id": f"paradigm-rust-researcher-{today}-1",
+            "title": "Lead Rust Researcher",
+            "company": "Paradigm",
             "type": "SVM",
             "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$180,000 - $250,000",
-            "requirements": ["Rust", "ZK Proofs", "Cryptography"],
-            "applyLink": "https://a16zcrypto.com/jobs"
+            "experience": "Principal level",
+            "salaryRange": "$220,000 - $300,000",
+            "requirements": ["Rust", "Cryptography", "Research", "ZK Proofs"],
+            "applyLink": "https://paradigm.xyz/careers"
         },
         {
-            "id": f"polygon-solidity-{today}",
-            "title": "L2 Protocol Engineer",
-            "company": "Polygon Labs",
+            "id": f"uniswap-solidity-protocol-{today}-1",
+            "title": "Smart Contract Protocol Engineer",
+            "company": "Uniswap Labs",
             "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$160,000 - $210,000",
-            "requirements": ["Solidity", "Yul", "EVM internals"],
-            "applyLink": "https://polygon.technology/careers"
+            "salaryRange": "$190,000 - $250,000",
+            "requirements": ["Solidity", "DeFi", "Smart Contracts", "Foundry"],
+            "applyLink": "https://uniswap.org/careers"
         },
         {
-            "id": f"jump-crypto-solana-{today}",
-            "title": "Solana Core Developer",
-            "company": "Jump Crypto",
-            "type": "SVM",
+            "id": f"monad-core-dev-{today}-1",
+            "title": "Core Blockchain Developer",
+            "company": "Monad",
+            "type": "EVM",
             "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$170,000 - $240,000",
-            "requirements": ["Rust", "C++", "Low-latency systems", "Solana"],
-            "applyLink": "https://jumpcrypto.com/careers"
+            "salaryRange": "$180,000 - $260,000",
+            "requirements": ["C++", "Rust", "EVM Architecture", "High Performance"],
+            "applyLink": "https://monad.xyz/careers"
         }
     ]
 

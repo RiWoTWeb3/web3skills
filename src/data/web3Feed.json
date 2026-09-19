@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-09-14",
+    "type": "job",
+    "title": "Lead Rust Researcher at Paradigm",
+    "description": "Join Paradigm as a Lead Rust Researcher. Requirements: Rust, Cryptography, Research. Remote.",
+    "link": "https://paradigm.xyz/careers"
+  },
+  {
+    "date": "2026-09-14",
+    "type": "job",
+    "title": "Smart Contract Protocol Engineer at Uniswap Labs",
+    "description": "Join Uniswap Labs as a Smart Contract Protocol Engineer. Requirements: Solidity, DeFi, Smart Contracts. Remote.",
+    "link": "https://uniswap.org/careers"
+  },
+  {
+    "date": "2026-09-14",
+    "type": "job",
+    "title": "Core Blockchain Developer at Monad",
+    "description": "Join Monad as a Core Blockchain Developer. Requirements: C++, Rust, EVM Architecture. Remote.",
+    "link": "https://monad.xyz/careers"
+  },
+  {
+    "date": "2026-09-14",
+    "type": "news",
+    "title": "US Republicans send \u2018final\u2019 CLARITY Act offer to Democrats",
+    "description": "The 635-page revised proposal includes Trump-backed ethics provisions and comes just two days before a key procedural vote.",
+    "link": "https://cointelegraph.com/news/us-republicans-send-final-clarity-act-offer-to-democrats?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-09-14",
+    "type": "news",
+    "title": "Crypto\u2019s biggest week ever? Swarm fears prompt AI slowdown: Hodler\u2019s Digest",
+    "description": "Crypto\u2019s moment of CLARITY finally arrives with a key Senate vote on Tuesday. AI swarm fears prompt development slowdown, with some predicting big fal...",
+    "link": "https://cointelegraph.com/magazine/cryptos-biggest-week-ever-swarm-fears-prompt-ai-slowdown-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-09-14",
+    "type": "hack",
+    "title": "Revolut attackers threaten daily customer data leaks",
+    "description": "Attackers reportedly published identity documents and selfies belonging to Revolut customers and threatened to release more data each day until the fi...",
+    "link": "https://cointelegraph.com/news/revolut-attackers-threaten-daily-customer-data-leaks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "date": "2026-08-31",
     "type": "job",
     "title": "Senior Cryptography Engineer at a16z crypto",
@@ -376,47 +418,5 @@
     "title": "Senior Protocol Engineer at Kaia Labs Limited",
     "description": "Join Kaia Labs Limited as a Senior Protocol Engineer. Requirements: Blockchain Protocols, Distributed Systems, Go. Remote.",
     "link": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "job",
-    "title": "Backend Engineer, Integrations & APIs at Stellar Development Foundation",
-    "description": "Join Stellar Development Foundation as a Backend Engineer, Integrations & APIs. Requirements: Go, API Design, Distributed Systems. Remote.",
-    "link": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "job",
-    "title": "Senior Low-Latency Trading Systems Engineer at HyroTrader",
-    "description": "Join HyroTrader as a Senior Low-Latency Trading Systems Engineer. Requirements: Low-Latency, Trading Systems, Rust. Remote.",
-    "link": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "news",
-    "title": "Re7 Labs Expands Onchain Operator Strategy",
-    "description": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
-    "link": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "news",
-    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
-    "description": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
-    "link": "https://cryptojobslist.com/research/web3-workforce-report"
-  },
-  {
-    "date": "2026-05-29",
-    "type": "hack",
-    "title": "New Market Trading Exploit: $3.98M Drained",
-    "description": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
-    "link": "https://rekt.news/newmarkettrading-rekt"
-  },
-  {
-    "date": "2026-04-16",
-    "type": "job",
-    "title": "Smart Contracts Engineer EVM at Odos",
-    "description": "Join Odos as a Smart Contracts Engineer EVM. Requirements: Solidity, Rust, EVM Mechanics. Remote.",
-    "link": "https://www.indeed.com/q-web3-rust-l-remote-jobs.html"
   }
 ]
