@@ -92,37 +92,37 @@ def main():
     # 2. Get Jobs
     new_jobs = [
          {
-            "id": f"paradigm-rust-researcher-{today}-1",
-            "title": "Lead Rust Researcher",
-            "company": "Paradigm",
+            "id": f"starkware-zk-crypto-{today}-1",
+            "title": "Senior ZK Cryptography Engineer",
+            "company": "Starkware",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Senior level",
+            "salaryRange": "$180,000 - $280,000",
+            "requirements": ["Cryptography", "ZK Proofs", "Rust", "Mathematics"],
+            "applyLink": "https://starkware.co/careers/"
+        },
+        {
+            "id": f"trailofbits-evm-security-{today}-1",
+            "title": "EVM Security Researcher",
+            "company": "Trail of Bits",
+            "type": "EVM",
+            "workType": "Remote",
+            "experience": "Mid-Senior level",
+            "salaryRange": "$160,000 - $220,000",
+            "requirements": ["Solidity", "Security Auditing", "EVM", "Smart Contracts"],
+            "applyLink": "https://www.trailofbits.com/careers/"
+        },
+        {
+            "id": f"sui-rust-protocol-{today}-1",
+            "title": "Rust Protocol Developer",
+            "company": "Sui Foundation",
             "type": "SVM",
             "workType": "Remote",
-            "experience": "Principal level",
-            "salaryRange": "$220,000 - $300,000",
-            "requirements": ["Rust", "Cryptography", "Research", "ZK Proofs"],
-            "applyLink": "https://paradigm.xyz/careers"
-        },
-        {
-            "id": f"uniswap-solidity-protocol-{today}-1",
-            "title": "Smart Contract Protocol Engineer",
-            "company": "Uniswap Labs",
-            "type": "EVM",
-            "workType": "Remote",
             "experience": "Senior level",
-            "salaryRange": "$190,000 - $250,000",
-            "requirements": ["Solidity", "DeFi", "Smart Contracts", "Foundry"],
-            "applyLink": "https://uniswap.org/careers"
-        },
-        {
-            "id": f"monad-core-dev-{today}-1",
-            "title": "Core Blockchain Developer",
-            "company": "Monad",
-            "type": "EVM",
-            "workType": "Remote",
-            "experience": "Senior level",
-            "salaryRange": "$180,000 - $260,000",
-            "requirements": ["C++", "Rust", "EVM Architecture", "High Performance"],
-            "applyLink": "https://monad.xyz/careers"
+            "salaryRange": "$170,000 - $250,000",
+            "requirements": ["Rust", "Distributed Systems", "Sui Move", "Blockchain Architecture"],
+            "applyLink": "https://sui.io/about/careers"
         }
     ]
 

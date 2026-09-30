@@ -1,5 +1,53 @@
 [
   {
+    "id": "starkware-zk-crypto-2026-09-28-1",
+    "title": "Senior ZK Cryptography Engineer",
+    "company": "Starkware",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $280,000",
+    "requirements": [
+      "Cryptography",
+      "ZK Proofs",
+      "Rust",
+      "Mathematics"
+    ],
+    "applyLink": "https://starkware.co/careers/"
+  },
+  {
+    "id": "trailofbits-evm-security-2026-09-28-1",
+    "title": "EVM Security Researcher",
+    "company": "Trail of Bits",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Security Auditing",
+      "EVM",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://www.trailofbits.com/careers/"
+  },
+  {
+    "id": "sui-rust-protocol-2026-09-28-1",
+    "title": "Rust Protocol Developer",
+    "company": "Sui Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Sui Move",
+      "Blockchain Architecture"
+    ],
+    "applyLink": "https://sui.io/about/careers"
+  },
+  {
     "id": "paradigm-rust-researcher-2026-09-14-1",
     "title": "Lead Rust Researcher",
     "company": "Paradigm",
