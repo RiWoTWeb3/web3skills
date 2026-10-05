@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-10-05",
+    "type": "job",
+    "title": "Core Protocol Engineer - Solana Foundation at Solana Foundation",
+    "description": "Join Solana Foundation as a Core Protocol Engineer - Solana Foundation. Requirements: Rust, Solana, Distributed Systems. Remote.",
+    "link": "https://jobs.solana.com/core-engineer"
+  },
+  {
+    "date": "2026-10-05",
+    "type": "job",
+    "title": "Senior EVM Smart Contract Developer at ConsenSys",
+    "description": "Join ConsenSys as a Senior EVM Smart Contract Developer. Requirements: Solidity, EVM, Hardhat. Remote.",
+    "link": "https://consensys.net/careers/"
+  },
+  {
+    "date": "2026-10-05",
+    "type": "job",
+    "title": "Crypto Research Engineer (Rust) at Paradigm",
+    "description": "Join Paradigm as a Crypto Research Engineer (Rust). Requirements: Rust, Cryptography, DeFi. Remote.",
+    "link": "https://paradigm.xyz/careers"
+  },
+  {
+    "date": "2026-10-05",
+    "type": "news",
+    "title": "Zcash activates NU7 on testnet ahead of November mainnet target",
+    "description": "Zcash\u2019s NU7 upgrade is now live on testnet, giving developers several weeks to assess 25-second blocks and other protocol changes before a planned Nov...",
+    "link": "https://cointelegraph.com/news/zcash-nu7-testnet-activation-november-mainnet?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-10-05",
+    "type": "news",
+    "title": "OKX, NYSE parent file to launch tokenized US stock platform",
+    "description": "The stock trading platform seeks to offer tokenized shares in more than 60 US-listed companies under the SEC\u2019s recently introduced innovation exemptio...",
+    "link": "https://cointelegraph.com/news/okx-nyse-parent-file-to-launch-tokenized-us-stock-platform?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-10-05",
+    "type": "hack",
+    "title": "NEAR Intents recovers entire stolen $3.8M after ultimatum to exploiter",
+    "description": "The exploiter returned the entire sum to NEAR Intents after being identified and given 48 hours to respond.",
+    "link": "https://cointelegraph.com/news/near-intents-recovers-entire-stolen-38m-after-ultimatum-to-exploiter?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "date": "2026-09-28",
     "type": "job",
     "title": "Senior ZK Cryptography Engineer at Starkware",
@@ -375,48 +417,6 @@
     "type": "job",
     "title": "Senior Rust Engineer, Core Protocol at Solana Foundation",
     "description": "Join Solana Foundation as a Senior Rust Engineer, Core Protocol. Requirements: Rust, Solana, Distributed Systems. Remote.",
-    "link": "https://web3.career/remote+solana-jobs"
-  },
-  {
-    "date": "2026-06-29",
-    "type": "job",
-    "title": "Smart Contract Engineer at Uniswap Labs",
-    "description": "Join Uniswap Labs as a Smart Contract Engineer. Requirements: Solidity, Ethereum, Foundry. Remote.",
-    "link": "https://web3.career/remote+solidity-jobs"
-  },
-  {
-    "date": "2026-06-29",
-    "type": "job",
-    "title": "Backend Infrastructure Engineer at Chainlink Labs",
-    "description": "Join Chainlink Labs as a Backend Infrastructure Engineer. Requirements: Go, Kubernetes, Ethereum. Remote.",
-    "link": "https://web3.career/remote+backend-jobs"
-  },
-  {
-    "date": "2026-06-29",
-    "type": "news",
-    "title": "Ethereum's Pectra Upgrade Mainnet Launch Date Confirmed",
-    "description": "The Ethereum community has reached consensus on the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
-    "link": "https://ethereum.org/en/developers/"
-  },
-  {
-    "date": "2026-06-29",
-    "type": "news",
-    "title": "Solana Firedancer Client Enters Beta Stage",
-    "description": "Jump Crypto announces that the Firedancer validator client has entered beta, promising 1M+ TPS and significant network decentralization.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-06-29",
-    "type": "hack",
-    "title": "DeFi Protocol ShieldSafe Discloses $2M Bug Bounty",
-    "description": "ShieldSafe protocol successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-05-31",
-    "type": "job",
-    "title": "Staff Performance Engineer, Trading Infrastructure at Helius",
-    "description": "Join Helius as a Staff Performance Engineer, Trading Infrastructure. Requirements: Rust, Solana, Trading Infrastructure. Remote.",
     "link": "https://web3.career/remote+solana-jobs"
   }
 ]
