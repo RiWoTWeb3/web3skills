@@ -1,5 +1,53 @@
 [
   {
+    "id": "solana-foundation-svm-2026-10-05-eng",
+    "title": "Core Protocol Engineer - Solana Foundation",
+    "company": "Solana Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Distributed Systems",
+      "Cryptography"
+    ],
+    "applyLink": "https://jobs.solana.com/core-engineer"
+  },
+  {
+    "id": "consensys-evm-2026-10-05-dev",
+    "title": "Senior EVM Smart Contract Developer",
+    "company": "ConsenSys",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "EVM",
+      "Hardhat",
+      "Security"
+    ],
+    "applyLink": "https://consensys.net/careers/"
+  },
+  {
+    "id": "paradigm-rust-2026-10-05-research",
+    "title": "Crypto Research Engineer (Rust)",
+    "company": "Paradigm",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$190,000 - $300,000",
+    "requirements": [
+      "Rust",
+      "Cryptography",
+      "DeFi",
+      "Mathematics"
+    ],
+    "applyLink": "https://paradigm.xyz/careers"
+  },
+  {
     "id": "starkware-zk-crypto-2026-09-28-1",
     "title": "Senior ZK Cryptography Engineer",
     "company": "Starkware",
