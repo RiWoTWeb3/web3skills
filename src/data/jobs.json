@@ -1,5 +1,101 @@
 [
   {
+    "id": "chainlink-solidity-2026-10-19-1",
+    "title": "Senior Solidity Developer",
+    "company": "Chainlink",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Smart Contracts",
+      "DeFi",
+      "EVM"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "magiceden-rust-2026-10-19-1",
+    "title": "Solana Rust Engineer",
+    "company": "Magic Eden",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$150,000 - $200,000",
+    "requirements": [
+      "Rust",
+      "Solana",
+      "Anchor",
+      "Web3"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "aave-protocol-2026-10-19-1",
+    "title": "Protocol Engineer",
+    "company": "Aave",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$140,000 - $190,000",
+    "requirements": [
+      "Solidity",
+      "Ethereum",
+      "Foundry",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://web3.career/"
+  },
+  {
+    "id": "starkware-zk-crypto-2026-10-19-1",
+    "title": "Senior ZK Cryptography Engineer",
+    "company": "Starkware",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$180,000 - $280,000",
+    "requirements": [
+      "Cryptography",
+      "ZK Proofs",
+      "Rust",
+      "Mathematics"
+    ],
+    "applyLink": "https://starkware.co/careers/"
+  },
+  {
+    "id": "trailofbits-evm-security-2026-10-19-1",
+    "title": "EVM Security Researcher",
+    "company": "Trail of Bits",
+    "type": "EVM",
+    "workType": "Remote",
+    "experience": "Mid-Senior level",
+    "salaryRange": "$160,000 - $220,000",
+    "requirements": [
+      "Solidity",
+      "Security Auditing",
+      "EVM",
+      "Smart Contracts"
+    ],
+    "applyLink": "https://www.trailofbits.com/careers/"
+  },
+  {
+    "id": "sui-rust-protocol-2026-10-19-1",
+    "title": "Rust Protocol Developer",
+    "company": "Sui Foundation",
+    "type": "SVM",
+    "workType": "Remote",
+    "experience": "Senior level",
+    "salaryRange": "$170,000 - $250,000",
+    "requirements": [
+      "Rust",
+      "Distributed Systems",
+      "Sui Move",
+      "Blockchain Architecture"
+    ],
+    "applyLink": "https://sui.io/about/careers"
+  },
+  {
     "id": "solana-foundation-svm-2026-10-05-eng",
     "title": "Core Protocol Engineer - Solana Foundation",
     "company": "Solana Foundation",
