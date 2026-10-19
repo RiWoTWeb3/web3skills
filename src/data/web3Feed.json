@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-10-19",
+    "type": "job",
+    "title": "Senior Solidity Developer at Chainlink",
+    "description": "Join Chainlink as a Senior Solidity Developer. Requirements: Solidity, Smart Contracts, DeFi. Remote.",
+    "link": "https://web3.career/"
+  },
+  {
+    "date": "2026-10-19",
+    "type": "job",
+    "title": "Solana Rust Engineer at Magic Eden",
+    "description": "Join Magic Eden as a Solana Rust Engineer. Requirements: Rust, Solana, Anchor. Remote.",
+    "link": "https://web3.career/"
+  },
+  {
+    "date": "2026-10-19",
+    "type": "job",
+    "title": "Protocol Engineer at Aave",
+    "description": "Join Aave as a Protocol Engineer. Requirements: Solidity, Ethereum, Foundry. Remote.",
+    "link": "https://web3.career/"
+  },
+  {
+    "date": "2026-10-19",
+    "type": "news",
+    "title": "Richard Heart caught \u2018off-guard,\u2019 QDay gets even closer: Hodler\u2019s Digest",
+    "description": "HEX founder Richard Heart detained in early morning raid in Istanbul, Starknet plunges almost 50% as it votes to become an L1, and Bitwise says all si...",
+    "link": "https://cointelegraph.com/magazine/richard-heart-caught-with-pants-down-qday-gets-even-closer-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-10-19",
+    "type": "news",
+    "title": "Here\u2019s what happened in crypto today",
+    "description": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and cry...",
+    "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-10-19",
+    "type": "hack",
+    "title": "Qubic freezes chain after attacker drains 1.4K wallets with weak seeds",
+    "description": "Qubic says 87.1% of the stolen funds remain onchain and the rest were frozen at crypto exchange MEXC, as network validators prepare to vote on a recov...",
+    "link": "https://cointelegraph.com/news/qubic-freezes-chain-after-attacker-drains-14k-wallets-with-weak-seeds?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "date": "2026-10-05",
     "type": "job",
     "title": "Core Protocol Engineer - Solana Foundation at Solana Foundation",
@@ -376,47 +418,5 @@
     "title": "Senior Protocol Engineer at Kaia Labs Limited",
     "description": "Join Kaia Labs Limited as a Senior Protocol Engineer. Requirements: Blockchain Protocols, Distributed Systems, Go. Remote.",
     "link": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "job",
-    "title": "Backend Engineer, Integrations & APIs at Stellar Development Foundation",
-    "description": "Join Stellar Development Foundation as a Backend Engineer, Integrations & APIs. Requirements: Go, API Design, Distributed Systems. Remote.",
-    "link": "https://cryptojobslist.com/jobs/backend-engineer-integrations-apis-at-stellar-development-foundation"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "job",
-    "title": "Senior Low-Latency Trading Systems Engineer at HyroTrader",
-    "description": "Join HyroTrader as a Senior Low-Latency Trading Systems Engineer. Requirements: Low-Latency, Trading Systems, Rust. Remote.",
-    "link": "https://cryptojobslist.com/jobs/senior-low-latency-trading-systems-at-hyrotrader-1"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "news",
-    "title": "Re7 Labs Expands Onchain Operator Strategy",
-    "description": "Re7 Labs is scaling its onchain operator advising and vault curation capabilities, seeking DeFi associates to manage complex cross-chain transactions and risk.",
-    "link": "https://cryptojobslist.com/jobs/defi-associate-at-re7-labs"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "news",
-    "title": "The 2026 Web3 Workforce Report: The Agent Manager Era",
-    "description": "New research highlights a shift in Web3 hiring toward roles focused on managing AI agents and autonomous on-chain operations.",
-    "link": "https://cryptojobslist.com/research/web3-workforce-report"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "hack",
-    "title": "New Market Trading Exploit: $3.98M Drained",
-    "description": "An access control failure in a third-party Safe module allowed an attacker to drain 88 Gnosis Safes across multiple chains.",
-    "link": "https://rekt.news/newmarkettrading-rekt"
-  },
-  {
-    "date": "2026-06-29",
-    "type": "job",
-    "title": "Senior Rust Engineer, Core Protocol at Solana Foundation",
-    "description": "Join Solana Foundation as a Senior Rust Engineer, Core Protocol. Requirements: Rust, Solana, Distributed Systems. Remote.",
-    "link": "https://web3.career/remote+solana-jobs"
   }
 ]
