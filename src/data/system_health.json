@@ -1,7 +1,12 @@
 {
-  "lastSync": "2026-10-05T04:19:54.667552Z",
+  "lastSync": "2026-10-19T04:35:29.019743Z",
   "status": "HEALTHY",
   "syncHistory": [
+    {
+      "date": "2026-10-19",
+      "status": "SUCCESS",
+      "itemsAdded": 6
+    },
     {
       "date": "2026-10-05",
       "status": "SUCCESS",
@@ -44,11 +49,6 @@
     },
     {
       "date": "2026-07-12",
-      "status": "SUCCESS",
-      "itemsAdded": 6
-    },
-    {
-      "date": "2026-06-29",
       "status": "SUCCESS",
       "itemsAdded": 6
     }
