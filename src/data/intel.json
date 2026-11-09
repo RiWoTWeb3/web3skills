@@ -1,5 +1,26 @@
 [
   {
+    "title": "tBTC bridge partially resumes as $120M Aave reserve remains frozen",
+    "category": "INFRA",
+    "summary": "Threshold halted its tBTC bridge on Oct. 30 as operators addressed a critical Linux kernel vulnerability that could allow attackers to execute code on...",
+    "date": "2026-11-09",
+    "sourceLink": "https://cointelegraph.com/news/tbtc-bridge-resumes-aave-120m-reserve-frozen?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "title": "Vitalik \u2018pivots\u2019 ETH to store of value, crypto suffers after US midterms: Hodler\u2019s Digest",
+    "category": "INFRA",
+    "summary": "Vitalik Buterin wants Ethereum to embrace a store of value narrative, upsetting Bitcoin maxis. The crypto industry faces an uncertain future following...",
+    "date": "2026-11-09",
+    "sourceLink": "https://cointelegraph.com/magazine/vitaliks-pivots-to-eth-as-a-store-of-value-us-election-weighs-on-crypto-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "title": "Gnosis Pay breach exposes card details, personal data and crypto wallet information",
+    "category": "HACK",
+    "summary": "The crypto debit card provider said customer funds remained safe despite the exposure of sensitive financial and personal information.",
+    "date": "2026-11-09",
+    "sourceLink": "https://cointelegraph.com/news/gnosis-pay-breach-exposes-card-details-personal-data-crypto-wallet-information?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "title": "Richard Heart caught \u2018off-guard,\u2019 QDay gets even closer: Hodler\u2019s Digest",
     "category": "INFRA",
     "summary": "HEX founder Richard Heart detained in early morning raid in Istanbul, Starknet plunges almost 50% as it votes to become an L1, and Bitwise says all si...",
