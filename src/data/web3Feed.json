@@ -1,5 +1,47 @@
 [
   {
+    "date": "2026-11-09",
+    "type": "job",
+    "title": "Lead EVM Core Developer at Optimism Foundation",
+    "description": "Join Optimism Foundation as a Lead EVM Core Developer. Requirements: Go, EVM, Layer 2. Remote.",
+    "link": "https://optimism.io/careers/"
+  },
+  {
+    "date": "2026-11-09",
+    "type": "job",
+    "title": "Rust VM Engineer at Solana Labs",
+    "description": "Join Solana Labs as a Rust VM Engineer. Requirements: Rust, Solana VM, Performance Optimization. Remote.",
+    "link": "https://solana.com/careers/"
+  },
+  {
+    "date": "2026-11-09",
+    "type": "job",
+    "title": "Smart Contract Security Auditor at Consensys",
+    "description": "Join Consensys as a Smart Contract Security Auditor. Requirements: Solidity, Security Auditing, EVM. Remote.",
+    "link": "https://consensys.net/careers/"
+  },
+  {
+    "date": "2026-11-09",
+    "type": "news",
+    "title": "tBTC bridge partially resumes as $120M Aave reserve remains frozen",
+    "description": "Threshold halted its tBTC bridge on Oct. 30 as operators addressed a critical Linux kernel vulnerability that could allow attackers to execute code on...",
+    "link": "https://cointelegraph.com/news/tbtc-bridge-resumes-aave-120m-reserve-frozen?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-11-09",
+    "type": "news",
+    "title": "Vitalik \u2018pivots\u2019 ETH to store of value, crypto suffers after US midterms: Hodler\u2019s Digest",
+    "description": "Vitalik Buterin wants Ethereum to embrace a store of value narrative, upsetting Bitcoin maxis. The crypto industry faces an uncertain future following...",
+    "link": "https://cointelegraph.com/magazine/vitaliks-pivots-to-eth-as-a-store-of-value-us-election-weighs-on-crypto-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+    "date": "2026-11-09",
+    "type": "hack",
+    "title": "Gnosis Pay breach exposes card details, personal data and crypto wallet information",
+    "description": "The crypto debit card provider said customer funds remained safe despite the exposure of sensitive financial and personal information.",
+    "link": "https://cointelegraph.com/news/gnosis-pay-breach-exposes-card-details-personal-data-crypto-wallet-information?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
     "date": "2026-10-19",
     "type": "job",
     "title": "Senior Solidity Developer at Chainlink",
@@ -376,47 +418,5 @@
     "title": "Senior Rust Engineer, Infrastructure at Solana Foundation",
     "description": "Join Solana Foundation as a Senior Rust Engineer, Infrastructure. Requirements: Rust, Solana, Distributed Systems. Remote.",
     "link": "https://web3.career/remote+solana-jobs"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "job",
-    "title": "Protocol Engineer at Uniswap Labs",
-    "description": "Join Uniswap Labs as a Protocol Engineer. Requirements: Solidity, Ethereum, Foundry. Remote.",
-    "link": "https://web3.career/remote+solidity-jobs"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "job",
-    "title": "Backend Services Engineer at Chainlink Labs",
-    "description": "Join Chainlink Labs as a Backend Services Engineer. Requirements: Go, Kubernetes, Ethereum. Remote.",
-    "link": "https://web3.career/remote+backend-jobs"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "news",
-    "title": "Firedancer Beta Released for Public Testnet",
-    "description": "Jump Crypto announces that the Firedancer validator client has been released for public testnet, promising 1M+ TPS and significant network decentralization.",
-    "link": "https://solana.com/news"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "news",
-    "title": "Ethereum's Pectra Upgrade Timeline Released",
-    "description": "The Ethereum community has released the Pectra upgrade timeline, aiming for a Q4 2026 mainnet launch with major scalability improvements.",
-    "link": "https://ethereum.org/en/developers/"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "hack",
-    "title": "DeFi Protocol PolyNetwork Discloses $2M Bug Bounty",
-    "description": "PolyNetwork successfully patched a critical logic vulnerability discovered by a white-hat researcher, paying out a $2M bounty via Immunefi.",
-    "link": "https://immunefi.com/blog/"
-  },
-  {
-    "date": "2026-07-12",
-    "type": "job",
-    "title": "Senior Protocol Engineer at Kaia Labs Limited",
-    "description": "Join Kaia Labs Limited as a Senior Protocol Engineer. Requirements: Blockchain Protocols, Distributed Systems, Go. Remote.",
-    "link": "https://cryptojobslist.com/jobs/senior-protocol-engineer-at-kaia-labs-limited"
   }
 ]
